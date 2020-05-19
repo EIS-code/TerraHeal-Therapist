@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GRANDDUKE.ttf">
+            <string>GRANDDUKERegular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TherapistProfileVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnBio" destination="CNb-wZ-Wbt" id="km0-Pc-dNk"/>
+                <outlet property="btnDone" destination="M4n-K6-Vex" id="2Dk-rT-ePh"/>
+                <outlet property="btnFemale" destination="OUW-YR-kRf" id="7DN-DY-4Oo"/>
+                <outlet property="btnMale" destination="Zm7-uu-WZa" id="rXM-aH-QfV"/>
+                <outlet property="btnProfilePic" destination="pU4-jo-VB5" id="JhY-P7-bqH"/>
+                <outlet property="btnSubmit" destination="3lS-U2-gua" id="ZGQ-dM-eMl"/>
+                <outlet property="btnThingsIcanDo" destination="SkD-51-GjR" id="bd7-mp-82P"/>
+                <outlet property="imgProfilePic" destination="4QR-HF-cya" id="cnH-cu-qmy"/>
+                <outlet property="lblGender" destination="DnS-4x-u3K" id="ff5-yt-Lrp"/>
+                <outlet property="lblHeader" destination="Bz8-KT-bjZ" id="NPk-WR-YLH"/>
+                <outlet property="lblProfilePic" destination="ckg-Uh-TbR" id="r1b-hu-9kp"/>
+                <outlet property="lblProfilePicMessage" destination="ToM-19-D0F" id="dOT-55-icd"/>
+                <outlet property="stkGender" destination="Gm1-qK-ZDk" id="1Uv-bd-v1R"/>
+                <outlet property="txtDob" destination="rXr-pl-KcI" id="D7F-rj-8KZ"/>
+                <outlet property="txtEmergencyContact" destination="W1e-fu-5si" id="XIC-hP-OON"/>
+                <outlet property="txtName" destination="hto-0j-LJo" id="KsE-gP-2M7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwProfilePic" destination="IsT-fb-7rD" id="wzd-9V-YIf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvb-QL-4A8" userLabel="scrVw">
+                    <rect key="frame" x="20" y="64" width="335" height="694"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeP-gc-xbD" userLabel="vwContent">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="936.66666666666663"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz8-KT-bjZ" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="55.999999999999993" width="295" height="18.666666666666664"/>
+                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IsT-fb-7rD" userLabel="vwProfilePicture">
+                                    <rect key="frame" x="117.33333333333334" y="94.666666666666657" width="100.33333333333334" height="100.66666666666666"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4QR-HF-cya">
+                                            <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="100.66666666666667"/>
+                                            <color key="backgroundColor" name="theme_primary_light_background"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckg-Uh-TbR" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="100.66666666666667"/>
+                                            <color key="backgroundColor" name="theme_primary_light_background"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="theme_primary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pU4-jo-VB5" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="100.66666666666667"/>
+                                            <state key="normal">
+                                                <color key="titleColor" name="theme_primary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnProfilePicTapped:" destination="-1" eventType="touchUpInside" id="Z2W-gu-a28"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="4QR-HF-cya" firstAttribute="top" secondItem="IsT-fb-7rD" secondAttribute="top" id="0hz-9z-cAX"/>
+                                        <constraint firstAttribute="trailing" secondItem="ckg-Uh-TbR" secondAttribute="trailing" id="E9I-0d-Cms"/>
+                                        <constraint firstItem="pU4-jo-VB5" firstAttribute="top" secondItem="IsT-fb-7rD" secondAttribute="top" id="OmX-Q9-a1S"/>
+                                        <constraint firstItem="pU4-jo-VB5" firstAttribute="leading" secondItem="IsT-fb-7rD" secondAttribute="leading" id="Ss4-3G-mz4"/>
+                                        <constraint firstAttribute="width" secondItem="IsT-fb-7rD" secondAttribute="height" multiplier="1:1" id="XUt-Sn-sj5"/>
+                                        <constraint firstItem="ckg-Uh-TbR" firstAttribute="leading" secondItem="IsT-fb-7rD" secondAttribute="leading" id="b8C-NY-2cA"/>
+                                        <constraint firstItem="ckg-Uh-TbR" firstAttribute="top" secondItem="IsT-fb-7rD" secondAttribute="top" id="bdR-VX-DxQ"/>
+                                        <constraint firstItem="4QR-HF-cya" firstAttribute="leading" secondItem="IsT-fb-7rD" secondAttribute="leading" id="g15-kn-psB"/>
+                                        <constraint firstAttribute="trailing" secondItem="pU4-jo-VB5" secondAttribute="trailing" id="gs3-xJ-Nby"/>
+                                        <constraint firstAttribute="bottom" secondItem="4QR-HF-cya" secondAttribute="bottom" id="iIa-7G-36Z"/>
+                                        <constraint firstAttribute="bottom" secondItem="pU4-jo-VB5" secondAttribute="bottom" id="tfi-3Z-KC9"/>
+                                        <constraint firstAttribute="trailing" secondItem="4QR-HF-cya" secondAttribute="trailing" id="vwo-ud-NrW"/>
+                                        <constraint firstAttribute="bottom" secondItem="ckg-Uh-TbR" secondAttribute="bottom" id="zZw-Dq-xaZ"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Picture (Face Only)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToM-19-D0F" userLabel="Profile Pic Message" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="215.33333333333331" width="335" height="18.666666666666657"/>
+                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hto-0j-LJo" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="253.99999999999997" width="335" height="59.666666666666657"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="hto-0j-LJo" secondAttribute="height" multiplier="28:5" id="2ZA-GD-lvA"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" textContentType="name"/>
+                                </textField>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gm1-qK-ZDk">
+                                    <rect key="frame" x="91.666666666666686" y="333.66666666666669" width="152" height="106.33333333333331"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnS-4x-u3K" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="59.999999999999986" y="0.0" width="32" height="20.333333333333332"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="theme_primary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hzq-dD-hvV">
+                                            <rect key="frame" x="0.0" y="40.333333333333314" width="152" height="66"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zm7-uu-WZa" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Zm7-uu-WZa" secondAttribute="height" multiplier="1:1" id="WWh-HC-xCc"/>
+                                                    </constraints>
+                                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                    <state key="normal" title="Male">
+                                                        <color key="titleColor" name="theme_primary"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="btnMaleTapped:" destination="-1" eventType="touchUpInside" id="ku8-dV-jcs"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUW-YR-kRf" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                    <rect key="frame" x="85.999999999999986" y="0.0" width="66.000000000000014" height="66"/>
+                                                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                    <state key="normal" title="Fenale">
+                                                        <color key="titleColor" name="theme_primary"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="btnFemaleTapped:" destination="-1" eventType="touchUpInside" id="K8E-MY-wFP"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rXr-pl-KcI" userLabel="txtDob" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="460" width="335" height="59.666666666666629"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="rXr-pl-KcI" secondAttribute="height" multiplier="28:5" id="hK3-wl-3oZ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1e-fu-5si" userLabel="txtEmergencyContact" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="539.66666666666663" width="335" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="W1e-fu-5si" secondAttribute="height" multiplier="28:5" id="S3l-j8-9BA"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                </textField>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1nE-QV-1jS" userLabel="Stack View - what i can do">
+                                    <rect key="frame" x="33.666666666666657" y="619.66666666666663" width="268" height="124"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNb-wZ-Wbt" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+                                            <color key="backgroundColor" name="theme_primary_light_background"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="CNb-wZ-Wbt" secondAttribute="height" multiplier="1:1" id="uBk-9f-422"/>
+                                            </constraints>
+                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                            <state key="normal" title="Bio">
+                                                <color key="titleColor" name="theme_primary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnBioTapped:" destination="-1" eventType="touchUpInside" id="GFP-Q7-vFb"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkD-51-GjR" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="144" y="0.0" width="124" height="124"/>
+                                            <color key="backgroundColor" name="theme_primary_light_background"/>
+                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                            <state key="normal" title="Things I can do">
+                                                <color key="titleColor" name="theme_primary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnThingsIcanDoTapped:" destination="-1" eventType="touchUpInside" id="OjL-ln-uUj"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FCJ-iJ-ovV" userLabel="Stack View - Next">
+                                    <rect key="frame" x="62" y="763.66666666666663" width="211" height="143"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lS-U2-gua" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="111" width="53" height="32"/>
+                                            <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                                            <state key="normal" title="Sign In">
+                                                <color key="titleColor" name="theme_primary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnDoneTapped:" destination="-1" eventType="touchUpInside" id="DEN-Pp-uLC"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4n-K6-Vex" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="68" y="0.0" width="143" height="143"/>
+                                            <color key="backgroundColor" name="theme_primary_light"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="M4n-K6-Vex" secondAttribute="height" multiplier="1:1" id="eQb-Fj-anU"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                            <state key="normal" title="→" image="asset-arrow-right">
+                                                <color key="titleColor" name="theme_button_text"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnDoneTapped:" destination="-1" eventType="touchUpInside" id="iF2-bA-Wqu"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="W1e-fu-5si" firstAttribute="top" secondItem="rXr-pl-KcI" secondAttribute="bottom" constant="20" id="1kC-WL-kcU"/>
+                                <constraint firstItem="FCJ-iJ-ovV" firstAttribute="top" secondItem="1nE-QV-1jS" secondAttribute="bottom" constant="20" id="2yC-Fm-X2U"/>
+                                <constraint firstAttribute="bottom" secondItem="FCJ-iJ-ovV" secondAttribute="bottom" constant="30" id="3uO-AQ-t2e"/>
+                                <constraint firstItem="1nE-QV-1jS" firstAttribute="width" secondItem="TeP-gc-xbD" secondAttribute="width" multiplier="0.8" id="5jL-H1-hqX"/>
+                                <constraint firstItem="IsT-fb-7rD" firstAttribute="centerX" secondItem="TeP-gc-xbD" secondAttribute="centerX" id="6P9-K3-Y4w"/>
+                                <constraint firstItem="hto-0j-LJo" firstAttribute="width" secondItem="TeP-gc-xbD" secondAttribute="width" id="6cF-aj-MUU"/>
+                                <constraint firstItem="hto-0j-LJo" firstAttribute="top" secondItem="ToM-19-D0F" secondAttribute="bottom" constant="20" id="6pq-ko-VTE"/>
+                                <constraint firstItem="rXr-pl-KcI" firstAttribute="width" secondItem="rXr-pl-KcI" secondAttribute="height" multiplier="28:5" id="6zy-RN-A7i"/>
+                                <constraint firstItem="rXr-pl-KcI" firstAttribute="width" secondItem="TeP-gc-xbD" secondAttribute="width" id="8xD-Nf-q4F"/>
+                                <constraint firstItem="W1e-fu-5si" firstAttribute="width" secondItem="W1e-fu-5si" secondAttribute="height" multiplier="28:5" id="CfA-Nh-BKL"/>
+                                <constraint firstItem="IsT-fb-7rD" firstAttribute="width" secondItem="TeP-gc-xbD" secondAttribute="width" multiplier="0.3" id="D2Z-vZ-CY8"/>
+                                <constraint firstItem="Gm1-qK-ZDk" firstAttribute="top" secondItem="hto-0j-LJo" secondAttribute="bottom" constant="20" id="FbQ-2R-7PU"/>
+                                <constraint firstItem="1nE-QV-1jS" firstAttribute="centerX" secondItem="TeP-gc-xbD" secondAttribute="centerX" id="KdY-Ox-uEm"/>
+                                <constraint firstAttribute="trailing" secondItem="Bz8-KT-bjZ" secondAttribute="trailing" constant="20" id="PZd-wL-1vm"/>
+                                <constraint firstItem="rXr-pl-KcI" firstAttribute="top" secondItem="Gm1-qK-ZDk" secondAttribute="bottom" constant="20" id="YNW-aF-t57"/>
+                                <constraint firstItem="ToM-19-D0F" firstAttribute="width" secondItem="TeP-gc-xbD" secondAttribute="width" id="Zq6-WS-BUa"/>
+                                <constraint firstItem="Gm1-qK-ZDk" firstAttribute="centerX" secondItem="TeP-gc-xbD" secondAttribute="centerX" id="bdG-mO-GYb"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="ceE-DH-E0U"/>
+                                <constraint firstItem="W1e-fu-5si" firstAttribute="centerX" secondItem="TeP-gc-xbD" secondAttribute="centerX" id="dbv-W1-77w"/>
+                                <constraint firstItem="1nE-QV-1jS" firstAttribute="top" secondItem="W1e-fu-5si" secondAttribute="bottom" constant="20" id="dsT-Ya-6AQ"/>
+                                <constraint firstItem="FCJ-iJ-ovV" firstAttribute="centerX" secondItem="TeP-gc-xbD" secondAttribute="centerX" id="eDv-iG-hjZ"/>
+                                <constraint firstItem="hto-0j-LJo" firstAttribute="centerX" secondItem="TeP-gc-xbD" secondAttribute="centerX" id="f9E-ra-uyi"/>
+                                <constraint firstItem="Bz8-KT-bjZ" firstAttribute="leading" secondItem="TeP-gc-xbD" secondAttribute="leading" constant="20" id="fey-6m-gUg"/>
+                                <constraint firstItem="rXr-pl-KcI" firstAttribute="centerX" secondItem="TeP-gc-xbD" secondAttribute="centerX" id="pIH-FI-vp4"/>
+                                <constraint firstItem="ToM-19-D0F" firstAttribute="top" secondItem="IsT-fb-7rD" secondAttribute="bottom" constant="20" id="pTl-p6-ME5"/>
+                                <constraint firstItem="ToM-19-D0F" firstAttribute="centerX" secondItem="IsT-fb-7rD" secondAttribute="centerX" id="qWy-rd-2Nl"/>
+                                <constraint firstItem="IsT-fb-7rD" firstAttribute="top" secondItem="Bz8-KT-bjZ" secondAttribute="bottom" constant="20" id="s0k-MS-zpY"/>
+                                <constraint firstItem="W1e-fu-5si" firstAttribute="width" secondItem="TeP-gc-xbD" secondAttribute="width" id="uvS-aB-kce"/>
+                                <constraint firstItem="Bz8-KT-bjZ" firstAttribute="top" secondItem="TeP-gc-xbD" secondAttribute="top" constant="56" id="wZ7-xX-4tG"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="TeP-gc-xbD" firstAttribute="leading" secondItem="wvb-QL-4A8" secondAttribute="leading" id="86y-Dm-7yg"/>
+                        <constraint firstAttribute="bottom" secondItem="TeP-gc-xbD" secondAttribute="bottom" id="Kvo-eE-mmh"/>
+                        <constraint firstItem="TeP-gc-xbD" firstAttribute="width" secondItem="wvb-QL-4A8" secondAttribute="width" id="QrE-mj-AVY"/>
+                        <constraint firstItem="TeP-gc-xbD" firstAttribute="top" secondItem="wvb-QL-4A8" secondAttribute="top" id="WVY-1w-857"/>
+                        <constraint firstAttribute="trailing" secondItem="TeP-gc-xbD" secondAttribute="trailing" id="nRF-W9-xVc"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0V7-VQ-w9M">
+                    <rect key="frame" x="20" y="64" width="95" height="95"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="0V7-VQ-w9M" secondAttribute="height" multiplier="1:1" id="L2j-qw-GSo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    <state key="normal" image="asset-cross"/>
+                    <connections>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="XLU-KS-Zby"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0V7-VQ-w9M" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="0Su-sk-vMQ"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="wvb-QL-4A8" secondAttribute="bottom" constant="20" id="2wE-Pb-z6A"/>
+                <constraint firstItem="wvb-QL-4A8" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="9bF-SN-2dj"/>
+                <constraint firstItem="wvb-QL-4A8" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="fY9-mS-5Wu"/>
+                <constraint firstItem="0V7-VQ-w9M" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="o3I-1i-2n5"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="wvb-QL-4A8" secondAttribute="trailing" constant="20" id="wDh-L5-zrH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
+            <point key="canvasLocation" x="131" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-arrow-right" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="asset-cross" width="42.666667938232422" height="42.666667938232422"/>
+        <namedColor name="theme_button_text">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light">
+            <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light_background">
+            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

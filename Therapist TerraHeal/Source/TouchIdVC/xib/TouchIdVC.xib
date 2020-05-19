@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GRANDDUKE.ttf">
+            <string>GRANDDUKERegular</string>
+        </array>
+        <array key="Ovo-Regular.ttf">
+            <string>Ovo</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TouchIdVC" customModule="Terra_Heal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnUsePassword" destination="QtW-ja-aCe" id="Iyd-LU-xcH"/>
+                <outlet property="imgChecked" destination="GjW-bt-gHU" id="w8g-pv-7Nz"/>
+                <outlet property="lblMessage" destination="7jV-sf-aUO" id="At4-da-45B"/>
+                <outlet property="lblTouchIDTitle" destination="7rG-EW-05Z" id="02C-cm-aSP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rG-EW-05Z" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="32" y="56" width="256" height="19"/>
+                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
+                    <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jV-sf-aUO" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="32" y="95" width="256" height="37.5"/>
+                    <string key="text">You need to identify 
+to sign back in</string>
+                    <fontDescription key="fontDescription" name="Ovo" family="Ovo" pointSize="16"/>
+                    <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-check" translatesAutoresizingMaskIntoConstraints="NO" id="GjW-bt-gHU">
+                    <rect key="frame" x="165" y="408" width="20" height="20"/>
+                    <color key="backgroundColor" name="theme_primary_light"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="9Ca-2T-Tye"/>
+                        <constraint firstAttribute="width" secondItem="GjW-bt-gHU" secondAttribute="height" multiplier="1:1" id="NQF-jp-lYD"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-fingerprint" translatesAutoresizingMaskIntoConstraints="NO" id="YQL-hZ-UJz">
+                    <rect key="frame" x="135" y="418" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="YQL-hZ-UJz" secondAttribute="height" multiplier="1:1" id="0qB-s9-iVF"/>
+                        <constraint firstAttribute="height" constant="50" id="ccy-u6-tst"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVz-p8-fgb">
+                    <rect key="frame" x="135" y="418" width="50" height="50"/>
+                    <connections>
+                        <action selector="btnFingerPrintTapped:" destination="-1" eventType="touchUpInside" id="uDE-qS-VbB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtW-ja-aCe" customClass="UnderlineTextButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="32" y="498" width="256" height="30"/>
+                    <state key="normal" title="Use Password">
+                        <color key="titleColor" name="theme_primary"/>
+                    </state>
+                    <connections>
+                        <action selector="btnUsePasswordTapped:" destination="-1" eventType="touchUpInside" id="Tzt-P6-uBl"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RVz-p8-fgb" firstAttribute="leading" secondItem="YQL-hZ-UJz" secondAttribute="leading" id="1di-Pc-zsd"/>
+                <constraint firstItem="QtW-ja-aCe" firstAttribute="top" secondItem="YQL-hZ-UJz" secondAttribute="bottom" constant="30" id="2s8-rc-MHQ"/>
+                <constraint firstItem="7jV-sf-aUO" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="MrW-zs-lWf"/>
+                <constraint firstItem="7rG-EW-05Z" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="PjM-7G-qMV"/>
+                <constraint firstItem="RVz-p8-fgb" firstAttribute="trailing" secondItem="YQL-hZ-UJz" secondAttribute="trailing" id="XeV-Wn-z93"/>
+                <constraint firstItem="QtW-ja-aCe" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Xt5-Ix-9ED"/>
+                <constraint firstItem="GjW-bt-gHU" firstAttribute="trailing" secondItem="YQL-hZ-UJz" secondAttribute="trailing" id="Y49-60-B0Y"/>
+                <constraint firstItem="RVz-p8-fgb" firstAttribute="bottom" secondItem="YQL-hZ-UJz" secondAttribute="bottom" id="ag7-LB-eGA"/>
+                <constraint firstItem="7jV-sf-aUO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ff7-BI-xQH"/>
+                <constraint firstItem="YQL-hZ-UJz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hvR-f7-wZg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QtW-ja-aCe" secondAttribute="bottom" constant="40" id="iMj-jy-Cos"/>
+                <constraint firstItem="7rG-EW-05Z" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iUN-hF-xTs"/>
+                <constraint firstItem="RVz-p8-fgb" firstAttribute="top" secondItem="YQL-hZ-UJz" secondAttribute="top" id="p2v-iw-bF7"/>
+                <constraint firstItem="QtW-ja-aCe" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="roU-UM-0zO"/>
+                <constraint firstItem="7rG-EW-05Z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="56" id="sGf-Ib-0Tp"/>
+                <constraint firstItem="GjW-bt-gHU" firstAttribute="centerY" secondItem="YQL-hZ-UJz" secondAttribute="top" id="vX1-Ws-mzU"/>
+                <constraint firstItem="7jV-sf-aUO" firstAttribute="top" secondItem="7rG-EW-05Z" secondAttribute="bottom" constant="20" id="xw0-HF-1hm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-check" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="asset-fingerprint" width="170.66667175292969" height="170.66667175292969"/>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light">
+            <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

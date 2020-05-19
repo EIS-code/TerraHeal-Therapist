@@ -1,0 +1,1212 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63415E33246FB5C600F0D7A0 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E2F246FB5C600F0D7A0 /* Nunito-Light.ttf */; };
+		63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E30246FB5C600F0D7A0 /* Nunito-Regular.ttf */; };
+		63415E35246FB5C600F0D7A0 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E31246FB5C600F0D7A0 /* Nunito-SemiBold.ttf */; };
+		63415E36246FB5C600F0D7A0 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E32246FB5C600F0D7A0 /* Nunito-Bold.ttf */; };
+		6343BC0A24728C9800C2A25B /* AlamofireHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343BC0624728C9800C2A25B /* AlamofireHelper.swift */; };
+		6343BC0B24728C9800C2A25B /* AppWebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343BC0724728C9800C2A25B /* AppWebApi.swift */; };
+		6343BC0C24728C9800C2A25B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343BC0824728C9800C2A25B /* Reachability.swift */; };
+		6343BC0D24728C9800C2A25B /* UserWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343BC0924728C9800C2A25B /* UserWebService.swift */; };
+		6343BC0F2472930000C2A25B /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343BC0E2472930000C2A25B /* ResponseModel.swift */; };
+		634501D72473A8B800671C9B /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634501D62473A8B800671C9B /* Singleton.swift */; };
+		63ABC18D246D650D00360F07 /* ACFloatingTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0CC246D650B00360F07 /* ACFloatingTextfield.swift */; };
+		63ABC18E246D650D00360F07 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0CD246D650B00360F07 /* Loader.swift */; };
+		63ABC18F246D650D00360F07 /* DataType + Extesnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0D0246D650B00360F07 /* DataType + Extesnion.swift */; };
+		63ABC190246D650D00360F07 /* NSObject + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0D1246D650B00360F07 /* NSObject + Extension.swift */; };
+		63ABC191246D650D00360F07 /* String + TypeCasting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0D3246D650B00360F07 /* String + TypeCasting.swift */; };
+		63ABC192246D650D00360F07 /* String + Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0D4246D650B00360F07 /* String + Validation.swift */; };
+		63ABC193246D650D00360F07 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0D5246D650B00360F07 /* String+Localization.swift */; };
+		63ABC194246D650D00360F07 /* JDSubclasses + UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0D7246D650B00360F07 /* JDSubclasses + UIControl.swift */; };
+		63ABC195246D650D00360F07 /* JDDeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0D8246D650B00360F07 /* JDDeviceHelper.swift */; };
+		63ABC196246D650D00360F07 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0DA246D650B00360F07 /* UIView + Extension.swift */; };
+		63ABC197246D650D00360F07 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0DB246D650B00360F07 /* UIViewController + Extension.swift */; };
+		63ABC198246D650D00360F07 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0DC246D650B00360F07 /* UITextField + Extension.swift */; };
+		63ABC199246D650D00360F07 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0DE246D650B00360F07 /* Constant.swift */; };
+		63ABC19A246D650D00360F07 /* APP+NAVIGATION.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0DF246D650B00360F07 /* APP+NAVIGATION.swift */; };
+		63ABC19B246D650D00360F07 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0E0246D650B00360F07 /* Common.swift */; };
+		63ABC19C246D650D00360F07 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC0E1246D650B00360F07 /* Localizable.strings */; };
+		63ABC19D246D650D00360F07 /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0E2246D650B00360F07 /* PreferenceHelper.swift */; };
+		63ABC19E246D650D00360F07 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0E3246D650B00360F07 /* AppTheme.swift */; };
+		63ABC19F246D650D00360F07 /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0E5246D650B00360F07 /* ThemeLabel.swift */; };
+		63ABC1A0246D650D00360F07 /* ThemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0E6246D650B00360F07 /* ThemeTextField.swift */; };
+		63ABC1A1246D650D00360F07 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0E7246D650B00360F07 /* ThemeView.swift */; };
+		63ABC1A2246D650D00360F07 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0E8246D650B00360F07 /* ThemeButton.swift */; };
+		63ABC1A3246D650D00360F07 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0E9246D650B00360F07 /* Main.swift */; };
+		63ABC1A4246D650D00360F07 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0EA246D650B00360F07 /* FontHelper.swift */; };
+		63ABC1A5246D650D00360F07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0EB246D650B00360F07 /* SceneDelegate.swift */; };
+		63ABC1A6246D650D00360F07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0EC246D650B00360F07 /* AppDelegate.swift */; };
+		63ABC1A7246D650D00360F07 /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC0F1246D650B00360F07 /* WelcomeVC.xib */; };
+		63ABC1A8246D650D00360F07 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0F2246D650B00360F07 /* WelcomeVC.swift */; };
+		63ABC1A9246D650D00360F07 /* LaunchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC0F4246D650B00360F07 /* LaunchVC.xib */; };
+		63ABC1AA246D650D00360F07 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0F5246D650B00360F07 /* LaunchVC.swift */; };
+		63ABC1AB246D650D00360F07 /* PaymentAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC0F8246D650B00360F07 /* PaymentAccountVC.xib */; };
+		63ABC1AC246D650D00360F07 /* PaymentVerificationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC0FA246D650B00360F07 /* PaymentVerificationDialog.xib */; };
+		63ABC1AD246D650D00360F07 /* PaymentVerificationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0FB246D650B00360F07 /* PaymentVerificationDialog.swift */; };
+		63ABC1AE246D650D00360F07 /* PaymentAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0FC246D650B00360F07 /* PaymentAccountVC.swift */; };
+		63ABC1AF246D650D00360F07 /* PaymetAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0FE246D650B00360F07 /* PaymetAccountCell.swift */; };
+		63ABC1B0246D650D00360F07 /* PaymetAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC0FF246D650B00360F07 /* PaymetAccountCell.xib */; };
+		63ABC1B1246D650D00360F07 /* UploadDocumentDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC101246D650B00360F07 /* UploadDocumentDialog.xib */; };
+		63ABC1B2246D650D00360F07 /* UploadDocumentDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC102246D650B00360F07 /* UploadDocumentDialog.swift */; };
+		63ABC1B3246D650D00360F07 /* DocumentTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC104246D650B00360F07 /* DocumentTblCell.swift */; };
+		63ABC1B4246D650D00360F07 /* DocumentTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC105246D650B00360F07 /* DocumentTblCell.xib */; };
+		63ABC1B5246D650D00360F07 /* CompleteTherapistSignUpProcessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC10A246D650B00360F07 /* CompleteTherapistSignUpProcessVC.xib */; };
+		63ABC1B6246D650D00360F07 /* CompleteTherapistSignUpProcessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC10B246D650B00360F07 /* CompleteTherapistSignUpProcessVC.swift */; };
+		63ABC1B7246D650D00360F07 /* TherapistKycVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC10E246D650B00360F07 /* TherapistKycVC.xib */; };
+		63ABC1B8246D650D00360F07 /* TherapistKycVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC10F246D650C00360F07 /* TherapistKycVC.swift */; };
+		63ABC1B9246D650D00360F07 /* AddCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC112246D650C00360F07 /* AddCardVC.xib */; };
+		63ABC1BA246D650D00360F07 /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC113246D650C00360F07 /* AddCardVC.swift */; };
+		63ABC1BB246D650D00360F07 /* IdentityVerificationInstructionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC116246D650C00360F07 /* IdentityVerificationInstructionVC.xib */; };
+		63ABC1BC246D650D00360F07 /* IdentityVerificationInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC117246D650C00360F07 /* IdentityVerificationInstructionVC.swift */; };
+		63ABC1BD246D650D00360F07 /* TherapistKycInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC11A246D650C00360F07 /* TherapistKycInfoVC.xib */; };
+		63ABC1BE246D650D00360F07 /* TherapistKycInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC11B246D650C00360F07 /* TherapistKycInfoVC.swift */; };
+		63ABC1BF246D650D00360F07 /* KycInfoTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC11D246D650C00360F07 /* KycInfoTblCell.swift */; };
+		63ABC1C0246D650D00360F07 /* KycInfoTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC11E246D650C00360F07 /* KycInfoTblCell.xib */; };
+		63ABC1C9246D650D00360F07 /* TherapistWorkDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC133246D650C00360F07 /* TherapistWorkDialog.xib */; };
+		63ABC1CA246D650D00360F07 /* WorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC135246D650C00360F07 /* WorkCell.swift */; };
+		63ABC1CB246D650D00360F07 /* WorkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC136246D650C00360F07 /* WorkCell.xib */; };
+		63ABC1CC246D650D00360F07 /* TherapistWorkDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC137246D650C00360F07 /* TherapistWorkDialog.swift */; };
+		63ABC1CD246D650D00360F07 /* TherapistProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC139246D650C00360F07 /* TherapistProfileVC.xib */; };
+		63ABC1CE246D650D00360F07 /* TherapistProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC13A246D650C00360F07 /* TherapistProfileVC.swift */; };
+		63ABC1DF246D650D00360F07 /* ContactVerificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC161246D650C00360F07 /* ContactVerificationVC.xib */; };
+		63ABC1E0246D650D00360F07 /* ContactVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC162246D650C00360F07 /* ContactVerificationVC.swift */; };
+		63ABC1E1246D650D00360F07 /* VerificationAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC164246D650C00360F07 /* VerificationAlert.xib */; };
+		63ABC1E2246D650D00360F07 /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC166246D650C00360F07 /* OTPFieldView.swift */; };
+		63ABC1E3246D650D00360F07 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC167246D650C00360F07 /* OTPTextField.swift */; };
+		63ABC1E4246D650D00360F07 /* VerificationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC168246D650C00360F07 /* VerificationAlert.swift */; };
+		63ABC1E5246D650D00360F07 /* TutorialVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC16B246D650C00360F07 /* TutorialVC.xib */; };
+		63ABC1E6246D650D00360F07 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC16C246D650C00360F07 /* TutorialVC.swift */; };
+		63ABC1E7246D650D00360F07 /* TutorialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC16E246D650C00360F07 /* TutorialCell.xib */; };
+		63ABC1E8246D650D00360F07 /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC16F246D650C00360F07 /* TutorialCell.swift */; };
+		63ABC1E9246D650D00360F07 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC172246D650C00360F07 /* RegisterVC.xib */; };
+		63ABC1EA246D650D00360F07 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC173246D650C00360F07 /* RegisterVC.swift */; };
+		63ABC1EB246D650D00360F07 /* TouchIdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC176246D650D00360F07 /* TouchIdVC.xib */; };
+		63ABC1EC246D650D00360F07 /* TouchIdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC177246D650D00360F07 /* TouchIdVC.swift */; };
+		63ABC1ED246D650D00360F07 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC17A246D650D00360F07 /* LoginVC.xib */; };
+		63ABC1EE246D650D00360F07 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC17B246D650D00360F07 /* LoginVC.swift */; };
+		63ABC1EF246D650D00360F07 /* ClientImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC17D246D650D00360F07 /* ClientImages.xcassets */; };
+		63ABC1F0246D650D00360F07 /* CommonColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC17E246D650D00360F07 /* CommonColor.xcassets */; };
+		63ABC1F1246D650D00360F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC17F246D650D00360F07 /* Assets.xcassets */; };
+		63ABC1F2246D650D00360F07 /* TherapistImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC180246D650D00360F07 /* TherapistImages.xcassets */; };
+		63ABC1F3246D650D00360F07 /* TextViewDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC183246D650D00360F07 /* TextViewDialog.xib */; };
+		63ABC1F4246D650D00360F07 /* TextViewDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC184246D650D00360F07 /* TextViewDialog.swift */; };
+		63ABC1F5246D650D00360F07 /* CustomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC186246D650D00360F07 /* CustomAlert.xib */; };
+		63ABC1F6246D650D00360F07 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC187246D650D00360F07 /* CustomAlert.swift */; };
+		63ABC1FB246D66B800360F07 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63ABC1FA246D66B800360F07 /* LocalAuthentication.framework */; };
+		995CBCAE73040B4398225571 /* Pods_Therapist_TerraHeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8A6F056877617A8E08DADC /* Pods_Therapist_TerraHeal.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D64E9E11E70D1B77E4F4BA9 /* Pods-Therapist TerraHeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therapist TerraHeal.debug.xcconfig"; path = "Target Support Files/Pods-Therapist TerraHeal/Pods-Therapist TerraHeal.debug.xcconfig"; sourceTree = "<group>"; };
+		52F577F1D54D46E3263D2738 /* Pods-Therapist TerraHeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therapist TerraHeal.release.xcconfig"; path = "Target Support Files/Pods-Therapist TerraHeal/Pods-Therapist TerraHeal.release.xcconfig"; sourceTree = "<group>"; };
+		63415E2F246FB5C600F0D7A0 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		63415E30246FB5C600F0D7A0 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		63415E31246FB5C600F0D7A0 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		63415E32246FB5C600F0D7A0 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		6343BC0624728C9800C2A25B /* AlamofireHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireHelper.swift; sourceTree = "<group>"; };
+		6343BC0724728C9800C2A25B /* AppWebApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWebApi.swift; sourceTree = "<group>"; };
+		6343BC0824728C9800C2A25B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		6343BC0924728C9800C2A25B /* UserWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWebService.swift; sourceTree = "<group>"; };
+		6343BC0E2472930000C2A25B /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		634501D62473A8B800671C9B /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		63ABC0B2246D64B500360F07 /* Therapist TerraHeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Therapist TerraHeal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63ABC0C3246D64B700360F07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63ABC0C9246D650A00360F07 /* Therapist TerraHeal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Therapist TerraHeal-Bridging-Header.h"; sourceTree = "<group>"; };
+		63ABC0CC246D650B00360F07 /* ACFloatingTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACFloatingTextfield.swift; sourceTree = "<group>"; };
+		63ABC0CD246D650B00360F07 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		63ABC0D0246D650B00360F07 /* DataType + Extesnion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataType + Extesnion.swift"; sourceTree = "<group>"; };
+		63ABC0D1246D650B00360F07 /* NSObject + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject + Extension.swift"; sourceTree = "<group>"; };
+		63ABC0D3246D650B00360F07 /* String + TypeCasting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + TypeCasting.swift"; sourceTree = "<group>"; };
+		63ABC0D4246D650B00360F07 /* String + Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + Validation.swift"; sourceTree = "<group>"; };
+		63ABC0D5246D650B00360F07 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		63ABC0D7246D650B00360F07 /* JDSubclasses + UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JDSubclasses + UIControl.swift"; sourceTree = "<group>"; };
+		63ABC0D8246D650B00360F07 /* JDDeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDDeviceHelper.swift; sourceTree = "<group>"; };
+		63ABC0DA246D650B00360F07 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		63ABC0DB246D650B00360F07 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		63ABC0DC246D650B00360F07 /* UITextField + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
+		63ABC0DE246D650B00360F07 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		63ABC0DF246D650B00360F07 /* APP+NAVIGATION.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APP+NAVIGATION.swift"; sourceTree = "<group>"; };
+		63ABC0E0246D650B00360F07 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		63ABC0E1246D650B00360F07 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		63ABC0E2246D650B00360F07 /* PreferenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceHelper.swift; sourceTree = "<group>"; };
+		63ABC0E3246D650B00360F07 /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		63ABC0E5246D650B00360F07 /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
+		63ABC0E6246D650B00360F07 /* ThemeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextField.swift; sourceTree = "<group>"; };
+		63ABC0E7246D650B00360F07 /* ThemeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		63ABC0E8246D650B00360F07 /* ThemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
+		63ABC0E9246D650B00360F07 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		63ABC0EA246D650B00360F07 /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		63ABC0EB246D650B00360F07 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		63ABC0EC246D650B00360F07 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63ABC0F1246D650B00360F07 /* WelcomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeVC.xib; sourceTree = "<group>"; };
+		63ABC0F2246D650B00360F07 /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		63ABC0F4246D650B00360F07 /* LaunchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchVC.xib; sourceTree = "<group>"; };
+		63ABC0F5246D650B00360F07 /* LaunchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
+		63ABC0F8246D650B00360F07 /* PaymentAccountVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentAccountVC.xib; sourceTree = "<group>"; };
+		63ABC0FA246D650B00360F07 /* PaymentVerificationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentVerificationDialog.xib; sourceTree = "<group>"; };
+		63ABC0FB246D650B00360F07 /* PaymentVerificationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentVerificationDialog.swift; sourceTree = "<group>"; };
+		63ABC0FC246D650B00360F07 /* PaymentAccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentAccountVC.swift; sourceTree = "<group>"; };
+		63ABC0FE246D650B00360F07 /* PaymetAccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymetAccountCell.swift; sourceTree = "<group>"; };
+		63ABC0FF246D650B00360F07 /* PaymetAccountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymetAccountCell.xib; sourceTree = "<group>"; };
+		63ABC101246D650B00360F07 /* UploadDocumentDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadDocumentDialog.xib; sourceTree = "<group>"; };
+		63ABC102246D650B00360F07 /* UploadDocumentDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadDocumentDialog.swift; sourceTree = "<group>"; };
+		63ABC104246D650B00360F07 /* DocumentTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTblCell.swift; sourceTree = "<group>"; };
+		63ABC105246D650B00360F07 /* DocumentTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentTblCell.xib; sourceTree = "<group>"; };
+		63ABC10A246D650B00360F07 /* CompleteTherapistSignUpProcessVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompleteTherapistSignUpProcessVC.xib; sourceTree = "<group>"; };
+		63ABC10B246D650B00360F07 /* CompleteTherapistSignUpProcessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteTherapistSignUpProcessVC.swift; sourceTree = "<group>"; };
+		63ABC10E246D650B00360F07 /* TherapistKycVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TherapistKycVC.xib; sourceTree = "<group>"; };
+		63ABC10F246D650C00360F07 /* TherapistKycVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistKycVC.swift; sourceTree = "<group>"; };
+		63ABC112246D650C00360F07 /* AddCardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardVC.xib; sourceTree = "<group>"; };
+		63ABC113246D650C00360F07 /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
+		63ABC116246D650C00360F07 /* IdentityVerificationInstructionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IdentityVerificationInstructionVC.xib; sourceTree = "<group>"; };
+		63ABC117246D650C00360F07 /* IdentityVerificationInstructionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityVerificationInstructionVC.swift; sourceTree = "<group>"; };
+		63ABC11A246D650C00360F07 /* TherapistKycInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TherapistKycInfoVC.xib; sourceTree = "<group>"; };
+		63ABC11B246D650C00360F07 /* TherapistKycInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistKycInfoVC.swift; sourceTree = "<group>"; };
+		63ABC11D246D650C00360F07 /* KycInfoTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KycInfoTblCell.swift; sourceTree = "<group>"; };
+		63ABC11E246D650C00360F07 /* KycInfoTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KycInfoTblCell.xib; sourceTree = "<group>"; };
+		63ABC133246D650C00360F07 /* TherapistWorkDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TherapistWorkDialog.xib; sourceTree = "<group>"; };
+		63ABC135246D650C00360F07 /* WorkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
+		63ABC136246D650C00360F07 /* WorkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkCell.xib; sourceTree = "<group>"; };
+		63ABC137246D650C00360F07 /* TherapistWorkDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistWorkDialog.swift; sourceTree = "<group>"; };
+		63ABC139246D650C00360F07 /* TherapistProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TherapistProfileVC.xib; sourceTree = "<group>"; };
+		63ABC13A246D650C00360F07 /* TherapistProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistProfileVC.swift; sourceTree = "<group>"; };
+		63ABC161246D650C00360F07 /* ContactVerificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactVerificationVC.xib; sourceTree = "<group>"; };
+		63ABC162246D650C00360F07 /* ContactVerificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactVerificationVC.swift; sourceTree = "<group>"; };
+		63ABC164246D650C00360F07 /* VerificationAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerificationAlert.xib; sourceTree = "<group>"; };
+		63ABC166246D650C00360F07 /* OTPFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
+		63ABC167246D650C00360F07 /* OTPTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
+		63ABC168246D650C00360F07 /* VerificationAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationAlert.swift; sourceTree = "<group>"; };
+		63ABC16B246D650C00360F07 /* TutorialVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialVC.xib; sourceTree = "<group>"; };
+		63ABC16C246D650C00360F07 /* TutorialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
+		63ABC16E246D650C00360F07 /* TutorialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialCell.xib; sourceTree = "<group>"; };
+		63ABC16F246D650C00360F07 /* TutorialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
+		63ABC172246D650C00360F07 /* RegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
+		63ABC173246D650C00360F07 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		63ABC176246D650D00360F07 /* TouchIdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TouchIdVC.xib; sourceTree = "<group>"; };
+		63ABC177246D650D00360F07 /* TouchIdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIdVC.swift; sourceTree = "<group>"; };
+		63ABC17A246D650D00360F07 /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		63ABC17B246D650D00360F07 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		63ABC17D246D650D00360F07 /* ClientImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ClientImages.xcassets; sourceTree = "<group>"; };
+		63ABC17E246D650D00360F07 /* CommonColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CommonColor.xcassets; sourceTree = "<group>"; };
+		63ABC17F246D650D00360F07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63ABC180246D650D00360F07 /* TherapistImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TherapistImages.xcassets; sourceTree = "<group>"; };
+		63ABC183246D650D00360F07 /* TextViewDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewDialog.xib; sourceTree = "<group>"; };
+		63ABC184246D650D00360F07 /* TextViewDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewDialog.swift; sourceTree = "<group>"; };
+		63ABC186246D650D00360F07 /* CustomAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAlert.xib; sourceTree = "<group>"; };
+		63ABC187246D650D00360F07 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		63ABC1FA246D66B800360F07 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		EA8A6F056877617A8E08DADC /* Pods_Therapist_TerraHeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Therapist_TerraHeal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63ABC0AF246D64B500360F07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63ABC1FB246D66B800360F07 /* LocalAuthentication.framework in Frameworks */,
+				995CBCAE73040B4398225571 /* Pods_Therapist_TerraHeal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6343BC0424728C9800C2A25B /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				6343BC0524728C9800C2A25B /* AFNHelper */,
+				6343BC0924728C9800C2A25B /* UserWebService.swift */,
+				6343BC0E2472930000C2A25B /* ResponseModel.swift */,
+				634501D62473A8B800671C9B /* Singleton.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		6343BC0524728C9800C2A25B /* AFNHelper */ = {
+			isa = PBXGroup;
+			children = (
+				6343BC0624728C9800C2A25B /* AlamofireHelper.swift */,
+				6343BC0724728C9800C2A25B /* AppWebApi.swift */,
+				6343BC0824728C9800C2A25B /* Reachability.swift */,
+			);
+			path = AFNHelper;
+			sourceTree = "<group>";
+		};
+		63ABC0A9246D64B500360F07 = {
+			isa = PBXGroup;
+			children = (
+				63ABC0B4246D64B500360F07 /* Therapist TerraHeal */,
+				63ABC0B3246D64B500360F07 /* Products */,
+				63ABC1F9246D66B700360F07 /* Frameworks */,
+				EDC6A2FA8675DE9EE08259B1 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		63ABC0B3246D64B500360F07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0B2246D64B500360F07 /* Therapist TerraHeal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63ABC0B4246D64B500360F07 /* Therapist TerraHeal */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0C3246D64B700360F07 /* Info.plist */,
+				63ABC0DD246D650B00360F07 /* AppBaseClass */,
+				63ABC0EC246D650B00360F07 /* AppDelegate.swift */,
+				63ABC17C246D650D00360F07 /* Assets */,
+				63ABC181246D650D00360F07 /* Dialogs */,
+				63ABC0CA246D650B00360F07 /* Others */,
+				63ABC188246D650D00360F07 /* Resources */,
+				63ABC0EB246D650B00360F07 /* SceneDelegate.swift */,
+				63ABC0ED246D650B00360F07 /* Source */,
+				63ABC0C9246D650A00360F07 /* Therapist TerraHeal-Bridging-Header.h */,
+			);
+			path = "Therapist TerraHeal";
+			sourceTree = "<group>";
+		};
+		63ABC0CA246D650B00360F07 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0CB246D650B00360F07 /* Frameworks */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		63ABC0CB246D650B00360F07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0CC246D650B00360F07 /* ACFloatingTextfield.swift */,
+				63ABC0CD246D650B00360F07 /* Loader.swift */,
+				63ABC0CE246D650B00360F07 /* JDFramework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		63ABC0CE246D650B00360F07 /* JDFramework */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0CF246D650B00360F07 /* Othert + Extension */,
+				63ABC0D2246D650B00360F07 /* String + Extension */,
+				63ABC0D6246D650B00360F07 /* JDSubClasses */,
+				63ABC0D8246D650B00360F07 /* JDDeviceHelper.swift */,
+				63ABC0D9246D650B00360F07 /* UControl + Extension */,
+			);
+			path = JDFramework;
+			sourceTree = "<group>";
+		};
+		63ABC0CF246D650B00360F07 /* Othert + Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0D0246D650B00360F07 /* DataType + Extesnion.swift */,
+				63ABC0D1246D650B00360F07 /* NSObject + Extension.swift */,
+			);
+			path = "Othert + Extension";
+			sourceTree = "<group>";
+		};
+		63ABC0D2246D650B00360F07 /* String + Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0D3246D650B00360F07 /* String + TypeCasting.swift */,
+				63ABC0D4246D650B00360F07 /* String + Validation.swift */,
+				63ABC0D5246D650B00360F07 /* String+Localization.swift */,
+			);
+			path = "String + Extension";
+			sourceTree = "<group>";
+		};
+		63ABC0D6246D650B00360F07 /* JDSubClasses */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0D7246D650B00360F07 /* JDSubclasses + UIControl.swift */,
+			);
+			path = JDSubClasses;
+			sourceTree = "<group>";
+		};
+		63ABC0D9246D650B00360F07 /* UControl + Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0DA246D650B00360F07 /* UIView + Extension.swift */,
+				63ABC0DB246D650B00360F07 /* UIViewController + Extension.swift */,
+				63ABC0DC246D650B00360F07 /* UITextField + Extension.swift */,
+			);
+			path = "UControl + Extension";
+			sourceTree = "<group>";
+		};
+		63ABC0DD246D650B00360F07 /* AppBaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				6343BC0424728C9800C2A25B /* WebService */,
+				63ABC0DE246D650B00360F07 /* Constant.swift */,
+				63ABC0DF246D650B00360F07 /* APP+NAVIGATION.swift */,
+				63ABC0E0246D650B00360F07 /* Common.swift */,
+				63ABC0E1246D650B00360F07 /* Localizable.strings */,
+				63ABC0E2246D650B00360F07 /* PreferenceHelper.swift */,
+				63ABC0E3246D650B00360F07 /* AppTheme.swift */,
+				63ABC0E4246D650B00360F07 /* BaseSubClasses */,
+				63ABC0EA246D650B00360F07 /* FontHelper.swift */,
+			);
+			path = AppBaseClass;
+			sourceTree = "<group>";
+		};
+		63ABC0E4246D650B00360F07 /* BaseSubClasses */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0E5246D650B00360F07 /* ThemeLabel.swift */,
+				63ABC0E6246D650B00360F07 /* ThemeTextField.swift */,
+				63ABC0E7246D650B00360F07 /* ThemeView.swift */,
+				63ABC0E8246D650B00360F07 /* ThemeButton.swift */,
+				63ABC0E9246D650B00360F07 /* Main.swift */,
+			);
+			path = BaseSubClasses;
+			sourceTree = "<group>";
+		};
+		63ABC0ED246D650B00360F07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC170246D650C00360F07 /* Register */,
+				63ABC174246D650D00360F07 /* TouchIdVC */,
+				63ABC178246D650D00360F07 /* Login */,
+				63ABC169246D650C00360F07 /* TutorialVC */,
+				63ABC15F246D650C00360F07 /* ContactVerification */,
+				63ABC107246D650B00360F07 /* THERAPIST KYC SCENE */,
+				63ABC131246D650C00360F07 /* Profile */,
+				63ABC0EF246D650B00360F07 /* WelcomeVC */,
+				63ABC0F3246D650B00360F07 /* LaunchVC */,
+				63ABC0F6246D650B00360F07 /* PaymentAccountVC */,
+				63ABC100246D650B00360F07 /* UploadDocumentDialog */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		63ABC0EF246D650B00360F07 /* WelcomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0F0246D650B00360F07 /* xib */,
+				63ABC0F2246D650B00360F07 /* WelcomeVC.swift */,
+			);
+			path = WelcomeVC;
+			sourceTree = "<group>";
+		};
+		63ABC0F0246D650B00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0F1246D650B00360F07 /* WelcomeVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC0F3246D650B00360F07 /* LaunchVC */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0F4246D650B00360F07 /* LaunchVC.xib */,
+				63ABC0F5246D650B00360F07 /* LaunchVC.swift */,
+			);
+			path = LaunchVC;
+			sourceTree = "<group>";
+		};
+		63ABC0F6246D650B00360F07 /* PaymentAccountVC */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0F7246D650B00360F07 /* xib */,
+				63ABC0F9246D650B00360F07 /* PaymentVerificationDialog */,
+				63ABC0FC246D650B00360F07 /* PaymentAccountVC.swift */,
+				63ABC0FD246D650B00360F07 /* PaymetAccountCell */,
+			);
+			path = PaymentAccountVC;
+			sourceTree = "<group>";
+		};
+		63ABC0F7246D650B00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0F8246D650B00360F07 /* PaymentAccountVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC0F9246D650B00360F07 /* PaymentVerificationDialog */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0FA246D650B00360F07 /* PaymentVerificationDialog.xib */,
+				63ABC0FB246D650B00360F07 /* PaymentVerificationDialog.swift */,
+			);
+			path = PaymentVerificationDialog;
+			sourceTree = "<group>";
+		};
+		63ABC0FD246D650B00360F07 /* PaymetAccountCell */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC0FE246D650B00360F07 /* PaymetAccountCell.swift */,
+				63ABC0FF246D650B00360F07 /* PaymetAccountCell.xib */,
+			);
+			path = PaymetAccountCell;
+			sourceTree = "<group>";
+		};
+		63ABC100246D650B00360F07 /* UploadDocumentDialog */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC101246D650B00360F07 /* UploadDocumentDialog.xib */,
+				63ABC102246D650B00360F07 /* UploadDocumentDialog.swift */,
+				63ABC103246D650B00360F07 /* DocumentCell */,
+			);
+			path = UploadDocumentDialog;
+			sourceTree = "<group>";
+		};
+		63ABC103246D650B00360F07 /* DocumentCell */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC104246D650B00360F07 /* DocumentTblCell.swift */,
+				63ABC105246D650B00360F07 /* DocumentTblCell.xib */,
+			);
+			path = DocumentCell;
+			sourceTree = "<group>";
+		};
+		63ABC107246D650B00360F07 /* THERAPIST KYC SCENE */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC108246D650B00360F07 /* CompleteIdentityVerificationVC */,
+				63ABC10C246D650B00360F07 /* KYCVC */,
+				63ABC110246D650C00360F07 /* AddCardVC */,
+				63ABC114246D650C00360F07 /* IdentityVerificationInstructionVC */,
+				63ABC118246D650C00360F07 /* KycInfoVC */,
+			);
+			path = "THERAPIST KYC SCENE";
+			sourceTree = "<group>";
+		};
+		63ABC108246D650B00360F07 /* CompleteIdentityVerificationVC */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC109246D650B00360F07 /* xib */,
+				63ABC10B246D650B00360F07 /* CompleteTherapistSignUpProcessVC.swift */,
+			);
+			path = CompleteIdentityVerificationVC;
+			sourceTree = "<group>";
+		};
+		63ABC109246D650B00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC10A246D650B00360F07 /* CompleteTherapistSignUpProcessVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC10C246D650B00360F07 /* KYCVC */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC10D246D650B00360F07 /* xib */,
+				63ABC10F246D650C00360F07 /* TherapistKycVC.swift */,
+			);
+			path = KYCVC;
+			sourceTree = "<group>";
+		};
+		63ABC10D246D650B00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC10E246D650B00360F07 /* TherapistKycVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC110246D650C00360F07 /* AddCardVC */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC111246D650C00360F07 /* xib */,
+				63ABC113246D650C00360F07 /* AddCardVC.swift */,
+			);
+			path = AddCardVC;
+			sourceTree = "<group>";
+		};
+		63ABC111246D650C00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC112246D650C00360F07 /* AddCardVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC114246D650C00360F07 /* IdentityVerificationInstructionVC */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC115246D650C00360F07 /* xib */,
+				63ABC117246D650C00360F07 /* IdentityVerificationInstructionVC.swift */,
+			);
+			path = IdentityVerificationInstructionVC;
+			sourceTree = "<group>";
+		};
+		63ABC115246D650C00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC116246D650C00360F07 /* IdentityVerificationInstructionVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC118246D650C00360F07 /* KycInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC119246D650C00360F07 /* xib */,
+				63ABC11B246D650C00360F07 /* TherapistKycInfoVC.swift */,
+				63ABC11C246D650C00360F07 /* KycDocCell */,
+			);
+			path = KycInfoVC;
+			sourceTree = "<group>";
+		};
+		63ABC119246D650C00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC11A246D650C00360F07 /* TherapistKycInfoVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC11C246D650C00360F07 /* KycDocCell */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC11D246D650C00360F07 /* KycInfoTblCell.swift */,
+				63ABC11E246D650C00360F07 /* KycInfoTblCell.xib */,
+			);
+			path = KycDocCell;
+			sourceTree = "<group>";
+		};
+		63ABC131246D650C00360F07 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC132246D650C00360F07 /* TherapistWorkDialog */,
+				63ABC138246D650C00360F07 /* xib */,
+				63ABC13A246D650C00360F07 /* TherapistProfileVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		63ABC132246D650C00360F07 /* TherapistWorkDialog */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC133246D650C00360F07 /* TherapistWorkDialog.xib */,
+				63ABC134246D650C00360F07 /* WorkCell */,
+				63ABC137246D650C00360F07 /* TherapistWorkDialog.swift */,
+			);
+			path = TherapistWorkDialog;
+			sourceTree = "<group>";
+		};
+		63ABC134246D650C00360F07 /* WorkCell */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC135246D650C00360F07 /* WorkCell.swift */,
+				63ABC136246D650C00360F07 /* WorkCell.xib */,
+			);
+			path = WorkCell;
+			sourceTree = "<group>";
+		};
+		63ABC138246D650C00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC139246D650C00360F07 /* TherapistProfileVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC15F246D650C00360F07 /* ContactVerification */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC160246D650C00360F07 /* xib */,
+				63ABC162246D650C00360F07 /* ContactVerificationVC.swift */,
+				63ABC163246D650C00360F07 /* VerificationView */,
+			);
+			path = ContactVerification;
+			sourceTree = "<group>";
+		};
+		63ABC160246D650C00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC161246D650C00360F07 /* ContactVerificationVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC163246D650C00360F07 /* VerificationView */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC164246D650C00360F07 /* VerificationAlert.xib */,
+				63ABC165246D650C00360F07 /* OTPView */,
+				63ABC168246D650C00360F07 /* VerificationAlert.swift */,
+			);
+			path = VerificationView;
+			sourceTree = "<group>";
+		};
+		63ABC165246D650C00360F07 /* OTPView */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC166246D650C00360F07 /* OTPFieldView.swift */,
+				63ABC167246D650C00360F07 /* OTPTextField.swift */,
+			);
+			path = OTPView;
+			sourceTree = "<group>";
+		};
+		63ABC169246D650C00360F07 /* TutorialVC */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC16A246D650C00360F07 /* xib */,
+				63ABC16C246D650C00360F07 /* TutorialVC.swift */,
+				63ABC16D246D650C00360F07 /* TutorialCell */,
+			);
+			path = TutorialVC;
+			sourceTree = "<group>";
+		};
+		63ABC16A246D650C00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC16B246D650C00360F07 /* TutorialVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC16D246D650C00360F07 /* TutorialCell */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC16E246D650C00360F07 /* TutorialCell.xib */,
+				63ABC16F246D650C00360F07 /* TutorialCell.swift */,
+			);
+			path = TutorialCell;
+			sourceTree = "<group>";
+		};
+		63ABC170246D650C00360F07 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC171246D650C00360F07 /* xib */,
+				63ABC173246D650C00360F07 /* RegisterVC.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		63ABC171246D650C00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC172246D650C00360F07 /* RegisterVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC174246D650D00360F07 /* TouchIdVC */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC175246D650D00360F07 /* xib */,
+				63ABC177246D650D00360F07 /* TouchIdVC.swift */,
+			);
+			path = TouchIdVC;
+			sourceTree = "<group>";
+		};
+		63ABC175246D650D00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC176246D650D00360F07 /* TouchIdVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC178246D650D00360F07 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC179246D650D00360F07 /* xib */,
+				63ABC17B246D650D00360F07 /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		63ABC179246D650D00360F07 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC17A246D650D00360F07 /* LoginVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		63ABC17C246D650D00360F07 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC17D246D650D00360F07 /* ClientImages.xcassets */,
+				63ABC17E246D650D00360F07 /* CommonColor.xcassets */,
+				63ABC17F246D650D00360F07 /* Assets.xcassets */,
+				63ABC180246D650D00360F07 /* TherapistImages.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		63ABC181246D650D00360F07 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC182246D650D00360F07 /* TextViewDialog */,
+				63ABC185246D650D00360F07 /* AlertDialog */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		63ABC182246D650D00360F07 /* TextViewDialog */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC183246D650D00360F07 /* TextViewDialog.xib */,
+				63ABC184246D650D00360F07 /* TextViewDialog.swift */,
+			);
+			path = TextViewDialog;
+			sourceTree = "<group>";
+		};
+		63ABC185246D650D00360F07 /* AlertDialog */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC186246D650D00360F07 /* CustomAlert.xib */,
+				63ABC187246D650D00360F07 /* CustomAlert.swift */,
+			);
+			path = AlertDialog;
+			sourceTree = "<group>";
+		};
+		63ABC188246D650D00360F07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC189246D650D00360F07 /* Font */,
+				63ABC18C246D650D00360F07 /* Sound */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		63ABC189246D650D00360F07 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				63415E2F246FB5C600F0D7A0 /* Nunito-Light.ttf */,
+				63415E30246FB5C600F0D7A0 /* Nunito-Regular.ttf */,
+				63415E31246FB5C600F0D7A0 /* Nunito-SemiBold.ttf */,
+				63415E32246FB5C600F0D7A0 /* Nunito-Bold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		63ABC18C246D650D00360F07 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		63ABC1F9246D66B700360F07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63ABC1FA246D66B800360F07 /* LocalAuthentication.framework */,
+				EA8A6F056877617A8E08DADC /* Pods_Therapist_TerraHeal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDC6A2FA8675DE9EE08259B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2D64E9E11E70D1B77E4F4BA9 /* Pods-Therapist TerraHeal.debug.xcconfig */,
+				52F577F1D54D46E3263D2738 /* Pods-Therapist TerraHeal.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63ABC0B1246D64B500360F07 /* Therapist TerraHeal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63ABC0C6246D64B700360F07 /* Build configuration list for PBXNativeTarget "Therapist TerraHeal" */;
+			buildPhases = (
+				5C968FA975E4D3447D6017AB /* [CP] Check Pods Manifest.lock */,
+				63ABC0AE246D64B500360F07 /* Sources */,
+				63ABC0AF246D64B500360F07 /* Frameworks */,
+				63ABC0B0246D64B500360F07 /* Resources */,
+				DF70F73FF488A32EF87CA5CA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Therapist TerraHeal";
+			productName = "Therapist TerraHeal";
+			productReference = 63ABC0B2246D64B500360F07 /* Therapist TerraHeal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63ABC0AA246D64B500360F07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = Evolution;
+				TargetAttributes = {
+					63ABC0B1246D64B500360F07 = {
+						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
+					};
+				};
+			};
+			buildConfigurationList = 63ABC0AD246D64B500360F07 /* Build configuration list for PBXProject "Therapist TerraHeal" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63ABC0A9246D64B500360F07;
+			productRefGroup = 63ABC0B3246D64B500360F07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63ABC0B1246D64B500360F07 /* Therapist TerraHeal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63ABC0B0246D64B500360F07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63ABC1A9246D650D00360F07 /* LaunchVC.xib in Resources */,
+				63ABC1BD246D650D00360F07 /* TherapistKycInfoVC.xib in Resources */,
+				63ABC1B1246D650D00360F07 /* UploadDocumentDialog.xib in Resources */,
+				63ABC1AB246D650D00360F07 /* PaymentAccountVC.xib in Resources */,
+				63ABC1EF246D650D00360F07 /* ClientImages.xcassets in Resources */,
+				63ABC1E9246D650D00360F07 /* RegisterVC.xib in Resources */,
+				63ABC1ED246D650D00360F07 /* LoginVC.xib in Resources */,
+				63ABC1B5246D650D00360F07 /* CompleteTherapistSignUpProcessVC.xib in Resources */,
+				63ABC19C246D650D00360F07 /* Localizable.strings in Resources */,
+				63ABC1AC246D650D00360F07 /* PaymentVerificationDialog.xib in Resources */,
+				63ABC1DF246D650D00360F07 /* ContactVerificationVC.xib in Resources */,
+				63ABC1B4246D650D00360F07 /* DocumentTblCell.xib in Resources */,
+				63ABC1B7246D650D00360F07 /* TherapistKycVC.xib in Resources */,
+				63ABC1C9246D650D00360F07 /* TherapistWorkDialog.xib in Resources */,
+				63415E35246FB5C600F0D7A0 /* Nunito-SemiBold.ttf in Resources */,
+				63ABC1EB246D650D00360F07 /* TouchIdVC.xib in Resources */,
+				63ABC1F0246D650D00360F07 /* CommonColor.xcassets in Resources */,
+				63ABC1E5246D650D00360F07 /* TutorialVC.xib in Resources */,
+				63ABC1E7246D650D00360F07 /* TutorialCell.xib in Resources */,
+				63ABC1F1246D650D00360F07 /* Assets.xcassets in Resources */,
+				63ABC1B9246D650D00360F07 /* AddCardVC.xib in Resources */,
+				63ABC1C0246D650D00360F07 /* KycInfoTblCell.xib in Resources */,
+				63415E36246FB5C600F0D7A0 /* Nunito-Bold.ttf in Resources */,
+				63ABC1E1246D650D00360F07 /* VerificationAlert.xib in Resources */,
+				63ABC1CD246D650D00360F07 /* TherapistProfileVC.xib in Resources */,
+				63ABC1F5246D650D00360F07 /* CustomAlert.xib in Resources */,
+				63ABC1A7246D650D00360F07 /* WelcomeVC.xib in Resources */,
+				63415E33246FB5C600F0D7A0 /* Nunito-Light.ttf in Resources */,
+				63ABC1F2246D650D00360F07 /* TherapistImages.xcassets in Resources */,
+				63ABC1F3246D650D00360F07 /* TextViewDialog.xib in Resources */,
+				63ABC1CB246D650D00360F07 /* WorkCell.xib in Resources */,
+				63ABC1BB246D650D00360F07 /* IdentityVerificationInstructionVC.xib in Resources */,
+				63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */,
+				63ABC1B0246D650D00360F07 /* PaymetAccountCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C968FA975E4D3447D6017AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Therapist TerraHeal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF70F73FF488A32EF87CA5CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therapist TerraHeal/Pods-Therapist TerraHeal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Therapist TerraHeal/Pods-Therapist TerraHeal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Therapist TerraHeal/Pods-Therapist TerraHeal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63ABC0AE246D64B500360F07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63ABC1EE246D650D00360F07 /* LoginVC.swift in Sources */,
+				63ABC19E246D650D00360F07 /* AppTheme.swift in Sources */,
+				63ABC1E3246D650D00360F07 /* OTPTextField.swift in Sources */,
+				63ABC1A0246D650D00360F07 /* ThemeTextField.swift in Sources */,
+				63ABC1E2246D650D00360F07 /* OTPFieldView.swift in Sources */,
+				6343BC0D24728C9800C2A25B /* UserWebService.swift in Sources */,
+				63ABC1A3246D650D00360F07 /* Main.swift in Sources */,
+				63ABC19D246D650D00360F07 /* PreferenceHelper.swift in Sources */,
+				63ABC1E4246D650D00360F07 /* VerificationAlert.swift in Sources */,
+				63ABC197246D650D00360F07 /* UIViewController + Extension.swift in Sources */,
+				63ABC1EA246D650D00360F07 /* RegisterVC.swift in Sources */,
+				63ABC19A246D650D00360F07 /* APP+NAVIGATION.swift in Sources */,
+				63ABC1BF246D650D00360F07 /* KycInfoTblCell.swift in Sources */,
+				63ABC1AE246D650D00360F07 /* PaymentAccountVC.swift in Sources */,
+				63ABC1E8246D650D00360F07 /* TutorialCell.swift in Sources */,
+				63ABC1B2246D650D00360F07 /* UploadDocumentDialog.swift in Sources */,
+				63ABC1A2246D650D00360F07 /* ThemeButton.swift in Sources */,
+				63ABC1B8246D650D00360F07 /* TherapistKycVC.swift in Sources */,
+				63ABC18F246D650D00360F07 /* DataType + Extesnion.swift in Sources */,
+				6343BC0C24728C9800C2A25B /* Reachability.swift in Sources */,
+				63ABC194246D650D00360F07 /* JDSubclasses + UIControl.swift in Sources */,
+				63ABC190246D650D00360F07 /* NSObject + Extension.swift in Sources */,
+				63ABC1A4246D650D00360F07 /* FontHelper.swift in Sources */,
+				63ABC1BE246D650D00360F07 /* TherapistKycInfoVC.swift in Sources */,
+				63ABC1A1246D650D00360F07 /* ThemeView.swift in Sources */,
+				63ABC1CC246D650D00360F07 /* TherapistWorkDialog.swift in Sources */,
+				63ABC1F6246D650D00360F07 /* CustomAlert.swift in Sources */,
+				6343BC0B24728C9800C2A25B /* AppWebApi.swift in Sources */,
+				63ABC18E246D650D00360F07 /* Loader.swift in Sources */,
+				63ABC1CA246D650D00360F07 /* WorkCell.swift in Sources */,
+				63ABC1A6246D650D00360F07 /* AppDelegate.swift in Sources */,
+				63ABC192246D650D00360F07 /* String + Validation.swift in Sources */,
+				63ABC1F4246D650D00360F07 /* TextViewDialog.swift in Sources */,
+				63ABC1BA246D650D00360F07 /* AddCardVC.swift in Sources */,
+				63ABC1B3246D650D00360F07 /* DocumentTblCell.swift in Sources */,
+				63ABC1AD246D650D00360F07 /* PaymentVerificationDialog.swift in Sources */,
+				63ABC1CE246D650D00360F07 /* TherapistProfileVC.swift in Sources */,
+				634501D72473A8B800671C9B /* Singleton.swift in Sources */,
+				6343BC0F2472930000C2A25B /* ResponseModel.swift in Sources */,
+				63ABC18D246D650D00360F07 /* ACFloatingTextfield.swift in Sources */,
+				6343BC0A24728C9800C2A25B /* AlamofireHelper.swift in Sources */,
+				63ABC193246D650D00360F07 /* String+Localization.swift in Sources */,
+				63ABC1A8246D650D00360F07 /* WelcomeVC.swift in Sources */,
+				63ABC195246D650D00360F07 /* JDDeviceHelper.swift in Sources */,
+				63ABC199246D650D00360F07 /* Constant.swift in Sources */,
+				63ABC196246D650D00360F07 /* UIView + Extension.swift in Sources */,
+				63ABC1E0246D650D00360F07 /* ContactVerificationVC.swift in Sources */,
+				63ABC1EC246D650D00360F07 /* TouchIdVC.swift in Sources */,
+				63ABC191246D650D00360F07 /* String + TypeCasting.swift in Sources */,
+				63ABC19B246D650D00360F07 /* Common.swift in Sources */,
+				63ABC1AF246D650D00360F07 /* PaymetAccountCell.swift in Sources */,
+				63ABC1BC246D650D00360F07 /* IdentityVerificationInstructionVC.swift in Sources */,
+				63ABC1AA246D650D00360F07 /* LaunchVC.swift in Sources */,
+				63ABC19F246D650D00360F07 /* ThemeLabel.swift in Sources */,
+				63ABC1E6246D650D00360F07 /* TutorialVC.swift in Sources */,
+				63ABC198246D650D00360F07 /* UITextField + Extension.swift in Sources */,
+				63ABC1B6246D650D00360F07 /* CompleteTherapistSignUpProcessVC.swift in Sources */,
+				63ABC1A5246D650D00360F07 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		63ABC0C4246D64B700360F07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		63ABC0C5246D64B700360F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63ABC0C7246D64B700360F07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D64E9E11E70D1B77E4F4BA9 /* Pods-Therapist TerraHeal.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 92Q7N837Q6;
+				INFOPLIST_FILE = "Therapist TerraHeal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.therapist.terraheal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Therapist  development";
+				SWIFT_OBJC_BRIDGING_HEADER = "Therapist TerraHeal/Therapist TerraHeal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		63ABC0C8246D64B700360F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F577F1D54D46E3263D2738 /* Pods-Therapist TerraHeal.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 92Q7N837Q6;
+				INFOPLIST_FILE = "Therapist TerraHeal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.therapist.terraheal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Therapist  development";
+				SWIFT_OBJC_BRIDGING_HEADER = "Therapist TerraHeal/Therapist TerraHeal-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63ABC0AD246D64B500360F07 /* Build configuration list for PBXProject "Therapist TerraHeal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63ABC0C4246D64B700360F07 /* Debug */,
+				63ABC0C5246D64B700360F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63ABC0C6246D64B700360F07 /* Build configuration list for PBXNativeTarget "Therapist TerraHeal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63ABC0C7246D64B700360F07 /* Debug */,
+				63ABC0C8246D64B700360F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63ABC0AA246D64B500360F07 /* Project object */;
+}

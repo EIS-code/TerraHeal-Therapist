@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GRANDDUKE.ttf">
+            <string>GRANDDUKERegular</string>
+        </array>
+        <array key="Ovo-Regular.ttf">
+            <string>Ovo</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnDone" destination="Uuh-BK-JbM" id="TOZ-PU-7ns"/>
+                <outlet property="btnForgotPassword" destination="QtW-ja-aCe" id="DPb-nR-20B"/>
+                <outlet property="btnLogin" destination="KCc-Ig-liE" id="vgx-en-juJ"/>
+                <outlet property="btnSignUp" destination="ddf-XN-YDK" id="zAX-1x-9Q5"/>
+                <outlet property="hVwContent" destination="Ucj-XE-hyn" id="xWx-CE-0na"/>
+                <outlet property="lblLoginTitle" destination="7rG-EW-05Z" id="YAA-Au-Uqs"/>
+                <outlet property="lblMessage" destination="7jV-sf-aUO" id="At4-da-45B"/>
+                <outlet property="scrVw" destination="Agl-Wb-btm" id="bu9-vP-nMg"/>
+                <outlet property="txtEmail" destination="ov9-Oy-oJD" id="MOT-8S-P1c"/>
+                <outlet property="txtPassword" destination="n6s-st-fuG" id="rBl-rz-mAu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwContent" destination="hp5-yH-riX" id="dab-jg-fuU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agl-Wb-btm" userLabel="scrVw">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="426"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp5-yH-riX" userLabel="vwContent">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="460.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rG-EW-05Z" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="56" width="280" height="19"/>
+                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jV-sf-aUO" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="95" width="280" height="37.5"/>
+                                    <string key="text">You need to identify 
+to sign back in</string>
+                                    <fontDescription key="fontDescription" name="Ovo" family="Ovo" pointSize="16"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="J5Q-R5-iLe">
+                                    <rect key="frame" x="20" y="162.5" width="280" height="115"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ov9-Oy-oJD" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ov9-Oy-oJD" secondAttribute="height" multiplier="28:5" id="2LX-E6-6qA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6s-st-fuG" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="65" width="280" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="n6s-st-fuG" secondAttribute="height" multiplier="28:5" id="gj4-v6-yZc"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uni-dL-qev" userLabel="Stack View - Next">
+                                    <rect key="frame" x="20" y="297.5" width="211" height="143"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="111" width="53" height="32"/>
+                                            <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                                            <state key="normal" title="Sign In">
+                                                <color key="titleColor" name="theme_primary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnLoginTapped:" destination="-1" eventType="touchUpInside" id="GgL-7O-QuI"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuh-BK-JbM" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="68" y="0.0" width="143" height="143"/>
+                                            <color key="backgroundColor" name="theme_primary_light"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Uuh-BK-JbM" secondAttribute="height" multiplier="1:1" id="9Nc-Cr-6Dw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                            <state key="normal" title="→" image="asset-arrow-right">
+                                                <color key="titleColor" name="theme_button_text"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnLoginTapped:" destination="-1" eventType="touchUpInside" id="z6f-bC-ydX"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="J5Q-R5-iLe" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="20" id="0Q7-jn-erc"/>
+                                <constraint firstAttribute="trailing" secondItem="7rG-EW-05Z" secondAttribute="trailing" constant="20" id="6Q5-nH-fdz"/>
+                                <constraint firstItem="7jV-sf-aUO" firstAttribute="top" secondItem="7rG-EW-05Z" secondAttribute="bottom" constant="20" id="6ek-Tu-W9d"/>
+                                <constraint firstItem="7rG-EW-05Z" firstAttribute="top" secondItem="hp5-yH-riX" secondAttribute="top" constant="56" id="8MN-4t-6nn"/>
+                                <constraint firstAttribute="trailing" secondItem="7jV-sf-aUO" secondAttribute="trailing" constant="20" id="CAH-3r-Qdy"/>
+                                <constraint firstAttribute="trailing" secondItem="J5Q-R5-iLe" secondAttribute="trailing" constant="20" id="K9I-5J-Uj2"/>
+                                <constraint firstItem="J5Q-R5-iLe" firstAttribute="top" secondItem="7jV-sf-aUO" secondAttribute="bottom" constant="30" id="O0O-4r-3O2"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Ucj-XE-hyn"/>
+                                <constraint firstItem="uni-dL-qev" firstAttribute="top" secondItem="J5Q-R5-iLe" secondAttribute="bottom" constant="20" id="YKY-Ak-HIf"/>
+                                <constraint firstItem="uni-dL-qev" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="20" id="a5U-GU-so7"/>
+                                <constraint firstAttribute="bottom" secondItem="uni-dL-qev" secondAttribute="bottom" constant="20" id="kG9-YL-gQQ"/>
+                                <constraint firstItem="7rG-EW-05Z" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="20" id="n2R-7r-t5n"/>
+                                <constraint firstItem="7jV-sf-aUO" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="20" id="u6g-xm-8BP"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="hp5-yH-riX" firstAttribute="width" secondItem="Agl-Wb-btm" secondAttribute="width" id="GbZ-il-t8u"/>
+                        <constraint firstItem="hp5-yH-riX" firstAttribute="leading" secondItem="Agl-Wb-btm" secondAttribute="leading" id="Qvb-e9-gyF"/>
+                        <constraint firstAttribute="trailing" secondItem="hp5-yH-riX" secondAttribute="trailing" id="cLc-12-Ckw"/>
+                        <constraint firstAttribute="bottom" secondItem="hp5-yH-riX" secondAttribute="bottom" id="fee-a9-4BO"/>
+                        <constraint firstItem="hp5-yH-riX" firstAttribute="top" secondItem="Agl-Wb-btm" secondAttribute="top" id="kqv-yZ-rqA"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddf-XN-YDK" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="446" width="62" height="32"/>
+                    <fontDescription key="fontDescription" name="Ovo" family="Ovo" pointSize="17"/>
+                    <state key="normal" title="Sign Up">
+                        <color key="titleColor" name="theme_primary"/>
+                    </state>
+                    <connections>
+                        <action selector="btnSignUpTapped:" destination="-1" eventType="touchUpInside" id="hLX-tr-igw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtW-ja-aCe" customClass="UnderlineTextButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="498" width="127" height="30"/>
+                    <state key="normal" title="Forgot Password ?">
+                        <color key="titleColor" name="theme_primary"/>
+                    </state>
+                    <connections>
+                        <action selector="btnForgotPasswordTapped:" destination="-1" eventType="touchUpInside" id="KKq-8W-15O"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Agl-Wb-btm" secondAttribute="trailing" id="A7l-Sb-LQw"/>
+                <constraint firstItem="QtW-ja-aCe" firstAttribute="top" secondItem="ddf-XN-YDK" secondAttribute="bottom" constant="20" id="Gd9-O6-ZCv"/>
+                <constraint firstItem="ddf-XN-YDK" firstAttribute="top" secondItem="Agl-Wb-btm" secondAttribute="bottom" constant="20" id="LAK-2L-4gK"/>
+                <constraint firstItem="Agl-Wb-btm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RLs-Nt-G9K"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QtW-ja-aCe" secondAttribute="bottom" constant="40" id="iMj-jy-Cos"/>
+                <constraint firstItem="Agl-Wb-btm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kN4-Se-iQP"/>
+                <constraint firstItem="QtW-ja-aCe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="lTa-Kt-OVH"/>
+                <constraint firstItem="ddf-XN-YDK" firstAttribute="leading" secondItem="QtW-ja-aCe" secondAttribute="leading" id="sEK-qS-UZM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-arrow-right" width="42.666667938232422" height="42.666667938232422"/>
+        <namedColor name="theme_button_text">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light">
+            <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

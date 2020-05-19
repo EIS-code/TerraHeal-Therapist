@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GRANDDUKE.ttf">
+            <string>GRANDDUKERegular</string>
+        </array>
+        <array key="Ovo-Regular.ttf">
+            <string>Ovo</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactVerificationVC" customModule="Terra_Heal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnDone" destination="KqD-5U-Cp1" id="jjI-1N-idi"/>
+                <outlet property="btnProceed" destination="vZP-VL-Mfl" id="vKW-ls-jOW"/>
+                <outlet property="btnVerifiedEmail" destination="kFH-la-r0l" id="uoy-Oq-khi"/>
+                <outlet property="btnVerifiedMobile" destination="QnL-Og-eHu" id="SKQ-2s-EW4"/>
+                <outlet property="btnVerifyEmail" destination="KCc-Ig-liE" id="HtG-VJ-fLA"/>
+                <outlet property="btnVerifyEmailDone" destination="Uuh-BK-JbM" id="zDk-BZ-xMK"/>
+                <outlet property="btnVerifyMobile" destination="Mch-Uh-4ET" id="e9J-pD-lVS"/>
+                <outlet property="btnVerifyMobileDone" destination="oOD-Yg-QpQ" id="ffL-dw-bdi"/>
+                <outlet property="hVwContent" destination="Ucj-XE-hyn" id="xWx-CE-0na"/>
+                <outlet property="lblCountryCode" destination="yFe-Q9-k4a" id="KLM-qg-0jB"/>
+                <outlet property="lblEmailVerified" destination="1r4-9J-fhP" id="U2J-a2-1R8"/>
+                <outlet property="lblHeader" destination="RW8-zo-2D4" id="01A-ro-nDz"/>
+                <outlet property="lblMessage" destination="Th9-JW-vb9" id="YAF-Pr-wxk"/>
+                <outlet property="lblMobileNumber" destination="bTF-JC-fEe" id="Gm9-ol-k3R"/>
+                <outlet property="lblVerified" destination="MnG-87-Jg2" id="ova-Tk-0kG"/>
+                <outlet property="scrVw" destination="Agl-Wb-btm" id="bu9-vP-nMg"/>
+                <outlet property="stkProceed" destination="43y-ro-83t" id="Y46-qZ-F4q"/>
+                <outlet property="txtCountryCode" destination="Jsc-jy-Xvp" id="hsC-dX-VgS"/>
+                <outlet property="txtEmail" destination="oZ6-jT-WyV" id="zZG-7Q-Cxo"/>
+                <outlet property="txtMobile" destination="Qv0-Fc-W8E" id="ThW-6k-asv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwContent" destination="hp5-yH-riX" id="dab-jg-fuU"/>
+                <outlet property="vwEmailVerified" destination="zlU-SR-M8P" id="nh6-wc-nyc"/>
+                <outlet property="vwMobileVerified" destination="pd5-X5-es1" id="XY6-mx-EXc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agl-Wb-btm" userLabel="scrVw">
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp5-yH-riX" userLabel="vwContent">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW8-zo-2D4" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="55.999999999999993" width="375" height="25.666666666666664"/>
+                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="22"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th9-JW-vb9" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="101.66666666666666" width="375" height="18.666666666666671"/>
+                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFe-Q9-k4a" userLabel="lblCountryCode" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="150.33333333333334" width="113" height="21"/>
+                                    <fontDescription key="fontDescription" name="Ovo" family="Ovo" pointSize="18"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jsc-jy-Xvp" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="191.33333333333334" width="113" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="sl5-jG-TS2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-JC-fEe" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="163" y="150.33333333333334" width="117.33333333333331" height="20.333333333333343"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qv0-Fc-W8E" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="163" y="191.33333333333334" width="192" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="s06-IS-qhO"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mch-Uh-4ET" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="181" y="310.33333333333331" width="53" height="32"/>
+                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                                    <state key="normal" title="Sign In">
+                                        <color key="titleColor" name="theme_primary"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnVerifyMobileTapped:" destination="-1" eventType="touchUpInside" id="dkK-uU-kF0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOD-Yg-QpQ" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="254" y="241.33333333333331" width="101" height="101"/>
+                                    <color key="backgroundColor" name="theme_primary_light"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="oOD-Yg-QpQ" secondAttribute="height" multiplier="1:1" id="WRo-lI-O5j"/>
+                                    </constraints>
+                                    <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                    <state key="normal" image="asset-arrow-right">
+                                        <color key="titleColor" name="theme_button_text"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnVerifyMobileTapped:" destination="-1" eventType="touchUpInside" id="iSI-YE-gs0"/>
+                                    </connections>
+                                </button>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd5-X5-es1" userLabel="vwVerifiedMobile">
+                                    <rect key="frame" x="181" y="241.33333333333331" width="174" height="101"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnL-Og-eHu" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="62.333333333333343" y="30.666666666666686" width="40" height="40"/>
+                                            <color key="backgroundColor" name="theme_primary_light"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="D5e-LA-71I"/>
+                                                <constraint firstAttribute="width" secondItem="QnL-Og-eHu" secondAttribute="height" multiplier="1:1" id="tPW-qI-SOF"/>
+                                            </constraints>
+                                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                            <state key="normal" image="asset-check">
+                                                <color key="titleColor" name="theme_button_text"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnVerifyMobileTapped:" destination="-1" eventType="touchUpInside" id="UNJ-Vs-wpg"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnG-87-Jg2" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="112.33333333333333" y="40.333333333333371" width="41.666666666666671" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="theme_primary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="MnG-87-Jg2" firstAttribute="centerY" secondItem="pd5-X5-es1" secondAttribute="centerY" id="0u9-7P-Cei"/>
+                                        <constraint firstAttribute="trailing" secondItem="MnG-87-Jg2" secondAttribute="trailing" constant="20" id="FgI-JR-TRD"/>
+                                        <constraint firstItem="QnL-Og-eHu" firstAttribute="centerY" secondItem="pd5-X5-es1" secondAttribute="centerY" id="jFt-75-gPf"/>
+                                        <constraint firstItem="MnG-87-Jg2" firstAttribute="leading" secondItem="QnL-Og-eHu" secondAttribute="trailing" constant="10" id="xwz-aU-Hfz"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kb-2c-FYf" userLabel="emailVerification">
+                                    <rect key="frame" x="32" y="372.33333333333326" width="323" height="341.66666666666674"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oZ6-jT-WyV" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="9.9999999999999964" width="202" height="50.666666666666657"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="oZ6-jT-WyV" secondAttribute="height" multiplier="4:1" id="VoY-me-kvQ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="149" y="149.66666666666669" width="53" height="32"/>
+                                            <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                                            <state key="normal" title="Sign In">
+                                                <color key="titleColor" name="theme_primary"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnVerifyEmailTapped:" destination="-1" eventType="touchUpInside" id="KFb-j8-5uP"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuh-BK-JbM" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="222" y="80.666666666666686" width="101" height="101"/>
+                                            <color key="backgroundColor" name="theme_primary_light"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Uuh-BK-JbM" secondAttribute="height" multiplier="1:1" id="9Nc-Cr-6Dw"/>
+                                            </constraints>
+                                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                            <state key="normal" image="asset-arrow-right">
+                                                <color key="titleColor" name="theme_button_text"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnVerifyEmailTapped:" destination="-1" eventType="touchUpInside" id="ihX-Eh-3Qw"/>
+                                            </connections>
+                                        </button>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlU-SR-M8P" userLabel="vwVerifiedEmail">
+                                            <rect key="frame" x="149" y="80.666666666666686" width="174" height="101"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFH-la-r0l" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="62.333333333333343" y="30.333333333333371" width="40" height="40"/>
+                                                    <color key="backgroundColor" name="theme_primary_light"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="kFH-la-r0l" secondAttribute="height" multiplier="1:1" id="Mul-tT-cN1"/>
+                                                        <constraint firstAttribute="height" constant="40" id="pvt-7B-jxO"/>
+                                                    </constraints>
+                                                    <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                                    <state key="normal" image="asset-check">
+                                                        <color key="titleColor" name="theme_button_text"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="btnVerifyMobileTapped:" destination="-1" eventType="touchUpInside" id="UWF-gf-cPn"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1r4-9J-fhP" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="112.33333333333333" y="40.333333333333371" width="41.666666666666671" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="theme_primary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="1r4-9J-fhP" secondAttribute="trailing" constant="20" id="n8f-zD-FGG"/>
+                                                <constraint firstItem="kFH-la-r0l" firstAttribute="centerY" secondItem="zlU-SR-M8P" secondAttribute="centerY" id="v16-ce-6Dw"/>
+                                                <constraint firstItem="1r4-9J-fhP" firstAttribute="leading" secondItem="kFH-la-r0l" secondAttribute="trailing" constant="10" id="vF1-KR-dPT"/>
+                                                <constraint firstItem="1r4-9J-fhP" firstAttribute="centerY" secondItem="zlU-SR-M8P" secondAttribute="centerY" id="vXK-Tu-bwA"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="oZ6-jT-WyV" firstAttribute="top" secondItem="7Kb-2c-FYf" secondAttribute="top" constant="10" id="5hF-aB-jDr"/>
+                                        <constraint firstAttribute="trailing" secondItem="Uuh-BK-JbM" secondAttribute="trailing" id="74J-Lz-YVJ"/>
+                                        <constraint firstItem="zlU-SR-M8P" firstAttribute="top" secondItem="Uuh-BK-JbM" secondAttribute="top" id="Evk-eS-tWP"/>
+                                        <constraint firstItem="oZ6-jT-WyV" firstAttribute="trailing" secondItem="KCc-Ig-liE" secondAttribute="trailing" id="HT9-Sm-JKy"/>
+                                        <constraint firstItem="zlU-SR-M8P" firstAttribute="trailing" secondItem="Uuh-BK-JbM" secondAttribute="trailing" id="Lqb-Nb-fa0"/>
+                                        <constraint firstItem="zlU-SR-M8P" firstAttribute="bottom" secondItem="Uuh-BK-JbM" secondAttribute="bottom" id="PV2-qg-Nbq"/>
+                                        <constraint firstItem="Uuh-BK-JbM" firstAttribute="top" secondItem="oZ6-jT-WyV" secondAttribute="bottom" constant="20" id="c0r-7D-qWi"/>
+                                        <constraint firstItem="KCc-Ig-liE" firstAttribute="bottom" secondItem="Uuh-BK-JbM" secondAttribute="bottom" id="grR-9R-nBJ"/>
+                                        <constraint firstItem="Uuh-BK-JbM" firstAttribute="leading" secondItem="KCc-Ig-liE" secondAttribute="trailing" constant="20" id="grr-Zt-Edf"/>
+                                        <constraint firstItem="zlU-SR-M8P" firstAttribute="leading" secondItem="KCc-Ig-liE" secondAttribute="leading" id="oot-bs-kzD"/>
+                                        <constraint firstItem="oZ6-jT-WyV" firstAttribute="leading" secondItem="7Kb-2c-FYf" secondAttribute="leading" id="xZ8-Ja-75y"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Qv0-Fc-W8E" firstAttribute="top" secondItem="Jsc-jy-Xvp" secondAttribute="top" id="0iK-dS-aDd"/>
+                                <constraint firstItem="Qv0-Fc-W8E" firstAttribute="trailing" secondItem="oOD-Yg-QpQ" secondAttribute="trailing" id="2uS-FW-1hJ"/>
+                                <constraint firstItem="Th9-JW-vb9" firstAttribute="width" secondItem="hp5-yH-riX" secondAttribute="width" id="3C7-ad-HgH"/>
+                                <constraint firstItem="7Kb-2c-FYf" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="32" id="3ab-5u-Rus"/>
+                                <constraint firstAttribute="bottom" secondItem="7Kb-2c-FYf" secondAttribute="bottom" constant="20" id="3jU-Hn-Hg2"/>
+                                <constraint firstAttribute="trailing" secondItem="7Kb-2c-FYf" secondAttribute="trailing" constant="20" id="B0f-4f-0md"/>
+                                <constraint firstItem="pd5-X5-es1" firstAttribute="leading" secondItem="Mch-Uh-4ET" secondAttribute="leading" id="Ed3-i3-P8h"/>
+                                <constraint firstItem="bTF-JC-fEe" firstAttribute="leading" secondItem="Qv0-Fc-W8E" secondAttribute="leading" id="ErW-aA-nfQ"/>
+                                <constraint firstItem="Jsc-jy-Xvp" firstAttribute="trailing" secondItem="yFe-Q9-k4a" secondAttribute="trailing" id="FPZ-Z0-50k"/>
+                                <constraint firstItem="Th9-JW-vb9" firstAttribute="top" secondItem="RW8-zo-2D4" secondAttribute="bottom" constant="20" id="Hfx-O9-Ik2"/>
+                                <constraint firstItem="oOD-Yg-QpQ" firstAttribute="leading" secondItem="Mch-Uh-4ET" secondAttribute="trailing" constant="20" id="LhE-5a-Kv5"/>
+                                <constraint firstItem="Jsc-jy-Xvp" firstAttribute="top" secondItem="yFe-Q9-k4a" secondAttribute="bottom" constant="20" id="Nlo-9O-D3C"/>
+                                <constraint firstItem="pd5-X5-es1" firstAttribute="bottom" secondItem="oOD-Yg-QpQ" secondAttribute="bottom" id="TIU-ah-vHm"/>
+                                <constraint firstItem="7Kb-2c-FYf" firstAttribute="top" secondItem="oOD-Yg-QpQ" secondAttribute="bottom" constant="30" id="U0y-5z-wku"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Ucj-XE-hyn"/>
+                                <constraint firstItem="RW8-zo-2D4" firstAttribute="centerX" secondItem="hp5-yH-riX" secondAttribute="centerX" id="WhA-Bs-6lf"/>
+                                <constraint firstItem="Qv0-Fc-W8E" firstAttribute="bottom" secondItem="Jsc-jy-Xvp" secondAttribute="bottom" id="Zax-vV-f6h"/>
+                                <constraint firstItem="Mch-Uh-4ET" firstAttribute="bottom" secondItem="oOD-Yg-QpQ" secondAttribute="bottom" id="hiP-sO-7oa"/>
+                                <constraint firstAttribute="trailing" secondItem="oOD-Yg-QpQ" secondAttribute="trailing" constant="20" id="hob-WX-V3n"/>
+                                <constraint firstItem="pd5-X5-es1" firstAttribute="trailing" secondItem="oOD-Yg-QpQ" secondAttribute="trailing" id="iA2-9W-ffh"/>
+                                <constraint firstItem="RW8-zo-2D4" firstAttribute="top" secondItem="hp5-yH-riX" secondAttribute="top" constant="56" id="mZ9-C6-1rJ"/>
+                                <constraint firstItem="Jsc-jy-Xvp" firstAttribute="leading" secondItem="yFe-Q9-k4a" secondAttribute="leading" id="mtB-Ux-hBn"/>
+                                <constraint firstItem="RW8-zo-2D4" firstAttribute="width" secondItem="hp5-yH-riX" secondAttribute="width" id="oUJ-XH-LTe"/>
+                                <constraint firstItem="yFe-Q9-k4a" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="20" id="pbB-Xl-icW"/>
+                                <constraint firstItem="oOD-Yg-QpQ" firstAttribute="top" secondItem="Qv0-Fc-W8E" secondAttribute="bottom" constant="20" id="pbM-fs-v7J"/>
+                                <constraint firstItem="bTF-JC-fEe" firstAttribute="top" secondItem="yFe-Q9-k4a" secondAttribute="top" id="r89-x1-Eqa"/>
+                                <constraint firstItem="pd5-X5-es1" firstAttribute="top" secondItem="oOD-Yg-QpQ" secondAttribute="top" id="sZq-xj-GeD"/>
+                                <constraint firstItem="Th9-JW-vb9" firstAttribute="centerX" secondItem="hp5-yH-riX" secondAttribute="centerX" id="tQC-qH-IOT"/>
+                                <constraint firstItem="Qv0-Fc-W8E" firstAttribute="leading" secondItem="Jsc-jy-Xvp" secondAttribute="trailing" constant="30" id="vRM-XZ-AHR"/>
+                                <constraint firstItem="yFe-Q9-k4a" firstAttribute="top" secondItem="Th9-JW-vb9" secondAttribute="bottom" constant="30" id="ynj-L8-YHG"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="hp5-yH-riX" firstAttribute="width" secondItem="Agl-Wb-btm" secondAttribute="width" id="GbZ-il-t8u"/>
+                        <constraint firstItem="hp5-yH-riX" firstAttribute="leading" secondItem="Agl-Wb-btm" secondAttribute="leading" id="Qvb-e9-gyF"/>
+                        <constraint firstItem="hp5-yH-riX" firstAttribute="height" secondItem="Agl-Wb-btm" secondAttribute="height" priority="999" id="ZfB-ZY-rh5"/>
+                        <constraint firstAttribute="trailing" secondItem="hp5-yH-riX" secondAttribute="trailing" id="cLc-12-Ckw"/>
+                        <constraint firstAttribute="bottom" secondItem="hp5-yH-riX" secondAttribute="bottom" id="fee-a9-4BO"/>
+                        <constraint firstItem="hp5-yH-riX" firstAttribute="top" secondItem="Agl-Wb-btm" secondAttribute="top" id="kqv-yZ-rqA"/>
+                    </constraints>
+                </scrollView>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="43y-ro-83t" userLabel="Stack View - Next">
+                    <rect key="frame" x="186" y="657" width="169" height="101"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZP-VL-Mfl" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="69" width="53" height="32"/>
+                            <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                            <state key="normal" title="Sign In">
+                                <color key="titleColor" name="theme_primary"/>
+                            </state>
+                            <connections>
+                                <action selector="btnNextTapped:" destination="-1" eventType="touchUpInside" id="Ypw-Wl-LiP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqD-5U-Cp1" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="68" y="0.0" width="101" height="101"/>
+                            <color key="backgroundColor" name="theme_primary_light"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="KqD-5U-Cp1" secondAttribute="height" multiplier="1:1" id="I3i-d2-uEL"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                            <state key="normal" image="asset-arrow-right">
+                                <color key="titleColor" name="theme_button_text"/>
+                            </state>
+                            <connections>
+                                <action selector="btnNextTapped:" destination="-1" eventType="touchUpInside" id="EqR-3e-Vyw"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="43y-ro-83t" secondAttribute="bottom" constant="20" id="9VZ-2b-rta"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Agl-Wb-btm" secondAttribute="trailing" id="A7l-Sb-LQw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="43y-ro-83t" secondAttribute="trailing" constant="20" id="MME-zC-hUo"/>
+                <constraint firstItem="Agl-Wb-btm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RLs-Nt-G9K"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Agl-Wb-btm" secondAttribute="bottom" id="TPz-Zk-G3f"/>
+                <constraint firstItem="Agl-Wb-btm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kN4-Se-iQP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-arrow-right" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="asset-check" width="170.66667175292969" height="170.66667175292969"/>
+        <namedColor name="theme_button_text">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light">
+            <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

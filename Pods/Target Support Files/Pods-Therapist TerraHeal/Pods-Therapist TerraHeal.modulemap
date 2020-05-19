@@ -1,0 +1,6 @@
+framework module Pods_Therapist_TerraHeal {
+  umbrella header "Pods-Therapist TerraHeal-umbrella.h"
+
+  export *
+  module * { export * }
+}

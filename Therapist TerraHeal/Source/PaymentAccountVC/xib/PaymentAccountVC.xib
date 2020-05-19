@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentAccountVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnPrivacyPolicy" destination="phD-1A-sjB" id="pIk-ns-KE5"/>
+                <outlet property="collectionView" destination="6ch-aB-LeW" id="FLt-WD-NYH"/>
+                <outlet property="lblHeader" destination="xOG-OI-OfF" id="hde-C2-8N6"/>
+                <outlet property="lblMessage" destination="goJ-bu-BWb" id="0ZN-Wr-dlt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwBg" destination="cmV-AP-sC2" id="D5F-GA-zKa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urP-lp-SLs" userLabel="btnCancel">
+                    <rect key="frame" x="20" y="20" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="urP-lp-SLs" secondAttribute="height" multiplier="1:1" id="zMH-JF-RnK"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    <state key="normal" image="asset-cross"/>
+                    <connections>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="QI3-IW-0wQ"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOG-OI-OfF" userLabel="lblTitle" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="32" y="72" width="256" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goJ-bu-BWb" userLabel="lblMessage" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="32" y="112.5" width="256" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmV-AP-sC2" userLabel="vwBg">
+                    <rect key="frame" x="32" y="193" width="256" height="220"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6ch-aB-LeW">
+                            <rect key="frame" x="8" y="8" width="240" height="204"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lea-og-5gJ">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="6ch-aB-LeW" secondAttribute="trailing" constant="8" id="Kzj-tP-OzD"/>
+                        <constraint firstAttribute="bottom" secondItem="6ch-aB-LeW" secondAttribute="bottom" constant="8" id="TWD-Xf-cUe"/>
+                        <constraint firstItem="6ch-aB-LeW" firstAttribute="leading" secondItem="cmV-AP-sC2" secondAttribute="leading" constant="8" id="ZyE-nV-Ewg"/>
+                        <constraint firstItem="6ch-aB-LeW" firstAttribute="top" secondItem="cmV-AP-sC2" secondAttribute="top" constant="8" id="sGY-fM-vPz"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phD-1A-sjB" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="32" y="433" width="256" height="105"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="We Process your data in accordance with our" image="asset-lock">
+                        <color key="titleColor" name="theme_primary"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPrivacyPolicyTapped:" destination="-1" eventType="touchUpInside" id="7SY-SU-FGb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cmV-AP-sC2" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="0if-CK-egp"/>
+                <constraint firstItem="phD-1A-sjB" firstAttribute="width" secondItem="cmV-AP-sC2" secondAttribute="width" id="1EW-FO-jdL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="phD-1A-sjB" secondAttribute="bottom" constant="30" id="3ga-7x-TBN"/>
+                <constraint firstItem="cmV-AP-sC2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4gs-gm-ku2"/>
+                <constraint firstItem="xOG-OI-OfF" firstAttribute="top" secondItem="urP-lp-SLs" secondAttribute="bottom" constant="20" id="89M-y5-e0t"/>
+                <constraint firstItem="phD-1A-sjB" firstAttribute="top" secondItem="cmV-AP-sC2" secondAttribute="bottom" constant="20" id="8j5-zk-f6I"/>
+                <constraint firstItem="phD-1A-sjB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CuN-uD-NgF"/>
+                <constraint firstItem="cmV-AP-sC2" firstAttribute="top" secondItem="goJ-bu-BWb" secondAttribute="bottom" constant="60" id="Hdh-89-s5A"/>
+                <constraint firstItem="goJ-bu-BWb" firstAttribute="top" secondItem="xOG-OI-OfF" secondAttribute="bottom" constant="20" id="IzD-sd-xk5"/>
+                <constraint firstItem="urP-lp-SLs" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.1" id="OBD-ox-fGp"/>
+                <constraint firstItem="goJ-bu-BWb" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="a3L-Z4-5E6"/>
+                <constraint firstItem="xOG-OI-OfF" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="jlt-z9-ddL"/>
+                <constraint firstItem="goJ-bu-BWb" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="kXr-w3-MLU"/>
+                <constraint firstItem="urP-lp-SLs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="mZL-oW-eK7"/>
+                <constraint firstItem="urP-lp-SLs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="o80-Jh-s81"/>
+                <constraint firstItem="xOG-OI-OfF" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="q8z-Di-y6i"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-cross" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="asset-lock" width="42.666667938232422" height="42.666667938232422"/>
+        <namedColor name="theme_primary">
+            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

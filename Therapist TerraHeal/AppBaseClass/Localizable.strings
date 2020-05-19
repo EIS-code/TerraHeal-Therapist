@@ -1,0 +1,180 @@
+//
+//  Created by Jaydeep Vyas
+//  Copyright © 2019 Jaydeep. All rights reserved.
+//
+
+//MARK: - Screen Wise Strings
+"APP_NAME" = "Terra Heal";
+//MARK: WELCOME SCREEN
+"WELCOME_LBL_MESSAGE" = "Please select weather you want to\nuse app as therapist or client";
+"WELCOME_LBL_I_AM" = "I am a";
+"WELCOME_BTN_CLIENT" =  "Client";
+"WELCOME_BTN_THERAPIST" =  "Therapist";
+"WELCOME_BTN_PROCEED" = "Proceed";
+//MARK: TUTORIAL SCREEN
+"TUTORIAL_LBL_TITLE" = "This is a title";
+"TUTORIAL_LBL_MESSAGE" = "This is a description,\nthis is a sample text";
+"TUTORIAL_BTN_NEXT" = "Next";
+"TUTORIAL_BTN_SKIP" = "Skip";
+//MARK: -
+//MARK: Client App
+//MARK: -
+//MARK: LOGIN SCREEN
+"LOGIN_LBL_TITLE" = "Welcome Back";
+"LOGIN_LBL_MESSAGE" = "You need to identify\nto sign back in";
+"LOGIN_TXT_EMAIL" = "Email";
+"LOGIN_TXT_PASSWORD" = "Password";
+"LOGIN_BTN_SIGN_IN" = "Sign In";
+"LOGIN_BTN_FORGOT_PASSWORD" = "Forgot Password?";
+"LOGIN_BTN_SIGN_UP" = "Sign Up";
+//MARK: REGISTER SCREEN
+"REGISTER_LBL_MESSAGE" = "Getting Massage\nMade Simple";
+"REGISTER_TXT_NAME" = "Name";
+"REGISTER_TXT_EMAIL" = "Email";
+"REGISTER_TXT_PASSWORD" = "Password";
+"REGISTER_TXT_CONFIRM_PASSWORD" = "Confirm Password";
+"REGISTER_BTN_SIGN_IN" = "Sign In";
+"REGISTER_LBL_ALREADY_A_MEMBER" = "Already a member?";
+"REGISTER_BTN_SIGN_UP" = "Sign Up";
+//MARK: TOUCH ID  SCREEN
+"TOUCH_ID_LBL_TITLE" = "Welcome Back";
+"TOUCH_ID_LBL_MESSAGE" = "You need to identify\nto sign back in";
+"TOUCH_ID_BTN_USE_PASSWORD" = "Use Password";
+//MARK: CONTACT VERIFICATION  SCREEN
+"CONTACT_VERIFICATION_LBL_TITLE" = "Contact Verification";
+"CONTACT_VERIFICATION_LBL_MESSAGE" = "We need to verify your contact\ndetails before proceeding";
+"CONTACT_VERIFICATION_BTN_VERIFY" = "Verify";
+"CONTACT_VERIFICATION_BTN_VERIFIED" = "Verified";
+"CONTACT_VERIFICATION_BTN_PROCEED" = "Proceed";
+"CONTACT_VERIFICATION_LBL_COUNTRY_CODE" = "Country Code";
+"CONTACT_VERIFICATION_TXT_MOBILE_NUMBER" = "Mobile Number";
+"CONTACT_VERIFICATION_TXT_EMAIL" = "Email";
+//MARK: Verification Dialog
+"VERIFICATION_LBL_TITLE" = "Enter OTP";
+"VERIFICATION_MOBILE_TITLE" = "Verify Your Mobile Number";
+"VERIFICATION_EMAIL_TITLE" = "Verify Your Email Id";
+"VERIFICATION_MSG_DETAIL" = "Please enter the 4 digit code that is\nsent to ";
+"VERIFICATION_BTN_VERIFY" = "Verify";
+"VERIFICATION_BTN_RESEND" = "Resend";
+//MARK: KYC WELCOME  SCREEN
+"KYC_LBL_TITLE" = "Welcome";
+"KYC_LBL_MESSAGE" = "You need to complete your identity verification in order to hire therapists. You can book massages at shop without doing it.\n\nDo you want to complete this step?";
+"KYC_BTN_SKIP" = "Skip";
+"KYC_BTN_PROCEED" = "Yes Proceed";
+//MARK: KYC INFO  SCREEN
+"KYC_INFO_LBL_TITLE" = "Let's Get Started";
+"KYC_INFO_LBL_MESSAGE" = "For identity variation we will follow 3 simple steps.";
+"KYC_INFO_BTN_PROCEED" = "Yes I am Ready";
+"KYC_INFO_LBL_SCAN_PASSPORT" = "Scan Passport";
+"KYC_INFO_LBL_TAKE_SELFIE" = "Take Selfie";
+"KYC_INFO_LBL_ADD_CREDIT_CARD" = "Add Credit Card";
+//MARK: SCAN PASSPORT SCREEN
+"SCAN_PASSPORT_LBL_TITLE" = "Scan Passport";
+"SCAN_PASSPORT_LBL_MESSAGE" = "Please scan your passport as per given instruction";
+"SCAN_PASSPORT_BTN_SCAN_NOW" = "Scan Now";
+"SCAN_PASSPORT_LBL_FRONT_SIDE"  = "Scan Front Side";
+"SCAN_PASSPORT_LBL_BACK_SIDE"  = "Scan Back Side";
+//MARK: SELFIE SCREEN
+"SELFIE_LBL_TITLE" = "Take Selfie";
+"SELFIE_LBL_MESSAGE" = "We use your selfie to compare with your passport photo";
+"SELFIE_BTN_OPEN_CAMERA" = "Open Camera";
+"SELFIE_LBL_INFO_1_TITLE"  = "Good lighting";
+"SELFIE_LBL_INFO_1_MESSAGE"  = "Make sure you are in a well lit area and both ears are uncovered";
+"SELFIE_LBL_INFO_2_TITLE"  = "Look straight";
+"SELFIE_LBL_INFO_2_MESSAGE"  = "Hold your phone at eye level and look straight to the camera";
+"SELFIE_SCAN_LBL_INFO" = "Hold your phone at eye level so that your selfie is similar to your passport photo";
+//MARK: ADD CARD SCREEN
+"ADD_CARD_LBL_TITLE" = "Add Credit card";
+"ADD_CARD_LBL_MESSAGE" = "verify and secure your card";
+"ADD_CARD_LBL_CARD_NUMBER" = "Card Number";
+"ADD_CARD_LBL_EXPIRY_DATE" = "Expiry";
+"ADD_CARD_TXT_CARD_NUMBER" = "XXXX XXXX XXXX XXXX";
+"ADD_CARD_TXT_EXPIRY_DATE" = "MM/YY";
+"ADD_CARD_BTN_ADD_CARD" = "Add Card";
+//MARK: COMPLETE IDENTITY VERFICATION SCREEN
+"COMPLETE_VERIFICATION_LBL_TITLE" = "Success";
+"COMPLETE_VERIFICATION_LBL_MESSAGE" = "Your identity is verified successfully.";
+"COMPLETE_VERIFICATION_BTN_HOME" = "Home";
+//MARK: HOME SHOP SCREEN
+"HOME_LBL_TITLE" = "Location";
+"HOME_TXT_SEARCH" = "Search for massage, therapies.....";
+"HOME_BTN_MASSAGE_SHOP" = "massage shop";
+"HOME_BTN_THERAPIST" = "therapists";
+"HOME_BTN_FILTER" = "Filter";
+"HOME_SECTION_TOP_PICKS_FOR_YOU" = "top picks for you";
+"HOME_SECTION_ALL_MASSAGES_AVAILABLE" = "All Massages Available";
+//MARK: -
+//MARK: THERAPIST SCREEEN DESIGN
+//MARK: -
+//MARK: Therapist KYC SCREEN
+"T_KYC_LBL_TITLE" = "Before you start receiving the booking requests , Let's get you verified.";
+"T_KYC_LBL_MESSAGE" = "We need to check that you are really you. It helps us fight frauds and provide you with most suitable work.";
+"T_KYC_BTN_PROCEED" = "Yes Proceed";
+//MARK: TherapistKycInfoVC
+"KYC_INFO_LBL_TITLE" =  "Getting Started";
+"KYC_INFO_LBL_MESSAGE" =  "Steps completed";
+"KYC_INFO_BTN_HOME" =  "Home";
+//MARK: Upload Document
+"UPLOAD_DOCUMENT_LBL_TITLE" =  "Upload Document";
+"UPLOAD_DOCUMENT_LBL_MESSAGE" =  "Upload your proof of address from here securely.";
+"UPLOAD_DOCUMENT_BTN_ADD_FILE" =  "Add File";
+"UPLOAD_DOCUMENT_BTN_SUBMIT" =  "Submit";
+//MARK: IDENTITY VERIFICATION VC
+"T_IDENTITY_VERIFICATION_LBL_TITLE" =  "Identity Verification";
+"T_IDENTITY_VERIFICATION_LBL_MESSAGE" =  "Upload following documents to complete your identity verification.";
+"T_IDENTITY_VERIFICATION_LBL_INFO_1_TITLE"  = "Proof of Address";
+"T_IDENTITY_VERIFICATION_LBL_INFO_1_MESSAGE"  = "Upload utility bill or bank statement";
+"T_IDENTITY_VERIFICATION_LBL_INFO_2_TITLE"  = "Proof of Identity";
+"T_IDENTITY_VERIFICATION_LBL_INFO_2_MESSAGE"  = "Upload passport, Driving Licence or National id card.";
+"T_IDENTITY_VERIFICATION_LBL_INFO_3_TITLE"  = "Insurance";
+"T_IDENTITY_VERIFICATION_LBL_INFO_3_MESSAGE"  = "Upload your isurance documents";
+"T_IDENTITY_VERIFICATION_LBL_PRIVACY_POLICY_" =  "We Process your data in accordance with our ";
+"T_IDENTITY_VERIFICATION_BTN_PRIVACY_POLICY_" =  "Privacy Policy";
+//MARK: COMPLETE SIGN UP PROCESS SCREEN
+"T_COMPLETE_SIGNUP_LBL_TITLE" = "Congratulations";
+"T_COMPLETE_SIGNUP_LBL_MESSAGE" = "Your account is verified successfully, As your profile is now visible to clients, make sure your profile is complete.";
+"T_COMPLETE_SIGNUP_BTN_HOME" = "Home";
+//MARK: PAYMENT ACCOUNT SCREEN
+"PAYMENT_ACCOOUNT_LBL_TITLE" = "Payment Accounts";
+"PAYMENT_ACCOOUNT_LBL_MESSAGE" = "Upload following documents to complete your identity verification.";
+"PAYMENT_ACCOUNT_LBL_PRIVACY_POLICY_" =  "We Process your data in accordance with our ";
+"PAYMENT_ACCOUNT_LBL_BTN_PRIVACY_POLICY_" =  "Privacy Policy";
+//MARK: THERAPIST ACCOUNT SCREEN
+"T_PROFILE_LBL_TITLE" = "Profile Details";
+"T_PROFILE_LBL_PROFILE_PICTURE" = "Profile Picture (Face Only)";
+"T_PROFILE_TXT_NAME" =  "Name";
+"T_PROFILE_LBL_GENDER" =  "I am";
+"T_PROFILE_GENDER_MALE" =  "Male";
+"T_PROFILE_GENDER_FEMALE" =  "Female";
+"T_PROFILE_TXT_DOB" =  "Date Of Birth (DD/MM/YYYY)";
+"T_PROFILE_TXT_EMERGENCEY_CONTACT" =  "Emergency Contact Number";
+"T_PROFILE_LBL_BIO" =  "Bio";
+"T_PROFILE_LBL_THINGS_I_DO" =  "Things I Do";
+
+"T_PROFILE_LBL_BIO" =  "Bio";
+"T_PROFILE_BIO_LBL_TITLE" =  "About Me";
+"T_PROFILE_BIO_LBL_MESSAGE" =  "Write down about your self";
+
+"T_PROFILE_WORK_LBL_TITLE" =  "What I can Do ?";
+"T_PROFILE_MASSAGE" =  "Massages";
+"T_PROFILE_THERAPIES" =  "Therapies";
+
+//MARK: -
+//MARK: Common Strings
+//MARK: -
+"BTN_CONNECT" = "Connect";
+"LBL_UPLOAD" = "Upload";
+"BTN_SUBMIT" = "Submit";
+"BTN_APPLY" =  "Apply";
+
+//MARK: -
+//MARK: VALIDATION TOAST MESSAGES
+//MARK: -
+"VALIDATION_MSG_INVALID_EMAIL" = "Please enter valid email address";
+"VALIDATION_MSG_INVALID_PASSWORD" = "Please enter valid password";
+"VALIDATION_MSG_INVALID_NAME" = "Please enter valid name";
+"VALIDATION_MSG_MISMATCH_CONFIRM_PASSWORD" = "Confirm password does not match with your entered password.\nConfirm and password must be same.";
+"VALIDATION_MSG_INVALID_MOBILE" = "Please enter valid mobile number";
+"VALIDATION_MSG_PLEASE_ENTER_OTP" = "Please enter valid otp";
+"VALIDATION_MSG_PLEASE_UPLOAD_ALL_DOCUMENTS" = "Please Upload documents: - ";
+"VALIDATION_MSG_INVALID_DATA" = "Please enter valid data";
