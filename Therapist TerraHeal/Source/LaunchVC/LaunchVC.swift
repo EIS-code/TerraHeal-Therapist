@@ -29,11 +29,15 @@ class LaunchVC: MainVC {
         super .viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
             if PreferenceHelper.shared.getUserId().isEmpty() {
-                Common.appDelegate.loadLoginVC()
+                if PreferenceHelper.shared.getIsShowTutorial() {
+                    Common.appDelegate.loadTutoraiVC()
+                } else {
+                    Common.appDelegate.loadLoginVC()
+                }
             }
             else {
                 Singleton.loadFrombDB()
-                Common.appDelegate.loadIdentityVerificationInstructionVC()
+                Common.appDelegate.loadTherapistKycVC()
             }
         }
     }

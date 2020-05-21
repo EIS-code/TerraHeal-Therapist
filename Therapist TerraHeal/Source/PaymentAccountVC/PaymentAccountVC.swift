@@ -90,7 +90,7 @@ class PaymentAccountVC: MainVC {
             self?.arrForPayment[paymentDetail.id].isConnected = true
             self?.collectionView.reloadData()
         }
-        alert.onBtnCancelTapped = { [weak alert, weak self] in
+        alert.onBtnCancelTapped = { [weak alert/*,weak self*/] in
             alert?.dismiss()
 
         }
@@ -99,7 +99,7 @@ class PaymentAccountVC: MainVC {
 
 }
 //MARK:- Collection View Setup
-extension PaymentAccountVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout  {
+extension PaymentAccountVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout  {
 
     func setCollectionView() {
         collectionView.delegate = self
@@ -128,7 +128,7 @@ extension PaymentAccountVC : UICollectionViewDelegate,UICollectionViewDataSource
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let spacing :CGFloat = 1.0
+        let spacing:CGFloat = 1.0
         let numberOfItemsPerRow:CGFloat = 2
         let spacingBetweenCells:CGFloat = 1.0
         let totalSpacing = (2 * spacing) + ((numberOfItemsPerRow - 1) * spacingBetweenCells)

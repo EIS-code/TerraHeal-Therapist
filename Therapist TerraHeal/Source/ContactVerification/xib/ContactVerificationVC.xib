@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactVerificationVC" customModule="Terra_Heal" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactVerificationVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <connections>
                 <outlet property="btnDone" destination="KqD-5U-Cp1" id="jjI-1N-idi"/>
                 <outlet property="btnProceed" destination="vZP-VL-Mfl" id="vKW-ls-jOW"/>
@@ -56,25 +56,25 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp5-yH-riX" userLabel="vwContent">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW8-zo-2D4" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW8-zo-2D4" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="55.999999999999993" width="375" height="25.666666666666664"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="22"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th9-JW-vb9" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th9-JW-vb9" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="101.66666666666666" width="375" height="18.666666666666671"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFe-Q9-k4a" userLabel="lblCountryCode" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFe-Q9-k4a" userLabel="lblCountryCode" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="20" y="150.33333333333334" width="113" height="21"/>
                                     <fontDescription key="fontDescription" name="Ovo" family="Ovo" pointSize="18"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jsc-jy-Xvp" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jsc-jy-Xvp" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="20" y="191.33333333333334" width="113" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="sl5-jG-TS2"/>
@@ -85,13 +85,13 @@
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="YES"/>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-JC-fEe" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-JC-fEe" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="163" y="150.33333333333334" width="117.33333333333331" height="20.333333333333343"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qv0-Fc-W8E" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qv0-Fc-W8E" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="163" y="191.33333333333334" width="192" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="s06-IS-qhO"/>
@@ -102,7 +102,7 @@
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="YES"/>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mch-Uh-4ET" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mch-Uh-4ET" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="181" y="310.33333333333331" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">
@@ -112,7 +112,7 @@
                                         <action selector="btnVerifyMobileTapped:" destination="-1" eventType="touchUpInside" id="dkK-uU-kF0"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOD-Yg-QpQ" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOD-Yg-QpQ" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="254" y="241.33333333333331" width="101" height="101"/>
                                     <color key="backgroundColor" name="theme_primary_light"/>
                                     <constraints>
@@ -129,7 +129,7 @@
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd5-X5-es1" userLabel="vwVerifiedMobile">
                                     <rect key="frame" x="181" y="241.33333333333331" width="174" height="101"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnL-Og-eHu" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnL-Og-eHu" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="62.333333333333343" y="30.666666666666686" width="40" height="40"/>
                                             <color key="backgroundColor" name="theme_primary_light"/>
                                             <constraints>
@@ -144,7 +144,7 @@
                                                 <action selector="btnVerifyMobileTapped:" destination="-1" eventType="touchUpInside" id="UNJ-Vs-wpg"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnG-87-Jg2" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnG-87-Jg2" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="112.33333333333333" y="40.333333333333371" width="41.666666666666671" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_primary"/>
@@ -162,7 +162,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kb-2c-FYf" userLabel="emailVerification">
                                     <rect key="frame" x="32" y="372.33333333333326" width="323" height="341.66666666666674"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oZ6-jT-WyV" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oZ6-jT-WyV" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="9.9999999999999964" width="202" height="50.666666666666657"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="oZ6-jT-WyV" secondAttribute="height" multiplier="4:1" id="VoY-me-kvQ"/>
@@ -170,7 +170,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="149" y="149.66666666666669" width="53" height="32"/>
                                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                             <state key="normal" title="Sign In">
@@ -180,7 +180,7 @@
                                                 <action selector="btnVerifyEmailTapped:" destination="-1" eventType="touchUpInside" id="KFb-j8-5uP"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuh-BK-JbM" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuh-BK-JbM" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="222" y="80.666666666666686" width="101" height="101"/>
                                             <color key="backgroundColor" name="theme_primary_light"/>
                                             <constraints>
@@ -197,7 +197,7 @@
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlU-SR-M8P" userLabel="vwVerifiedEmail">
                                             <rect key="frame" x="149" y="80.666666666666686" width="174" height="101"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFH-la-r0l" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFH-la-r0l" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                                     <rect key="frame" x="62.333333333333343" y="30.333333333333371" width="40" height="40"/>
                                                     <color key="backgroundColor" name="theme_primary_light"/>
                                                     <constraints>
@@ -212,7 +212,7 @@
                                                         <action selector="btnVerifyMobileTapped:" destination="-1" eventType="touchUpInside" id="UWF-gf-cPn"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1r4-9J-fhP" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1r4-9J-fhP" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                                     <rect key="frame" x="112.33333333333333" y="40.333333333333371" width="41.666666666666671" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="theme_primary"/>
@@ -292,7 +292,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="43y-ro-83t" userLabel="Stack View - Next">
                     <rect key="frame" x="186" y="657" width="169" height="101"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZP-VL-Mfl" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZP-VL-Mfl" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="69" width="53" height="32"/>
                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                             <state key="normal" title="Sign In">
@@ -302,7 +302,7 @@
                                 <action selector="btnNextTapped:" destination="-1" eventType="touchUpInside" id="Ypw-Wl-LiP"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqD-5U-Cp1" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqD-5U-Cp1" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <rect key="frame" x="68" y="0.0" width="101" height="101"/>
                             <color key="backgroundColor" name="theme_primary_light"/>
                             <constraints>

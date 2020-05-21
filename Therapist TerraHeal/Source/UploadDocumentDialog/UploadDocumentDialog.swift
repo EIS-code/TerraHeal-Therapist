@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import MobileCoreServices
 
 class UploadDocumentDialog: ThemeDialogView {
 
@@ -27,8 +28,8 @@ class UploadDocumentDialog: ThemeDialogView {
     var imageSelected:UIImage?;
     var arrForUploadDocuments:[UploadDocumentDetail] = []
     var numberOfDocuments: Int = 1
-    var onBtnDoneTapped : ((_ documents:[UploadDocumentDetail]) -> Void)? = nil
-    var onBtnCancelTapped : (() -> Void)? = nil
+    var onBtnDoneTapped: ((_ documents:[UploadDocumentDetail]) -> Void)? = nil
+    var onBtnCancelTapped: (() -> Void)? = nil
 
     //Animation Properties
     var animationDirection: AnimationDirection = .undefined
@@ -135,19 +136,25 @@ class UploadDocumentDialog: ThemeDialogView {
     }
 
     @IBAction func btnAddFileTapped(_ sender: UIButton) {
-        self.photoFromGallary()
+        self.openDocumentPicker()
+        //self.photoFromGallary()
 
     }
 
 
     @IBAction func btnDoneTapped(_ sender: Any) {
-        if self.arrForUploadDocuments.count < self.numberOfDocuments{
+        if self.onBtnDoneTapped != nil {
+            self.onBtnDoneTapped!(self.arrForUploadDocuments);
+        }
+        /*
+        if self.arrForUploadDocuments.count == 0{
             Common.showAlert(message: "VALIDATION_MSG_PLEASE_UPLOAD_ALL_DOCUMENTS".localized() + self.numberOfDocuments.toString())
         } else {
             if self.onBtnDoneTapped != nil {
                 self.onBtnDoneTapped!(self.arrForUploadDocuments);
             }
-        }
+        }*/
+
 
     }
 
@@ -160,15 +167,16 @@ class UploadDocumentDialog: ThemeDialogView {
         } else  {
             // self.hwTblVw.constant = (self.dialogView.bounds.height * 0.5)
         }
-        if self.arrForUploadDocuments.count == numberOfDocuments {
+       /* if self.arrForUploadDocuments.count == numberOfDocuments {
             self.btnAddFile.isEnabled = false
         } else {
             self.btnAddFile.isEnabled = true
-        }
+        }*/
+
     }
 }
 
-extension UploadDocumentDialog :  UITableViewDelegate,UITableViewDataSource {
+extension UploadDocumentDialog:  UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         return arrForUploadDocuments.count
@@ -193,7 +201,7 @@ extension UploadDocumentDialog :  UITableViewDelegate,UITableViewDataSource {
 }
 
 
-extension UploadDocumentDialog:  UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+extension UploadDocumentDialog:  UIImagePickerControllerDelegate {
      func photoFromGallary() {
             picker.delegate = self
             picker.allowsEditing = true
@@ -204,7 +212,7 @@ extension UploadDocumentDialog:  UIImagePickerControllerDelegate,UINavigationCon
         }
     }
 
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             imageSelected = image
             let fileManager = FileManager.default
@@ -243,7 +251,7 @@ extension UploadDocumentDialog:  UIImagePickerControllerDelegate,UINavigationCon
         }
         else {
             imageSelected = nil
-            let url:String? = nil
+            
 
         }
          Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: nil)
@@ -273,10 +281,10 @@ extension  UploadDocumentDialog {
         let isVertical = abs(velocity.y) > abs(velocity.x)
         var derivedDirection: AnimationDirection = .undefined
         if isVertical {
-            derivedDirection = velocity.y < 0 ? .up : .down
+            derivedDirection = velocity.y < 0 ? .up: .down
         }
         else {
-            derivedDirection = velocity.x < 0 ? .left : .right
+            derivedDirection = velocity.x < 0 ? .left: .right
         }
         return derivedDirection
     }
@@ -304,7 +312,7 @@ extension  UploadDocumentDialog {
             animationProgress  = percentage
             transitionAnimator?.fractionComplete = animationProgress
 
-        case .ended, .failed , .cancelled :
+        case .ended, .failed , .cancelled:
             transitionAnimator?.stopAnimation(true)
             self.addDissmissAnimation(direction: direction)
             transitionAnimator?.startAnimation()
@@ -354,4 +362,27 @@ extension  UploadDocumentDialog {
     }
 
 
+}
+
+extension UploadDocumentDialog: UIDocumentPickerDelegate, UINavigationControllerDelegate {
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        for url in urls {
+            let data = try! Data(contentsOf: url)
+            let document: UploadDocumentDetail = UploadDocumentDetail(id: url.absoluteString, name: url.pathComponents.last!,image: nil , data: data,isCompleted: true)
+            self.addFileToArray(document: document)
+
+        }
+    }
+
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    func openDocumentPicker() {
+        let types: [String] = ["public.item"]
+        let documentPicker = UIDocumentPickerViewController(documentTypes: types, in: .import)
+        documentPicker.delegate = self
+        documentPicker.modalPresentationStyle = .formSheet
+        Common.appDelegate.getTopViewController()?.present(documentPicker, animated: true, completion: nil)
+    }
 }

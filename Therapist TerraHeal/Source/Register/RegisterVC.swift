@@ -96,7 +96,8 @@ class RegisterVC: MainVC {
     @IBAction func btnRegisterTapped(_ sender: UIButton) {
         self.view.endEditing(true)
         if checkValidation() {
-            sender.isEnabled = false
+            self.btnSignUp?.isEnabled = false
+            self.btnDone?.isEnabled = false
             self.wsRegister()
         }
     }
@@ -179,16 +180,21 @@ extension RegisterVC {
         request.password = txtPassword.text!
         request.name = (txtName.text?.trim())!
         AppWebApi.register(params: request) { (response) in
-            let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
-            Loader.hideLoading()
             self.btnSignUp?.isEnabled = true
-            if let user = response.data.first {
-                PreferenceHelper.shared.setUserId(user.id)
-                //PreferenceHelper.shared.setSessionToken(user.token)
-                Singleton.shared.user = user
-                Singleton.saveInDb()
-                Common.appDelegate.loadTherapistProfileVC()
+            self.btnDone?.isEnabled = true
+            let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
+            if ResponseModel.isSuccess(response: model, withSuccessToast: true, andErrorToast: true) {
+                if let user = response.data.first {
+                    PreferenceHelper.shared.setUserId(user.id)
+                    //PreferenceHelper.shared.setSessionToken(user.token)
+                    appSingleton.user = user
+                    Singleton.saveInDb()
+                    Common.appDelegate.loadTherapistKycVC()
+                }
+
             }
+            Loader.hideLoading()
+
         }
     }
 }

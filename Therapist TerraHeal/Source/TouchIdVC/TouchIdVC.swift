@@ -163,12 +163,11 @@ extension TouchIdVC {
 
     func notifyUser(_ msg: String, err: String?) {
 
-        print(err)
         let alert: CustomAlert = CustomAlert.fromNib()
         alert.initialize(message: msg.localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
-            [weak alert, weak self] in
+            [weak alert/*,weak self*/] in
             alert?.dismiss()
         }
     }

@@ -28,7 +28,7 @@
 "LOGIN_BTN_FORGOT_PASSWORD" = "Forgot Password?";
 "LOGIN_BTN_SIGN_UP" = "Sign Up";
 //MARK: REGISTER SCREEN
-"REGISTER_LBL_MESSAGE" = "Getting Massage\nMade Simple";
+"REGISTER_LBL_MESSAGE" = "Getting Clients\nMade Simple";
 "REGISTER_TXT_NAME" = "Name";
 "REGISTER_TXT_EMAIL" = "Email";
 "REGISTER_TXT_PASSWORD" = "Password";
@@ -150,14 +150,19 @@
 "T_PROFILE_TXT_EMERGENCEY_CONTACT" =  "Emergency Contact Number";
 "T_PROFILE_LBL_BIO" =  "Bio";
 "T_PROFILE_LBL_THINGS_I_DO" =  "Things I Do";
-
 "T_PROFILE_LBL_BIO" =  "Bio";
 "T_PROFILE_BIO_LBL_TITLE" =  "About Me";
 "T_PROFILE_BIO_LBL_MESSAGE" =  "Write down about your self";
-
 "T_PROFILE_WORK_LBL_TITLE" =  "What I can Do ?";
 "T_PROFILE_MASSAGE" =  "Massages";
 "T_PROFILE_THERAPIES" =  "Therapies";
+
+//MARK: HOME SCREEN
+"HOME_LBL_TITLE" = "Home Title";
+"HOME_LBL_MESSAGE" = "Home message display here.";
+"HOME_BTN_LOGOUT" =  "Logout";
+
+
 
 //MARK: -
 //MARK: Common Strings

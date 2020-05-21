@@ -9,7 +9,7 @@
 import Foundation
 let appSingleton = Singleton.shared
 
-public class Singleton :NSObject {
+public class Singleton:NSObject {
     static let shared = Singleton()
     var user:User.UserData = User.UserData.init(fromDictionary: [:])
     //var settting:Setting.Response = Setting.Response.init(fromDictionary: [:])

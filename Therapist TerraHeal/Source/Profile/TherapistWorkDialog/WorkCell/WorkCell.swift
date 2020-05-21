@@ -6,21 +6,12 @@
 //
 
 import UIKit
-// import JDFramework
 
-struct WorkDetails {
-    var id: Int = 0
-    var name: String = ""
-    var isSelected: Bool = false
-    var image:UIImage? = nil
-
-}
 class WorkCell: CollectionCell {
     
     @IBOutlet weak var ivForPayment: UIImageView!
     @IBOutlet weak var lblName: ThemeLabel!
-   @IBOutlet weak var vwContent: UIView!
-
+    @IBOutlet weak var vwContent: UIView!
     @IBOutlet weak var ivSelected: UIImageView!
 
     override func awakeFromNib() {
@@ -35,7 +26,7 @@ class WorkCell: CollectionCell {
     }
 
 
-    func setData(_ data: WorkDetails, _ idxPath: IndexPath) {
+    func setData(_ data: MassageDetail, _ idxPath: IndexPath) {
         self.lblName.text = data.name
         self.updateStatus(isConnected: data.isSelected)
     }

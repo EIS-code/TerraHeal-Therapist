@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public extension UIViewController {
-    class var storyboardID : String {
+    class var storyboardID: String {
         
         return "\(self)"
     }

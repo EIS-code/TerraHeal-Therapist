@@ -66,6 +66,7 @@ class TutorialVC: MainVC {
     }
 
     @IBAction func btnSkipTapped(_ sender: Any) {
+         PreferenceHelper.shared.setIsShowTutorial(false)
         Common.appDelegate.loadLoginVC()
     }
 
@@ -74,7 +75,9 @@ class TutorialVC: MainVC {
             currentIndex.row = currentIndex.row + 1
             snapToNearestCell(indexPath: currentIndex)
          } else {
+             PreferenceHelper.shared.setIsShowTutorial(false)
             Common.appDelegate.loadLoginVC()
+
         }
 
     }

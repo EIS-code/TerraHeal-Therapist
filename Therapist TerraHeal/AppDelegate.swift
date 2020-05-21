@@ -16,8 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame:UIScreen.main.bounds)
         self.loadLaunchVC()
         IQKeyboardManager.shared().isEnabled = true
-        //self.setupFireBaseConfiguration()
-        //self.loadWelcomeVC()
         return true
     }
 

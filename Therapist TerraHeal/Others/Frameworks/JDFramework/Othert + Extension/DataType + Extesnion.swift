@@ -22,7 +22,7 @@ public extension Dictionary {
 
     var convertValues: [String: Any] {
         
-        var dictionary: [String: Any] = self as! [String : Any]
+        var dictionary: [String: Any] = self as! [String: Any]
         let strEmpty: String = ""
 
         for (key, value) in dictionary {
@@ -170,7 +170,7 @@ public extension String {
     func convertToDictionary() throws -> [String: String] {
         guard let data = self.data(using: .utf8) else { return [:] }
         let anyResult: Any = try JSONSerialization.jsonObject(with: data, options: [])
-        return (anyResult as? [String: Any])?.convertValues as! [String : String]
+        return (anyResult as? [String: Any])?.convertValues as! [String:String]
     }
 }
 //MARK_ Date Extention

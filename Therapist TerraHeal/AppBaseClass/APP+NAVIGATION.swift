@@ -16,9 +16,9 @@ extension AppDelegate {
         }
     }
 
-    func loadWelcomeVC() {
-        let welcomeVc: WelcomeVC = WelcomeVC.fromNib()
-        let nC: NC = NC(rootViewController: welcomeVc)
+    func loadHomeVC() {
+        let targetVc: HomeVC = HomeVC.fromNib()
+        let nC: NC = NC(rootViewController: targetVc)
         self.windowConfig(withRootVC: nC)
     }
 
@@ -42,6 +42,8 @@ extension AppDelegate {
     }
 
     func loadRegisterVC(navigaionVC:UINavigationController? = nil) {
+        PreferenceHelper.shared.setUserId("")
+        PreferenceHelper.shared.setSessionToken("")
         if let nc = navigaionVC as? NC {
             if let targetVC: RegisterVC =  nc.findVCs(ofType: RegisterVC.self).first {
                 _ = nc.popToViewController(targetVC, animated: true)
@@ -58,6 +60,9 @@ extension AppDelegate {
     }
 
     func loadLoginVC(navigaionVC:UINavigationController? = nil) {
+
+        PreferenceHelper.shared.setUserId("")
+        PreferenceHelper.shared.setSessionToken("")
         if let nc = navigaionVC as? NC {
             if let targetVC: LoginVC =  nc.findVCs(ofType: LoginVC.self).first {
                 _ = nc.popToViewController(targetVC, animated: true)
@@ -136,18 +141,35 @@ extension AppDelegate {
     }
 
     func loadTherapistKycInfoVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: TherapistKycInfoVC =  nc.findVCs(ofType: TherapistKycInfoVC.self).first {
-                _ = nc.popToViewController(targetVC, animated: true)
-            } else {
-                let targetVC: TherapistKycVC = TherapistKycInfoVC.fromNib()
-                nc.pushViewController(targetVC, animated: true)
+        AppWebApi.getUserDetail { (response) in
+            Loader.hideLoading()
+            let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
+            if ResponseModel.isSuccess(response: model, withSuccessToast: false, andErrorToast: false) {
+                if let user = response.data.first {
+                    PreferenceHelper.shared.setUserId(user.id)
+                    //PreferenceHelper.shared.setSessionToken(user.token)
+                    appSingleton.user = user
+                    Singleton.saveInDb()
+                    if let nc = navigaionVC as? NC {
+                        if let targetVC: TherapistKycInfoVC =  nc.findVCs(ofType: TherapistKycInfoVC.self).first {
+                            _ = nc.popToViewController(targetVC, animated: true)
+                        } else {
+                            let targetVC: TherapistKycVC = TherapistKycInfoVC.fromNib()
+                            nc.pushViewController(targetVC, animated: true)
+                        }
+                    } else {
+                        let targetVC: TherapistKycInfoVC = TherapistKycInfoVC.fromNib()
+                        let nC: NC = NC(rootViewController: targetVC)
+                        self.windowConfig(withRootVC: nC)
+                    }
+                }
+
             }
-        } else {
-            let targetVC: TherapistKycInfoVC = TherapistKycInfoVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
+
+
         }
+
+
     }
 
 

@@ -108,7 +108,14 @@ import UIKit
             secureEntryData.append("")
         }
     }
-    
+    func clearTextField() {
+        secureEntryData.removeAll()
+        for index in stride(from: 0, to: fieldsCount, by: 1) {
+            let oldOtpField = viewWithTag(index + 1) as? OTPTextField
+            oldOtpField?.text = ""
+            secureEntryData.append("")
+        }
+    }
     fileprivate func getOTPField(forIndex index: Int) -> OTPTextField {
         let hasOddNumberOfFields = (fieldsCount % 2 == 1)
         var fieldFrame = CGRect(x: 0, y: 0, width: fieldSize, height: fieldSize)
@@ -196,8 +203,8 @@ import UIKit
                     otpField = getOTPField(forIndex: index)
                 }
                 
-                let fieldBackgroundColor = (otpField?.text ?? "").isEmpty ? defaultBackgroundColor : filledBackgroundColor
-                let fieldBorderColor = (otpField?.text ?? "").isEmpty ? defaultBorderColor : filledBorderColor
+                let fieldBackgroundColor = (otpField?.text ?? "").isEmpty ? defaultBackgroundColor: filledBackgroundColor
+                let fieldBorderColor = (otpField?.text ?? "").isEmpty ? defaultBorderColor: filledBorderColor
                 
                 if displayType == .diamond || displayType == .underlinedBottom {
                     otpField?.shapeLayer.fillColor = fieldBackgroundColor.cgColor

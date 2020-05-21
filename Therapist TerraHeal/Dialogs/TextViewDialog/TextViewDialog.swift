@@ -20,8 +20,8 @@ class TextViewDialog: ThemeDialogView {
 
     var verificationData: String = ""
     var strEnteredData:String = ""
-    var onBtnDoneTapped : ((_ data:String) -> Void)? = nil
-    var onBtnCancelTapped : (() -> Void)? = nil
+    var onBtnDoneTapped: ((_ data:String) -> Void)? = nil
+    var onBtnCancelTapped: (() -> Void)? = nil
 
     //Animation Properties
     var animationDirection: AnimationDirection = .undefined
@@ -153,10 +153,10 @@ extension  TextViewDialog {
         let isVertical = abs(velocity.y) > abs(velocity.x)
         var derivedDirection: AnimationDirection = .undefined
         if isVertical {
-            derivedDirection = velocity.y < 0 ? .up : .down
+            derivedDirection = velocity.y < 0 ? .up: .down
         }
         else {
-            derivedDirection = velocity.x < 0 ? .left : .right
+            derivedDirection = velocity.x < 0 ? .left: .right
         }
         return derivedDirection
     }
@@ -184,7 +184,7 @@ extension  TextViewDialog {
             animationProgress  = percentage
             transitionAnimator?.fractionComplete = animationProgress
 
-        case .ended, .failed , .cancelled :
+        case .ended, .failed , .cancelled:
             transitionAnimator?.stopAnimation(true)
             self.addDissmissAnimation(direction: direction)
             transitionAnimator?.startAnimation()

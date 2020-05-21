@@ -8,11 +8,12 @@
 
 import Foundation
 
+//MARK: Request Models
 enum User {
 
     struct RequestProfile: Codable  {
         var id: String = PreferenceHelper.shared.getUserId()
-        var token: String = PreferenceHelper.shared.getSessionToken()
+       // var token: String = PreferenceHelper.shared.getSessionToken()
         var device_token: String = PreferenceHelper.shared.getDeviceToken()
         var app_version: String = Bundle.appVesion
         var oauth_uid: String = ""
@@ -21,9 +22,14 @@ enum User {
         var name: String? = nil
         var email: String? = nil
         var phone: String? = nil
+        var dob: String? = nil
         var password: String? = nil
-
-    }
+        var gender: String? = nil
+        var tel_number: String? = nil
+        var hobbies: String? = nil
+        var short_description: String? = nil
+        var paid_percentage: String? = nil
+   }
 
     struct RequestLogout: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
@@ -35,10 +41,12 @@ enum User {
         var type: String = "1"
         var token: String = PreferenceHelper.shared.getSessionToken()
     }
+
     struct RequestLogin: Codable {
         var email: String = ""
         var password: String = ""
         var device_token: String = PreferenceHelper.shared.getDeviceToken()
+        var device_type: String = Constant.typeIOS
         var app_version: String = Bundle.appVesion
         var oauth_uid: String = ""
         var oauth_provider: String = LoginBy.Manual
@@ -50,16 +58,62 @@ enum User {
         var email: String = ""
         var password: String = ""
         var device_token: String = PreferenceHelper.shared.getDeviceToken()
+        var device_type: String = Constant.typeIOS
         var app_version: String = Bundle.appVesion
         var oauth_uid: String = ""
         var oauth_provider: String = LoginBy.Manual
+    }
+
+    struct RequestEmailOTP: Codable {
+        var email: String = ""
+        var device_token: String = PreferenceHelper.shared.getDeviceToken()
+        var device_type: String = Constant.typeIOS
+        var app_version: String = Bundle.appVesion
+    }
+
+    struct RequestVerifyEmailOTP: Codable {
+        var otp: String = ""
+        var device_token: String = PreferenceHelper.shared.getDeviceToken()
+        var device_type: String = Constant.typeIOS
+        var app_version: String = Bundle.appVesion
+    }
+
+    struct RequestPhoneOTP: Codable {
+        var mobile: String = ""
+        var device_token: String = PreferenceHelper.shared.getDeviceToken()
+        var device_type: String = Constant.typeIOS
+        var app_version: String = Bundle.appVesion
+    }
+
+    struct RequestVerifyPhoneOTP: Codable {
+        var otp: String = ""
+        var device_token: String = PreferenceHelper.shared.getDeviceToken()
+        var device_type: String = Constant.typeIOS
+        var app_version: String = Bundle.appVesion
+    }
+
+
+
+}
+
+//MARK: Response Models
+extension User {
+
+    class ResponseVerification:  ResponseModel {
+
+        var data: Any? = nil
+
+        override init(fromDictionary dictionary: [String:Any]) {
+            super.init(fromDictionary: dictionary)
+            data = dictionary["data"] as? [String:Any]
+        }
 
     }
 
-    class Response :  Codable {
-        var code : String = ""
-        var data : [UserData]!
-        var message : String!
+    class Response:  Codable {
+        var code: String = ""
+        var data: [UserData]!
+        var message: String = ""
 
         init(fromDictionary dictionary: [String:Any]) {
             self.code = (dictionary["code"] as? String) ?? ""
@@ -71,11 +125,15 @@ enum User {
                     data.append(value)
                 }
             }
+            else if let dataArray = dictionary["data"] as? [String:Any] {
+                    let value = UserData.init(fromDictionary: dataArray)
+                    data.append(value)
+            }
         }
 
         @objc required init(coder aDecoder: NSCoder) {
             code = (aDecoder.decodeObject(forKey: "code") as? String) ?? ""
-            data = aDecoder.decodeObject(forKey :"data") as? [UserData]
+            data = aDecoder.decodeObject(forKey:"data") as? [UserData]
             message = (aDecoder.decodeObject(forKey: "msg") as? String) ?? ""
         }
 
@@ -100,22 +158,26 @@ enum User {
     }
 
     class UserData: Codable {
-        var createdAt : String = ""
-        var dob : String = ""
-        var email : String = ""
-        var gender : String = ""
-        var hobbies : String = ""
-        var id : String = ""
-        var isDeleted : String = ""
-        var isFreelancer : String = ""
-        var name : String = ""
-        var paidPercentage : String = ""
-        var password : String = ""
-        var shopId : String = ""
-        var shortDescription : String = ""
-        var telNumber : String = ""
-        var updatedAt : String = ""
-        init(fromDictionary dictionary: [String:Any]){
+        var createdAt: String = ""
+        var dob: String = ""
+        var email: String = ""
+        var gender: String = ""
+        var hobbies: String = ""
+        var id: String = ""
+        var isDeleted: String = ""
+        var isFreelancer: String = ""
+        var name: String = ""
+        var paidPercentage: String = ""
+        var password: String = ""
+        var shopId: String = ""
+        var shortDescription: String = ""
+        var telNumber: String = ""
+        var updatedAt: String = ""
+        var isMobileVerified: String = ""
+        var isEmailVerified: String = ""
+        var isDocumentVerified: String = ""
+
+        init(fromDictionary dictionary: [String:Any]) {
             self.createdAt = (dictionary["created_at"] as? String) ??  ""
             self.dob = (dictionary["dob"] as? String) ??  ""
             self.email = (dictionary["email"] as? String) ??  ""
@@ -130,6 +192,9 @@ enum User {
             self.shopId = (dictionary["shop_id"] as? String) ??  ""
             self.shortDescription = (dictionary["short_description"] as? String) ??  ""
             self.telNumber = (dictionary["tel_number"] as? String) ??  ""
+            self.isMobileVerified = (dictionary["is_mobile_verified"] as? String) ??  ""
+            self.isEmailVerified = (dictionary["is_email_verified"] as? String) ??  ""
+            self.isDocumentVerified = (dictionary["is_document_verified"] as? String) ??  ""
             self.updatedAt = (dictionary["updated_at"] as? String) ??  ""
         }
 
@@ -149,7 +214,9 @@ enum User {
             self.shortDescription = (aDecoder.decodeObject(forKey: "short_description") as? String) ?? ""
             self.telNumber = (aDecoder.decodeObject(forKey: "tel_number") as? String) ?? ""
             self.updatedAt = (aDecoder.decodeObject(forKey: "updated_at") as? String) ?? ""
-
+            self.isMobileVerified = (aDecoder.decodeObject(forKey: "is_mobile_verified") as? String) ?? ""
+            self.isEmailVerified = (aDecoder.decodeObject(forKey: "is_email_verified") as? String) ?? ""
+            self.isDocumentVerified = (aDecoder.decodeObject(forKey: "is_document_verified") as? String) ?? ""
         }
 
         @objc func encode(with aCoder: NSCoder) {
@@ -168,6 +235,10 @@ enum User {
             aCoder.encode(shortDescription, forKey: "short_description")
             aCoder.encode(telNumber, forKey: "tel_number")
             aCoder.encode(updatedAt, forKey: "updated_at")
+            aCoder.encode(isMobileVerified, forKey: "is_mobile_verified")
+            aCoder.encode(isEmailVerified, forKey: "is_email_verified")
+            aCoder.encode(isDocumentVerified, forKey: "is_document_verified")
+
         }
 
         func toDictionary() -> [String:Any] {
@@ -187,8 +258,16 @@ enum User {
             dictionary["short_description"] = shortDescription
             dictionary["tel_number"] = telNumber
             dictionary["updated_at"] = updatedAt
+            dictionary["is_mobile_verified"] = isMobileVerified
+            dictionary["is_email_verified"] = isEmailVerified
+            dictionary["is_document_verified"] = isDocumentVerified
             return dictionary
         }
+
+        func isContactVerified() -> Bool {
+            return self.isMobileVerified.toBool && self.isEmailVerified.toBool
+        }
     }
+
 }
 

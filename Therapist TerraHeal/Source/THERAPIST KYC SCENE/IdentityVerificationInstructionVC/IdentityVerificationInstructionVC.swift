@@ -117,8 +117,11 @@ class IdentityVerificationInstructionVC: MainVC {
         alert.onBtnDoneTapped = { [weak alert, weak self] (documents:[UploadDocumentDetail]) in
             alert?.dismiss()
             sender.isEnabled = true
+            var request = User.RequestUploadDocument()
+            request.type = DocumentType.addressProof
+            self?.uploadFile(documents: documents,params:request)
         }
-        alert.onBtnCancelTapped = { [weak alert, weak self] in
+        alert.onBtnCancelTapped = { [weak alert/*,weak self*/] in
             alert?.dismiss()
             sender.isEnabled = true
         }
@@ -133,8 +136,11 @@ class IdentityVerificationInstructionVC: MainVC {
         alert.onBtnDoneTapped = { [weak alert, weak self] (documents:[UploadDocumentDetail]) in
             alert?.dismiss()
             sender.isEnabled = true
+            var request = User.RequestUploadDocument()
+            request.type = DocumentType.identityProof
+            self?.uploadFile(documents: documents,params:request )
         }
-        alert.onBtnCancelTapped = { [weak alert, weak self] in
+        alert.onBtnCancelTapped = { [weak alert/*,weak self*/] in
             alert?.dismiss()
             sender.isEnabled = true
         }
@@ -148,20 +154,23 @@ class IdentityVerificationInstructionVC: MainVC {
         alert.onBtnDoneTapped = { [weak alert, weak self] (documents:[UploadDocumentDetail]) in
             alert?.dismiss()
             sender.isEnabled = true
-            self?.uploadFile()
+
+            var request = User.RequestUploadDocument()
+            request.type = DocumentType.insuranceProof
+            self?.uploadFile(documents: documents,params:request)
         }
-        alert.onBtnCancelTapped = { [weak alert, weak self] in
+        alert.onBtnCancelTapped = { [weak alert/*,weak self*/] in
             alert?.dismiss()
             sender.isEnabled = true
         }
 
     }
 
-    func uploadFile() {
-        AppWebApi.uploadDocument(params: User.RequestUploadDocument(), documents:  ["file":UIImage(named: "asset-cancel")!,"test":UIImage(named: "asset-cancel")!]) { (response) in
+    func uploadFile(documents:[UploadDocumentDetail], params:User.RequestUploadDocument = User.RequestUploadDocument()) {
+        AppWebApi.uploadDocument(params: params, documents:  documents) { (response) in
             print(response)
         }
-
     }
+
 }
 

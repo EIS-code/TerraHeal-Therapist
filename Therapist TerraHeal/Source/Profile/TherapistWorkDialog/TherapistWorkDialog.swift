@@ -19,42 +19,28 @@ class TherapistWorkDialog: ThemeDialogView {
     @IBOutlet weak var btnTherapies: ThemeButton!
     @IBOutlet weak var btnMassages: ThemeButton!
     var verificationData: String = ""
-    var onBtnDoneTapped : ((_ messages:[WorkDetails],_ therapies:[WorkDetails]) -> Void)? = nil
-    var onBtnCancelTapped : (() -> Void)? = nil
+    var onBtnDoneTapped: ((_ messages:[MassageDetail],_ therapies:[MassageDetail]) -> Void)? = nil
+    var onBtnCancelTapped: (() -> Void)? = nil
     var animationDirection: AnimationDirection = .undefined
     var transitionAnimator: UIViewPropertyAnimator? = nil
     var animationProgress: CGFloat = 0
     var yPostion: CGFloat = 0.0
 
 
-    var arrForMassages:[WorkDetails] =  [
-            WorkDetails(id: 0, name: "Massage\nName", isSelected: false, image: nil),
-            WorkDetails(id: 1, name: "Massage\nName", isSelected: false, image: nil),
-            WorkDetails(id: 2, name: "Massage\nName", isSelected: false, image: nil),
-            WorkDetails(id: 3, name: "Massage\nName", isSelected: false, image: nil),
-            WorkDetails(id: 4, name: "Massage\nName", isSelected: false, image: nil),
-            WorkDetails(id: 5, name: "Massage\nName", isSelected: false, image: nil),
-            WorkDetails(id: 6, name: "Massage\nName", isSelected: false, image: nil),
-            WorkDetails(id: 7, name: "Massage\nName", isSelected: false, image: nil)
+    var arrForMassages:[MassageDetail] =  [
+
     ]
 
-    var arrForTherapies:[WorkDetails] =  [
-        WorkDetails(id: 0, name: "Therapy\nName", isSelected: false, image: nil),
-        WorkDetails(id: 1, name: "Therapy\nName", isSelected: false, image: nil),
-        WorkDetails(id: 2, name: "Therapy\nName", isSelected: false, image: nil),
-        WorkDetails(id: 3, name: "Therapy\nName", isSelected: false, image: nil),
-        WorkDetails(id: 4, name: "Therapy\nName", isSelected: false, image: nil),
-        WorkDetails(id: 5, name: "Therapy\nName", isSelected: false, image: nil),
-        WorkDetails(id: 6, name: "Therapy\nName", isSelected: false, image: nil),
-        WorkDetails(id: 7, name: "Therapy\nName", isSelected: false, image: nil)
+    var arrForTherapies:[MassageDetail] =  [
+
     ]
 
-    var selectedTherapies:[WorkDetails]  = []
-    var selectedMassages:[WorkDetails]  = []
-    var filteredArray:[WorkDetails] = []
+    var selectedTherapies:[MassageDetail]  = []
+    var selectedMassages:[MassageDetail]  = []
+    var filteredArray:[MassageDetail] = []
     var isMassageSelected: Bool = true
 
-    func initialize(selectedMassages:[WorkDetails], selectedTherapies:[WorkDetails], data:String) {
+    func initialize(selectedMassages:[MassageDetail], selectedTherapies:[MassageDetail], data:String) {
 
 
         self.lblTitle.text = "T_PROFILE_WORK_LBL_TITLE".localized()
@@ -71,6 +57,7 @@ class TherapistWorkDialog: ThemeDialogView {
 
         self.initialSetup()
         self.fillFiltered(normalArr: self.arrForMassages, selectedArray: self.selectedMassages)
+        self.wsGetMassage()
 
     }
 
@@ -85,13 +72,13 @@ class TherapistWorkDialog: ThemeDialogView {
         self.setCollectionView()
         self.addPanGesture(view: self)
         transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
-
-
     }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         self.btnDone?.setUpRoundedButton()
     }
+
     func show(animated:Bool){
 
         self.isAnimated = animated
@@ -177,10 +164,10 @@ class TherapistWorkDialog: ThemeDialogView {
 
     }
 
-    func fillFiltered(normalArr: [WorkDetails], selectedArray:[WorkDetails]) {
+    func fillFiltered(normalArr: [MassageDetail], selectedArray:[MassageDetail]) {
         filteredArray.removeAll()
         for item in normalArr {
-            var newItem: WorkDetails = item
+            var newItem: MassageDetail = item
             for therapi in selectedArray {
                     if item.id == therapi
                         .id {
@@ -199,7 +186,7 @@ class TherapistWorkDialog: ThemeDialogView {
 
 
 //MARK:- Collection View Setup
-extension TherapistWorkDialog : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout  {
+extension TherapistWorkDialog: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout  {
 
     func setCollectionView() {
         self.collectionView.delegate = self
@@ -247,7 +234,7 @@ extension TherapistWorkDialog : UICollectionViewDelegate,UICollectionViewDataSou
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let spacing :CGFloat = 1.0
+        let spacing:CGFloat = 1.0
         let numberOfItemsPerRow:CGFloat = 3
         let spacingBetweenCells:CGFloat = 1.0
         let totalSpacing = (2 * spacing) + ((numberOfItemsPerRow - 1) * spacingBetweenCells)
@@ -278,10 +265,10 @@ extension  TherapistWorkDialog {
         let isVertical = abs(velocity.y) > abs(velocity.x)
         var derivedDirection: AnimationDirection = .undefined
         if isVertical {
-            derivedDirection = velocity.y < 0 ? .up : .down
+            derivedDirection = velocity.y < 0 ? .up: .down
         }
         else {
-            derivedDirection = velocity.x < 0 ? .left : .right
+            derivedDirection = velocity.x < 0 ? .left: .right
         }
         return derivedDirection
     }
@@ -309,7 +296,7 @@ extension  TherapistWorkDialog {
             animationProgress  = percentage
             transitionAnimator?.fractionComplete = animationProgress
 
-        case .ended, .failed , .cancelled :
+        case .ended, .failed , .cancelled:
             transitionAnimator?.stopAnimation(true)
             self.addDissmissAnimation(direction: direction)
             transitionAnimator?.startAnimation()
@@ -359,4 +346,23 @@ extension  TherapistWorkDialog {
     }
 
 
+}
+
+
+//MARK:  Web Service Calls
+extension TherapistWorkDialog {
+
+    func wsGetMassage() {
+        Loader.showLoading()
+        var request: Massage.RequestMassages = Massage.RequestMassages()
+        AppWebApi.massageList(params: request) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+                for data in response.data {
+                    self.arrForMassages.append(data)
+                }
+                self.fillFiltered(normalArr: self.arrForMassages, selectedArray: self.selectedMassages)
+            }
+        }
+    }
 }

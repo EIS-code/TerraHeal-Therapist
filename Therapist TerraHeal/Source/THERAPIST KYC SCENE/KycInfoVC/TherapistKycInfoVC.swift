@@ -17,14 +17,7 @@ class TherapistKycInfoVC: MainVC {
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet weak var tblDocuments: UITableView!
 
-    var arrForSteps:[DocumentDetail] = [
-        DocumentDetail(id: "1", name: "Account Created", isCompleted: true),
-        DocumentDetail(id: "2", name: "Contact Verification", isCompleted: true),
-        DocumentDetail(id: "3", name: "Identity Verification", isCompleted: false),
-        DocumentDetail(id: "4", name: "Payment Details", isCompleted: false),
-        DocumentDetail(id: "5", name: "Profile Details", isCompleted: false),
-        DocumentDetail(id: "6", name: "Last Step", isCompleted: false)
-    ]
+    var arrForSteps:[DocumentDetail] = []
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -48,7 +41,19 @@ class TherapistKycInfoVC: MainVC {
         super.viewDidLoad()
         self.initialViewSetup()
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.arrForSteps =
+        [
+            DocumentDetail(id: "1", name: "Account Created", isCompleted: true),
+            DocumentDetail(id: "2", name: "Contact Verification", isCompleted: appSingleton.user.isContactVerified()),
+            DocumentDetail(id: "3", name: "Identity Verification", isCompleted: appSingleton.user.isDocumentVerified.toBool),
+            DocumentDetail(id: "4", name: "Payment Details", isCompleted: false),
+            DocumentDetail(id: "5", name: "Profile Details", isCompleted: false),
+            DocumentDetail(id: "6", name: "Last Step", isCompleted: false)
+        ]
+        self.tblDocuments.reloadData()
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.btnDone?.setUpRoundedButton()
@@ -83,13 +88,13 @@ class TherapistKycInfoVC: MainVC {
     }
 
     @IBAction func btnNextTapped(_ sender: Any) {
-       Common.appDelegate.loadTutoraiVC()
+       Common.appDelegate.loadHomeVC()
     }
 
 }
 
 
-extension TherapistKycInfoVC :  UITableViewDelegate,UITableViewDataSource {
+extension TherapistKycInfoVC:  UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrForSteps.count
     }
@@ -104,8 +109,12 @@ extension TherapistKycInfoVC :  UITableViewDelegate,UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
         switch indexPath.row {
+        case 0:
+            Common.appDelegate.loadIdentityVerificationInstructionVC(navigaionVC: self.navigationController)
+        case 1:
+            Common.appDelegate.loadContactVerificationVC(navigaionVC: self.navigationController)
         case 2:
             Common.appDelegate.loadIdentityVerificationInstructionVC(navigaionVC: self.navigationController)
         case 3:

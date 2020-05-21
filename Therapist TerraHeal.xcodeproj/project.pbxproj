@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6302986B2476A80000074D6A /* MassageWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302986A2476A80000074D6A /* MassageWebService.swift */; };
 		63415E33246FB5C600F0D7A0 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E2F246FB5C600F0D7A0 /* Nunito-Light.ttf */; };
 		63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E30246FB5C600F0D7A0 /* Nunito-Regular.ttf */; };
 		63415E35246FB5C600F0D7A0 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E31246FB5C600F0D7A0 /* Nunito-SemiBold.ttf */; };
@@ -17,6 +18,9 @@
 		6343BC0D24728C9800C2A25B /* UserWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343BC0924728C9800C2A25B /* UserWebService.swift */; };
 		6343BC0F2472930000C2A25B /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6343BC0E2472930000C2A25B /* ResponseModel.swift */; };
 		634501D72473A8B800671C9B /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634501D62473A8B800671C9B /* Singleton.swift */; };
+		6349DF9E24764F7F0073D269 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6349DF9C24764F7F0073D269 /* HomeVC.xib */; };
+		6349DF9F24764F7F0073D269 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6349DF9D24764F7F0073D269 /* HomeVC.swift */; };
+		636DDB9224750D140014C7DC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636DDB9124750D140014C7DC /* MobileCoreServices.framework */; };
 		63ABC18D246D650D00360F07 /* ACFloatingTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0CC246D650B00360F07 /* ACFloatingTextfield.swift */; };
 		63ABC18E246D650D00360F07 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0CD246D650B00360F07 /* Loader.swift */; };
 		63ABC18F246D650D00360F07 /* DataType + Extesnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0D0246D650B00360F07 /* DataType + Extesnion.swift */; };
@@ -43,8 +47,6 @@
 		63ABC1A4246D650D00360F07 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0EA246D650B00360F07 /* FontHelper.swift */; };
 		63ABC1A5246D650D00360F07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0EB246D650B00360F07 /* SceneDelegate.swift */; };
 		63ABC1A6246D650D00360F07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0EC246D650B00360F07 /* AppDelegate.swift */; };
-		63ABC1A7246D650D00360F07 /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC0F1246D650B00360F07 /* WelcomeVC.xib */; };
-		63ABC1A8246D650D00360F07 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0F2246D650B00360F07 /* WelcomeVC.swift */; };
 		63ABC1A9246D650D00360F07 /* LaunchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC0F4246D650B00360F07 /* LaunchVC.xib */; };
 		63ABC1AA246D650D00360F07 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0F5246D650B00360F07 /* LaunchVC.swift */; };
 		63ABC1AB246D650D00360F07 /* PaymentAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC0F8246D650B00360F07 /* PaymentAccountVC.xib */; };
@@ -106,6 +108,7 @@
 /* Begin PBXFileReference section */
 		2D64E9E11E70D1B77E4F4BA9 /* Pods-Therapist TerraHeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therapist TerraHeal.debug.xcconfig"; path = "Target Support Files/Pods-Therapist TerraHeal/Pods-Therapist TerraHeal.debug.xcconfig"; sourceTree = "<group>"; };
 		52F577F1D54D46E3263D2738 /* Pods-Therapist TerraHeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therapist TerraHeal.release.xcconfig"; path = "Target Support Files/Pods-Therapist TerraHeal/Pods-Therapist TerraHeal.release.xcconfig"; sourceTree = "<group>"; };
+		6302986A2476A80000074D6A /* MassageWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassageWebService.swift; sourceTree = "<group>"; };
 		63415E2F246FB5C600F0D7A0 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		63415E30246FB5C600F0D7A0 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		63415E31246FB5C600F0D7A0 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -116,6 +119,9 @@
 		6343BC0924728C9800C2A25B /* UserWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWebService.swift; sourceTree = "<group>"; };
 		6343BC0E2472930000C2A25B /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		634501D62473A8B800671C9B /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		6349DF9C24764F7F0073D269 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		6349DF9D24764F7F0073D269 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		636DDB9124750D140014C7DC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		63ABC0B2246D64B500360F07 /* Therapist TerraHeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Therapist TerraHeal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63ABC0C3246D64B700360F07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63ABC0C9246D650A00360F07 /* Therapist TerraHeal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Therapist TerraHeal-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -145,8 +151,6 @@
 		63ABC0EA246D650B00360F07 /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		63ABC0EB246D650B00360F07 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		63ABC0EC246D650B00360F07 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63ABC0F1246D650B00360F07 /* WelcomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeVC.xib; sourceTree = "<group>"; };
-		63ABC0F2246D650B00360F07 /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		63ABC0F4246D650B00360F07 /* LaunchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchVC.xib; sourceTree = "<group>"; };
 		63ABC0F5246D650B00360F07 /* LaunchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
 		63ABC0F8246D650B00360F07 /* PaymentAccountVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentAccountVC.xib; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636DDB9224750D140014C7DC /* MobileCoreServices.framework in Frameworks */,
 				63ABC1FB246D66B800360F07 /* LocalAuthentication.framework in Frameworks */,
 				995CBCAE73040B4398225571 /* Pods_Therapist_TerraHeal.framework in Frameworks */,
 			);
@@ -223,6 +228,7 @@
 			children = (
 				6343BC0524728C9800C2A25B /* AFNHelper */,
 				6343BC0924728C9800C2A25B /* UserWebService.swift */,
+				6302986A2476A80000074D6A /* MassageWebService.swift */,
 				6343BC0E2472930000C2A25B /* ResponseModel.swift */,
 				634501D62473A8B800671C9B /* Singleton.swift */,
 			);
@@ -237,6 +243,23 @@
 				6343BC0824728C9800C2A25B /* Reachability.swift */,
 			);
 			path = AFNHelper;
+			sourceTree = "<group>";
+		};
+		6349DF9A24764F7F0073D269 /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				6349DF9B24764F7F0073D269 /* xib */,
+				6349DF9D24764F7F0073D269 /* HomeVC.swift */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		6349DF9B24764F7F0073D269 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				6349DF9C24764F7F0073D269 /* HomeVC.xib */,
+			);
+			path = xib;
 			sourceTree = "<group>";
 		};
 		63ABC0A9246D64B500360F07 = {
@@ -372,6 +395,7 @@
 		63ABC0ED246D650B00360F07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				6349DF9A24764F7F0073D269 /* HomeVC */,
 				63ABC170246D650C00360F07 /* Register */,
 				63ABC174246D650D00360F07 /* TouchIdVC */,
 				63ABC178246D650D00360F07 /* Login */,
@@ -379,29 +403,11 @@
 				63ABC15F246D650C00360F07 /* ContactVerification */,
 				63ABC107246D650B00360F07 /* THERAPIST KYC SCENE */,
 				63ABC131246D650C00360F07 /* Profile */,
-				63ABC0EF246D650B00360F07 /* WelcomeVC */,
 				63ABC0F3246D650B00360F07 /* LaunchVC */,
 				63ABC0F6246D650B00360F07 /* PaymentAccountVC */,
 				63ABC100246D650B00360F07 /* UploadDocumentDialog */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		63ABC0EF246D650B00360F07 /* WelcomeVC */ = {
-			isa = PBXGroup;
-			children = (
-				63ABC0F0246D650B00360F07 /* xib */,
-				63ABC0F2246D650B00360F07 /* WelcomeVC.swift */,
-			);
-			path = WelcomeVC;
-			sourceTree = "<group>";
-		};
-		63ABC0F0246D650B00360F07 /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				63ABC0F1246D650B00360F07 /* WelcomeVC.xib */,
-			);
-			path = xib;
 			sourceTree = "<group>";
 		};
 		63ABC0F3246D650B00360F07 /* LaunchVC */ = {
@@ -796,6 +802,7 @@
 		63ABC1F9246D66B700360F07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				636DDB9124750D140014C7DC /* MobileCoreServices.framework */,
 				63ABC1FA246D66B800360F07 /* LocalAuthentication.framework */,
 				EA8A6F056877617A8E08DADC /* Pods_Therapist_TerraHeal.framework */,
 			);
@@ -877,6 +884,7 @@
 				63ABC1B1246D650D00360F07 /* UploadDocumentDialog.xib in Resources */,
 				63ABC1AB246D650D00360F07 /* PaymentAccountVC.xib in Resources */,
 				63ABC1EF246D650D00360F07 /* ClientImages.xcassets in Resources */,
+				6349DF9E24764F7F0073D269 /* HomeVC.xib in Resources */,
 				63ABC1E9246D650D00360F07 /* RegisterVC.xib in Resources */,
 				63ABC1ED246D650D00360F07 /* LoginVC.xib in Resources */,
 				63ABC1B5246D650D00360F07 /* CompleteTherapistSignUpProcessVC.xib in Resources */,
@@ -898,7 +906,6 @@
 				63ABC1E1246D650D00360F07 /* VerificationAlert.xib in Resources */,
 				63ABC1CD246D650D00360F07 /* TherapistProfileVC.xib in Resources */,
 				63ABC1F5246D650D00360F07 /* CustomAlert.xib in Resources */,
-				63ABC1A7246D650D00360F07 /* WelcomeVC.xib in Resources */,
 				63415E33246FB5C600F0D7A0 /* Nunito-Light.ttf in Resources */,
 				63ABC1F2246D650D00360F07 /* TherapistImages.xcassets in Resources */,
 				63ABC1F3246D650D00360F07 /* TextViewDialog.xib in Resources */,
@@ -981,6 +988,7 @@
 				63ABC194246D650D00360F07 /* JDSubclasses + UIControl.swift in Sources */,
 				63ABC190246D650D00360F07 /* NSObject + Extension.swift in Sources */,
 				63ABC1A4246D650D00360F07 /* FontHelper.swift in Sources */,
+				6349DF9F24764F7F0073D269 /* HomeVC.swift in Sources */,
 				63ABC1BE246D650D00360F07 /* TherapistKycInfoVC.swift in Sources */,
 				63ABC1A1246D650D00360F07 /* ThemeView.swift in Sources */,
 				63ABC1CC246D650D00360F07 /* TherapistWorkDialog.swift in Sources */,
@@ -1000,9 +1008,9 @@
 				63ABC18D246D650D00360F07 /* ACFloatingTextfield.swift in Sources */,
 				6343BC0A24728C9800C2A25B /* AlamofireHelper.swift in Sources */,
 				63ABC193246D650D00360F07 /* String+Localization.swift in Sources */,
-				63ABC1A8246D650D00360F07 /* WelcomeVC.swift in Sources */,
 				63ABC195246D650D00360F07 /* JDDeviceHelper.swift in Sources */,
 				63ABC199246D650D00360F07 /* Constant.swift in Sources */,
+				6302986B2476A80000074D6A /* MassageWebService.swift in Sources */,
 				63ABC196246D650D00360F07 /* UIView + Extension.swift in Sources */,
 				63ABC1E0246D650D00360F07 /* ContactVerificationVC.swift in Sources */,
 				63ABC1EC246D650D00360F07 /* TouchIdVC.swift in Sources */,

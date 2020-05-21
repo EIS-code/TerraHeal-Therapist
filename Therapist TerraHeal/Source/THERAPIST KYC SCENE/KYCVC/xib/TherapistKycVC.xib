@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TherapistKycVC" customModule="Terra_Heal" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TherapistKycVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <connections>
                 <outlet property="btnDone" destination="btk-IO-WjQ" id="1DB-Dz-aTq"/>
                 <outlet property="btnNext" destination="MPT-lV-vrF" id="mFr-3x-dT1"/>
@@ -28,13 +28,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOG-OI-OfF" userLabel="lblTitle" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOG-OI-OfF" userLabel="lblTitle" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="32" y="346" width="256" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_primary"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goJ-bu-BWb" userLabel="lblMessage" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goJ-bu-BWb" userLabel="lblMessage" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="32" y="386.5" width="256" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_primary"/>
@@ -43,7 +43,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fjQ-k9-NAp" userLabel="Stack View - Next">
                     <rect key="frame" x="120" y="437" width="180" height="101"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPT-lV-vrF" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPT-lV-vrF" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="69" width="64" height="32"/>
                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                             <state key="normal" title="Proceed">
@@ -53,7 +53,7 @@
                                 <action selector="btnNextTapped:" destination="-1" eventType="touchUpInside" id="6Sj-xX-HQH"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btk-IO-WjQ" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btk-IO-WjQ" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <rect key="frame" x="79" y="0.0" width="101" height="101"/>
                             <color key="backgroundColor" name="theme_primary_light"/>
                             <constraints>

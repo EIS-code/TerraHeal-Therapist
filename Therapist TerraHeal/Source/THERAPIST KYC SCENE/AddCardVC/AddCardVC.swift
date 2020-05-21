@@ -92,7 +92,7 @@ class AddCardVC: MainVC {
 
 
 
-extension AddCardVC : UITextFieldDelegate {
+extension AddCardVC: UITextFieldDelegate {
 
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

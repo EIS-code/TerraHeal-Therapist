@@ -43,23 +43,25 @@ class ThemeButton: UIButton {
         }
     }*/
     func setSelected() {
-        borderDissapear(highlighted: true)
+        self.isHighlighted = true
+        borderDissapear(hideBorder: false)
     }
     func setDeselect() {
-        borderDissapear(highlighted: false)
+        self.isHighlighted = false
+        borderDissapear(hideBorder: true)
     }
 
-    func borderDissapear (highlighted: Bool) {
+    func borderDissapear (hideBorder: Bool) {
         let animation = CABasicAnimation(keyPath: "borderColor")
         animation.duration = 0.1
         animation.autoreverses = false
         animation.repeatCount = 1
         animation.fillMode = CAMediaTimingFillMode.forwards
         animation.isRemovedOnCompletion = false
-        if highlighted {
+        if hideBorder {
             animation.fromValue = UIColor.themePrimary.cgColor.copy(alpha: 1.0)
             animation.toValue = UIColor.themePrimary.cgColor.copy(alpha: 0.0)
-        } else if !highlighted {
+        } else if !hideBorder {
             animation.fromValue = UIColor.themePrimary.cgColor.copy(alpha: 0.0)
             animation.toValue = UIColor.themePrimary.cgColor.copy(alpha: 1.0)
         }
@@ -78,10 +80,10 @@ class ThemeButton: UIButton {
 
     private func attributedString(title:String?) -> NSAttributedString? {
         if let normalTitle = title {
-            let attributes : [NSAttributedString.Key : Any] = [
-                NSAttributedString.Key.font : self.titleLabel?.font ?? UIFont.systemFont(ofSize: 14),
-                NSAttributedString.Key.foregroundColor : self.titleColor(for: .normal) ?? UIColor.red,
-                NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue
+            let attributes: [NSAttributedString.Key: Any] = [
+                NSAttributedString.Key.font: self.titleLabel?.font ?? UIFont.systemFont(ofSize: 14),
+                NSAttributedString.Key.foregroundColor: self.titleColor(for: .normal) ?? UIColor.red,
+                NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
             ]
             let attributedString = NSAttributedString(string:normalTitle, attributes: attributes)
             return attributedString
@@ -101,10 +103,10 @@ class UnderlineTextButton: ThemeButton {
     }
 
     private func attributedString() -> NSAttributedString? {
-        let attributes : [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.font : self.titleLabel?.font ?? UIFont.systemFont(ofSize: 14),
-            NSAttributedString.Key.foregroundColor : self.titleColor(for: .normal) ?? UIColor.red,
-            NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: self.titleLabel?.font ?? UIFont.systemFont(ofSize: 14),
+            NSAttributedString.Key.foregroundColor: self.titleColor(for: .normal) ?? UIColor.red,
+            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
         ]
         let attributedString = NSAttributedString(string: self.currentTitle!, attributes: attributes)
         return attributedString

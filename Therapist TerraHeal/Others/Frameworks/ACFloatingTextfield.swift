@@ -9,50 +9,50 @@ import UIKit
 @IBDesignable
 @objc open class ACFloatingTextfield: ThemeTextField {
     
-    fileprivate var bottomLineView : UIView?
-    fileprivate var labelPlaceholder : UILabel?
-    fileprivate var labelErrorPlaceholder : UILabel?
-    fileprivate var showingError : Bool = false
-    fileprivate var bottomLineViewHeight : NSLayoutConstraint?
-    fileprivate var placeholderLabelHeight : NSLayoutConstraint?
-    fileprivate var errorLabelHieght : NSLayoutConstraint?
+    fileprivate var bottomLineView: UIView?
+    fileprivate var labelPlaceholder: UILabel?
+    fileprivate var labelErrorPlaceholder: UILabel?
+    fileprivate var showingError: Bool = false
+    fileprivate var bottomLineViewHeight: NSLayoutConstraint?
+    fileprivate var placeholderLabelHeight: NSLayoutConstraint?
+    fileprivate var errorLabelHieght: NSLayoutConstraint?
     
     /// Disable Floating Label when true.
-    @IBInspectable open var disableFloatingLabel : Bool = false
+    @IBInspectable open var disableFloatingLabel: Bool = false
     
     /// Shake Bottom line when Showing Error ?
-    @IBInspectable open var shakeLineWithError : Bool = true
+    @IBInspectable open var shakeLineWithError: Bool = true
     
     /// Change Bottom Line Color.
-    @IBInspectable open var lineColor : UIColor = UIColor.themePrimaryLight {
+    @IBInspectable open var lineColor: UIColor = UIColor.themePrimaryLight {
         didSet{
             self.floatTheLabel()
         }
     }
     
     /// Change line color when Editing in textfield
-    @IBInspectable open var selectedLineColor : UIColor = UIColor.themePrimary{
+    @IBInspectable open var selectedLineColor: UIColor = UIColor.themePrimary{
         didSet{
             self.floatTheLabel()
         }
     }
     
     /// Change placeholder color.
-    @IBInspectable open var placeHolderColor : UIColor = UIColor.themePrimary {
+    @IBInspectable open var placeHolderColor: UIColor = UIColor.themePrimary {
         didSet{
             self.floatTheLabel()
         }
     }
     
     /// Change placeholder color while editing.
-    @IBInspectable open var selectedPlaceHolderColor : UIColor = UIColor.themePrimary {
+    @IBInspectable open var selectedPlaceHolderColor: UIColor = UIColor.themePrimary {
         didSet{
             self.floatTheLabel()
         }
     }
     
     /// Change Error Text color.
-    @IBInspectable open var errorTextColor : UIColor = UIColor.red{
+    @IBInspectable open var errorTextColor: UIColor = UIColor.red{
         didSet{
             self.labelErrorPlaceholder?.textColor = errorTextColor
             self.floatTheLabel()
@@ -60,7 +60,7 @@ import UIKit
     }
     
     /// Change Error Line color.
-    @IBInspectable open var errorLineColor : UIColor = UIColor.red{
+    @IBInspectable open var errorLineColor: UIColor = UIColor.red{
         didSet{
             self.floatTheLabel()
         }
@@ -84,7 +84,7 @@ import UIKit
         }
     }
     
-    open var errorText : String? {
+    open var errorText: String? {
         willSet {
             self.labelErrorPlaceholder?.text = newValue
         }
@@ -147,7 +147,7 @@ import UIKit
         floatTheLabel()
     }
     
-    public func showErrorWithText(errorText : String) {
+    public func showErrorWithText(errorText: String) {
         self.errorText = errorText;
         self.labelErrorPlaceholder?.text = self.errorText
         showingError = true;
@@ -203,7 +203,7 @@ fileprivate extension ACFloatingTextfield {
         if labelPlaceholder?.superview != nil {
             return
         }
-        var placeholderText : String? = labelPlaceholder?.text
+        var placeholderText: String? = labelPlaceholder?.text
         if self.placeholder != nil && self.placeholder != "" {
             placeholderText = self.placeholder!
         }
@@ -316,13 +316,13 @@ fileprivate extension ACFloatingTextfield {
         labelPlaceholder?.isHidden = false
         if selected {
             
-            bottomLineView?.backgroundColor = showingError ? self.errorLineColor : self.selectedLineColor;
+            bottomLineView?.backgroundColor = showingError ? self.errorLineColor: self.selectedLineColor;
             labelPlaceholder?.textColor = self.selectedPlaceHolderColor;
             bottomLineViewHeight?.constant = 2;
             self.changePlaceHolder(color: self.selectedPlaceHolderColor)
             
         } else {
-            bottomLineView?.backgroundColor = showingError ? self.errorLineColor : self.lineColor;
+            bottomLineView?.backgroundColor = showingError ? self.errorLineColor: self.lineColor;
             bottomLineViewHeight?.constant = 1;
             self.labelPlaceholder?.textColor = self.placeHolderColor
             self.changePlaceHolder(color: self.placeHolderColor)
@@ -351,7 +351,7 @@ fileprivate extension ACFloatingTextfield {
         
         self.changePlaceHolder(color: self.placeHolderColor)
         
-        bottomLineView?.backgroundColor = showingError ? self.errorLineColor : self.lineColor;
+        bottomLineView?.backgroundColor = showingError ? self.errorLineColor: self.lineColor;
         bottomLineViewHeight?.constant = 1;
         
         if disableFloatingLabel {

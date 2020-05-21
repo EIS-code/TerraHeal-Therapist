@@ -65,10 +65,14 @@ class TherapistKycVC: MainVC {
     }
 
     @IBAction func btnSkipTapped(_ sender: Any) {
-        Common.appDelegate.loadWelcomeVC()
+        self.btnDone.isEnabled = false
+        self.btnNext.isEnabled = false
+        Common.appDelegate.loadHomeVC()
     }
 
     @IBAction func btnNextTapped(_ sender: Any) {
+        self.btnDone.isEnabled = false
+        self.btnNext.isEnabled = false
         Common.appDelegate.loadTherapistKycInfoVC()
     }
 

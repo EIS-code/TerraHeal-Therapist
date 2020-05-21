@@ -163,17 +163,12 @@ extension LoginVC {
                 if let user = response.data.first {
                     PreferenceHelper.shared.setUserId(user.id)
                     //PreferenceHelper.shared.setSessionToken(user.token)
-                    Singleton.shared.user = user
+                    appSingleton.user = user
                     Singleton.saveInDb()
-                    Common.appDelegate.loadTherapistProfileVC()
+                    Common.appDelegate.loadTherapistKycVC()
                 }
 
-            } else {
-                print(response.message)
             }
         }
     }
-
-    
-
 }

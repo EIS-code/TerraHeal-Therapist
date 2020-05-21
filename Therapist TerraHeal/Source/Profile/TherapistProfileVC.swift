@@ -33,8 +33,8 @@ class TherapistProfileVC: MainVC {
 
     var aboutMe:String = ""
     var selectedDate: Date? = nil
-    var selectedTherapies:[WorkDetails]  = []
-    var selectedMassages:[WorkDetails]  = []
+    var selectedTherapies:[MassageDetail]  = []
+    var selectedMassages:[MassageDetail]  = []
     var picker: UIImagePickerController! = UIImagePickerController()
     var imageSelected:UIImage?;
     
@@ -67,7 +67,7 @@ class TherapistProfileVC: MainVC {
         self.imgProfilePic?.setRound()
         self.btnMale?.setRound()
         self.btnFemale?.setRound()
-
+        self.btnDone?.setUpRoundedButton()
         self.btnThingsIcanDo?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.btnBio?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
 
@@ -95,24 +95,32 @@ class TherapistProfileVC: MainVC {
         self.btnBio.setFont(name: FontName.GradDuke, size: FontSize.button_14)
         self.btnThingsIcanDo.setTitle("T_PROFILE_LBL_THINGS_I_DO".localized(), for: .normal)
         self.btnThingsIcanDo.setFont(name: FontName.GradDuke, size: FontSize.button_14)
+        self.setUserData()
     }
 
     func setUserData() {
-        self.txtName.text = Singleton.shared.user.name
-        self.txtDob.text = Singleton.shared.user.dob
-        self.txtEmergencyContact.text = Singleton.shared.user.telNumber
-        
+        self.txtName.text = appSingleton.user.name
+        self.txtDob.text = appSingleton.user.dob
+        self.txtEmergencyContact.text = appSingleton.user.telNumber
+        self.aboutMe = appSingleton.user.shortDescription
+        if appSingleton.user.gender == Gender.Male {
+            self.btnMale.setSelected()
+            self.btnFemale.setDeselect()
+        } else {
+            self.btnFemale.setSelected()
+            self.btnMale.setDeselect()
+        }
 
     }
 
     @IBAction func btnMaleTapped(_ sender: Any) {
-        btnFemale.setSelected()
-        btnMale.setDeselect()
+        btnFemale.setDeselect()
+        btnMale.setSelected()
     }
 
     @IBAction func btnFemaleTapped(_ sender: UIButton) {
-        btnFemale.setDeselect()
-        btnMale.setSelected()
+        btnMale.setDeselect()
+        btnFemale.setSelected()
     }
 
     // MARK: Action Buttons
@@ -121,7 +129,7 @@ class TherapistProfileVC: MainVC {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnDoneTapped(_ sender: Any) {
-
+        self.wsProfile()
     }
     @IBAction func dateSelected() {
         if let datePicker = self.txtDob.inputView as? UIDatePicker {
@@ -138,13 +146,13 @@ class TherapistProfileVC: MainVC {
         let alert: TherapistWorkDialog = TherapistWorkDialog.fromNib()
         alert.initialize(selectedMassages: self.selectedMassages, selectedTherapies: self.selectedTherapies, data: "")
         alert.show(animated: true)
-        alert.onBtnDoneTapped = { [weak alert, weak self] (massages:[WorkDetails],therapies:[WorkDetails]) in
+        alert.onBtnDoneTapped = { [weak alert, weak self] (massages:[MassageDetail],therapies:[MassageDetail]) in
             alert?.dismiss()
             sender.isEnabled = true
             self?.selectedMassages = massages
             self?.selectedTherapies = therapies
         }
-        alert.onBtnCancelTapped = { [weak alert, weak self] in
+        alert.onBtnCancelTapped = { [weak alert/*,weak self*/] in
             alert?.dismiss()
             sender.isEnabled = true
         }
@@ -159,7 +167,7 @@ class TherapistProfileVC: MainVC {
             self?.aboutMe = data
             sender.isEnabled = true
         }
-        alert.onBtnCancelTapped = { [weak alert, weak self] in
+        alert.onBtnCancelTapped = { [weak alert/*,weak self*/] in
             alert?.dismiss()
             sender.isEnabled = true
         }
@@ -185,26 +193,20 @@ extension TherapistProfileVC:  UIImagePickerControllerDelegate,UINavigationContr
         }
     }
 
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             imageSelected = image
-            let fileManager = FileManager.default
-            let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
             self.imgProfilePic.image = imageSelected
             self.lblProfilePic.isHidden = true
         }
 
         else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageSelected = image
-            let fileManager = FileManager.default
-            let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
             self.imgProfilePic.image = imageSelected
             self.lblProfilePic.isHidden = true
         }
         else {
             imageSelected = nil
-            let url:String? = nil
-
         }
         Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: nil)
     }
@@ -222,21 +224,33 @@ extension TherapistProfileVC {
     func wsProfile() {
         Loader.showLoading()
         var request: User.RequestProfile = User.RequestProfile()
-
-        request.password = "iOS@1995"
-        request.name = (txtName.text?.trim())!
-        AppWebApi.profile(params: request) { (response) in
-            let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
+        request.name = txtName.text?.trim() ??  ""
+        request.email = appSingleton.user.email
+        request.dob = (txtDob.text?.trim() ?? "").formatDate(from: DateFormat.DD_MM_YYYY, to: DateFormat.DOB)
+        request.gender = btnMale.isHighlighted ? Gender.Male: Gender.Female
+        request.tel_number = txtEmergencyContact.text?.trim()
+        request.hobbies = "Reading"
+        request.short_description = self.aboutMe
+        request.paid_percentage = "50"
+        var document:  UploadDocumentDetail? = nil
+        if imageSelected != nil {
+            document  = UploadDocumentDetail(id: "", name: PreferenceHelper.shared.getUserId(), image: imageSelected, data: imageSelected?.jpegData(compressionQuality: 0.8), isCompleted: true)
+        }
+        AppWebApi.profile(params: request, image: document) { (response) in
+            let _: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
             Loader.hideLoading()
             self.btnDone?.isEnabled = true
-            if let user = response.data.first {
-                PreferenceHelper.shared.setUserId(user.id)
-                //PreferenceHelper.shared.setSessionToken(user.token)
-                Singleton.shared.user = user
-                Singleton.saveInDb()
-                Common.appDelegate.loadTherapistProfileVC()
+            let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
+            if ResponseModel.isSuccess(response: model, withSuccessToast: true, andErrorToast: true) {
+                if let user = response.data.first {
+                    PreferenceHelper.shared.setUserId(user.id)
+                    //PreferenceHelper.shared.setSessionToken(user.token)
+                    appSingleton.user = user
+                    Singleton.saveInDb()
+                    Common.appDelegate.loadTherapistProfileVC()
+                }
+
             }
         }
     }
-
 }

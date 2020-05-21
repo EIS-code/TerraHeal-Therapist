@@ -63,7 +63,7 @@ class CompleteTherapistSignUpProcessVC: MainVC {
     }
 
     @IBAction func btnHomeTapped(_ sender: Any) {
-        Common.appDelegate.loadWelcomeVC()
+        Common.appDelegate.loadHomeVC()
     }
 }
 

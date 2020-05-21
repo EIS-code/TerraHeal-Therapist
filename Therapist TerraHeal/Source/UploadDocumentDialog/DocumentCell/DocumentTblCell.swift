@@ -7,12 +7,7 @@
 //
 
 import UIKit
-struct UploadDocumentDetail {
-    var id: String  = ""
-    var name: String  = ""
-    var image: UIImage? = nil
-    var isCompleted: Bool  = false
-}
+
 class DocumentTblCell: TableCell {
 
     @IBOutlet weak var imgChecked: ThemeButton!
