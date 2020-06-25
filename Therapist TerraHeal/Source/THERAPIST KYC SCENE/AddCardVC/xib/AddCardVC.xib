@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCardVC" customModule="Terra_Heal" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCardVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <connections>
                 <outlet property="btnAddCard" destination="26g-HT-sfe" id="Dkr-pG-1K5"/>
                 <outlet property="lblCardNumber" destination="3vv-wg-biF" id="ulM-cS-xsy"/>
@@ -40,13 +40,13 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQc-C6-2jQ" userLabel="vwContent">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="405.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DI-pi-2Xp" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DI-pi-2Xp" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="20" y="56" width="280" height="19"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0n-yx-iC7" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0n-yx-iC7" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="20" y="95" width="280" height="37.5"/>
                                     <string key="text">You need to identify 
 to sign back in</string>
@@ -57,13 +57,13 @@ to sign back in</string>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jLy-nt-QGy">
                                     <rect key="frame" x="20" y="162.5" width="280" height="171"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vv-wg-biF" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vv-wg-biF" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_primary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-88-9Ib" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-88-9Ib" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="30.5" width="280" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="rMz-88-9Ib" secondAttribute="height" multiplier="28:5" id="D36-Lz-2CX"/>
@@ -74,13 +74,13 @@ to sign back in</string>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28E-tI-Dp0" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28E-tI-Dp0" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="90.5" width="280" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_primary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EXPIRY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJS-5M-Hel" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EXPIRY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJS-5M-Hel" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="121" width="280" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="IJS-5M-Hel" secondAttribute="height" multiplier="28:5" id="Hi7-fd-gpA"/>
@@ -93,7 +93,7 @@ to sign back in</string>
                                         </textField>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26g-HT-sfe" userLabel="btnSkip" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26g-HT-sfe" userLabel="btnSkip" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="52" y="353.5" width="216" height="32"/>
                                     <color key="backgroundColor" name="theme_primary_light_background"/>
                                     <constraints>

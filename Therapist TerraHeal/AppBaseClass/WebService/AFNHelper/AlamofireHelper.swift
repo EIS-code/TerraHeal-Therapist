@@ -101,12 +101,20 @@ class AlamofireHelper: NSObject {
                    "Content-Disposition": "form-data"]
         AF.upload(multipartFormData: { (multipartFormData) in
 
-            for document in documents {
-                multipartFormData.append(document.data!, withName: paramName, fileName: document.name, mimeType: "*/*")
-            }
+            print("Request Parameters:- \(paramData)\n")
+            print("Request Files:- \n")
             for (key, value) in paramData {
                 multipartFormData.append((value as! String).data(using: String.Encoding.utf8)!, withName: key)
             }
+
+            for document in documents {
+
+                
+                multipartFormData.append(document.data!, withName: paramName + "[]", fileName: document.name, mimeType: "*/*")
+                print("File Name: \(document.name), Length:\(document.data?.count) ParamName: \(paramName)")
+            }
+
+
         }, to: urlString, method: .post, headers: headers).response { (response) in
             switch(response.result) {
             case .success(let value):

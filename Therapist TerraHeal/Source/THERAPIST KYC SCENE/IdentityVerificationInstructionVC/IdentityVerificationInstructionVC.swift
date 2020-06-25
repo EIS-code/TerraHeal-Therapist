@@ -103,7 +103,12 @@ class IdentityVerificationInstructionVC: MainVC {
 
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        self.navigationController?.popViewController(animated: true)
+        Loader.showLoading()
+        AppWebApi.getUserDetail { (response) in
+            Loader.hideLoading()
+            self.navigationController?.popViewController(animated: true)
+        }
+
     }
     @IBAction func btnPrivacyTapped(_ sender: Any) {
         Common.appDelegate.loadPaymentAccountVC(navigaionVC: self.navigationController)
@@ -168,6 +173,19 @@ class IdentityVerificationInstructionVC: MainVC {
 
     func uploadFile(documents:[UploadDocumentDetail], params:User.RequestUploadDocument = User.RequestUploadDocument()) {
         AppWebApi.uploadDocument(params: params, documents:  documents) { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                if params.type == DocumentType.addressProof {
+                    self.btnInfo1.isSelected = true
+                } else if params.type == DocumentType.identityProof {
+                    self.btnInfo2.isSelected = true
+                }
+                else if params.type == DocumentType.insuranceProof {
+                    self.btnInfo3.isSelected = true
+                }
+
+            }
+
+
             print(response)
         }
     }

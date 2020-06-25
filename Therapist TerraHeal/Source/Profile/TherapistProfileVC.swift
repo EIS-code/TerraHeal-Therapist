@@ -33,11 +33,11 @@ class TherapistProfileVC: MainVC {
 
     var aboutMe:String = ""
     var selectedDate: Date? = nil
-    var selectedTherapies:[MassageDetail]  = []
-    var selectedMassages:[MassageDetail]  = []
+    var selectedTherapies:[String]  = []
+    var selectedMassages:[String]  = []
     var picker: UIImagePickerController! = UIImagePickerController()
     var imageSelected:UIImage?;
-    
+    var gender: String = Gender.Other
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -65,11 +65,11 @@ class TherapistProfileVC: MainVC {
         super.viewDidLayoutSubviews()
         self.lblProfilePic?.setRound()
         self.imgProfilePic?.setRound()
-        self.btnMale?.setRound()
-        self.btnFemale?.setRound()
+        //self.btnMale?.setRound()
+        //self.btnFemale?.setRound()
         self.btnDone?.setUpRoundedButton()
         self.btnThingsIcanDo?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.btnBio?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        //self.btnBio?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
 
     }
 
@@ -95,30 +95,35 @@ class TherapistProfileVC: MainVC {
         self.btnBio.setFont(name: FontName.GradDuke, size: FontSize.button_14)
         self.btnThingsIcanDo.setTitle("T_PROFILE_LBL_THINGS_I_DO".localized(), for: .normal)
         self.btnThingsIcanDo.setFont(name: FontName.GradDuke, size: FontSize.button_14)
+        self.btnSubmit.setTitle("BTN_SUBMIT".localized(), for: .normal)
+        self.btnSubmit.setFont(name: FontName.GradDuke, size: FontSize.button_22)
         self.setUserData()
     }
 
     func setUserData() {
         self.txtName.text = appSingleton.user.name
-        self.txtDob.text = appSingleton.user.dob
+        self.txtDob.text = appSingleton.user.dob.formatDate(from: DateFormat.DOB, to: DateFormat.DD_MM_YYYY)
         self.txtEmergencyContact.text = appSingleton.user.telNumber
         self.aboutMe = appSingleton.user.shortDescription
-        if appSingleton.user.gender == Gender.Male {
-            self.btnMale.setSelected()
-            self.btnFemale.setDeselect()
-        } else {
-            self.btnFemale.setSelected()
-            self.btnMale.setDeselect()
+        if !self.aboutMe.isEmpty() {
+            self.btnBio.setRound(withBorderColor: UIColor.themePrimary, andCornerRadious: 10.0, borderWidth: 1.0)
         }
-
+        if appSingleton.user.gender == Gender.Male {
+            self.btnMaleTapped(self.btnMale)
+        } else {
+            self.btnFemaleTapped(self.btnFemale)
+        }
+        self.selectedMassages = appSingleton.user.selectedMassages
     }
 
-    @IBAction func btnMaleTapped(_ sender: Any) {
+    @IBAction func btnMaleTapped(_ sender: UIButton) {
+        self.gender = Gender.Male
         btnFemale.setDeselect()
         btnMale.setSelected()
     }
 
     @IBAction func btnFemaleTapped(_ sender: UIButton) {
+        self.gender = Gender.Female
         btnMale.setDeselect()
         btnFemale.setSelected()
     }
@@ -129,6 +134,8 @@ class TherapistProfileVC: MainVC {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnDoneTapped(_ sender: Any) {
+        self.btnDone.isEnabled = false
+        self.btnSubmit.isEnabled = false
         self.wsProfile()
     }
     @IBAction func dateSelected() {
@@ -146,7 +153,7 @@ class TherapistProfileVC: MainVC {
         let alert: TherapistWorkDialog = TherapistWorkDialog.fromNib()
         alert.initialize(selectedMassages: self.selectedMassages, selectedTherapies: self.selectedTherapies, data: "")
         alert.show(animated: true)
-        alert.onBtnDoneTapped = { [weak alert, weak self] (massages:[MassageDetail],therapies:[MassageDetail]) in
+        alert.onBtnDoneTapped = { [weak alert, weak self] (massages:[String],therapies:[String]) in
             alert?.dismiss()
             sender.isEnabled = true
             self?.selectedMassages = massages
@@ -177,8 +184,6 @@ class TherapistProfileVC: MainVC {
         self.photoFromGallary()
     }
     // MARK: Other Functions
-
-
 }
 
 
@@ -227,11 +232,17 @@ extension TherapistProfileVC {
         request.name = txtName.text?.trim() ??  ""
         request.email = appSingleton.user.email
         request.dob = (txtDob.text?.trim() ?? "").formatDate(from: DateFormat.DD_MM_YYYY, to: DateFormat.DOB)
-        request.gender = btnMale.isHighlighted ? Gender.Male: Gender.Female
-        request.tel_number = txtEmergencyContact.text?.trim()
+        request.gender =  self.gender
+        if txtEmergencyContact.text?.isEmpty() ?? true {
+           request.tel_number = appSingleton.user.telNumber
+        } else {
+           request.tel_number = txtEmergencyContact.text?.trim()
+        }
         request.hobbies = "Reading"
         request.short_description = self.aboutMe
         request.paid_percentage = "50"
+        request.selected_massages = selectedMassages
+        request.selected_therapies = selectedTherapies
         var document:  UploadDocumentDetail? = nil
         if imageSelected != nil {
             document  = UploadDocumentDetail(id: "", name: PreferenceHelper.shared.getUserId(), image: imageSelected, data: imageSelected?.jpegData(compressionQuality: 0.8), isCompleted: true)
@@ -239,7 +250,6 @@ extension TherapistProfileVC {
         AppWebApi.profile(params: request, image: document) { (response) in
             let _: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
             Loader.hideLoading()
-            self.btnDone?.isEnabled = true
             let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
             if ResponseModel.isSuccess(response: model, withSuccessToast: true, andErrorToast: true) {
                 if let user = response.data.first {
@@ -247,10 +257,11 @@ extension TherapistProfileVC {
                     //PreferenceHelper.shared.setSessionToken(user.token)
                     appSingleton.user = user
                     Singleton.saveInDb()
-                    Common.appDelegate.loadTherapistProfileVC()
+                    self.setUserData()
                 }
-
             }
+            self.btnDone?.isEnabled = true
+            self.btnSubmit?.isEnabled = true
         }
     }
 }

@@ -141,6 +141,7 @@ extension AppDelegate {
     }
 
     func loadTherapistKycInfoVC(navigaionVC:UINavigationController? = nil) {
+        Loader.showLoading()
         AppWebApi.getUserDetail { (response) in
             Loader.hideLoading()
             let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())

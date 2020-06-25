@@ -51,10 +51,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agl-Wb-btm" userLabel="scrVw">
-                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                    <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp5-yH-riX" userLabel="vwContent">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW8-zo-2D4" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="55.999999999999993" width="375" height="25.666666666666664"/>
@@ -75,7 +75,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jsc-jy-Xvp" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="191.33333333333334" width="113" height="30"/>
+                                    <rect key="frame" x="20" y="191.33333333333331" width="113" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="sl5-jG-TS2"/>
                                     </constraints>
@@ -92,7 +92,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qv0-Fc-W8E" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="163" y="191.33333333333334" width="192" height="30"/>
+                                    <rect key="frame" x="163" y="191.33333333333331" width="192" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="s06-IS-qhO"/>
                                     </constraints>
@@ -160,7 +160,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kb-2c-FYf" userLabel="emailVerification">
-                                    <rect key="frame" x="32" y="372.33333333333326" width="323" height="341.66666666666674"/>
+                                    <rect key="frame" x="32" y="372.33333333333326" width="323" height="297.66666666666674"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oZ6-jT-WyV" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="9.9999999999999964" width="202" height="50.666666666666657"/>
@@ -318,15 +318,29 @@
                         </button>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KM0-2V-nfi">
+                    <rect key="frame" x="20" y="64" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KM0-2V-nfi" secondAttribute="height" multiplier="1:1" id="HeF-EX-0pE"/>
+                        <constraint firstAttribute="height" constant="44" id="nYF-Fa-1Mi"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    <state key="normal" image="asset-cross"/>
+                    <connections>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="GX7-h8-Bgz"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="43y-ro-83t" secondAttribute="bottom" constant="20" id="9VZ-2b-rta"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Agl-Wb-btm" secondAttribute="trailing" id="A7l-Sb-LQw"/>
+                <constraint firstItem="KM0-2V-nfi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="DE2-sd-RKC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="43y-ro-83t" secondAttribute="trailing" constant="20" id="MME-zC-hUo"/>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RLs-Nt-G9K"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Agl-Wb-btm" secondAttribute="bottom" id="TPz-Zk-G3f"/>
-                <constraint firstItem="Agl-Wb-btm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kN4-Se-iQP"/>
+                <constraint firstItem="Agl-Wb-btm" firstAttribute="top" secondItem="KM0-2V-nfi" secondAttribute="bottom" constant="-20" id="kN4-Se-iQP"/>
+                <constraint firstItem="KM0-2V-nfi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="yav-rp-gd7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131" y="154"/>
@@ -335,6 +349,7 @@
     <resources>
         <image name="asset-arrow-right" width="42.666667938232422" height="42.666667938232422"/>
         <image name="asset-check" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="asset-cross" width="42.666667938232422" height="42.666667938232422"/>
         <namedColor name="theme_button_text">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -10,11 +10,11 @@ import Foundation
 
 //MARK: Request Models
 
-typealias MassageDetail = Massage.MassageData
+typealias TherapyDetail = Therapy.TherapyData
 
-enum Massage {
+enum Therapy {
 
-    struct RequestMassages: Codable  {
+    struct RequestTherapy: Codable  {
         var id: String = PreferenceHelper.shared.getUserId()
         // var token: String = PreferenceHelper.shared.getSessionToken()
         var device_token: String = PreferenceHelper.shared.getDeviceToken()
@@ -24,18 +24,33 @@ enum Massage {
         var q: String = ""
     }
 }
+class WorkData {
+    var createdAt: String = ""
+    var id: String = ""
+    var image: String = ""
+    var name: String = ""
+    var updatedAt: String = ""
+    var isSelected:  Bool = false
+    init(fromDictionary dictionary: [String:Any]){
+        self.createdAt = (dictionary["created_at"] as? String) ?? ""
+        self.id = (dictionary["id"] as? String) ?? ""
+        self.image = (dictionary["image"] as? String) ?? ""
+        self.name = (dictionary["name"] as? String) ?? ""
+        self.updatedAt = (dictionary["updated_at"] as? String) ?? ""
+    }
+}
 
 //MARK: Response Models
-extension Massage {
+extension Therapy {
 
-    class ResponseMassageList:  ResponseModel {
-        var data: [MassageData] = []
+    class ResponseTherapyList:  ResponseModel {
+        var data: [TherapyData] = []
         override init(fromDictionary dictionary: [String:Any]) {
             super.init(fromDictionary: dictionary)
-            data = [MassageData]()
+            data = [TherapyData]()
             if let dataArray = dictionary["data"] as? [[String:Any]]{
                 for dic in dataArray{
-                    let value = MassageData(fromDictionary: dic)
+                    let value = TherapyData(fromDictionary: dic)
                     data.append(value)
                 }
             }
@@ -43,7 +58,7 @@ extension Massage {
 
     }
 
-    class MassageData: ResponseModel {
+    class TherapyData: ResponseModel {
         var createdAt: String = ""
         var id: String = ""
         var image: String = ""

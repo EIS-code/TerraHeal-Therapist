@@ -14,9 +14,9 @@
             filePath = "Therapist TerraHeal/Source/Profile/TherapistWorkDialog/TherapistWorkDialog.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "btnMassageTapped(_:)"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "btnDoneTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -30,9 +30,9 @@
             filePath = "Therapist TerraHeal/Source/Profile/TherapistWorkDialog/TherapistWorkDialog.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "setCollectionView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -55,38 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B6B12DD2-C966-47B8-92A4-7376840C1312"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Therapist TerraHeal/Source/Profile/TherapistProfileVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "setUserData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3069691A-AE45-4411-9C7E-56046FB25C75"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Therapist TerraHeal/Source/Profile/TherapistProfileVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "wsProfile()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "249E63C4-8D11-4A96-B140-482E29341FF5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -96,40 +64,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "218"
             endingLineNumber = "218"
-            landmarkName = "wsVerifyEmail(isResend:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "249E63C4-8D11-4A96-B140-482E29341FF5 - 213e8edfd7edf0ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Therapist_TerraHeal.ContactVerificationVC.(wsVerifyEmail in _E8147B3DE6EA5040730197D75B0F9697)(isResend: Swift.Bool) -&gt; ()"
-                  moduleName = "Therapist TerraHeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jaydeep/Desktop/EvolutionWork/TerraHeal(Evolution)/Apps/Therapist%20TerraHeal/Therapist%20TerraHeal/Source/ContactVerification/ContactVerificationVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "218"
-                  endingLineNumber = "218"
-                  offsetFromSymbolStart = "1859">
-               </Location>
-               <Location
-                  uuid = "249E63C4-8D11-4A96-B140-482E29341FF5 - f1cc20efe760e5b0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Therapist_TerraHeal.User.ResponseVerification) -&gt; () in Therapist_TerraHeal.ContactVerificationVC.(wsVerifyEmail in _E8147B3DE6EA5040730197D75B0F9697)(isResend: Swift.Bool) -&gt; ()"
-                  moduleName = "Therapist TerraHeal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jaydeep/Desktop/EvolutionWork/TerraHeal(Evolution)/Apps/Therapist%20TerraHeal/Therapist%20TerraHeal/Source/ContactVerification/ContactVerificationVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "219"
-                  endingLineNumber = "219"
-                  offsetFromSymbolStart = "132">
-               </Location>
-            </Locations>
+            landmarkName = "ContactVerificationVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -144,23 +80,23 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "220"
             endingLineNumber = "220"
-            landmarkName = "wsVerifyEmail(isResend:)"
-            landmarkType = "7">
+            landmarkName = "ContactVerificationVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "584BFFFA-9D92-4407-BAFC-5B6A61937FD7"
+            uuid = "6B8201D9-D149-4F89-943B-DB603C4E6E60"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Therapist TerraHeal/AppBaseClass/WebService/ResponseModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "init(fromDictionary:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "isSuccess(response:withSuccessToast:andErrorToast:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

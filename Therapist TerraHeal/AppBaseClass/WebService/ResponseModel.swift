@@ -19,7 +19,7 @@ class ResponseModel: NSObject{
         code = (dictionary["code"] as? String) ?? ""
         success = (dictionary["success"] as? String) ?? ""
         message = (dictionary["msg"] as? String) ?? ""
-        if let arrForErrors = dictionary["error_messages"] as? [Any] {
+        if let arrForErrors = dictionary["msg"] as? [Any] {
             if let intError = arrForErrors as? [Int] {
                 errorMessage = [(intError.first?.toString()) ?? ""]
             }
@@ -33,7 +33,11 @@ class ResponseModel: NSObject{
         }
 
         if message.isEmpty {
-            message = code
+            if errorMessage.isEmpty {
+                message = code
+            } else {
+                message = errorMessage.joined(separator: "\n")
+            }
         }
     }
 

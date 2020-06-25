@@ -20,6 +20,9 @@
 		634501D72473A8B800671C9B /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634501D62473A8B800671C9B /* Singleton.swift */; };
 		6349DF9E24764F7F0073D269 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6349DF9C24764F7F0073D269 /* HomeVC.xib */; };
 		6349DF9F24764F7F0073D269 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6349DF9D24764F7F0073D269 /* HomeVC.swift */; };
+		634A5E522477931200AD0EA8 /* ConfimationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A5E502477931200AD0EA8 /* ConfimationDialog.swift */; };
+		634A5E532477931200AD0EA8 /* ConfimationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634A5E512477931200AD0EA8 /* ConfimationDialog.xib */; };
+		635237F62477ED1500F0421C /* TherapyWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635237F52477ED1400F0421C /* TherapyWebService.swift */; };
 		636DDB9224750D140014C7DC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636DDB9124750D140014C7DC /* MobileCoreServices.framework */; };
 		63ABC18D246D650D00360F07 /* ACFloatingTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0CC246D650B00360F07 /* ACFloatingTextfield.swift */; };
 		63ABC18E246D650D00360F07 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0CD246D650B00360F07 /* Loader.swift */; };
@@ -121,6 +124,9 @@
 		634501D62473A8B800671C9B /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		6349DF9C24764F7F0073D269 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		6349DF9D24764F7F0073D269 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		634A5E502477931200AD0EA8 /* ConfimationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfimationDialog.swift; sourceTree = "<group>"; };
+		634A5E512477931200AD0EA8 /* ConfimationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfimationDialog.xib; sourceTree = "<group>"; };
+		635237F52477ED1400F0421C /* TherapyWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapyWebService.swift; sourceTree = "<group>"; };
 		636DDB9124750D140014C7DC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		63ABC0B2246D64B500360F07 /* Therapist TerraHeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Therapist TerraHeal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63ABC0C3246D64B700360F07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -229,6 +235,7 @@
 				6343BC0524728C9800C2A25B /* AFNHelper */,
 				6343BC0924728C9800C2A25B /* UserWebService.swift */,
 				6302986A2476A80000074D6A /* MassageWebService.swift */,
+				635237F52477ED1400F0421C /* TherapyWebService.swift */,
 				6343BC0E2472930000C2A25B /* ResponseModel.swift */,
 				634501D62473A8B800671C9B /* Singleton.swift */,
 			);
@@ -260,6 +267,15 @@
 				6349DF9C24764F7F0073D269 /* HomeVC.xib */,
 			);
 			path = xib;
+			sourceTree = "<group>";
+		};
+		634A5E4F2477931200AD0EA8 /* ConfimationDialog */ = {
+			isa = PBXGroup;
+			children = (
+				634A5E502477931200AD0EA8 /* ConfimationDialog.swift */,
+				634A5E512477931200AD0EA8 /* ConfimationDialog.xib */,
+			);
+			path = ConfimationDialog;
 			sourceTree = "<group>";
 		};
 		63ABC0A9246D64B500360F07 = {
@@ -748,6 +764,7 @@
 		63ABC181246D650D00360F07 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				634A5E4F2477931200AD0EA8 /* ConfimationDialog */,
 				63ABC182246D650D00360F07 /* TextViewDialog */,
 				63ABC185246D650D00360F07 /* AlertDialog */,
 			);
@@ -910,6 +927,7 @@
 				63ABC1F2246D650D00360F07 /* TherapistImages.xcassets in Resources */,
 				63ABC1F3246D650D00360F07 /* TextViewDialog.xib in Resources */,
 				63ABC1CB246D650D00360F07 /* WorkCell.xib in Resources */,
+				634A5E532477931200AD0EA8 /* ConfimationDialog.xib in Resources */,
 				63ABC1BB246D650D00360F07 /* IdentityVerificationInstructionVC.xib in Resources */,
 				63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */,
 				63ABC1B0246D650D00360F07 /* PaymetAccountCell.xib in Resources */,
@@ -1018,10 +1036,12 @@
 				63ABC19B246D650D00360F07 /* Common.swift in Sources */,
 				63ABC1AF246D650D00360F07 /* PaymetAccountCell.swift in Sources */,
 				63ABC1BC246D650D00360F07 /* IdentityVerificationInstructionVC.swift in Sources */,
+				634A5E522477931200AD0EA8 /* ConfimationDialog.swift in Sources */,
 				63ABC1AA246D650D00360F07 /* LaunchVC.swift in Sources */,
 				63ABC19F246D650D00360F07 /* ThemeLabel.swift in Sources */,
 				63ABC1E6246D650D00360F07 /* TutorialVC.swift in Sources */,
 				63ABC198246D650D00360F07 /* UITextField + Extension.swift in Sources */,
+				635237F62477ED1500F0421C /* TherapyWebService.swift in Sources */,
 				63ABC1B6246D650D00360F07 /* CompleteTherapistSignUpProcessVC.swift in Sources */,
 				63ABC1A5246D650D00360F07 /* SceneDelegate.swift in Sources */,
 			);

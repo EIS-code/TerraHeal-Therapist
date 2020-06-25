@@ -171,6 +171,9 @@
 "LBL_UPLOAD" = "Upload";
 "BTN_SUBMIT" = "Submit";
 "BTN_APPLY" =  "Apply";
+"BTN_CONFIRM" = "Confirm";
+
+
 
 //MARK: -
 //MARK: VALIDATION TOAST MESSAGES
@@ -183,3 +186,4 @@
 "VALIDATION_MSG_PLEASE_ENTER_OTP" = "Please enter valid otp";
 "VALIDATION_MSG_PLEASE_UPLOAD_ALL_DOCUMENTS" = "Please Upload documents: - ";
 "VALIDATION_MSG_INVALID_DATA" = "Please enter valid data";
+"DIALOG_CONFIRM_DELET_MSG" = "Are you sure you want to delete";

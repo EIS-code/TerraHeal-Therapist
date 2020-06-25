@@ -83,6 +83,17 @@ class ContactVerificationVC: MainVC {
         stkProceed.isHidden = true
         vwEmailVerified.isHidden = true
         vwMobileVerified.isHidden = true
+        if appSingleton.user.isEmailVerified.toBool {
+            txtEmail.text = appSingleton.user.email
+            self.verifedEmail()
+            self.isEmailVerified = true
+        }
+        if appSingleton.user.isMobileVerified.toBool {
+            txtMobile.text = appSingleton.user.telNumber
+            self.verifedMobile()
+            self.isMobileVerified = true
+        }
+        self.updateProceedUI()
     }
 
     private func initialViewSetup() {
@@ -173,7 +184,7 @@ class ContactVerificationVC: MainVC {
         }
 
         alertForMobileVerification.onBtnResendTapped = { [weak self] in
-            self?.wsVerifyPhone()
+            self?.wsVerifyPhone(isResend: true)
         }
         alertForMobileVerification.onBtnCancelTapped = { [weak alertForMobileVerification,  weak self] in
             alertForMobileVerification?.dismiss()
@@ -258,7 +269,7 @@ extension ContactVerificationVC {
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 if isResend {
-                    self.alertForEmailVerification.otpTextFieldView.clearTextField()
+                    self.alertForMobileVerification.otpTextFieldView.clearTextField()
                 } else {
                     self.openPhoneVerification()
                 }

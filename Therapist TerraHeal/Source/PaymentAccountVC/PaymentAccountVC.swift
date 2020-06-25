@@ -88,6 +88,7 @@ class PaymentAccountVC: MainVC {
         alert.onBtnDoneTapped = { [weak alert, weak self] (data:String) in
             alert?.dismiss()
             self?.arrForPayment[paymentDetail.id].isConnected = true
+            appSingleton.user.isPaymentDetailAdded = Constant.True
             self?.collectionView.reloadData()
         }
         alert.onBtnCancelTapped = { [weak alert/*,weak self*/] in

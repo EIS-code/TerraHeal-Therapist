@@ -43,12 +43,14 @@ class ThemeButton: UIButton {
         }
     }*/
     func setSelected() {
-        self.isHighlighted = true
-        borderDissapear(hideBorder: false)
+      //  self.isHighlighted = true
+        self.setRound(withBorderColor: UIColor.themePrimary, andCornerRadious: 0.0, borderWidth: 1.5)
+        self.alpha = 1.0
     }
     func setDeselect() {
-        self.isHighlighted = false
-        borderDissapear(hideBorder: true)
+        //self.isHighlighted = false
+        self.setRound(withBorderColor: UIColor.clear, andCornerRadious: 0.0, borderWidth: 1.5)
+        self.alpha = 0.5
     }
 
     func borderDissapear (hideBorder: Bool) {

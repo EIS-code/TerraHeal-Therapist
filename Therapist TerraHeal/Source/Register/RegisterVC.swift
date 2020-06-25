@@ -179,6 +179,7 @@ extension RegisterVC {
         request.email = txtEmail.text?.trim() ?? ""
         request.password = txtPassword.text!
         request.name = (txtName.text?.trim())!
+        request.name = (.text?.trim())!
         AppWebApi.register(params: request) { (response) in
             self.btnSignUp?.isEnabled = true
             self.btnDone?.isEnabled = true

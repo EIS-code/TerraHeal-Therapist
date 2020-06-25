@@ -95,10 +95,6 @@ class UploadDocumentDialog: ThemeDialogView {
                 self.backgroundView.alpha = 0.66
                 self.dialogView.alpha = 1.0
             }) { (completion) in
-
-
-
-                //self.animationVw.shake()
                 self.isUserInteractionEnabled = true
             }
         }
@@ -137,8 +133,6 @@ class UploadDocumentDialog: ThemeDialogView {
 
     @IBAction func btnAddFileTapped(_ sender: UIButton) {
         self.openDocumentPicker()
-        //self.photoFromGallary()
-
     }
 
 
@@ -146,33 +140,33 @@ class UploadDocumentDialog: ThemeDialogView {
         if self.onBtnDoneTapped != nil {
             self.onBtnDoneTapped!(self.arrForUploadDocuments);
         }
-        /*
-        if self.arrForUploadDocuments.count == 0{
-            Common.showAlert(message: "VALIDATION_MSG_PLEASE_UPLOAD_ALL_DOCUMENTS".localized() + self.numberOfDocuments.toString())
-        } else {
-            if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!(self.arrForUploadDocuments);
-            }
-        }*/
-
-
     }
 
+    func openConfirmationDialog(index:Int) {
+        let alert: ConfimationDialog = ConfimationDialog.fromNib()
+        alert.initialize(message: "DIALOG_CONFIRM_DELET_MSG".localized() + "\n" + arrForUploadDocuments[index].name,buttonTitle: "BTN_CONFIRM".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss();
+        }
+        alert.onBtnSubmitTapped = {
+            [weak alert, weak self] in
+            alert?.dismiss();
+            self?.arrForUploadDocuments.remove(at: index)
+            self?.reloadData()
+        }
+    }
     func addFileToArray(document:UploadDocumentDetail) {
         self.arrForUploadDocuments.append(document)
+        self.reloadData()
+    }
+    func reloadData() {
         self.tblDocuments.reloadData()
         if self.dialogView.bounds.height < (UIScreen.main.bounds.height * 0.8) {
             self.tblDocuments.reloadData(heightToFit: self.hwTblVw) {
             }
-        } else  {
-            // self.hwTblVw.constant = (self.dialogView.bounds.height * 0.5)
         }
-       /* if self.arrForUploadDocuments.count == numberOfDocuments {
-            self.btnAddFile.isEnabled = false
-        } else {
-            self.btnAddFile.isEnabled = true
-        }*/
-
     }
 }
 
@@ -193,11 +187,13 @@ extension UploadDocumentDialog:  UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //self.openDocumentDialog()
+        self.openConfirmationDialog(index: indexPath.row)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+
+
 }
 
 

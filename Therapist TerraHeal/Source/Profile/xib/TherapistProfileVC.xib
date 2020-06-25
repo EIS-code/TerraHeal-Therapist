@@ -45,7 +45,7 @@
                     <rect key="frame" x="20" y="64" width="335" height="694"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeP-gc-xbD" userLabel="vwContent">
-                            <rect key="frame" x="0.0" y="0.0" width="335" height="936.66666666666663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="898.66666666666663"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz8-KT-bjZ" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="20" y="55.999999999999993" width="295" height="18.666666666666664"/>
@@ -109,19 +109,19 @@
                                     <textInputTraits key="textInputTraits" textContentType="name"/>
                                 </textField>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gm1-qK-ZDk">
-                                    <rect key="frame" x="91.666666666666686" y="333.66666666666669" width="152" height="106.33333333333331"/>
+                                    <rect key="frame" x="87.666666666666686" y="333.66666666666669" width="160" height="110.33333333333331"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnS-4x-u3K" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                            <rect key="frame" x="59.999999999999986" y="0.0" width="32" height="20.333333333333332"/>
+                                            <rect key="frame" x="63.999999999999986" y="0.0" width="32" height="20.333333333333332"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_primary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hzq-dD-hvV">
-                                            <rect key="frame" x="0.0" y="40.333333333333314" width="152" height="66"/>
+                                            <rect key="frame" x="0.0" y="40.333333333333314" width="160" height="70"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zm7-uu-WZa" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                     <color key="backgroundColor" name="theme_primary_light_background"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Zm7-uu-WZa" secondAttribute="height" multiplier="1:1" id="WWh-HC-xCc"/>
@@ -135,10 +135,10 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUW-YR-kRf" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                                    <rect key="frame" x="85.999999999999986" y="0.0" width="66.000000000000014" height="66"/>
+                                                    <rect key="frame" x="89.999999999999986" y="0.0" width="70.000000000000014" height="70"/>
                                                     <color key="backgroundColor" name="theme_primary_light_background"/>
                                                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                    <state key="normal" title="Fenale">
+                                                    <state key="normal" title="Female">
                                                         <color key="titleColor" name="theme_primary"/>
                                                     </state>
                                                     <connections>
@@ -150,7 +150,7 @@
                                     </subviews>
                                 </stackView>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rXr-pl-KcI" userLabel="txtDob" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="460" width="335" height="59.666666666666629"/>
+                                    <rect key="frame" x="0.0" y="464" width="335" height="59.666666666666629"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="rXr-pl-KcI" secondAttribute="height" multiplier="28:5" id="hK3-wl-3oZ"/>
                                     </constraints>
@@ -158,7 +158,7 @@
                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1e-fu-5si" userLabel="txtEmergencyContact" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="539.66666666666663" width="335" height="60"/>
+                                    <rect key="frame" x="0.0" y="543.66666666666663" width="335" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="W1e-fu-5si" secondAttribute="height" multiplier="28:5" id="S3l-j8-9BA"/>
                                     </constraints>
@@ -166,7 +166,7 @@
                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                 </textField>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1nE-QV-1jS" userLabel="Stack View - what i can do">
-                                    <rect key="frame" x="33.666666666666657" y="619.66666666666663" width="268" height="124"/>
+                                    <rect key="frame" x="33.666666666666657" y="623.66666666666663" width="268" height="124"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNb-wZ-Wbt" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
@@ -196,10 +196,10 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FCJ-iJ-ovV" userLabel="Stack View - Next">
-                                    <rect key="frame" x="62" y="763.66666666666663" width="211" height="143"/>
+                                    <rect key="frame" x="83" y="767.66666666666663" width="169" height="101"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lS-U2-gua" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="111" width="53" height="32"/>
+                                            <rect key="frame" x="0.0" y="69" width="53" height="32"/>
                                             <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                             <state key="normal" title="Sign In">
                                                 <color key="titleColor" name="theme_primary"/>
@@ -209,15 +209,15 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4n-K6-Vex" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                            <rect key="frame" x="68" y="0.0" width="143" height="143"/>
+                                            <rect key="frame" x="68" y="0.0" width="101" height="101"/>
                                             <color key="backgroundColor" name="theme_primary_light"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="M4n-K6-Vex" secondAttribute="height" multiplier="1:1" id="eQb-Fj-anU"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                             <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                            <state key="normal" title="→" image="asset-arrow-right">
-                                                <color key="titleColor" name="theme_button_text"/>
+                                            <state key="normal" image="asset-arrow-right">
+                                                <color key="titleColor" name="theme_light_text_color"/>
                                             </state>
                                             <connections>
                                                 <action selector="btnDoneTapped:" destination="-1" eventType="touchUpInside" id="iF2-bA-Wqu"/>
@@ -270,9 +270,10 @@
                     </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0V7-VQ-w9M">
-                    <rect key="frame" x="20" y="64" width="95" height="95"/>
+                    <rect key="frame" x="20" y="64" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="0V7-VQ-w9M" secondAttribute="height" multiplier="1:1" id="L2j-qw-GSo"/>
+                        <constraint firstAttribute="height" constant="44" id="tf0-9U-OCf"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="7"/>
                     <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -298,8 +299,8 @@
     <resources>
         <image name="asset-arrow-right" width="42.666667938232422" height="42.666667938232422"/>
         <image name="asset-cross" width="42.666667938232422" height="42.666667938232422"/>
-        <namedColor name="theme_button_text">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="theme_light_text_color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

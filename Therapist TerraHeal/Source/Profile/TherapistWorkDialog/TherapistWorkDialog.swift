@@ -19,7 +19,7 @@ class TherapistWorkDialog: ThemeDialogView {
     @IBOutlet weak var btnTherapies: ThemeButton!
     @IBOutlet weak var btnMassages: ThemeButton!
     var verificationData: String = ""
-    var onBtnDoneTapped: ((_ messages:[MassageDetail],_ therapies:[MassageDetail]) -> Void)? = nil
+    var onBtnDoneTapped: ((_ messages:[String],_ therapies:[String]) -> Void)? = nil
     var onBtnCancelTapped: (() -> Void)? = nil
     var animationDirection: AnimationDirection = .undefined
     var transitionAnimator: UIViewPropertyAnimator? = nil
@@ -31,16 +31,16 @@ class TherapistWorkDialog: ThemeDialogView {
 
     ]
 
-    var arrForTherapies:[MassageDetail] =  [
+    var arrForTherapies:[TherapyDetail] =  [
 
     ]
 
-    var selectedTherapies:[MassageDetail]  = []
-    var selectedMassages:[MassageDetail]  = []
-    var filteredArray:[MassageDetail] = []
+    var selectedTherapies:[String]  = []
+    var selectedMassages:[String]  = []
+    var filteredArray:[WorkData] = []
     var isMassageSelected: Bool = true
-
-    func initialize(selectedMassages:[MassageDetail], selectedTherapies:[MassageDetail], data:String) {
+    var workDetailArray:[WorkData] = []
+    func initialize(selectedMassages:[String], selectedTherapies:[String], data:String) {
 
 
         self.lblTitle.text = "T_PROFILE_WORK_LBL_TITLE".localized()
@@ -56,9 +56,25 @@ class TherapistWorkDialog: ThemeDialogView {
         self.selectedTherapies = selectedTherapies
 
         self.initialSetup()
-        self.fillFiltered(normalArr: self.arrForMassages, selectedArray: self.selectedMassages)
+        self.fillFiltered(normalArr: self.massageToWorkArray(), selectedArray: self.selectedMassages)
         self.wsGetMassage()
+        self.wsGetTherapies()
+    }
 
+    func massageToWorkArray() -> [WorkData] {
+        var workDetailArray: [WorkData] = []
+        for data in self.arrForMassages {
+            workDetailArray.append(data.toWorkData())
+        }
+        return workDetailArray
+    }
+
+    func therapyToWorkArray() -> [WorkData] {
+        var workDetailArray: [WorkData] = []
+        for data in self.arrForTherapies {
+            workDetailArray.append(data.toWorkData())
+        }
+        return workDetailArray
     }
 
     func initialSetup() {
@@ -153,24 +169,23 @@ class TherapistWorkDialog: ThemeDialogView {
         self.btnMassages.setUnderlineTitle("T_PROFILE_MASSAGE".localized(), for: .normal)
         self.btnTherapies.resetNormalTitle("T_PROFILE_THERAPIES".localized(), for: .normal)
         self.isMassageSelected = true
-        self.fillFiltered(normalArr: arrForMassages,selectedArray: self.selectedMassages)
+        self.fillFiltered(normalArr: self.massageToWorkArray(),selectedArray: self.selectedMassages)
     }
     
     @IBAction func btnTherapiesTapped(_ sender: Any) {
         self.btnMassages.resetNormalTitle("T_PROFILE_MASSAGE".localized(), for: .normal)
         self.btnTherapies.setUnderlineTitle("T_PROFILE_THERAPIES".localized(), for: .normal)
         self.isMassageSelected = false
-        self.fillFiltered(normalArr: arrForTherapies,selectedArray: self.selectedTherapies)
+        self.fillFiltered(normalArr: self.therapyToWorkArray(),selectedArray: self.selectedTherapies)
 
     }
 
-    func fillFiltered(normalArr: [MassageDetail], selectedArray:[MassageDetail]) {
+    func fillFiltered(normalArr: [WorkData], selectedArray:[String]) {
         filteredArray.removeAll()
         for item in normalArr {
-            var newItem: MassageDetail = item
+            var newItem: WorkData = item
             for therapi in selectedArray {
-                    if item.id == therapi
-                        .id {
+                    if item.id == therapi  {
                         newItem.isSelected = true
                     }
             }
@@ -215,19 +230,19 @@ extension TherapistWorkDialog: UICollectionViewDelegate,UICollectionViewDataSour
 
         if isMassageSelected {
             if let index = (selectedMassages.firstIndex { (item) -> Bool in
-                item.id == self.filteredArray[indexPath.row].id
+                item == self.filteredArray[indexPath.row].id
             }){
                 selectedMassages.remove(at: index)
             } else {
-                selectedMassages.append(self.filteredArray[indexPath.row])
+                selectedMassages.append(self.filteredArray[indexPath.row].id)
             }
         } else {
             if let index = (selectedTherapies.firstIndex { (item) -> Bool in
-                item.id == self.filteredArray[indexPath.row].id })
+                item == self.filteredArray[indexPath.row].id })
             {
                 selectedTherapies.remove(at: index)
             }else {
-                selectedTherapies.append(self.filteredArray[indexPath.row])
+                selectedTherapies.append(self.filteredArray[indexPath.row].id)
             }
         }
         collectionView.reloadData()
@@ -357,11 +372,27 @@ extension TherapistWorkDialog {
         var request: Massage.RequestMassages = Massage.RequestMassages()
         AppWebApi.massageList(params: request) { (response) in
             Loader.hideLoading()
-            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
                 for data in response.data {
                     self.arrForMassages.append(data)
                 }
-                self.fillFiltered(normalArr: self.arrForMassages, selectedArray: self.selectedMassages)
+                self.fillFiltered(normalArr: self.massageToWorkArray(), selectedArray: self.selectedMassages)
+            }
+        }
+    }
+
+    func wsGetTherapies() {
+        Loader.showLoading()
+        var request: Therapy.RequestTherapy = Therapy.RequestTherapy()
+        AppWebApi.therapyList(params: request) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                for data in response.data {
+                    self.arrForTherapies.append(data)
+                }
+
+
+                self.fillFiltered(normalArr: self.therapyToWorkArray(), selectedArray: self.selectedMassages)
             }
         }
     }

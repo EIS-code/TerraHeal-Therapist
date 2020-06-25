@@ -28,6 +28,8 @@ enum User {
         var tel_number: String? = nil
         var hobbies: String? = nil
         var short_description: String? = nil
+        var selected_therapies: [String] = []
+        var selected_massages: [String] = []
         var paid_percentage: String? = nil
    }
 
@@ -176,6 +178,13 @@ extension User {
         var isMobileVerified: String = ""
         var isEmailVerified: String = ""
         var isDocumentVerified: String = ""
+        var isPaymentDetailAdded: String = ""
+        var selectedMassages: [String] = []
+        var selectedTherapies: [String] = []
+
+        var selected_massages: [SelectedMassage] = []
+        var selected_therapies: [SelectedTherapies] = []
+
 
         init(fromDictionary dictionary: [String:Any]) {
             self.createdAt = (dictionary["created_at"] as? String) ??  ""
@@ -196,6 +205,21 @@ extension User {
             self.isEmailVerified = (dictionary["is_email_verified"] as? String) ??  ""
             self.isDocumentVerified = (dictionary["is_document_verified"] as? String) ??  ""
             self.updatedAt = (dictionary["updated_at"] as? String) ??  ""
+
+            if let selectedMsgs = dictionary["selected_massages"] as? [[String:Any]] {
+                for data in selectedMsgs {
+                    let item = SelectedMassage.init(fromDictionary: data)
+                    self.selected_massages.append(item)
+                    self.selectedMassages.append(item.massageId)
+                }
+            }
+            if let selectedMsgs = dictionary["selected_therapies"] as? [[String:Any]] {
+                for data in selectedMsgs {
+                    let item = SelectedTherapies.init(fromDictionary: data)
+                    self.selected_therapies.append(item)
+                    self.selectedTherapies.append(item.therapyId)
+                }
+            }
         }
 
         @objc required init(coder aDecoder: NSCoder) {
@@ -217,9 +241,14 @@ extension User {
             self.isMobileVerified = (aDecoder.decodeObject(forKey: "is_mobile_verified") as? String) ?? ""
             self.isEmailVerified = (aDecoder.decodeObject(forKey: "is_email_verified") as? String) ?? ""
             self.isDocumentVerified = (aDecoder.decodeObject(forKey: "is_document_verified") as? String) ?? ""
+            self.selectedMassages = (aDecoder.decodeObject(forKey: "selected_massages") as? [String]) ?? []
+            self.selectedTherapies = (aDecoder.decodeObject(forKey: "selected_therapies") as? [String]) ?? []
+            self.selected_massages = (aDecoder.decodeObject(forKey: "selected_massages") as? [SelectedMassage]) ?? []
+            self.selected_therapies = (aDecoder.decodeObject(forKey: "selected_therapies") as? [SelectedTherapies]) ?? []
         }
 
         @objc func encode(with aCoder: NSCoder) {
+
             aCoder.encode(createdAt, forKey: "created_at")
             aCoder.encode(dob, forKey: "dob")
             aCoder.encode(email, forKey: "email")
@@ -238,6 +267,10 @@ extension User {
             aCoder.encode(isMobileVerified, forKey: "is_mobile_verified")
             aCoder.encode(isEmailVerified, forKey: "is_email_verified")
             aCoder.encode(isDocumentVerified, forKey: "is_document_verified")
+            aCoder.encode(selectedMassages, forKey: "selected_massages")
+            aCoder.encode(selectedTherapies, forKey: "selected_therapies")
+            aCoder.encode(selected_massages, forKey: "selected_massages")
+            aCoder.encode(selected_therapies, forKey: "selected_therapies")
 
         }
 
@@ -261,13 +294,106 @@ extension User {
             dictionary["is_mobile_verified"] = isMobileVerified
             dictionary["is_email_verified"] = isEmailVerified
             dictionary["is_document_verified"] = isDocumentVerified
+            dictionary["selected_massages"] = selectedMassages
+            dictionary["selected_therapies"] = selectedTherapies
+
             return dictionary
         }
 
         func isContactVerified() -> Bool {
             return self.isMobileVerified.toBool && self.isEmailVerified.toBool
         }
+        func isProfileVerified() -> Bool {
+            return !self.dob.isEmpty()
+        }
+        func isPaymentDetailCompleted() -> Bool {
+            return self.isPaymentDetailAdded.toBool
+        }
+
+
     }
+
+    class SelectedMassage: Codable {
+
+        var createdAt: String = ""
+        var id: String = ""
+        var massageId: String = ""
+        var therapistId: String = ""
+        var updatedAt: String = ""
+
+        init(fromDictionary dictionary: [String:Any]){
+            self.createdAt = (dictionary["created_at"] as? String) ?? ""
+            self.id = (dictionary["id"] as? String) ?? ""
+            self.massageId = (dictionary["massage_id"] as? String) ?? ""
+            self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
+            self.updatedAt = (dictionary["updated_at"] as? String) ?? ""
+        }
+        @objc required init(coder aDecoder: NSCoder) {
+            self.createdAt = (aDecoder.decodeObject(forKey: "created_at") as? String) ?? ""
+            self.id = (aDecoder.decodeObject(forKey: "id") as? String) ?? ""
+            self.massageId = (aDecoder.decodeObject(forKey: "massage_id") as? String) ?? ""
+            self.therapistId = (aDecoder.decodeObject(forKey: "therapist_id") as? String) ?? ""
+            self.updatedAt = (aDecoder.decodeObject(forKey: "updated_at") as? String) ?? ""
+        }
+        @objc func encode(with aCoder: NSCoder) {
+            aCoder.encode(createdAt, forKey: "created_at")
+            aCoder.encode(id, forKey: "id")
+            aCoder.encode(massageId, forKey: "massage_id")
+            aCoder.encode(therapistId, forKey: "therapist_id")
+            aCoder.encode(updatedAt, forKey: "updated_at")
+        }
+        func toDictionary() -> [String:Any] {
+            var dictionary = [String:Any]()
+            dictionary["created_at"] = createdAt
+            dictionary["massage_id"] = massageId
+            dictionary["therapist_id"] = therapistId
+            dictionary["updated_at"] = updatedAt
+            dictionary["id"] = id
+            return dictionary
+        }
+
+    }
+    class SelectedTherapies: Codable {
+
+        var createdAt: String = ""
+        var id: String = ""
+        var therapyId: String = ""
+        var therapistId: String = ""
+        var updatedAt: String = ""
+
+        init(fromDictionary dictionary: [String:Any]){
+            self.createdAt = (dictionary["created_at"] as? String) ?? ""
+            self.id = (dictionary["id"] as? String) ?? ""
+            self.therapyId = (dictionary["therapy_id"] as? String) ?? ""
+            self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
+            self.updatedAt = (dictionary["updated_at"] as? String) ?? ""
+        }
+        @objc required init(coder aDecoder: NSCoder) {
+            self.createdAt = (aDecoder.decodeObject(forKey: "created_at") as? String) ?? ""
+            self.id = (aDecoder.decodeObject(forKey: "id") as? String) ?? ""
+            self.therapyId = (aDecoder.decodeObject(forKey: "therapy_id") as? String) ?? ""
+            self.therapistId = (aDecoder.decodeObject(forKey: "therapist_id") as? String) ?? ""
+            self.updatedAt = (aDecoder.decodeObject(forKey: "updated_at") as? String) ?? ""
+        }
+        @objc func encode(with aCoder: NSCoder) {
+            aCoder.encode(createdAt, forKey: "created_at")
+            aCoder.encode(id, forKey: "id")
+            aCoder.encode(therapyId, forKey: "therapy_id")
+            aCoder.encode(therapistId, forKey: "therapist_id")
+            aCoder.encode(updatedAt, forKey: "updated_at")
+        }
+        func toDictionary() -> [String:Any] {
+            var dictionary = [String:Any]()
+            dictionary["created_at"] = createdAt
+            dictionary["therapy_id"] = therapyId
+            dictionary["therapist_id"] = therapistId
+            dictionary["updated_at"] = updatedAt
+            dictionary["id"] = id
+            return dictionary
+        }
+
+    }
+
 
 }
 

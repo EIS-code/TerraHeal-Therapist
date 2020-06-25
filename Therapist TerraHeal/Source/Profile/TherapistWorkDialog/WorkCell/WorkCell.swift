@@ -26,7 +26,7 @@ class WorkCell: CollectionCell {
     }
 
 
-    func setData(_ data: MassageDetail, _ idxPath: IndexPath) {
+    func setData(_ data: WorkData, _ idxPath: IndexPath) {
         self.lblName.text = data.name
         self.updateStatus(isConnected: data.isSelected)
     }

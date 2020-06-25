@@ -48,8 +48,8 @@ class TherapistKycInfoVC: MainVC {
             DocumentDetail(id: "1", name: "Account Created", isCompleted: true),
             DocumentDetail(id: "2", name: "Contact Verification", isCompleted: appSingleton.user.isContactVerified()),
             DocumentDetail(id: "3", name: "Identity Verification", isCompleted: appSingleton.user.isDocumentVerified.toBool),
-            DocumentDetail(id: "4", name: "Payment Details", isCompleted: false),
-            DocumentDetail(id: "5", name: "Profile Details", isCompleted: false),
+            DocumentDetail(id: "4", name: "Payment Details", isCompleted: appSingleton.user.isPaymentDetailCompleted()),
+            DocumentDetail(id: "5", name: "Profile Details", isCompleted: appSingleton.user.isProfileVerified()),
             DocumentDetail(id: "6", name: "Last Step", isCompleted: false)
         ]
         self.tblDocuments.reloadData()
@@ -104,6 +104,7 @@ extension TherapistKycInfoVC:  UITableViewDelegate,UITableViewDataSource {
         if cell == nil {
             cell = UITableViewCell(style: .value1, reuseIdentifier: KycInfoTblCell.name) as? KycInfoTblCell
         }
+        cell?.selectionStyle = .none
         cell?.setData(data: arrForSteps[indexPath.row])
         return cell!
     }
