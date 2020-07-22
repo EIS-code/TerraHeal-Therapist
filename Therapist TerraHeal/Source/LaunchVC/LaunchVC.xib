@@ -1,64 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Nunito-SemiBold.ttf">
-            <string>Nunito-SemiBold</string>
-        </array>
-    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchVC" customModule="Therapist_TerraHeal" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchVC" customModule="Terra_Heal" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController id="n42-RV-ByW" customClass="LaunchVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
+        <viewController id="n42-RV-ByW" customClass="LaunchVC" customModule="Terra_Heal" customModuleProvider="target">
             <view key="view" contentMode="scaleToFill" id="bWN-TS-h3M">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pex-3M-L77" userLabel="imgLogo">
-                        <rect key="frame" x="117" y="358" width="180" height="180"/>
-                        <color key="backgroundColor" name="theme_light_blue_background"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-splash" translatesAutoresizingMaskIntoConstraints="NO" id="FeQ-dA-R4n" userLabel="imgSplashBg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pex-3M-L77" userLabel="imgLogo">
+                        <rect key="frame" x="93.666666666666671" y="312.33333333333331" width="187.66666666666663" height="187.33333333333331"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="Pex-3M-L77" secondAttribute="height" multiplier="1:1" id="QjH-yG-VnN"/>
+                            <constraint firstAttribute="width" secondItem="Pex-3M-L77" secondAttribute="height" multiplier="1:1" id="5Pk-KJ-Etc"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqO-w2-9YL" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                        <rect key="frame" x="127" y="430.5" width="160" height="35.5"/>
-                        <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="26"/>
-                        <color key="textColor" name="theme_text"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="Pex-3M-L77" firstAttribute="height" secondItem="FT2-Ki-0n6" secondAttribute="height" multiplier="0.22" id="42s-Vl-6cA"/>
+                    <constraint firstAttribute="bottom" secondItem="FeQ-dA-R4n" secondAttribute="bottom" id="8cM-yx-FaN"/>
+                    <constraint firstAttribute="trailing" secondItem="FeQ-dA-R4n" secondAttribute="trailing" id="9oU-3M-2RY"/>
                     <constraint firstItem="Pex-3M-L77" firstAttribute="centerX" secondItem="FT2-Ki-0n6" secondAttribute="centerX" id="OUG-dS-DHy"/>
+                    <constraint firstItem="Pex-3M-L77" firstAttribute="width" secondItem="FT2-Ki-0n6" secondAttribute="width" multiplier="0.5" id="REx-Sr-XnV"/>
+                    <constraint firstItem="FeQ-dA-R4n" firstAttribute="leading" secondItem="bWN-TS-h3M" secondAttribute="leading" id="kLG-m1-fuW"/>
+                    <constraint firstItem="FeQ-dA-R4n" firstAttribute="top" secondItem="bWN-TS-h3M" secondAttribute="top" id="koU-f5-9am"/>
                     <constraint firstItem="Pex-3M-L77" firstAttribute="centerY" secondItem="bWN-TS-h3M" secondAttribute="centerY" id="rFG-n3-ONU"/>
-                    <constraint firstItem="IqO-w2-9YL" firstAttribute="width" secondItem="Pex-3M-L77" secondAttribute="width" constant="-20" id="sd8-PV-E63"/>
-                    <constraint firstItem="IqO-w2-9YL" firstAttribute="centerX" secondItem="Pex-3M-L77" secondAttribute="centerX" id="wIW-xn-j8P"/>
-                    <constraint firstItem="IqO-w2-9YL" firstAttribute="centerY" secondItem="Pex-3M-L77" secondAttribute="centerY" id="xzX-3R-Mox"/>
                 </constraints>
                 <viewLayoutGuide key="safeArea" id="FT2-Ki-0n6"/>
             </view>
             <connections>
                 <outlet property="ivLogo" destination="Pex-3M-L77" id="IAM-wT-7eb"/>
-                <outlet property="lblLogo" destination="IqO-w2-9YL" id="vZQ-L7-InH"/>
             </connections>
-            <point key="canvasLocation" x="9" y="86"/>
+            <point key="canvasLocation" x="8.6956521739130448" y="85.714285714285708"/>
         </viewController>
     </objects>
     <resources>
-        <namedColor name="theme_light_blue_background">
-            <color red="0.73725490196078436" green="0.8784313725490196" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_text">
-            <color red="0.23199999332427979" green="0.5" blue="0.92299997806549072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="asset-logo" width="217" height="146"/>
+        <image name="asset-splash" width="375.33334350585938" height="812"/>
     </resources>
 </document>

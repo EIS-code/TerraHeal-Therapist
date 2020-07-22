@@ -92,7 +92,7 @@ public class Reachability {
     fileprivate var previousFlags: SCNetworkReachabilityFlags?
     
     fileprivate var isRunningOnDevice: Bool = {
-        #if (arch(i386) || arch(x86_64)) && os(iOS)
+        #if targetEnvironment(simulator)
             return false
         #else
             return true
@@ -211,15 +211,15 @@ public extension Reachability {
     
     var description: String {
         
-        let W = isRunningOnDevice ? (isOnWWANFlagSet ? "W": "-"): "X"
-        let R = isReachableFlagSet ? "R": "-"
-        let c = isConnectionRequiredFlagSet ? "c": "-"
-        let t = isTransientConnectionFlagSet ? "t": "-"
-        let i = isInterventionRequiredFlagSet ? "i": "-"
-        let C = isConnectionOnTrafficFlagSet ? "C": "-"
-        let D = isConnectionOnDemandFlagSet ? "D": "-"
-        let l = isLocalAddressFlagSet ? "l": "-"
-        let d = isDirectFlagSet ? "d": "-"
+        let W = isRunningOnDevice ? (isOnWWANFlagSet ? "W" : "-") : "X"
+        let R = isReachableFlagSet ? "R" : "-"
+        let c = isConnectionRequiredFlagSet ? "c" : "-"
+        let t = isTransientConnectionFlagSet ? "t" : "-"
+        let i = isInterventionRequiredFlagSet ? "i" : "-"
+        let C = isConnectionOnTrafficFlagSet ? "C" : "-"
+        let D = isConnectionOnDemandFlagSet ? "D" : "-"
+        let l = isLocalAddressFlagSet ? "l" : "-"
+        let d = isDirectFlagSet ? "d" : "-"
         
         return "\(W)\(R) \(c)\(t)\(i)\(C)\(D)\(l)\(d)"
     }
@@ -233,7 +233,7 @@ fileprivate extension Reachability {
         
         guard previousFlags != flags else { return }
         
-        let block = isReachable ? whenReachable: whenUnreachable
+        let block = isReachable ? whenReachable : whenUnreachable
         block?(self)
         
         NotificationCenter.default.post(name: ReachabilityChangedNotification, object:self)

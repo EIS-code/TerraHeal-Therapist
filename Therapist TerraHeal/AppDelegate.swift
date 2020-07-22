@@ -4,6 +4,8 @@
 //
 import UIKit
 import IQKeyboardManager
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame:UIScreen.main.bounds)
         self.loadLaunchVC()
         IQKeyboardManager.shared().isEnabled = true
+        GMSServices.provideAPIKey("AIzaSyBuupL4pg_TJS76EVkKrrquH3gCgFs--u4")
+        GMSPlacesClient.provideAPIKey("AIzaSyBuupL4pg_TJS76EVkKrrquH3gCgFs--u4")
         return true
     }
 

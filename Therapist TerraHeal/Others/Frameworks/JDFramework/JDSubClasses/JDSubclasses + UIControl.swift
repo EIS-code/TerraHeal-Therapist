@@ -88,6 +88,37 @@ public extension NC {
 
         return vCs as! [T]
     }
+    
+    func pushVC(_ viewController: UIViewController) {
+            let transition: CATransition = CATransition()
+            transition.duration = 0.3
+            transition.type = CATransitionType.fade
+            view.layer.add(transition, forKey: nil)
+            pushViewController(viewController, animated: false)
+    }
 
-}
+    func popToVc(_ viewController: UIViewController) -> [UIViewController]? {
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            transition.type = CATransitionType.fade
+            self.view.layer.add(transition, forKey: nil)
+            let vc = self.popToViewController(viewController, animated: false)
+            return vc
+    }
+        
+
+    func popVC() -> UIViewController? {
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            transition.type = CATransitionType.fade
+            self.view.layer.add(transition, forKey: nil)
+            let vc = self.popViewController(animated: false)
+            return vc
+        }
+    }
+
+
+
 

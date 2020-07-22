@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_Therapist_TerraHeal: NSObject
+@interface PodsDummy_Pods_Therapist_TerraHeal : NSObject
 @end
 @implementation PodsDummy_Pods_Therapist_TerraHeal
 @end

@@ -41,12 +41,12 @@ class TextViewDialog: ThemeDialogView {
     func initialSetup() {
         dialogView.clipsToBounds = true
         self.backgroundColor = .clear
-        self.txtDescription.setFont(name: FontName.Ovo, size: FontSize.label_22)
+        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.label_22)
         self.backgroundView.backgroundColor = UIColor.black
         self.backgroundView.alpha = 0.0
         self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
         dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
-        self.lblTitle.setFont(name: FontName.GradDuke, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.label_26)
         self.txtDescription?.delegate = self
         self.addPanGesture(view: self)
         transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)

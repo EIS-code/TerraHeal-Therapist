@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GRANDDUKE.ttf">
+            <string>GRANDDUKERegular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapBookVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnBack" destination="ZHi-gD-f1Z" id="2Bc-ij-fYP"/>
+                <outlet property="btnCheckIn" destination="Uje-OS-aMX" id="nGA-WK-gAa"/>
+                <outlet property="btnKm" destination="5ts-YA-ha4" id="pYN-jC-D04"/>
+                <outlet property="btnMyLocation" destination="4bD-XR-1BI" id="1qM-ta-MOY"/>
+                <outlet property="mapView" destination="0ux-6h-A7d" id="zot-fd-IlU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ux-6h-A7d" userLabel="vwMap" customClass="GMSMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <color key="backgroundColor" name="theme_primary_border"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-YA-ha4" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="114" width="89" height="38"/>
+                    <color key="backgroundColor" name="theme_primary"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                    <state key="normal" title="2.9 Km">
+                        <color key="titleColor" name="theme_light_text_color"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHi-gD-f1Z" userLabel="btnBack" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="64" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ZHi-gD-f1Z" secondAttribute="height" multiplier="1:1" id="unm-sn-dTn"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" name="theme_light_text_color"/>
+                    </state>
+                    <connections>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="0dC-w3-Mms"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bD-XR-1BI" userLabel="btnCurrentLocation">
+                    <rect key="frame" x="295" y="114" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4bD-XR-1BI" secondAttribute="height" multiplier="1:1" id="EGY-3z-GcC"/>
+                        <constraint firstAttribute="height" constant="60" id="dZd-Fn-q11"/>
+                    </constraints>
+                    <state key="normal" image="asset-my-location"/>
+                    <connections>
+                        <action selector="btnCurrentLocationTapped:" destination="-1" eventType="touchUpInside" id="E9z-6N-gp3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-OS-aMX" userLabel="BtnCheckService" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="116.66666666666669" y="718" width="142" height="40"/>
+                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                    <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
+                    <state key="normal" title="Sign Up">
+                        <color key="titleColor" name="theme_primary"/>
+                    </state>
+                    <connections>
+                        <action selector="btnCheckInTapped:" destination="-1" eventType="touchUpInside" id="Ryv-pP-24n"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZHi-gD-f1Z" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="4CR-2J-WUp"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="0ux-6h-A7d" secondAttribute="trailing" id="91j-uN-GDQ"/>
+                <constraint firstItem="ZHi-gD-f1Z" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="AjR-RY-RAf"/>
+                <constraint firstItem="5ts-YA-ha4" firstAttribute="top" secondItem="4bD-XR-1BI" secondAttribute="top" id="K44-m2-yJC"/>
+                <constraint firstItem="Uje-OS-aMX" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="TxA-H1-OfO"/>
+                <constraint firstItem="4bD-XR-1BI" firstAttribute="trailing" secondItem="0ux-6h-A7d" secondAttribute="trailing" constant="-20" id="gzd-7M-sZ4"/>
+                <constraint firstItem="5ts-YA-ha4" firstAttribute="leading" secondItem="0ux-6h-A7d" secondAttribute="leading" constant="20" id="h21-Ef-bP7"/>
+                <constraint firstItem="0ux-6h-A7d" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="k6f-g4-fG3"/>
+                <constraint firstItem="0ux-6h-A7d" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mAI-cM-pI8"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="Uje-OS-aMX" secondAttribute="bottom" constant="20" id="pSY-eL-pSg"/>
+                <constraint firstItem="4bD-XR-1BI" firstAttribute="top" secondItem="ZHi-gD-f1Z" secondAttribute="bottom" constant="20" id="qQo-O6-7AZ"/>
+                <constraint firstAttribute="bottom" secondItem="0ux-6h-A7d" secondAttribute="bottom" id="sRi-2g-R09"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
+            <point key="canvasLocation" x="131" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-my-location" width="36" height="36"/>
+        <namedColor name="theme_light_text_color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary">
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_border">
+            <color red="0.73725490196078436" green="0.8784313725490196" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

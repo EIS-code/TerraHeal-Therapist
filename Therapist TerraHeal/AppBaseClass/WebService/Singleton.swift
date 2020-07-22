@@ -9,9 +9,10 @@
 import Foundation
 let appSingleton = Singleton.shared
 
-public class Singleton:NSObject {
+public class Singleton :NSObject {
     static let shared = Singleton()
     var user:User.UserData = User.UserData.init(fromDictionary: [:])
+    var myMassagePreference: MyMassagePreference = MyMassagePreference.init()
     //var settting:Setting.Response = Setting.Response.init(fromDictionary: [:])
     var myLatitude: String = ""
     var myLongitude: String = ""
@@ -33,4 +34,15 @@ public class Singleton:NSObject {
         guard let savedPerson = try? JSONDecoder().decode(User.UserData.self, from: savedPersonData) else { return }
         appSingleton.user = savedPerson
     }
+}
+
+class MyMassagePreference: NSObject {
+    override init() {
+        super.init()
+    }
+    var treatmentDescription: String = ""
+    var problemsDescription: String = ""
+    var pastSurgeryDescription: String = ""
+    var allergiesDescription: String = ""
+    var healthConditionDescription: String = ""
 }

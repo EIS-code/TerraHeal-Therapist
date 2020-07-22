@@ -7,43 +7,42 @@ import UIKit
 
 class LaunchVC: MainVC {
     
+    // MARK: - Outlets
     @IBOutlet weak var ivLogo: UIImageView!
-    @IBOutlet weak var lblLogo: ThemeLabel!
-
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.lblLogo.setFont(name: FontName.GradDuke, size: FontSize.label_14)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.ivLogo?.setRound()
+        if self.isViewAvailable() {
+         
+        }
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
-            if PreferenceHelper.shared.getUserId().isEmpty() {
-                if PreferenceHelper.shared.getIsShowTutorial() {
-                    Common.appDelegate.loadTutoraiVC()
-                } else {
-                    Common.appDelegate.loadLoginVC()
-                }
-            }
-            else {
-                Singleton.loadFrombDB()
-                Common.appDelegate.loadTherapistKycVC()
-            }
-        }
+        Common.appDelegate.loadLoginVC()
+        //self.loadNextScreen()
     }
     // MARK: - StatusBar
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+    // MARK: - Other Functions
+    fileprivate func loadNextScreen() {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+            if !PreferenceHelper.shared.getUserId().isEmpty() {
+                Common.appDelegate.loadHomeVC()
+            } else {
+                Common.appDelegate.loadLoginVC()
+            }
+        }
+    }
 }

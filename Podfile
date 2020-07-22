@@ -4,8 +4,11 @@
 target 'Therapist TerraHeal' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for Therapist TerraHeal
-	pod 'IQKeyboardManager'
-	pod 'Alamofire'
+  pod 'IQKeyboardManager'
+  pod 'Alamofire'
+  pod 'SDWebImage'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 end

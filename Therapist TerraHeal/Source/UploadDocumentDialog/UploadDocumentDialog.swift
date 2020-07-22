@@ -54,9 +54,9 @@ class UploadDocumentDialog: ThemeDialogView {
         self.backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
         self.dialogView.setRound(withBorderColor: .clear, andCornerRadious: 20.0, borderWidth: 1.0)
         self.vwBgForAddFile.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
-        self.lblTitle.setFont(name: FontName.GradDuke, size: FontSize.label_22)
-        self.lblMessage.setFont(name: FontName.Ovo, size: FontSize.label_20)
-        self.lblAddFile.setFont(name: FontName.GradDuke, size: FontSize.button_22)
+        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.label_22)
+        self.lblMessage.setFont(name: FontName.Regular, size: FontSize.label_20)
+        self.lblAddFile.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.setupTableView()
         self.addPanGesture(view: self)
         transitionAnimator = UIViewPropertyAnimator.init(duration: 0.25, curve: UIView.AnimationCurve.easeInOut, animations: nil)
@@ -143,18 +143,20 @@ class UploadDocumentDialog: ThemeDialogView {
     }
 
     func openConfirmationDialog(index:Int) {
-        let alert: ConfimationDialog = ConfimationDialog.fromNib()
-        alert.initialize(message: "DIALOG_CONFIRM_DELET_MSG".localized() + "\n" + arrForUploadDocuments[index].name,buttonTitle: "BTN_CONFIRM".localized())
+        let alert: CustomAlertConfirmation = CustomAlertConfirmation.fromNib()
+        alert.initialize(title: "DIALOG_CONFIRM_DELET_MSG".localized() + "\n" + arrForUploadDocuments[index].name, message: "", buttonTitle: "BTN_CONFIRM".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
             alert?.dismiss();
         }
-        alert.onBtnSubmitTapped = {
+        alert.onBtnDoneTapped = {
             [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
             alert?.dismiss();
-            self?.arrForUploadDocuments.remove(at: index)
-            self?.reloadData()
+            self.arrForUploadDocuments.remove(at: index)
+            self.reloadData()
         }
     }
     func addFileToArray(document:UploadDocumentDetail) {

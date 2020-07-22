@@ -229,7 +229,7 @@ extension SessionDelegate: URLSessionDataDelegate {
 
         if let request = request(for: dataTask, as: DataRequest.self) {
             request.didReceive(data: data)
-         } else if let request = request(for: dataTask, as: DataStreamRequest.self) {
+        } else if let request = request(for: dataTask, as: DataStreamRequest.self) {
             request.didReceive(data: data)
         } else {
             assertionFailure("dataTask did not find DataRequest or DataStreamRequest in didReceive")

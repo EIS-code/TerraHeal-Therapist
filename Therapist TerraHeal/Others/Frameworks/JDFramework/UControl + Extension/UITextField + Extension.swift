@@ -17,8 +17,6 @@ public extension UITextField {
         let screenWidth = UIScreen.main.bounds.width
         let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))//1
         datePicker.datePickerMode = .date //2
-        datePicker.backgroundColor = UIColor.white
-        datePicker.textLabelColor = UIColor.themePrimary
         self.inputView = datePicker //3
 
         // Create a toolbar and assign it to inputAccessoryView
@@ -34,16 +32,6 @@ public extension UITextField {
         self.resignFirstResponder()
     }
 
-}
-@IBDesignable
-extension UIDatePicker {
-    @IBInspectable var textLabelColor: UIColor? {
-        get {
-            return self.value(forKey: "textColor") as? UIColor
-        }
-        set {
-            self.setValue(newValue, forKey: "textColor")
-            self.performSelector(inBackground: "setHighlightsToday:", with:newValue) //For some reason this line makes the highlighted text appear the same color but can not be changed from textColor.
-        }
-    }
+
+
 }

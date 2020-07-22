@@ -18,7 +18,7 @@ class DocumentTblCell: TableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblDocName.setFont(name: FontName.Ovo, size: FontSize.label_20)
+        self.lblDocName.setFont(name: FontName.Regular, size: FontSize.label_20)
         self.imgChecked.setRound()
         self.vwBg.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.backgroundColor = .clear

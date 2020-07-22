@@ -18,7 +18,9 @@ public extension String {
     func isEmpty() -> Bool {
         return self.trim().isEmpty
     }
-
+    func isNotEmpty() -> Bool {
+        return !self.trim().isEmpty
+    }
     func isValidEmail() -> Bool  {
 
         let stremail = self.trimmingCharacters(in:CharacterSet.whitespacesAndNewlines);
@@ -45,7 +47,7 @@ public extension String {
             str = nsString.substring(with:
                 NSRange(
                     location: 0,
-                    length: nsString.length > length ? length: nsString.length)
+                    length: nsString.length > length ? length : nsString.length)
             )
         }
         return  str
@@ -72,7 +74,7 @@ public extension String {
             let cleanedUpCopy = replacingOccurrences(of: String(separator), with: "")
 
             return String(cleanedUpCopy.enumerated().map() {
-                $0.offset % groupSize == 0 ? [separator, $0.element]: [$0.element]
+                $0.offset % groupSize == 0 ? [separator, $0.element] : [$0.element]
             }.joined().dropFirst())
     }
 

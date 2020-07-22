@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public extension UIViewController {
-    class var storyboardID: String {
+    class var storyboardID : String {
         
         return "\(self)"
     }
@@ -43,7 +43,5 @@ public extension UIViewController {
         let type = self.self
         return type.init(nibName: type.name, bundle: nil) as! T
     }
-
-    
-
 }
+

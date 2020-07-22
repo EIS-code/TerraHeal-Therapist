@@ -2,7 +2,7 @@
 //  CustomAlert.swift
 //  ModalView
 //
-//  Created by Aatish Rajkarnikar on 3/20/17.
+//  Created by Jaydeep Vyas on 3/20/17.
 //  Copyright © 2017 Aatish. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ class CustomAlert: ThemeDialogView {
     @IBOutlet weak var animationVw: UIView!
 
 
-    var onBtnCancelTapped: (() -> Void)? = nil
+    var onBtnCancelTapped : (() -> Void)? = nil
 
     //Animation Properties
     var animationDirection: AnimationDirection = .undefined
@@ -29,7 +29,7 @@ class CustomAlert: ThemeDialogView {
 
     func initialize(message:String) {
         self.initialSetup()
-        self.lblMessage.setFont(name: FontName.Ovo, size: FontSize.label_26)
+        self.lblMessage.setFont(name: FontName.Regular, size: FontSize.label_26)
         lblMessage.text = message
     }
 
@@ -49,9 +49,8 @@ class CustomAlert: ThemeDialogView {
         self.isAnimated = animated
         self.backgroundView.alpha = 0
         self.frame = UIScreen.main.bounds
-
-        if let topController = Common.appDelegate.getTopWindow() {
-            topController.addSubview(self)
+        if let topController = Common.appDelegate.getTopViewController() {
+            topController.view.addSubview(self)
         }
 
         if animated {
@@ -104,13 +103,10 @@ class CustomAlert: ThemeDialogView {
         }
     }
 
-    @IBAction func btnCalcelTapped(_ sender: Any) {
-        if self.onBtnCancelTapped != nil
-        {
+    @IBAction func btnCancelTapped(_ sender: Any) {
+        if self.onBtnCancelTapped != nil {
             self.onBtnCancelTapped!();
-            
         }
-
     }
 
 }
@@ -133,10 +129,10 @@ extension  CustomAlert {
         let isVertical = abs(velocity.y) > abs(velocity.x)
         var derivedDirection: AnimationDirection = .undefined
         if isVertical {
-            derivedDirection = velocity.y < 0 ? .up: .down
+            derivedDirection = velocity.y < 0 ? .up : .down
         }
         else {
-            derivedDirection = velocity.x < 0 ? .left: .right
+            derivedDirection = velocity.x < 0 ? .left : .right
         }
         return derivedDirection
     }
@@ -164,7 +160,7 @@ extension  CustomAlert {
             animationProgress  = percentage
             transitionAnimator?.fractionComplete = animationProgress
 
-        case .ended, .failed , .cancelled:
+        case .ended, .failed , .cancelled :
             transitionAnimator?.stopAnimation(true)
             self.addDissmissAnimation(direction: direction)
             transitionAnimator?.startAnimation()
@@ -200,8 +196,6 @@ extension  CustomAlert {
             print("No Animation")
 
         }
-
-
         transitionAnimator?.addCompletion({ (position) in
             self.removeFromSuperview()
         })
