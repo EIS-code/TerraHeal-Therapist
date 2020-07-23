@@ -47,7 +47,7 @@ class CameraVC: MainVC {
             cameraController.prepare {(error) in
                 if let error = error {
                     print(error)
-                    Common.showAlert(message: error.localizedDescription)
+                  //  Common.showAlert(message: error.localizedDescription)
                 }
                 
                 try? self.cameraController.displayPreview(on: self.capturePreviewView)
@@ -70,6 +70,7 @@ class CameraVC: MainVC {
         self.vwHintLayer.isHidden = true
     }
     private func initialViewSetup() {
+        self.setTitle(title: "scan")
         self.lblMsg?.setFont(name: FontName.SemiBold, size: FontSize.label_26)
         self.showHint(messae: "CAMERA_LBL_SCAN_QR_MESSAGE".localized(), image: "asset-scan-qr")
     }
@@ -78,7 +79,7 @@ class CameraVC: MainVC {
         super.viewDidAppear(animated)
         self.lblTitle?.textColor = .themePrimary
         self.lblTitle?.transform = CGAffineTransform(translationX: 0.0, y: self.view.frame.maxY)
-        UIView.animate(withDuration: 0.4, delay: 0.2, options: .curveLinear, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: .transitionCrossDissolve, animations: {
             self.lblTitle?.transform = .identity
             self.lblTitle?.textColor = .themeDarkText
         }) { (success) in
@@ -86,27 +87,40 @@ class CameraVC: MainVC {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.lblTitle?.textColor = .themeDarkText
-        self.lblTitle?.transform = .identity
-        UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveLinear, animations: {
-            self.lblTitle?.transform = CGAffineTransform(translationX: 0.0, y: self.view.frame.maxY)
-            self.lblTitle?.textColor = .themePrimary
-        }) { (success) in
-        }
+        
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
     // MARK: - Action Methods
-    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        if let nc = self.navigationController as? NC {
-                _ = nc.popVC()
-        } else {
-            self.dismiss(animated: true) {
+    fileprivate func animationDown() {
+        DispatchQueue.main.async {
+            self.lblTitle?.textColor = .themeDarkText
+            self.lblTitle?.transform = .identity
+            UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear,
+                           animations: {
+                            self.lblTitle?.transform = CGAffineTransform(translationX: 0.0, y: -10.0)
+            }, completion: { Void in()
                 
-            }
+                UIView.animate(withDuration: 0.4, delay: 0.0, options: .transitionCrossDissolve, animations: {
+                    self.lblTitle?.transform = CGAffineTransform(translationX: 0.0, y: self.view.frame.maxY)
+                    self.lblTitle?.textColor = .themePrimary
+                }) { (success) in
+                    if let nc = self.navigationController as? NC {
+                        _ = nc.popVC()
+                    } else {
+                        self.dismiss(animated: true) {
+                            
+                        }
+                    }
+                }
+                
+            })
         }
-        
+    }
+    
+    override func btnLeftTapped(_ btn: UIButton = UIButton()) {
+        animationDown()
     }
     
     @IBAction func toggleFlash(_ sender: UIButton) {
@@ -146,7 +160,7 @@ class CameraVC: MainVC {
         cameraController.captureImage {(image, error) in
             guard let image = image else {
                 
-                Common.showAlert(message: error?.localizedDescription ?? "Image capture error" )
+               // Common.showAlert(message: error?.localizedDescription ?? "Image capture error" )
                 return
             }
             try? PHPhotoLibrary.shared().performChangesAndWait {

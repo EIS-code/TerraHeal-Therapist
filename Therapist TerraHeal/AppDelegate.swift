@@ -57,6 +57,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func getCurrentViewController() -> UIViewController? {
+        if var topController = UIApplication.shared.delegate?.window??.rootViewController {
+            if let nc = topController as? NC, let vc = nc.viewControllers.last {
+                topController =  vc
+            }
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            
+            return topController
+        } else {
+            return UIApplication.shared.windows.last?.rootViewController ?? nil
+        }
+    }
+    
     func getTopWindow() -> UIWindow? {
         if let topController = UIApplication.shared.delegate?.window {
             return topController

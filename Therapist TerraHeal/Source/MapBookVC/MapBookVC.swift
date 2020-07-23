@@ -87,7 +87,7 @@ class MapBookVC: MainVC {
     }
     
     @IBAction func btnCurrentLocationTapped(_ sender: Any) {
-        var arrForCoordinate: [CLLocationCoordinate2D] = [self.currentMarker!.position]
+        let arrForCoordinate: [CLLocationCoordinate2D] = [self.currentMarker!.position]
         self.mapView.focusMap(locations: arrForCoordinate)
     }
     
@@ -103,7 +103,7 @@ class MapBookVC: MainVC {
         scanQrDialog.onBtnDoneTapped = {
             [weak scanQrDialog, weak self] in
             guard let self = self else {return}; print(self)
-            scanQrDialog?.dismiss()
+            //scanQrDialog?.dismiss()
             Common.appDelegate.loadCameraVC(navigaionVC: self.navigationController)
         }
     }

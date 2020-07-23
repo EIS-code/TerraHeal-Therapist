@@ -111,6 +111,8 @@
 		0345191024C86DF300AF7026 /* DashedCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0345190F24C86DF300AF7026 /* DashedCircleView.swift */; };
 		0345191524C8711D00AF7026 /* ServiceStatusVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0345191324C8711D00AF7026 /* ServiceStatusVC.xib */; };
 		0345191624C8711D00AF7026 /* ServiceStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0345191424C8711D00AF7026 /* ServiceStatusVC.swift */; };
+		03488F3224C8998800514994 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03488F3124C8998800514994 /* LoginViewModel.swift */; };
+		0365CDAB24C959E100E1361B /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0365CDAA24C959E100E1361B /* CoreServices.framework */; };
 		038AF12224C5E1DE00DDDDDA /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038AF10C24C5E1DE00DDDDDA /* LoginVC.xib */; };
 		038AF12324C5E1DE00DDDDDA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038AF10D24C5E1DE00DDDDDA /* LoginVC.swift */; };
 		038AF14224C5E47200DDDDDA /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038AF13D24C5E47200DDDDDA /* HomeVC.xib */; };
@@ -121,7 +123,6 @@
 		63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E30246FB5C600F0D7A0 /* Nunito-Regular.ttf */; };
 		63415E35246FB5C600F0D7A0 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E31246FB5C600F0D7A0 /* Nunito-SemiBold.ttf */; };
 		63415E36246FB5C600F0D7A0 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E32246FB5C600F0D7A0 /* Nunito-Bold.ttf */; };
-		636DDB9224750D140014C7DC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636DDB9124750D140014C7DC /* MobileCoreServices.framework */; };
 		63ABC1A5246D650D00360F07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0EB246D650B00360F07 /* SceneDelegate.swift */; };
 		63ABC1A6246D650D00360F07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ABC0EC246D650B00360F07 /* AppDelegate.swift */; };
 		63ABC1B1246D650D00360F07 /* UploadDocumentDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63ABC101246D650B00360F07 /* UploadDocumentDialog.xib */; };
@@ -240,6 +241,8 @@
 		0345190F24C86DF300AF7026 /* DashedCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashedCircleView.swift; path = "Therapist TerraHeal/Others/DashedCircleView.swift"; sourceTree = SOURCE_ROOT; };
 		0345191324C8711D00AF7026 /* ServiceStatusVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceStatusVC.xib; sourceTree = "<group>"; };
 		0345191424C8711D00AF7026 /* ServiceStatusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceStatusVC.swift; sourceTree = "<group>"; };
+		03488F3124C8998800514994 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0365CDAA24C959E100E1361B /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		038AF10C24C5E1DE00DDDDDA /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		038AF10D24C5E1DE00DDDDDA /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		038AF13D24C5E47200DDDDDA /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
@@ -274,8 +277,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				636DDB9224750D140014C7DC /* MobileCoreServices.framework in Frameworks */,
 				63ABC1FB246D66B800360F07 /* LocalAuthentication.framework in Frameworks */,
+				0365CDAB24C959E100E1361B /* CoreServices.framework in Frameworks */,
 				995CBCAE73040B4398225571 /* Pods_Therapist_TerraHeal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -742,6 +745,23 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
+		03488F2F24C8997700514994 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				03488F3124C8998800514994 /* LoginViewModel.swift */,
+			);
+			name = ViewModel;
+			path = "Therapist TerraHeal/Source/PreloginScene/ViewModel";
+			sourceTree = SOURCE_ROOT;
+		};
+		03488F3024C8997700514994 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = "Therapist TerraHeal/Source/PreloginScene/Model";
+			sourceTree = SOURCE_ROOT;
+		};
 		038AF0E424C5E1DE00DDDDDA /* PreloginScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,6 +773,8 @@
 		038AF10A24C5E1DE00DDDDDA /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				03488F3024C8997700514994 /* Model */,
+				03488F2F24C8997700514994 /* ViewModel */,
 				038AF10B24C5E1DE00DDDDDA /* xib */,
 				038AF10D24C5E1DE00DDDDDA /* LoginVC.swift */,
 			);
@@ -932,6 +954,7 @@
 		63ABC1F9246D66B700360F07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0365CDAA24C959E100E1361B /* CoreServices.framework */,
 				636DDB9124750D140014C7DC /* MobileCoreServices.framework */,
 				63ABC1FA246D66B800360F07 /* LocalAuthentication.framework */,
 				EA8A6F056877617A8E08DADC /* Pods_Therapist_TerraHeal.framework */,
@@ -1137,6 +1160,7 @@
 				034124FA24C5CE8A009AC83D /* Draggable.swift in Sources */,
 				034124F824C5CE8A009AC83D /* Extensions.swift in Sources */,
 				034124EA24C5CE8A009AC83D /* TextField + InputConfiguration.swift in Sources */,
+				03488F3224C8998800514994 /* LoginViewModel.swift in Sources */,
 				034124B524C5CE0B009AC83D /* CountriesWebService.swift in Sources */,
 				034518B224C8106A00AF7026 /* CustomAlertConfirmation.swift in Sources */,
 				034124BD24C5CE0B009AC83D /* PinterestLayout.swift in Sources */,

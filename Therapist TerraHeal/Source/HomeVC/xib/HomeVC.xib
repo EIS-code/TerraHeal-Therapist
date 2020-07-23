@@ -12,10 +12,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <connections>
                 <outlet property="btnFilter" destination="e84-Fg-VKG" id="CjS-9K-Opl"/>
+                <outlet property="btnMenu" destination="dk0-AN-Hja" id="RF9-qg-wGI"/>
                 <outlet property="hFilterTble" destination="2jb-9u-zF7" id="39f-5D-COf"/>
                 <outlet property="tableView" destination="aVT-f3-Mwd" id="nhg-gV-smz"/>
                 <outlet property="tblForFilter" destination="8dm-VP-vvc" id="XtY-53-X52"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwFilter" destination="mQB-Qa-XCL" id="Fco-P4-a9s"/>
                 <outlet property="vwFilterDialog" destination="ilK-66-sf1" id="S9Q-uR-JZk"/>
                 <outlet property="vwTab" destination="gC1-hu-GRW" id="gct-tN-jNY"/>
             </connections>
@@ -44,6 +46,9 @@
                     </constraints>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <state key="normal" image="asset-menu"/>
+                    <connections>
+                        <action selector="btnMenuTapped:" destination="-1" eventType="touchUpInside" id="bsb-C8-76C"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUA-Xf-CmK" userLabel="btnProfile" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="313" y="64" width="42" height="42"/>
@@ -53,23 +58,28 @@
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <state key="normal" backgroundImage="asset-user"/>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilK-66-sf1" userLabel="vwFilterDialog">
-                    <rect key="frame" x="150" y="558" width="187.66666666666663" height="140"/>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQB-Qa-XCL" userLabel="vwFilterBg">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilK-66-sf1" userLabel="vwFilterDialog">
+                            <rect key="frame" x="150" y="498" width="187.66666666666663" height="200"/>
+                            <color key="backgroundColor" name="theme_primary"/>
+                        </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8dm-VP-vvc">
-                            <rect key="frame" x="20" y="20" width="147.66666666666666" height="100"/>
+                            <rect key="frame" x="170" y="518" width="147.66666666666663" height="100"/>
                             <color key="backgroundColor" name="theme_primary"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="2jb-9u-zF7"/>
                             </constraints>
                         </tableView>
                     </subviews>
-                    <color key="backgroundColor" name="theme_primary"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.29799871575342468" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="8dm-VP-vvc" firstAttribute="top" secondItem="ilK-66-sf1" secondAttribute="top" constant="20" id="2cN-bO-WCy"/>
-                        <constraint firstItem="8dm-VP-vvc" firstAttribute="leading" secondItem="ilK-66-sf1" secondAttribute="leading" constant="20" id="KSP-mY-1MV"/>
-                        <constraint firstAttribute="trailing" secondItem="8dm-VP-vvc" secondAttribute="trailing" constant="20" id="cO8-jd-ZLu"/>
-                        <constraint firstAttribute="bottom" secondItem="8dm-VP-vvc" secondAttribute="bottom" constant="20" id="hIV-qE-qC6"/>
+                        <constraint firstItem="ilK-66-sf1" firstAttribute="leading" secondItem="8dm-VP-vvc" secondAttribute="leading" constant="-20" id="18A-Fi-r81"/>
+                        <constraint firstItem="ilK-66-sf1" firstAttribute="width" secondItem="mQB-Qa-XCL" secondAttribute="width" multiplier="0.5" id="VVA-4x-Epy"/>
+                        <constraint firstItem="ilK-66-sf1" firstAttribute="top" secondItem="8dm-VP-vvc" secondAttribute="top" constant="-20" id="Yz1-Da-2LZ"/>
+                        <constraint firstItem="ilK-66-sf1" firstAttribute="bottom" secondItem="8dm-VP-vvc" secondAttribute="bottom" constant="80" id="iYE-E5-0L9"/>
+                        <constraint firstItem="ilK-66-sf1" firstAttribute="trailing" secondItem="8dm-VP-vvc" secondAttribute="trailing" constant="20" id="za8-cF-tfr"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e84-Fg-VKG" userLabel="btnFilter" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
@@ -92,18 +102,21 @@
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="gC1-hu-GRW" secondAttribute="bottom" constant="20" id="4Mp-xv-52N"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" multiplier="0.8" id="4dM-82-kg5"/>
                 <constraint firstItem="gC1-hu-GRW" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="8vX-8I-TNC"/>
+                <constraint firstItem="mQB-Qa-XCL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BgW-yY-TRX"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="XUA-Xf-CmK" secondAttribute="trailing" constant="20" id="HGE-db-AYL"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="KpZ-I1-Ere"/>
+                <constraint firstItem="ilK-66-sf1" firstAttribute="trailing" secondItem="e84-Fg-VKG" secondAttribute="trailing" id="OfB-Qg-YON"/>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="PCD-nQ-9GP"/>
                 <constraint firstItem="gC1-hu-GRW" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" multiplier="0.8" id="QGU-aF-5p3"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="bottom" constant="20" id="U7n-if-2pA"/>
+                <constraint firstItem="ilK-66-sf1" firstAttribute="bottom" secondItem="e84-Fg-VKG" secondAttribute="bottom" id="UBA-Ds-5Ue"/>
                 <constraint firstItem="e84-Fg-VKG" firstAttribute="trailing" secondItem="gC1-hu-GRW" secondAttribute="trailing" id="Urq-oV-s3M"/>
-                <constraint firstItem="ilK-66-sf1" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" multiplier="0.5" id="bQx-0F-wtW"/>
-                <constraint firstItem="ilK-66-sf1" firstAttribute="trailing" secondItem="e84-Fg-VKG" secondAttribute="trailing" id="fCX-5y-Oxe"/>
-                <constraint firstItem="ilK-66-sf1" firstAttribute="bottom" secondItem="e84-Fg-VKG" secondAttribute="bottom" id="hm7-IS-bVL"/>
+                <constraint firstItem="mQB-Qa-XCL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="o9v-Gb-F3k"/>
+                <constraint firstAttribute="trailing" secondItem="mQB-Qa-XCL" secondAttribute="trailing" id="qFm-66-8Se"/>
                 <constraint firstItem="gC1-hu-GRW" firstAttribute="top" secondItem="e84-Fg-VKG" secondAttribute="bottom" constant="20" id="rcy-Ib-T7P"/>
                 <constraint firstItem="XUA-Xf-CmK" firstAttribute="bottom" secondItem="dk0-AN-Hja" secondAttribute="bottom" id="tVm-Ii-or9"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="xL1-kH-6pc"/>
+                <constraint firstAttribute="bottom" secondItem="mQB-Qa-XCL" secondAttribute="bottom" id="zPe-8P-YSK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>

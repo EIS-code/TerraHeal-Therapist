@@ -12,13 +12,14 @@ struct MyBookingTblDetail{
 
 class HomeVC: MainVC {
     
-    @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vwTab: JDSegmentedControl!
     @IBOutlet weak var btnFilter: FloatingRoundButton!
     @IBOutlet weak var vwFilterDialog: UIView!
     @IBOutlet weak var tblForFilter: UITableView!
     @IBOutlet weak var hFilterTble: NSLayoutConstraint!
+    @IBOutlet weak var btnMenu: FloatingRoundButton!
+    @IBOutlet weak var vwFilter: UIView!
     
     var arrForMyPlaces: [MyBookingTblDetail] = [
         MyBookingTblDetail(title: "29 oct 2020 4:20pm", isSelected: false),
@@ -97,12 +98,8 @@ class HomeVC: MainVC {
         
     }
     
-    @IBAction func btnBackTapped(_ sender: Any) {
-        _ = _ = (self.navigationController as? NC)?.popVC()
-    }
-    
-    @IBAction func btnSubmitTapped(_ sender: Any) {
-        Common.appDelegate.loadHomeVC()
+    @IBAction func btnMenuTapped(_ sender: Any) {
+        Common.appDelegate.loadLoginVC()
     }
     
     @IBAction func btnFilterTapped(_ sender: UIButton) {
@@ -118,39 +115,37 @@ class HomeVC: MainVC {
     
     func showFilterDialog() {
         
-        self.vwFilterDialog.isUserInteractionEnabled = false
+        self.vwFilter.isUserInteractionEnabled = false
         self.vwFilterDialog.setAnchorPoint(CGPoint.init(x: 1.0, y: 1.0))
         self.vwFilterDialog.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        self.vwFilterDialog.isHidden = false
         self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: self.tblForFilter.frame.maxY)
-        UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveLinear, animations: {
+        self.vwFilter.isHidden = false
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
             self.vwFilterDialog.transform = .identity
+            self.tblForFilter.transform = CGAffineTransform.identity
+            
         }) { (success) in
-            UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveLinear, animations: {
-                self.tblForFilter.transform = CGAffineTransform.identity
-                self.vwFilterDialog.isUserInteractionEnabled = true
-            }, completion: nil)
+            self.vwFilter.isUserInteractionEnabled = true
         }
     }
     func hideFilterDialog() {
-        self.vwFilterDialog.isHidden = false
+        self.vwFilter.isHidden = false
         self.vwFilterDialog.isUserInteractionEnabled = false
-        //self.vwFilterDialog.layer.anchorPoint = CGPoint.init(x: 1.0, y: 1.0)
         self.vwFilterDialog.transform = CGAffineTransform.identity
         self.tblForFilter.transform = CGAffineTransform.identity
-        
-        UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveLinear, animations: {
-            self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: self.tblForFilter.frame.maxY)
-        }) { (success) in
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self.vwFilterDialog.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-                
-                
-            }) { (success) in
-                self.vwFilterDialog.isHidden = true
-            }
-        }
+        UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear,
+                       animations: {
+                        self.vwFilterDialog.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                        self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: -10.0)
+        }, completion: { Void in()
+                UIView.animate(withDuration: 0.5, animations: {
+                    
+                  self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: (self.view.frame.maxY - self.tblForFilter.frame.minY))
+                   self.vwFilterDialog.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+                }) { (success) in
+                    self.vwFilter.isHidden = true
+                }
+        })
     }
 }
 
@@ -210,8 +205,12 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if tableView == tblForFilter {
+            self.hideFilterDialog()
+        }  else {
+            Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController,isBookingFinished: self.arrForMyPlaces[indexPath.row].isSelected)
+        }
         
-        Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController,isBookingFinished: self.arrForMyPlaces[indexPath.row].isSelected)
     }
     
 }

@@ -76,6 +76,7 @@ class LoginVC: MainVC {
         self.btnLogin?.setTitle("LOGIN_BTN_SIGN_IN".localized(), for: .normal)
         self.btnLogin.setHighlighted(isHighlighted: true)
         self.imgChecked?.isHidden = true
+     
     }
 
 
@@ -135,7 +136,6 @@ class LoginVC: MainVC {
             [weak alertFingerPrint, weak self] in
             guard let self = self else {return}; print(self)
             alertFingerPrint?.dismiss();
-            
         }
     }
     
