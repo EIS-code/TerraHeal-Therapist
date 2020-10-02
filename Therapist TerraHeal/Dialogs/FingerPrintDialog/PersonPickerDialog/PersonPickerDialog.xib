@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GRANDDUKE.ttf">
+            <string>GRANDDUKERegular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PersonPickerDialog" customModule="Terra_Heal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ZW-DU-hOd">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
+                    <rect key="frame" x="0.0" y="17" width="414" height="879"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - main">
+                            <rect key="frame" x="20" y="10" width="374" height="849"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
+                                    <rect key="frame" x="167" y="0.0" width="40" height="5"/>
+                                    <color key="backgroundColor" name="theme_primary"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="LSt-UA-ZZO"/>
+                                        <constraint firstAttribute="height" constant="5" id="Uoj-kp-KCE"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="158.5" y="25" width="57" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="theme_primary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-GV-f0f">
+                                    <rect key="frame" x="18.5" y="65.5" width="337" height="673.5"/>
+                                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                                </tableView>
+                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="120.5" y="759" width="133" height="40"/>
+                                    <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                                    <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
+                                    <state key="normal" title="Sign In">
+                                        <color key="titleColor" name="theme_primary"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="c2U-cc-MxJ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
+                                    <rect key="frame" x="164" y="819" width="46" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="EhO-GW-jUf"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="tfg-GV-f0f" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.9" id="xVK-Qm-60d"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="theme_primary_light_background"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="cXW-IL-cWe" secondAttribute="trailing" constant="20" id="1HJ-Xp-DOL"/>
+                        <constraint firstAttribute="height" constant="879" id="F9m-mX-b1k"/>
+                        <constraint firstItem="cXW-IL-cWe" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="RrZ-kW-n5i"/>
+                        <constraint firstItem="cXW-IL-cWe" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Zud-Qp-ll1"/>
+                        <constraint firstAttribute="bottom" secondItem="cXW-IL-cWe" secondAttribute="bottom" constant="20" id="fhi-OD-EBT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Yaj-p7-IIT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8dM-F7-kDK"/>
+                <constraint firstAttribute="trailing" secondItem="6ZW-DU-hOd" secondAttribute="trailing" id="C4E-pP-AJq"/>
+                <constraint firstAttribute="bottom" secondItem="Yaj-p7-IIT" secondAttribute="bottom" id="JTg-za-1ir"/>
+                <constraint firstItem="6ZW-DU-hOd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O4e-FZ-uqZ"/>
+                <constraint firstItem="6ZW-DU-hOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q6J-jS-lz5"/>
+                <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="pYV-Pm-HG9"/>
+                <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backgroundView" destination="6ZW-DU-hOd" id="BnY-1h-4oF"/>
+                <outlet property="btnCancel" destination="BVl-el-UJJ" id="mZE-lE-kWH"/>
+                <outlet property="btnDone" destination="W3s-UH-gbE" id="Cp0-qH-ylB"/>
+                <outlet property="dialogHeight" destination="F9m-mX-b1k" id="QF2-9B-wWM"/>
+                <outlet property="dialogView" destination="Yaj-p7-IIT" id="I5L-DG-Qv7"/>
+                <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
+                <outlet property="tableView" destination="tfg-GV-f0f" id="Ira-PT-Aex"/>
+                <outlet property="topBarSpace" destination="Zud-Qp-ll1" id="RWA-1C-2vh"/>
+                <outlet property="vwTopBar" destination="OsI-uf-Fb8" id="VT3-o0-WSd"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="theme_primary">
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light_background">
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

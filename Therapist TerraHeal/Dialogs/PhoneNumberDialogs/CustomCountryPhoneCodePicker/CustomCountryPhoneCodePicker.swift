@@ -3,14 +3,13 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit
 
 class CustomCountryPhoneCodePicker: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchVw: UIView!
     @IBOutlet weak var txtSearchBar: ThemeTextField!
@@ -46,15 +45,13 @@ class CustomCountryPhoneCodePicker: ThemeBottomDialogView {
 
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.setDataForStepUpAnimation()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnDone?.layoutIfNeeded()
-        self.btnDone?.setHighlighted(isHighlighted: true)
-        self.reloadTableDateToFitHeight(tableView: self.tableView)
+        self.reloadTableDataToFitHeight(tableView: self.tableView)
         self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
     }
 
@@ -73,7 +70,7 @@ class CustomCountryPhoneCodePicker: ThemeBottomDialogView {
 
 extension CustomCountryPhoneCodePicker : UITableViewDelegate,UITableViewDataSource {
 
-    private func reloadTableDateToFitHeight(tableView: UITableView) {
+    private func reloadTableDataToFitHeight(tableView: UITableView) {
         DispatchQueue.main.async {
 
             tableView.reloadData {
@@ -88,6 +85,7 @@ extension CustomCountryPhoneCodePicker : UITableViewDelegate,UITableViewDataSour
     private func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -130,9 +128,10 @@ extension CustomCountryPhoneCodePicker : UITextFieldDelegate {
 
     private func setupSearchbar(searchBar: UITextField) {
         txtSearchBar.delegate = self
-        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_20)
+        txtSearchBar.setFont(name: FontName.Regular, size: FontSize.textField_regular)
         txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
-        txtSearchBar.changePlaceHolder(color: UIColor.themePrimary)
+        txtSearchBar.textColor = UIColor.themeDarkText
+        txtSearchBar.changePlaceHolder(color: UIColor.themeDarkText)
         txtSearchBar.placeholder = "PROFILE_TXT_SEARCH_COUNTRY".localized()
     }
 
@@ -151,7 +150,7 @@ extension CustomCountryPhoneCodePicker : UITextFieldDelegate {
                 }
             }
         }
-        self.reloadTableDateToFitHeight(tableView: tableView)
+        self.reloadTableDataToFitHeight(tableView: tableView)
     }
 
     @IBAction func searching(_ sender: UITextField) {

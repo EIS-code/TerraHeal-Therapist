@@ -22,9 +22,10 @@ enum TextFieldContentType: Int {
     case Country = 8
     case Nif = 9
     case IdPassport = 10
-    case Password = 13
     case Number = 11
     case Default = 12
+    case Password = 13
+    case Currency = 14
     
 }
 
@@ -47,7 +48,7 @@ public struct InputTextFieldDetail {
         return InputTextFieldDetail(isMadatory: true, textContentType: .name, texFieldType: .Name, minLength: 2, maxLength: 20, keyBoardType: .default)
     }
     static func getCurrencyConfiguration() -> InputTextFieldDetail {
-        return InputTextFieldDetail(isMadatory: true, textContentType: .postalCode, texFieldType: .Number, minLength: 2, maxLength: 20, keyBoardType: .decimalPad)
+        return InputTextFieldDetail(isMadatory: true, textContentType: .name, texFieldType: .Currency, minLength: 2, maxLength: 20, keyBoardType: .decimalPad)
     }
     static func getNumberConfiguration() -> InputTextFieldDetail {
         return InputTextFieldDetail(isMadatory: true, textContentType: .postalCode, texFieldType: .Number, minLength: 2, maxLength: 20, keyBoardType: .numberPad)

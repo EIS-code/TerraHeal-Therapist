@@ -41,8 +41,8 @@ private extension DashedCircleView {
     }
 
     func updatePath() {
-        let rect = bounds.insetBy(dx: shapeLayer.lineWidth / 2, dy: shapeLayer.lineWidth / 2)
-        let radius = min(rect.width, rect.height) / 2
+        let rect = bounds.insetBy(dx: (shapeLayer.lineWidth - 1.5) / 2, dy: (shapeLayer.lineWidth - 1.5) / 2)
+        let radius = self.bounds.size.width/2
         let center = CGPoint(x: rect.midX, y: rect.midY)
 
         let path = UIBezierPath()

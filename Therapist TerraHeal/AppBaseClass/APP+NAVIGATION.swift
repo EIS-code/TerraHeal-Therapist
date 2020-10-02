@@ -40,88 +40,21 @@ extension AppDelegate {
         }
     }
     
-    func loadBookingDetailVC(navigaionVC:UINavigationController? = nil, isBookingFinished:Bool = false) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: BookingDetailVC =  nc.findVCs(ofType: BookingDetailVC.self).first {
-                targetVC.isBookingFinished = isBookingFinished
-                _ = nc.popToVc(targetVC)
-            } else {
-                let targetVC: BookingDetailVC = BookingDetailVC.fromNib()
-                targetVC.isBookingFinished = isBookingFinished
-                nc.pushVC(targetVC)
-            }
-        } else {
-            let targetVC: BookingDetailVC = BookingDetailVC.fromNib()
-            targetVC.isBookingFinished = isBookingFinished
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
-    
-    func loadMapBookVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: MapBookVC =  nc.findVCs(ofType: MapBookVC.self).first {
-                _ = nc.popToVc(targetVC)
-            } else {
-                let targetVC: MapBookVC = MapBookVC.fromNib()
-                nc.pushVC(targetVC)
-            }
-        } else {
-            let targetVC: MapBookVC = MapBookVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
-    
-    func loadCameraVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: CameraVC =  nc.findVCs(ofType: CameraVC.self).first {
-                _ = nc.popToVc(targetVC)
-            } else {
-                let targetVC: CameraVC = CameraVC.fromNib()
-                nc.pushVC(targetVC)
-            }
-        } else {
-            let targetVC: CameraVC = CameraVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
-    
-    func loadServiceStatusVC(navigaionVC:UINavigationController? = nil) {
-           if let nc = navigaionVC as? NC {
-               if let targetVC: ServiceStatusVC =  nc.findVCs(ofType: ServiceStatusVC.self).first {
-                   _ = nc.popToVc(targetVC)
-               } else {
-                   let targetVC: ServiceStatusVC = ServiceStatusVC.fromNib()
-                   nc.pushVC(targetVC)
-               }
-           } else {
-               let targetVC: ServiceStatusVC = ServiceStatusVC.fromNib()
-               let nC: NC = NC(rootViewController: targetVC)
-               self.windowConfig(withRootVC: nC)
-           }
-       }
-    fileprivate func loadHomeVC(_ navigaionVC: UINavigationController?) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: HomeVC =  nc.findVCs(ofType: HomeVC.self).first {
-                _ = nc.popToVc(targetVC)
-            } else {
-                let targetVC: HomeVC = HomeVC.fromNib()
-                nc.pushVC(targetVC)
-            }
-        } else {
-            let targetVC: HomeVC = HomeVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
+
+    fileprivate func loadMainVC(_ navigaionVC: UINavigationController?) {
+        let mainVC: NC = NC(rootViewController: MainVC.fromNib())
+        let leftVC: NC = NC(rootViewController: SideVC.fromNib())
+        let rightVC: NC = NC(rootViewController: SideVC.fromNib())
+        let targetVC = PBRevealViewController.init(leftViewController: leftVC, mainViewController: mainVC, rightViewController: rightVC)
+               self.windowConfig(withRootVC: targetVC)
     }
     
     
     
     
-    func loadHomeVC(navigaionVC:UINavigationController? = nil) {
-        
+    func loadMainVC(navigaionVC:UINavigationController? = nil) {
+        loadMainVC(navigaionVC)
+        /*
         if !PreferenceHelper.shared.getUserId().isEmpty() {
             AppWebApi.getUserDetail { (response) in
                 Loader.hideLoading()
@@ -131,14 +64,15 @@ extension AppDelegate {
                     PreferenceHelper.shared.setUserId(user.id)
                     appSingleton.user = user
                     Singleton.saveInDb()
-                    self.loadHomeVC(navigaionVC)
+                    self.loadMainVC(navigaionVC)
                 } else {
-                    self.loadHomeVC(navigaionVC)
+                    self.loadMainVC(navigaionVC)
                 }
             }
         } else {
-            loadHomeVC(navigaionVC)
-        }
+            loadMainVC(navigaionVC)
+        }*/
+        
     }
     
 }

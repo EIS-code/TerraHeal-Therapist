@@ -9,29 +9,33 @@ extension UIColor {
 
     //Custom TextFieldColors
     static var themePrimary:UIColor = UIColor.init(named: "theme_primary") ?? UIColor.init(hex: "#9A4026")
-    static var themeDarkText:UIColor = UIColor.init(named: "theme_dark_text") ?? UIColor.init(hex: "#6D6E71")
-    static var themeHintText:UIColor = UIColor.init(named: "theme_hint_text") ?? UIColor.init(hex: "#B2B3B5")
-    
-    
-    
-    static var themeSecondary:UIColor = UIColor.init(named: "theme_secondary") ?? UIColor.init(hex: "##F8991E")
     static var themePrimaryLight:UIColor = UIColor.init(named: "theme_primary_light") ?? UIColor.init(hex: "#000000")
     static var themePrimaryBorder:UIColor = UIColor.init(named: "theme_primary_border") ?? UIColor.init(hex: "#000000")
     static var themePrimaryLightBackground:UIColor = UIColor.init(named: "theme_primary_light_background") ?? UIColor.init(hex: "#000000")
 
-     static var themeBackground:UIColor = UIColor.init(named: "theme_background") ?? UIColor.init(hex: "#000000")
-     static var themeLightTextColor:UIColor = UIColor.init(named: "theme_light_text_color") ?? UIColor.init(hex: "#000000")
+    static var themeNavigationTitle: UIColor = UIColor.init(named: "theme_navigtion_title") ?? UIColor.init(hex: "#6D6E71") //dark text color
 
-    static var themeBookingType1:UIColor = UIColor.init(named: "theme_booking_type_1") ?? UIColor.init(hex: "#000000")
-    static var themeBookingType2:UIColor = UIColor.init(named: "theme_booking_type_2") ?? UIColor.init(hex: "#000000")
-    
-    
+    static var themeGreen:UIColor = UIColor.init(named: "theme_green") ?? UIColor.init(hex: "#B2B3B5")
+    static var themeSecondary:UIColor = UIColor.init(named: "theme_secondary") ?? UIColor.init(hex: "##F8991E")
+
+    static var themeBackground:UIColor = UIColor.init(named: "theme_background") ?? UIColor.init(hex: "#000000") //white color
+    static var themeLightBackground: UIColor = UIColor.init(named: "theme_light_background") ?? UIColor.init(hex: "#F6F6F4") // light background
+    static var themeDialogBackground: UIColor = UIColor.init(named: "theme_dialog_background") ?? UIColor.init(hex: "#F6F6F4") // light background
+    static var themeLightTextColor:UIColor = UIColor.init(named: "theme_light_text_color") ?? UIColor.init(hex: "#000000") // white text
+    static var themeDarkText:UIColor = UIColor.init(named: "theme_dark_text") ?? UIColor.init(hex: "#6D6E71") //dark text color
+    static var themeHintText:UIColor = UIColor.init(named: "theme_hint_text") ?? UIColor.init(hex: "#B2B3B5") // place holder text color
+
+    static var themeInfoButtonBackground: UIColor = UIColor.init(named: "theme_info_button_background") ?? UIColor.init(hex: "#B2B3B5")
+
+
+    //Shadow Colors
+
+    static var themeShadowColor: UIColor = UIColor.init(named: "theme_shadow")!
 
 }
 
 //MARK: Color Extension
 extension UIColor {
-
     public convenience init(hex: String) {
         let r, g, b, a: CGFloat
 
@@ -70,5 +74,4 @@ extension UIColor {
         self.init(red: 0, green: 0, blue: 0, alpha: 1.0)
         return
     }
-
 }

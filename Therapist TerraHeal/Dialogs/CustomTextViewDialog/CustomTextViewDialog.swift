@@ -3,14 +3,13 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit
 
 class CustomTextViewDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var txtDescription: ThemeTextView!
     var strEnteredData: String = ""
     var onBtnDoneTapped: ((_ data:String) -> Void)? = nil
@@ -39,10 +38,10 @@ class CustomTextViewDialog: ThemeBottomDialogView {
 
     override func initialSetup() {
         super.initialSetup()
-        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.label_18)
-        self.txtDescription.setPlaceholderFont(name: FontName.Regular, size: FontSize.label_18)
+        self.txtDescription.setFont(name: FontName.Regular, size: FontSize.subHeader)
+        self.txtDescription.setPlaceholderFont(name: FontName.Regular, size: FontSize.subHeader)
         self.txtDescription.placeholder = "Lorem ipsum dolor"
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.txtDescription?.delegate = self
     }
 

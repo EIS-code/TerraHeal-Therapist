@@ -20,15 +20,15 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="41.5" y="393.5" width="331" height="119"/>
+                    <rect key="frame" x="41.5" y="390" width="331" height="126.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zID-Ae-0K4">
-                            <rect key="frame" x="10" y="29.5" width="311" height="79.5"/>
+                            <rect key="frame" x="10" y="32" width="311" height="84.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4l-kv-Txv" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                    <rect key="frame" x="31" y="29.5" width="249" height="20.5"/>
+                                    <rect key="frame" x="31" y="32" width="249" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" name="theme_primary"/>
+                                    <color key="textColor" name="theme_dark_text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -39,13 +39,13 @@
                                 <constraint firstItem="z4l-kv-Txv" firstAttribute="centerX" secondItem="zID-Ae-0K4" secondAttribute="centerX" id="tZ8-by-4eW"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLC-kr-ZBM">
-                            <rect key="frame" x="272.5" y="10" width="39" height="39"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLC-kr-ZBM" customClass="CancelButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="267.5" y="10" width="44" height="44"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="RLC-kr-ZBM" secondAttribute="height" multiplier="1:1" id="q7K-EP-9Kp"/>
+                                <constraint firstAttribute="width" secondItem="RLC-kr-ZBM" secondAttribute="height" multiplier="1:1" id="WLI-Lj-cuz"/>
                             </constraints>
-                            <state key="normal" image="asset-cancel"/>
+                            <state key="normal" image="asset-cross"/>
                             <connections>
                                 <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="fMj-Nd-i44"/>
                             </connections>
@@ -53,13 +53,44 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="RLC-kr-ZBM" firstAttribute="width" secondItem="zID-Ae-0K4" secondAttribute="width" multiplier="0.125" id="AMg-at-CMB"/>
-                        <constraint firstAttribute="trailing" secondItem="zID-Ae-0K4" secondAttribute="trailing" constant="10" id="FeJ-0G-9Rm"/>
-                        <constraint firstItem="z4l-kv-Txv" firstAttribute="top" secondItem="RLC-kr-ZBM" secondAttribute="bottom" constant="10" id="JLR-lC-QZB"/>
+                        <constraint firstAttribute="trailing" secondItem="zID-Ae-0K4" secondAttribute="trailing" constant="10" id="FeJ-0G-9Rm" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                        <constraint firstItem="z4l-kv-Txv" firstAttribute="top" secondItem="RLC-kr-ZBM" secondAttribute="bottom" constant="10" id="JLR-lC-QZB" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                         <constraint firstItem="RLC-kr-ZBM" firstAttribute="trailing" secondItem="zID-Ae-0K4" secondAttribute="trailing" multiplier="0.97" id="RV4-d6-rWo"/>
-                        <constraint firstItem="zID-Ae-0K4" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="10" id="S12-54-h0R"/>
-                        <constraint firstItem="RLC-kr-ZBM" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Sb6-vs-HB0"/>
-                        <constraint firstAttribute="bottom" secondItem="zID-Ae-0K4" secondAttribute="bottom" constant="10" id="bFo-BT-DJc"/>
+                        <constraint firstItem="zID-Ae-0K4" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="10" id="S12-54-h0R" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                        <constraint firstItem="RLC-kr-ZBM" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="Sb6-vs-HB0" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                        <constraint firstAttribute="bottom" secondItem="zID-Ae-0K4" secondAttribute="bottom" constant="10" id="bFo-BT-DJc" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                         <constraint firstItem="RLC-kr-ZBM" firstAttribute="centerY" secondItem="zID-Ae-0K4" secondAttribute="top" id="jkz-wN-FXr"/>
                     </constraints>
                 </view>
@@ -86,9 +117,9 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-cancel" width="170.66667175292969" height="170.66667175292969"/>
-        <namedColor name="theme_primary">
-            <color red="0.0" green="0.49803921568627452" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="asset-cross" width="44" height="44"/>
+        <namedColor name="theme_dark_text">
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

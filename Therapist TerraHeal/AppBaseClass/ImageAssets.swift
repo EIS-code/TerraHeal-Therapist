@@ -24,7 +24,8 @@ struct ImageAsset {
     
     struct Filter {
         static let past = "asset-filter-past"
-        static let upcoming = "asset-filter-upcoming"
+        static let future = "asset-filter-future"
+        static let today = "asset-filter-today"
     }
     
 }

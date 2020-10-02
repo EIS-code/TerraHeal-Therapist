@@ -70,6 +70,12 @@ public extension Int {
     }
 }
 
+public extension Float {
+    func toString() -> String {
+        return   String(self )
+    }
+}
+
 public extension Double {
 
     func roundTo(places:Int = 2) -> Double {

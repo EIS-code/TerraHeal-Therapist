@@ -5,7 +5,7 @@
 
 import UIKit
 
-class LaunchVC: MainVC {
+class LaunchVC: BaseVC {
     
     // MARK: - Outlets
     @IBOutlet weak var ivLogo: UIImageView!
@@ -28,8 +28,7 @@ class LaunchVC: MainVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
-        Common.appDelegate.loadLoginVC()
-        //self.loadNextScreen()
+        self.loadNextScreen()
     }
     // MARK: - StatusBar
     override var prefersStatusBarHidden: Bool {
@@ -39,7 +38,7 @@ class LaunchVC: MainVC {
     fileprivate func loadNextScreen() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
             if !PreferenceHelper.shared.getUserId().isEmpty() {
-                Common.appDelegate.loadHomeVC()
+                Common.appDelegate.loadMainVC()
             } else {
                 Common.appDelegate.loadLoginVC()
             }

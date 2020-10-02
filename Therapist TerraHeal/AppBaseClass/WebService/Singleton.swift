@@ -13,6 +13,7 @@ public class Singleton :NSObject {
     static let shared = Singleton()
     var user:User.UserData = User.UserData.init(fromDictionary: [:])
     var myMassagePreference: MyMassagePreference = MyMassagePreference.init()
+    var currencySymbol:String = ""
     //var settting:Setting.Response = Setting.Response.init(fromDictionary: [:])
     var myLatitude: String = ""
     var myLongitude: String = ""

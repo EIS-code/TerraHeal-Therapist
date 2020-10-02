@@ -13,12 +13,13 @@ private var __maxLengths = [UITextField: Int]()
 open class ThemeTextField: UITextField {
 
     func setFont(name:String,size:CGFloat){
-        let finalSize = JDDeviceHelper().fontCalculator(size: size)
+        let finalSize = JDDeviceHelper.fontCalculator(size: size)
         self.font = FontHelper.font(name: name, size: finalSize)
     }
 }
 
 extension ThemeTextField {
+   
     @IBInspectable var maxLength: Int {
         get {
             guard let l = __maxLengths[self] else {
@@ -60,16 +61,34 @@ extension UITextField {
 //MARK: UITextView
 class ThemeTextView: UITextView {
 
+    @IBInspectable open var borderLineColor : UIColor = UIColor.themeDarkText {
+           didSet{
+               self.updateView()
+           }
+       }
+   
+    @IBInspectable open var bgColor : UIColor = UIColor.clear {
+           didSet{
+               self.updateView()
+           }
+    }
+    
     let padding = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 
     func setFont(name:String,size:CGFloat){
-        let finalSize = JDDeviceHelper().fontCalculator(size: size)
+        let finalSize = JDDeviceHelper.fontCalculator(size: size)
         self.font = FontHelper.font(name: name, size: finalSize)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.setRound(withBorderColor: .themePrimary, andCornerRadious: 25.0, borderWidth: 1.0)
+        self.updateView()
+        
+    }
+    func updateView() {
+        self.backgroundColor = bgColor
+        self.setRound(withBorderColor: borderLineColor, andCornerRadious: 25.0, borderWidth: 1.0)
+              
         textContainerInset = padding
     }
 }
@@ -85,8 +104,9 @@ extension UITextView: NSTextStorageDelegate {
             return label
         } else {
             let label = PlaceholderLabel(frame: .zero)
-            label.setFont(name: FontName.Regular, size: FontSize.label_22)
-            label.textColor = UIColor.themePrimary
+            label.font = self.font
+            //..setFont(name: FontName.Regular, size: FontSize.header)
+            label.textColor = self.textColor
             addSubview(label)
             return label
         }

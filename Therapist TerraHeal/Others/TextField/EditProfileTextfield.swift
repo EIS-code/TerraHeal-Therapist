@@ -15,7 +15,7 @@ import UIKit
     fileprivate var placeholderLabelHeight : NSLayoutConstraint?
     fileprivate var placeholderLabelLeading : NSLayoutConstraint?
 
-    let leftImage: UIImage? = UIImage()
+    var leftImage: UIImage? = UIImage()
     let rightButton  = UIButton(type: .custom)
 
     @IBInspectable open var disableFloatingLabel : Bool = false
@@ -30,7 +30,7 @@ import UIKit
             self.floatTheLabel()
         }
     }
-    @IBInspectable open var leftViewColor : UIColor = UIColor.themePrimaryBorder {
+    @IBInspectable open var leftViewColor : UIColor = UIColor.themePrimary {
         didSet{
             self.floatTheLabel()
         }
@@ -100,14 +100,15 @@ import UIKit
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.leftViewRect(forBounds: bounds)
         textRect.origin.x += 0
-        return CGRect(x:textRect.width, y: 0, width:bounds.size.width, height:bounds.size.height);
+        
+        return CGRect(x:textRect.width, y: JDDeviceHelper.offseter(offset: 15), width:bounds.size.width, height:bounds.size.height);
     }
 
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.leftViewRect(forBounds: bounds)
         textRect.origin.x += 0
 
-        return CGRect(x:textRect.width, y: 0, width:bounds.size.width, height:bounds.size.height);
+        return CGRect(x:textRect.width, y: JDDeviceHelper.offseter(offset: 15), width:bounds.size.width, height:bounds.size.height);
     }
 
     override open func leftViewRect(forBounds bounds: CGRect) -> CGRect {
@@ -146,13 +147,13 @@ import UIKit
     }
 
     func getPaddingHeight() -> CGFloat {
-        return  self.bounds.height * 0.6
+        return  self.bounds.height
     }
 
     open override func layoutSubviews() {
         super.layoutSubviews()
-        if placeholderLabelLeading?.constant != self.getPaddingHeight() + 10{
-            placeholderLabelLeading?.constant = self.getPaddingHeight() + 10
+        if placeholderLabelLeading?.constant != self.getPaddingHeight() {
+            placeholderLabelLeading?.constant = self.getPaddingHeight()
         }
    }
 }
@@ -166,9 +167,10 @@ extension EditProfileTextfield {
         
         self.addLeftView()
         self.textColor = textForeColor
-        self.setFont(name:FontName.Regular,size:FontSize.textField_20)
+        self.setFont(name:FontName.Regular,size:FontSize.textField_14)
         addBottomLine()
         addFloatingLabel()
+        self.contentVerticalAlignment =  .top
         if self.text != nil && self.text != "" {
             self.floatTheLabel()
         }
@@ -214,7 +216,7 @@ extension EditProfileTextfield {
         labelPlaceholder?.text = placeholderText
         labelPlaceholder?.textAlignment = self.textAlignment
         labelPlaceholder?.textColor = placeHolderColor
-        labelPlaceholder?.setFont(name: FontName.Regular, size: FontSize.placeHolder_14)
+        labelPlaceholder?.setFont(name: FontName.SemiBold, size: FontSize.placeHolder_14)
         labelPlaceholder?.isHidden = true
         labelPlaceholder?.sizeToFit()
         labelPlaceholder?.translatesAutoresizingMaskIntoConstraints = false
@@ -223,11 +225,11 @@ extension EditProfileTextfield {
             self.addSubview(labelPlaceholder!)
         }
 
-        placeholderLabelLeading = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: self.getPaddingHeight() + 10)
+        placeholderLabelLeading = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: self.getPaddingHeight())
 
         let trailingConstraint = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
         let topConstraint = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
-        placeholderLabelHeight = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: JDDeviceHelper().offseter(offset: 15, direction: .horizontal, currentDeviceBound: 375))
+        placeholderLabelHeight = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: JDDeviceHelper.offseter(offset: 15))
         self.addConstraints([placeholderLabelLeading!,trailingConstraint,topConstraint])
         labelPlaceholder?.addConstraint(placeholderLabelHeight!)
     }
@@ -265,10 +267,11 @@ extension EditProfileTextfield {
             return
         }
 
-        if placeholderLabelHeight?.constant == JDDeviceHelper().offseter(offset: 15) {
+        if placeholderLabelHeight?.constant == JDDeviceHelper.offseter(offset: 15)
+        {
             return
         }
-        placeholderLabelHeight?.constant = JDDeviceHelper().offseter(offset: 15);
+        placeholderLabelHeight?.constant = JDDeviceHelper.offseter(offset: 15);
         labelPlaceholder?.setFont(name: FontName.Regular, size: FontSize.placeHolder_14)
         UIView.animate(withDuration: 0.2, animations: {
             self.layoutIfNeeded()
@@ -336,22 +339,30 @@ extension EditProfileTextfield {
         if let image = leftImage {
             leftViewMode = UITextField.ViewMode.always
 
-            let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.getPaddingHeight() + 10, height: self.getPaddingHeight()))
-            let imageView = UIImageView(frame: CGRect.init(x: 0, y: 0, width:  self.getPaddingHeight(), height:  self.getPaddingHeight()))
+            let paddingView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.getPaddingHeight(), height: self.getPaddingHeight()))
+            paddingView.backgroundColor = .clear
+            
+            
+            
+            let vwImageBg : UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.getPaddingHeight() * 0.7, height: self.getPaddingHeight() * 0.7))
+        
+            vwImageBg.backgroundColor = self.leftViewColor
+            
+            let imageView = UIImageView(frame: CGRect.init(x: 0, y: 0, width:  self.getPaddingHeight() * 0.4, height:  self.getPaddingHeight() * 0.5))
+            imageView.center = vwImageBg.center
             imageView.contentMode = .scaleAspectFit
-            imageView.backgroundColor = self.leftViewColor
             imageView.image = image
-            paddingView.addSubview(imageView)
-            imageView.setRound()
+            vwImageBg.addSubview(imageView)
+            vwImageBg.setRound()
+            vwImageBg.center = paddingView.center
+            paddingView.addSubview(vwImageBg)
             leftView = paddingView
-
         } else {
             leftViewMode = UITextField.ViewMode.never
             leftView = nil
         }
     }
 }
-
 
 
 

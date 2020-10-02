@@ -44,7 +44,10 @@ public extension UIView {
         mask.path = path.cgPath
         layer.mask = mask
     }
-
+    
+    func copyView<T: UIView>() -> T {
+            return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self)) as! T
+        }
 }
 
 // MARK: Nib Extension
@@ -122,6 +125,25 @@ public extension UIView {
                         self.alpha = 0.0
                         self.isHidden = true
         }, completion: completion)
+    }
+
+    func setAnchorPoint(_ point: CGPoint) {
+        var newPoint = CGPoint(x: bounds.size.width * point.x, y: bounds.size.height * point.y)
+        var oldPoint = CGPoint(x: bounds.size.width * layer.anchorPoint.x, y: bounds.size.height * layer.anchorPoint.y);
+
+        newPoint = newPoint.applying(transform)
+        oldPoint = oldPoint.applying(transform)
+
+        var position = layer.position
+
+        position.x -= oldPoint.x
+        position.x += newPoint.x
+
+        position.y -= oldPoint.y
+        position.y += newPoint.y
+
+        layer.position = position
+        layer.anchorPoint = point
     }
 }
 

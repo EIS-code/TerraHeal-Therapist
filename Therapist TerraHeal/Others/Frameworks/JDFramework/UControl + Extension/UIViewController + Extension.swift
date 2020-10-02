@@ -45,3 +45,18 @@ public extension UIViewController {
     }
 }
 
+
+@nonobjc extension UIViewController {
+    func add(_ child: UIViewController, view: UIView) {
+        addChild(child)
+        child.view.frame = view.bounds
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+    }
+
+    func remove() {
+        willMove(toParent: nil)
+        view.removeFromSuperview()
+        removeFromParent()
+    }
+}

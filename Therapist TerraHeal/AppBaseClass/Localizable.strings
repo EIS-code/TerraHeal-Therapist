@@ -15,10 +15,21 @@
 "LOGIN_BTN_FORGOT_PASSWORD" = "forgot password?";
 //MARK: Home SCREEN
 "HOME_BTN_NEWS" = "news";
-"HOME_BTN_CHAT" = "chat";
+"HOME_BTN_CALENDER" = "calender";
 "HOME_BTN_BOOKING" = "booking";
-"HOME_FILTER_PAST" = "Past";
-"HOME_FILTER_UPCOMING" = "Upcoming";
+
+"HOME_FILTER_TODAY" = "today";
+"HOME_FILTER_FUTURE" = "future";
+"HOME_FILTER_PAST" = "past";
+"HOME_SECTION_BTN_SELECT_DATE" = "select date";
+//MARK: Menu Screen
+"MENU_TITLE" = "Menu";
+"MENU_QUIT_COLLABORATION" = "quit collaboration";
+"MENU_SUSPEND_COLLABORATION" = "suspend collaboration";
+"MENU_SUGGESTIONS_AND_COMPLAINTS" = "suggestions and complaints";
+"MENU_TAKE_BREAK" = "take break";
+"MENU_NEWS" = "news";
+"MENU_NOTIFICATIONS" = "notifications";
 
 //MARK: Service Map SCREEN
 "SERVICE_PROGRESS_TITLE" = "Service in progress";

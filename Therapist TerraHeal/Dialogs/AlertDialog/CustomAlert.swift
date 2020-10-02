@@ -3,7 +3,7 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ enum AnimationDirection: Int {    case up, down, left, right, undefined}
 class CustomAlert: ThemeDialogView {
 
     @IBOutlet weak var dialogView: UIView!
-    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var cancelButton: CancelButton!
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var animationVw: UIView!
@@ -29,7 +29,7 @@ class CustomAlert: ThemeDialogView {
 
     func initialize(message:String) {
         self.initialSetup()
-        self.lblMessage.setFont(name: FontName.Regular, size: FontSize.label_26)
+        self.lblMessage.setFont(name: FontName.Regular, size: FontSize.large)
         lblMessage.text = message
     }
 
@@ -45,36 +45,38 @@ class CustomAlert: ThemeDialogView {
     }
 
     func show(animated:Bool){
+        if self.lblMessage.text!.isNotEmpty() {
+                self.isAnimated = animated
+                self.backgroundView.alpha = 0
+                self.frame = UIScreen.main.bounds
+                if let topController = Common.appDelegate.getTopViewController() {
+                    topController.view.endEditing(true)
+                    Common.appDelegate.window?.addSubview(self)
+                    //topController.view.addSubview(self)
+                }
 
-        self.isAnimated = animated
-        self.backgroundView.alpha = 0
-        self.frame = UIScreen.main.bounds
-        if let topController = Common.appDelegate.getTopViewController() {
-            topController.view.addSubview(self)
+                if animated {
+                    self.isUserInteractionEnabled = false
+                    self.animationVw.alpha = 0.1
+                    let translation = CGAffineTransform(translationX: self.frame.midX, y: 0)
+                    self.animationVw.transform = translation.rotated(by:-6.0)
+                    UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut], animations: {
+                        self.animationVw.transform = CGAffineTransform.identity
+                        self.animationVw.transform = CGAffineTransform(rotationAngle: CGFloat(0.0))
+                        self.backgroundView.alpha = 0.66
+                        self.animationVw.alpha = 1.0
+                    }) { (completion) in
+                        //self.animationVw.shake()
+                        self.isUserInteractionEnabled = true
+                    }
+                }
+                else {
+                    self.backgroundView.alpha = 0.66
+                }
+        } else {
+            self.removeFromSuperview()
         }
-
-        if animated {
-            self.isUserInteractionEnabled = false
-            self.animationVw.alpha = 0.1
-            let translation = CGAffineTransform(translationX: self.frame.midX, y: 0)
-            self.animationVw.transform = translation.rotated(by:-6.0)
-            UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut], animations: {
-                self.animationVw.transform = CGAffineTransform.identity
-                self.animationVw.transform = CGAffineTransform(rotationAngle: CGFloat(0.0))
-                self.backgroundView.alpha = 0.66
-                self.animationVw.alpha = 1.0
-            }) { (completion) in
-
-
-
-                //self.animationVw.shake()
-                self.isUserInteractionEnabled = true
-            }
-        }
-        else {
-            self.backgroundView.alpha = 0.66
-        }
-
+        
     }
 
     func dismiss(){
@@ -87,14 +89,12 @@ class CustomAlert: ThemeDialogView {
                 self.animationVw.transform = translation.rotated(by: 6.0)
                 self.backgroundView.alpha = 0.0
                 self.animationVw.alpha = 0.1
-
             }) { (completion) in
                 self.removeFromSuperview()
             }
         }else{
             self.removeFromSuperview()
         }
-
     }
 
     @objc func didTappedOnBackgroundView(){

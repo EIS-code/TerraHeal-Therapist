@@ -3,7 +3,7 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit
@@ -12,7 +12,6 @@ import LocalAuthentication
 
 class FingerPrintDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
     @IBOutlet weak var imgChecked: UIImageView!
     var onBtnDoneTapped : (() -> Void)? = nil
 
@@ -40,21 +39,32 @@ class FingerPrintDialog: ThemeBottomDialogView {
             self.btnNext.setTitle(buttonTitle, for: .normal)
             self.btnNext.isHidden = false
         }
+       // self.enableButton(isEnable: false)
     }
 
     override func initialSetup() {
         super.initialSetup()
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
     }
     
     @IBAction func onClickBtnDone(_ sender: Any) {
-        if self.onBtnDoneTapped != nil {
-            self.onBtnDoneTapped!();
+        if self.imgChecked.isHidden  {
+            Common.showAlert(message: "FINGER_PRINT_DIALOG_VALIDATION".localized())
+        } else {
+            if self.onBtnDoneTapped != nil {
+                self.onBtnDoneTapped!();
+            }
         }
     }
     
     @IBAction func btnFingerPrintTapped(_ sender: UIButton) {
           authenticateUser(self)
+    }
+    
+    func enableButton(isEnable:Bool) {
+        self.btnDoneFloating?.isEnabled = isEnable
+        self.btnNext?.isEnabled = isEnable
+        self.btnDone?.isEnabled = isEnable
     }
    
 }
@@ -105,6 +115,7 @@ extension FingerPrintDialog {
 
                         } else {
                             self.imgChecked?.isHidden = false
+                            self.enableButton(isEnable: true)
                         }
                     }
             })
@@ -132,6 +143,7 @@ extension FingerPrintDialog {
                 }
             }
         }
+        
     }
 
 

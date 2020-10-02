@@ -3,14 +3,14 @@
 //  ModalView
 //
 //  Created by Jaydeep Vyas on 3/20/17.
-//  Copyright © 2017 Aatish. All rights reserved.
+//  Copyright © 2017 Jaydeep. All rights reserved.
 //
 
 import UIKit
 
 class CustomMobileNumberDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var lblTitle: ThemeLabel!
+    
     @IBOutlet weak var txtMobileNumber: ACFloatingTextfield!
     @IBOutlet weak var txtCountryPhoneCode: ACFloatingTextfield!
 
@@ -47,13 +47,13 @@ class CustomMobileNumberDialog: ThemeBottomDialogView {
         self.txtMobileNumber?.delegate = self
         self.txtCountryPhoneCode?.placeholder = "".localized()
         self.txtCountryPhoneCode?.delegate = self
-        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.label_26)
+        self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
+        self.txtMobileNumber.configureTextField(InputTextFieldDetail.getMobileConfiguration())
     }
       
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.btnDone?.setHighlighted(isHighlighted: true)
     }
 
 

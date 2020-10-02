@@ -186,6 +186,8 @@ import UIKit
                        return(true,"VALIDATION_MSG_INVALID_NIF".localized())
                    case .IdPassport:
                        return(true,"VALIDATION_MSG_INVALID_ID".localized())
+                   case .Currency:
+                        return(true,"")
                    case .Number:
                        return(self.text!.isNumber(),"VALIDATION_MSG_NUMBER_ONLY".localized())
                    case .Default:
@@ -205,7 +207,7 @@ fileprivate extension ACFloatingTextfield {
         self.clipsToBounds = true
         self.textColor = UIColor.themeDarkText
         self.autocorrectionType = .no
-        self.setFont(name:FontName.Regular,size:FontSize.textField_20)
+        self.setFont(name:FontName.Regular,size:FontSize.textField_regular)
         addBottomLine()
         addFloatingLabel()
         if self.text != nil && self.text != "" {
@@ -251,7 +253,7 @@ fileprivate extension ACFloatingTextfield {
         labelPlaceholder?.text = placeholderText
         labelPlaceholder?.textAlignment = self.textAlignment
         labelPlaceholder?.textColor = placeHolderColor
-        labelPlaceholder?.font = UIFont.init(name: (self.font?.fontName ?? "helvetica")!, size: JDDeviceHelper().fontCalculator(size: 12))
+        labelPlaceholder?.font = UIFont.init(name: (self.font?.fontName ?? "helvetica")!, size: JDDeviceHelper.fontCalculator(size: 12))
         labelPlaceholder?.isHidden = true
         labelPlaceholder?.sizeToFit()
         labelPlaceholder?.translatesAutoresizingMaskIntoConstraints = false
@@ -262,7 +264,7 @@ fileprivate extension ACFloatingTextfield {
         let leadingConstraint = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
         let trailingConstraint = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
         let topConstraint = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
-        placeholderLabelHeight = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: JDDeviceHelper().offseter(offset: 15, direction: .horizontal, currentDeviceBound: 375))
+        placeholderLabelHeight = NSLayoutConstraint.init(item: labelPlaceholder!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: JDDeviceHelper.offseter(offset: 15))
         self.addConstraints([leadingConstraint,trailingConstraint,topConstraint])
         labelPlaceholder?.addConstraint(placeholderLabelHeight!)
     }
@@ -321,12 +323,12 @@ fileprivate extension ACFloatingTextfield {
             return
         }
         
-        if placeholderLabelHeight?.constant == JDDeviceHelper().offseter(offset: 15, direction: .horizontal, currentDeviceBound: 375) {
+        if placeholderLabelHeight?.constant == JDDeviceHelper.offseter(offset: 15) {
             return
         }
         
-        placeholderLabelHeight?.constant = JDDeviceHelper().offseter(offset: 15, direction: .horizontal, currentDeviceBound: 375);
-        labelPlaceholder?.font = UIFont(name: (self.font?.fontName)!, size: JDDeviceHelper().fontCalculator(size: 12))
+        placeholderLabelHeight?.constant = JDDeviceHelper.offseter(offset: 15);
+        labelPlaceholder?.font = UIFont(name: (self.font?.fontName)!, size: JDDeviceHelper.fontCalculator(size: 12))
         
         UIView.animate(withDuration: 0.2, animations: {
             self.layoutIfNeeded()

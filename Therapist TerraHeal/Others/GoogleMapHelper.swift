@@ -28,25 +28,24 @@ extension GMSMapView {
         polyline.geodesic = true
         
         
-        /* let styles = [GMSStrokeStyle.solidColor(.clear),
-                            GMSStrokeStyle.solidColor(.themePrimary)]
+        let styles = [GMSStrokeStyle.solidColor(.clear),
+                             GMSStrokeStyle.solidColor(.themePrimary)]
         let scale = 1.0 / Double(self.projection.points(forMeters: 1, at: self.camera.target))
         let lengths: [NSNumber] = [NSNumber(value: 10.0 * scale), NSNumber(value: 10.0 * scale)]
         
-        polyline.spans = GMSStyleSpans(polyline.path!, styles, lengths, .rhumb)*/
+        polyline.spans = GMSStyleSpans(polyline.path!, styles, lengths, .rhumb)
         polyline.map = self
         // add coordinate to your path
        
     }
     func updateLine(polyline: GMSPolyline) {
-       /* if polyline.path != nil {
+        if polyline.path != nil {
                 let styles = [GMSStrokeStyle.solidColor(.clear),
                                      GMSStrokeStyle.solidColor(.themePrimary)]
                 let scale = 1.0 / Double(self.projection.points(forMeters: 1, at: self.camera.target))
                 let lengths: [NSNumber] = [NSNumber(value: 10.0 * scale), NSNumber(value: 10.0 * scale)]
                 polyline.spans = GMSStyleSpans(polyline.path!, styles, lengths, .rhumb)
-        }*/
-        
+        }
         
     }
     
@@ -67,7 +66,8 @@ extension GMSMapView {
         }
         marker.position = location
         if marker.icon == nil {
-            marker.icon = self.drawImageWithMassageCenterPic(pp: image, image: UIImage.init(named: "asset-center-maker"))
+            marker.icon  = UIImage.init(named: "asset-center-maker")
+           // marker.icon = self.drawImageWithMassageCenterPic(pp: image, image: UIImage.init(named: "asset-center-maker"))
         }
         marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
     }

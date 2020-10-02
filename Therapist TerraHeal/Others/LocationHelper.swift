@@ -13,13 +13,6 @@ import GoogleMaps
 
 typealias LC = LocationCenter
 
-
-struct AutoCompleteAddress {
-    var title: NSAttributedString!
-    var subTitle: NSAttributedString!
-    var placeID: String = ""
-}
-
 class LocationCenter: NSObject, CLLocationManagerDelegate {
     
     let manager: CLLocationManager = CLLocationManager()
@@ -120,6 +113,8 @@ class LocationCenter: NSObject, CLLocationManagerDelegate {
                          didUpdateLocations locations: [CLLocation]) {
         debugPrint("\(self) \(#function)")
         guard let mostRecentLocation = locations.last else { return }
+        appSingleton.myLatitude = mostRecentLocation.coordinate.latitude.toString(places: 8)
+        appSingleton.myLongitude = mostRecentLocation.coordinate.longitude.toString(places: 8)
         Common.nCd.post(name: Common.locationUpdateNtfNm,
                         object: self,
                         userInfo: ["ncd": ["location": mostRecentLocation]])
@@ -128,6 +123,7 @@ class LocationCenter: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager,
                          didFailWithError error: Error) {
         debugPrint("\(self) \(#function)")
+        
         Common.nCd.post(name: Common.locationFailNtfNm,
                         object: self,
                         userInfo: ["ncd": ["locationError": error]])
@@ -203,7 +199,7 @@ extension LocationCenter {
             }
         }
     }
-    func getAutocomplete(text:String, completion: @escaping  (([AutoCompleteAddress]) -> Void)) {
+  /*  func getAutocomplete(text:String, completion: @escaping  (([AutoCompleteAddress]) -> Void)) {
         let token = GMSAutocompleteSessionToken.init()
         
         // Create a type filter.
@@ -229,6 +225,7 @@ extension LocationCenter {
         }
         
     }
+    */
     
     
     func getAddress(placeId:String, completion: @escaping  ((Address) -> Void)) {

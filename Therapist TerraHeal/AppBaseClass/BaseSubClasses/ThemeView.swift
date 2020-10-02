@@ -7,83 +7,162 @@ import Foundation
 import UIKit
 
 class ThemeView: UIView {
- 
+    
+    
+}
+class ThemeTopGradientView: UIView {
+    var gradientLayer: CAGradientLayer? = nil
+    @IBInspectable open var enableGradient : Bool = false {
+        didSet{
+            self.addGradientFade()
+        }
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .clear
+        self.addGradientFade()
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.backgroundColor = .clear
+        self.addGradientFade()
+    }
+    override func layoutSubviews() {
+        self.gradientLayer?.frame = self.bounds
+    }
+    
+    func addGradientFade() {
+        if enableGradient {
+            gradientLayer =  CAGradientLayer()
+            let gradientColor = UIColor.white
+            gradientLayer!.frame = self.bounds
+            gradientLayer!.colors = [gradientColor.withAlphaComponent(1.0).cgColor,gradientColor.withAlphaComponent(0.8).cgColor, gradientColor.withAlphaComponent(0.5).cgColor,gradientColor.withAlphaComponent(0.0).cgColor]
+            gradientLayer!.name = "gradient"
+            
+            if let oldLayer:  CAGradientLayer = self.layer.sublayers?.last(where: { (currentLayer) -> Bool in
+                return currentLayer.name == "topGradient"
+            }) as?  CAGradientLayer {
+                oldLayer.removeFromSuperlayer()
+            }
+            self.layer.addSublayer(gradientLayer!)
+        } else {
+            gradientLayer = nil
+        }
+    }
 }
 
-
+class ThemeBottomGradientView: UIView {
+    var gradientLayer: CAGradientLayer? = nil
+    @IBInspectable open var enableGradient : Bool = false {
+        didSet{
+            self.addGradientFade()
+        }
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .clear
+        self.addGradientFade()
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.backgroundColor = .clear
+        self.addGradientFade()
+    }
+    override func layoutSubviews() {
+        
+        self.gradientLayer?.frame = self.bounds
+    }
+    
+    func addGradientFade() {
+        if enableGradient {
+            gradientLayer =  CAGradientLayer()
+            let gradientColor = UIColor.white
+            gradientLayer!.frame = self.bounds
+            gradientLayer!.colors = [gradientColor.withAlphaComponent(0.0).cgColor,gradientColor.withAlphaComponent(0.5).cgColor, gradientColor.withAlphaComponent(0.8).cgColor,gradientColor.withAlphaComponent(1.0).cgColor]
+            gradientLayer!.name = "gradient"
+            
+            if let oldLayer:  CAGradientLayer = self.layer.sublayers?.last(where: { (currentLayer) -> Bool in
+                return currentLayer.name == "topGradient"
+            }) as?  CAGradientLayer {
+                oldLayer.removeFromSuperlayer()
+            }
+            self.layer.addSublayer(gradientLayer!)
+        } else {
+            gradientLayer = nil
+        }
+    }
+}
 
 
 extension UIView {
     
-    func applyTransform(withScale scale: CGFloat, anchorPoint: CGPoint) {
-            layer.anchorPoint = anchorPoint
-            let scale = scale != 0 ? scale : CGFloat.leastNonzeroMagnitude
-            let xPadding = 1/scale * (anchorPoint.x - 0.5)*bounds.width
-            let yPadding = 1/scale * (anchorPoint.y - 0.5)*bounds.height
-            transform = CGAffineTransform(scaleX: scale, y: scale).translatedBy(x: xPadding, y: yPadding)
-        }
     
-    func height(constant: CGFloat) {
-        setConstraint(value: constant, attribute: .height)
-    }
-
-    func width(constant: CGFloat) {
-        setConstraint(value: constant, attribute: .width)
-    }
-
-    func setShadow() {
+    
+    func setShadow(radius: CGFloat = 5.0, opacity: Float = 0.8, offset: CGSize = CGSize(width: 1.0, height: -2.0) , color: UIColor = UIColor.gray) {
         self.layer.masksToBounds = false
-        self.layer.shadowRadius = 5.0
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowOffset = CGSize(width: 1.0, height: -2.0)
-        self.layer.shadowColor = UIColor.gray.cgColor
-    }
-    private func removeConstraint(attribute: NSLayoutConstraint.Attribute) {
-        constraints.forEach {
-            if $0.firstAttribute == attribute {
-                removeConstraint($0)
-            }
-        }
+        self.layer.shadowRadius = radius
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowOffset = offset
+        self.layer.shadowColor = color.cgColor
     }
 
-    private func setConstraint(value: CGFloat, attribute: NSLayoutConstraint.Attribute) {
-        removeConstraint(attribute: attribute)
-        let constraint =
-            NSLayoutConstraint(item: self,
-                               attribute: attribute,
-                               relatedBy: NSLayoutConstraint.Relation.equal,
-                               toItem: nil,
-                               attribute: NSLayoutConstraint.Attribute.notAnAttribute,
-                               multiplier: 1,
-                               constant: value)
-        self.addConstraint(constraint)
+    func setDurationCellShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 10.0
+        self.layer.shadowOpacity = 0.15
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        self.layer.shadowColor = UIColor.black.cgColor
     }
     
-    func setAnchorPoint(_ anchorPoint: CGPoint) {
-        var newPoint: CGPoint = CGPoint.init(x: self.bounds.size.width * anchorPoint.x, y: self.bounds.size.height * anchorPoint.y)
-        var oldPoint: CGPoint = CGPoint.init(x: self.bounds.size.width * self.layer.anchorPoint.x, y: self.bounds.size.height * self.layer.anchorPoint.y)
-        newPoint = newPoint.applying(self.transform)
-        oldPoint = oldPoint.applying(self.transform)
-        var position: CGPoint = self.layer.position
-        position.x -= oldPoint.x
-        position.x += newPoint.x
-        position.y -= oldPoint.y
-        position.y += newPoint.y
-        self.translatesAutoresizingMaskIntoConstraints = true
-        self.layer.anchorPoint = anchorPoint
-        self.layer.position = position
+    func setHomeBottomMenuShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 0.22
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.layer.shadowColor = UIColor.init(red: 98/255, green: 196/255, blue: 255/255, alpha: 1.0).cgColor
+    }
+    
+    func setCollectionSelectionShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 6.0
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        self.layer.shadowColor = UIColor.init(hex: "#00000029").cgColor
+    }
+
+    func setHomeCardShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 4.0
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        self.layer.shadowColor = UIColor.init(hex: "#B2B3B566").cgColor
+    }
+    
+    func setSessionCardShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 6.0
+        self.layer.shadowOpacity = 0.15
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        self.layer.shadowColor = UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor
+    }
+    func removeShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 0.0
+        self.layer.shadowOpacity = 0.0
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        self.layer.shadowColor = UIColor.clear.cgColor
     }
 }
 //MARK: Dashed UIView
 extension UIView {
-
+    
     func createDashedLine(from point1: CGPoint, to point2: CGPoint, color: UIColor, strokeLength: NSNumber, gapLength: NSNumber, width: CGFloat) {
         let shapeLayer = CAShapeLayer()
-
+        
         shapeLayer.strokeColor = color.cgColor
         shapeLayer.lineWidth = width
         shapeLayer.lineDashPattern = [strokeLength, gapLength]
-
+        
         let path = CGMutablePath()
         path.addLines(between: [point1, point2])
         shapeLayer.path = path
@@ -95,29 +174,27 @@ extension UIView {
         }
         layer.addSublayer(shapeLayer)
     }
-
+    
 }
 class DashedLineView: UIView {
-
+    
     private let borderLayer = CAShapeLayer()
     private let radius: CGFloat = 10
-
+    
     override func awakeFromNib() {
-
+        
         super.awakeFromNib()
-
+        
         borderLayer.strokeColor = UIColor.themePrimary.cgColor
         borderLayer.lineDashPattern = [3,3]
         borderLayer.backgroundColor = UIColor.clear.cgColor
         borderLayer.fillColor = UIColor.clear.cgColor
-
+        
         layer.addSublayer(borderLayer)
     }
-
+    
     override func draw(_ rect: CGRect) {
-
         borderLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: radius).cgPath
-        print("\(self)-\(rect)")
     }
 }
 
@@ -140,11 +217,11 @@ extension UIView {
 
 //MARK:- Custom Segment Control
 class CustomSegmentedControl: UISegmentedControl {
-
+    
     override func layoutSubviews(){
-
+        
         super.layoutSubviews()
-
+        
         //corner radius
         let cornerRadius = bounds.height/2
         let maskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
@@ -162,58 +239,10 @@ class CustomSegmentedControl: UISegmentedControl {
             foregroundImageView.backgroundColor = UIColor.themePrimary
             foregroundImageView.clipsToBounds = true
             foregroundImageView.layer.masksToBounds = true
-
+            
             foregroundImageView.layer.cornerRadius = 14
             foregroundImageView.layer.maskedCorners = maskedCorners
         }
     }
-}
-
-@IBDesignable class PaddedImageView: UIImageView {
-    @IBInspectable open var padding: CGFloat = 0 {
-        didSet{
-            self.setPadding(padding: self.padding)
-        }
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setPadding(padding: self.padding)
-    }
-    
-    override init(image: UIImage?) {
-        super.init(image: nil)
-        self.setPadding(padding: self.padding)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.setPadding(padding: self.padding)
-    }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        //self.setPadding(padding: self.padding)
-    }
-    func setPadding(padding:CGFloat) {
-            self.image = self.image?.imageWithInsets(insetDimen: padding)
-    }
-}
-
-extension UIImage {
-    func imageWithInsets(insetDimen: CGFloat) -> UIImage {
-        return imageWithInset(insets: UIEdgeInsets(top: insetDimen, left: insetDimen, bottom: insetDimen, right: insetDimen))
-    }
-    
-    func imageWithInset(insets: UIEdgeInsets) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(
-            CGSize(width: self.size.width + insets.left + insets.right,
-                   height: self.size.height + insets.top + insets.bottom), false, self.scale)
-        let origin = CGPoint(x: insets.left, y: insets.top)
-        self.draw(at: origin)
-        let imageWithInsets = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return imageWithInsets!
-    }
-    
 }
 

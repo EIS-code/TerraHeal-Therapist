@@ -10,7 +10,7 @@ import SDWebImage
 extension UIImageView {
     
     func downloadedFrom(link: String,
-                        placeHolder:String = "logo",
+                        placeHolder:UIImage? = UIImage(named:"logo"),
                         isFromCache:Bool = true,
                         isIndicator:Bool = false,
                         mode:UIView.ContentMode = .scaleToFill,
@@ -18,9 +18,10 @@ extension UIImageView {
         
         self.contentMode = mode
         self.clipsToBounds = true;
-        let placeHolderImage = UIImage.init(named: placeHolder)
+        if placeHolder != nil {
+                self.image=placeHolder;
+        }
         
-        self.image=placeHolderImage;
         if link.isEmpty() {
             print("link is empty")
             return
@@ -35,7 +36,7 @@ extension UIImageView {
             }
             if isFromCache {
                 
-                self.sd_setImage(with: url, placeholderImage:placeHolderImage, completed: { (image, error, cacheType, url) -> Void in
+                self.sd_setImage(with: url, placeholderImage:placeHolder, completed: { (image, error, cacheType, url) -> Void in
                     if ((error) != nil) {
                         if isIndicator {
                             self.sd_imageIndicator!.stopAnimatingIndicator()
