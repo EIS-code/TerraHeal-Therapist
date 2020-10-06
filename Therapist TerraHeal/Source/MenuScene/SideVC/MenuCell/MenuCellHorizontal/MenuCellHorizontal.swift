@@ -11,7 +11,6 @@ import Foundation
 class MenuCellHorizontal: CollectionShadowCell {
 
     @IBOutlet weak var lblTitle: ThemeLabel!
-    @IBOutlet weak var ivBg: UIImageView!
     @IBOutlet weak var ivMenu: UIImageView!
     @IBOutlet weak var vwCellBg: UIView!
     
@@ -29,7 +28,6 @@ class MenuCellHorizontal: CollectionShadowCell {
         //self.lblTitle?.font = FontHelper.font(name: FontName.Regular, size: FontSize.detail)
         self.lblTitle.text = menuDetail.id.name()
         self.ivMenu.image = UIImage.init(named: menuDetail.id.image())
-        self.ivBg.image = UIImage.init(named: menuDetail.id.backgroundImage())
     }
     override func layoutSubviews() {
         super.layoutSubviews()

@@ -29,21 +29,24 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="65z-cQ-Krc" userLabel="Stack View - select Date">
-                    <rect key="frame" x="341" y="9.5" width="47" height="21.5"/>
+                    <rect key="frame" x="346" y="10" width="42" height="20.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gib-9e-cGN" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.5" width="15.5" height="20.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="15.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="theme_dark_text"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="hRh-ub-YTJ">
-                            <rect key="frame" x="25.5" y="0.0" width="21.5" height="21.5"/>
+                            <rect key="frame" x="25.5" y="5" width="16.5" height="10.5"/>
                         </imageView>
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3O-Ly-ek3" userLabel="btnSelectDate">
-                    <rect key="frame" x="333" y="1.5" width="63" height="37.5"/>
+                    <rect key="frame" x="338" y="2" width="58" height="36.5"/>
+                    <connections>
+                        <action selector="btnSelectDateTapped:" destination="-1" eventType="touchUpInside" id="GbO-D7-aXC"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
@@ -69,7 +72,7 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-arrow-down" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-arrow-down" width="16.5" height="10.5"/>
         <image name="asset-filter-future" width="24" height="24.5"/>
         <namedColor name="theme_dark_text">
             <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

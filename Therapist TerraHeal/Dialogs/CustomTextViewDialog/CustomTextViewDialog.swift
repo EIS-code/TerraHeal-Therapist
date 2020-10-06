@@ -18,7 +18,8 @@ class CustomTextViewDialog: ThemeBottomDialogView {
         super.awakeFromNib()
     }
     
-    func initialize(title:String,data: String , buttonTitle:String,cancelButtonTitle:String) {
+    func initialize(title:String,placeholder:String = "",  data: String = "" , buttonTitle:String,cancelButtonTitle:String) {
+         self.initialSetup()
         self.lblTitle.text = title
         self.txtDescription.text = data
         if cancelButtonTitle.isEmpty() {
@@ -33,7 +34,7 @@ class CustomTextViewDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
-        self.initialSetup()
+        self.txtDescription.placeholder = placeholder
     }
 
     override func initialSetup() {
@@ -48,8 +49,6 @@ class CustomTextViewDialog: ThemeBottomDialogView {
     override func layoutSubviews() {
         super.layoutSubviews()
     }
-
-
 
     @IBAction func btnDoneTapped(_ sender: Any) {
         strEnteredData = txtDescription.text?.trim() ?? ""

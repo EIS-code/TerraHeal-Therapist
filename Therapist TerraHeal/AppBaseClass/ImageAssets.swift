@@ -26,6 +26,25 @@ struct ImageAsset {
         static let past = "asset-filter-past"
         static let future = "asset-filter-future"
         static let today = "asset-filter-today"
+
+        static let pastDark = "asset-filter-past-dark"
+        static let futureDark = "asset-filter-future-dark"
+
+    }
+
+    struct SideMenu {
+        static let news = "asset-side-menu-news"
+        static let notifications = "asset-side-menu-notifications"
+        static let quitCollaboration = "asset-side-menu-quit-collaboration"
+        static let suggestionCollaboration = "asset-side-menu-suggestion-collaboration"
+        static let suspendCollaboration = "asset-side-menu-suspend-collaboration"
+        static let takeBreak = "asset-side-menu-take-break"
+
+
+    }
+    struct Button {
+           static let filter = "asset-filter"
+           static let close = "asset-close"
     }
     
 }

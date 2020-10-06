@@ -30,7 +30,30 @@
 "MENU_TAKE_BREAK" = "take break";
 "MENU_NEWS" = "news";
 "MENU_NOTIFICATIONS" = "notifications";
+//MARK: Notification
+"NOTIFICATION_TITLE" = "notifications";
+"NO_NOTIFICATION_TITLE" = "no more notifications";
 
+//MARK: Suggestions And Complaints
+"SUGGESTIONS_AND_COMPLAINTS_TITLE" = "suggestions and complaints";
+"SUGGESTIONS_AND_COMPLAINTS_EMPTY_TITLE" = "no more suggestions and complaints";
+"SUGGESTIONS_AND_COMPLAINTS_BTN_ADD" = "Add";
+"ADD_SUGGESTIONS_OR_COMPLAINTS_DIALOG_TITLE" = "add suggestions\nor complaints";
+"SUGGESTIONS" = "suggestions";
+"COMPLATIONS" = "complations";
+"ADD_COMPLAINTS_DIALOG_TITLE" = "add complaints";
+"ADD_COMPLAINTS_DIALOG_PLACEHOLDER"  = "type a complaints here";
+"ADD_SUGGESTION_DIALOG_TITLE" = "add suggestions";
+"ADD_SUGGESTION_DIALOG_PLACEHOLDER"  = "type a suggestions here";
+//MARK: TimeBreak Dialog
+"TIME_BREAK_DIALOG_TITLE" = "break minutes";
+"TIME_BREAK_PLACEHOLDER" = "or type here";
+"TIME_BREAK_AVAILABLE" = "available in";
+//MARK: Rating Screen
+"RATING_TITLE" = "rating";
+"RATING_BTN_RATE" = "Rate";
+"RATING_BTN_CANCEL" = "Cancel";
+/*
 //MARK: Service Map SCREEN
 "SERVICE_PROGRESS_TITLE" = "Service in progress";
 "SERVICE_PROGRESS_BTN_FINISH" = "finish";
@@ -62,6 +85,7 @@
 "DATE_DIALOG_TITLE" = "select date & time";
 "DATE_DIALOG_LBL_SELECT_DATE" = "select date";
 "DATE_DIALOG_LBL_SELECT_TIME" = "select time";
+*/
 
 //MARK: -
 //MARK: Common Strings

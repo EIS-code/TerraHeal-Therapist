@@ -32,6 +32,13 @@ class ShadowTableCell: TableCell {
        
 }
 
+struct SelectionBorderTableCellDetail {
+    var id:String = ""
+    var title:String = ""
+    var isSelected:Bool = false
+    var indexPath: IndexPath = IndexPath.init(row: -1, section: -1)
+}
+
 class SelectionBorderTableCell: ShadowTableCell {
    
     @IBOutlet weak var lblCellTitle: ThemeLabel!
@@ -52,9 +59,9 @@ class SelectionBorderTableCell: ShadowTableCell {
         self.vwCellBg?.backgroundColor = UIColor.white
     }
     
-    func setData(title: String, isSelected: Bool) {
-        self.lblCellTitle?.text = title
-        self.isSelected = isSelected
+    func setCellData(data: SelectionBorderTableCellDetail) {
+        self.lblCellTitle?.text = data.title
+        self.isSelected = data.isSelected
         self.setupLayout()
     }
 

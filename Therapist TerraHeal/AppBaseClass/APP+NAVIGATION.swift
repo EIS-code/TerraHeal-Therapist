@@ -74,6 +74,65 @@ extension AppDelegate {
         }*/
         
     }
+
+    func loadNotificationVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: NotificationVC =  nc.findVCs(ofType: NotificationVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: NotificationVC = NotificationVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: NotificationVC = NotificationVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadSuggestionVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: SuggestionAndComplaintVC =  nc.findVCs(ofType: SuggestionAndComplaintVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: SuggestionAndComplaintVC = SuggestionAndComplaintVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: SuggestionAndComplaintVC = SuggestionAndComplaintVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    func loadRateVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: RateVC =  nc.findVCs(ofType: RateVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: RateVC = RateVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: RateVC = RateVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    func loadNewsVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: NewsVC =  nc.findVCs(ofType: NewsVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: NewsVC = NewsVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: NewsVC = NewsVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
     
 }
 

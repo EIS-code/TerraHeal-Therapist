@@ -11,6 +11,7 @@ struct SideMenuItem {
     var id: SideMenu = SideMenu.News
     var image: String = ""
     var isVerticle: Bool = true
+    var value:String = ""
 }
 enum SideMenu: String {
     case QuitColobration = "0"
@@ -25,9 +26,9 @@ enum SideMenu: String {
         case .QuitColobration:
             return "MENU_QUIT_COLLABORATION".localized()
         case .SuggesionAndComplaints:
-            return "MENU_SUSPEND_COLLABORATION".localized()
-        case .SuspendCollaboration:
             return "MENU_SUGGESTIONS_AND_COMPLAINTS".localized()
+        case .SuspendCollaboration:
+            return "MENU_SUSPEND_COLLABORATION".localized()
         case .TakeBreak:
             return "MENU_TAKE_BREAK".localized()
         case .News:
@@ -40,17 +41,18 @@ enum SideMenu: String {
     func image() -> String {
         switch self {
         case .QuitColobration:
-            return "MENU_QUIT_COLLABORATION".localized()
+
+            return ImageAsset.SideMenu.quitCollaboration
         case .SuggesionAndComplaints:
-            return "MENU_SUSPEND_COLLABORATION".localized()
+            return ImageAsset.SideMenu.suggestionCollaboration
         case .SuspendCollaboration:
-            return "MENU_SUGGESTIONS_AND_COMPLAINTS".localized()
+            return ImageAsset.SideMenu.suspendCollaboration
         case .TakeBreak:
-            return "MENU_TAKE_BREAK".localized()
+            return ImageAsset.SideMenu.takeBreak
         case .News:
-            return "MENU_NEWS".localized()
+            return ImageAsset.SideMenu.news
         case .Notifications:
-            return "MENU_NOTIFICATIONS".localized()
+            return ImageAsset.SideMenu.notifications
         }
     }
 
@@ -173,10 +175,65 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         if  let baseVC = self.revealViewController()?.leftViewController as? NC{
-
+            switch self.arrForMenu[indexPath.row].id {
+            case SideMenu.Notifications:
+                Common.appDelegate.loadNotificationVC(navigaionVC: baseVC)
+            case .QuitColobration:
+                self.openTextViewPicker(index: indexPath.item)
+                break
+            case .SuggesionAndComplaints:
+                //self.openTextViewPicker(index: indexPath.item)
+                Common.appDelegate.loadSuggestionVC(navigaionVC: baseVC)
+                break
+            case .SuspendCollaboration:
+                self.openTextViewPicker(index: indexPath.item)
+                break
+            case .TakeBreak:
+                self.openTimeBreakDialog()
+                break
+            case .News:
+                Common.appDelegate.loadNewsVC(navigaionVC: self.navigationController)
+                //Common.appDelegate.loadNotificationVC(navigaionVC: baseVC)
+                break
+            }
         }
 
     }
+
+    func openTextViewPicker(index:Int = 0) {
+        let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
+        alert.initialize(title: arrForMenu[index].id.name()
+            , data: arrForMenu[index].value, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else {return}; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (description) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+            self.arrForMenu[index].value = description
+        }
+    }
+
+    func openTimeBreakDialog() {
+        let alert: TimeBreakDialog = TimeBreakDialog.fromNib()
+        alert.initialize(title: "TIME_BREAK_DIALOG_TITLE".localized(), buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else {return}; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (description) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+        }
+    }
+
 
 }
 

@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TimeDialog" customModule="Terra_Heal" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TimeDialog" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -38,7 +38,7 @@
                                         <constraint firstAttribute="width" constant="40" id="L7X-Gk-SrO"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVJ-76-FfX" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVJ-76-FfX" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="150.5" y="25" width="42" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
@@ -54,7 +54,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Rqi-IJ-x8k" userLabel="Stack View - Next">
                                             <rect key="frame" x="226" y="5" width="117" height="40"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pf4-I0-zI7" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pf4-I0-zI7" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="8" width="64" height="32"/>
                                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                                     <state key="normal" title="Proceed">
@@ -64,7 +64,7 @@
                                                         <action selector="onClickBtnDone:" destination="iN0-l3-epB" eventType="touchUpInside" id="7kL-dt-K9f"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1W-AP-3eY" customClass="DialogFloatingProceedButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1W-AP-3eY" customClass="DialogFloatingProceedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                                     <rect key="frame" x="79" y="2" width="38" height="38"/>
                                                     <color key="backgroundColor" name="theme_primary_light"/>
                                                     <constraints>
@@ -88,7 +88,7 @@
                                         <constraint firstItem="Rqi-IJ-x8k" firstAttribute="centerY" secondItem="ZP6-Da-KrV" secondAttribute="centerY" id="q8U-5e-Nja"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpg-NK-hBn" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpg-NK-hBn" customClass="DialogCancelButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="145" y="371.5" width="53" height="32"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <state key="normal" title="Sign In">
@@ -108,14 +108,14 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="NCB-os-EvZ" secondAttribute="bottom" constant="30" id="9VT-eB-zvv"/>
                         <constraint firstItem="NCB-os-EvZ" firstAttribute="top" secondItem="jWD-qT-vi6" secondAttribute="top" constant="10" id="GsQ-cd-kdK"/>
-                        <constraint firstItem="NCB-os-EvZ" firstAttribute="leading" secondItem="jWD-qT-vi6" secondAttribute="leading" constant="16" id="TFC-wd-6xS" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                        <constraint firstItem="NCB-os-EvZ" firstAttribute="leading" secondItem="jWD-qT-vi6" secondAttribute="leading" constant="16" id="TFC-wd-6xS" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                     <real key="value" value="16"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </constraint>
-                        <constraint firstAttribute="trailing" secondItem="NCB-os-EvZ" secondAttribute="trailing" constant="16" id="nYa-ZC-izW" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                        <constraint firstAttribute="trailing" secondItem="NCB-os-EvZ" secondAttribute="trailing" constant="16" id="nYa-ZC-izW" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                     <real key="value" value="16"/>
@@ -161,7 +161,7 @@
             <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -103,16 +103,23 @@ class HomeVC: BaseVC {
     }
     
     @IBAction func btnFilterTapped(_ sender: UIButton) {
-        sender.isEnabled = false
-        sender.isSelected.toggle()
-        let image: UIImage? = sender.isSelected ? UIImage.init(named: "asset-close") : UIImage.init(named: "asset-filter")
-        sender.isSelected ? self.showFilterDialog() : self.hideFilterDialog()
-        UIView.transition(with: sender as UIView, duration: 0.5, options: .transitionCrossDissolve, animations: {
-            sender.setImage(image, for: .normal)
-            sender.isEnabled = true
+        btnFilter.isEnabled = false
+        btnFilter.isSelected.toggle()
+        self.updateFilterButton(isShowFilter: btnFilter.isSelected)
+    }
+
+    func updateFilterButton(isShowFilter:Bool) {
+
+        let image: UIImage? = isShowFilter ? UIImage.init(named: "asset-close") : UIImage.init(named: "asset-filter")
+
+        isShowFilter ? self.showFilterDialog() : self.hideFilterDialog()
+
+        UIView.transition(with: btnFilter as UIView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.btnFilter.setImage(image, for: .normal)
+            self.btnFilter.isEnabled = true
         }, completion: nil)
     }
-    
+
     func showFilterDialog() {
         
         self.vwFilter.isUserInteractionEnabled = false
@@ -125,9 +132,12 @@ class HomeVC: BaseVC {
             self.tblForFilter.transform = CGAffineTransform.identity
             
         }) { (success) in
+            self.btnFilter.isSelected = true
             self.vwFilter.isUserInteractionEnabled = true
         }
     }
+
+
     func hideFilterDialog() {
         self.vwFilter.isHidden = false
         self.vwFilterDialog.isUserInteractionEnabled = false
@@ -144,9 +154,13 @@ class HomeVC: BaseVC {
                    self.vwFilterDialog.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
                 }) { (success) in
                     self.vwFilter.isHidden = true
+                    self.btnFilter.isSelected = false
                 }
         })
+       
     }
+
+   
 }
 
 

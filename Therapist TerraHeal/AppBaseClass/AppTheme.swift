@@ -19,7 +19,7 @@ extension UIColor {
     static var themeSecondary:UIColor = UIColor.init(named: "theme_secondary") ?? UIColor.init(hex: "##F8991E")
 
     static var themeBackground:UIColor = UIColor.init(named: "theme_background") ?? UIColor.init(hex: "#000000") //white color
-    static var themeLightBackground: UIColor = UIColor.init(named: "theme_light_background") ?? UIColor.init(hex: "#F6F6F4") // light background
+    static var themeLightBackground: UIColor = UIColor.init(named: "theme_light_background") ?? UIColor.init(hex: "#FFFFFF") // light background
     static var themeDialogBackground: UIColor = UIColor.init(named: "theme_dialog_background") ?? UIColor.init(hex: "#F6F6F4") // light background
     static var themeLightTextColor:UIColor = UIColor.init(named: "theme_light_text_color") ?? UIColor.init(hex: "#000000") // white text
     static var themeDarkText:UIColor = UIColor.init(named: "theme_dark_text") ?? UIColor.init(hex: "#6D6E71") //dark text color
@@ -31,7 +31,7 @@ extension UIColor {
     //Shadow Colors
 
     static var themeShadowColor: UIColor = UIColor.init(named: "theme_shadow")!
-
+    static var themeWhite: UIColor = UIColor.init(hex: "#FFFFFF")
 }
 
 //MARK: Color Extension

@@ -10,6 +10,9 @@ struct FontName {
     static let SemiBold: String = "Nunito-SemiBold"
     static let Regular: String = "Nunito-Regular"
     static let Bold: String = "Nunito-Bold"
+    static let Light: String = "Nunito-Light"
+
+
     static let System: String = ""
 }
 

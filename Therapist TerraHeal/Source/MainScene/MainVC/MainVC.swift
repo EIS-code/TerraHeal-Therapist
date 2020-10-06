@@ -20,7 +20,7 @@ class MainVC: BaseVC {
 
     var homeVC: HomeVC? = nil
     var calendarVC: HomeVC? = nil
-    var newsVC: HomeVC? = nil
+    var newsVC: NewsVC? = nil
 
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -82,17 +82,52 @@ class MainVC: BaseVC {
             guard let self = self else { return } ; print(self)
             switch index {
             case 0:
-                print("")
-                //self.homeButtonSelected()
+                self.calendarSelected()
+
             case 1:
-                print("")
-                //self.exploreButtonSelected()
+                self.homeSelected()
+
             default:
-                print("")
-                //self.favouriteButtonSelected()
+                self.newsSelected()
+
             }
         }
         self.btnMenu.addTarget(self.revealViewController(), action: #selector(PBRevealViewController.revealLeftView), for: .touchUpInside)
+    }
+
+    func newsSelected() {
+        if newsVC == nil {
+            newsVC = NewsVC.fromNib()
+        }
+        newsVC?.isHideNavigationBar = true
+        self.add(newsVC!, view:self.newsView)
+        self.bookingView.gone()
+        self.calendarView.gone()
+        self.newsView.visible()
+        self.homeVC?.removeFromParent()
+        self.calendarVC?.removeFromParent()
+    }
+    func homeSelected() {
+        if homeVC == nil {
+            homeVC = HomeVC.fromNib()
+        }
+        self.add(homeVC!, view:self.bookingView)
+        self.calendarView.gone()
+        self.newsView.gone()
+        self.bookingView.visible()
+        self.newsVC?.removeFromParent()
+        self.calendarVC?.removeFromParent()
+    }
+    func calendarSelected() {
+        if calendarVC == nil {
+            calendarVC = HomeVC.fromNib()
+        }
+        self.add(calendarVC!, view:self.calendarView)
+        self.bookingView.gone()
+        self.newsView.gone()
+        self.calendarView.visible()
+        self.newsVC?.removeFromParent()
+        self.homeVC?.removeFromParent()
     }
 }
 

@@ -79,11 +79,12 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
                     else {
                         return nil
                 }
+
                 if selectedFilterType == .Past {
-                    view.imgFilterType.image = UIImage.init(named: ImageAsset.Filter.past)
+                    view.imgFilterType.image = UIImage.init(named: ImageAsset.Filter.pastDark)
                     view.lblFilterType.text = "Past"
                 } else {
-                    view.imgFilterType.image = UIImage.init(named: ImageAsset.Filter.future)
+                    view.imgFilterType.image = UIImage.init(named: ImageAsset.Filter.futureDark)
                     view.lblFilterType.text = "Future"
                 }
                 return view
@@ -100,16 +101,18 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             }
             print(self.selectedFilterType.rawValue)
             self.tableView.reloadData()
-            self.hideFilterDialog()
+
+            self.updateFilterButton(isShowFilter: false)
         }  else {
             // Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController,isBookingFinished: self.arrForMyPlaces[indexPath.row].isSelected)
         }
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if tblForFilter ==  tableView{
-            return 1
+        if selectedFilterType != .Today && tableView == self.tableView {
+            return 60
+        } else {
+            return 0
         }
-        return 60
     }
 
 }

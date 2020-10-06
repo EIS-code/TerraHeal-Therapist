@@ -46,6 +46,16 @@
 		0342137124C6B3C500ABB285 /* LaunchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0342136F24C6B3C500ABB285 /* LaunchVC.xib */; };
 		0342137224C6B3C500ABB285 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342137024C6B3C500ABB285 /* LaunchVC.swift */; };
 		0345190924C85EBE00AF7026 /* styleable_map.json in Resources */ = {isa = PBXBuildFile; fileRef = 0345190824C85EBE00AF7026 /* styleable_map.json */; };
+		03521F05252B18A00094829E /* DateDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F03252B189F0094829E /* DateDialog.xib */; };
+		03521F06252B18A00094829E /* DateDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F04252B189F0094829E /* DateDialog.swift */; };
+		03521F11252B58FD0094829E /* NotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F09252B58FD0094829E /* NotificationVC.xib */; };
+		03521F12252B58FD0094829E /* NotificationTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F0B252B58FD0094829E /* NotificationTblCell.swift */; };
+		03521F13252B58FD0094829E /* NotificationTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F0C252B58FD0094829E /* NotificationTblCell.xib */; };
+		03521F16252B58FD0094829E /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F10252B58FD0094829E /* NotificationVC.swift */; };
+		03521F29252B612E0094829E /* SuggestionAndComplaintVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F24252B612E0094829E /* SuggestionAndComplaintVC.xib */; };
+		03521F2A252B612E0094829E /* SuggestionTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F26252B612E0094829E /* SuggestionTblCell.swift */; };
+		03521F2B252B612E0094829E /* SuggestionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F27252B612E0094829E /* SuggestionTblCell.xib */; };
+		03521F2C252B612E0094829E /* SuggestionAndComplaintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F28252B612E0094829E /* SuggestionAndComplaintVC.swift */; };
 		035EF5AA2526F3A400C64BD4 /* SideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EF5A12526F3A300C64BD4 /* SideVC.swift */; };
 		035EF5AB2526F3A400C64BD4 /* SideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035EF5A22526F3A300C64BD4 /* SideVC.xib */; };
 		035EF5AC2526F3A400C64BD4 /* MenuCellHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EF5A52526F3A300C64BD4 /* MenuCellHorizontal.swift */; };
@@ -62,6 +72,22 @@
 		035EF5C52526FA3A00C64BD4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EF5BD2526FA3A00C64BD4 /* MainVC.swift */; };
 		035EF5C72526FF3200C64BD4 /* PBRevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EF5C62526FF3200C64BD4 /* PBRevealViewController.swift */; };
 		0365CDAB24C959E100E1361B /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0365CDAA24C959E100E1361B /* CoreServices.framework */; };
+		0379EAB7252C4C2800303A59 /* SelectionBorderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EAB4252C4C2800303A59 /* SelectionBorderTableCell.xib */; };
+		0379EAB8252C4C2800303A59 /* CustomTblSelectionDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EAB5252C4C2800303A59 /* CustomTblSelectionDialog.xib */; };
+		0379EAB9252C4C2800303A59 /* CustomTblSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EAB6252C4C2800303A59 /* CustomTblSelectionDialog.swift */; };
+		0379EABD252C574B00303A59 /* TimeBreakDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EABB252C574B00303A59 /* TimeBreakDialog.swift */; };
+		0379EABE252C574B00303A59 /* TimeBreakDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EABC252C574B00303A59 /* TimeBreakDialog.xib */; };
+		0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EABF252C725B00303A59 /* TimeBreakDialog + CollectionView.swift */; };
+		0379EAC4252C72B800303A59 /* TimeSlotCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EAC2252C72B800303A59 /* TimeSlotCltCell.xib */; };
+		0379EAC5252C72B800303A59 /* TimeSlotCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EAC3252C72B800303A59 /* TimeSlotCltCell.swift */; };
+		0379EACD252C934A00303A59 /* RateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EAC8252C934A00303A59 /* RateVC.xib */; };
+		0379EACE252C934A00303A59 /* RateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EAC9252C934A00303A59 /* RateVC.swift */; };
+		0379EACF252C934A00303A59 /* RateTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EACB252C934A00303A59 /* RateTblCell.swift */; };
+		0379EAD0252C934A00303A59 /* RateTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EACC252C934A00303A59 /* RateTblCell.xib */; };
+		0379EAE3252CA89700303A59 /* NewsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EADE252CA89700303A59 /* NewsVC.xib */; };
+		0379EAE4252CA89700303A59 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EADF252CA89700303A59 /* NewsVC.swift */; };
+		0379EAE5252CA89700303A59 /* NewsTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EAE1252CA89700303A59 /* NewsTblCell.xib */; };
+		0379EAE6252CA89700303A59 /* NewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EAE2252CA89700303A59 /* NewsTblCell.swift */; };
 		038CAF8E252601CF001ACAD6 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038CAF83252601CF001ACAD6 /* LoginVC.xib */; };
 		038CAF8F252601CF001ACAD6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CAF84252601CF001ACAD6 /* LoginVC.swift */; };
 		038CAFC1252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CAF9A252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.swift */; };
@@ -175,6 +201,16 @@
 		0342136F24C6B3C500ABB285 /* LaunchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchVC.xib; sourceTree = "<group>"; };
 		0342137024C6B3C500ABB285 /* LaunchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
 		0345190824C85EBE00AF7026 /* styleable_map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleable_map.json; sourceTree = "<group>"; };
+		03521F03252B189F0094829E /* DateDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateDialog.xib; sourceTree = "<group>"; };
+		03521F04252B189F0094829E /* DateDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateDialog.swift; sourceTree = "<group>"; };
+		03521F09252B58FD0094829E /* NotificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationVC.xib; sourceTree = "<group>"; };
+		03521F0B252B58FD0094829E /* NotificationTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTblCell.swift; sourceTree = "<group>"; };
+		03521F0C252B58FD0094829E /* NotificationTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTblCell.xib; sourceTree = "<group>"; };
+		03521F10252B58FD0094829E /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		03521F24252B612E0094829E /* SuggestionAndComplaintVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestionAndComplaintVC.xib; sourceTree = "<group>"; };
+		03521F26252B612E0094829E /* SuggestionTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionTblCell.swift; sourceTree = "<group>"; };
+		03521F27252B612E0094829E /* SuggestionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestionTblCell.xib; sourceTree = "<group>"; };
+		03521F28252B612E0094829E /* SuggestionAndComplaintVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionAndComplaintVC.swift; sourceTree = "<group>"; };
 		035EF5A12526F3A300C64BD4 /* SideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideVC.swift; sourceTree = "<group>"; };
 		035EF5A22526F3A300C64BD4 /* SideVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideVC.xib; sourceTree = "<group>"; };
 		035EF5A52526F3A300C64BD4 /* MenuCellHorizontal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCellHorizontal.swift; sourceTree = "<group>"; };
@@ -191,6 +227,22 @@
 		035EF5BD2526FA3A00C64BD4 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		035EF5C62526FF3200C64BD4 /* PBRevealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBRevealViewController.swift; sourceTree = "<group>"; };
 		0365CDAA24C959E100E1361B /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		0379EAB4252C4C2800303A59 /* SelectionBorderTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionBorderTableCell.xib; sourceTree = "<group>"; };
+		0379EAB5252C4C2800303A59 /* CustomTblSelectionDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTblSelectionDialog.xib; sourceTree = "<group>"; };
+		0379EAB6252C4C2800303A59 /* CustomTblSelectionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTblSelectionDialog.swift; sourceTree = "<group>"; };
+		0379EABB252C574B00303A59 /* TimeBreakDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeBreakDialog.swift; sourceTree = "<group>"; };
+		0379EABC252C574B00303A59 /* TimeBreakDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeBreakDialog.xib; sourceTree = "<group>"; };
+		0379EABF252C725B00303A59 /* TimeBreakDialog + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeBreakDialog + CollectionView.swift"; sourceTree = "<group>"; };
+		0379EAC2252C72B800303A59 /* TimeSlotCltCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeSlotCltCell.xib; sourceTree = "<group>"; };
+		0379EAC3252C72B800303A59 /* TimeSlotCltCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSlotCltCell.swift; sourceTree = "<group>"; };
+		0379EAC8252C934A00303A59 /* RateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RateVC.xib; sourceTree = "<group>"; };
+		0379EAC9252C934A00303A59 /* RateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateVC.swift; sourceTree = "<group>"; };
+		0379EACB252C934A00303A59 /* RateTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTblCell.swift; sourceTree = "<group>"; };
+		0379EACC252C934A00303A59 /* RateTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RateTblCell.xib; sourceTree = "<group>"; };
+		0379EADE252CA89700303A59 /* NewsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsVC.xib; sourceTree = "<group>"; };
+		0379EADF252CA89700303A59 /* NewsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
+		0379EAE1252CA89700303A59 /* NewsTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTblCell.xib; sourceTree = "<group>"; };
+		0379EAE2252CA89700303A59 /* NewsTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTblCell.swift; sourceTree = "<group>"; };
 		038CAF83252601CF001ACAD6 /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		038CAF84252601CF001ACAD6 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		038CAF9A252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCountryPhoneCodePickerCell.swift; sourceTree = "<group>"; };
@@ -387,9 +439,74 @@
 			name = Support;
 			sourceTree = "<group>";
 		};
+		03521F02252B189F0094829E /* DateDialog */ = {
+			isa = PBXGroup;
+			children = (
+				03521F03252B189F0094829E /* DateDialog.xib */,
+				03521F04252B189F0094829E /* DateDialog.swift */,
+			);
+			path = DateDialog;
+			sourceTree = "<group>";
+		};
+		03521F07252B58FD0094829E /* NotificationVC */ = {
+			isa = PBXGroup;
+			children = (
+				03521F08252B58FD0094829E /* xib */,
+				03521F0A252B58FD0094829E /* NotificationCell */,
+				03521F10252B58FD0094829E /* NotificationVC.swift */,
+			);
+			path = NotificationVC;
+			sourceTree = "<group>";
+		};
+		03521F08252B58FD0094829E /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				03521F09252B58FD0094829E /* NotificationVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		03521F0A252B58FD0094829E /* NotificationCell */ = {
+			isa = PBXGroup;
+			children = (
+				03521F0B252B58FD0094829E /* NotificationTblCell.swift */,
+				03521F0C252B58FD0094829E /* NotificationTblCell.xib */,
+			);
+			path = NotificationCell;
+			sourceTree = "<group>";
+		};
+		03521F22252B612E0094829E /* SuggestionAndComplaintVC */ = {
+			isa = PBXGroup;
+			children = (
+				03521F23252B612E0094829E /* xib */,
+				03521F25252B612E0094829E /* SuggestionAndComplaintCell */,
+				03521F28252B612E0094829E /* SuggestionAndComplaintVC.swift */,
+			);
+			path = SuggestionAndComplaintVC;
+			sourceTree = "<group>";
+		};
+		03521F23252B612E0094829E /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				03521F24252B612E0094829E /* SuggestionAndComplaintVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		03521F25252B612E0094829E /* SuggestionAndComplaintCell */ = {
+			isa = PBXGroup;
+			children = (
+				03521F26252B612E0094829E /* SuggestionTblCell.swift */,
+				03521F27252B612E0094829E /* SuggestionTblCell.xib */,
+			);
+			path = SuggestionAndComplaintCell;
+			sourceTree = "<group>";
+		};
 		035EF59F2526F3A300C64BD4 /* MenuScene */ = {
 			isa = PBXGroup;
 			children = (
+				03521F22252B612E0094829E /* SuggestionAndComplaintVC */,
+				03521F07252B58FD0094829E /* NotificationVC */,
 				035EF5A02526F3A300C64BD4 /* SideVC */,
 			);
 			path = MenuScene;
@@ -436,6 +553,7 @@
 		035EF5B02526FA3A00C64BD4 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				0379EAC6252C934A00303A59 /* RateVC */,
 				035EF5B12526FA3A00C64BD4 /* MainVC */,
 			);
 			path = MainScene;
@@ -444,6 +562,7 @@
 		035EF5B12526FA3A00C64BD4 /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
+				0379EADC252CA89700303A59 /* NewsVC */,
 				035EF5B22526FA3A00C64BD4 /* xib */,
 				035EF5B42526FA3A00C64BD4 /* HomeVC */,
 				035EF5BD2526FA3A00C64BD4 /* MainVC.swift */,
@@ -462,6 +581,7 @@
 		035EF5B42526FA3A00C64BD4 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				03521F02252B189F0094829E /* DateDialog */,
 				03A7FB2425273ACB003A6025 /* MyBookingTblSection */,
 				035EF5B52526FA3A00C64BD4 /* FilterCell */,
 				035EF5B82526FA3A00C64BD4 /* HomeVC.xib */,
@@ -488,6 +608,98 @@
 				035EF5BC2526FA3A00C64BD4 /* MyBookingTblCell.xib */,
 			);
 			path = MyBookingTblCell;
+			sourceTree = "<group>";
+		};
+		0379EAB2252C4C2800303A59 /* CustomTblSelectionDialog */ = {
+			isa = PBXGroup;
+			children = (
+				0379EAB3252C4C2800303A59 /* SelectionBorderTblCell */,
+				0379EAB5252C4C2800303A59 /* CustomTblSelectionDialog.xib */,
+				0379EAB6252C4C2800303A59 /* CustomTblSelectionDialog.swift */,
+			);
+			path = CustomTblSelectionDialog;
+			sourceTree = "<group>";
+		};
+		0379EAB3252C4C2800303A59 /* SelectionBorderTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				0379EAB4252C4C2800303A59 /* SelectionBorderTableCell.xib */,
+			);
+			path = SelectionBorderTblCell;
+			sourceTree = "<group>";
+		};
+		0379EABA252C574B00303A59 /* TimeBreakDialog */ = {
+			isa = PBXGroup;
+			children = (
+				0379EAC1252C72B800303A59 /* TimeSlotCltCell */,
+				0379EABB252C574B00303A59 /* TimeBreakDialog.swift */,
+				0379EABF252C725B00303A59 /* TimeBreakDialog + CollectionView.swift */,
+				0379EABC252C574B00303A59 /* TimeBreakDialog.xib */,
+			);
+			path = TimeBreakDialog;
+			sourceTree = "<group>";
+		};
+		0379EAC1252C72B800303A59 /* TimeSlotCltCell */ = {
+			isa = PBXGroup;
+			children = (
+				0379EAC2252C72B800303A59 /* TimeSlotCltCell.xib */,
+				0379EAC3252C72B800303A59 /* TimeSlotCltCell.swift */,
+			);
+			path = TimeSlotCltCell;
+			sourceTree = "<group>";
+		};
+		0379EAC6252C934A00303A59 /* RateVC */ = {
+			isa = PBXGroup;
+			children = (
+				0379EAC7252C934A00303A59 /* xib */,
+				0379EAC9252C934A00303A59 /* RateVC.swift */,
+				0379EACA252C934A00303A59 /* RateTblCell */,
+			);
+			path = RateVC;
+			sourceTree = "<group>";
+		};
+		0379EAC7252C934A00303A59 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0379EAC8252C934A00303A59 /* RateVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		0379EACA252C934A00303A59 /* RateTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				0379EACB252C934A00303A59 /* RateTblCell.swift */,
+				0379EACC252C934A00303A59 /* RateTblCell.xib */,
+			);
+			path = RateTblCell;
+			sourceTree = "<group>";
+		};
+		0379EADC252CA89700303A59 /* NewsVC */ = {
+			isa = PBXGroup;
+			children = (
+				0379EADD252CA89700303A59 /* xib */,
+				0379EADF252CA89700303A59 /* NewsVC.swift */,
+				0379EAE0252CA89700303A59 /* NewsTblCell */,
+			);
+			path = NewsVC;
+			sourceTree = "<group>";
+		};
+		0379EADD252CA89700303A59 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0379EADE252CA89700303A59 /* NewsVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		0379EAE0252CA89700303A59 /* NewsTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				0379EAE1252CA89700303A59 /* NewsTblCell.xib */,
+				0379EAE2252CA89700303A59 /* NewsTblCell.swift */,
+			);
+			path = NewsTblCell;
 			sourceTree = "<group>";
 		};
 		038AF0E424C5E1DE00DDDDDA /* PreloginScene */ = {
@@ -518,6 +730,8 @@
 		038CAF96252604AB001ACAD6 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				0379EABA252C574B00303A59 /* TimeBreakDialog */,
+				0379EAB2252C4C2800303A59 /* CustomTblSelectionDialog */,
 				038CAF97252604AB001ACAD6 /* PhoneNumberDialogs */,
 				038CAFA2252604AB001ACAD6 /* CustomTextViewDialog */,
 				038CAFA5252604AB001ACAD6 /* DateAndTimeSelectionDialog */,
@@ -951,9 +1165,14 @@
 			files = (
 				038CAFDA252604AB001ACAD6 /* CustomAlert.xib in Resources */,
 				63415E35246FB5C600F0D7A0 /* Nunito-SemiBold.ttf in Resources */,
+				0379EAD0252C934A00303A59 /* RateTblCell.xib in Resources */,
+				0379EAE3252CA89700303A59 /* NewsVC.xib in Resources */,
+				0379EAB7252C4C2800303A59 /* SelectionBorderTableCell.xib in Resources */,
 				038CAFD0252604AB001ACAD6 /* PersonPickerDialog.xib in Resources */,
 				63ABC1F0246D650D00360F07 /* CommonColor.xcassets in Resources */,
+				0379EABE252C574B00303A59 /* TimeBreakDialog.xib in Resources */,
 				035EF5AD2526F3A400C64BD4 /* MenuCellHorizontal.xib in Resources */,
+				0379EAE5252CA89700303A59 /* NewsTblCell.xib in Resources */,
 				038CAFC5252604AB001ACAD6 /* CustomCountryPhoneCodePicker.xib in Resources */,
 				038CAFD2252604AB001ACAD6 /* PersonPickerCell.xib in Resources */,
 				035EF5C12526FA3A00C64BD4 /* HomeVC.xib in Resources */,
@@ -970,16 +1189,24 @@
 				03A7FB2C25274225003A6025 /* MyBookingTblSection.xib in Resources */,
 				038CAFCA252604AB001ACAD6 /* DateTimeDialog.xib in Resources */,
 				038CAFC2252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.xib in Resources */,
+				03521F13252B58FD0094829E /* NotificationTblCell.xib in Resources */,
 				0342137124C6B3C500ABB285 /* LaunchVC.xib in Resources */,
+				0379EAB8252C4C2800303A59 /* CustomTblSelectionDialog.xib in Resources */,
 				035EF5C02526FA3A00C64BD4 /* FilterTblCell.xib in Resources */,
 				035EF5C42526FA3A00C64BD4 /* MyBookingTblCell.xib in Resources */,
 				038CAF8E252601CF001ACAD6 /* LoginVC.xib in Resources */,
+				03521F05252B18A00094829E /* DateDialog.xib in Resources */,
+				0379EAC4252C72B800303A59 /* TimeSlotCltCell.xib in Resources */,
 				038CAFD8252604AB001ACAD6 /* CustomTextFieldDialog.xib in Resources */,
 				035EF5AE2526F3A400C64BD4 /* MenuCellVerticle.xib in Resources */,
 				038CAFCC252604AB001ACAD6 /* CustomDatePicker.xib in Resources */,
+				03521F2B252B612E0094829E /* SuggestionTblCell.xib in Resources */,
 				030DB59B25260966004C7CC8 /* Localizable.strings in Resources */,
+				03521F29252B612E0094829E /* SuggestionAndComplaintVC.xib in Resources */,
 				038CAFD6252604AB001ACAD6 /* CustomAlertConfirmation.xib in Resources */,
+				03521F11252B58FD0094829E /* NotificationVC.xib in Resources */,
 				038CAFC6252604AB001ACAD6 /* CustomMobileNumberDialog.xib in Resources */,
+				0379EACD252C934A00303A59 /* RateVC.xib in Resources */,
 				63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */,
 				0345190924C85EBE00AF7026 /* styleable_map.json in Resources */,
 			);
@@ -1054,6 +1281,7 @@
 				030DB5C3252609FB004C7CC8 /* ThemeLabel.swift in Sources */,
 				038CAFCF252604AB001ACAD6 /* TimeDialog.swift in Sources */,
 				030DB5A125260966004C7CC8 /* UserWebService.swift in Sources */,
+				0379EAB9252C4C2800303A59 /* CustomTblSelectionDialog.swift in Sources */,
 				035EF5BF2526FA3A00C64BD4 /* FilterTblCell.swift in Sources */,
 				038CB0152526056E001ACAD6 /* DeviceHelper.swift in Sources */,
 				038CB0182526056E001ACAD6 /* UIView + Extension.swift in Sources */,
@@ -1063,6 +1291,7 @@
 				035EF5C32526FA3A00C64BD4 /* MyBookingTblCell.swift in Sources */,
 				038CB00A2526056E001ACAD6 /* RatingView.swift in Sources */,
 				038CB01B2526056E001ACAD6 /* JDImageExtension.swift in Sources */,
+				0379EACE252C934A00303A59 /* RateVC.swift in Sources */,
 				030DB5A425260966004C7CC8 /* CountriesWebService.swift in Sources */,
 				030DB57725260869004C7CC8 /* DashedCircleView.swift in Sources */,
 				030DB5CF252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift in Sources */,
@@ -1070,6 +1299,8 @@
 				030DB5C4252609FB004C7CC8 /* CheckBoxButton.swift in Sources */,
 				038CB0062526056E001ACAD6 /* EditProfileTextfield.swift in Sources */,
 				038CAFC4252604AB001ACAD6 /* CustomCountryPhoneCodePicker.swift in Sources */,
+				0379EABD252C574B00303A59 /* TimeBreakDialog.swift in Sources */,
+				03521F2A252B612E0094829E /* SuggestionTblCell.swift in Sources */,
 				038CB0172526056E001ACAD6 /* JDDeviceHelper.swift in Sources */,
 				038CB00F2526056E001ACAD6 /* NSObject + Extension.swift in Sources */,
 				030DB59D25260966004C7CC8 /* AlamofireHelper.swift in Sources */,
@@ -1082,11 +1313,13 @@
 				030DB57625260869004C7CC8 /* CircularProgressBar.swift in Sources */,
 				038CAFE2252604D8001ACAD6 /* CoreDataManager.swift in Sources */,
 				038CAFE5252604D8001ACAD6 /* PersonData.xcdatamodeld in Sources */,
+				03521F12252B58FD0094829E /* NotificationTblCell.swift in Sources */,
 				038CB0112526056E001ACAD6 /* NSLayoutHelper.swift in Sources */,
 				038CB0142526056E001ACAD6 /* String+Localization.swift in Sources */,
 				030DB5CB252609FB004C7CC8 /* ThemeView.swift in Sources */,
 				030DB59C25260966004C7CC8 /* PreferenceHelper.swift in Sources */,
 				038CAFE3252604D8001ACAD6 /* Person+CoreDataClass.swift in Sources */,
+				03521F2C252B612E0094829E /* SuggestionAndComplaintVC.swift in Sources */,
 				030DB5A325260966004C7CC8 /* Singleton.swift in Sources */,
 				035EF5C72526FF3200C64BD4 /* PBRevealViewController.swift in Sources */,
 				038CB01A2526056E001ACAD6 /* UITextField + Extension.swift in Sources */,
@@ -1096,10 +1329,12 @@
 				038CAFD5252604AB001ACAD6 /* FingerPrintDialog.swift in Sources */,
 				038CB0072526056E001ACAD6 /* ACFloatingTextfield.swift in Sources */,
 				035EF5AC2526F3A400C64BD4 /* MenuCellHorizontal.swift in Sources */,
+				0379EAE6252CA89700303A59 /* NewsTblCell.swift in Sources */,
 				030DB5C9252609FB004C7CC8 /* BaseVC.swift in Sources */,
 				030DB5C5252609FB004C7CC8 /* RadioButton.swift in Sources */,
 				030DB5A225260966004C7CC8 /* CityWebService.swift in Sources */,
 				030DB59A25260966004C7CC8 /* ImageAssets.swift in Sources */,
+				03521F06252B18A00094829E /* DateDialog.swift in Sources */,
 				030DB5A625260966004C7CC8 /* AddressWebService.swift in Sources */,
 				035EF5C52526FA3A00C64BD4 /* MainVC.swift in Sources */,
 				030DB5A725260966004C7CC8 /* AppTheme.swift in Sources */,
@@ -1109,27 +1344,32 @@
 				030DB5C7252609FB004C7CC8 /* ThemeButton.swift in Sources */,
 				038CAFE4252604D8001ACAD6 /* Person+CoreDataProperties.swift in Sources */,
 				030DB5CE252609FB004C7CC8 /* ThemeTableCells.swift in Sources */,
+				0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */,
 				030DB59625260966004C7CC8 /* Constant.swift in Sources */,
 				038CAFDB252604AB001ACAD6 /* CustomAlert.swift in Sources */,
 				038CAFC1252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.swift in Sources */,
 				035EF5C22526FA3A00C64BD4 /* HomeVC.swift in Sources */,
 				030DB59F25260966004C7CC8 /* Reachability.swift in Sources */,
+				0379EAC5252C72B800303A59 /* TimeSlotCltCell.swift in Sources */,
 				030DB5AF25260966004C7CC8 /* FontHelper.swift in Sources */,
 				030DB59E25260966004C7CC8 /* AppWebApi.swift in Sources */,
 				030DB59725260966004C7CC8 /* LanguageManager.swift in Sources */,
 				038CAFCB252604AB001ACAD6 /* DateTimeDialog.swift in Sources */,
 				038CB0122526056E001ACAD6 /* String + TypeCasting.swift in Sources */,
+				0379EAE4252CA89700303A59 /* NewsVC.swift in Sources */,
 				03A7FB2325273058003A6025 /* HomeVC + TableView.swift in Sources */,
 				030DB5CD252609FB004C7CC8 /* ThemeScrollView.swift in Sources */,
 				030DB5C6252609FB004C7CC8 /* FloatingRoundButton.swift in Sources */,
 				030DB5A025260966004C7CC8 /* ResponseModel.swift in Sources */,
 				030DB5D0252609FB004C7CC8 /* ThemeBottomDialog.swift in Sources */,
+				0379EACF252C934A00303A59 /* RateTblCell.swift in Sources */,
 				030DB5C2252609FB004C7CC8 /* ThemeCollectionCell.swift in Sources */,
 				038CB01C2526056E001ACAD6 /* LocationHelper.swift in Sources */,
 				038CB0102526056E001ACAD6 /* Date + Extension.swift in Sources */,
 				038CB0162526056E001ACAD6 /* JDSubclasses + UIControl.swift in Sources */,
 				038CAFD7252604AB001ACAD6 /* CustomAlertConfirmation.swift in Sources */,
 				038CAFCD252604AB001ACAD6 /* CustomDatePicker.swift in Sources */,
+				03521F16252B58FD0094829E /* NotificationVC.swift in Sources */,
 				038CAFC8252604AB001ACAD6 /* CustomTextViewDialog.swift in Sources */,
 				038CB0132526056E001ACAD6 /* String + Validation.swift in Sources */,
 				0342137224C6B3C500ABB285 /* LaunchVC.swift in Sources */,

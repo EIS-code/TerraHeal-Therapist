@@ -43,7 +43,7 @@
                                     <color key="titleColor" name="theme_primary"/>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-demo" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
                                 <rect key="frame" x="20" y="10" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6Va-LV-dZv"/>
@@ -89,7 +89,7 @@
     </objects>
     <resources>
         <image name="asset-arrow-right" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-center" width="27" height="27"/>
+        <image name="asset-center-demo" width="30" height="26.5"/>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
