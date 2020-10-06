@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="254" id="KGk-i7-Jjw" userLabel="SuggestionTblCell" customClass="SuggestionTblCell" customModule="Therapist_TerraHeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="389" height="254"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="389" height="254"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
+                        <rect key="frame" x="8" y="8" width="373" height="238"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-demo" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-Rc-egA">
+                                <rect key="frame" x="8" y="8" width="38" height="38"/>
+                                <color key="backgroundColor" name="theme_primary_light"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="2u4-JE-rTm" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                <real key="value" value="38"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="LzM-Rc-egA" secondAttribute="height" multiplier="1:1" id="LSu-4J-cQn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <rect key="frame" x="52" y="8" width="42.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_dark_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Short" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkL-On-Gbz" userLabel="lblDesignation" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <rect key="frame" x="52" y="32.5" width="42.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_dark_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fG-X5-1El" userLabel="lblDetails" customClass="ThemeVerticalAlignLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <rect key="frame" x="8" y="62" width="357" height="160"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_dark_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:40 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0L7-Fm-ezJ" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <rect key="frame" x="295" y="8" width="70" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_dark_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggestion" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rl-0j-5X6" userLabel="lblType" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <rect key="frame" x="278.5" y="32.5" width="86.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_dark_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="theme_light_background"/>
+                        <constraints>
+                            <constraint firstItem="vkL-On-Gbz" firstAttribute="trailing" secondItem="zbl-J2-KSJ" secondAttribute="trailing" id="0sd-uf-5E8"/>
+                            <constraint firstItem="vkL-On-Gbz" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="leading" id="1KN-Ep-V3d"/>
+                            <constraint firstItem="0L7-Fm-ezJ" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="top" id="2EO-HS-Rdz"/>
+                            <constraint firstItem="8rl-0j-5X6" firstAttribute="top" secondItem="vkL-On-Gbz" secondAttribute="top" id="356-UJ-SeP"/>
+                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="LzM-Rc-egA" secondAttribute="top" id="3Dv-61-uxc"/>
+                            <constraint firstItem="8rl-0j-5X6" firstAttribute="trailing" secondItem="0L7-Fm-ezJ" secondAttribute="trailing" id="3ct-J7-e2M"/>
+                            <constraint firstAttribute="trailing" secondItem="0L7-Fm-ezJ" secondAttribute="trailing" constant="8" id="5Dy-XJ-5Ni" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="LzM-Rc-egA" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="8" id="5EV-zN-tX0"/>
+                            <constraint firstItem="0L7-Fm-ezJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="16" id="5XI-dt-PrP" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="LzM-Rc-egA" secondAttribute="trailing" constant="6" id="5v0-p8-lpy" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="LzM-Rc-egA" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="8" id="7X5-dO-mGX" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="9fG-X5-1El" firstAttribute="centerX" secondItem="fTr-D4-KiU" secondAttribute="centerX" id="Ogj-2s-Kfd"/>
+                            <constraint firstItem="8rl-0j-5X6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vkL-On-Gbz" secondAttribute="trailing" constant="16" id="Oza-hc-EbQ" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="9fG-X5-1El" firstAttribute="top" secondItem="vkL-On-Gbz" secondAttribute="bottom" constant="8" id="Szs-Bk-uk8"/>
+                            <constraint firstItem="9fG-X5-1El" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LzM-Rc-egA" secondAttribute="bottom" constant="16" id="TWH-yk-oAu" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="9fG-X5-1El" secondAttribute="bottom" constant="16" id="Zeb-ei-Q4g" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="9fG-X5-1El" firstAttribute="leading" secondItem="LzM-Rc-egA" secondAttribute="leading" id="ezA-5e-Biq"/>
+                            <constraint firstItem="vkL-On-Gbz" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="bottom" constant="4" id="hbU-Eu-ZbQ" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="theme_light_background"/>
+                <constraints>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="2jg-EE-YxG" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
+                    <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="8" id="AWN-UN-JV4" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="p1a-dc-cSm" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
+                    <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" constant="8" id="uHV-Oa-H3d" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" name="theme_light_background"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ivCell" destination="LzM-Rc-egA" id="y8h-yP-anD"/>
+                <outlet property="lblDate" destination="0L7-Fm-ezJ" id="RAJ-Wf-Fjc"/>
+                <outlet property="lblDesignation" destination="vkL-On-Gbz" id="X95-xE-uxr"/>
+                <outlet property="lblDetail" destination="9fG-X5-1El" id="Hzk-pE-HA4"/>
+                <outlet property="lblName" destination="zbl-J2-KSJ" id="uPE-In-SOw"/>
+                <outlet property="lblType" destination="8rl-0j-5X6" id="PmN-gU-GXa"/>
+                <outlet property="vwCellBg" destination="fTr-D4-KiU" id="iKO-bX-t2m"/>
+            </connections>
+            <point key="canvasLocation" x="181.8840579710145" y="200.89285714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="asset-center-demo" width="30" height="26.5"/>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_light_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light">
+            <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
