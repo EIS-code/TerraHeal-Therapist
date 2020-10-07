@@ -67,6 +67,9 @@
                         </constraint>
                     </constraints>
                     <state key="normal" image="asset-filter-small"/>
+                    <connections>
+                        <action selector="btnSubFilterTapped:" destination="-1" eventType="touchUpInside" id="EzH-su-w0k"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e84-Fg-VKG" userLabel="btnFilter" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="303" y="646" width="48" height="48"/>

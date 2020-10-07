@@ -94,7 +94,7 @@ class HomeVC: BaseVC {
         self.setupTableView(tableView: self.tblForFilter)
         self.registerFilterNib(tableView: self.tblForFilter)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
-        self.setTitle(title: "".localized())
+        self.setNavigationTitle(title: "".localized())
         self.vwFilter.backgroundColor = .clear
     }
     
@@ -108,6 +108,12 @@ class HomeVC: BaseVC {
         self.updateFilterButton(isShowFilter: btnFilter.isSelected)
     }
 
+    @IBAction func btnSubFilterTapped(_ sender: Any) {
+        self.btnSubFilter.isEnabled = false
+        self.openSubFilterDialog()
+    }
+
+
     func updateFilterButton(isShowFilter:Bool) {
 
         let image: UIImage? = isShowFilter ? UIImage.init(named: "asset-close") : UIImage.init(named: "asset-filter")
@@ -119,9 +125,11 @@ class HomeVC: BaseVC {
             self.btnFilter.isEnabled = true
         }, completion: nil)
     }
+}
 
+extension HomeVC {
     func showFilterDialog() {
-        
+
         self.vwFilter.isUserInteractionEnabled = false
         //self.vwFilterDialog.setAnchorPoint(CGPoint.init(x: 1.0, y: 1.0))
         self.vwFilterDialog.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
@@ -130,7 +138,7 @@ class HomeVC: BaseVC {
         UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
             self.vwFilterDialog.transform = .identity
             self.tblForFilter.transform = CGAffineTransform.identity
-            
+
         }) { (success) in
             self.btnFilter.isSelected = true
             self.vwFilter.isUserInteractionEnabled = true
@@ -149,7 +157,7 @@ class HomeVC: BaseVC {
                         self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: -10.0)
         }, completion: { Void in()
                 UIView.animate(withDuration: 0.5, animations: {
-                    
+
                   self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: (self.view.frame.maxY - self.tblForFilter.frame.minY))
                    self.vwFilterDialog.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
                 }) { (success) in
@@ -157,10 +165,30 @@ class HomeVC: BaseVC {
                     self.btnFilter.isSelected = false
                 }
         })
-       
+
     }
 
-   
+    func openSubFilterDialog() {
+        let alert: CustomFilterDialog = CustomFilterDialog.fromNib()
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+            self.btnSubFilter.isEnabled = true
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (filterType,value) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+            self.arrForMyPlaces.removeAll()
+            for i in 0...5 {
+                self.arrForMyPlaces.append(MyBookingTblDetail.init(title: value as! String, isSelected: false))
+            }
+            self.tableView.reloadData()
+            self.btnSubFilter.isEnabled = true
+        }
+    }
 }
 
 

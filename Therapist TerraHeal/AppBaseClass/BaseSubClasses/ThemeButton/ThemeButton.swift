@@ -96,7 +96,7 @@ class RoundedBorderButton: ThemeButton {
 class UnderlineTextButton: ThemeButton {
     
     override func setTitle(_ title: String?, for state: UIControl.State) {
-        super.setTitle(title, for: .normal)
+        super.setText(title, for: .normal)
         self.setAttributedTitle(self.attributedString(), for: .normal)
     }
     
@@ -125,7 +125,7 @@ class DialogCancelButton: UnderlineTextButton {
     }
    
     override func setTitle(_ title: String?, for state: UIControl.State) {
-        super.setTitle(title, for: .normal)
+        super.setText(title, for: .normal)
     }
 
 }
@@ -150,10 +150,54 @@ class DialogFilledRoundedButton: ThemeButton {
     func fillButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear) {
         self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.height(constant: CommonSize.Button.standard, direction: .horizontal)
-        self.width(constant: CommonSize.Button.standardLargeWidth, direction: .horizontal)
+        //self.width(constant: CommonSize.Button.standardLargeWidth, direction: .horizontal)
         self.contentEdgeInsets = UIEdgeInsets.init(top: 10, left: 0, bottom: 10, right: 0)
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
         self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
     }
+}
+
+class SelectionButton: ThemeButton {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.initalSetup()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.initalSetup()
+    }
+
+    func initalSetup() {
+        self.setFont(name: FontName.SemiBold, size: FontSize.button_17)
+    }
+    func select(withAnimation:Bool = false) {
+        if withAnimation {
+            UIView.animate(withDuration: 0.1) {
+                self.backgroundColor = UIColor.themeSecondary
+                self.setTitleColor(UIColor.themeLightTextColor, for: .normal)
+                self.applyShadow()
+            }
+        }else {
+            self.backgroundColor = UIColor.themeSecondary
+            self.setTitleColor(UIColor.themeLightTextColor, for: .normal)
+            self.applyShadow()
+        }
+
+    }
+    func deselect() {
+        self.backgroundColor = UIColor.clear
+        self.setTitleColor(UIColor.themeDarkText, for: .normal)
+        self.removeShadow()
+    }
+    private func applyShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 6.0
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowOffset = CGSize.init(width: 0.0, height: 3.0)
+        self.layer.shadowColor = UIColor.init(hex: "#00000029").cgColor
+
+    }
+
 }

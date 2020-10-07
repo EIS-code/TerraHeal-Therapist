@@ -66,11 +66,12 @@ class NotificationVC: BaseVC {
         
         self.setBackground(color: UIColor.themeWhite)
         self.setupTableView(tableView: self.tableView)
-        self.setTitle(title: "NOTIFICATION_TITLE".localized())
+
+        self.setNavigationTitle(title:"NOTIFICATION_TITLE".localized())
         self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.detail)
-        self.lblEmptyTitle.text = "NO_NOTIFICATION_TITLE".localized()
-        self.lblEmptyMsg.text = ""
+        self.lblEmptyTitle.setText( "NO_NOTIFICATION_TITLE".localized())
+        self.lblEmptyMsg.setText("")
         self.updateUI()
     }
     

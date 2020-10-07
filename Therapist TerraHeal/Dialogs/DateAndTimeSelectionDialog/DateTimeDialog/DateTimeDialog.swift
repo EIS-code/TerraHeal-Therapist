@@ -30,19 +30,19 @@ class DateTimeDialog: ThemeBottomDialogView {
     
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
-        self.lblTitle.text = title
-        self.btnNext.setTitle(buttonTitle, for: .normal)
+        self.lblTitle.setText(title)
+        self.btnNext.setText(buttonTitle, for: .normal)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
-            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
+            self.btnCancel.setText(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
         if buttonTitle.isEmpty() {
             self.btnNext.isHidden = true
         } else {
             self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
-            self.btnNext.setTitle(buttonTitle, for: .normal)
+            self.btnNext.setText(buttonTitle, for: .normal)
             self.btnNext.isHidden = false
         }
     }
@@ -50,8 +50,8 @@ class DateTimeDialog: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
-        self.lblSelectDate.text = "DATE_DIALOG_LBL_SELECT_DATE".localized()
-        self.lblSelectTime.text = "DATE_DIALOG_LBL_SELECT_TIME".localized()
+        self.lblSelectDate.setText("DATE_DIALOG_LBL_SELECT_DATE".localized())
+        self.lblSelectTime.setText("DATE_DIALOG_LBL_SELECT_TIME".localized())
         self.lblSelectDate.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblSelectTime.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblDateValue.setFont(name: FontName.Regular, size: FontSize.regular)
@@ -105,7 +105,7 @@ class DateTimeDialog: ThemeBottomDialogView {
             datePickerAlert?.dismiss()
             print(date)
             self.dateMilli = date
-            self.lblDateValue.text = Date.milliSecToDate(milliseconds: date, format: DateFormat.BookingDateSelection)
+            self.lblDateValue.setText(Date.milliSecToDate(milliseconds: date, format: DateFormat.BookingDateSelection))
         }
     }
     
@@ -124,7 +124,8 @@ class DateTimeDialog: ThemeBottomDialogView {
             print(date)
             timePickerAlert?.dismiss()
             self.timeMilli = date
-            self.lblTimeValue.text = Date.milliSecToDate(milliseconds: date - Double((TimeZone.current.secondsFromGMT() * 1000)), format: DateFormat.BookingTimeSelection)
+            var dateToConvert = Date.milliSecToDate(milliseconds: date - Double((TimeZone.current.secondsFromGMT() * 1000)), format: DateFormat.BookingTimeSelection)
+            self.lblTimeValue.setText(dateToConvert)
         }
     }
     

@@ -29,7 +29,7 @@ class FilterTblCell: TableCell {
     }
 
     func setData(data: ImageWithTitle ) {
-        self.lblName.text = data.name
+        self.lblName.setText(data.name)
         self.ivFilterImage.image = UIImage.init(named: data.imageName)
     }
 

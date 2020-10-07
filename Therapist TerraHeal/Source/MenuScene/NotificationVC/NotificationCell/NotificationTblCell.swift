@@ -26,8 +26,8 @@ class NotificationTblCell: TableCell {
     }
 
     func setData(data: NotificationDetail ) {
-        self.lblMessage.text = data.message
-        self.lblDate.text = data.date
+        self.lblMessage.setText(data.message)
+        self.lblDate.setText(data.date)
     }
 
     override func layoutSubviews() {

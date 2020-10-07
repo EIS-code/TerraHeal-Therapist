@@ -37,11 +37,11 @@ class SuggestionTblCell: TableCell {
     }
 
     func setData(data: SuggestionTblCellDetail ) {
-        self.lblName?.text = data.name
-        self.lblDesignation?.text = data.designation
-        self.lblDetail?.text = data.details
-        self.lblDate?.text = Date.milliSecToDate(milliseconds: data.date, format: DateFormat.DD_MM_YYYY)
-        self.lblType?.text = data.type
+        self.lblName?.setText(data.name)
+        self.lblDesignation?.setText(data.designation)
+        self.lblDetail?.setText(data.details)
+        self.lblDate?.setText(Date.milliSecToDate(milliseconds: data.date, format: DateFormat.DD_MM_YYYY))
+        self.lblType?.setText(data.type)
     }
 
     override func layoutSubviews() {

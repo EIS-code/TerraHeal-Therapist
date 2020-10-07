@@ -20,18 +20,19 @@ class CustomTextViewDialog: ThemeBottomDialogView {
     
     func initialize(title:String,placeholder:String = "",  data: String = "" , buttonTitle:String,cancelButtonTitle:String) {
          self.initialSetup()
-        self.lblTitle.text = title
-        self.txtDescription.text = data
+        self.lblTitle.setText(title)
+        
+        self.txtDescription.setText(data)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
-            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
+            self.btnCancel.setText(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
         if buttonTitle.isEmpty() {
             self.btnDone.isHidden = true
         } else {
-            self.btnDone.setTitle(buttonTitle, for: .normal)
+            self.btnDone.setText(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
         self.txtDescription.placeholder = placeholder

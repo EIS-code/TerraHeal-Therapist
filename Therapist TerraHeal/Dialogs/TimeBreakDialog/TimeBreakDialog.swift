@@ -48,17 +48,17 @@ class TimeBreakDialog: ThemeBottomDialogView {
     
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
-        self.lblTitle.text = title
+        self.lblTitle.setText(title)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
-            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
+            self.btnCancel.setText(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
         if buttonTitle.isEmpty() {
             self.btnDone.isHidden = true
         } else {
-            self.btnDone.setTitle(buttonTitle, for: .normal)
+            self.btnDone.setText(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
         vwForSelectedTime.setRound(withBorderColor: UIColor.themePrimary, andCornerRadious: 1.0, borderWidth: 1.0)
@@ -93,8 +93,8 @@ class TimeBreakDialog: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
-        self.lblAvailableTime.text = "TIME_BREAK_AVAILABLE".localized()
-        self.txtBreakTime.placeholder = "TIME_BREAK_PLACEHOLDER".localized()
+        self.lblAvailableTime.setText("TIME_BREAK_AVAILABLE".localized())
+        self.txtBreakTime.setPlaceholder("TIME_BREAK_PLACEHOLDER".localized())
         self.txtBreakTime.setRound(withBorderColor: .themeHintText, andCornerRadious: 5.0, borderWidth: 1.0)
         self.txtBreakTime.delegate = self
         self.txtBreakTime.keyboardType = .numberPad

@@ -35,9 +35,8 @@ extension ThemeTextField {
     @objc func fix(textField: UITextField) {
         if let t = textField.text  {
             if maxLength != 0 {
-                    textField.text = String(t.prefix(maxLength))
+                    textField.setText(String(t.prefix(maxLength)))
             }
-            
         }
     }
 }
@@ -123,7 +122,7 @@ extension UITextView: NSTextStorageDelegate {
         }
         set {
             let placeholderLabel = self.placeholderLabel
-            placeholderLabel.text = newValue
+            placeholderLabel.setText(newValue)
             placeholderLabel.numberOfLines = 0
             let width = frame.width - 40
             let size = placeholderLabel.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude))

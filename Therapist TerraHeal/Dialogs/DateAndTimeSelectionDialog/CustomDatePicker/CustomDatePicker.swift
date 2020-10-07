@@ -43,21 +43,21 @@ class CustomDatePicker: ThemeBottomDialogView {
 
         self.initialSetup()
         
-        self.lblTitle.text = title
-        self.btnDone.setTitle(buttonTitle, for: .normal)
+        self.lblTitle.setText(title)
+        self.btnDone.setText(buttonTitle, for: .normal)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
-            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
+            self.btnCancel.setText(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
     }
 
     override func initialSetup() {
         super.initialSetup()
-        self.btnPreviousMonth.setTitle(FontSymbol.back_arrow, for: .normal)
+        self.btnPreviousMonth.setText(FontSymbol.back_arrow, for: .normal)
         self.btnPreviousMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        self.btnNextMonth.setTitle(FontSymbol.next_arrow, for: .normal)
+        self.btnNextMonth.setText(FontSymbol.next_arrow, for: .normal)
         self.btnNextMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblSelectedDate.setFont(name: FontName.Bold, size: FontSize.doubleExLarge)
@@ -143,8 +143,8 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
     }
     
     func selectDate(date:Date) {
-        self.lblSelectedDate.text = date.toString(format: "E, MMM dd")
-        self.lblSelectedYear.text = date.toString(format: "yyyy")
+        self.lblSelectedDate.setText(date.toString(format: "E, MMM dd"))
+        self.lblSelectedYear.setText(date.toString(format: "yyyy"))
         self.vwCalendar.select(date)
         self.selectedMilli = date.millisecondsSince1970
     }

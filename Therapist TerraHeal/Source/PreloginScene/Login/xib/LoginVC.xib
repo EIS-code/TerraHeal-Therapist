@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -35,29 +35,29 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agl-Wb-btm" userLabel="scrVw">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp5-yH-riX" userLabel="vwContent">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="513.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-logo" translatesAutoresizingMaskIntoConstraints="NO" id="LZo-vT-jyU">
-                                    <rect key="frame" x="112.5" y="16" width="150" height="100"/>
+                                    <rect key="frame" x="112.66666666666669" y="16" width="150" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="LZo-vT-jyU" secondAttribute="height" multiplier="1.5:1" id="xlh-rf-Px3"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rG-EW-05Z" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="60" y="140" width="255" height="19"/>
+                                    <rect key="frame" x="60" y="140" width="255" height="18.666666666666657"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
                                     <color key="textColor" name="theme_dark_text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jV-sf-aUO" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="60" y="167" width="255" height="37.5"/>
+                                    <rect key="frame" x="60" y="166.66666666666666" width="255" height="37.333333333333343"/>
                                     <string key="text">You need to identify 
 to sign back in</string>
                                     <fontDescription key="fontDescription" name="Ovo" family="Ovo" pointSize="16"/>
@@ -65,10 +65,10 @@ to sign back in</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="J5Q-R5-iLe" userLabel="Stack View - TextFields">
-                                    <rect key="frame" x="60" y="228.5" width="255" height="131"/>
+                                    <rect key="frame" x="60" y="228" width="255" height="131"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ov9-Oy-oJD" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="255" height="45.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="255" height="45.666666666666664"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="ov9-Oy-oJD" secondAttribute="height" multiplier="28:5" id="2LX-E6-6qA"/>
                                             </constraints>
@@ -76,7 +76,7 @@ to sign back in</string>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6s-st-fuG" customClass="ACFloatingTextfield" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="50.5" width="255" height="45.5"/>
+                                            <rect key="frame" x="0.0" y="50.666666666666686" width="255" height="45.333333333333343"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="n6s-st-fuG" secondAttribute="height" multiplier="28:5" id="gj4-v6-yZc"/>
                                             </constraints>
@@ -92,7 +92,7 @@ to sign back in</string>
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="FilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="121" y="383.5" width="133" height="40"/>
+                                    <rect key="frame" x="121" y="383" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                     <state key="normal" title="Sign In">
@@ -103,7 +103,7 @@ to sign back in</string>
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aP0-Wu-Qbj" userLabel="touchIdView">
-                                    <rect key="frame" x="162.5" y="447.5" width="50" height="50"/>
+                                    <rect key="frame" x="162.66666666666666" y="447" width="50" height="50"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-fingerprint" translatesAutoresizingMaskIntoConstraints="NO" id="ImM-Vg-CDA">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -265,8 +265,14 @@ to sign back in</string>
                         <constraint firstItem="hp5-yH-riX" firstAttribute="top" secondItem="Agl-Wb-btm" secondAttribute="top" id="kqv-yZ-rqA"/>
                     </constraints>
                 </scrollView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-login-left" translatesAutoresizingMaskIntoConstraints="NO" id="BUY-e9-nJA">
+                    <rect key="frame" x="12" y="637" width="138.66666666666666" height="175"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-login-right" translatesAutoresizingMaskIntoConstraints="NO" id="cbW-hg-DCy">
+                    <rect key="frame" x="252" y="698" width="111" height="114"/>
+                </imageView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1P-U5-noU" customClass="BackButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                    <rect key="frame" x="16" y="16" width="34" height="34"/>
+                    <rect key="frame" x="16" y="60" width="34" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="h1P-U5-noU" secondAttribute="height" multiplier="1:1" id="Sdi-EZ-Cgg"/>
                     </constraints>
@@ -277,6 +283,16 @@ to sign back in</string>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="BUY-e9-nJA" secondAttribute="bottom" id="8gw-re-yLf"/>
+                <constraint firstItem="cbW-hg-DCy" firstAttribute="bottom" secondItem="BUY-e9-nJA" secondAttribute="bottom" id="94S-vV-qVU"/>
+                <constraint firstItem="BUY-e9-nJA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="9Do-FB-gBW" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Agl-Wb-btm" secondAttribute="trailing" id="A7l-Sb-LQw"/>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RLs-Nt-G9K"/>
                 <constraint firstItem="h1P-U5-noU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VRE-4K-gkm" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
@@ -284,6 +300,14 @@ to sign back in</string>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cbW-hg-DCy" secondAttribute="trailing" constant="12" id="YDW-bb-EFx" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kN4-Se-iQP"/>
@@ -301,8 +325,10 @@ to sign back in</string>
         </view>
     </objects>
     <resources>
-        <image name="asset-check" width="32" height="32"/>
-        <image name="asset-fingerprint" width="108" height="108"/>
+        <image name="asset-check" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-fingerprint" width="48" height="48"/>
+        <image name="asset-login-left" width="138.66667175292969" height="175"/>
+        <image name="asset-login-right" width="111" height="114"/>
         <image name="asset-logo" width="217" height="146"/>
         <namedColor name="theme_dark_text">
             <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

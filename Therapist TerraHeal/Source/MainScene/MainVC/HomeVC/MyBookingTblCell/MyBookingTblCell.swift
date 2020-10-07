@@ -30,7 +30,7 @@ class MyBookingTblCell: TableCell {
     }
 
     func setData(data: MyBookingTblDetail ) {
-        self.lblName.text = data.title
+        self.lblName.setText(data.title)
        // self.vwBar.backgroundColor =  data.isSelected ? UIColor.themeBookingType1 : UIColor.themeBookingType2
         
     }

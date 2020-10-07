@@ -67,14 +67,8 @@ import UIKit
     override open var placeholder: String? {
         willSet {
             if newValue != "" {
-                self.labelPlaceholder?.text = newValue
+                self.labelPlaceholder?.setText(newValue)
             }
-        }
-    }
-    
-    open var errorText : String? {
-        willSet {
-            self.labelErrorPlaceholder?.text = newValue
         }
     }
     
@@ -250,7 +244,7 @@ fileprivate extension ACFloatingTextfield {
             placeholderText = self.placeholder!
         }
         labelPlaceholder = UILabel()
-        labelPlaceholder?.text = placeholderText
+        labelPlaceholder?.setText(placeholderText)
         labelPlaceholder?.textAlignment = self.textAlignment
         labelPlaceholder?.textColor = placeHolderColor
         labelPlaceholder?.font = UIFont.init(name: (self.font?.fontName ?? "helvetica")!, size: JDDeviceHelper.fontCalculator(size: 12))

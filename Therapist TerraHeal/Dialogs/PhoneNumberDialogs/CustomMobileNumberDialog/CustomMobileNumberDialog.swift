@@ -23,19 +23,19 @@ class CustomMobileNumberDialog: ThemeBottomDialogView {
     func initialize(title:String, countryPhoneCode:String = "", phoneNumber:String = "", buttonTitle:String,cancelButtonTitle:String) {
 
         self.initialSetup()
-        self.lblTitle.text = title
-        self.txtCountryPhoneCode.text = countryPhoneCode
-        self.txtMobileNumber.text = phoneNumber
+        self.lblTitle.setText(title)
+        self.txtCountryPhoneCode.setText(countryPhoneCode)
+        self.txtMobileNumber.setText(phoneNumber)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
-            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
+            self.btnCancel.setText(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
         if buttonTitle.isEmpty() {
             self.btnDone.isHidden = true
         } else {
-            self.btnDone.setTitle(buttonTitle, for: .normal)
+            self.btnDone.setText(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
 
@@ -104,7 +104,7 @@ class CustomMobileNumberDialog: ThemeBottomDialogView {
             [weak alert, weak self] (countryPhoneCode:  CountryPhone) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-            self.txtCountryPhoneCode.text = countryPhoneCode.countryPhoneCode
+            self.txtCountryPhoneCode.setText(countryPhoneCode.countryPhoneCode)
         }
     }
 }

@@ -92,8 +92,8 @@ class BaseVC: UIViewController {
     @IBAction func btnRightTapped(_ btn: UIButton = UIButton()) {
     }
 
-    func setTitle(title: String) {
-        lblTitle?.text = title
+    func setNavigationTitle(title: String) {
+        lblTitle?.setText(title)
         lblTitle?.textAlignment = .center
     }
     func setBackground(color: UIColor) {

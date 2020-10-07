@@ -109,7 +109,7 @@ extension  ThemeBottomDialogView {
                 transitionAnimator?.stopAnimation(true)
                 self.upDownAnimation(direction: AnimationDirection.up)
                 transitionAnimator?.startAnimation()
-            } else {
+            } else if direction == .down {
                 transitionAnimator?.stopAnimation(true)
                 self.upDownAnimation(direction: AnimationDirection.down)
                 /* if fractionComplete < 0.1 {
@@ -118,6 +118,8 @@ extension  ThemeBottomDialogView {
                  self.upDownAnimation(direction: AnimationDirection.down)
                  }*/
                 transitionAnimator?.startAnimation()
+            } else {
+                
             }
         default:
             break

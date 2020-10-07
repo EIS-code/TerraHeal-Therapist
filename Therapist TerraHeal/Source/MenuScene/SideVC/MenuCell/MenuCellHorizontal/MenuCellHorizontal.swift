@@ -26,7 +26,7 @@ class MenuCellHorizontal: CollectionShadowCell {
     func setData(menuDetail:SideMenuItem) {
         self.lblTitle?.setFont(name: FontName.Regular, size: FontSize.detail)
         //self.lblTitle?.font = FontHelper.font(name: FontName.Regular, size: FontSize.detail)
-        self.lblTitle.text = menuDetail.id.name()
+        self.lblTitle.setText(menuDetail.id.name())
         self.ivMenu.image = UIImage.init(named: menuDetail.id.image())
     }
     override func layoutSubviews() {

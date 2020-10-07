@@ -63,7 +63,7 @@ class NewsVC: BaseVC {
     
     private func initialViewSetup() {
         self.setupTableView(tableView: self.tableView)
-        self.setTitle(title: "NEWS_TITLE".localized())
+        self.setNavigationTitle(title: "NEWS_TITLE".localized())
 
     }
     

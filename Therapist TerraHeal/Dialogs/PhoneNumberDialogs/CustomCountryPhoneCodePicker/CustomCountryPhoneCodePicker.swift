@@ -24,12 +24,12 @@ class CustomCountryPhoneCodePicker: ThemeBottomDialogView {
     
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
-        self.lblTitle.text = title
-        self.btnDone.setTitle(buttonTitle, for: .normal)
+        self.lblTitle.setText(title)
+        self.btnDone.setText(buttonTitle, for: .normal)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
-            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
+            self.btnCancel.setText(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
         self.btnDone.isHidden = true

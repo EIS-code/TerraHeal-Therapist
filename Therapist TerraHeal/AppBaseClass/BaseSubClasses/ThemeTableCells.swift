@@ -60,7 +60,8 @@ class SelectionBorderTableCell: ShadowTableCell {
     }
     
     func setCellData(data: SelectionBorderTableCellDetail) {
-        self.lblCellTitle?.text = data.title
+
+        self.lblCellTitle?.setText(data.title)
         self.isSelected = data.isSelected
         self.setupLayout()
     }

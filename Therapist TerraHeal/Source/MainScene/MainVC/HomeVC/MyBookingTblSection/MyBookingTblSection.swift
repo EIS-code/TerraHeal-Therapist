@@ -20,7 +20,7 @@ class MyBookingTblSection: UITableViewHeaderFooterView {
         super.awakeFromNib()
         self.lblSelectDate.setFont(name: FontName.Regular, size: FontSize.regular)
         self.lblFilterType.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
-        self.lblSelectDate.text = "HOME_SECTION_BTN_SELECT_DATE".localized()
+        self.lblSelectDate.setText("HOME_SECTION_BTN_SELECT_DATE".localized())
     }
 
     override func layoutSubviews() {

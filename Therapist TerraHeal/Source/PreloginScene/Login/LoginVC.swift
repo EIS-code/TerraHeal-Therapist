@@ -54,20 +54,20 @@ class LoginVC: BaseVC {
 
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeBackground)
-        self.lblLoginTitle?.text = "LOGIN_LBL_TITLE".localized()
+        self.lblLoginTitle?.setText("LOGIN_LBL_TITLE".localized())
         self.lblLoginTitle?.setFont(name: FontName.Bold, size: FontSize.exLarge)
-        self.lblMessage?.text = "LOGIN_LBL_MESSAGE".localized()
+        self.lblMessage?.setText("LOGIN_LBL_MESSAGE".localized())
         self.lblMessage?.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
-        self.txtEmail?.placeholder = "LOGIN_TXT_EMAIL".localized()
+        self.txtEmail?.setPlaceholder("LOGIN_TXT_EMAIL".localized())
         self.txtEmail?.delegate = self
         self.txtEmail?.configureTextField(InputTextFieldDetail.getEmailConfiguration())
-        self.txtPassword?.placeholder = "LOGIN_TXT_PASSWORD".localized()
+        self.txtPassword?.setPlaceholder("LOGIN_TXT_PASSWORD".localized())
         self.txtPassword?.delegate = self
         self.txtPassword.setupPasswordTextFielad()
         self.txtPassword.configureTextField(InputTextFieldDetail.getPassowordConfiguration())
         self.btnForgotPassword?.setFont(name: FontName.Regular, size: FontSize.button_13)
-        self.btnForgotPassword?.setTitle("LOGIN_BTN_FORGOT_PASSWORD".localized(), for: .normal)
-        self.btnLogin?.setTitle("LOGIN_BTN_SIGN_IN".localized(), for: .normal)
+        self.btnForgotPassword?.setText("LOGIN_BTN_FORGOT_PASSWORD".localized(), for: .normal)
+        self.btnLogin?.setText("LOGIN_BTN_SIGN_IN".localized(), for: .normal)
         self.imgChecked?.isHidden = true
     }
 

@@ -34,7 +34,7 @@ class ThemeLabel: UILabel {
 
     func setTextWithAnimation(text:String,duration:CFTimeInterval = 0.3){
         fadeTransition(duration)
-        self.text = text
+        self.setText(text)
     }
 
     func fadeTransition(_ duration:CFTimeInterval) {

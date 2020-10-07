@@ -59,9 +59,9 @@ class SuggestionAndComplaintVC: BaseVC {
     
     private func initialViewSetup() {
         self.setupTableView(tableView: self.tblForData)
-        self.setTitle(title: "SUGGESTIONS_AND_COMPLAINTS_TITLE".localized())
+        self.setNavigationTitle(title: "SUGGESTIONS_AND_COMPLAINTS_TITLE".localized())
         self.setBackground(color: UIColor.themeLightBackground)
-        self.btnSubmit?.setTitle("SUGGESTIONS_AND_COMPLAINTS_BTN_ADD".localized(), for: .normal)
+        self.btnSubmit?.setText("SUGGESTIONS_AND_COMPLAINTS_BTN_ADD".localized(), for: .normal)
     }
 
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {

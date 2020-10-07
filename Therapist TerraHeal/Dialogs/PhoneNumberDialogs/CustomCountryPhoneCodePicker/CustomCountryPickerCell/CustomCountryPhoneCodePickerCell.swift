@@ -25,9 +25,9 @@ class CustomCountryPhoneCodePickerCell: TableCell {
     }
 
     func setData(data: CountryPhone ) {
-        self.lblCountryName.text = data.countryName
-        self.lblCountryPhoneCode.text = data.countryPhoneCode
-        self.countryFlag.text = data.countryFlag
+        self.lblCountryName.setText(data.countryName)
+        self.lblCountryPhoneCode.setText(data.countryPhoneCode)
+        self.countryFlag.setText(data.countryFlag)
     }
 
     override func layoutSubviews() {

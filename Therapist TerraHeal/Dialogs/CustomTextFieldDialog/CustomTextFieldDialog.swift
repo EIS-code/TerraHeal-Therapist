@@ -24,19 +24,19 @@ class CustomTextFieldDialog: ThemeBottomDialogView {
         
         self.initialSetup()
         self.isMandatory = isMandatory
-        self.lblTitle.text = title
+        self.lblTitle.setText(title)
         self.txtData.placeholder = placeholder
-        self.txtData.text = data
+        self.txtData.setText(data)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
-            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
+            self.btnCancel.setText(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
         if buttonTitle.isEmpty() {
             self.btnDone.isHidden = true
         } else {
-            self.btnDone.setTitle(buttonTitle, for: .normal)
+            self.btnDone.setText(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
         

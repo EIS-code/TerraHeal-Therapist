@@ -63,7 +63,7 @@ class MainVC: BaseVC {
     private func initialViewSetup() {
         
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
-        self.setTitle(title: "".localized())
+        self.setNavigationTitle(title: "".localized())
         
         self.bookingView.isHidden = false
         self.newsView.isHidden = true

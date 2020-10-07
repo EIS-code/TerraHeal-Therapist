@@ -52,9 +52,9 @@ class DateDialog: ThemeDialogView, UIGestureRecognizerDelegate {
 
      func initialSetup() {
 
-        self.btnPreviousMonth.setTitle(FontSymbol.back_arrow, for: .normal)
+        self.btnPreviousMonth.setText(FontSymbol.back_arrow, for: .normal)
         self.btnPreviousMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        self.btnNextMonth.setTitle(FontSymbol.next_arrow, for: .normal)
+        self.btnNextMonth.setText(FontSymbol.next_arrow, for: .normal)
         self.btnNextMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.lblSelectedDate.setFont(name: FontName.Bold, size: FontSize.doubleExLarge)
         self.lblSelectedYear.setFont(name: FontName.Regular, size: FontSize.subHeader)
@@ -155,8 +155,8 @@ extension DateDialog: FSCalendarDataSource, FSCalendarDelegate {
     }
     
     func selectDate(date:Date) {
-        self.lblSelectedDate.text = date.toString(format: "E, MMM dd")
-        self.lblSelectedYear.text = date.toString(format: "yyyy")
+        self.lblSelectedDate.setText(date.toString(format: "E, MMM dd"))
+        self.lblSelectedYear.setText(date.toString(format: "yyyy"))
         self.vwCalendar.select(date)
         self.selectedMilli = date.millisecondsSince1970
     }

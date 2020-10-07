@@ -42,7 +42,7 @@ extension TimeBreakDialog:  UICollectionViewDelegate, UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        self.txtBreakTime.text = ""
+        self.txtBreakTime.setText("")
         self.txtBreakTime.resignFirstResponder()
         self.select(data: self.arrForData[indexPath.row])
 

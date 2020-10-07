@@ -96,8 +96,7 @@ class SideVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
-        self.lblMenu.text = "MENU_TITLE".localized()
-        //self.lblMenu?.font = FontHelper.font(name: FontName.Bold, size: FontSize.large)
+        self.lblMenu.setText("MENU_TITLE".localized())
         self.lblMenu.setFont(name: FontName.Bold, size: FontSize.large)
         self.setupCollectionView()
     }

@@ -25,18 +25,18 @@ class TimeDialog: ThemeBottomDialogView {
     
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
-        self.lblTitle.text = title
+        self.lblTitle.setText(title)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
-            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
+            self.btnCancel.setText(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
         if buttonTitle.isEmpty() {
             self.btnNext.isHidden = true
         } else {
             self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
-            self.btnNext.setTitle(buttonTitle, for: .normal)
+            self.btnNext.setText(buttonTitle, for: .normal)
             self.btnNext.isHidden = false
         }
     }

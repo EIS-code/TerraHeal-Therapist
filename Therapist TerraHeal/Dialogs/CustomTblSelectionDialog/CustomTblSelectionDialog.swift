@@ -16,12 +16,12 @@ class CustomTblSelectionDialog: ThemeBottomDialogView {
     var onBtnDoneTapped: ((_ data:SelectionBorderTableCellDetail) -> Void)? = nil
     var selectedData:SelectionBorderTableCellDetail? = nil
     var arrForData: [SelectionBorderTableCellDetail] = []
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    
+
+
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.text = title
@@ -86,7 +86,7 @@ class CustomTblSelectionDialog: ThemeBottomDialogView {
         }
 
     }
-   
+
 }
 
 extension CustomTblSelectionDialog : UITableViewDelegate,UITableViewDataSource {
@@ -133,6 +133,3 @@ extension CustomTblSelectionDialog : UITableViewDelegate,UITableViewDataSource {
         return UITableView.automaticDimension
     }
 }
-
-
-

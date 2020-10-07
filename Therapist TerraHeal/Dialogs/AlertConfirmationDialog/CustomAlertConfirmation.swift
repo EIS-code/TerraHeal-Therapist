@@ -24,18 +24,18 @@ class CustomAlertConfirmation: ThemeBottomDialogView {
 
     func initialize(title:String, message:String, buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
-        self.lblTitle.text = title
-        lblMessage.text = message
+        self.lblTitle.setText(title)
+        lblMessage.setText(message)
         if cancelButtonTitle.isEmpty() {
             self.btnCancel.isHidden = true
         } else {
-            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
+            self.btnCancel.setText(cancelButtonTitle, for: .normal)
             self.btnCancel.isHidden = false
         }
         if buttonTitle.isEmpty() {
             self.btnNext.isHidden = true
         } else {
-            self.btnNext.setTitle(buttonTitle, for: .normal)
+            self.btnNext.setText(buttonTitle, for: .normal)
             self.btnNext.isHidden = false
         }
     }

@@ -43,9 +43,13 @@
 		030DB5CE252609FB004C7CC8 /* ThemeTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB5BE252609FB004C7CC8 /* ThemeTableCells.swift */; };
 		030DB5CF252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB5C0252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift */; };
 		030DB5D0252609FB004C7CC8 /* ThemeBottomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB5C1252609FB004C7CC8 /* ThemeBottomDialog.swift */; };
+		03405502252E043000B7077D /* RadioSelectionTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03405500252E043000B7077D /* RadioSelectionTblCell.swift */; };
+		03405503252E043000B7077D /* RadioSelectionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03405501252E043000B7077D /* RadioSelectionTblCell.xib */; };
+		03405505252E04BD00B7077D /* CustomFilterDialog + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03405504252E04BD00B7077D /* CustomFilterDialog + TableView.swift */; };
 		0342137124C6B3C500ABB285 /* LaunchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0342136F24C6B3C500ABB285 /* LaunchVC.xib */; };
 		0342137224C6B3C500ABB285 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342137024C6B3C500ABB285 /* LaunchVC.swift */; };
 		0345190924C85EBE00AF7026 /* styleable_map.json in Resources */ = {isa = PBXBuildFile; fileRef = 0345190824C85EBE00AF7026 /* styleable_map.json */; };
+		03456BD7252DDADF00013231 /* CustomFilterDialog + DateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456BD6252DDADF00013231 /* CustomFilterDialog + DateFilter.swift */; };
 		03521F05252B18A00094829E /* DateDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F03252B189F0094829E /* DateDialog.xib */; };
 		03521F06252B18A00094829E /* DateDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F04252B189F0094829E /* DateDialog.swift */; };
 		03521F11252B58FD0094829E /* NotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F09252B58FD0094829E /* NotificationVC.xib */; };
@@ -148,6 +152,9 @@
 		03A7FB2825273ACC003A6025 /* MyBookingTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7FB2625273ACB003A6025 /* MyBookingTblSection.swift */; };
 		03A7FB2C25274225003A6025 /* MyBookingTblSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A7FB2B25274225003A6025 /* MyBookingTblSection.xib */; };
 		03E3F79124CF166500997A16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3F79024CF166500997A16 /* CoreData.framework */; };
+		03F50388252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F50387252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift */; };
+		03F5038C252D937F00AF50A5 /* CustomFilterDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5038A252D937F00AF50A5 /* CustomFilterDialog.swift */; };
+		03F5038D252D937F00AF50A5 /* CustomFilterDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F5038B252D937F00AF50A5 /* CustomFilterDialog.xib */; };
 		63415E33246FB5C600F0D7A0 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E2F246FB5C600F0D7A0 /* Nunito-Light.ttf */; };
 		63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E30246FB5C600F0D7A0 /* Nunito-Regular.ttf */; };
 		63415E35246FB5C600F0D7A0 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63415E31246FB5C600F0D7A0 /* Nunito-SemiBold.ttf */; };
@@ -198,9 +205,13 @@
 		030DB5BE252609FB004C7CC8 /* ThemeTableCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTableCells.swift; sourceTree = "<group>"; };
 		030DB5C0252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThemeBottomDialog + Animation.swift"; sourceTree = "<group>"; };
 		030DB5C1252609FB004C7CC8 /* ThemeBottomDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBottomDialog.swift; sourceTree = "<group>"; };
+		03405500252E043000B7077D /* RadioSelectionTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioSelectionTblCell.swift; sourceTree = "<group>"; };
+		03405501252E043000B7077D /* RadioSelectionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioSelectionTblCell.xib; sourceTree = "<group>"; };
+		03405504252E04BD00B7077D /* CustomFilterDialog + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFilterDialog + TableView.swift"; sourceTree = "<group>"; };
 		0342136F24C6B3C500ABB285 /* LaunchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchVC.xib; sourceTree = "<group>"; };
 		0342137024C6B3C500ABB285 /* LaunchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
 		0345190824C85EBE00AF7026 /* styleable_map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleable_map.json; sourceTree = "<group>"; };
+		03456BD6252DDADF00013231 /* CustomFilterDialog + DateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFilterDialog + DateFilter.swift"; sourceTree = "<group>"; };
 		03521F03252B189F0094829E /* DateDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateDialog.xib; sourceTree = "<group>"; };
 		03521F04252B189F0094829E /* DateDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateDialog.swift; sourceTree = "<group>"; };
 		03521F09252B58FD0094829E /* NotificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationVC.xib; sourceTree = "<group>"; };
@@ -303,6 +314,9 @@
 		03A7FB2625273ACB003A6025 /* MyBookingTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingTblSection.swift; sourceTree = "<group>"; };
 		03A7FB2B25274225003A6025 /* MyBookingTblSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBookingTblSection.xib; sourceTree = "<group>"; };
 		03E3F79024CF166500997A16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		03F50387252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl + SetText + Extension.swift"; sourceTree = "<group>"; };
+		03F5038A252D937F00AF50A5 /* CustomFilterDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFilterDialog.swift; sourceTree = "<group>"; };
+		03F5038B252D937F00AF50A5 /* CustomFilterDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomFilterDialog.xib; sourceTree = "<group>"; };
 		2D64E9E11E70D1B77E4F4BA9 /* Pods-Therapist TerraHeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therapist TerraHeal.debug.xcconfig"; path = "Target Support Files/Pods-Therapist TerraHeal/Pods-Therapist TerraHeal.debug.xcconfig"; sourceTree = "<group>"; };
 		52F577F1D54D46E3263D2738 /* Pods-Therapist TerraHeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Therapist TerraHeal.release.xcconfig"; path = "Target Support Files/Pods-Therapist TerraHeal/Pods-Therapist TerraHeal.release.xcconfig"; sourceTree = "<group>"; };
 		63415E2F246FB5C600F0D7A0 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
@@ -416,6 +430,15 @@
 				030DB5C1252609FB004C7CC8 /* ThemeBottomDialog.swift */,
 			);
 			path = BottomDialog;
+			sourceTree = "<group>";
+		};
+		034054FF252E043000B7077D /* RadioSelectionTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				03405500252E043000B7077D /* RadioSelectionTblCell.swift */,
+				03405501252E043000B7077D /* RadioSelectionTblCell.xib */,
+			);
+			path = RadioSelectionTblCell;
 			sourceTree = "<group>";
 		};
 		0342136E24C6B3C500ABB285 /* LaunchVC */ = {
@@ -730,6 +753,7 @@
 		038CAF96252604AB001ACAD6 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				03F50389252D937F00AF50A5 /* CustomFilterDialog */,
 				0379EABA252C574B00303A59 /* TimeBreakDialog */,
 				0379EAB2252C4C2800303A59 /* CustomTblSelectionDialog */,
 				038CAF97252604AB001ACAD6 /* PhoneNumberDialogs */,
@@ -950,6 +974,7 @@
 				038CAFF32526056E001ACAD6 /* DataType + Extesnion.swift */,
 				038CAFF42526056E001ACAD6 /* NSObject + Extension.swift */,
 				038CAFF52526056E001ACAD6 /* Date + Extension.swift */,
+				03F50387252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift */,
 			);
 			path = "Othert + Extension";
 			sourceTree = "<group>";
@@ -997,6 +1022,18 @@
 				03A7FB2625273ACB003A6025 /* MyBookingTblSection.swift */,
 			);
 			path = MyBookingTblSection;
+			sourceTree = "<group>";
+		};
+		03F50389252D937F00AF50A5 /* CustomFilterDialog */ = {
+			isa = PBXGroup;
+			children = (
+				034054FF252E043000B7077D /* RadioSelectionTblCell */,
+				03F5038A252D937F00AF50A5 /* CustomFilterDialog.swift */,
+				03456BD6252DDADF00013231 /* CustomFilterDialog + DateFilter.swift */,
+				03405504252E04BD00B7077D /* CustomFilterDialog + TableView.swift */,
+				03F5038B252D937F00AF50A5 /* CustomFilterDialog.xib */,
+			);
+			path = CustomFilterDialog;
 			sourceTree = "<group>";
 		};
 		63ABC0A9246D64B500360F07 = {
@@ -1179,6 +1216,7 @@
 				038CAFC3252604AB001ACAD6 /* country_list.json in Resources */,
 				035EF5BE2526FA3A00C64BD4 /* MainVC.xib in Resources */,
 				63ABC1F1246D650D00360F07 /* Assets.xcassets in Resources */,
+				03F5038D252D937F00AF50A5 /* CustomFilterDialog.xib in Resources */,
 				63415E36246FB5C600F0D7A0 /* Nunito-Bold.ttf in Resources */,
 				038CAFCE252604AB001ACAD6 /* TimeDialog.xib in Resources */,
 				035EF5AB2526F3A400C64BD4 /* SideVC.xib in Resources */,
@@ -1195,6 +1233,7 @@
 				035EF5C02526FA3A00C64BD4 /* FilterTblCell.xib in Resources */,
 				035EF5C42526FA3A00C64BD4 /* MyBookingTblCell.xib in Resources */,
 				038CAF8E252601CF001ACAD6 /* LoginVC.xib in Resources */,
+				03405503252E043000B7077D /* RadioSelectionTblCell.xib in Resources */,
 				03521F05252B18A00094829E /* DateDialog.xib in Resources */,
 				0379EAC4252C72B800303A59 /* TimeSlotCltCell.xib in Resources */,
 				038CAFD8252604AB001ACAD6 /* CustomTextFieldDialog.xib in Resources */,
@@ -1339,6 +1378,7 @@
 				035EF5C52526FA3A00C64BD4 /* MainVC.swift in Sources */,
 				030DB5A725260966004C7CC8 /* AppTheme.swift in Sources */,
 				03A7FB2825273ACC003A6025 /* MyBookingTblSection.swift in Sources */,
+				03F50388252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift in Sources */,
 				038CB0192526056E001ACAD6 /* UIViewController + Extension.swift in Sources */,
 				038CB00B2526056E001ACAD6 /* HomeSegmentControl.swift in Sources */,
 				030DB5C7252609FB004C7CC8 /* ThemeButton.swift in Sources */,
@@ -1348,6 +1388,7 @@
 				030DB59625260966004C7CC8 /* Constant.swift in Sources */,
 				038CAFDB252604AB001ACAD6 /* CustomAlert.swift in Sources */,
 				038CAFC1252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.swift in Sources */,
+				03405502252E043000B7077D /* RadioSelectionTblCell.swift in Sources */,
 				035EF5C22526FA3A00C64BD4 /* HomeVC.swift in Sources */,
 				030DB59F25260966004C7CC8 /* Reachability.swift in Sources */,
 				0379EAC5252C72B800303A59 /* TimeSlotCltCell.swift in Sources */,
@@ -1357,6 +1398,7 @@
 				038CAFCB252604AB001ACAD6 /* DateTimeDialog.swift in Sources */,
 				038CB0122526056E001ACAD6 /* String + TypeCasting.swift in Sources */,
 				0379EAE4252CA89700303A59 /* NewsVC.swift in Sources */,
+				03456BD7252DDADF00013231 /* CustomFilterDialog + DateFilter.swift in Sources */,
 				03A7FB2325273058003A6025 /* HomeVC + TableView.swift in Sources */,
 				030DB5CD252609FB004C7CC8 /* ThemeScrollView.swift in Sources */,
 				030DB5C6252609FB004C7CC8 /* FloatingRoundButton.swift in Sources */,
@@ -1377,6 +1419,8 @@
 				038CAFD1252604AB001ACAD6 /* PersonPickerCell.swift in Sources */,
 				038CB00C2526056E001ACAD6 /* Loader.swift in Sources */,
 				038CAFD9252604AB001ACAD6 /* CustomTextFieldDialog.swift in Sources */,
+				03F5038C252D937F00AF50A5 /* CustomFilterDialog.swift in Sources */,
+				03405505252E04BD00B7077D /* CustomFilterDialog + TableView.swift in Sources */,
 				038CAFC7252604AB001ACAD6 /* CustomMobileNumberDialog.swift in Sources */,
 				038CB0092526056E001ACAD6 /* GoogleMapHelper.swift in Sources */,
 				63ABC1A5246D650D00360F07 /* SceneDelegate.swift in Sources */,

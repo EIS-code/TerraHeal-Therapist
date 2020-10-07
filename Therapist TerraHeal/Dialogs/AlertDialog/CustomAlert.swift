@@ -30,7 +30,7 @@ class CustomAlert: ThemeDialogView {
     func initialize(message:String) {
         self.initialSetup()
         self.lblMessage.setFont(name: FontName.Regular, size: FontSize.large)
-        lblMessage.text = message
+        lblMessage.setText(message)
     }
 
     func initialSetup() {

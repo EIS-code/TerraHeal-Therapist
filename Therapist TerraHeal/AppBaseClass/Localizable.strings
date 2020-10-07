@@ -53,6 +53,16 @@
 "RATING_TITLE" = "rating";
 "RATING_BTN_RATE" = "Rate";
 "RATING_BTN_CANCEL" = "Cancel";
+//MARK: Filter Dialog
+"FILTER_BTN_DATE" = "Date";
+"FILTER_BTN_CLIENT_NAME" = "Client name";
+"FILTER_BTN_SERVICES" = "Services";
+"FILTER_BTN_BOOKING_TYPE" = "Booking type";
+"FILTER_BTN_SESSION_TYPE" = "Session type";
+"FILTER_DIALOG_TXT_SEARCH_CLIENT" = "search client name here";
+"FILTER_DIALOG_TXT_SEARCH_SERVICE" = "search services here";
+"FILTER_DIALOG_HOME" = "home/hotel";
+"FILTER_DIALOG_CENTER" = "center";
 /*
 //MARK: Service Map SCREEN
 "SERVICE_PROGRESS_TITLE" = "Service in progress";

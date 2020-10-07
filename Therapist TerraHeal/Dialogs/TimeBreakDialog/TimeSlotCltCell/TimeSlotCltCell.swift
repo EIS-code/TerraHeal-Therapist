@@ -16,7 +16,7 @@ class TimeSlotCltCell: CollectionCell {
         self.lblName?.setFont(name: FontName.Regular, size: FontSize.detail)
     }
     func setData(data:SlotDetail) {
-        self.lblName.text = data.minute
+        self.lblName.setText(data.minute)
         if data.isSelected {
             self.vwForSelected.isHidden = false
             self.lblName.textColor = UIColor.themeLightTextColor

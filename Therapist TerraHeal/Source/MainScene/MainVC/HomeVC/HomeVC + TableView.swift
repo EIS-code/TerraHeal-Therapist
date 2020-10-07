@@ -82,10 +82,10 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
 
                 if selectedFilterType == .Past {
                     view.imgFilterType.image = UIImage.init(named: ImageAsset.Filter.pastDark)
-                    view.lblFilterType.text = "Past"
+                    view.lblFilterType.setText("Past")
                 } else {
                     view.imgFilterType.image = UIImage.init(named: ImageAsset.Filter.futureDark)
-                    view.lblFilterType.text = "Future"
+                    view.lblFilterType.setText("Future")
                 }
                 return view
             }

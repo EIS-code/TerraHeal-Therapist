@@ -63,7 +63,7 @@ import UIKit
     override open var placeholder: String? {
         willSet {
             if newValue != "" {
-                self.labelPlaceholder?.text = newValue
+                self.labelPlaceholder?.setText(newValue)
             }
         }
     }
@@ -213,7 +213,7 @@ extension EditProfileTextfield {
             placeholderText = self.placeholder!
         }
         labelPlaceholder = ThemeLabel()
-        labelPlaceholder?.text = placeholderText
+        labelPlaceholder?.setText(placeholderText)
         labelPlaceholder?.textAlignment = self.textAlignment
         labelPlaceholder?.textColor = placeHolderColor
         labelPlaceholder?.setFont(name: FontName.SemiBold, size: FontSize.placeHolder_14)

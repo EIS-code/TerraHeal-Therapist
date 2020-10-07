@@ -37,11 +37,11 @@ class NewsTblCell: TableCell {
     }
 
     func setData(data: NewsTblCellDetail ) {
-        self.lblHeader?.text = data.header
-        self.lblSubHeader?.text = data.subHeader
-        self.lblDetail?.text = data.details
-        self.lblDate?.text = Date.milliSecToDate(milliseconds: data.date, format: DateFormat.DD_MM_YYYY)
-        self.lblRead?.text = "Read"
+        self.lblHeader?.setText(data.header)
+        self.lblSubHeader?.setText(data.subHeader)
+        self.lblDetail?.setText(data.details)
+        self.lblDate?.setText(Date.milliSecToDate(milliseconds: data.date, format: DateFormat.DD_MM_YYYY))
+        self.lblRead?.setText("Read")
         self.btnCheck.isSelected = data.isRead
     }
 

@@ -27,7 +27,7 @@ class RateTblCell: TableCell {
     }
 
     func setData(data: RateTblCellDetail ) {
-        self.lblCellTitle.text = data.title
+        self.lblCellTitle.setText(data.title)
         self.vwRating.rating = data.rate
     }
     override func layoutSubviews() {

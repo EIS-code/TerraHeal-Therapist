@@ -63,9 +63,9 @@ class RateVC: BaseVC {
     
     private func initialViewSetup() {
         self.setupTableView(tableView: self.tableView)
-        self.setTitle(title: "RATING_TITLE".localized())
-        self.btnRate.setTitle("RATING_BTN_RATE".localized(), for: .normal)
-        self.btnCancel.setTitle("RATING_BTN_CANCEL".localized(), for: .normal)
+        self.setNavigationTitle(title: "RATING_TITLE".localized())
+        self.btnRate.setText("RATING_BTN_RATE".localized(), for: .normal)
+        self.btnCancel.setText("RATING_BTN_CANCEL".localized(), for: .normal)
     }
     
 

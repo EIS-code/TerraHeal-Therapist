@@ -24,7 +24,7 @@ class PersonPickerCell: TableCell {
     }
 
     func setData(data: PersonData ) {
-        self.lblName.text = data.username
+        self.lblName.setText(data.username)
         if data.isSelected {
             self.ivSelected.isHidden = false
 
