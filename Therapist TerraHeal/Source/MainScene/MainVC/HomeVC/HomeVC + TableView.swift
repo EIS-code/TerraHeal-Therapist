@@ -104,6 +104,8 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
 
             self.updateFilterButton(isShowFilter: false)
         }  else {
+            Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController)
+            
             // Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController,isBookingFinished: self.arrForMyPlaces[indexPath.row].isSelected)
         }
     }

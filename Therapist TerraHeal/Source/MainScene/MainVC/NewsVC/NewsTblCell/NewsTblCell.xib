@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fG-X5-1El" userLabel="lblDetails" customClass="ThemeVerticalAlignLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                <rect key="frame" x="8" y="61" width="357" height="123"/>
+                                <rect key="frame" x="8" y="61" width="357" height="127"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
@@ -45,17 +45,17 @@
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5k-Tg-NX4" customClass="JDCheckboxButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                <rect key="frame" x="8" y="192" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrd-8k-Y5G" customClass="JDCheckboxButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <rect key="frame" x="8" y="196" width="34" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="j5k-Tg-NX4" secondAttribute="height" multiplier="1:1" id="KNZ-gz-nSw" customClass="JD"/>
+                                    <constraint firstAttribute="width" secondItem="wrd-8k-Y5G" secondAttribute="height" multiplier="15:15" id="2uh-2B-axR"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="btnCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="H0Q-qI-cgR"/>
+                                    <action selector="btnCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rOr-Bh-gqh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y10-bD-bjz" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                <rect key="frame" x="46" y="197" width="39" height="20.5"/>
+                                <rect key="frame" x="46" y="203" width="39" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_dark_text"/>
                                 <nil key="highlightedColor"/>
@@ -65,9 +65,10 @@
                         <constraints>
                             <constraint firstItem="vkL-On-Gbz" firstAttribute="trailing" secondItem="zbl-J2-KSJ" secondAttribute="trailing" id="0sd-uf-5E8"/>
                             <constraint firstItem="vkL-On-Gbz" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="leading" id="1KN-Ep-V3d"/>
+                            <constraint firstItem="Y10-bD-bjz" firstAttribute="centerY" secondItem="wrd-8k-Y5G" secondAttribute="centerY" id="1fR-QT-Y2Z"/>
                             <constraint firstItem="0L7-Fm-ezJ" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="top" id="2EO-HS-Rdz"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="8" id="3Ls-R4-jbW"/>
-                            <constraint firstAttribute="bottom" secondItem="j5k-Tg-NX4" secondAttribute="bottom" constant="16" id="4cH-z5-7Yh"/>
+                            <constraint firstItem="wrd-8k-Y5G" firstAttribute="top" secondItem="9fG-X5-1El" secondAttribute="bottom" constant="8" id="3oU-nP-cMV"/>
                             <constraint firstAttribute="trailing" secondItem="0L7-Fm-ezJ" secondAttribute="trailing" constant="8" id="5Dy-XJ-5Ni" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
@@ -84,10 +85,13 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </constraint>
-                            <constraint firstItem="j5k-Tg-NX4" firstAttribute="leading" secondItem="9fG-X5-1El" secondAttribute="leading" id="6b7-JP-QB8"/>
+                            <constraint firstItem="wrd-8k-Y5G" firstAttribute="width" secondItem="wrd-8k-Y5G" secondAttribute="height" multiplier="15:15" id="5n0-gl-6Wr"/>
+                            <constraint firstItem="wrd-8k-Y5G" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="8" id="Dvp-TT-kMS"/>
+                            <constraint firstItem="Y10-bD-bjz" firstAttribute="leading" secondItem="wrd-8k-Y5G" secondAttribute="trailing" constant="4" id="GdR-cO-lEL"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="8" id="Gdd-BE-lZw"/>
                             <constraint firstItem="9fG-X5-1El" firstAttribute="centerX" secondItem="fTr-D4-KiU" secondAttribute="centerX" id="Ogj-2s-Kfd"/>
                             <constraint firstItem="9fG-X5-1El" firstAttribute="top" secondItem="vkL-On-Gbz" secondAttribute="bottom" constant="8" id="Szs-Bk-uk8"/>
+                            <constraint firstAttribute="bottom" secondItem="wrd-8k-Y5G" secondAttribute="bottom" constant="8" id="aGF-mf-rYx"/>
                             <constraint firstItem="9fG-X5-1El" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="leading" id="eze-m2-09o"/>
                             <constraint firstItem="vkL-On-Gbz" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="bottom" constant="4" id="hbU-Eu-ZbQ" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                 <userDefinedRuntimeAttributes>
@@ -96,9 +100,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </constraint>
-                            <constraint firstItem="Y10-bD-bjz" firstAttribute="leading" secondItem="j5k-Tg-NX4" secondAttribute="trailing" constant="8" id="jcj-bU-1WW"/>
-                            <constraint firstItem="Y10-bD-bjz" firstAttribute="centerY" secondItem="j5k-Tg-NX4" secondAttribute="centerY" id="rol-7L-zlp"/>
-                            <constraint firstItem="j5k-Tg-NX4" firstAttribute="top" secondItem="9fG-X5-1El" secondAttribute="bottom" constant="8" id="vtN-lf-Qdl"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -137,7 +138,7 @@
             <color key="backgroundColor" name="theme_light_background"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnCheck" destination="j5k-Tg-NX4" id="M3E-Ic-FfK"/>
+                <outlet property="btnCheck" destination="wrd-8k-Y5G" id="eTH-DT-wlg"/>
                 <outlet property="lblDate" destination="0L7-Fm-ezJ" id="RAJ-Wf-Fjc"/>
                 <outlet property="lblDetail" destination="9fG-X5-1El" id="Hzk-pE-HA4"/>
                 <outlet property="lblHeader" destination="zbl-J2-KSJ" id="pwM-tL-b25"/>

@@ -46,5 +46,8 @@ struct ImageAsset {
            static let filter = "asset-filter"
            static let close = "asset-close"
     }
+    struct Camera {
+        static let qr = "asset-qr"
+    }
     
 }

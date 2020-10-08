@@ -132,7 +132,58 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
+    func loadBookingDetailVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: BookingDetailVC =  nc.findVCs(ofType: BookingDetailVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: BookingDetailVC = BookingDetailVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: BookingDetailVC = BookingDetailVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
 
+    func loadCameraVC(navigaionVC:UINavigationController? = nil) -> CameraVC {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: CameraVC =  nc.findVCs(ofType: CameraVC.self).first {
+                _ = nc.popToVc(targetVC)
+                return targetVC
+            } else {
+                let targetVC: CameraVC = CameraVC.fromNib()
+                nc.pushVC(targetVC)
+                return targetVC
+            }
+        } else {
+            let targetVC: CameraVC = CameraVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+            return targetVC
+        }
+
+    }
+
+    func loadServiceStatusVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ServiceStatusVC =  nc.findVCs(ofType: ServiceStatusVC.self).first {
+                _ = nc.popToVc(targetVC)
+
+            } else {
+                let targetVC: ServiceStatusVC = ServiceStatusVC.fromNib()
+                nc.pushVC(targetVC)
+
+            }
+        } else {
+            let targetVC: ServiceStatusVC = ServiceStatusVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+
+        }
+
+    }
     
 }
 

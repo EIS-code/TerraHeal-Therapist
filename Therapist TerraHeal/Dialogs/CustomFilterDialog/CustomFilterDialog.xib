@@ -473,7 +473,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Okn-er-jYH">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Okn-er-jYH">
                     <rect key="frame" x="16" y="60" width="382" height="786"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
@@ -524,6 +524,12 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTU-ve-9ly">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="62"/>
                             <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruc-dP-tc7" userLabel="btnCenter">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="62"/>
+                                    <connections>
+                                        <action selector="btnCenterTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="mgC-aZ-glx"/>
+                                    </connections>
+                                </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-demo" translatesAutoresizingMaskIntoConstraints="NO" id="JQv-RH-IHk">
                                     <rect key="frame" x="16" y="0.0" width="30" height="62"/>
                                 </imageView>
@@ -557,7 +563,10 @@
                             </subviews>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
+                                <constraint firstItem="Ruc-dP-tc7" firstAttribute="leading" secondItem="JTU-ve-9ly" secondAttribute="leading" id="03P-zU-jhr"/>
+                                <constraint firstItem="Ruc-dP-tc7" firstAttribute="top" secondItem="JTU-ve-9ly" secondAttribute="top" id="Bad-d3-1AZ"/>
                                 <constraint firstItem="t7Y-Na-TRw" firstAttribute="centerY" secondItem="JTU-ve-9ly" secondAttribute="centerY" id="EIF-V0-bzt"/>
+                                <constraint firstAttribute="bottom" secondItem="Ruc-dP-tc7" secondAttribute="bottom" id="FL9-C3-Noe"/>
                                 <constraint firstItem="Ggv-Eb-3lu" firstAttribute="centerY" secondItem="JTU-ve-9ly" secondAttribute="centerY" id="FvC-fY-jmv"/>
                                 <constraint firstItem="t7Y-Na-TRw" firstAttribute="top" secondItem="JTU-ve-9ly" secondAttribute="top" constant="16" id="GkD-z2-5VJ"/>
                                 <constraint firstAttribute="trailing" secondItem="t7Y-Na-TRw" secondAttribute="trailing" constant="16" id="QX8-kI-uAu"/>
@@ -566,11 +575,18 @@
                                 <constraint firstItem="Ggv-Eb-3lu" firstAttribute="top" secondItem="JTU-ve-9ly" secondAttribute="top" constant="16" id="Wrb-q0-0s8"/>
                                 <constraint firstItem="JQv-RH-IHk" firstAttribute="leading" secondItem="JTU-ve-9ly" secondAttribute="leading" constant="16" id="g7k-Qp-Xhf"/>
                                 <constraint firstItem="Ggv-Eb-3lu" firstAttribute="leading" secondItem="JQv-RH-IHk" secondAttribute="trailing" constant="16" id="sGF-M2-xdf"/>
+                                <constraint firstAttribute="trailing" secondItem="Ruc-dP-tc7" secondAttribute="trailing" id="zIA-CG-HvQ"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFY-hq-iaO">
                             <rect key="frame" x="0.0" y="62" width="382" height="62"/>
                             <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsE-OX-Kmx" userLabel="btnhome">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="62"/>
+                                    <connections>
+                                        <action selector="btnHomeTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="wmh-tb-hyp"/>
+                                    </connections>
+                                </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-home-demo" translatesAutoresizingMaskIntoConstraints="NO" id="zlK-Q0-ZyN">
                                     <rect key="frame" x="16" y="0.0" width="30" height="62"/>
                                 </imageView>
@@ -604,15 +620,19 @@
                             </subviews>
                             <color key="backgroundColor" name="theme_background"/>
                             <constraints>
+                                <constraint firstAttribute="bottom" secondItem="CsE-OX-Kmx" secondAttribute="bottom" id="5mz-St-t7U"/>
                                 <constraint firstItem="BLb-K4-hyz" firstAttribute="centerY" secondItem="nFY-hq-iaO" secondAttribute="centerY" id="9HR-8Q-QfE"/>
                                 <constraint firstItem="zlK-Q0-ZyN" firstAttribute="centerY" secondItem="nFY-hq-iaO" secondAttribute="centerY" id="CZw-dv-lhv"/>
                                 <constraint firstAttribute="trailing" secondItem="BLb-K4-hyz" secondAttribute="trailing" constant="16" id="ErU-WI-9xI"/>
                                 <constraint firstItem="zlK-Q0-ZyN" firstAttribute="leading" secondItem="nFY-hq-iaO" secondAttribute="leading" constant="16" id="KJT-BG-5UP"/>
                                 <constraint firstItem="7JI-iY-gwI" firstAttribute="centerY" secondItem="nFY-hq-iaO" secondAttribute="centerY" id="KR4-vx-Eq5"/>
+                                <constraint firstItem="CsE-OX-Kmx" firstAttribute="leading" secondItem="nFY-hq-iaO" secondAttribute="leading" id="Mqa-F4-UfT"/>
                                 <constraint firstItem="7JI-iY-gwI" firstAttribute="top" secondItem="nFY-hq-iaO" secondAttribute="top" constant="16" id="PDy-EB-45J"/>
                                 <constraint firstItem="BLb-K4-hyz" firstAttribute="top" secondItem="nFY-hq-iaO" secondAttribute="top" constant="16" id="Qx5-fM-NVf"/>
                                 <constraint firstItem="zlK-Q0-ZyN" firstAttribute="top" secondItem="nFY-hq-iaO" secondAttribute="top" id="beR-CZ-qXt"/>
+                                <constraint firstItem="CsE-OX-Kmx" firstAttribute="top" secondItem="nFY-hq-iaO" secondAttribute="top" id="dh5-c7-MMh"/>
                                 <constraint firstItem="7JI-iY-gwI" firstAttribute="leading" secondItem="zlK-Q0-ZyN" secondAttribute="trailing" constant="16" id="iNy-wF-lsb"/>
+                                <constraint firstAttribute="trailing" secondItem="CsE-OX-Kmx" secondAttribute="trailing" id="kI5-Ag-9MI"/>
                             </constraints>
                         </view>
                     </subviews>

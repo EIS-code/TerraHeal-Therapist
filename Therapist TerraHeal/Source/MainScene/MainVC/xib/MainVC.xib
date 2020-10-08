@@ -46,22 +46,29 @@
                         </constraint>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" userLabel="btnBack" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                    <rect key="frame" x="16" y="60" width="42" height="42"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" userLabel="btnMenu" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="16" y="60" width="44" height="44"/>
                     <color key="backgroundColor" name="theme_light_text_color"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="dk0-AN-Hja" secondAttribute="height" multiplier="1:1" id="UQN-iw-RUR"/>
+                        <constraint firstAttribute="width" constant="44" id="XoS-uM-VFX" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="44"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
                     </constraints>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <state key="normal" image="asset-menu"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUA-Xf-CmK" userLabel="btnProfile" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                    <rect key="frame" x="317" y="60" width="42" height="42"/>
+                    <rect key="frame" x="315" y="60" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="XUA-Xf-CmK" secondAttribute="height" multiplier="1:1" id="mby-jt-zMd"/>
                     </constraints>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                    <state key="normal" backgroundImage="asset-user"/>
+                    <state key="normal" backgroundImage="asset-logo"/>
                 </button>
             </subviews>
             <color key="backgroundColor" name="theme_background"/>
@@ -125,8 +132,8 @@
         </view>
     </objects>
     <resources>
+        <image name="asset-logo" width="217" height="146"/>
         <image name="asset-menu" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-user" width="21" height="20.666666030883789"/>
         <namedColor name="theme_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

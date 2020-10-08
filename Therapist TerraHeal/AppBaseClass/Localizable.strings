@@ -63,11 +63,28 @@
 "FILTER_DIALOG_TXT_SEARCH_SERVICE" = "search services here";
 "FILTER_DIALOG_HOME" = "home/hotel";
 "FILTER_DIALOG_CENTER" = "center";
-/*
-//MARK: Service Map SCREEN
+//MARK: Booking Detail Screen
+"BOOKING_DETAILS_TITLE" = "booking details";
+"BOOKING_DETAILS_BTN_START" = "Start";
+"BOOKING_DETAILS_BTN_CANCEL" = "Cancel";
+
+//MARK: Scan Dialog
+"DIALOG_SCAN_TITLE" = "Scan QR";
+"DIALOG_BTN_SCAN" = "scan";
+"SCAN_MASSAGE" = "align the QR Code within frame to scan";
+"SCAN_TITLE" = "scan";
+
+
+
+
+//MARK: Service Status SCREEN
 "SERVICE_PROGRESS_TITLE" = "Service in progress";
 "SERVICE_PROGRESS_BTN_FINISH" = "finish";
-//MARK: Booking SCREEN
+"SERVICE_DURATION" = "Service duration";
+"SERVICE_MIN_REMAINING" = "min\nremaining";
+
+/*
+ //MARK: Booking SCREEN
 "BOOKING_DETAIL_TITLE" = "booking details";
 "BOOKING_DETAIL_BTN_I_GO" = "I go";
 "BOOKING_DETAIL_BTN_I_AM_SAFE" = "I am safe";

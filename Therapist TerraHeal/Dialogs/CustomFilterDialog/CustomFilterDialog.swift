@@ -152,6 +152,7 @@ class CustomFilterDialog: ThemeBottomDialogView {
         self.vwSession.gone()
         self.vwServiceSearch.gone()
         self.vwClientSearch.gone()
+        self.vwBookingType.gone()
         self.dateView.visible()
     }
 
@@ -160,6 +161,7 @@ class CustomFilterDialog: ThemeBottomDialogView {
         self.vwSession.gone()
         self.vwClientSearch.gone()
         self.dateView.gone()
+        self.vwBookingType.gone()
         self.vwServiceSearch.visible()
     }
 
@@ -168,6 +170,7 @@ class CustomFilterDialog: ThemeBottomDialogView {
         self.vwSession.gone()
         self.vwServiceSearch.gone()
         self.dateView.gone()
+        self.vwBookingType.gone()
         self.vwClientSearch.visible()
     }
 
@@ -177,14 +180,26 @@ class CustomFilterDialog: ThemeBottomDialogView {
         self.vwServiceSearch.gone()
         self.dateView.gone()
         self.vwClientSearch.gone()
+        self.vwBookingType.visible()
     }
 
     func handleSessionTypeView() {
         self.selectedTab = .SessionType
-        self.vwSession.visible()
         self.vwServiceSearch.gone()
         self.dateView.gone()
         self.vwClientSearch.gone()
+        self.vwBookingType.gone()
+        self.vwSession.visible()
+    }
+    @IBAction func btnHomeTapped(_ sender: Any) {
+        btnHome.isSelected = true
+        btnCenter.isSelected = false
+        self.selectedValue = "Home Booking"
+    }
+    @IBAction func btnCenterTapped(_ sender: Any) {
+        btnHome.isSelected = false
+        btnCenter.isSelected = true
+        self.selectedValue = "Center Booking"
     }
 }
 
@@ -278,23 +293,14 @@ extension CustomFilterDialog {
     func setupBookingTypeView() {
         self.vwBookingType.frame = self.activeView.bounds
         self.activeView.addSubview(vwBookingType)
-        self.lblHome.setText("FILTER_DIALOG_HOME")
+        self.lblHome.setText("FILTER_DIALOG_HOME".localized())
         self.lblHome.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
-        self.lblCenter.setText("FILTER_DIALOG_CENTER")
+        self.lblCenter.setText("FILTER_DIALOG_CENTER".localized())
         self.lblCenter.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.btnHome.isSelected = false
         self.btnCenter.isSelected = false
     }
 
-    @IBAction func btnHomeTapped(_ sender: Any) {
-        btnHome.isSelected = true
-        btnCenter.isSelected = false
-        self.selectedValue = "Home Booking"
-    }
-    @IBAction func btnCenterTapped(_ sender: Any) {
-        btnHome.isSelected = false
-        btnCenter.isSelected = true
-        self.selectedValue = "Center Booking"
-    }
+
 
 }

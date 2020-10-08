@@ -46,8 +46,26 @@
 		03405502252E043000B7077D /* RadioSelectionTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03405500252E043000B7077D /* RadioSelectionTblCell.swift */; };
 		03405503252E043000B7077D /* RadioSelectionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03405501252E043000B7077D /* RadioSelectionTblCell.xib */; };
 		03405505252E04BD00B7077D /* CustomFilterDialog + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03405504252E04BD00B7077D /* CustomFilterDialog + TableView.swift */; };
+		0341227C252F3882000BCDAE /* ScanDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0341227A252F3882000BCDAE /* ScanDialog.swift */; };
+		0341227D252F3882000BCDAE /* ScanDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0341227B252F3882000BCDAE /* ScanDialog.xib */; };
+		03412291252F3AFC000BCDAE /* UIImageCropperVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03412282252F3AFB000BCDAE /* UIImageCropperVC.xib */; };
+		03412292252F3AFC000BCDAE /* UIImageCropperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03412283252F3AFB000BCDAE /* UIImageCropperVC.swift */; };
+		03412293252F3AFC000BCDAE /* UIImage+FixOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03412284252F3AFB000BCDAE /* UIImage+FixOrientation.swift */; };
+		03412294252F3AFC000BCDAE /* CustomDocumentPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03412286252F3AFB000BCDAE /* CustomDocumentPicker.xib */; };
+		03412295252F3AFC000BCDAE /* CustomDocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03412287252F3AFB000BCDAE /* CustomDocumentPicker.swift */; };
+		03412296252F3AFC000BCDAE /* CustomPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03412289252F3AFB000BCDAE /* CustomPhotoPicker.swift */; };
+		03412297252F3AFC000BCDAE /* CustomPhotoPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0341228A252F3AFB000BCDAE /* CustomPhotoPicker.xib */; };
+		03412298252F3AFC000BCDAE /* CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0341228D252F3AFB000BCDAE /* CameraVC.xib */; };
+		03412299252F3AFC000BCDAE /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0341228F252F3AFB000BCDAE /* CameraController.swift */; };
+		0341229A252F3AFC000BCDAE /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03412290252F3AFB000BCDAE /* CameraVC.swift */; };
+		0341229F252F40E4000BCDAE /* ServiceStatusVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0341229D252F40E4000BCDAE /* ServiceStatusVC.xib */; };
+		034122A0252F40E4000BCDAE /* ServiceStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0341229E252F40E4000BCDAE /* ServiceStatusVC.swift */; };
 		0342137124C6B3C500ABB285 /* LaunchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0342136F24C6B3C500ABB285 /* LaunchVC.xib */; };
 		0342137224C6B3C500ABB285 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342137024C6B3C500ABB285 /* LaunchVC.swift */; };
+		03440371252F04FB00C8C700 /* BookingDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0344036C252F04FB00C8C700 /* BookingDetailVC.xib */; };
+		03440374252F04FB00C8C700 /* BookingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03440370252F04FB00C8C700 /* BookingDetailVC.swift */; };
+		0344037D252F08D900C8C700 /* BookingDetailTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0344037B252F08D900C8C700 /* BookingDetailTblCell.xib */; };
+		0344037E252F08D900C8C700 /* BookingDetailTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0344037C252F08D900C8C700 /* BookingDetailTblCell.swift */; };
 		0345190924C85EBE00AF7026 /* styleable_map.json in Resources */ = {isa = PBXBuildFile; fileRef = 0345190824C85EBE00AF7026 /* styleable_map.json */; };
 		03456BD7252DDADF00013231 /* CustomFilterDialog + DateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456BD6252DDADF00013231 /* CustomFilterDialog + DateFilter.swift */; };
 		03521F05252B18A00094829E /* DateDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F03252B189F0094829E /* DateDialog.xib */; };
@@ -208,8 +226,26 @@
 		03405500252E043000B7077D /* RadioSelectionTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioSelectionTblCell.swift; sourceTree = "<group>"; };
 		03405501252E043000B7077D /* RadioSelectionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioSelectionTblCell.xib; sourceTree = "<group>"; };
 		03405504252E04BD00B7077D /* CustomFilterDialog + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFilterDialog + TableView.swift"; sourceTree = "<group>"; };
+		0341227A252F3882000BCDAE /* ScanDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanDialog.swift; sourceTree = "<group>"; };
+		0341227B252F3882000BCDAE /* ScanDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanDialog.xib; sourceTree = "<group>"; };
+		03412282252F3AFB000BCDAE /* UIImageCropperVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIImageCropperVC.xib; sourceTree = "<group>"; };
+		03412283252F3AFB000BCDAE /* UIImageCropperVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageCropperVC.swift; sourceTree = "<group>"; };
+		03412284252F3AFB000BCDAE /* UIImage+FixOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FixOrientation.swift"; sourceTree = "<group>"; };
+		03412286252F3AFB000BCDAE /* CustomDocumentPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomDocumentPicker.xib; sourceTree = "<group>"; };
+		03412287252F3AFB000BCDAE /* CustomDocumentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDocumentPicker.swift; sourceTree = "<group>"; };
+		03412289252F3AFB000BCDAE /* CustomPhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPhotoPicker.swift; sourceTree = "<group>"; };
+		0341228A252F3AFB000BCDAE /* CustomPhotoPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPhotoPicker.xib; sourceTree = "<group>"; };
+		0341228D252F3AFB000BCDAE /* CameraVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraVC.xib; sourceTree = "<group>"; };
+		0341228F252F3AFB000BCDAE /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		03412290252F3AFB000BCDAE /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		0341229D252F40E4000BCDAE /* ServiceStatusVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceStatusVC.xib; sourceTree = "<group>"; };
+		0341229E252F40E4000BCDAE /* ServiceStatusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceStatusVC.swift; sourceTree = "<group>"; };
 		0342136F24C6B3C500ABB285 /* LaunchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchVC.xib; sourceTree = "<group>"; };
 		0342137024C6B3C500ABB285 /* LaunchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
+		0344036C252F04FB00C8C700 /* BookingDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingDetailVC.xib; sourceTree = "<group>"; };
+		03440370252F04FB00C8C700 /* BookingDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailVC.swift; sourceTree = "<group>"; };
+		0344037B252F08D900C8C700 /* BookingDetailTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingDetailTblCell.xib; sourceTree = "<group>"; };
+		0344037C252F08D900C8C700 /* BookingDetailTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailTblCell.swift; sourceTree = "<group>"; };
 		0345190824C85EBE00AF7026 /* styleable_map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleable_map.json; sourceTree = "<group>"; };
 		03456BD6252DDADF00013231 /* CustomFilterDialog + DateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFilterDialog + DateFilter.swift"; sourceTree = "<group>"; };
 		03521F03252B189F0094829E /* DateDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateDialog.xib; sourceTree = "<group>"; };
@@ -441,6 +477,113 @@
 			path = RadioSelectionTblCell;
 			sourceTree = "<group>";
 		};
+		03412279252F3882000BCDAE /* ScanDialog */ = {
+			isa = PBXGroup;
+			children = (
+				0341227A252F3882000BCDAE /* ScanDialog.swift */,
+				0341227B252F3882000BCDAE /* ScanDialog.xib */,
+			);
+			path = ScanDialog;
+			sourceTree = "<group>";
+		};
+		0341227E252F3AFB000BCDAE /* HelperVC */ = {
+			isa = PBXGroup;
+			children = (
+				0341227F252F3AFB000BCDAE /* ImagePickerVC */,
+			);
+			path = HelperVC;
+			sourceTree = "<group>";
+		};
+		0341227F252F3AFB000BCDAE /* ImagePickerVC */ = {
+			isa = PBXGroup;
+			children = (
+				03412280252F3AFB000BCDAE /* ImageEditorVC */,
+				03412285252F3AFB000BCDAE /* CustomDocumentPicker */,
+				03412288252F3AFB000BCDAE /* CustomPhotoPicker */,
+				0341228B252F3AFB000BCDAE /* CameraVC */,
+			);
+			path = ImagePickerVC;
+			sourceTree = "<group>";
+		};
+		03412280252F3AFB000BCDAE /* ImageEditorVC */ = {
+			isa = PBXGroup;
+			children = (
+				03412281252F3AFB000BCDAE /* xib */,
+				03412283252F3AFB000BCDAE /* UIImageCropperVC.swift */,
+				03412284252F3AFB000BCDAE /* UIImage+FixOrientation.swift */,
+			);
+			path = ImageEditorVC;
+			sourceTree = "<group>";
+		};
+		03412281252F3AFB000BCDAE /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				03412282252F3AFB000BCDAE /* UIImageCropperVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		03412285252F3AFB000BCDAE /* CustomDocumentPicker */ = {
+			isa = PBXGroup;
+			children = (
+				03412286252F3AFB000BCDAE /* CustomDocumentPicker.xib */,
+				03412287252F3AFB000BCDAE /* CustomDocumentPicker.swift */,
+			);
+			path = CustomDocumentPicker;
+			sourceTree = "<group>";
+		};
+		03412288252F3AFB000BCDAE /* CustomPhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				03412289252F3AFB000BCDAE /* CustomPhotoPicker.swift */,
+				0341228A252F3AFB000BCDAE /* CustomPhotoPicker.xib */,
+			);
+			path = CustomPhotoPicker;
+			sourceTree = "<group>";
+		};
+		0341228B252F3AFB000BCDAE /* CameraVC */ = {
+			isa = PBXGroup;
+			children = (
+				0341228C252F3AFB000BCDAE /* xib */,
+				0341228E252F3AFB000BCDAE /* CameraController */,
+				03412290252F3AFB000BCDAE /* CameraVC.swift */,
+			);
+			path = CameraVC;
+			sourceTree = "<group>";
+		};
+		0341228C252F3AFB000BCDAE /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0341228D252F3AFB000BCDAE /* CameraVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		0341228E252F3AFB000BCDAE /* CameraController */ = {
+			isa = PBXGroup;
+			children = (
+				0341228F252F3AFB000BCDAE /* CameraController.swift */,
+			);
+			path = CameraController;
+			sourceTree = "<group>";
+		};
+		0341229B252F40E4000BCDAE /* ServiceStatusVC */ = {
+			isa = PBXGroup;
+			children = (
+				0341229C252F40E4000BCDAE /* xib */,
+				0341229E252F40E4000BCDAE /* ServiceStatusVC.swift */,
+			);
+			path = ServiceStatusVC;
+			sourceTree = "<group>";
+		};
+		0341229C252F40E4000BCDAE /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0341229D252F40E4000BCDAE /* ServiceStatusVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
 		0342136E24C6B3C500ABB285 /* LaunchVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +591,33 @@
 				0342137024C6B3C500ABB285 /* LaunchVC.swift */,
 			);
 			path = LaunchVC;
+			sourceTree = "<group>";
+		};
+		0344036A252F04FB00C8C700 /* BookingDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				0344037A252F08D900C8C700 /* BookingDetailTblCell */,
+				0344036B252F04FB00C8C700 /* xib */,
+				03440370252F04FB00C8C700 /* BookingDetailVC.swift */,
+			);
+			path = BookingDetailVC;
+			sourceTree = "<group>";
+		};
+		0344036B252F04FB00C8C700 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0344036C252F04FB00C8C700 /* BookingDetailVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		0344037A252F08D900C8C700 /* BookingDetailTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				0344037B252F08D900C8C700 /* BookingDetailTblCell.xib */,
+				0344037C252F08D900C8C700 /* BookingDetailTblCell.swift */,
+			);
+			path = BookingDetailTblCell;
 			sourceTree = "<group>";
 		};
 		0345190724C85EA200AF7026 /* Support */ = {
@@ -576,6 +746,7 @@
 		035EF5B02526FA3A00C64BD4 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				0344036A252F04FB00C8C700 /* BookingDetailVC */,
 				0379EAC6252C934A00303A59 /* RateVC */,
 				035EF5B12526FA3A00C64BD4 /* MainVC */,
 			);
@@ -753,6 +924,7 @@
 		038CAF96252604AB001ACAD6 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				03412279252F3882000BCDAE /* ScanDialog */,
 				03F50389252D937F00AF50A5 /* CustomFilterDialog */,
 				0379EABA252C574B00303A59 /* TimeBreakDialog */,
 				0379EAB2252C4C2800303A59 /* CustomTblSelectionDialog */,
@@ -1072,6 +1244,8 @@
 		63ABC0ED246D650B00360F07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0341229B252F40E4000BCDAE /* ServiceStatusVC */,
+				0341227E252F3AFB000BCDAE /* HelperVC */,
 				035EF5B02526FA3A00C64BD4 /* MainScene */,
 				035EF59F2526F3A300C64BD4 /* MenuScene */,
 				0342136E24C6B3C500ABB285 /* LaunchVC */,
@@ -1209,6 +1383,7 @@
 				63ABC1F0246D650D00360F07 /* CommonColor.xcassets in Resources */,
 				0379EABE252C574B00303A59 /* TimeBreakDialog.xib in Resources */,
 				035EF5AD2526F3A400C64BD4 /* MenuCellHorizontal.xib in Resources */,
+				03412298252F3AFC000BCDAE /* CameraVC.xib in Resources */,
 				0379EAE5252CA89700303A59 /* NewsTblCell.xib in Resources */,
 				038CAFC5252604AB001ACAD6 /* CustomCountryPhoneCodePicker.xib in Resources */,
 				038CAFD2252604AB001ACAD6 /* PersonPickerCell.xib in Resources */,
@@ -1217,6 +1392,8 @@
 				035EF5BE2526FA3A00C64BD4 /* MainVC.xib in Resources */,
 				63ABC1F1246D650D00360F07 /* Assets.xcassets in Resources */,
 				03F5038D252D937F00AF50A5 /* CustomFilterDialog.xib in Resources */,
+				03412297252F3AFC000BCDAE /* CustomPhotoPicker.xib in Resources */,
+				0344037D252F08D900C8C700 /* BookingDetailTblCell.xib in Resources */,
 				63415E36246FB5C600F0D7A0 /* Nunito-Bold.ttf in Resources */,
 				038CAFCE252604AB001ACAD6 /* TimeDialog.xib in Resources */,
 				035EF5AB2526F3A400C64BD4 /* SideVC.xib in Resources */,
@@ -1228,6 +1405,7 @@
 				038CAFCA252604AB001ACAD6 /* DateTimeDialog.xib in Resources */,
 				038CAFC2252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.xib in Resources */,
 				03521F13252B58FD0094829E /* NotificationTblCell.xib in Resources */,
+				03412294252F3AFC000BCDAE /* CustomDocumentPicker.xib in Resources */,
 				0342137124C6B3C500ABB285 /* LaunchVC.xib in Resources */,
 				0379EAB8252C4C2800303A59 /* CustomTblSelectionDialog.xib in Resources */,
 				035EF5C02526FA3A00C64BD4 /* FilterTblCell.xib in Resources */,
@@ -1235,10 +1413,13 @@
 				038CAF8E252601CF001ACAD6 /* LoginVC.xib in Resources */,
 				03405503252E043000B7077D /* RadioSelectionTblCell.xib in Resources */,
 				03521F05252B18A00094829E /* DateDialog.xib in Resources */,
+				03440371252F04FB00C8C700 /* BookingDetailVC.xib in Resources */,
 				0379EAC4252C72B800303A59 /* TimeSlotCltCell.xib in Resources */,
 				038CAFD8252604AB001ACAD6 /* CustomTextFieldDialog.xib in Resources */,
+				0341229F252F40E4000BCDAE /* ServiceStatusVC.xib in Resources */,
 				035EF5AE2526F3A400C64BD4 /* MenuCellVerticle.xib in Resources */,
 				038CAFCC252604AB001ACAD6 /* CustomDatePicker.xib in Resources */,
+				0341227D252F3882000BCDAE /* ScanDialog.xib in Resources */,
 				03521F2B252B612E0094829E /* SuggestionTblCell.xib in Resources */,
 				030DB59B25260966004C7CC8 /* Localizable.strings in Resources */,
 				03521F29252B612E0094829E /* SuggestionAndComplaintVC.xib in Resources */,
@@ -1247,6 +1428,7 @@
 				038CAFC6252604AB001ACAD6 /* CustomMobileNumberDialog.xib in Resources */,
 				0379EACD252C934A00303A59 /* RateVC.xib in Resources */,
 				63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */,
+				03412291252F3AFC000BCDAE /* UIImageCropperVC.xib in Resources */,
 				0345190924C85EBE00AF7026 /* styleable_map.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1330,27 +1512,34 @@
 				035EF5C32526FA3A00C64BD4 /* MyBookingTblCell.swift in Sources */,
 				038CB00A2526056E001ACAD6 /* RatingView.swift in Sources */,
 				038CB01B2526056E001ACAD6 /* JDImageExtension.swift in Sources */,
+				03412295252F3AFC000BCDAE /* CustomDocumentPicker.swift in Sources */,
 				0379EACE252C934A00303A59 /* RateVC.swift in Sources */,
 				030DB5A425260966004C7CC8 /* CountriesWebService.swift in Sources */,
 				030DB57725260869004C7CC8 /* DashedCircleView.swift in Sources */,
 				030DB5CF252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift in Sources */,
 				035EF5AF2526F3A400C64BD4 /* MenuCellVerticle.swift in Sources */,
+				0341229A252F3AFC000BCDAE /* CameraVC.swift in Sources */,
 				030DB5C4252609FB004C7CC8 /* CheckBoxButton.swift in Sources */,
 				038CB0062526056E001ACAD6 /* EditProfileTextfield.swift in Sources */,
 				038CAFC4252604AB001ACAD6 /* CustomCountryPhoneCodePicker.swift in Sources */,
 				0379EABD252C574B00303A59 /* TimeBreakDialog.swift in Sources */,
 				03521F2A252B612E0094829E /* SuggestionTblCell.swift in Sources */,
+				03412299252F3AFC000BCDAE /* CameraController.swift in Sources */,
 				038CB0172526056E001ACAD6 /* JDDeviceHelper.swift in Sources */,
 				038CB00F2526056E001ACAD6 /* NSObject + Extension.swift in Sources */,
 				030DB59D25260966004C7CC8 /* AlamofireHelper.swift in Sources */,
+				0344037E252F08D900C8C700 /* BookingDetailTblCell.swift in Sources */,
 				030DB59925260966004C7CC8 /* Common.swift in Sources */,
 				030DB5CA252609FB004C7CC8 /* PinterestLayout.swift in Sources */,
 				038CB00E2526056E001ACAD6 /* DataType + Extesnion.swift in Sources */,
 				038CAF8F252601CF001ACAD6 /* LoginVC.swift in Sources */,
+				034122A0252F40E4000BCDAE /* ServiceStatusVC.swift in Sources */,
 				038CAFD3252604AB001ACAD6 /* PersonPickerDialog.swift in Sources */,
 				030DB5CC252609FB004C7CC8 /* ThemeImageView.swift in Sources */,
 				030DB57625260869004C7CC8 /* CircularProgressBar.swift in Sources */,
 				038CAFE2252604D8001ACAD6 /* CoreDataManager.swift in Sources */,
+				03412292252F3AFC000BCDAE /* UIImageCropperVC.swift in Sources */,
+				03412296252F3AFC000BCDAE /* CustomPhotoPicker.swift in Sources */,
 				038CAFE5252604D8001ACAD6 /* PersonData.xcdatamodeld in Sources */,
 				03521F12252B58FD0094829E /* NotificationTblCell.swift in Sources */,
 				038CB0112526056E001ACAD6 /* NSLayoutHelper.swift in Sources */,
@@ -1366,6 +1555,7 @@
 				030DB59825260966004C7CC8 /* APP+NAVIGATION.swift in Sources */,
 				030DB5C8252609FB004C7CC8 /* ThemeTextField.swift in Sources */,
 				038CAFD5252604AB001ACAD6 /* FingerPrintDialog.swift in Sources */,
+				0341227C252F3882000BCDAE /* ScanDialog.swift in Sources */,
 				038CB0072526056E001ACAD6 /* ACFloatingTextfield.swift in Sources */,
 				035EF5AC2526F3A400C64BD4 /* MenuCellHorizontal.swift in Sources */,
 				0379EAE6252CA89700303A59 /* NewsTblCell.swift in Sources */,
@@ -1376,6 +1566,7 @@
 				03521F06252B18A00094829E /* DateDialog.swift in Sources */,
 				030DB5A625260966004C7CC8 /* AddressWebService.swift in Sources */,
 				035EF5C52526FA3A00C64BD4 /* MainVC.swift in Sources */,
+				03440374252F04FB00C8C700 /* BookingDetailVC.swift in Sources */,
 				030DB5A725260966004C7CC8 /* AppTheme.swift in Sources */,
 				03A7FB2825273ACC003A6025 /* MyBookingTblSection.swift in Sources */,
 				03F50388252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift in Sources */,
@@ -1383,6 +1574,7 @@
 				038CB00B2526056E001ACAD6 /* HomeSegmentControl.swift in Sources */,
 				030DB5C7252609FB004C7CC8 /* ThemeButton.swift in Sources */,
 				038CAFE4252604D8001ACAD6 /* Person+CoreDataProperties.swift in Sources */,
+				03412293252F3AFC000BCDAE /* UIImage+FixOrientation.swift in Sources */,
 				030DB5CE252609FB004C7CC8 /* ThemeTableCells.swift in Sources */,
 				0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */,
 				030DB59625260966004C7CC8 /* Constant.swift in Sources */,
