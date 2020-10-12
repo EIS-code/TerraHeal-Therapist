@@ -60,14 +60,13 @@ extension GMSMapView {
     }
     
     
-    func setMassageCenterMarker(marker:GMSMarker,image:UIImage, location:CLLocationCoordinate2D) {
+    func setMassageCenterMarker(marker:GMSMarker, location:CLLocationCoordinate2D) {
         if marker.map == nil {
             marker.map = self
         }
         marker.position = location
         if marker.icon == nil {
             marker.icon  = UIImage.init(named: "asset-center-maker")
-           // marker.icon = self.drawImageWithMassageCenterPic(pp: image, image: UIImage.init(named: "asset-center-maker"))
         }
         marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
     }
@@ -77,7 +76,8 @@ extension GMSMapView {
         }
         marker.position = location
         if marker.icon == nil {
-            marker.icon = self.drawImageWithProfilePic(pp: UIImage.init(named: "asset-user")!, image: nil)
+            marker.icon = UIImage.init(named: "asset-current-marker")
+            //marker.icon = self.drawImageWithProfilePic(pp: UIImage.init(named: "asset-user")!, image: nil)
         }
         marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
     }

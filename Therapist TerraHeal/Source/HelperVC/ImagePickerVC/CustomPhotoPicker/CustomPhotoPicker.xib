@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomPhotoPicker" customModule="Terra_Heal" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomPhotoPicker" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -38,7 +38,7 @@
                                         <constraint firstAttribute="width" constant="40" id="PzM-zS-hRS"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJJ-fK-tcA" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJJ-fK-tcA" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="158.5" y="25" width="57" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
@@ -48,11 +48,11 @@
                                     <rect key="frame" x="37.5" y="65.5" width="299" height="53.5"/>
                                     <subviews>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uor-HJ-dlO">
-                                            <rect key="frame" x="10" y="10" width="31.5" height="33.5"/>
+                                            <rect key="frame" x="10" y="10" width="21.5" height="33.5"/>
                                             <state key="normal" image="asset-camera"/>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioq-iS-r7L" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="51.5" y="16.5" width="42" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioq-iS-r7L" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="41.5" y="16.5" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
@@ -82,11 +82,11 @@
                                     <rect key="frame" x="37.5" y="139" width="299" height="53.5"/>
                                     <subviews>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAw-VG-R1B">
-                                            <rect key="frame" x="10" y="10" width="31.5" height="33.5"/>
+                                            <rect key="frame" x="10" y="10" width="21.5" height="33.5"/>
                                             <state key="normal" image="asset-gallary"/>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgv-6m-XId" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                                            <rect key="frame" x="51.5" y="16.5" width="42" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgv-6m-XId" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                            <rect key="frame" x="41.5" y="16.5" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
@@ -112,7 +112,7 @@
                                         <constraint firstItem="xgv-6m-XId" firstAttribute="leading" secondItem="GAw-VG-R1B" secondAttribute="trailing" constant="10" id="uBY-pC-6je"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-DL-CeP" customClass="DialogFilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-DL-CeP" customClass="DialogFilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="120.5" y="212.5" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
@@ -123,7 +123,7 @@
                                         <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="q46-yq-9fA"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocy-xf-jLE" customClass="DialogCancelButton" customModule="Terra_Heal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocy-xf-jLE" customClass="DialogCancelButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="164" y="272.5" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
@@ -138,13 +138,24 @@
                                 <constraint firstItem="v5S-xR-Y3S" firstAttribute="width" secondItem="v5S-xR-Y3S" secondAttribute="height" multiplier="28:5" id="zU4-t4-lfb"/>
                             </constraints>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lam-YI-SB0" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                            <rect key="frame" x="368" y="35" width="30" height="30"/>
+                            <state key="normal" title="i">
+                                <color key="titleColor" name="theme_primary"/>
+                            </state>
+                            <connections>
+                                <action selector="btnInfoTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Lcq-Ba-wUp"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
                         <constraint firstItem="KG3-VU-mTa" firstAttribute="leading" secondItem="Yaj-p7-IIT" secondAttribute="leading" constant="20" id="5vA-fC-CgM"/>
+                        <constraint firstItem="Lam-YI-SB0" firstAttribute="top" secondItem="FJJ-fK-tcA" secondAttribute="top" id="6vm-1v-eA0"/>
                         <constraint firstAttribute="trailing" secondItem="KG3-VU-mTa" secondAttribute="trailing" constant="20" id="8AY-bB-vUi"/>
                         <constraint firstAttribute="bottom" secondItem="KG3-VU-mTa" secondAttribute="bottom" constant="20" id="h5x-Sb-gdz"/>
                         <constraint firstItem="KG3-VU-mTa" firstAttribute="top" secondItem="Yaj-p7-IIT" secondAttribute="top" constant="10" id="iYK-DE-J76"/>
+                        <constraint firstAttribute="trailing" secondItem="Lam-YI-SB0" secondAttribute="trailing" constant="16" id="mtX-ex-Stb"/>
                     </constraints>
                 </view>
             </subviews>
@@ -165,6 +176,7 @@
                 <outlet property="btnCancel" destination="ocy-xf-jLE" id="7zf-9C-yGA"/>
                 <outlet property="btnDone" destination="3t4-DL-CeP" id="rQI-Nk-HTE"/>
                 <outlet property="btnGallary" destination="zdL-V3-Fwk" id="Mkb-kD-dB5"/>
+                <outlet property="btnInfo" destination="Lam-YI-SB0" id="KXX-cx-5DL"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
                 <outlet property="lblCamera" destination="Ioq-iS-r7L" id="Lsc-N1-DGt"/>
                 <outlet property="lblGallary" destination="xgv-6m-XId" id="OJL-35-eNV"/>
@@ -178,16 +190,16 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-camera" width="31.5" height="26.5"/>
-        <image name="asset-gallary" width="31.5" height="31.5"/>
+        <image name="asset-camera" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-gallary" width="21.333333969116211" height="21.333333969116211"/>
         <namedColor name="theme_dark_text">
-            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

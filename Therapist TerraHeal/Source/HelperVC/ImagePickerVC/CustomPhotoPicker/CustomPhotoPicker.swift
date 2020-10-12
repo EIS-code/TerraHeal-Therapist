@@ -20,6 +20,7 @@ class CustomPhotoPicker: ThemeBottomDialogView {
     @IBOutlet weak var vwGallary: UIView!
     @IBOutlet weak var btnGallary: UIButton!
     @IBOutlet weak var lblGallary: ThemeLabel!
+    @IBOutlet weak var btnInfo: ThemeButton!
 
     var picker: UIImagePickerController! = UIImagePickerController()
     var imageSelected:UploadDocumentDetail?;
@@ -57,6 +58,7 @@ class CustomPhotoPicker: ThemeBottomDialogView {
         self.lblGallary.text = "PHOTO_DIALOG_FROM_GALLARY".localized()
         self.lblGallary.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
+        self.btnInfo.setRound(withBorderColor: .themePrimary, andCornerRadious: 0.0, borderWidth: 1.0)
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -76,6 +78,8 @@ class CustomPhotoPicker: ThemeBottomDialogView {
             }
     }
 
+    @IBAction func btnInfoTapped(_ sender: Any) {
+    }
 
 
 

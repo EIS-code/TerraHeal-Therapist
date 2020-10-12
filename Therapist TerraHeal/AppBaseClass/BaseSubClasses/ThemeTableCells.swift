@@ -12,6 +12,7 @@ import UIKit
 
 class TableCell: UITableViewCell {
     var parentVC: UIViewController? = nil
+     var indexPath: IndexPath? = nil
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none

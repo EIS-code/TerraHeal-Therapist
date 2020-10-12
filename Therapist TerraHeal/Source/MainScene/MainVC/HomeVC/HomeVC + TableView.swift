@@ -104,8 +104,19 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
 
             self.updateFilterButton(isShowFilter: false)
         }  else {
-            Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController)
-            
+            if indexPath.row % 2 == 0 {
+                Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: { [weak self](bookingDetailVC) in
+                    bookingDetailVC.bookingDetail = MyBookingData.init(fromDictionary: [:])
+                    bookingDetailVC.bookingDetail.bookingType = BookingType.MassageCenter.rawValue
+
+                })
+            } else {
+                Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: { [weak self](bookingDetailVC) in
+                    bookingDetailVC.bookingDetail = MyBookingData.init(fromDictionary: [:])
+                    bookingDetailVC.bookingDetail.bookingType = BookingType.AtHotelOrRoom.rawValue
+
+                })
+            }
             // Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController,isBookingFinished: self.arrForMyPlaces[indexPath.row].isSelected)
         }
     }

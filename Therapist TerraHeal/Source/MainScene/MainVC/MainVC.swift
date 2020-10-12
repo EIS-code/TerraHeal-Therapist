@@ -19,7 +19,7 @@ class MainVC: BaseVC {
     @IBOutlet weak var calendarView: UIView!
 
     var homeVC: HomeVC? = nil
-    var calendarVC: HomeVC? = nil
+    var calendarVC: CalendarGraphVC? = nil
     var newsVC: NewsVC? = nil
 
     // MARK: Object lifecycle
@@ -120,7 +120,7 @@ class MainVC: BaseVC {
     }
     func calendarSelected() {
         if calendarVC == nil {
-            calendarVC = HomeVC.fromNib()
+            calendarVC = CalendarGraphVC.fromNib()
         }
         self.add(calendarVC!, view:self.calendarView)
         self.bookingView.gone()

@@ -132,18 +132,21 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
-    func loadBookingDetailVC(navigaionVC:UINavigationController? = nil) {
+    func loadBookingDetailVC(navigaionVC:UINavigationController? = nil, completion: (BookingDetailVC) -> Void) {
         if let nc = navigaionVC as? NC {
             if let targetVC: BookingDetailVC =  nc.findVCs(ofType: BookingDetailVC.self).first {
                 _ = nc.popToVc(targetVC)
+                completion(targetVC)
             } else {
                 let targetVC: BookingDetailVC = BookingDetailVC.fromNib()
                 nc.pushVC(targetVC)
+                completion(targetVC)
             }
         } else {
             let targetVC: BookingDetailVC = BookingDetailVC.fromNib()
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
+            completion(targetVC)
         }
     }
 
@@ -181,6 +184,27 @@ extension AppDelegate {
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
 
+        }
+
+    }
+
+    func loadServiceNavigationVC(navigaionVC:UINavigationController? = nil, completion: (ServiceNavigationVC) -> Void) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ServiceNavigationVC =  nc.findVCs(ofType: ServiceNavigationVC.self).first {
+                _ = nc.popToVc(targetVC)
+                completion(targetVC)
+
+            } else {
+                let targetVC: ServiceNavigationVC = ServiceNavigationVC.fromNib()
+                nc.pushVC(targetVC)
+                completion(targetVC)
+
+            }
+        } else {
+            let targetVC: ServiceNavigationVC = ServiceNavigationVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+            completion(targetVC)
         }
 
     }

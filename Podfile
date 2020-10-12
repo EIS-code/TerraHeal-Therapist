@@ -8,10 +8,10 @@ target 'Therapist TerraHeal' do
   # Pods for Therapist TerraHeal
   pod 'IQKeyboardManager'
   pod 'Alamofire'
-  pod 'FSCalendar'
   pod 'SDWebImage'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'FSCalendar'
   # Recommended: Add the Firebase pod for Google Analytics and Crashlytics
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'

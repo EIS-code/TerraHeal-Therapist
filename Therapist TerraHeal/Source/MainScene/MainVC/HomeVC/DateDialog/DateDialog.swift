@@ -200,9 +200,8 @@ extension DateDialog {
             self.backgroundView.alpha = 0.66
             self.backgroundView.transform = CGAffineTransform.identity
             self.vwSelectDate.translatesAutoresizingMaskIntoConstraints = true
-            self.vwMainCalender.translatesAutoresizingMaskIntoConstraints = false
-
-            UIView.animate(withDuration: 5.0, delay: 0.0, options: [.curveEaseInOut], animations: {
+            self.vwMainCalender.isHidden = true
+            UIView.animate(withDuration: 0.20, delay: 0.0, options: [.curveEaseInOut], animations: {
                 self.backgroundView.alpha = 0.0
                 self.backgroundView.layer.cornerRadius = 40.0
                 self.backgroundView.transform = CGAffineTransform.init(scaleX: 0.8, y: 0.8)

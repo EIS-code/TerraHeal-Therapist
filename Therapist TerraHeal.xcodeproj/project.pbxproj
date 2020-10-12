@@ -68,6 +68,39 @@
 		0344037E252F08D900C8C700 /* BookingDetailTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0344037C252F08D900C8C700 /* BookingDetailTblCell.swift */; };
 		0345190924C85EBE00AF7026 /* styleable_map.json in Resources */ = {isa = PBXBuildFile; fileRef = 0345190824C85EBE00AF7026 /* styleable_map.json */; };
 		03456BD7252DDADF00013231 /* CustomFilterDialog + DateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456BD6252DDADF00013231 /* CustomFilterDialog + DateFilter.swift */; };
+		034CBE0925340C1100B20A11 /* UserDetailTblSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CBE0725340C1100B20A11 /* UserDetailTblSection.xib */; };
+		034CBE0A25340C1100B20A11 /* UserDetailTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE0825340C1100B20A11 /* UserDetailTblSection.swift */; };
+		034CBE152534531300B20A11 /* CalendarGraphVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE122534531300B20A11 /* CalendarGraphVC + CollectionView.swift */; };
+		034CBE162534531300B20A11 /* CalendarGraphVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE132534531300B20A11 /* CalendarGraphVC.swift */; };
+		034CBE182534546300B20A11 /* CalendarGraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CBE172534546300B20A11 /* CalendarGraphVC.xib */; };
+		034CBE2125346C4C00B20A11 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE1B25346C4C00B20A11 /* EventCell.swift */; };
+		034CBE2225346C4C00B20A11 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CBE1C25346C4C00B20A11 /* EventCell.xib */; };
+		034CBE2325346C4C00B20A11 /* DefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE1D25346C4C00B20A11 /* DefaultViewModel.swift */; };
+		034CBE2525346C4C00B20A11 /* DefaultEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE1F25346C4C00B20A11 /* DefaultEvent.swift */; };
+		034CBE2625346C4C00B20A11 /* DefaultWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE2025346C4C00B20A11 /* DefaultWeekView.swift */; };
+		034CBE712534700D00B20A11 /* JZLongPressWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE572534700D00B20A11 /* JZLongPressWeekView.swift */; };
+		034CBE722534700D00B20A11 /* JZAllDayEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE582534700D00B20A11 /* JZAllDayEvent.swift */; };
+		034CBE732534700D00B20A11 /* JZWeekViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE592534700D00B20A11 /* JZWeekViewHelper.swift */; };
+		034CBE742534700D00B20A11 /* JZLongPressEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE5A2534700D00B20A11 /* JZLongPressEventCell.swift */; };
+		034CBE752534700D00B20A11 /* JZWeekViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE5B2534700D00B20A11 /* JZWeekViewFlowLayout.swift */; };
+		034CBE762534700D00B20A11 /* JZWeekViewColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE5D2534700D00B20A11 /* JZWeekViewColors.swift */; };
+		034CBE772534700D00B20A11 /* WeakTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE5E2534700D00B20A11 /* WeakTimer.swift */; };
+		034CBE782534700D00B20A11 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE5F2534700D00B20A11 /* Extensions.swift */; };
+		034CBE792534700D00B20A11 /* JZBaseWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE612534700D00B20A11 /* JZBaseWeekView.swift */; };
+		034CBE7A2534700D00B20A11 /* JZBaseEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE622534700D00B20A11 /* JZBaseEvent.swift */; };
+		034CBE7C2534700D00B20A11 /* JZColumnHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE652534700D00B20A11 /* JZColumnHeader.swift */; };
+		034CBE7D2534700D00B20A11 /* JZCornerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE662534700D00B20A11 /* JZCornerHeader.swift */; };
+		034CBE7E2534700D00B20A11 /* JZRowHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE672534700D00B20A11 /* JZRowHeader.swift */; };
+		034CBE7F2534700D00B20A11 /* JZAllDayHeaderBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE682534700D00B20A11 /* JZAllDayHeaderBackground.swift */; };
+		034CBE802534700D00B20A11 /* JZColumnHeaderBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE692534700D00B20A11 /* JZColumnHeaderBackground.swift */; };
+		034CBE812534700D00B20A11 /* JZCurrentTimelinePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE6A2534700D00B20A11 /* JZCurrentTimelinePage.swift */; };
+		034CBE822534700D00B20A11 /* JZGridLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE6B2534700D00B20A11 /* JZGridLine.swift */; };
+		034CBE832534700D00B20A11 /* JZAllDayCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE6C2534700D00B20A11 /* JZAllDayCorner.swift */; };
+		034CBE842534700D00B20A11 /* JZCurrentTimelineSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE6D2534700D00B20A11 /* JZCurrentTimelineSection.swift */; };
+		034CBE852534700D00B20A11 /* JZRowHeaderBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE6E2534700D00B20A11 /* JZRowHeaderBackground.swift */; };
+		034CBE862534700D00B20A11 /* JZAllDayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE6F2534700D00B20A11 /* JZAllDayHeader.swift */; };
+		034CBE872534700D00B20A11 /* JZCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE702534700D00B20A11 /* JZCollectionView.swift */; };
+		034CBE8A2534751200B20A11 /* OptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE892534751200B20A11 /* OptionsViewModel.swift */; };
 		03521F05252B18A00094829E /* DateDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F03252B189F0094829E /* DateDialog.xib */; };
 		03521F06252B18A00094829E /* DateDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F04252B189F0094829E /* DateDialog.swift */; };
 		03521F11252B58FD0094829E /* NotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F09252B58FD0094829E /* NotificationVC.xib */; };
@@ -166,6 +199,23 @@
 		038CB01A2526056E001ACAD6 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CB0032526056E001ACAD6 /* UITextField + Extension.swift */; };
 		038CB01B2526056E001ACAD6 /* JDImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CB0042526056E001ACAD6 /* JDImageExtension.swift */; };
 		038CB01C2526056E001ACAD6 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CB0052526056E001ACAD6 /* LocationHelper.swift */; };
+		03A2CC2525301EF2005E3F29 /* CustomInformationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A2CC2325301EF2005E3F29 /* CustomInformationDialog.xib */; };
+		03A2CC2625301EF2005E3F29 /* CustomInformationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC2425301EF2005E3F29 /* CustomInformationDialog.swift */; };
+		03A2CC3425302468005E3F29 /* ServiceNavigationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A2CC3125302468005E3F29 /* ServiceNavigationVC.xib */; };
+		03A2CC3525302468005E3F29 /* ServiceNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC3225302468005E3F29 /* ServiceNavigationVC.swift */; };
+		03A2CC3625302468005E3F29 /* ServiceNavigationVC + MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC3325302468005E3F29 /* ServiceNavigationVC + MapView.swift */; };
+		03A2CC3B25303CE3005E3F29 /* MyBookingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC3825303CE3005E3F29 /* MyBookingData.swift */; };
+		03A2CC3C25303CE3005E3F29 /* MyBookingWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC3925303CE3005E3F29 /* MyBookingWebService.swift */; };
+		03A2CC3D25303CE3005E3F29 /* MyBookingMassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC3A25303CE3005E3F29 /* MyBookingMassage.swift */; };
+		03A2CC3F25306CFF005E3F29 /* BookingDetailVC + Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC3E25306CFF005E3F29 /* BookingDetailVC + Tableview.swift */; };
+		03A2CC4B2530976B005E3F29 /* MyBookingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A2CC422530976B005E3F29 /* MyBookingVC.xib */; };
+		03A2CC4C2530976B005E3F29 /* MyBookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC432530976B005E3F29 /* MyBookingVC.swift */; };
+		03A2CC5825309D59005E3F29 /* MyBookingVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC5725309D59005E3F29 /* MyBookingVC + TableView.swift */; };
+		03A2CC6425309E84005E3F29 /* MassageDetailTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC5B25309E84005E3F29 /* MassageDetailTblCell.swift */; };
+		03A2CC6525309E84005E3F29 /* MassageDetailTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A2CC5C25309E84005E3F29 /* MassageDetailTblCell.xib */; };
+		03A2CC6625309E84005E3F29 /* MyBookingExpandTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A2CC5E25309E84005E3F29 /* MyBookingExpandTblCell.xib */; };
+		03A2CC6725309E84005E3F29 /* MyBookingExpandTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC5F25309E84005E3F29 /* MyBookingExpandTblCell.swift */; };
+		03A2CC6825309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC6025309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift */; };
 		03A7FB2325273058003A6025 /* HomeVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7FB2225273058003A6025 /* HomeVC + TableView.swift */; };
 		03A7FB2825273ACC003A6025 /* MyBookingTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7FB2625273ACB003A6025 /* MyBookingTblSection.swift */; };
 		03A7FB2C25274225003A6025 /* MyBookingTblSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A7FB2B25274225003A6025 /* MyBookingTblSection.xib */; };
@@ -248,6 +298,40 @@
 		0344037C252F08D900C8C700 /* BookingDetailTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailTblCell.swift; sourceTree = "<group>"; };
 		0345190824C85EBE00AF7026 /* styleable_map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleable_map.json; sourceTree = "<group>"; };
 		03456BD6252DDADF00013231 /* CustomFilterDialog + DateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFilterDialog + DateFilter.swift"; sourceTree = "<group>"; };
+		034CBE0725340C1100B20A11 /* UserDetailTblSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailTblSection.xib; sourceTree = "<group>"; };
+		034CBE0825340C1100B20A11 /* UserDetailTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailTblSection.swift; sourceTree = "<group>"; };
+		034CBE122534531300B20A11 /* CalendarGraphVC + CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CalendarGraphVC + CollectionView.swift"; sourceTree = "<group>"; };
+		034CBE132534531300B20A11 /* CalendarGraphVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarGraphVC.swift; sourceTree = "<group>"; };
+		034CBE172534546300B20A11 /* CalendarGraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarGraphVC.xib; sourceTree = "<group>"; };
+		034CBE1B25346C4C00B20A11 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		034CBE1C25346C4C00B20A11 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		034CBE1D25346C4C00B20A11 /* DefaultViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultViewModel.swift; sourceTree = "<group>"; };
+		034CBE1F25346C4C00B20A11 /* DefaultEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultEvent.swift; sourceTree = "<group>"; };
+		034CBE2025346C4C00B20A11 /* DefaultWeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultWeekView.swift; sourceTree = "<group>"; };
+		034CBE572534700D00B20A11 /* JZLongPressWeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZLongPressWeekView.swift; sourceTree = "<group>"; };
+		034CBE582534700D00B20A11 /* JZAllDayEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZAllDayEvent.swift; sourceTree = "<group>"; };
+		034CBE592534700D00B20A11 /* JZWeekViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZWeekViewHelper.swift; sourceTree = "<group>"; };
+		034CBE5A2534700D00B20A11 /* JZLongPressEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZLongPressEventCell.swift; sourceTree = "<group>"; };
+		034CBE5B2534700D00B20A11 /* JZWeekViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZWeekViewFlowLayout.swift; sourceTree = "<group>"; };
+		034CBE5D2534700D00B20A11 /* JZWeekViewColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZWeekViewColors.swift; sourceTree = "<group>"; };
+		034CBE5E2534700D00B20A11 /* WeakTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakTimer.swift; sourceTree = "<group>"; };
+		034CBE5F2534700D00B20A11 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		034CBE602534700D00B20A11 /* JZCalendarWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCalendarWeekView.h; sourceTree = "<group>"; };
+		034CBE612534700D00B20A11 /* JZBaseWeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZBaseWeekView.swift; sourceTree = "<group>"; };
+		034CBE622534700D00B20A11 /* JZBaseEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZBaseEvent.swift; sourceTree = "<group>"; };
+		034CBE652534700D00B20A11 /* JZColumnHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZColumnHeader.swift; sourceTree = "<group>"; };
+		034CBE662534700D00B20A11 /* JZCornerHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZCornerHeader.swift; sourceTree = "<group>"; };
+		034CBE672534700D00B20A11 /* JZRowHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZRowHeader.swift; sourceTree = "<group>"; };
+		034CBE682534700D00B20A11 /* JZAllDayHeaderBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZAllDayHeaderBackground.swift; sourceTree = "<group>"; };
+		034CBE692534700D00B20A11 /* JZColumnHeaderBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZColumnHeaderBackground.swift; sourceTree = "<group>"; };
+		034CBE6A2534700D00B20A11 /* JZCurrentTimelinePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZCurrentTimelinePage.swift; sourceTree = "<group>"; };
+		034CBE6B2534700D00B20A11 /* JZGridLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZGridLine.swift; sourceTree = "<group>"; };
+		034CBE6C2534700D00B20A11 /* JZAllDayCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZAllDayCorner.swift; sourceTree = "<group>"; };
+		034CBE6D2534700D00B20A11 /* JZCurrentTimelineSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZCurrentTimelineSection.swift; sourceTree = "<group>"; };
+		034CBE6E2534700D00B20A11 /* JZRowHeaderBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZRowHeaderBackground.swift; sourceTree = "<group>"; };
+		034CBE6F2534700D00B20A11 /* JZAllDayHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZAllDayHeader.swift; sourceTree = "<group>"; };
+		034CBE702534700D00B20A11 /* JZCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZCollectionView.swift; sourceTree = "<group>"; };
+		034CBE892534751200B20A11 /* OptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsViewModel.swift; path = "Therapist TerraHeal/Source/HelperVC/CalenderGraph/OptionsViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		03521F03252B189F0094829E /* DateDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateDialog.xib; sourceTree = "<group>"; };
 		03521F04252B189F0094829E /* DateDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateDialog.swift; sourceTree = "<group>"; };
 		03521F09252B58FD0094829E /* NotificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationVC.xib; sourceTree = "<group>"; };
@@ -346,6 +430,23 @@
 		038CB0032526056E001ACAD6 /* UITextField + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		038CB0042526056E001ACAD6 /* JDImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDImageExtension.swift; sourceTree = "<group>"; };
 		038CB0052526056E001ACAD6 /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		03A2CC2325301EF2005E3F29 /* CustomInformationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInformationDialog.xib; sourceTree = "<group>"; };
+		03A2CC2425301EF2005E3F29 /* CustomInformationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInformationDialog.swift; sourceTree = "<group>"; };
+		03A2CC3125302468005E3F29 /* ServiceNavigationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceNavigationVC.xib; sourceTree = "<group>"; };
+		03A2CC3225302468005E3F29 /* ServiceNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceNavigationVC.swift; sourceTree = "<group>"; };
+		03A2CC3325302468005E3F29 /* ServiceNavigationVC + MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceNavigationVC + MapView.swift"; sourceTree = "<group>"; };
+		03A2CC3825303CE3005E3F29 /* MyBookingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingData.swift; sourceTree = "<group>"; };
+		03A2CC3925303CE3005E3F29 /* MyBookingWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingWebService.swift; sourceTree = "<group>"; };
+		03A2CC3A25303CE3005E3F29 /* MyBookingMassage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingMassage.swift; sourceTree = "<group>"; };
+		03A2CC3E25306CFF005E3F29 /* BookingDetailVC + Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BookingDetailVC + Tableview.swift"; path = "/Users/Evolution/Desktop/EvolutionWork/TerraHeal(Evolution)/Apps/TerraHeal-Therapist/Therapist TerraHeal/Source/MainScene/BookingDetailVC/BookingDetailVC + Tableview.swift"; sourceTree = "<absolute>"; };
+		03A2CC422530976B005E3F29 /* MyBookingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBookingVC.xib; sourceTree = "<group>"; };
+		03A2CC432530976B005E3F29 /* MyBookingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingVC.swift; sourceTree = "<group>"; };
+		03A2CC5725309D59005E3F29 /* MyBookingVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyBookingVC + TableView.swift"; sourceTree = "<group>"; };
+		03A2CC5B25309E84005E3F29 /* MassageDetailTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassageDetailTblCell.swift; sourceTree = "<group>"; };
+		03A2CC5C25309E84005E3F29 /* MassageDetailTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MassageDetailTblCell.xib; sourceTree = "<group>"; };
+		03A2CC5E25309E84005E3F29 /* MyBookingExpandTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBookingExpandTblCell.xib; sourceTree = "<group>"; };
+		03A2CC5F25309E84005E3F29 /* MyBookingExpandTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingExpandTblCell.swift; sourceTree = "<group>"; };
+		03A2CC6025309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyBookingExpandTblCell + TableViewl.swift"; sourceTree = "<group>"; };
 		03A7FB2225273058003A6025 /* HomeVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + TableView.swift"; sourceTree = "<group>"; };
 		03A7FB2625273ACB003A6025 /* MyBookingTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingTblSection.swift; sourceTree = "<group>"; };
 		03A7FB2B25274225003A6025 /* MyBookingTblSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBookingTblSection.xib; sourceTree = "<group>"; };
@@ -408,6 +509,7 @@
 		030DB58025260966004C7CC8 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
+				03A2CC3725303CE3005E3F29 /* BookingDetailModel */,
 				030DB58125260966004C7CC8 /* AFNHelper */,
 				030DB58525260966004C7CC8 /* ResponseModel.swift */,
 				030DB58625260966004C7CC8 /* UserWebService.swift */,
@@ -489,6 +591,7 @@
 		0341227E252F3AFB000BCDAE /* HelperVC */ = {
 			isa = PBXGroup;
 			children = (
+				034CBE1A25346C4C00B20A11 /* CalenderGraph */,
 				0341227F252F3AFB000BCDAE /* ImagePickerVC */,
 			);
 			path = HelperVC;
@@ -599,6 +702,7 @@
 				0344037A252F08D900C8C700 /* BookingDetailTblCell */,
 				0344036B252F04FB00C8C700 /* xib */,
 				03440370252F04FB00C8C700 /* BookingDetailVC.swift */,
+				03A2CC3E25306CFF005E3F29 /* BookingDetailVC + Tableview.swift */,
 			);
 			path = BookingDetailVC;
 			sourceTree = "<group>";
@@ -630,6 +734,93 @@
 				63ABC0C9246D650A00360F07 /* Therapist TerraHeal-Bridging-Header.h */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		034CBE0625340C1100B20A11 /* UserDetaillSection */ = {
+			isa = PBXGroup;
+			children = (
+				034CBE0725340C1100B20A11 /* UserDetailTblSection.xib */,
+				034CBE0825340C1100B20A11 /* UserDetailTblSection.swift */,
+			);
+			path = UserDetaillSection;
+			sourceTree = "<group>";
+		};
+		034CBE112534531300B20A11 /* CalendarGraphVC */ = {
+			isa = PBXGroup;
+			children = (
+				034CBE172534546300B20A11 /* CalendarGraphVC.xib */,
+				034CBE122534531300B20A11 /* CalendarGraphVC + CollectionView.swift */,
+				034CBE132534531300B20A11 /* CalendarGraphVC.swift */,
+				034CBE142534531300B20A11 /* CalenderBookingCell */,
+			);
+			path = CalendarGraphVC;
+			sourceTree = "<group>";
+		};
+		034CBE142534531300B20A11 /* CalenderBookingCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CalenderBookingCell;
+			sourceTree = "<group>";
+		};
+		034CBE1A25346C4C00B20A11 /* CalenderGraph */ = {
+			isa = PBXGroup;
+			children = (
+				034CBE562534700D00B20A11 /* JZCalendarWeekView */,
+				034CBE1B25346C4C00B20A11 /* EventCell.swift */,
+				034CBE1C25346C4C00B20A11 /* EventCell.xib */,
+				034CBE1D25346C4C00B20A11 /* DefaultViewModel.swift */,
+				034CBE1F25346C4C00B20A11 /* DefaultEvent.swift */,
+				034CBE2025346C4C00B20A11 /* DefaultWeekView.swift */,
+			);
+			path = CalenderGraph;
+			sourceTree = "<group>";
+		};
+		034CBE562534700D00B20A11 /* JZCalendarWeekView */ = {
+			isa = PBXGroup;
+			children = (
+				034CBE892534751200B20A11 /* OptionsViewModel.swift */,
+				034CBE572534700D00B20A11 /* JZLongPressWeekView.swift */,
+				034CBE582534700D00B20A11 /* JZAllDayEvent.swift */,
+				034CBE592534700D00B20A11 /* JZWeekViewHelper.swift */,
+				034CBE5A2534700D00B20A11 /* JZLongPressEventCell.swift */,
+				034CBE5B2534700D00B20A11 /* JZWeekViewFlowLayout.swift */,
+				034CBE5C2534700D00B20A11 /* Utils */,
+				034CBE602534700D00B20A11 /* JZCalendarWeekView.h */,
+				034CBE612534700D00B20A11 /* JZBaseWeekView.swift */,
+				034CBE622534700D00B20A11 /* JZBaseEvent.swift */,
+				034CBE642534700D00B20A11 /* ReusableViews */,
+				034CBE702534700D00B20A11 /* JZCollectionView.swift */,
+			);
+			path = JZCalendarWeekView;
+			sourceTree = "<group>";
+		};
+		034CBE5C2534700D00B20A11 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				034CBE5D2534700D00B20A11 /* JZWeekViewColors.swift */,
+				034CBE5E2534700D00B20A11 /* WeakTimer.swift */,
+				034CBE5F2534700D00B20A11 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		034CBE642534700D00B20A11 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				034CBE652534700D00B20A11 /* JZColumnHeader.swift */,
+				034CBE662534700D00B20A11 /* JZCornerHeader.swift */,
+				034CBE672534700D00B20A11 /* JZRowHeader.swift */,
+				034CBE682534700D00B20A11 /* JZAllDayHeaderBackground.swift */,
+				034CBE692534700D00B20A11 /* JZColumnHeaderBackground.swift */,
+				034CBE6A2534700D00B20A11 /* JZCurrentTimelinePage.swift */,
+				034CBE6B2534700D00B20A11 /* JZGridLine.swift */,
+				034CBE6C2534700D00B20A11 /* JZAllDayCorner.swift */,
+				034CBE6D2534700D00B20A11 /* JZCurrentTimelineSection.swift */,
+				034CBE6E2534700D00B20A11 /* JZRowHeaderBackground.swift */,
+				034CBE6F2534700D00B20A11 /* JZAllDayHeader.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 		03521F02252B189F0094829E /* DateDialog */ = {
@@ -746,6 +937,9 @@
 		035EF5B02526FA3A00C64BD4 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				034CBE112534531300B20A11 /* CalendarGraphVC */,
+				03A2CC402530976B005E3F29 /* MyBooking */,
+				03A2CC2F25302468005E3F29 /* ServiceNavigationVC */,
 				0344036A252F04FB00C8C700 /* BookingDetailVC */,
 				0379EAC6252C934A00303A59 /* RateVC */,
 				035EF5B12526FA3A00C64BD4 /* MainVC */,
@@ -924,6 +1118,7 @@
 		038CAF96252604AB001ACAD6 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				03A2CC2225301EF2005E3F29 /* CustomInformationDialog */,
 				03412279252F3882000BCDAE /* ScanDialog */,
 				03F50389252D937F00AF50A5 /* CustomFilterDialog */,
 				0379EABA252C574B00303A59 /* TimeBreakDialog */,
@@ -1187,6 +1382,91 @@
 			path = "UControl + Extension";
 			sourceTree = "<group>";
 		};
+		03A2CC2225301EF2005E3F29 /* CustomInformationDialog */ = {
+			isa = PBXGroup;
+			children = (
+				03A2CC2325301EF2005E3F29 /* CustomInformationDialog.xib */,
+				03A2CC2425301EF2005E3F29 /* CustomInformationDialog.swift */,
+			);
+			path = CustomInformationDialog;
+			sourceTree = "<group>";
+		};
+		03A2CC2F25302468005E3F29 /* ServiceNavigationVC */ = {
+			isa = PBXGroup;
+			children = (
+				03A2CC3025302468005E3F29 /* xib */,
+				03A2CC3225302468005E3F29 /* ServiceNavigationVC.swift */,
+				03A2CC3325302468005E3F29 /* ServiceNavigationVC + MapView.swift */,
+			);
+			path = ServiceNavigationVC;
+			sourceTree = "<group>";
+		};
+		03A2CC3025302468005E3F29 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				03A2CC3125302468005E3F29 /* ServiceNavigationVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		03A2CC3725303CE3005E3F29 /* BookingDetailModel */ = {
+			isa = PBXGroup;
+			children = (
+				03A2CC3825303CE3005E3F29 /* MyBookingData.swift */,
+				03A2CC3925303CE3005E3F29 /* MyBookingWebService.swift */,
+				03A2CC3A25303CE3005E3F29 /* MyBookingMassage.swift */,
+			);
+			path = BookingDetailModel;
+			sourceTree = "<group>";
+		};
+		03A2CC402530976B005E3F29 /* MyBooking */ = {
+			isa = PBXGroup;
+			children = (
+				03A2CC5925309E84005E3F29 /* Cells */,
+				03A2CC412530976B005E3F29 /* xib */,
+				03A2CC432530976B005E3F29 /* MyBookingVC.swift */,
+				03A2CC5725309D59005E3F29 /* MyBookingVC + TableView.swift */,
+			);
+			path = MyBooking;
+			sourceTree = "<group>";
+		};
+		03A2CC412530976B005E3F29 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				03A2CC422530976B005E3F29 /* MyBookingVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		03A2CC5925309E84005E3F29 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				034CBE0625340C1100B20A11 /* UserDetaillSection */,
+				03A2CC5A25309E84005E3F29 /* MassageDetailTblCell */,
+				03A2CC5D25309E84005E3F29 /* MyBookingExpandTblCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		03A2CC5A25309E84005E3F29 /* MassageDetailTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				03A2CC5B25309E84005E3F29 /* MassageDetailTblCell.swift */,
+				03A2CC5C25309E84005E3F29 /* MassageDetailTblCell.xib */,
+			);
+			path = MassageDetailTblCell;
+			sourceTree = "<group>";
+		};
+		03A2CC5D25309E84005E3F29 /* MyBookingExpandTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				03A2CC5E25309E84005E3F29 /* MyBookingExpandTblCell.xib */,
+				03A2CC5F25309E84005E3F29 /* MyBookingExpandTblCell.swift */,
+				03A2CC6025309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift */,
+			);
+			path = MyBookingExpandTblCell;
+			sourceTree = "<group>";
+		};
 		03A7FB2425273ACB003A6025 /* MyBookingTblSection */ = {
 			isa = PBXGroup;
 			children = (
@@ -1374,16 +1654,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034CBE2225346C4C00B20A11 /* EventCell.xib in Resources */,
 				038CAFDA252604AB001ACAD6 /* CustomAlert.xib in Resources */,
+				034CBE182534546300B20A11 /* CalendarGraphVC.xib in Resources */,
 				63415E35246FB5C600F0D7A0 /* Nunito-SemiBold.ttf in Resources */,
 				0379EAD0252C934A00303A59 /* RateTblCell.xib in Resources */,
 				0379EAE3252CA89700303A59 /* NewsVC.xib in Resources */,
 				0379EAB7252C4C2800303A59 /* SelectionBorderTableCell.xib in Resources */,
 				038CAFD0252604AB001ACAD6 /* PersonPickerDialog.xib in Resources */,
 				63ABC1F0246D650D00360F07 /* CommonColor.xcassets in Resources */,
+				03A2CC4B2530976B005E3F29 /* MyBookingVC.xib in Resources */,
 				0379EABE252C574B00303A59 /* TimeBreakDialog.xib in Resources */,
 				035EF5AD2526F3A400C64BD4 /* MenuCellHorizontal.xib in Resources */,
 				03412298252F3AFC000BCDAE /* CameraVC.xib in Resources */,
+				03A2CC3425302468005E3F29 /* ServiceNavigationVC.xib in Resources */,
 				0379EAE5252CA89700303A59 /* NewsTblCell.xib in Resources */,
 				038CAFC5252604AB001ACAD6 /* CustomCountryPhoneCodePicker.xib in Resources */,
 				038CAFD2252604AB001ACAD6 /* PersonPickerCell.xib in Resources */,
@@ -1406,7 +1690,9 @@
 				038CAFC2252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.xib in Resources */,
 				03521F13252B58FD0094829E /* NotificationTblCell.xib in Resources */,
 				03412294252F3AFC000BCDAE /* CustomDocumentPicker.xib in Resources */,
+				034CBE0925340C1100B20A11 /* UserDetailTblSection.xib in Resources */,
 				0342137124C6B3C500ABB285 /* LaunchVC.xib in Resources */,
+				03A2CC6625309E84005E3F29 /* MyBookingExpandTblCell.xib in Resources */,
 				0379EAB8252C4C2800303A59 /* CustomTblSelectionDialog.xib in Resources */,
 				035EF5C02526FA3A00C64BD4 /* FilterTblCell.xib in Resources */,
 				035EF5C42526FA3A00C64BD4 /* MyBookingTblCell.xib in Resources */,
@@ -1416,12 +1702,14 @@
 				03440371252F04FB00C8C700 /* BookingDetailVC.xib in Resources */,
 				0379EAC4252C72B800303A59 /* TimeSlotCltCell.xib in Resources */,
 				038CAFD8252604AB001ACAD6 /* CustomTextFieldDialog.xib in Resources */,
+				03A2CC2525301EF2005E3F29 /* CustomInformationDialog.xib in Resources */,
 				0341229F252F40E4000BCDAE /* ServiceStatusVC.xib in Resources */,
 				035EF5AE2526F3A400C64BD4 /* MenuCellVerticle.xib in Resources */,
 				038CAFCC252604AB001ACAD6 /* CustomDatePicker.xib in Resources */,
 				0341227D252F3882000BCDAE /* ScanDialog.xib in Resources */,
 				03521F2B252B612E0094829E /* SuggestionTblCell.xib in Resources */,
 				030DB59B25260966004C7CC8 /* Localizable.strings in Resources */,
+				03A2CC6525309E84005E3F29 /* MassageDetailTblCell.xib in Resources */,
 				03521F29252B612E0094829E /* SuggestionAndComplaintVC.xib in Resources */,
 				038CAFD6252604AB001ACAD6 /* CustomAlertConfirmation.xib in Resources */,
 				03521F11252B58FD0094829E /* NotificationVC.xib in Resources */,
@@ -1503,19 +1791,25 @@
 				038CAFCF252604AB001ACAD6 /* TimeDialog.swift in Sources */,
 				030DB5A125260966004C7CC8 /* UserWebService.swift in Sources */,
 				0379EAB9252C4C2800303A59 /* CustomTblSelectionDialog.swift in Sources */,
+				034CBE2525346C4C00B20A11 /* DefaultEvent.swift in Sources */,
 				035EF5BF2526FA3A00C64BD4 /* FilterTblCell.swift in Sources */,
 				038CB0152526056E001ACAD6 /* DeviceHelper.swift in Sources */,
 				038CB0182526056E001ACAD6 /* UIView + Extension.swift in Sources */,
+				034CBE7E2534700D00B20A11 /* JZRowHeader.swift in Sources */,
 				038CB0082526056E001ACAD6 /* TextField + InputConfiguration.swift in Sources */,
+				03A2CC6725309E84005E3F29 /* MyBookingExpandTblCell.swift in Sources */,
 				030DB5A525260966004C7CC8 /* SettingPreferenceWebservice.swift in Sources */,
 				035EF5AA2526F3A400C64BD4 /* SideVC.swift in Sources */,
 				035EF5C32526FA3A00C64BD4 /* MyBookingTblCell.swift in Sources */,
 				038CB00A2526056E001ACAD6 /* RatingView.swift in Sources */,
+				03A2CC3B25303CE3005E3F29 /* MyBookingData.swift in Sources */,
 				038CB01B2526056E001ACAD6 /* JDImageExtension.swift in Sources */,
 				03412295252F3AFC000BCDAE /* CustomDocumentPicker.swift in Sources */,
 				0379EACE252C934A00303A59 /* RateVC.swift in Sources */,
+				034CBE7F2534700D00B20A11 /* JZAllDayHeaderBackground.swift in Sources */,
 				030DB5A425260966004C7CC8 /* CountriesWebService.swift in Sources */,
 				030DB57725260869004C7CC8 /* DashedCircleView.swift in Sources */,
+				03A2CC4C2530976B005E3F29 /* MyBookingVC.swift in Sources */,
 				030DB5CF252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift in Sources */,
 				035EF5AF2526F3A400C64BD4 /* MenuCellVerticle.swift in Sources */,
 				0341229A252F3AFC000BCDAE /* CameraVC.swift in Sources */,
@@ -1523,57 +1817,85 @@
 				038CB0062526056E001ACAD6 /* EditProfileTextfield.swift in Sources */,
 				038CAFC4252604AB001ACAD6 /* CustomCountryPhoneCodePicker.swift in Sources */,
 				0379EABD252C574B00303A59 /* TimeBreakDialog.swift in Sources */,
+				034CBE762534700D00B20A11 /* JZWeekViewColors.swift in Sources */,
+				034CBE2125346C4C00B20A11 /* EventCell.swift in Sources */,
 				03521F2A252B612E0094829E /* SuggestionTblCell.swift in Sources */,
+				03A2CC3525302468005E3F29 /* ServiceNavigationVC.swift in Sources */,
 				03412299252F3AFC000BCDAE /* CameraController.swift in Sources */,
 				038CB0172526056E001ACAD6 /* JDDeviceHelper.swift in Sources */,
 				038CB00F2526056E001ACAD6 /* NSObject + Extension.swift in Sources */,
 				030DB59D25260966004C7CC8 /* AlamofireHelper.swift in Sources */,
 				0344037E252F08D900C8C700 /* BookingDetailTblCell.swift in Sources */,
+				034CBE7A2534700D00B20A11 /* JZBaseEvent.swift in Sources */,
 				030DB59925260966004C7CC8 /* Common.swift in Sources */,
+				034CBE792534700D00B20A11 /* JZBaseWeekView.swift in Sources */,
 				030DB5CA252609FB004C7CC8 /* PinterestLayout.swift in Sources */,
 				038CB00E2526056E001ACAD6 /* DataType + Extesnion.swift in Sources */,
+				03A2CC6825309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift in Sources */,
 				038CAF8F252601CF001ACAD6 /* LoginVC.swift in Sources */,
 				034122A0252F40E4000BCDAE /* ServiceStatusVC.swift in Sources */,
 				038CAFD3252604AB001ACAD6 /* PersonPickerDialog.swift in Sources */,
 				030DB5CC252609FB004C7CC8 /* ThemeImageView.swift in Sources */,
 				030DB57625260869004C7CC8 /* CircularProgressBar.swift in Sources */,
+				03A2CC3C25303CE3005E3F29 /* MyBookingWebService.swift in Sources */,
 				038CAFE2252604D8001ACAD6 /* CoreDataManager.swift in Sources */,
+				03A2CC6425309E84005E3F29 /* MassageDetailTblCell.swift in Sources */,
+				034CBE822534700D00B20A11 /* JZGridLine.swift in Sources */,
 				03412292252F3AFC000BCDAE /* UIImageCropperVC.swift in Sources */,
 				03412296252F3AFC000BCDAE /* CustomPhotoPicker.swift in Sources */,
+				03A2CC5825309D59005E3F29 /* MyBookingVC + TableView.swift in Sources */,
 				038CAFE5252604D8001ACAD6 /* PersonData.xcdatamodeld in Sources */,
 				03521F12252B58FD0094829E /* NotificationTblCell.swift in Sources */,
+				034CBE2625346C4C00B20A11 /* DefaultWeekView.swift in Sources */,
+				03A2CC3625302468005E3F29 /* ServiceNavigationVC + MapView.swift in Sources */,
 				038CB0112526056E001ACAD6 /* NSLayoutHelper.swift in Sources */,
 				038CB0142526056E001ACAD6 /* String+Localization.swift in Sources */,
 				030DB5CB252609FB004C7CC8 /* ThemeView.swift in Sources */,
+				034CBE8A2534751200B20A11 /* OptionsViewModel.swift in Sources */,
 				030DB59C25260966004C7CC8 /* PreferenceHelper.swift in Sources */,
+				034CBE862534700D00B20A11 /* JZAllDayHeader.swift in Sources */,
+				034CBE0A25340C1100B20A11 /* UserDetailTblSection.swift in Sources */,
+				03A2CC2625301EF2005E3F29 /* CustomInformationDialog.swift in Sources */,
 				038CAFE3252604D8001ACAD6 /* Person+CoreDataClass.swift in Sources */,
 				03521F2C252B612E0094829E /* SuggestionAndComplaintVC.swift in Sources */,
 				030DB5A325260966004C7CC8 /* Singleton.swift in Sources */,
 				035EF5C72526FF3200C64BD4 /* PBRevealViewController.swift in Sources */,
 				038CB01A2526056E001ACAD6 /* UITextField + Extension.swift in Sources */,
+				034CBE802534700D00B20A11 /* JZColumnHeaderBackground.swift in Sources */,
 				63ABC1A6246D650D00360F07 /* AppDelegate.swift in Sources */,
+				03A2CC3D25303CE3005E3F29 /* MyBookingMassage.swift in Sources */,
+				034CBE872534700D00B20A11 /* JZCollectionView.swift in Sources */,
+				034CBE162534531300B20A11 /* CalendarGraphVC.swift in Sources */,
+				034CBE842534700D00B20A11 /* JZCurrentTimelineSection.swift in Sources */,
 				030DB59825260966004C7CC8 /* APP+NAVIGATION.swift in Sources */,
 				030DB5C8252609FB004C7CC8 /* ThemeTextField.swift in Sources */,
 				038CAFD5252604AB001ACAD6 /* FingerPrintDialog.swift in Sources */,
 				0341227C252F3882000BCDAE /* ScanDialog.swift in Sources */,
 				038CB0072526056E001ACAD6 /* ACFloatingTextfield.swift in Sources */,
 				035EF5AC2526F3A400C64BD4 /* MenuCellHorizontal.swift in Sources */,
+				034CBE722534700D00B20A11 /* JZAllDayEvent.swift in Sources */,
 				0379EAE6252CA89700303A59 /* NewsTblCell.swift in Sources */,
 				030DB5C9252609FB004C7CC8 /* BaseVC.swift in Sources */,
+				034CBE7D2534700D00B20A11 /* JZCornerHeader.swift in Sources */,
 				030DB5C5252609FB004C7CC8 /* RadioButton.swift in Sources */,
 				030DB5A225260966004C7CC8 /* CityWebService.swift in Sources */,
 				030DB59A25260966004C7CC8 /* ImageAssets.swift in Sources */,
+				034CBE732534700D00B20A11 /* JZWeekViewHelper.swift in Sources */,
 				03521F06252B18A00094829E /* DateDialog.swift in Sources */,
+				034CBE7C2534700D00B20A11 /* JZColumnHeader.swift in Sources */,
 				030DB5A625260966004C7CC8 /* AddressWebService.swift in Sources */,
 				035EF5C52526FA3A00C64BD4 /* MainVC.swift in Sources */,
 				03440374252F04FB00C8C700 /* BookingDetailVC.swift in Sources */,
+				034CBE2325346C4C00B20A11 /* DefaultViewModel.swift in Sources */,
 				030DB5A725260966004C7CC8 /* AppTheme.swift in Sources */,
 				03A7FB2825273ACC003A6025 /* MyBookingTblSection.swift in Sources */,
 				03F50388252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift in Sources */,
+				034CBE782534700D00B20A11 /* Extensions.swift in Sources */,
 				038CB0192526056E001ACAD6 /* UIViewController + Extension.swift in Sources */,
 				038CB00B2526056E001ACAD6 /* HomeSegmentControl.swift in Sources */,
 				030DB5C7252609FB004C7CC8 /* ThemeButton.swift in Sources */,
 				038CAFE4252604D8001ACAD6 /* Person+CoreDataProperties.swift in Sources */,
+				03A2CC3F25306CFF005E3F29 /* BookingDetailVC + Tableview.swift in Sources */,
 				03412293252F3AFC000BCDAE /* UIImage+FixOrientation.swift in Sources */,
 				030DB5CE252609FB004C7CC8 /* ThemeTableCells.swift in Sources */,
 				0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */,
@@ -1583,6 +1905,8 @@
 				03405502252E043000B7077D /* RadioSelectionTblCell.swift in Sources */,
 				035EF5C22526FA3A00C64BD4 /* HomeVC.swift in Sources */,
 				030DB59F25260966004C7CC8 /* Reachability.swift in Sources */,
+				034CBE812534700D00B20A11 /* JZCurrentTimelinePage.swift in Sources */,
+				034CBE742534700D00B20A11 /* JZLongPressEventCell.swift in Sources */,
 				0379EAC5252C72B800303A59 /* TimeSlotCltCell.swift in Sources */,
 				030DB5AF25260966004C7CC8 /* FontHelper.swift in Sources */,
 				030DB59E25260966004C7CC8 /* AppWebApi.swift in Sources */,
@@ -1590,13 +1914,18 @@
 				038CAFCB252604AB001ACAD6 /* DateTimeDialog.swift in Sources */,
 				038CB0122526056E001ACAD6 /* String + TypeCasting.swift in Sources */,
 				0379EAE4252CA89700303A59 /* NewsVC.swift in Sources */,
+				034CBE832534700D00B20A11 /* JZAllDayCorner.swift in Sources */,
 				03456BD7252DDADF00013231 /* CustomFilterDialog + DateFilter.swift in Sources */,
 				03A7FB2325273058003A6025 /* HomeVC + TableView.swift in Sources */,
+				034CBE152534531300B20A11 /* CalendarGraphVC + CollectionView.swift in Sources */,
 				030DB5CD252609FB004C7CC8 /* ThemeScrollView.swift in Sources */,
 				030DB5C6252609FB004C7CC8 /* FloatingRoundButton.swift in Sources */,
 				030DB5A025260966004C7CC8 /* ResponseModel.swift in Sources */,
+				034CBE852534700D00B20A11 /* JZRowHeaderBackground.swift in Sources */,
+				034CBE752534700D00B20A11 /* JZWeekViewFlowLayout.swift in Sources */,
 				030DB5D0252609FB004C7CC8 /* ThemeBottomDialog.swift in Sources */,
 				0379EACF252C934A00303A59 /* RateTblCell.swift in Sources */,
+				034CBE772534700D00B20A11 /* WeakTimer.swift in Sources */,
 				030DB5C2252609FB004C7CC8 /* ThemeCollectionCell.swift in Sources */,
 				038CB01C2526056E001ACAD6 /* LocationHelper.swift in Sources */,
 				038CB0102526056E001ACAD6 /* Date + Extension.swift in Sources */,
@@ -1608,6 +1937,7 @@
 				038CB0132526056E001ACAD6 /* String + Validation.swift in Sources */,
 				0342137224C6B3C500ABB285 /* LaunchVC.swift in Sources */,
 				038CB00D2526056E001ACAD6 /* JDSegmentControl.swift in Sources */,
+				034CBE712534700D00B20A11 /* JZLongPressWeekView.swift in Sources */,
 				038CAFD1252604AB001ACAD6 /* PersonPickerCell.swift in Sources */,
 				038CB00C2526056E001ACAD6 /* Loader.swift in Sources */,
 				038CAFD9252604AB001ACAD6 /* CustomTextFieldDialog.swift in Sources */,

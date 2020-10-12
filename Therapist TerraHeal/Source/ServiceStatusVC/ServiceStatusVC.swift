@@ -94,7 +94,6 @@ class ServiceStatusVC: BaseVC {
         }
     }
     func openCameraVC() {
-
         let cameraVC: CameraVC =  Common.appDelegate.loadCameraVC(navigaionVC: self.navigationController)
         cameraVC.onBtnCaptureTapped = { [weak self] (document)  in
                    guard let self = self else {
