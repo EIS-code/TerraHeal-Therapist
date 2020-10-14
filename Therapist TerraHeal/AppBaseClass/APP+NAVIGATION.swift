@@ -44,9 +44,9 @@ extension AppDelegate {
     fileprivate func loadMainVC(_ navigaionVC: UINavigationController?) {
         let mainVC: NC = NC(rootViewController: MainVC.fromNib())
         let leftVC: NC = NC(rootViewController: SideVC.fromNib())
-        let rightVC: NC = NC(rootViewController: SideVC.fromNib())
+        let rightVC: NC = NC(rootViewController: ProfileVC.fromNib())
         let targetVC = PBRevealViewController.init(leftViewController: leftVC, mainViewController: mainVC, rightViewController: rightVC)
-               self.windowConfig(withRootVC: targetVC)
+        self.windowConfig(withRootVC: targetVC)
     }
     
     

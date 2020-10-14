@@ -15,6 +15,7 @@ public protocol JZBaseViewDelegate: class {
     ///   - weekView: current JZBaseWeekView
     ///   - initDate: the new value of initDate
     func initDateDidChange(_ weekView: JZBaseWeekView, initDate: Date)
+    func eventClicked(_ event: JZBaseEvent)
 }
 
 extension JZBaseViewDelegate {
@@ -122,6 +123,7 @@ open class JZBaseWeekView: UIView {
         super.layoutSubviews()
 
         flowLayout.sectionWidth = getSectionWidth()
+        flowLayout.columnHeaderHeight = 100
     }
 
     /// Was going to use toDecimal1Value as well, but the CGFloat is always got the wrong precision
@@ -613,7 +615,9 @@ extension JZBaseWeekView: UICollectionViewDelegate, UICollectionViewDelegateFlow
         self.initDate = self.initDate.add(component: .day, value: addValue!)
         self.forceReload()
     }
-
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(self.getCurrentEvent(with: indexPath))
+    }
 }
 
 // MARK: - Current time line

@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="662" height="495"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhE-ot-Y3d" userLabel="vwExpanded">
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhE-ot-Y3d" userLabel="vwExpanded">
                         <rect key="frame" x="10" y="10" width="642" height="475"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="28 Oct 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lff-xv-HA0" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
@@ -80,7 +80,7 @@ lisbon, portugal -25412</string>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="theme_light_background"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="u9I-lm-oGh" secondAttribute="bottom" constant="48" id="ACG-3J-3rj"/>
                                     <constraint firstItem="Vy3-kb-BEN" firstAttribute="top" secondItem="0rz-vL-IaN" secondAttribute="bottom" constant="5" id="Dah-NQ-mlx"/>
@@ -119,7 +119,7 @@ lisbon, portugal -25412</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="theme_light_background"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ygG-Hu-5Fj" secondAttribute="bottom" constant="16" id="3r8-g0-lbn"/>
                                     <constraint firstAttribute="height" constant="80" id="5A5-2w-Fgy"/>

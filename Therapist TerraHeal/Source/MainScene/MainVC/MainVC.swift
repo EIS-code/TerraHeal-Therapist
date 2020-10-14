@@ -32,9 +32,8 @@ class MainVC: BaseVC {
         super.init(coder: aDecoder)
         setup()
     }
+
     private func setup() {
-        
-        
     }
     
     // MARK: View lifecycle
@@ -83,16 +82,15 @@ class MainVC: BaseVC {
             switch index {
             case 0:
                 self.calendarSelected()
-
             case 1:
                 self.homeSelected()
-
             default:
                 self.newsSelected()
-
             }
         }
+        self.vwFloatingBottom.selectItemAt(index: 1)
         self.btnMenu.addTarget(self.revealViewController(), action: #selector(PBRevealViewController.revealLeftView), for: .touchUpInside)
+        self.btnProfile.addTarget(self.revealViewController(), action: #selector(PBRevealViewController.revealRightView), for: .touchUpInside)
     }
 
     func newsSelected() {

@@ -11,7 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarGraphVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <connections>
+                <outlet property="bookingView" destination="ifb-Pt-1Zw" id="LaW-ve-vJh"/>
+                <outlet property="btnMonth" destination="nEl-i2-Nr9" id="7KX-vb-jl2"/>
                 <outlet property="calendarWeekView" destination="Ivl-gg-sTf" id="dVI-1T-wDy"/>
+                <outlet property="scrView" destination="7mm-WD-Hb5" id="xDw-zI-YiZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="vwForCard" destination="FD6-zP-WE3" id="nuj-va-y8B"/>
             </connections>
@@ -25,27 +28,56 @@
                     <rect key="frame" x="16" y="122" width="65" height="30"/>
                     <state key="normal" title="Oct 2024"/>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FD6-zP-WE3" userLabel="CardView2" customClass="ThemeCardView" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FD6-zP-WE3" userLabel="CardView2" customClass="ThemeCardView" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="168" width="375" height="689"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ivl-gg-sTf" customClass="DefaultWeekView" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="689"/>
+                            <rect key="frame" x="8" y="16" width="359" height="665"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="Ivl-gg-sTf" secondAttribute="trailing" id="WLv-oI-Uyj"/>
-                        <constraint firstItem="Ivl-gg-sTf" firstAttribute="leading" secondItem="FD6-zP-WE3" secondAttribute="leading" id="XMo-Kf-WmF"/>
-                        <constraint firstAttribute="bottom" secondItem="Ivl-gg-sTf" secondAttribute="bottom" id="irG-nj-0tZ"/>
-                        <constraint firstItem="Ivl-gg-sTf" firstAttribute="top" secondItem="FD6-zP-WE3" secondAttribute="top" id="zpr-lX-84z"/>
+                        <constraint firstAttribute="trailing" secondItem="Ivl-gg-sTf" secondAttribute="trailing" constant="8" id="WLv-oI-Uyj"/>
+                        <constraint firstItem="Ivl-gg-sTf" firstAttribute="leading" secondItem="FD6-zP-WE3" secondAttribute="leading" constant="8" id="XMo-Kf-WmF"/>
+                        <constraint firstAttribute="bottom" secondItem="Ivl-gg-sTf" secondAttribute="bottom" constant="8" id="irG-nj-0tZ"/>
+                        <constraint firstItem="Ivl-gg-sTf" firstAttribute="top" secondItem="FD6-zP-WE3" secondAttribute="top" constant="16" id="zpr-lX-84z"/>
                     </constraints>
                 </view>
+                <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mm-WD-Hb5">
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifb-Pt-1Zw" userLabel="bookingView">
+                            <rect key="frame" x="0.0" y="240" width="375" height="734"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ifb-Pt-1Zw" firstAttribute="leading" secondItem="7mm-WD-Hb5" secondAttribute="leading" id="0Hz-DZ-2cW"/>
+                        <constraint firstAttribute="trailing" secondItem="ifb-Pt-1Zw" secondAttribute="trailing" id="0VN-kZ-qTv"/>
+                        <constraint firstItem="ifb-Pt-1Zw" firstAttribute="top" secondItem="7mm-WD-Hb5" secondAttribute="top" constant="240" id="6mX-2s-xUs" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="240"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                        <constraint firstItem="ifb-Pt-1Zw" firstAttribute="height" secondItem="7mm-WD-Hb5" secondAttribute="height" priority="999" id="VlN-3c-aNQ"/>
+                        <constraint firstAttribute="bottom" secondItem="ifb-Pt-1Zw" secondAttribute="bottom" id="a7i-5A-6F0"/>
+                        <constraint firstItem="ifb-Pt-1Zw" firstAttribute="width" secondItem="7mm-WD-Hb5" secondAttribute="width" id="zKW-ZE-LiN"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="htQ-Xm-zYQ"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="BzC-gT-PHb"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" name="theme_background"/>
             <constraints>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="7mm-WD-Hb5" secondAttribute="trailing" id="07t-7g-5sk"/>
                 <constraint firstItem="FD6-zP-WE3" firstAttribute="top" secondItem="nEl-i2-Nr9" secondAttribute="bottom" constant="16" id="AcG-vH-dRB"/>
                 <constraint firstItem="FD6-zP-WE3" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="CMR-BL-dDA"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="7mm-WD-Hb5" secondAttribute="bottom" id="Qc8-Yf-LYQ"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="FD6-zP-WE3" secondAttribute="trailing" id="dGK-sO-e18"/>
+                <constraint firstItem="7mm-WD-Hb5" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="hJh-f3-Ggk"/>
                 <constraint firstItem="FD6-zP-WE3" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="124" id="hTR-Vw-5Tx"/>
                 <constraint firstItem="FD6-zP-WE3" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="45" id="oqC-sm-q7N" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
@@ -55,6 +87,7 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="nEl-i2-Nr9" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="tNc-Tw-7LH"/>
+                <constraint firstItem="7mm-WD-Hb5" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="vsu-Ab-jd3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>

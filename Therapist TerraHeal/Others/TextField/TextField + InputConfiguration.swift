@@ -38,7 +38,7 @@ public struct InputTextFieldDetail {
     var keyBoardType: UIKeyboardType = .default
     
     static func getEmailConfiguration() -> InputTextFieldDetail {
-        return InputTextFieldDetail(isMadatory: true, textContentType: .emailAddress, texFieldType: .Email, minLength: 2, maxLength: 20, keyBoardType: .emailAddress)
+        return InputTextFieldDetail(isMadatory: true, textContentType: .emailAddress, texFieldType: .Email, minLength: 2, maxLength: 50, keyBoardType: .emailAddress)
     }
     static func getMobileConfiguration() -> InputTextFieldDetail {
         return InputTextFieldDetail(isMadatory: true, textContentType: .telephoneNumber, texFieldType: .Phone, minLength: 8, maxLength: 10, keyBoardType: .phonePad)

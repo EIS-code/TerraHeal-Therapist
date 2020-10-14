@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="bookingView" destination="fyW-nC-fRK" id="8eO-oL-rSV"/>
                 <outlet property="btnMenu" destination="dk0-AN-Hja" id="RF9-qg-wGI"/>
+                <outlet property="btnProfile" destination="XUA-Xf-CmK" id="INf-hi-P8A"/>
                 <outlet property="calendarView" destination="ag8-dd-022" id="EYq-OH-rpL"/>
                 <outlet property="newsView" destination="KCO-pn-G7e" id="7Qu-Nj-qYW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

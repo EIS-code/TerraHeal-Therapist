@@ -26,9 +26,10 @@ class DefaultWeekView: JZBaseWeekView {
         preconditionFailure("EventCell and DefaultEvent should be casted")
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let selectedEvent = getCurrentEvent(with: indexPath) as? DefaultEvent {
-           
+            self.baseDelegate?.eventClicked(selectedEvent)
+            print(selectedEvent.id)
         }
     }
 }

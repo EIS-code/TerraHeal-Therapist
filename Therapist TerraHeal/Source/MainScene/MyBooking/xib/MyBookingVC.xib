@@ -25,12 +25,12 @@
                     <rect key="frame" x="0.0" y="44" width="375" height="723"/>
                     <color key="backgroundColor" name="theme_background"/>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
-                    <rect key="frame" x="16" y="88" width="343" height="690"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
+                    <rect key="frame" x="16" y="60" width="343" height="718"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="theme_light_background"/>
             <constraints>
                 <constraint firstItem="FD6-zP-WE3" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="CMR-BL-dDA"/>
                 <constraint firstItem="FD6-zP-WE3" firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" constant="16" id="Ux6-Sp-Fle" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
@@ -58,7 +58,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="FD6-zP-WE3" secondAttribute="top" constant="44" id="pwR-xJ-Cha"/>
+                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="FD6-zP-WE3" secondAttribute="top" constant="16" id="pwR-xJ-Cha"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="xL1-kH-6pc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
@@ -68,6 +68,9 @@
     <resources>
         <namedColor name="theme_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_light_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

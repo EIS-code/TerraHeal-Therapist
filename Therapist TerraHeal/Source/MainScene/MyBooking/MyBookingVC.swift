@@ -61,7 +61,7 @@ class MyBookingVC: BaseVC {
     }
     
     private func initialViewSetup() {
-        self.setBackground(color: UIColor.themeBackground)
+        self.setBackground(color: UIColor.clear)
         self.setupTableView(tableView: self.tableView)
         self.vwForCard.topRound()
         self.vwForCard.addGradientFade(colors: [UIColor.init(hex: "#FFFFFF57").cgColor,UIColor.init(hex: "#F6F6F4").cgColor,UIColor.init(hex: "#F6F6F4").cgColor])

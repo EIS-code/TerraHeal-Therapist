@@ -70,7 +70,6 @@
 		03456BD7252DDADF00013231 /* CustomFilterDialog + DateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456BD6252DDADF00013231 /* CustomFilterDialog + DateFilter.swift */; };
 		034CBE0925340C1100B20A11 /* UserDetailTblSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CBE0725340C1100B20A11 /* UserDetailTblSection.xib */; };
 		034CBE0A25340C1100B20A11 /* UserDetailTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE0825340C1100B20A11 /* UserDetailTblSection.swift */; };
-		034CBE152534531300B20A11 /* CalendarGraphVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE122534531300B20A11 /* CalendarGraphVC + CollectionView.swift */; };
 		034CBE162534531300B20A11 /* CalendarGraphVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE132534531300B20A11 /* CalendarGraphVC.swift */; };
 		034CBE182534546300B20A11 /* CalendarGraphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CBE172534546300B20A11 /* CalendarGraphVC.xib */; };
 		034CBE2125346C4C00B20A11 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE1B25346C4C00B20A11 /* EventCell.swift */; };
@@ -219,6 +218,10 @@
 		03A7FB2325273058003A6025 /* HomeVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7FB2225273058003A6025 /* HomeVC + TableView.swift */; };
 		03A7FB2825273ACC003A6025 /* MyBookingTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7FB2625273ACB003A6025 /* MyBookingTblSection.swift */; };
 		03A7FB2C25274225003A6025 /* MyBookingTblSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A7FB2B25274225003A6025 /* MyBookingTblSection.xib */; };
+		03AE6A132535C8D100F7C629 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE6A0D2535C8D100F7C629 /* ProfileVC.swift */; };
+		03AE6A142535C8D100F7C629 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AE6A0F2535C8D100F7C629 /* ProfileVC.xib */; };
+		03AE6A152535C8D100F7C629 /* ProfileTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE6A112535C8D100F7C629 /* ProfileTblCell.swift */; };
+		03AE6A162535C8D100F7C629 /* ProfileTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AE6A122535C8D100F7C629 /* ProfileTblCell.xib */; };
 		03E3F79124CF166500997A16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3F79024CF166500997A16 /* CoreData.framework */; };
 		03F50388252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F50387252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift */; };
 		03F5038C252D937F00AF50A5 /* CustomFilterDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5038A252D937F00AF50A5 /* CustomFilterDialog.swift */; };
@@ -300,7 +303,6 @@
 		03456BD6252DDADF00013231 /* CustomFilterDialog + DateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFilterDialog + DateFilter.swift"; sourceTree = "<group>"; };
 		034CBE0725340C1100B20A11 /* UserDetailTblSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailTblSection.xib; sourceTree = "<group>"; };
 		034CBE0825340C1100B20A11 /* UserDetailTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailTblSection.swift; sourceTree = "<group>"; };
-		034CBE122534531300B20A11 /* CalendarGraphVC + CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CalendarGraphVC + CollectionView.swift"; sourceTree = "<group>"; };
 		034CBE132534531300B20A11 /* CalendarGraphVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarGraphVC.swift; sourceTree = "<group>"; };
 		034CBE172534546300B20A11 /* CalendarGraphVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarGraphVC.xib; sourceTree = "<group>"; };
 		034CBE1B25346C4C00B20A11 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -316,7 +318,6 @@
 		034CBE5D2534700D00B20A11 /* JZWeekViewColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZWeekViewColors.swift; sourceTree = "<group>"; };
 		034CBE5E2534700D00B20A11 /* WeakTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakTimer.swift; sourceTree = "<group>"; };
 		034CBE5F2534700D00B20A11 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		034CBE602534700D00B20A11 /* JZCalendarWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZCalendarWeekView.h; sourceTree = "<group>"; };
 		034CBE612534700D00B20A11 /* JZBaseWeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZBaseWeekView.swift; sourceTree = "<group>"; };
 		034CBE622534700D00B20A11 /* JZBaseEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZBaseEvent.swift; sourceTree = "<group>"; };
 		034CBE652534700D00B20A11 /* JZColumnHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZColumnHeader.swift; sourceTree = "<group>"; };
@@ -450,6 +451,10 @@
 		03A7FB2225273058003A6025 /* HomeVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + TableView.swift"; sourceTree = "<group>"; };
 		03A7FB2625273ACB003A6025 /* MyBookingTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingTblSection.swift; sourceTree = "<group>"; };
 		03A7FB2B25274225003A6025 /* MyBookingTblSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBookingTblSection.xib; sourceTree = "<group>"; };
+		03AE6A0D2535C8D100F7C629 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		03AE6A0F2535C8D100F7C629 /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		03AE6A112535C8D100F7C629 /* ProfileTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTblCell.swift; sourceTree = "<group>"; };
+		03AE6A122535C8D100F7C629 /* ProfileTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTblCell.xib; sourceTree = "<group>"; };
 		03E3F79024CF166500997A16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		03F50387252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl + SetText + Extension.swift"; sourceTree = "<group>"; };
 		03F5038A252D937F00AF50A5 /* CustomFilterDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFilterDialog.swift; sourceTree = "<group>"; };
@@ -749,18 +754,9 @@
 			isa = PBXGroup;
 			children = (
 				034CBE172534546300B20A11 /* CalendarGraphVC.xib */,
-				034CBE122534531300B20A11 /* CalendarGraphVC + CollectionView.swift */,
 				034CBE132534531300B20A11 /* CalendarGraphVC.swift */,
-				034CBE142534531300B20A11 /* CalenderBookingCell */,
 			);
 			path = CalendarGraphVC;
-			sourceTree = "<group>";
-		};
-		034CBE142534531300B20A11 /* CalenderBookingCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CalenderBookingCell;
 			sourceTree = "<group>";
 		};
 		034CBE1A25346C4C00B20A11 /* CalenderGraph */ = {
@@ -786,7 +782,6 @@
 				034CBE5A2534700D00B20A11 /* JZLongPressEventCell.swift */,
 				034CBE5B2534700D00B20A11 /* JZWeekViewFlowLayout.swift */,
 				034CBE5C2534700D00B20A11 /* Utils */,
-				034CBE602534700D00B20A11 /* JZCalendarWeekView.h */,
 				034CBE612534700D00B20A11 /* JZBaseWeekView.swift */,
 				034CBE622534700D00B20A11 /* JZBaseEvent.swift */,
 				034CBE642534700D00B20A11 /* ReusableViews */,
@@ -937,6 +932,7 @@
 		035EF5B02526FA3A00C64BD4 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				03AE6A0C2535C8D100F7C629 /* ProfileVC */,
 				034CBE112534531300B20A11 /* CalendarGraphVC */,
 				03A2CC402530976B005E3F29 /* MyBooking */,
 				03A2CC2F25302468005E3F29 /* ServiceNavigationVC */,
@@ -1476,6 +1472,34 @@
 			path = MyBookingTblSection;
 			sourceTree = "<group>";
 		};
+		03AE6A0C2535C8D100F7C629 /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				03AE6A0D2535C8D100F7C629 /* ProfileVC.swift */,
+				03AE6A0E2535C8D100F7C629 /* xib */,
+				03AE6A102535C8D100F7C629 /* ProfileTblCell */,
+			);
+			name = ProfileVC;
+			path = "Therapist TerraHeal/Source/ProfileVC";
+			sourceTree = SOURCE_ROOT;
+		};
+		03AE6A0E2535C8D100F7C629 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				03AE6A0F2535C8D100F7C629 /* ProfileVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		03AE6A102535C8D100F7C629 /* ProfileTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				03AE6A112535C8D100F7C629 /* ProfileTblCell.swift */,
+				03AE6A122535C8D100F7C629 /* ProfileTblCell.xib */,
+			);
+			path = ProfileTblCell;
+			sourceTree = "<group>";
+		};
 		03F50389252D937F00AF50A5 /* CustomFilterDialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -1676,6 +1700,7 @@
 				035EF5BE2526FA3A00C64BD4 /* MainVC.xib in Resources */,
 				63ABC1F1246D650D00360F07 /* Assets.xcassets in Resources */,
 				03F5038D252D937F00AF50A5 /* CustomFilterDialog.xib in Resources */,
+				03AE6A162535C8D100F7C629 /* ProfileTblCell.xib in Resources */,
 				03412297252F3AFC000BCDAE /* CustomPhotoPicker.xib in Resources */,
 				0344037D252F08D900C8C700 /* BookingDetailTblCell.xib in Resources */,
 				63415E36246FB5C600F0D7A0 /* Nunito-Bold.ttf in Resources */,
@@ -1718,6 +1743,7 @@
 				63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */,
 				03412291252F3AFC000BCDAE /* UIImageCropperVC.xib in Resources */,
 				0345190924C85EBE00AF7026 /* styleable_map.json in Resources */,
+				03AE6A142535C8D100F7C629 /* ProfileVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1789,6 +1815,7 @@
 			files = (
 				030DB5C3252609FB004C7CC8 /* ThemeLabel.swift in Sources */,
 				038CAFCF252604AB001ACAD6 /* TimeDialog.swift in Sources */,
+				03AE6A152535C8D100F7C629 /* ProfileTblCell.swift in Sources */,
 				030DB5A125260966004C7CC8 /* UserWebService.swift in Sources */,
 				0379EAB9252C4C2800303A59 /* CustomTblSelectionDialog.swift in Sources */,
 				034CBE2525346C4C00B20A11 /* DefaultEvent.swift in Sources */,
@@ -1898,6 +1925,7 @@
 				03A2CC3F25306CFF005E3F29 /* BookingDetailVC + Tableview.swift in Sources */,
 				03412293252F3AFC000BCDAE /* UIImage+FixOrientation.swift in Sources */,
 				030DB5CE252609FB004C7CC8 /* ThemeTableCells.swift in Sources */,
+				03AE6A132535C8D100F7C629 /* ProfileVC.swift in Sources */,
 				0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */,
 				030DB59625260966004C7CC8 /* Constant.swift in Sources */,
 				038CAFDB252604AB001ACAD6 /* CustomAlert.swift in Sources */,
@@ -1917,7 +1945,6 @@
 				034CBE832534700D00B20A11 /* JZAllDayCorner.swift in Sources */,
 				03456BD7252DDADF00013231 /* CustomFilterDialog + DateFilter.swift in Sources */,
 				03A7FB2325273058003A6025 /* HomeVC + TableView.swift in Sources */,
-				034CBE152534531300B20A11 /* CalendarGraphVC + CollectionView.swift in Sources */,
 				030DB5CD252609FB004C7CC8 /* ThemeScrollView.swift in Sources */,
 				030DB5C6252609FB004C7CC8 /* FloatingRoundButton.swift in Sources */,
 				030DB5A025260966004C7CC8 /* ResponseModel.swift in Sources */,

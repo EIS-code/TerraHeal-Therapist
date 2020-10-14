@@ -22,7 +22,7 @@ extension MyBookingVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
             , forCellReuseIdentifier: MyBookingTblCell.name)
         tableView.register(MyBookingExpandTblCell.nib()
         , forCellReuseIdentifier: MyBookingExpandTblCell.name)
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.width, height: JDDeviceHelper.offseter(offset: 88)))
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,8 +59,25 @@ extension MyBookingVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.arrForData[indexPath.row].isSelected.toggle()
-        self.tableView.reloadRows(at: [indexPath], with: .fade)
+        for i in 0..<arrForData.count {
+            if indexPath.row != i {
+                arrForData[i].isSelected = false
+            } else {
+                self.arrForData[indexPath.row].isSelected.toggle()
+            }
+
+        }
+        tableView.beginUpdates()
+        if arrForData[indexPath.row].isSelected {
+            self.tableView.reloadRows(at: [indexPath], with: .fade)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+                self.tableView.reloadData()
+            }
+        } else {
+            self.tableView.reloadRows(at: [indexPath], with: .fade)
+        }
+        tableView.endUpdates()
+
     }
 
 }

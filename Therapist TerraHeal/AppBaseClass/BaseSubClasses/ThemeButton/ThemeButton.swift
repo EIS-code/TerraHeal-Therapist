@@ -96,7 +96,7 @@ class RoundedBorderButton: ThemeButton {
 class UnderlineTextButton: ThemeButton {
     
     override func setTitle(_ title: String?, for state: UIControl.State) {
-        super.setText(title, for: .normal)
+        super.setTitle(title, for: .normal)
         self.setAttributedTitle(self.attributedString(), for: .normal)
     }
     
@@ -125,7 +125,7 @@ class DialogCancelButton: UnderlineTextButton {
     }
    
     override func setTitle(_ title: String?, for state: UIControl.State) {
-        super.setText(title, for: .normal)
+        super.setTitle(title, for: .normal)
     }
 
 }

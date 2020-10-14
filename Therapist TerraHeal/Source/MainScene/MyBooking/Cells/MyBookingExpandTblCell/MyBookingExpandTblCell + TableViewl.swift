@@ -17,8 +17,6 @@ extension MyBookingExpandTblCell :  UITableViewDelegate,UITableViewDataSource {
         tableView.estimatedRowHeight = 40
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 50
-        tableView.backgroundColor = UIColor.green
-
         tableView.register(MassageDetailTblCell.nib()
                    , forCellReuseIdentifier: MassageDetailTblCell.name)
         tableView.register(UserDetailTblSection.nib(), forHeaderFooterViewReuseIdentifier: UserDetailTblSection.name)
@@ -38,7 +36,6 @@ extension MyBookingExpandTblCell :  UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let data = arrForData[indexPath.section].bookingMassages[indexPath.row]
        let cell = tableView.dequeueReusableCell(withIdentifier: MassageDetailTblCell.name, for: indexPath) as?  MassageDetailTblCell
-        cell?.imageView?.backgroundColor = UIColor.red
         cell?.layoutIfNeeded()
         
         cell?.setData(data: MassageCellDetail.init(data: data))

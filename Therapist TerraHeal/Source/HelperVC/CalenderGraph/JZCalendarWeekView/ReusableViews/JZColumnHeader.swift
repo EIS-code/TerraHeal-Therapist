@@ -31,24 +31,28 @@ open class JZColumnHeader: UICollectionReusableView {
         self.clipsToBounds = true
         let stackView = UIStackView(arrangedSubviews: [lblWeekday, lblDay])
         stackView.axis = .vertical
-        stackView.spacing = 2
+        stackView.spacing = 8
         addSubview(stackView)
         stackView.setAnchorConstraintsEqualTo(centerXAnchor: centerXAnchor, centerYAnchor: centerYAnchor)
         lblDay.textAlignment = .center
         lblWeekday.textAlignment = .center
-        lblDay.font = UIFont.systemFont(ofSize: 17)
-        lblWeekday.font = UIFont.systemFont(ofSize: 12)
+        lblDay.font = FontHelper.font(name: FontName.SemiBold, size: FontSize.button_14)
+        lblWeekday.font = FontHelper.font(name: FontName.SemiBold, size: FontSize.button_14)
     }
 
     public func updateView(date: Date) {
         let weekday = calendarCurrent.component(.weekday, from: date) - 1
 
         lblDay.text = String(calendarCurrent.component(.day, from: date))
-        lblWeekday.text = dateFormatter.shortWeekdaySymbols[weekday].uppercased()
+        lblWeekday.text = dateFormatter.veryShortWeekdaySymbols[weekday].uppercased()
+
 
         if date.isToday {
             lblDay.textColor = JZWeekViewColors.today
             lblWeekday.textColor = JZWeekViewColors.today
+        } else if  weekday == 0 {
+            lblDay.textColor = JZWeekViewColors.sundayColor
+            lblWeekday.textColor = JZWeekViewColors.sundayColor
         } else {
             lblDay.textColor = JZWeekViewColors.columnHeaderDay
             lblWeekday.textColor = JZWeekViewColors.columnHeaderDay
