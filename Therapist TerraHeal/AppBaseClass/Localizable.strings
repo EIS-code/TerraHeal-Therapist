@@ -40,11 +40,33 @@
 "PROFILE_MENU_MY_NUMBER_OF_MASSAGE" = "my number of massages";
 "PROFILE_MENU_LOGOUT" = "logout";
 "PROFILE_MENU_PAYMENT_PREFERENCE" = "payout preferences";
-
+//MARK: Edit Profile Menu
+"PROFILE_ACCOUN_NUMBER" = "Account Number";
+"PROFILE_NAME"  = "Name";
+"PROFILE_SURNAME"  = "Surname";
+"PROFILE_GENDER"  = "Gender";
+"PROFILE_DOB"  = "Date Of Birth";
+"PROFILE_NIF"  = "Nif";
+"PROFILE_SSN"  = "Social Security Number";
+"PROFILE_CITY"  = "City";
+"PROFILE_COUNTRY"  = "Country";
+"PROFILE_MOBILE"  = "Mobile";
+"PROFILE_EMERGENCY_CONTACT"  = "Emergency Contact";
+"PROFILE_EMAIL"  = "Email";
+"PROFILE_LANGUAGE_SPOKEN"  = "Languages Spoken";
+"PROFILE_MY_DOCUMENTS"  = "My Documents";
+"PROFILE_MY_SERVICES"  = "My Services";
+"PROFILE_EXPERIENCE"  = "Personal Experience";
+"PROFILE_DESCRIPTION"  = "Personal Description";
+"HEALTH_CONDITION_OR_ALLERGIES"  = "Health conditions or allergies";
+"TXT_SEARCH_COUNTRY" = "Search Country";
 //MARK: Notification
 "NOTIFICATION_TITLE" = "notifications";
 "NO_NOTIFICATION_TITLE" = "no more notifications";
-
+//MARK: Prefer Language
+"PREFERE_LANGUAGE_TITTLE" = "preferred language";
+"LANGUAGE_ENGLISH" =  "English";
+"LANGUAGE_PORTUGUES" =  "Portugues";
 //MARK: Suggestions And Complaints
 "SUGGESTIONS_AND_COMPLAINTS_TITLE" = "suggestions and complaints";
 "SUGGESTIONS_AND_COMPLAINTS_EMPTY_TITLE" = "no more suggestions and complaints";
@@ -89,45 +111,39 @@
 "SCAN_TITLE" = "scan";
 
 
-
-
+//MARK: Photo Dialog
+"PHOTO_DIALOG_EDIT_PROFILE_TITLE" = "upload a photo";
+"PHOTO_DIALOG_FROM_CAMERA" = "take a photo";
+"PHOTO_DIALOG_FROM_GALLARY" = "upload photo";
+"PHOTO_DIALOG_PROFILE_PIC_INFO_TITLE" = "what photo to upload?";
+"PHOTO_DIALOG_PROFILE_PIC_INFO_MSG" = "The picture should be taken in day light with white wall behind, with the uniform of Terra Heal. No strong make up and discrete jewelry.";
+"CAMERA_FACE_MSG" = "Hold your phone at eye level so that your selfie is similar to your passport photo";
+//MARK: Gender Dialog
+"GENDER_MALE" = "Male";
+"GENDER_FEMALE" = "Female";
 //MARK: Service Status SCREEN
 "SERVICE_PROGRESS_TITLE" = "Service in progress";
 "SERVICE_PROGRESS_BTN_FINISH" = "finish";
 "SERVICE_DURATION" = "Service duration";
 "SERVICE_MIN_REMAINING" = "min\nremaining";
-
-/*
- //MARK: Booking SCREEN
-"BOOKING_DETAIL_TITLE" = "booking details";
-"BOOKING_DETAIL_BTN_I_GO" = "I go";
-"BOOKING_DETAIL_BTN_I_AM_SAFE" = "I am safe";
-"BOOKING_DETAIL_LBL_START_TIME" = "start time";
-"BOOKING_DETAIL_LBL_END_TIME" = "end time";
-"BOOKING_DETAIL_LBL_FINISHED" = "finished";
-//Booking Details;
-"BOOKING_DETAIL_DATE" = "date";
-"BOOKING_DETAIL_TYPE_OF_SERVICE" = "type of service";
-"BOOKING_DETAIL_SERVICE_DETAIL" = "service details";
-"BOOKING_DETAIL_GENDER_PREFERENCE" = "gender preference";
-"BOOKING_DETAIL_SESSION_TYPE" = "session type";
-"BOOKING_DETAIL_NEED_TO_BRING" = "need to bring";
-"BOOKING_DETAIL_BTN_CHECK_IN" = "Check In";
-//MARK: FingerPrint Dialog
-"FINGER_PRINT_DIALOG_REGISTER_TITLE" = "register your fingerprint";
-"FINGER_PRINT_DIALOG_LOGIN_TITLE" = "login with fingerprint";
-"FINGER_PRINT_DIALOG_BTN_PASSWORD" = "password";
-//MARK: Photo Dialog
-"PHOTO_DIALOG_FROM_TITLE" = "upload a photo ";
-"PHOTO_DIALOG_FROM_CAMERA" = "take a photo ";
-"PHOTO_DIALOG_FROM_GALLARY" = "load from gallary";
-"CAMERA_LBL_SCAN_QR_MESSAGE" = "Align the QR Code within frame to scan";
-//MARK: Date Dialog
-"DATE_DIALOG_TITLE" = "select date & time";
-"DATE_DIALOG_LBL_SELECT_DATE" = "select date";
-"DATE_DIALOG_LBL_SELECT_TIME" = "select time";
-*/
-
+//Language Selection Dialog
+"LANGUAGE_FLUENT_BASIC" = "basic";
+"LANGUAGE_FLUENT_GOOD" = "good";
+"LANGUAGE_FLUENT_FLUENT" = "fluent";
+//MARK: - Document Scene
+"MY_DOCUMENT_TITLE" = "my documents";
+"MY_DOCUMENT_EMPTY_TITLE" = "No Documents";
+"MY_DOCUMENT_EMPTY_MSG" = "Document message";
+"MY_DOCUMENT_BTN_ADD_NEW" = "Add New";
+"PHOTO_DIALOG_SCAN_DOCUMENT" = "Scan";
+"PHOTO_DIALOG_UPLODED" = "Uploaded";
+"ADD_NEW_DOCUMENT_DIALOG_TITLE" = "add new document";
+//MARK: Manage Document Screen
+"MANAGE_DOCUMENT_TITLE" = "Id / Passport";
+"DOCUMENT_EMPTY_TITLE" = "no documents available";
+"DOCUMENT_EMPTY_MSG" = "add document to continue";
+"MANAGE_DOCUMENT_BTN_ADD_NEW" = "Add New";
+"ADD_NEW_DOCUMENT_TITLE" = "add new document";
 //MARK: -
 //MARK: Common Strings
 //MARK: -

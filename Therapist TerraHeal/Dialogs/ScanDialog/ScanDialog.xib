@@ -64,7 +64,6 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" name="theme_primary_light_background"/>
                             <constraints>
                                 <constraint firstItem="Y5n-Cj-AHW" firstAttribute="top" secondItem="Wp1-j6-ODW" secondAttribute="top" id="6uI-WY-pQR"/>
                                 <constraint firstItem="bS4-iS-4Ls" firstAttribute="leading" secondItem="Wp1-j6-ODW" secondAttribute="leading" constant="10" id="D0N-vi-X32"/>

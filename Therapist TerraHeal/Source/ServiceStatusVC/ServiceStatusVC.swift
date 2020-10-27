@@ -76,7 +76,7 @@ class ServiceStatusVC: BaseVC {
         scanDialog.initialize(title: "DIALOG_SCAN_TITLE".localized(), buttonTitle: "DIALOG_BTN_SCAN".localized(), cancelButtonTitle: "".localized())
         scanDialog.show(animated: true)
 
-        scanDialog.onBtnCameraTapped = { [weak scanDialog, weak self] (data) in
+        scanDialog.onBtnDoneTapped = { [weak scanDialog, weak self]  in
             guard let self = self else {
                 return
             }
@@ -99,6 +99,8 @@ class ServiceStatusVC: BaseVC {
                    guard let self = self else {
                        return
                    }
+            _ = (self.navigationController as? NC)?.popVC()
+            Common.appDelegate.loadRateVC(navigaionVC: self.navigationController)
         }
     }
 }

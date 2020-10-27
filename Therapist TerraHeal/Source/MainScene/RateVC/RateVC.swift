@@ -62,6 +62,7 @@ class RateVC: BaseVC {
     }
     
     private func initialViewSetup() {
+        self.setBackground(color: .themeWhite)
         self.setupTableView(tableView: self.tableView)
         self.setNavigationTitle(title: "RATING_TITLE".localized())
         self.btnRate.setText("RATING_BTN_RATE".localized(), for: .normal)

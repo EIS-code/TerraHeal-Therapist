@@ -26,7 +26,9 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEl-i2-Nr9">
                     <rect key="frame" x="16" y="122" width="65" height="30"/>
-                    <state key="normal" title="Oct 2024"/>
+                    <state key="normal" title="Oct 2024">
+                        <color key="titleColor" name="theme_dark_text"/>
+                    </state>
                 </button>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FD6-zP-WE3" userLabel="CardView2" customClass="ThemeCardView" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="168" width="375" height="689"/>
@@ -96,6 +98,9 @@
     <resources>
         <namedColor name="theme_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

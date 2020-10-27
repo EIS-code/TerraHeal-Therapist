@@ -184,6 +184,9 @@ extension  ThemeBottomDialogView {
         self.isFixedHeightDialog = false
         self.setDialogHeight(height: (data.first ?? 0.75))
     }
+    func setDialogHeight(height:CGFloat){
+        self.dialogHeight?.constant = height * UIScreen.main.bounds.height
+    }
     func upDialogAnimation() {
         transitionAnimator?.stopAnimation(true)
         transitionAnimator?.addAnimations {

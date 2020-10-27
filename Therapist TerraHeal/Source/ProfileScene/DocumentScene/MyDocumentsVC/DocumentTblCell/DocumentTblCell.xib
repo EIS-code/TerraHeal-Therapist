@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="53" id="KGk-i7-Jjw" userLabel="DocumentTblCell" customClass="DocumentTblCell" customModule="Therapist_TerraHeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="387" height="53"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="387" height="53"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
+                        <rect key="frame" x="5" y="5" width="377" height="43"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="asset-password-show" translatesAutoresizingMaskIntoConstraints="NO" id="j5m-7f-MSb">
+                                <rect key="frame" x="329.5" y="11" width="21.5" height="21"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <rect key="frame" x="12" y="12" width="305.5" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_dark_text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="theme_light_background"/>
+                        <constraints>
+                            <constraint firstItem="j5m-7f-MSb" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="12" id="198-Gh-0ys" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="6qt-bV-STU"/>
+                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fTr-D4-KiU" secondAttribute="top" constant="12" id="Sne-mr-ry5" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="j5m-7f-MSb" secondAttribute="trailing" constant="26" id="XcH-6y-Oye"/>
+                            <constraint firstItem="j5m-7f-MSb" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="cRj-SE-kMb"/>
+                            <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="12" id="hWn-ka-NKt" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="theme_background"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="5" id="AWN-UN-JV4"/>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="HVV-Z0-IQf"/>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="p1a-dc-cSm"/>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="ru1-Wn-v5S"/>
+                    <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" constant="5" id="uHV-Oa-H3d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ivDocument" destination="j5m-7f-MSb" id="DdF-HB-x1S"/>
+                <outlet property="lblName" destination="zbl-J2-KSJ" id="uPE-In-SOw"/>
+                <outlet property="vwBg" destination="fTr-D4-KiU" id="gMF-14-1KR"/>
+            </connections>
+            <point key="canvasLocation" x="-39.855072463768117" y="47.879464285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="asset-password-show" width="21.333333969116211" height="21.333333969116211"/>
+        <namedColor name="theme_background">
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_light_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

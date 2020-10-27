@@ -85,7 +85,7 @@ extension UIView {
         let constraint =
             NSLayoutConstraint(item: self,
                                attribute: attribute,
-                               relatedBy: NSLayoutConstraint.Relation.equal,
+                               relatedBy: NSLayoutConstraint.Relation.greaterThanOrEqual,
                                toItem: nil,
                                attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                multiplier: 1,

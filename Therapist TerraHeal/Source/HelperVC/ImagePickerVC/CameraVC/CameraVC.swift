@@ -6,7 +6,10 @@
 import UIKit
 import Photos
 
-
+struct CameraMessageInfo {
+    var cameraMsg: String = ""
+    var hintImage: String = ""
+}
 class CameraVC: BaseVC {
     
     @IBOutlet weak var btnCaptureNow: FloatingRoundButton!
@@ -18,7 +21,8 @@ class CameraVC: BaseVC {
     @IBOutlet fileprivate var toggleCameraButton: UIButton!
     @IBOutlet fileprivate var toggleFlashButton: UIButton!
     @IBOutlet fileprivate var videoModeButton: UIButton!
-    
+
+    var cameraMessage: CameraMessageInfo = CameraMessageInfo.init()
     let cameraController = CameraController()
     var uploadeDocument: UploadDocumentDetail = UploadDocumentDetail.init()
     var onBtnCaptureTapped: ((_ image: UploadDocumentDetail) -> Void)? = nil
@@ -52,9 +56,9 @@ class CameraVC: BaseVC {
         super.viewDidLayoutSubviews()
         
     }
-    func showHint(messae:String,image:String) {
-        self.lblMsg.text = messae
-        self.imgHint.image = UIImage.init(named: image)
+    func showHint(data:CameraMessageInfo) {
+        self.lblMsg.text = data.cameraMsg
+        self.imgHint.image = UIImage.init(named: data.hintImage)
         self.vwHintLayer.isHidden = false
     }
     func configureCameraController() {

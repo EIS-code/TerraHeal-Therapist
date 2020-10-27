@@ -1,12 +1,6 @@
 import UIKit
 import FSCalendar
 
-enum ServiceType: Int {
-    case Massages = 0
-    case Therapies = 1
-}
-
-
 class CustomFilterDialog: ThemeBottomDialogView {
 
     var onBtnDoneTapped: ((_ filterType:FilterTab, _ value:Any) -> Void)? = nil

@@ -150,7 +150,8 @@ class DialogFilledRoundedButton: ThemeButton {
     func fillButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themeSecondary, borderColor: UIColor = UIColor.clear) {
         self.setFont(name: FontName.SemiBold, size: FontSize.button_14)
         self.height(constant: CommonSize.Button.standard, direction: .horizontal)
-        //self.width(constant: CommonSize.Button.standardLargeWidth, direction: .horizontal)
+
+        self.width(constant: CommonSize.Button.standardLargeWidth, direction: .horizontal)
         self.contentEdgeInsets = UIEdgeInsets.init(top: 10, left: 0, bottom: 10, right: 0)
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)

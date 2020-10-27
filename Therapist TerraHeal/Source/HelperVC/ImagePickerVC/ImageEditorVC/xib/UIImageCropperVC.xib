@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIImageCropperVC" customModule="Terra_Heal" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIImageCropperVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <connections>
                 <outlet property="bottomView" destination="nkY-vf-NXg" id="b9U-uQ-Jux"/>
                 <outlet property="btnCamera" destination="yk9-Pj-o3R" id="fU3-9u-hZG"/>
@@ -33,25 +33,27 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="20" y="64" width="167" height="167"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="BackButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="64" width="48" height="48"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Gdy-JF-ggj"/>
                         <constraint firstAttribute="width" secondItem="dk0-AN-Hja" secondAttribute="height" multiplier="1:1" id="UQN-iw-RUR"/>
                     </constraints>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <state key="normal" image="asset-arrow-left"/>
                     <connections>
                         <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="5Rg-yy-tEu"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="207" y="147.66666666666666" width="0.0" height="0.0"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="88" y="88" width="238" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_primary"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRe-Ig-3i6" userLabel="vwBg">
-                    <rect key="frame" x="0.0" y="231" width="414" height="551"/>
+                    <rect key="frame" x="0.0" y="112" width="414" height="670"/>
                     <subviews>
                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-camera" translatesAutoresizingMaskIntoConstraints="NO" id="aLW-J7-A7i">
                             <rect key="frame" x="0.0" y="0.0" width="31.666666666666668" height="26.333333333333332"/>
@@ -61,11 +63,11 @@
                             </constraints>
                         </imageView>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4BW-MH-q5S" userLabel="vwFade">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="551"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="670"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovF-xa-aPc" userLabel="vwCrop">
-                            <rect key="frame" x="51.666666666666657" y="120.33333333333334" width="310.66666666666674" height="310.33333333333326"/>
+                            <rect key="frame" x="51.666666666666657" y="179.66666666666666" width="310.66666666666674" height="310.66666666666674"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="ovF-xa-aPc" secondAttribute="height" multiplier="1:1" id="UJq-p5-ueQ"/>
@@ -88,14 +90,14 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nkY-vf-NXg">
                     <rect key="frame" x="20" y="782" width="374" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk9-Pj-o3R" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk9-Pj-o3R" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                             <state key="normal" image="asset-camera"/>
                             <connections>
                                 <action selector="btnCameraTapped:" destination="-1" eventType="touchUpInside" id="qLb-51-Bjk"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggN-t7-0rz" customClass="FloatingRoundButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggN-t7-0rz" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <rect key="frame" x="157" y="0.0" width="60" height="60"/>
                             <color key="backgroundColor" name="theme_primary"/>
                             <constraints>
@@ -103,12 +105,12 @@
                             </constraints>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" image="asset-check-icon"/>
+                            <state key="normal" image="asset-check"/>
                             <connections>
                                 <action selector="btnCropTapd:" destination="-1" eventType="touchUpInside" id="Ykg-aY-THK"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQR-Yg-fcl" customClass="ThemeButton" customModule="Terra_Heal" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQR-Yg-fcl" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <rect key="frame" x="314" y="0.0" width="60" height="60"/>
                             <state key="normal" image="asset-rotate-arrow"/>
                             <connections>
@@ -143,9 +145,10 @@
         </view>
     </objects>
     <resources>
+        <image name="asset-arrow-left" width="21.333333969116211" height="21.333333969116211"/>
         <image name="asset-camera" width="31.666666030883789" height="26.333333969116211"/>
-        <image name="asset-check-icon" width="33.333332061767578" height="25.333333969116211"/>
-        <image name="asset-rotate-arrow" width="29.666666030883789" height="25.333333969116211"/>
+        <image name="asset-check" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-rotate-arrow" width="21.333333969116211" height="21.333333969116211"/>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -19,8 +19,6 @@
                 <outlet property="btnCancel" destination="haO-KT-sqV" id="ZYm-Lf-wv2"/>
                 <outlet property="btnLeft" destination="dk0-AN-Hja" id="VIH-Pf-hdA"/>
                 <outlet property="btnRate" destination="mgE-z2-b8K" id="G34-Jz-Lwn"/>
-                <outlet property="footerGradient" destination="B7w-JY-PY6" id="CmY-36-RDD"/>
-                <outlet property="headerGradient" destination="f8K-NU-JFd" id="Ife-A8-pyz"/>
                 <outlet property="lblTitle" destination="qXO-ds-8JK" id="CeN-Oc-tng"/>
                 <outlet property="tableView" destination="aVT-f3-Mwd" id="nhg-gV-smz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -57,35 +55,6 @@
                         </button>
                     </subviews>
                 </stackView>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4o-cA-upk" userLabel="GradientView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                    <subviews>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8K-NU-JFd" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="210.66666666666666"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7w-JY-PY6" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="601.33333333333337" width="375" height="210.66666666666663"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="B7w-JY-PY6" firstAttribute="centerX" secondItem="f4o-cA-upk" secondAttribute="centerX" id="4r3-gg-FqH"/>
-                        <constraint firstAttribute="bottom" secondItem="B7w-JY-PY6" secondAttribute="bottom" id="D54-dn-ksw"/>
-                        <constraint firstItem="f8K-NU-JFd" firstAttribute="centerX" secondItem="f4o-cA-upk" secondAttribute="centerX" id="Okl-Qe-R7U"/>
-                        <constraint firstItem="f8K-NU-JFd" firstAttribute="width" secondItem="f4o-cA-upk" secondAttribute="width" id="dgl-By-zTB"/>
-                        <constraint firstItem="B7w-JY-PY6" firstAttribute="width" secondItem="f4o-cA-upk" secondAttribute="width" id="j5M-tM-iLa"/>
-                        <constraint firstItem="B7w-JY-PY6" firstAttribute="height" secondItem="f8K-NU-JFd" secondAttribute="height" priority="250" id="mur-oO-IaW"/>
-                        <constraint firstItem="f8K-NU-JFd" firstAttribute="top" secondItem="f4o-cA-upk" secondAttribute="top" id="vC9-vG-AEZ"/>
-                    </constraints>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="BackButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="16" y="60" width="134.66666666666666" height="134.66666666666666"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
@@ -121,9 +90,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstAttribute="bottom" secondItem="f4o-cA-upk" secondAttribute="bottom" id="6LK-l3-td1"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="5S5-SL-NCr" secondAttribute="bottom" constant="16" id="7Qm-Zz-6dR"/>
-                <constraint firstItem="f4o-cA-upk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Cca-S3-Te1"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="FOw-Mx-kMa" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
@@ -142,13 +109,6 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="centerY" secondItem="dk0-AN-Hja" secondAttribute="centerY" id="Qb0-xD-7vO"/>
-                <constraint firstItem="f8K-NU-JFd" firstAttribute="bottom" secondItem="dk0-AN-Hja" secondAttribute="bottom" constant="16" id="arj-Ga-h0N" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
-                            <real key="value" value="16"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </constraint>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" constant="16" id="jaq-Pv-ANN" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
@@ -156,8 +116,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="f4o-cA-upk" firstAttribute="trailing" secondItem="VLJ-uh-dxO" secondAttribute="trailing" id="rye-bP-ksN"/>
-                <constraint firstItem="f4o-cA-upk" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="vTy-kn-ojR"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="xL1-kH-6pc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>

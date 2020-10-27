@@ -24,10 +24,12 @@ class CustomPhotoPicker: ThemeBottomDialogView {
 
     var picker: UIImagePickerController! = UIImagePickerController()
     var imageSelected:UploadDocumentDetail?;
+
     var onBtnCameraTapped: ((_ image: UploadDocumentDetail) -> Void)? = nil
     var onBtnGallaryTapped: ((_ image: UploadDocumentDetail) -> Void)? = nil
     var onBtnDoneTapped: (() -> Void)? = nil
-    
+    var onBtnInfoTapped: (() -> Void)? = nil
+    var cameraData: CameraMessageInfo = CameraMessageInfo.init(cameraMsg: "CAMERA_FACE_MSG".localized(), hintImage: ImageAsset.Camera.face)
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -73,12 +75,15 @@ class CustomPhotoPicker: ThemeBottomDialogView {
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
-            if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!();
-            }
+        if self.onBtnDoneTapped != nil {
+            self.onBtnDoneTapped!();
+        }
     }
 
     @IBAction func btnInfoTapped(_ sender: Any) {
+        if self.onBtnInfoTapped != nil {
+            self.onBtnInfoTapped!();
+        }
     }
 
 
@@ -87,22 +92,22 @@ class CustomPhotoPicker: ThemeBottomDialogView {
 
 extension CustomPhotoPicker:  UIImagePickerControllerDelegate {
     
-     func photoFromGallary() {
+    func photoFromGallary() {
         picker.modalPresentationStyle = .fullScreen
-            picker.delegate = self
-            picker.allowsEditing = false
-            picker.sourceType = .savedPhotosAlbum
-            picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-            DispatchQueue.main.async {
-                Common.appDelegate.getTopViewController()?.present(self.picker, animated: true, completion: nil)
+        picker.delegate = self
+        picker.allowsEditing = false
+        picker.sourceType = .savedPhotosAlbum
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        DispatchQueue.main.async {
+            Common.appDelegate.getTopViewController()?.present(self.picker, animated: true, completion: nil)
         }
     }
     func photoFromCamera() {
         let cameraVC:CameraVC =  CameraVC.fromNib()
         cameraVC.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async {
-                Common.appDelegate.getTopViewController()?.present(cameraVC, animated: true, completion: nil)
-            cameraVC.showHint(messae: "QR_SCAN_MESSAGE".localized(), image: ImageAsset.Camera.qr)
+            Common.appDelegate.getTopViewController()?.present(cameraVC, animated: true, completion: nil)
+            cameraVC.showHint(data: self.cameraData)
         }
         cameraVC.onBtnCaptureTapped = { [weak self] (document)  in
             guard let self = self else {
@@ -111,12 +116,12 @@ extension CustomPhotoPicker:  UIImagePickerControllerDelegate {
             self.imageSelected = document
             
             Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: {
-                    if self.onBtnCameraTapped != nil {
-                        if let image = self.imageSelected {
-                                self.onBtnCameraTapped!(image);
-                        }
-                        
+                if self.onBtnCameraTapped != nil {
+                    if let image = self.imageSelected {
+                        self.onBtnCameraTapped!(image);
                     }
+
+                }
             })
         }
         
@@ -149,19 +154,19 @@ extension CustomPhotoPicker:  UIImagePickerControllerDelegate {
                 if let name  = assetResources.first?.originalFilename {
                     imageName = name
                 }
-             }
+            }
             self.imageSelected = UploadDocumentDetail.init(id: appSingleton.user.id, name: imageName, image: image, data: image.pngData(), isCompleted: true)
         }
         else {
             imageSelected = nil
         }
         Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: {
-                if self.onBtnGallaryTapped != nil {
-                    if let image = self.imageSelected {
-                            self.onBtnGallaryTapped!(image);
-                    }
-                    
+            if self.onBtnGallaryTapped != nil {
+                if let image = self.imageSelected {
+                    self.onBtnGallaryTapped!(image);
                 }
+
+            }
         })
     }
 
@@ -169,7 +174,7 @@ extension CustomPhotoPicker:  UIImagePickerControllerDelegate {
         Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: nil)
     }
 
-
+    
 }
 
 extension CustomPhotoPicker: UIDocumentPickerDelegate, UINavigationControllerDelegate {

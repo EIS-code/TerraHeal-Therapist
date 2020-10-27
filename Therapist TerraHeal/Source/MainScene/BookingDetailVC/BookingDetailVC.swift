@@ -156,7 +156,7 @@ class BookingDetailVC: BaseVC {
             }
             scanDialog?.dismiss()
             self.btnStart.isEnabled = true
-            Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
+            self.openCameraVC()
         }
         scanDialog.onBtnCancelTapped = { [weak scanDialog, weak self]  in
             guard let self = self else {
@@ -164,6 +164,16 @@ class BookingDetailVC: BaseVC {
             }
             scanDialog?.dismiss()
             self.btnStart.isEnabled = true
+        }
+    }
+    func openCameraVC() {
+        let cameraVC: CameraVC =  Common.appDelegate.loadCameraVC(navigaionVC: self.navigationController)
+        cameraVC.onBtnCaptureTapped = { [weak self] (document)  in
+                   guard let self = self else {
+                       return
+                   }
+                _ = (self.navigationController as? NC)?.popVC()
+                Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
         }
     }
 }

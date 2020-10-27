@@ -173,19 +173,30 @@ extension AppDelegate {
         if let nc = navigaionVC as? NC {
             if let targetVC: ServiceStatusVC =  nc.findVCs(ofType: ServiceStatusVC.self).first {
                 _ = nc.popToVc(targetVC)
-
             } else {
                 let targetVC: ServiceStatusVC = ServiceStatusVC.fromNib()
                 nc.pushVC(targetVC)
-
             }
         } else {
             let targetVC: ServiceStatusVC = ServiceStatusVC.fromNib()
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
-
         }
+    }
 
+    func loadEditProfileVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: EditProfileVC =  nc.findVCs(ofType: EditProfileVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: EditProfileVC = EditProfileVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: EditProfileVC = EditProfileVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
     }
 
     func loadServiceNavigationVC(navigaionVC:UINavigationController? = nil, completion: (ServiceNavigationVC) -> Void) {
@@ -206,8 +217,37 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
             completion(targetVC)
         }
-
     }
-    
+
+    func loadMyDocumentsVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MyDocumentsVC =  nc.findVCs(ofType: MyDocumentsVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: MyDocumentsVC = MyDocumentsVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: MyDocumentsVC = MyDocumentsVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadManageDocumentVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ManageDocumentVC =  nc.findVCs(ofType: ManageDocumentVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
 }
 

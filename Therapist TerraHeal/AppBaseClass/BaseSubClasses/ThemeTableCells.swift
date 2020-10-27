@@ -60,11 +60,10 @@ class SelectionBorderTableCell: ShadowTableCell {
         self.vwCellBg?.backgroundColor = UIColor.white
     }
     
-    func setCellData(data: SelectionBorderTableCellDetail) {
-
-        self.lblCellTitle?.setText(data.title)
-        self.isSelected = data.isSelected
-        self.setupLayout()
+    func setData(title: String, isSelected: Bool) {
+           self.lblCellTitle?.text = title
+           self.isSelected = isSelected
+           self.setupLayout()
     }
 
     override func layoutSubviews() {

@@ -48,11 +48,11 @@
                                     <rect key="frame" x="37.5" y="65.5" width="299" height="53.5"/>
                                     <subviews>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uor-HJ-dlO">
-                                            <rect key="frame" x="10" y="10" width="21.5" height="33.5"/>
+                                            <rect key="frame" x="10" y="10" width="31.5" height="33.5"/>
                                             <state key="normal" image="asset-camera"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioq-iS-r7L" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                            <rect key="frame" x="41.5" y="16.5" width="42" height="20.5"/>
+                                            <rect key="frame" x="51.5" y="16.5" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
@@ -64,7 +64,6 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" name="theme_primary_light_background"/>
                                     <constraints>
                                         <constraint firstItem="gev-2K-U4Z" firstAttribute="leading" secondItem="csK-rm-xoP" secondAttribute="leading" id="2qU-AS-des"/>
                                         <constraint firstAttribute="width" secondItem="csK-rm-xoP" secondAttribute="height" multiplier="28:5" id="IXM-6G-4T8"/>
@@ -82,11 +81,11 @@
                                     <rect key="frame" x="37.5" y="139" width="299" height="53.5"/>
                                     <subviews>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAw-VG-R1B">
-                                            <rect key="frame" x="10" y="10" width="21.5" height="33.5"/>
-                                            <state key="normal" image="asset-gallary"/>
+                                            <rect key="frame" x="10" y="10" width="31.5" height="33.5"/>
+                                            <state key="normal" image="asset-camera"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgv-6m-XId" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                            <rect key="frame" x="41.5" y="16.5" width="42" height="20.5"/>
+                                            <rect key="frame" x="51.5" y="16.5" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="theme_dark_text"/>
                                             <nil key="highlightedColor"/>
@@ -98,7 +97,6 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" name="theme_primary_light_background"/>
                                     <constraints>
                                         <constraint firstItem="zdL-V3-Fwk" firstAttribute="leading" secondItem="v5S-xR-Y3S" secondAttribute="leading" id="5g8-nQ-EBy"/>
                                         <constraint firstItem="xgv-6m-XId" firstAttribute="centerY" secondItem="v5S-xR-Y3S" secondAttribute="centerY" id="8Rb-qf-Rn5"/>
@@ -190,8 +188,7 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-camera" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="asset-gallary" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-camera" width="31.5" height="26.5"/>
         <namedColor name="theme_dark_text">
             <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

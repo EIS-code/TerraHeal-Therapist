@@ -247,9 +247,10 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         let selectedType = arrForMenu[indexPath.row].type
         switch selectedType {
         case .MyProfile:
+            Common.appDelegate.loadEditProfileVC(navigaionVC: self.navigationController)
             print("")
         case .MyBookings:
-            print("")
+            Common.appDelegate.loadMyDocumentsVC(navigaionVC: self.navigationController)
         case .MyWorkingSchedule:
             print("")
         case .MyAvailability:

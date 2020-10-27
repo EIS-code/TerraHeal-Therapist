@@ -42,7 +42,7 @@ extension MyBookingVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
             return cell!
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingTblCell.name, for: indexPath) as?  MyBookingTblCell
-            //cell?.setData(data: arrForData[indexPath.row])
+            cell?.setData(data: MyBookingTblDetail.init())
             return cell!
         }
     }

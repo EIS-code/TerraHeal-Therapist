@@ -30,6 +30,24 @@
                     <rect key="frame" x="37.666666666666657" y="60" width="300" height="718"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkR-sL-uIL" userLabel="btnSubFilter" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="309" y="602" width="36" height="36"/>
+                    <color key="backgroundColor" name="theme_primary"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="nkR-sL-uIL" secondAttribute="height" multiplier="1:1" id="MZW-LQ-9UQ"/>
+                        <constraint firstAttribute="height" constant="36" id="XxM-39-oS0" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="36"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                    </constraints>
+                    <state key="normal" image="asset-filter-small"/>
+                    <connections>
+                        <action selector="btnSubFilterTapped:" destination="-1" eventType="touchUpInside" id="EzH-su-w0k"/>
+                    </connections>
+                </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQB-Qa-XCL" userLabel="vwFilterBg">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                     <subviews>
@@ -53,24 +71,6 @@
                         <constraint firstItem="ilK-66-sf1" firstAttribute="trailing" secondItem="8dm-VP-vvc" secondAttribute="trailing" constant="20" id="za8-cF-tfr"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkR-sL-uIL" userLabel="btnSubFilter" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                    <rect key="frame" x="309" y="602" width="36" height="36"/>
-                    <color key="backgroundColor" name="theme_primary"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="nkR-sL-uIL" secondAttribute="height" multiplier="1:1" id="MZW-LQ-9UQ"/>
-                        <constraint firstAttribute="height" constant="36" id="XxM-39-oS0" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
-                                    <real key="value" value="36"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </constraint>
-                    </constraints>
-                    <state key="normal" image="asset-filter-small"/>
-                    <connections>
-                        <action selector="btnSubFilterTapped:" destination="-1" eventType="touchUpInside" id="EzH-su-w0k"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e84-Fg-VKG" userLabel="btnFilter" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="303" y="646" width="48" height="48"/>
                     <color key="backgroundColor" name="theme_primary"/>

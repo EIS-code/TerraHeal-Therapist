@@ -119,7 +119,7 @@ extension CustomTblSelectionDialog : UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: SelectionBorderTableCell.name, for: indexPath) as?  SelectionBorderTableCell
         cell?.layoutIfNeeded()
         arrForData[indexPath.row].indexPath = indexPath
-        cell?.setCellData(data: arrForData[indexPath.row])
+        cell?.setData(title: arrForData[indexPath.row].title, isSelected: arrForData[indexPath.row].isSelected)
         cell?.layoutIfNeeded()
         return cell!
 
@@ -127,7 +127,6 @@ extension CustomTblSelectionDialog : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         self.select(data: arrForData[indexPath.row])
-
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

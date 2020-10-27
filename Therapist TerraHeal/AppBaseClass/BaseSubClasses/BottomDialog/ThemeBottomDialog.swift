@@ -90,7 +90,7 @@ class ThemeBottomDialogView: ThemeView {
     
     func initialSetup() {
         self.lblTitle?.textColor = UIColor.themeDarkText
-        self.dialogView.backgroundColor = UIColor.themeDialogBackground
+        self.dialogView?.backgroundColor = UIColor.themeDialogBackground
         self.backgroundColor = .clear
         self.backgroundView?.backgroundColor = UIColor.black
         self.backgroundView?.alpha = 0.0
@@ -103,10 +103,7 @@ class ThemeBottomDialogView: ThemeView {
         self.dialogView?.roundCorners(corners: [.topLeft,.topRight], radius: 40.0)
     }
     
-    func setDialogHeight(height:CGFloat){
-        
-        self.dialogHeight?.constant = height * UIScreen.main.bounds.height
-    }
+    
     
     @IBAction func btnCancelTapped(_ sender: Any) {
         if self.onBtnCancelTapped != nil {

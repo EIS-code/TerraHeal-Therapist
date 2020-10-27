@@ -7,7 +7,7 @@ import UIKit
 import GoogleMaps
 
 
-struct ServiceCenterDetail {
+struct ServiceCenterDetail1 {
     var name:String = ""
     var address:String = ""
     var numberOfServices: String = ""
@@ -33,7 +33,7 @@ class ServiceNavigationVC: BaseVC {
     var path: GMSPolyline =   GMSPolyline.init()
     var currentIndex: Int = 0
     // MARK: Object lifecycle
-    let serviceDetail: ServiceCenterDetail = ServiceCenterDetail(name: "terra heal massage center", address: "Lorem ipsum dolor sit,lisbon, portugal -25412", numberOfServices: "25",latitude: "22.35",longitude: "70.90")
+    let serviceDetail: ServiceCenterDetail1 = ServiceCenterDetail1(name: "terra heal massage center", address: "Lorem ipsum dolor sit,lisbon, portugal -25412", numberOfServices: "25",latitude: "22.35",longitude: "70.90")
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -117,6 +117,7 @@ class ServiceNavigationVC: BaseVC {
                    guard let self = self else {
                        return
                    }
+                _ = (self.navigationController as? NC)?.popVC()
         }
     }
 

@@ -24,6 +24,7 @@ class AppWebApi: NSObject {
         private  struct Routes {
             static let Client = "/api/therapist"
             static let Exception = "/api/error"
+            static let Location = "/api/location"
         }
         
         private  static let Domain = Domains.Production
@@ -44,12 +45,33 @@ class AppWebApi: NSObject {
             return Domain + Routes.Client  + "/logout"
             
         }
+
+        static var VerifyEmail: String {
+            return Domain + Routes.Client + "/verify/email"
+        }
+        static var VerifyPhone: String {
+            return Domain + Routes.Client + "/verify/mobile"
+        }
+        static var VerifyEmailOTP: String {
+            return Domain + Routes.Client + "/compare/otp/email"
+        }
+        static var VerifyPhoneOTP: String {
+            return Domain + Routes.Client + "/compare/otp/mobile"
+        }
+
         
         static var CheckExeption: String {
             return Domain + Routes.Exception
         }
         static var GetUserDetail: String {
             return  Domain + Routes.Client + "/get/" + PreferenceHelper.shared.getUserId()
+        }
+
+        static var GetCountryList: String {
+            return Domain + Routes.Location + "/get/country"
+        }
+        static var GetCityList: String {
+            return  Domain + Routes.Location + "/get/city"
         }
 
     }
@@ -124,6 +146,43 @@ extension AppWebApi {
         }
     }
 
+    class func getEmailOtp(params:User.RequestEmailOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.VerifyEmail, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = User.ResponseVerification.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func getPhoneOtp(params:User.RequestPhoneOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.VerifyPhone, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = User.ResponseVerification.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func verifyEmailOtp(params:User.RequestVerifyEmailOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.VerifyEmailOTP, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = User.ResponseVerification.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func verifyPhoneOtp(params:User.RequestVerifyPhoneOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.VerifyPhoneOTP, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = User.ResponseVerification.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+
+    class func countryList(params:Countries.RequestCountrylist = Countries.RequestCountrylist(), completionHandler: @escaping ((Countries.Response) -> Void)) {
+            AlamofireHelper().getDataFrom(urlString: API_URL.GetCountryList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
+                let response = Countries.Response.init(fromDictionary: dictionary)
+                completionHandler(response)
+            }
+        }
+    class func cityList(params:Cities.RequestCitylist, completionHandler: @escaping ((Cities.Response) -> Void)) {
+            AlamofireHelper().getDataFrom(urlString: API_URL.GetCityList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+                let response = Cities.Response.init(fromDictionary: dictionary)
+                completionHandler(response)
+            }
+        }
 }
 
 
