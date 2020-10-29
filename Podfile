@@ -11,7 +11,6 @@ target 'Therapist TerraHeal' do
   pod 'SDWebImage'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'FSCalendar'
   # Recommended: Add the Firebase pod for Google Analytics and Crashlytics
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'

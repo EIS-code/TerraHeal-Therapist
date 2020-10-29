@@ -31,7 +31,7 @@ class BaseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.vwNavigationBar?.backgroundColor = .themeBackground
+        self.vwNavigationBar?.backgroundColor = .clear
         self.setBackground(color: .themeBackground)
         self.lblTitle?.textColor = UIColor.themeNavigationTitle
         self.lblTitle?.textColor = UIColor.themeDarkText
@@ -112,6 +112,22 @@ class BaseVC: UIViewController {
         self.headerGradient.isHidden = false
         self.footerGradient.isHidden = false
     }
+}
+
+//MARK: Navigation Work
+extension BaseVC {
+    func popVC(){
+           if let nc = self.navigationController as? NC {
+               _ = nc.popVC()
+           } else if let nc = self.navigationController {
+               _ = nc.popViewController(animated: true)
+           } else{
+               self.dismiss(animated: true) {
+
+               }
+           }
+       }
+
 }
 
 //MARK: Location Observer

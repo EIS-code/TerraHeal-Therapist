@@ -250,7 +250,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
             Common.appDelegate.loadEditProfileVC(navigaionVC: self.navigationController)
             print("")
         case .MyBookings:
-            Common.appDelegate.loadMyDocumentsVC(navigaionVC: self.navigationController)
+            Common.appDelegate.loadBookingListVC(navigaionVC: self.navigationController)
         case .MyWorkingSchedule:
             print("")
         case .MyAvailability:

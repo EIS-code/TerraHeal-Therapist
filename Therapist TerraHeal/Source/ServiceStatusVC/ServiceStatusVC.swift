@@ -64,7 +64,7 @@ class ServiceStatusVC: BaseVC {
     
     // MARK: - Action Methods
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
-        _ = _ = (self.navigationController as? NC)?.popVC()
+        _ = self.popVC()
     }
 
     @IBAction func btnSubmitTapped(_ sender: UIButton) {
@@ -99,7 +99,7 @@ class ServiceStatusVC: BaseVC {
                    guard let self = self else {
                        return
                    }
-            _ = (self.navigationController as? NC)?.popVC()
+            self.popVC()
             Common.appDelegate.loadRateVC(navigaionVC: self.navigationController)
         }
     }

@@ -45,6 +45,8 @@ class CustomTextViewDialog: ThemeBottomDialogView {
         self.txtDescription.placeholder = "Lorem ipsum dolor"
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
         self.txtDescription?.delegate = self
+        self.txtDescription.borderLineColor = .themePrimary
+        self.txtDescription.bgColor = .themeWhite
     }
 
     override func layoutSubviews() {

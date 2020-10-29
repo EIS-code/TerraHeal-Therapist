@@ -52,7 +52,7 @@ class MyBookingExpandTblCell: TableCell {
             self.vwDate?.setRound(withBorderColor: .clear, andCornerRadious: 15, borderWidth: 1.0)
             print(#function)
         }
-        (self.parentVC  as! MyBookingVC).tableView.reloadRows(at: [self.indexPath!], with: .none)
+        
     }
 
     override func layoutSubviews() {

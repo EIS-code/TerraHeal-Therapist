@@ -20,6 +20,7 @@ class MyBookingTblCell: TableCell {
     @IBOutlet weak var btnAction: ThemeButton!
     @IBOutlet weak var ivForplace: UIImageView!
     @IBOutlet weak var vwBar: UIView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none

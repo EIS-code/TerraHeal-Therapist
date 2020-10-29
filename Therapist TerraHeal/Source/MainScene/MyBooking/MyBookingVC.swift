@@ -69,7 +69,7 @@ class MyBookingVC: BaseVC {
     
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
-        _ = (self.navigationController as? NC)?.popVC()
+        self.popVC()
     }
 
     @IBAction func btnSubmitTapped(_ sender: Any) {

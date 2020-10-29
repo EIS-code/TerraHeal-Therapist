@@ -126,7 +126,7 @@ class BookingDetailVC: BaseVC {
     
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
-        _ = (self.navigationController as? NC)?.popVC()
+        self.popVC()
     }
     
     @IBAction func btnStartTapped(_ sender: Any) {
@@ -135,7 +135,7 @@ class BookingDetailVC: BaseVC {
     }
 
     @IBAction func btnCancelTapped(_ sender: Any) {
-        _ = (self.navigationController as? NC)?.popVC()
+        self.popVC()
     }
 
     @IBAction func btnNavigationTapped(_ sender: Any) {
@@ -172,7 +172,7 @@ class BookingDetailVC: BaseVC {
                    guard let self = self else {
                        return
                    }
-                _ = (self.navigationController as? NC)?.popVC()
+                self.popVC()
                 Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
         }
     }

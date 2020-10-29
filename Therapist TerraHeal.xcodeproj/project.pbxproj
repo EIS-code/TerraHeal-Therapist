@@ -110,6 +110,21 @@
 		03521F2A252B612E0094829E /* SuggestionTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F26252B612E0094829E /* SuggestionTblCell.swift */; };
 		03521F2B252B612E0094829E /* SuggestionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F27252B612E0094829E /* SuggestionTblCell.xib */; };
 		03521F2C252B612E0094829E /* SuggestionAndComplaintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F28252B612E0094829E /* SuggestionAndComplaintVC.swift */; };
+		0354F26125492F4100F3BEB7 /* ManageExperienceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F25925492F4100F3BEB7 /* ManageExperienceVC.xib */; };
+		0354F26225492F4100F3BEB7 /* ManageExperienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F25A25492F4100F3BEB7 /* ManageExperienceVC.swift */; };
+		0354F26325492F4100F3BEB7 /* ManageExperienceTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F25C25492F4100F3BEB7 /* ManageExperienceTblCell.swift */; };
+		0354F26425492F4100F3BEB7 /* ManageExperienceTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F25D25492F4100F3BEB7 /* ManageExperienceTblCell.xib */; };
+		0354F26525492F4100F3BEB7 /* ExperienceDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F25F25492F4100F3BEB7 /* ExperienceDialog.swift */; };
+		0354F26625492F4100F3BEB7 /* ExperienceDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F26025492F4100F3BEB7 /* ExperienceDialog.xib */; };
+		0354F26B254947E100F3BEB7 /* BookingListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F269254947E100F3BEB7 /* BookingListVC.xib */; };
+		0354F26C254947E100F3BEB7 /* BookingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F26A254947E100F3BEB7 /* BookingListVC.swift */; };
+		0354F2742549603700F3BEB7 /* WorkingScheduleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F26F2549603700F3BEB7 /* WorkingScheduleVC.xib */; };
+		0354F2752549603700F3BEB7 /* WorkingScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F2702549603700F3BEB7 /* WorkingScheduleVC.swift */; };
+		0354F2762549603700F3BEB7 /* WorkingScheduleTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F2722549603700F3BEB7 /* WorkingScheduleTblCell.xib */; };
+		0354F2772549603700F3BEB7 /* WorkingScheduleTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F2732549603700F3BEB7 /* WorkingScheduleTblCell.swift */; };
+		0354F2792549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F2782549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift */; };
+		0354F27D25496E9100F3BEB7 /* WorkingScheduleTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F27B25496E9100F3BEB7 /* WorkingScheduleTblSection.swift */; };
+		0354F27E25496E9100F3BEB7 /* WorkingScheduleTblSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F27C25496E9100F3BEB7 /* WorkingScheduleTblSection.xib */; };
 		035EF5AA2526F3A400C64BD4 /* SideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EF5A12526F3A300C64BD4 /* SideVC.swift */; };
 		035EF5AB2526F3A400C64BD4 /* SideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035EF5A22526F3A300C64BD4 /* SideVC.xib */; };
 		035EF5AC2526F3A400C64BD4 /* MenuCellHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EF5A52526F3A300C64BD4 /* MenuCellHorizontal.swift */; };
@@ -125,6 +140,30 @@
 		035EF5C42526FA3A00C64BD4 /* MyBookingTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035EF5BC2526FA3A00C64BD4 /* MyBookingTblCell.xib */; };
 		035EF5C52526FA3A00C64BD4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EF5BD2526FA3A00C64BD4 /* MainVC.swift */; };
 		035EF5C72526FF3200C64BD4 /* PBRevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EF5C62526FF3200C64BD4 /* PBRevealViewController.swift */; };
+		03643F4C254A7EC4004F9156 /* FSCalendarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F2C254A7EC4004F9156 /* FSCalendarCollectionView.m */; };
+		03643F4D254A7EC4004F9156 /* FSCalendarDelegationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F2F254A7EC4004F9156 /* FSCalendarDelegationProxy.m */; };
+		03643F4E254A7EC4004F9156 /* FSCalendarDelegationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F31254A7EC4004F9156 /* FSCalendarDelegationFactory.m */; };
+		03643F4F254A7EC4004F9156 /* FSCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F38254A7EC4004F9156 /* FSCalendarCell.m */; };
+		03643F50254A7EC4004F9156 /* FSCalendarStickyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F39254A7EC4004F9156 /* FSCalendarStickyHeader.m */; };
+		03643F51254A7EC4004F9156 /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F3A254A7EC4004F9156 /* FSCalendar.m */; };
+		03643F52254A7EC4004F9156 /* FSCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F3B254A7EC4004F9156 /* FSCalendarCollectionViewLayout.m */; };
+		03643F53254A7EC4004F9156 /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F3C254A7EC4004F9156 /* FSCalendarWeekdayView.m */; };
+		03643F54254A7EC4004F9156 /* FSCalendarSeparatorDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F3F254A7EC4004F9156 /* FSCalendarSeparatorDecorationView.m */; };
+		03643F55254A7EC4004F9156 /* FSCalendarExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F41254A7EC4004F9156 /* FSCalendarExtensions.m */; };
+		03643F56254A7EC4004F9156 /* FSCalendarConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F43254A7EC4004F9156 /* FSCalendarConstants.m */; };
+		03643F57254A7EC4004F9156 /* FSCalendarCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F44254A7EC4004F9156 /* FSCalendarCalculator.m */; };
+		03643F58254A7EC4004F9156 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F45254A7EC4004F9156 /* FSCalendarHeaderView.m */; };
+		03643F59254A7EC4004F9156 /* FSCalendarTransitionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F49254A7EC4004F9156 /* FSCalendarTransitionCoordinator.m */; };
+		03643F5B254A7EC4004F9156 /* FSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 03643F4B254A7EC4004F9156 /* FSCalendarAppearance.m */; };
+		03643F93254AD109004F9156 /* MissingDaysVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03643F90254AD109004F9156 /* MissingDaysVC.xib */; };
+		03643F94254AD109004F9156 /* MissingDaysVC + CaledarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03643F91254AD109004F9156 /* MissingDaysVC + CaledarView.swift */; };
+		03643F95254AD109004F9156 /* MissingDaysVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03643F92254AD109004F9156 /* MissingDaysVC.swift */; };
+		03643F9D254AD92A004F9156 /* MassageListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03643F98254AD92A004F9156 /* MassageListVC.xib */; };
+		03643F9E254AD92A004F9156 /* MyMassageTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03643F9A254AD92A004F9156 /* MyMassageTblCell.swift */; };
+		03643F9F254AD92A004F9156 /* MyMassageTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03643F9B254AD92A004F9156 /* MyMassageTblCell.xib */; };
+		03643FA0254AD92A004F9156 /* MassageListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03643F9C254AD92A004F9156 /* MassageListVC.swift */; };
+		03643FA4254AEB47004F9156 /* MassageDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03643FA2254AEB47004F9156 /* MassageDetailVC.xib */; };
+		03643FA5254AEB47004F9156 /* MassageDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03643FA3254AEB47004F9156 /* MassageDetailVC.swift */; };
 		0365CDAB24C959E100E1361B /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0365CDAA24C959E100E1361B /* CoreServices.framework */; };
 		0366DD032546D85B002C2CDA /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0366DCFE2546D85B002C2CDA /* EditProfileVC.xib */; };
 		0366DD042546D85B002C2CDA /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0366DD002546D85B002C2CDA /* EditProfileCell.swift */; };
@@ -382,6 +421,21 @@
 		03521F26252B612E0094829E /* SuggestionTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionTblCell.swift; sourceTree = "<group>"; };
 		03521F27252B612E0094829E /* SuggestionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestionTblCell.xib; sourceTree = "<group>"; };
 		03521F28252B612E0094829E /* SuggestionAndComplaintVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionAndComplaintVC.swift; sourceTree = "<group>"; };
+		0354F25925492F4100F3BEB7 /* ManageExperienceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageExperienceVC.xib; sourceTree = "<group>"; };
+		0354F25A25492F4100F3BEB7 /* ManageExperienceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageExperienceVC.swift; sourceTree = "<group>"; };
+		0354F25C25492F4100F3BEB7 /* ManageExperienceTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageExperienceTblCell.swift; sourceTree = "<group>"; };
+		0354F25D25492F4100F3BEB7 /* ManageExperienceTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageExperienceTblCell.xib; sourceTree = "<group>"; };
+		0354F25F25492F4100F3BEB7 /* ExperienceDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDialog.swift; sourceTree = "<group>"; };
+		0354F26025492F4100F3BEB7 /* ExperienceDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExperienceDialog.xib; sourceTree = "<group>"; };
+		0354F269254947E100F3BEB7 /* BookingListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingListVC.xib; sourceTree = "<group>"; };
+		0354F26A254947E100F3BEB7 /* BookingListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingListVC.swift; sourceTree = "<group>"; };
+		0354F26F2549603700F3BEB7 /* WorkingScheduleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkingScheduleVC.xib; sourceTree = "<group>"; };
+		0354F2702549603700F3BEB7 /* WorkingScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingScheduleVC.swift; sourceTree = "<group>"; };
+		0354F2722549603700F3BEB7 /* WorkingScheduleTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkingScheduleTblCell.xib; sourceTree = "<group>"; };
+		0354F2732549603700F3BEB7 /* WorkingScheduleTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingScheduleTblCell.swift; sourceTree = "<group>"; };
+		0354F2782549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkingScheduleVC + CaledarView.swift"; sourceTree = "<group>"; };
+		0354F27B25496E9100F3BEB7 /* WorkingScheduleTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingScheduleTblSection.swift; sourceTree = "<group>"; };
+		0354F27C25496E9100F3BEB7 /* WorkingScheduleTblSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkingScheduleTblSection.xib; sourceTree = "<group>"; };
 		035EF5A12526F3A300C64BD4 /* SideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideVC.swift; sourceTree = "<group>"; };
 		035EF5A22526F3A300C64BD4 /* SideVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideVC.xib; sourceTree = "<group>"; };
 		035EF5A52526F3A300C64BD4 /* MenuCellHorizontal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCellHorizontal.swift; sourceTree = "<group>"; };
@@ -397,6 +451,46 @@
 		035EF5BC2526FA3A00C64BD4 /* MyBookingTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBookingTblCell.xib; sourceTree = "<group>"; };
 		035EF5BD2526FA3A00C64BD4 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		035EF5C62526FF3200C64BD4 /* PBRevealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBRevealViewController.swift; sourceTree = "<group>"; };
+		03643F2C254A7EC4004F9156 /* FSCalendarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarCollectionView.m; sourceTree = "<group>"; };
+		03643F2D254A7EC4004F9156 /* FSCalendarWeekdayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarWeekdayView.h; sourceTree = "<group>"; };
+		03643F2E254A7EC4004F9156 /* FSCalendarCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarCollectionViewLayout.h; sourceTree = "<group>"; };
+		03643F2F254A7EC4004F9156 /* FSCalendarDelegationProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarDelegationProxy.m; sourceTree = "<group>"; };
+		03643F30254A7EC4004F9156 /* FSCalendarExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarExtensions.h; sourceTree = "<group>"; };
+		03643F31254A7EC4004F9156 /* FSCalendarDelegationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarDelegationFactory.m; sourceTree = "<group>"; };
+		03643F32254A7EC4004F9156 /* FSCalendarSeparatorDecorationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarSeparatorDecorationView.h; sourceTree = "<group>"; };
+		03643F33254A7EC4004F9156 /* FSCalendarCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarCalculator.h; sourceTree = "<group>"; };
+		03643F34254A7EC4004F9156 /* FSCalendarHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarHeaderView.h; sourceTree = "<group>"; };
+		03643F35254A7EC4004F9156 /* FSCalendarConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarConstants.h; sourceTree = "<group>"; };
+		03643F36254A7EC4004F9156 /* FSCalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarAppearance.h; sourceTree = "<group>"; };
+		03643F37254A7EC4004F9156 /* FSCalendarTransitionCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarTransitionCoordinator.h; sourceTree = "<group>"; };
+		03643F38254A7EC4004F9156 /* FSCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarCell.m; sourceTree = "<group>"; };
+		03643F39254A7EC4004F9156 /* FSCalendarStickyHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarStickyHeader.m; sourceTree = "<group>"; };
+		03643F3A254A7EC4004F9156 /* FSCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendar.m; sourceTree = "<group>"; };
+		03643F3B254A7EC4004F9156 /* FSCalendarCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarCollectionViewLayout.m; sourceTree = "<group>"; };
+		03643F3C254A7EC4004F9156 /* FSCalendarWeekdayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarWeekdayView.m; sourceTree = "<group>"; };
+		03643F3D254A7EC4004F9156 /* FSCalendarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarCollectionView.h; sourceTree = "<group>"; };
+		03643F3E254A7EC4004F9156 /* FSCalendarDynamicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarDynamicHeader.h; sourceTree = "<group>"; };
+		03643F3F254A7EC4004F9156 /* FSCalendarSeparatorDecorationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarSeparatorDecorationView.m; sourceTree = "<group>"; };
+		03643F40254A7EC4004F9156 /* FSCalendarDelegationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarDelegationFactory.h; sourceTree = "<group>"; };
+		03643F41254A7EC4004F9156 /* FSCalendarExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarExtensions.m; sourceTree = "<group>"; };
+		03643F42254A7EC4004F9156 /* FSCalendarDelegationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarDelegationProxy.h; sourceTree = "<group>"; };
+		03643F43254A7EC4004F9156 /* FSCalendarConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarConstants.m; sourceTree = "<group>"; };
+		03643F44254A7EC4004F9156 /* FSCalendarCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarCalculator.m; sourceTree = "<group>"; };
+		03643F45254A7EC4004F9156 /* FSCalendarHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarHeaderView.m; sourceTree = "<group>"; };
+		03643F46254A7EC4004F9156 /* FSCalendarStickyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarStickyHeader.h; sourceTree = "<group>"; };
+		03643F47254A7EC4004F9156 /* FSCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendar.h; sourceTree = "<group>"; };
+		03643F48254A7EC4004F9156 /* FSCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarCell.h; sourceTree = "<group>"; };
+		03643F49254A7EC4004F9156 /* FSCalendarTransitionCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarTransitionCoordinator.m; sourceTree = "<group>"; };
+		03643F4B254A7EC4004F9156 /* FSCalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarAppearance.m; sourceTree = "<group>"; };
+		03643F90254AD109004F9156 /* MissingDaysVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MissingDaysVC.xib; sourceTree = "<group>"; };
+		03643F91254AD109004F9156 /* MissingDaysVC + CaledarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MissingDaysVC + CaledarView.swift"; sourceTree = "<group>"; };
+		03643F92254AD109004F9156 /* MissingDaysVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissingDaysVC.swift; sourceTree = "<group>"; };
+		03643F98254AD92A004F9156 /* MassageListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MassageListVC.xib; sourceTree = "<group>"; };
+		03643F9A254AD92A004F9156 /* MyMassageTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMassageTblCell.swift; sourceTree = "<group>"; };
+		03643F9B254AD92A004F9156 /* MyMassageTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMassageTblCell.xib; sourceTree = "<group>"; };
+		03643F9C254AD92A004F9156 /* MassageListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassageListVC.swift; sourceTree = "<group>"; };
+		03643FA2254AEB47004F9156 /* MassageDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MassageDetailVC.xib; sourceTree = "<group>"; };
+		03643FA3254AEB47004F9156 /* MassageDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassageDetailVC.swift; sourceTree = "<group>"; };
 		0365CDAA24C959E100E1361B /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		0366DCFE2546D85B002C2CDA /* EditProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
 		0366DD002546D85B002C2CDA /* EditProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
@@ -960,6 +1054,98 @@
 			path = SuggestionAndComplaintCell;
 			sourceTree = "<group>";
 		};
+		0354F25725492F4100F3BEB7 /* ManageExperienceVC */ = {
+			isa = PBXGroup;
+			children = (
+				0354F25825492F4100F3BEB7 /* xib */,
+				0354F25A25492F4100F3BEB7 /* ManageExperienceVC.swift */,
+				0354F25B25492F4100F3BEB7 /* ManageExperienceTblCell */,
+				0354F25E25492F4100F3BEB7 /* ExperienceDialog */,
+			);
+			path = ManageExperienceVC;
+			sourceTree = "<group>";
+		};
+		0354F25825492F4100F3BEB7 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0354F25925492F4100F3BEB7 /* ManageExperienceVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		0354F25B25492F4100F3BEB7 /* ManageExperienceTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				0354F25C25492F4100F3BEB7 /* ManageExperienceTblCell.swift */,
+				0354F25D25492F4100F3BEB7 /* ManageExperienceTblCell.xib */,
+			);
+			path = ManageExperienceTblCell;
+			sourceTree = "<group>";
+		};
+		0354F25E25492F4100F3BEB7 /* ExperienceDialog */ = {
+			isa = PBXGroup;
+			children = (
+				0354F25F25492F4100F3BEB7 /* ExperienceDialog.swift */,
+				0354F26025492F4100F3BEB7 /* ExperienceDialog.xib */,
+			);
+			path = ExperienceDialog;
+			sourceTree = "<group>";
+		};
+		0354F267254947E100F3BEB7 /* BookingListVC */ = {
+			isa = PBXGroup;
+			children = (
+				0354F268254947E100F3BEB7 /* xib */,
+				0354F26A254947E100F3BEB7 /* BookingListVC.swift */,
+			);
+			path = BookingListVC;
+			sourceTree = "<group>";
+		};
+		0354F268254947E100F3BEB7 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0354F269254947E100F3BEB7 /* BookingListVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		0354F26D2549603700F3BEB7 /* WorkingScheduleVC */ = {
+			isa = PBXGroup;
+			children = (
+				0354F26E2549603700F3BEB7 /* xib */,
+				0354F2702549603700F3BEB7 /* WorkingScheduleVC.swift */,
+				0354F2782549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift */,
+				0354F2712549603700F3BEB7 /* WorkingScheduleTblCell */,
+			);
+			path = WorkingScheduleVC;
+			sourceTree = "<group>";
+		};
+		0354F26E2549603700F3BEB7 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0354F26F2549603700F3BEB7 /* WorkingScheduleVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		0354F2712549603700F3BEB7 /* WorkingScheduleTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				0354F27A25496E9100F3BEB7 /* WorkingScheduleTblSection */,
+				0354F2722549603700F3BEB7 /* WorkingScheduleTblCell.xib */,
+				0354F2732549603700F3BEB7 /* WorkingScheduleTblCell.swift */,
+			);
+			path = WorkingScheduleTblCell;
+			sourceTree = "<group>";
+		};
+		0354F27A25496E9100F3BEB7 /* WorkingScheduleTblSection */ = {
+			isa = PBXGroup;
+			children = (
+				0354F27B25496E9100F3BEB7 /* WorkingScheduleTblSection.swift */,
+				0354F27C25496E9100F3BEB7 /* WorkingScheduleTblSection.xib */,
+			);
+			path = WorkingScheduleTblSection;
+			sourceTree = "<group>";
+		};
 		035EF59F2526F3A300C64BD4 /* MenuScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -1073,9 +1259,109 @@
 			path = MyBookingTblCell;
 			sourceTree = "<group>";
 		};
+		03643F2B254A7EC4004F9156 /* FSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				03643F2C254A7EC4004F9156 /* FSCalendarCollectionView.m */,
+				03643F2D254A7EC4004F9156 /* FSCalendarWeekdayView.h */,
+				03643F2E254A7EC4004F9156 /* FSCalendarCollectionViewLayout.h */,
+				03643F2F254A7EC4004F9156 /* FSCalendarDelegationProxy.m */,
+				03643F30254A7EC4004F9156 /* FSCalendarExtensions.h */,
+				03643F31254A7EC4004F9156 /* FSCalendarDelegationFactory.m */,
+				03643F32254A7EC4004F9156 /* FSCalendarSeparatorDecorationView.h */,
+				03643F33254A7EC4004F9156 /* FSCalendarCalculator.h */,
+				03643F34254A7EC4004F9156 /* FSCalendarHeaderView.h */,
+				03643F35254A7EC4004F9156 /* FSCalendarConstants.h */,
+				03643F36254A7EC4004F9156 /* FSCalendarAppearance.h */,
+				03643F37254A7EC4004F9156 /* FSCalendarTransitionCoordinator.h */,
+				03643F38254A7EC4004F9156 /* FSCalendarCell.m */,
+				03643F39254A7EC4004F9156 /* FSCalendarStickyHeader.m */,
+				03643F3A254A7EC4004F9156 /* FSCalendar.m */,
+				03643F3B254A7EC4004F9156 /* FSCalendarCollectionViewLayout.m */,
+				03643F3C254A7EC4004F9156 /* FSCalendarWeekdayView.m */,
+				03643F3D254A7EC4004F9156 /* FSCalendarCollectionView.h */,
+				03643F3E254A7EC4004F9156 /* FSCalendarDynamicHeader.h */,
+				03643F3F254A7EC4004F9156 /* FSCalendarSeparatorDecorationView.m */,
+				03643F40254A7EC4004F9156 /* FSCalendarDelegationFactory.h */,
+				03643F41254A7EC4004F9156 /* FSCalendarExtensions.m */,
+				03643F42254A7EC4004F9156 /* FSCalendarDelegationProxy.h */,
+				03643F43254A7EC4004F9156 /* FSCalendarConstants.m */,
+				03643F44254A7EC4004F9156 /* FSCalendarCalculator.m */,
+				03643F45254A7EC4004F9156 /* FSCalendarHeaderView.m */,
+				03643F46254A7EC4004F9156 /* FSCalendarStickyHeader.h */,
+				03643F47254A7EC4004F9156 /* FSCalendar.h */,
+				03643F48254A7EC4004F9156 /* FSCalendarCell.h */,
+				03643F49254A7EC4004F9156 /* FSCalendarTransitionCoordinator.m */,
+				03643F4B254A7EC4004F9156 /* FSCalendarAppearance.m */,
+			);
+			path = FSCalendar;
+			sourceTree = "<group>";
+		};
+		03643F8E254AD109004F9156 /* MissingDaysVC */ = {
+			isa = PBXGroup;
+			children = (
+				03643F8F254AD109004F9156 /* xib */,
+				03643F91254AD109004F9156 /* MissingDaysVC + CaledarView.swift */,
+				03643F92254AD109004F9156 /* MissingDaysVC.swift */,
+			);
+			path = MissingDaysVC;
+			sourceTree = "<group>";
+		};
+		03643F8F254AD109004F9156 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				03643F90254AD109004F9156 /* MissingDaysVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		03643F96254AD92A004F9156 /* MassageListVC */ = {
+			isa = PBXGroup;
+			children = (
+				03643F97254AD92A004F9156 /* xib */,
+				03643F99254AD92A004F9156 /* MyMassageTblCell */,
+				03643F9C254AD92A004F9156 /* MassageListVC.swift */,
+			);
+			name = MassageListVC;
+			path = "Therapist TerraHeal/Source/MainScene/MassageListVC";
+			sourceTree = SOURCE_ROOT;
+		};
+		03643F97254AD92A004F9156 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				03643F98254AD92A004F9156 /* MassageListVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		03643F99254AD92A004F9156 /* MyMassageTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				03643F9A254AD92A004F9156 /* MyMassageTblCell.swift */,
+				03643F9B254AD92A004F9156 /* MyMassageTblCell.xib */,
+			);
+			path = MyMassageTblCell;
+			sourceTree = "<group>";
+		};
+		03643FA1254AEB47004F9156 /* MassageDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				03643FA2254AEB47004F9156 /* MassageDetailVC.xib */,
+				03643FA3254AEB47004F9156 /* MassageDetailVC.swift */,
+			);
+			name = MassageDetailVC;
+			path = "Therapist TerraHeal/Source/MainScene/MassageListVC/MassageDetailVC";
+			sourceTree = SOURCE_ROOT;
+		};
 		0366DCFB2546D85B002C2CDA /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				03643FA1254AEB47004F9156 /* MassageDetailVC */,
+				03643F96254AD92A004F9156 /* MassageListVC */,
+				03643F8E254AD109004F9156 /* MissingDaysVC */,
+				0354F26D2549603700F3BEB7 /* WorkingScheduleVC */,
+				0354F267254947E100F3BEB7 /* BookingListVC */,
+				0354F25725492F4100F3BEB7 /* ManageExperienceVC */,
 				03F915BC254854EF00C391AB /* ServiceSelectionDialog */,
 				03B960A925483AA500F8F214 /* DocumentScene */,
 				0366DCFC2546D85B002C2CDA /* EditProfileVC */,
@@ -1500,6 +1786,7 @@
 		038CAFF02526056E001ACAD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03643F2B254A7EC4004F9156 /* FSCalendar */,
 				038CAFF12526056E001ACAD6 /* JDFramework */,
 			);
 			path = Frameworks;
@@ -2014,21 +2301,29 @@
 				038CAFD2252604AB001ACAD6 /* PersonPickerCell.xib in Resources */,
 				035EF5C12526FA3A00C64BD4 /* HomeVC.xib in Resources */,
 				038CAFC3252604AB001ACAD6 /* country_list.json in Resources */,
+				03643FA4254AEB47004F9156 /* MassageDetailVC.xib in Resources */,
 				035EF5BE2526FA3A00C64BD4 /* MainVC.xib in Resources */,
 				63ABC1F1246D650D00360F07 /* Assets.xcassets in Resources */,
+				0354F2742549603700F3BEB7 /* WorkingScheduleVC.xib in Resources */,
 				03F5038D252D937F00AF50A5 /* CustomFilterDialog.xib in Resources */,
 				03AE6A162535C8D100F7C629 /* ProfileTblCell.xib in Resources */,
+				0354F26625492F4100F3BEB7 /* ExperienceDialog.xib in Resources */,
 				03412297252F3AFC000BCDAE /* CustomPhotoPicker.xib in Resources */,
 				0344037D252F08D900C8C700 /* BookingDetailTblCell.xib in Resources */,
+				0354F26125492F4100F3BEB7 /* ManageExperienceVC.xib in Resources */,
+				0354F26B254947E100F3BEB7 /* BookingListVC.xib in Resources */,
 				63415E36246FB5C600F0D7A0 /* Nunito-Bold.ttf in Resources */,
+				0354F2762549603700F3BEB7 /* WorkingScheduleTblCell.xib in Resources */,
 				0366DD232546DB14002C2CDA /* CustomCountryPickerCell.xib in Resources */,
 				038CAFCE252604AB001ACAD6 /* TimeDialog.xib in Resources */,
+				0354F27E25496E9100F3BEB7 /* WorkingScheduleTblSection.xib in Resources */,
 				035EF5AB2526F3A400C64BD4 /* SideVC.xib in Resources */,
 				038CAFC9252604AB001ACAD6 /* CustomTextViewDialog.xib in Resources */,
 				63415E33246FB5C600F0D7A0 /* Nunito-Light.ttf in Resources */,
 				038CAFD4252604AB001ACAD6 /* FingerPrintDialog.xib in Resources */,
 				03A7FB2C25274225003A6025 /* MyBookingTblSection.xib in Resources */,
 				038CAFCA252604AB001ACAD6 /* DateTimeDialog.xib in Resources */,
+				03643F93254AD109004F9156 /* MissingDaysVC.xib in Resources */,
 				038CAFC2252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.xib in Resources */,
 				03521F13252B58FD0094829E /* NotificationTblCell.xib in Resources */,
 				03412294252F3AFC000BCDAE /* CustomDocumentPicker.xib in Resources */,
@@ -2044,6 +2339,7 @@
 				03405503252E043000B7077D /* RadioSelectionTblCell.xib in Resources */,
 				03521F05252B18A00094829E /* DateDialog.xib in Resources */,
 				03440371252F04FB00C8C700 /* BookingDetailVC.xib in Resources */,
+				0354F26425492F4100F3BEB7 /* ManageExperienceTblCell.xib in Resources */,
 				0379EAC4252C72B800303A59 /* TimeSlotCltCell.xib in Resources */,
 				038CAFD8252604AB001ACAD6 /* CustomTextFieldDialog.xib in Resources */,
 				03B960A825481E3600F8F214 /* LanguageFluencyDialog.xib in Resources */,
@@ -2051,7 +2347,9 @@
 				0341229F252F40E4000BCDAE /* ServiceStatusVC.xib in Resources */,
 				0366DD202546DB14002C2CDA /* CustomGenderPicker.xib in Resources */,
 				035EF5AE2526F3A400C64BD4 /* MenuCellVerticle.xib in Resources */,
+				03643F9D254AD92A004F9156 /* MassageListVC.xib in Resources */,
 				038CAFCC252604AB001ACAD6 /* CustomDatePicker.xib in Resources */,
+				03643F9F254AD92A004F9156 /* MyMassageTblCell.xib in Resources */,
 				0341227D252F3882000BCDAE /* ScanDialog.xib in Resources */,
 				0366DD282546DB14002C2CDA /* CustomCityPickerCell.xib in Resources */,
 				03521F2B252B612E0094829E /* SuggestionTblCell.xib in Resources */,
@@ -2163,6 +2461,7 @@
 				0379EACE252C934A00303A59 /* RateVC.swift in Sources */,
 				034CBE7F2534700D00B20A11 /* JZAllDayHeaderBackground.swift in Sources */,
 				030DB5A425260966004C7CC8 /* CountriesWebService.swift in Sources */,
+				03643F4F254A7EC4004F9156 /* FSCalendarCell.m in Sources */,
 				030DB57725260869004C7CC8 /* DashedCircleView.swift in Sources */,
 				03A2CC4C2530976B005E3F29 /* MyBookingVC.swift in Sources */,
 				030DB5CF252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift in Sources */,
@@ -2171,6 +2470,7 @@
 				0341229A252F3AFC000BCDAE /* CameraVC.swift in Sources */,
 				030DB5C4252609FB004C7CC8 /* CheckBoxButton.swift in Sources */,
 				038CB0062526056E001ACAD6 /* EditProfileTextfield.swift in Sources */,
+				03643F95254AD109004F9156 /* MissingDaysVC.swift in Sources */,
 				038CAFC4252604AB001ACAD6 /* CustomCountryPhoneCodePicker.swift in Sources */,
 				0379EABD252C574B00303A59 /* TimeBreakDialog.swift in Sources */,
 				034CBE762534700D00B20A11 /* JZWeekViewColors.swift in Sources */,
@@ -2178,10 +2478,12 @@
 				03521F2A252B612E0094829E /* SuggestionTblCell.swift in Sources */,
 				03A2CC3525302468005E3F29 /* ServiceNavigationVC.swift in Sources */,
 				03412299252F3AFC000BCDAE /* CameraController.swift in Sources */,
+				0354F2772549603700F3BEB7 /* WorkingScheduleTblCell.swift in Sources */,
 				038CB0172526056E001ACAD6 /* JDDeviceHelper.swift in Sources */,
 				038CB00F2526056E001ACAD6 /* NSObject + Extension.swift in Sources */,
 				030DB59D25260966004C7CC8 /* AlamofireHelper.swift in Sources */,
 				0344037E252F08D900C8C700 /* BookingDetailTblCell.swift in Sources */,
+				03643F51254A7EC4004F9156 /* FSCalendar.m in Sources */,
 				034CBE7A2534700D00B20A11 /* JZBaseEvent.swift in Sources */,
 				030DB59925260966004C7CC8 /* Common.swift in Sources */,
 				034CBE792534700D00B20A11 /* JZBaseWeekView.swift in Sources */,
@@ -2190,15 +2492,19 @@
 				03A2CC6825309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift in Sources */,
 				038CAF8F252601CF001ACAD6 /* LoginVC.swift in Sources */,
 				034122A0252F40E4000BCDAE /* ServiceStatusVC.swift in Sources */,
+				0354F26325492F4100F3BEB7 /* ManageExperienceTblCell.swift in Sources */,
+				0354F2752549603700F3BEB7 /* WorkingScheduleVC.swift in Sources */,
 				038CAFD3252604AB001ACAD6 /* PersonPickerDialog.swift in Sources */,
 				030DB5CC252609FB004C7CC8 /* ThemeImageView.swift in Sources */,
 				030DB57625260869004C7CC8 /* CircularProgressBar.swift in Sources */,
 				03A2CC3C25303CE3005E3F29 /* MyBookingWebService.swift in Sources */,
+				0354F26C254947E100F3BEB7 /* BookingListVC.swift in Sources */,
 				038CAFE2252604D8001ACAD6 /* CoreDataManager.swift in Sources */,
 				03A2CC6425309E84005E3F29 /* MassageDetailTblCell.swift in Sources */,
 				034CBE822534700D00B20A11 /* JZGridLine.swift in Sources */,
 				03412292252F3AFC000BCDAE /* UIImageCropperVC.swift in Sources */,
 				03412296252F3AFC000BCDAE /* CustomPhotoPicker.swift in Sources */,
+				03643FA0254AD92A004F9156 /* MassageListVC.swift in Sources */,
 				03A2CC5825309D59005E3F29 /* MyBookingVC + TableView.swift in Sources */,
 				03B960BF25483AA500F8F214 /* ManageDocumentVC.swift in Sources */,
 				038CAFE5252604D8001ACAD6 /* PersonData.xcdatamodeld in Sources */,
@@ -2209,11 +2515,13 @@
 				03A2CC3625302468005E3F29 /* ServiceNavigationVC + MapView.swift in Sources */,
 				038CB0112526056E001ACAD6 /* NSLayoutHelper.swift in Sources */,
 				038CB0142526056E001ACAD6 /* String+Localization.swift in Sources */,
+				03643F59254A7EC4004F9156 /* FSCalendarTransitionCoordinator.m in Sources */,
 				030DB5CB252609FB004C7CC8 /* ThemeView.swift in Sources */,
 				034CBE8A2534751200B20A11 /* OptionsViewModel.swift in Sources */,
 				030DB59C25260966004C7CC8 /* PreferenceHelper.swift in Sources */,
 				034CBE862534700D00B20A11 /* JZAllDayHeader.swift in Sources */,
 				034CBE0A25340C1100B20A11 /* UserDetailTblSection.swift in Sources */,
+				03643F4C254A7EC4004F9156 /* FSCalendarCollectionView.m in Sources */,
 				03A2CC2625301EF2005E3F29 /* CustomInformationDialog.swift in Sources */,
 				038CAFE3252604D8001ACAD6 /* Person+CoreDataClass.swift in Sources */,
 				03521F2C252B612E0094829E /* SuggestionAndComplaintVC.swift in Sources */,
@@ -2232,8 +2540,10 @@
 				030DB5C8252609FB004C7CC8 /* ThemeTextField.swift in Sources */,
 				038CAFD5252604AB001ACAD6 /* FingerPrintDialog.swift in Sources */,
 				0341227C252F3882000BCDAE /* ScanDialog.swift in Sources */,
+				03643F58254A7EC4004F9156 /* FSCalendarHeaderView.m in Sources */,
 				038CB0072526056E001ACAD6 /* ACFloatingTextfield.swift in Sources */,
 				035EF5AC2526F3A400C64BD4 /* MenuCellHorizontal.swift in Sources */,
+				03643F52254A7EC4004F9156 /* FSCalendarCollectionViewLayout.m in Sources */,
 				034CBE722534700D00B20A11 /* JZAllDayEvent.swift in Sources */,
 				0379EAE6252CA89700303A59 /* NewsTblCell.swift in Sources */,
 				030DB5C9252609FB004C7CC8 /* BaseVC.swift in Sources */,
@@ -2243,6 +2553,7 @@
 				030DB5A225260966004C7CC8 /* CityWebService.swift in Sources */,
 				030DB59A25260966004C7CC8 /* ImageAssets.swift in Sources */,
 				034CBE732534700D00B20A11 /* JZWeekViewHelper.swift in Sources */,
+				03643F4E254A7EC4004F9156 /* FSCalendarDelegationFactory.m in Sources */,
 				03521F06252B18A00094829E /* DateDialog.swift in Sources */,
 				034CBE7C2534700D00B20A11 /* JZColumnHeader.swift in Sources */,
 				030DB5A625260966004C7CC8 /* AddressWebService.swift in Sources */,
@@ -2257,15 +2568,24 @@
 				038CB0192526056E001ACAD6 /* UIViewController + Extension.swift in Sources */,
 				03F915C3254854EF00C391AB /* ServiceCltCell.swift in Sources */,
 				038CB00B2526056E001ACAD6 /* HomeSegmentControl.swift in Sources */,
+				03643F50254A7EC4004F9156 /* FSCalendarStickyHeader.m in Sources */,
+				03643F4D254A7EC4004F9156 /* FSCalendarDelegationProxy.m in Sources */,
 				030DB5C7252609FB004C7CC8 /* ThemeButton.swift in Sources */,
+				03643F53254A7EC4004F9156 /* FSCalendarWeekdayView.m in Sources */,
 				038CAFE4252604D8001ACAD6 /* Person+CoreDataProperties.swift in Sources */,
+				0354F2792549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift in Sources */,
 				03A2CC3F25306CFF005E3F29 /* BookingDetailVC + Tableview.swift in Sources */,
+				03643F94254AD109004F9156 /* MissingDaysVC + CaledarView.swift in Sources */,
+				03643F9E254AD92A004F9156 /* MyMassageTblCell.swift in Sources */,
 				03412293252F3AFC000BCDAE /* UIImage+FixOrientation.swift in Sources */,
 				030DB5CE252609FB004C7CC8 /* ThemeTableCells.swift in Sources */,
 				03AE6A132535C8D100F7C629 /* ProfileVC.swift in Sources */,
+				03643FA5254AEB47004F9156 /* MassageDetailVC.swift in Sources */,
 				0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */,
 				030DB59625260966004C7CC8 /* Constant.swift in Sources */,
 				038CAFDB252604AB001ACAD6 /* CustomAlert.swift in Sources */,
+				03643F54254A7EC4004F9156 /* FSCalendarSeparatorDecorationView.m in Sources */,
+				03643F5B254A7EC4004F9156 /* FSCalendarAppearance.m in Sources */,
 				038CAFC1252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.swift in Sources */,
 				03405502252E043000B7077D /* RadioSelectionTblCell.swift in Sources */,
 				035EF5C22526FA3A00C64BD4 /* HomeVC.swift in Sources */,
@@ -2273,8 +2593,10 @@
 				034CBE812534700D00B20A11 /* JZCurrentTimelinePage.swift in Sources */,
 				034CBE742534700D00B20A11 /* JZLongPressEventCell.swift in Sources */,
 				0379EAC5252C72B800303A59 /* TimeSlotCltCell.swift in Sources */,
+				0354F27D25496E9100F3BEB7 /* WorkingScheduleTblSection.swift in Sources */,
 				03B960A3254804F100F8F214 /* LanguageSelectionDialog.swift in Sources */,
 				030DB5AF25260966004C7CC8 /* FontHelper.swift in Sources */,
+				03643F56254A7EC4004F9156 /* FSCalendarConstants.m in Sources */,
 				030DB59E25260966004C7CC8 /* AppWebApi.swift in Sources */,
 				030DB59725260966004C7CC8 /* LanguageManager.swift in Sources */,
 				038CAFCB252604AB001ACAD6 /* DateTimeDialog.swift in Sources */,
@@ -2297,10 +2619,13 @@
 				030DB5D0252609FB004C7CC8 /* ThemeBottomDialog.swift in Sources */,
 				0366DD0F2546DA79002C2CDA /* OTPTextField.swift in Sources */,
 				0379EACF252C934A00303A59 /* RateTblCell.swift in Sources */,
+				0354F26225492F4100F3BEB7 /* ManageExperienceVC.swift in Sources */,
+				0354F26525492F4100F3BEB7 /* ExperienceDialog.swift in Sources */,
 				034CBE772534700D00B20A11 /* WeakTimer.swift in Sources */,
 				030DB5C2252609FB004C7CC8 /* ThemeCollectionCell.swift in Sources */,
 				038CB01C2526056E001ACAD6 /* LocationHelper.swift in Sources */,
 				038CB0102526056E001ACAD6 /* Date + Extension.swift in Sources */,
+				03643F57254A7EC4004F9156 /* FSCalendarCalculator.m in Sources */,
 				038CB0162526056E001ACAD6 /* JDSubclasses + UIControl.swift in Sources */,
 				038CAFD7252604AB001ACAD6 /* CustomAlertConfirmation.swift in Sources */,
 				038CAFCD252604AB001ACAD6 /* CustomDatePicker.swift in Sources */,
@@ -2310,6 +2635,7 @@
 				038CB0132526056E001ACAD6 /* String + Validation.swift in Sources */,
 				0342137224C6B3C500ABB285 /* LaunchVC.swift in Sources */,
 				038CB00D2526056E001ACAD6 /* JDSegmentControl.swift in Sources */,
+				03643F55254A7EC4004F9156 /* FSCalendarExtensions.m in Sources */,
 				034CBE712534700D00B20A11 /* JZLongPressWeekView.swift in Sources */,
 				038CAFD1252604AB001ACAD6 /* PersonPickerCell.swift in Sources */,
 				0366DD292546DB14002C2CDA /* CustomCityPicker.swift in Sources */,

@@ -249,5 +249,109 @@ extension AppDelegate {
         }
     }
 
+    func loadManageExperienceVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ManageExperienceVC =  nc.findVCs(ofType: ManageExperienceVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: ManageExperienceVC = ManageExperienceVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: ManageExperienceVC = ManageExperienceVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadMyBookingVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MyBookingVC =  nc.findVCs(ofType: MyBookingVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: MyBookingVC = MyBookingVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: MyBookingVC = MyBookingVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadBookingListVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: BookingListVC =  nc.findVCs(ofType: BookingListVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: BookingListVC = BookingListVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: BookingListVC = BookingListVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadWorkingScheduleVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: WorkingScheduleVC =  nc.findVCs(ofType: WorkingScheduleVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: WorkingScheduleVC = WorkingScheduleVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: WorkingScheduleVC = WorkingScheduleVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadMissingDaysVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MissingDaysVC =  nc.findVCs(ofType: MissingDaysVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: MissingDaysVC = MissingDaysVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: MissingDaysVC = MissingDaysVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadMyNumberOfMassageVC(navigaionVC:UINavigationController? = nil) {
+           if let nc = navigaionVC as? NC {
+               if let targetVC: MassageListVC =  nc.findVCs(ofType: MassageListVC.self).first {
+                   _ = nc.popToVc(targetVC)
+               } else {
+                   let targetVC: MassageListVC = MassageListVC.fromNib()
+                   nc.pushVC(targetVC)
+               }
+           } else {
+               let targetVC: MassageListVC = MassageListVC.fromNib()
+               let nC: NC = NC(rootViewController: targetVC)
+               self.windowConfig(withRootVC: nC)
+           }
+       }
+
+    func loadMassageDetailVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MassageDetailVC =  nc.findVCs(ofType: MassageDetailVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: MassageDetailVC = MassageDetailVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: MassageDetailVC = MassageDetailVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
 }
 

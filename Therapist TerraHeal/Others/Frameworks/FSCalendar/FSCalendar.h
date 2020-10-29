@@ -452,7 +452,7 @@ IB_DESIGNABLE
  @param identifier The reuse identifier to associate with the specified class. This parameter must not be nil and must not be an empty string.
  */
 - (void)registerClass:(Class)cellClass forCellReuseIdentifier:(NSString *)identifier;
-
+- (void)registerNib:(UINib*)nib forCellReuseIdentifier:(NSString *)identifier;
 /**
  Returns a reusable calendar cell object located by its identifier.
 

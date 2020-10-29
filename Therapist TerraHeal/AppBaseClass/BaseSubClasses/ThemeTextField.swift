@@ -87,7 +87,6 @@ class ThemeTextView: UITextView {
     func updateView() {
         self.backgroundColor = bgColor
         self.setRound(withBorderColor: borderLineColor, andCornerRadious: 25.0, borderWidth: 1.0)
-              
         textContainerInset = padding
     }
 }

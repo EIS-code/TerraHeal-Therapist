@@ -73,7 +73,7 @@ class ManageDocumentVC: BaseVC {
     }
     
     @IBAction func btnCancelTapped(_ sender: Any) {
-         _ = (self.navigationController as? NC)?.popVC()
+         self.popVC()
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
@@ -223,7 +223,7 @@ extension ManageDocumentVC: UIImageCropperProtocol {
     //optional
     func didCancel() {
         print("did cancel")
-         _ = (self.navigationController as? NC)?.popVC()
+         self.popVC()
         //self.wsUpdateProfile()
     }
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fTr-D4-KiU" userLabel="WorkingScheduleTblSection" customClass="WorkingScheduleTblSection" customModule="Therapist_TerraHeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="396" height="121"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeO-Zh-3Ke" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="5" y="5" width="42" height="111"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="BeO-Zh-3Ke" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="Hol-ZB-ie8"/>
+                <constraint firstItem="BeO-Zh-3Ke" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="5" id="fbx-gw-iGa" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="BeO-Zh-3Ke" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="5" id="sBb-P1-AhX" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lblTitle" destination="BeO-Zh-3Ke" id="h78-hc-xxJ"/>
+            </connections>
+            <point key="canvasLocation" x="111.59420289855073" y="496.54017857142856"/>
+        </view>
+    </objects>
+</document>

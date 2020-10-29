@@ -60,6 +60,24 @@
 "PROFILE_DESCRIPTION"  = "Personal Description";
 "HEALTH_CONDITION_OR_ALLERGIES"  = "Health conditions or allergies";
 "TXT_SEARCH_COUNTRY" = "Search Country";
+
+"DIALOG_PERSONAL_DESCRIPTION_TITLE"  = "Personal Description";
+"DIALOG_PERSONAL_DESCRIPTION_PLACEHOLDER"  = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae";
+"DIALOG_PERSONAL_DESCRIPTION_BTN_SAVE"  = "Save";
+
+
+"DIALOG_HEALTH_CONDITION_OR_ALLERGIES_TITLE"  = "Health conditions or allergies";
+"DIALOG_HEALTH_CONDITION_OR_ALLERGIES_PLACEHOLDER"  = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae";
+"DIALOG_HEALTH_CONDITION_OR_ALLERGIES_BTN_SAVE"  = "Save";
+//MARK: Experience Screen
+"MANAGE_EXPERIENCE_TITLE" = "Personal Experience";
+"MANAGE_EXPERIENCE_EMPTY_TITLE" = "No Personal Experience Added";
+"MANAGE_EXPERIENCET_EMPTY_MSG" = "--";
+"MANAGE_EXPERIENCE_BTN_ADD_NEW" = "Add";
+"DIALOG_EXPERIENCE_TITLE"  = "Health conditions or allergies";
+"DIALOG_EXPERIENCE_PLACEHOLDER"  = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae";
+"DIALOG_EXPERIENCE_BTN_SAVE"  = "Save";
+
 //MARK: Notification
 "NOTIFICATION_TITLE" = "notifications";
 "NO_NOTIFICATION_TITLE" = "no more notifications";
@@ -100,17 +118,15 @@
 "BOOKING_DETAILS_TITLE" = "booking details";
 "BOOKING_DETAILS_BTN_START" = "Start";
 "BOOKING_DETAILS_BTN_CANCEL" = "Cancel";
-
 "BOOKING_DETAILS_BTN_I_GO" = "I Go";
 "BOOKING_DETAILS_BTN_I_AM_SAFE" = "I am safe";
 "BOOKING_DETAIL_BTN_CHECK_IN" = "Check In";
+"MY_BOOKING_TITLE" = "my bookings";
 //MARK: Scan Dialog
 "DIALOG_SCAN_TITLE" = "Scan QR";
 "DIALOG_BTN_SCAN" = "scan";
 "SCAN_MASSAGE" = "align the QR Code within frame to scan";
 "SCAN_TITLE" = "scan";
-
-
 //MARK: Photo Dialog
 "PHOTO_DIALOG_EDIT_PROFILE_TITLE" = "upload a photo";
 "PHOTO_DIALOG_FROM_CAMERA" = "take a photo";
@@ -144,6 +160,12 @@
 "DOCUMENT_EMPTY_MSG" = "add document to continue";
 "MANAGE_DOCUMENT_BTN_ADD_NEW" = "Add New";
 "ADD_NEW_DOCUMENT_TITLE" = "add new document";
+"MY_WORKING_SCHEDULE_TITLE"="my working schedule";
+"WORKING_DAYS" = "working days";
+"MY_MISSING_DAYS_TITLE"="my missings days";
+"MISSING_DAYS" = "missings days";
+"MY_NUMBER_OF_MASSAGES_TITLE" =  "my number of massages";
+"MY_MASSAGES_DETAIL_TITLE" = "booking details";
 //MARK: -
 //MARK: Common Strings
 //MARK: -

@@ -79,7 +79,7 @@ class EditProfileVC: BaseVC {
     
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
-        _ = (self.navigationController as? NC)?.popVC()
+        self.popVC()
     }
     
     @IBAction func btnAddPictureTapped(_ sender: Any) {
@@ -273,6 +273,43 @@ extension EditProfileVC {
         }
     }
 
+    func openPersonalDetailDialog(index:Int) {
+         let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
+               alert.initialize(title: "DIALOG_PERSONAL_DESCRIPTION_TITLE".localized(), placeholder: "DIALOG_PERSONAL_DESCRIPTION_PLACEHOLDER".localized(), data: "", buttonTitle: "DIALOG_PERSONAL_DESCRIPTION_BTN_SAVE".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+               alert.show(animated: true)
+               alert.onBtnCancelTapped = {
+                   [weak alert, weak self] in
+                   guard let self = self else {return}; print(self)
+                   alert?.dismiss()
+               }
+               alert.onBtnDoneTapped = {
+                   [weak alert, weak self] (description) in
+                    alert?.dismiss()
+                   guard let self = self else { return } ; print(self)
+                   self.arrForProfile[index].value = description
+                   self.collectionVwForProfile.reloadData()
+               }
+    }
+
+    func openHeathConditionDialog(index:Int) {
+        let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
+        alert.initialize(title: "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_TITLE".localized(), placeholder: "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_PLACEHOLDER".localized(), data: "", buttonTitle: "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_BTN_SAVE".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else {return}; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (description) in
+            alert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.arrForProfile[index].value = description
+            self.collectionVwForProfile.reloadData()
+
+        }
+    }
+
     func openMobileNumberDialog(index:Int = 0) {
         let alert: CustomMobileNumberDialog = CustomMobileNumberDialog.fromNib()
         switch self.arrForProfile[index].type {
@@ -415,7 +452,7 @@ extension EditProfileVC {
 extension EditProfileVC: UIImageCropperProtocol {
     func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
         ivProfilePic.image = croppedImage
-        _ = (self.navigationController as? NC)?.popVC()
+        self.popVC()
         self.ivProfilePic.image = croppedImage
         self.selectedProfileDoc?.image = croppedImage
         //self.wsUpdateProfile()
@@ -424,7 +461,7 @@ extension EditProfileVC: UIImageCropperProtocol {
     //optional
     func didCancel() {
         print("did cancel")
-        _ = (self.navigationController as? NC)?.popVC()
+        self.popVC()
         //self.wsUpdateProfile()
     }
 }

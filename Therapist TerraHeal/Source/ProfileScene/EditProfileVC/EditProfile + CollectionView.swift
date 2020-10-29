@@ -86,6 +86,10 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
             self.openDatePicker(index: indexPath.row)
         case .LanguageSpoken:
             self.openLanguageSelectionDialog(index: indexPath.row)
+        case .Description:
+            self.openPersonalDetailDialog(index: indexPath.row)
+        case .HealthCodndition:
+            self.openHeathConditionDialog(index: indexPath.row)
         case .Phone:
             self.openMobileNumberDialog(index: indexPath.row)
         case .EmergencyContact:
@@ -96,7 +100,8 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
             self.openCountryPicker(index: indexPath.row)
         case .Services:
             self.openServiceSelection(index: indexPath.row)
-
+        case .Experience:
+            Common.appDelegate.loadManageExperienceVC(navigaionVC: self.navigationController)
         default:
             print("")
         }

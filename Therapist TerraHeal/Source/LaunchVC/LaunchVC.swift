@@ -22,13 +22,14 @@ class LaunchVC: BaseVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-         
+
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
-        self.loadNextScreen()
+        //self.loadNextScreen()
+        Common.appDelegate.loadMassageDetailVC()
     }
     // MARK: - StatusBar
     override var prefersStatusBarHidden: Bool {

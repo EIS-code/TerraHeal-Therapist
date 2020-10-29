@@ -78,7 +78,7 @@ class NotificationVC: BaseVC {
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
         if arrForNotification.isEmpty {
-                _ = (self.navigationController as? NC)?.popVC()
+                self.popVC()
         } else {
             self.arrForNotification.removeAll()
             self.updateUI()

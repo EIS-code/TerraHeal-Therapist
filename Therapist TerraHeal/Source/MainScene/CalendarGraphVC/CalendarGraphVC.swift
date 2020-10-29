@@ -63,7 +63,7 @@ class CalendarGraphVC: BaseVC {
     
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
-        _ = (self.navigationController as? NC)?.popVC()
+        self.popVC()
     }
     // Support device orientation change
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

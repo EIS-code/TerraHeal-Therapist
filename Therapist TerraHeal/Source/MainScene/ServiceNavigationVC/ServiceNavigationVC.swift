@@ -80,7 +80,7 @@ class ServiceNavigationVC: BaseVC {
     // MARK: Action Buttons
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped(btn)
-        _ = _ = (self.navigationController as? NC)?.popVC()
+        _ = self.popVC()
     }
     
     @IBAction func btnCurrentLocationTapped(_ sender: Any) {
@@ -117,7 +117,7 @@ class ServiceNavigationVC: BaseVC {
                    guard let self = self else {
                        return
                    }
-                _ = (self.navigationController as? NC)?.popVC()
+                self.popVC()
         }
     }
 

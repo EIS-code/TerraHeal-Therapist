@@ -37,7 +37,9 @@ extension MyBookingVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
             cell?.indexPath = indexPath
             cell?.layoutIfNeeded()
             cell?.setData(data: [MyBookingUserPeople.init(fromDictionary: [:]),MyBookingUserPeople.init(fromDictionary: [:])])
+            self.tableView.reloadRows(at: [indexPath], with: .none)
             cell?.layoutIfNeeded()
+
             print("Cell Height: \(cell?.bounds)")
             return cell!
         } else {
