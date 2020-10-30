@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" userLabel="AvailabilityCell" customClass="AvailabilityCell" customModule="Therapist_TerraHeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="291" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="291" height="72"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="582-VR-E0n" userLabel="vwForBG">
+                        <rect key="frame" x="4" y="4" width="283" height="64"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTy-Qs-oWs" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <rect key="frame" x="117.5" y="22" width="48" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="theme_light_text_color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="theme_availability"/>
+                        <constraints>
+                            <constraint firstItem="JTy-Qs-oWs" firstAttribute="centerY" secondItem="582-VR-E0n" secondAttribute="centerY" id="IHR-jc-0od"/>
+                            <constraint firstItem="JTy-Qs-oWs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="582-VR-E0n" secondAttribute="top" constant="5" id="TbQ-6d-BCi"/>
+                            <constraint firstItem="JTy-Qs-oWs" firstAttribute="centerX" secondItem="582-VR-E0n" secondAttribute="centerX" id="jPu-bS-igA"/>
+                            <constraint firstItem="JTy-Qs-oWs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="582-VR-E0n" secondAttribute="leading" constant="5" id="zRV-dG-rP7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" name="theme_background"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="582-VR-E0n" secondAttribute="bottom" constant="4" id="5e7-Y5-4TN"/>
+                <constraint firstAttribute="trailing" secondItem="582-VR-E0n" secondAttribute="trailing" constant="4" id="8r8-s9-ghB"/>
+                <constraint firstItem="582-VR-E0n" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Rsv-Xd-3ua"/>
+                <constraint firstItem="582-VR-E0n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="rpl-CI-rSC"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="lmf-Xn-7Ot"/>
+            <size key="customSize" width="215" height="108"/>
+            <connections>
+                <outlet property="lblCellTitle" destination="JTy-Qs-oWs" id="iKe-yh-Wyq"/>
+                <outlet property="vwForCellBg" destination="582-VR-E0n" id="eJi-LG-oIP"/>
+            </connections>
+            <point key="canvasLocation" x="261.5625" y="72.887323943661968"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="theme_availability">
+            <color red="0.20000000000000001" green="0.69411764705882351" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_background">
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_light_text_color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

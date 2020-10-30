@@ -62,6 +62,7 @@ class BackButton: FloatingRoundButton {
     }
     
     func backButton(textColor: UIColor = UIColor.themeLightTextColor, backgroundColor: UIColor = UIColor.themePrimary, borderColor: UIColor = UIColor.themePrimary) {
+        self.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         self.setImage(nil, for: .normal)
         self.height(constant: CommonSize.Button.back, direction: .horizontal)
         self.backgroundColor = backgroundColor

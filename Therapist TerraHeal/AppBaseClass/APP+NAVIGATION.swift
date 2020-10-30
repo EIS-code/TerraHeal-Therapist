@@ -353,5 +353,19 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
+    func loadAvailabilityVC(navigaionVC:UINavigationController? = nil) {
+           if let nc = navigaionVC as? NC {
+               if let targetVC: AvailabilityVC =  nc.findVCs(ofType: AvailabilityVC.self).first {
+                   _ = nc.popToVc(targetVC)
+               } else {
+                   let targetVC: AvailabilityVC = AvailabilityVC.fromNib()
+                   nc.pushVC(targetVC)
+               }
+           } else {
+               let targetVC: AvailabilityVC = AvailabilityVC.fromNib()
+               let nC: NC = NC(rootViewController: targetVC)
+               self.windowConfig(withRootVC: nC)
+           }
+       }
 }
 

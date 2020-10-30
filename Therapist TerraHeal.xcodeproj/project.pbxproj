@@ -100,6 +100,12 @@
 		034CBE862534700D00B20A11 /* JZAllDayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE6F2534700D00B20A11 /* JZAllDayHeader.swift */; };
 		034CBE872534700D00B20A11 /* JZCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE702534700D00B20A11 /* JZCollectionView.swift */; };
 		034CBE8A2534751200B20A11 /* OptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE892534751200B20A11 /* OptionsViewModel.swift */; };
+		034DB717254BD09100128AA1 /* AvailabilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034DB713254BD09100128AA1 /* AvailabilityVC.swift */; };
+		034DB718254BD09100128AA1 /* AvailabilityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034DB715254BD09100128AA1 /* AvailabilityVC.xib */; };
+		034DB719254BD09100128AA1 /* AvailabilityVC + CaledarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034DB716254BD09100128AA1 /* AvailabilityVC + CaledarView.swift */; };
+		034DB71B254BE98100128AA1 /* AvailabilityVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034DB71A254BE98100128AA1 /* AvailabilityVC + CollectionView.swift */; };
+		034DB71F254BEC0200128AA1 /* AvailabilityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034DB71D254BEC0200128AA1 /* AvailabilityCell.swift */; };
+		034DB720254BEC0200128AA1 /* AvailabilityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034DB71E254BEC0200128AA1 /* AvailabilityCell.xib */; };
 		03521F05252B18A00094829E /* DateDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F03252B189F0094829E /* DateDialog.xib */; };
 		03521F06252B18A00094829E /* DateDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F04252B189F0094829E /* DateDialog.swift */; };
 		03521F11252B58FD0094829E /* NotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F09252B58FD0094829E /* NotificationVC.xib */; };
@@ -411,6 +417,12 @@
 		034CBE6F2534700D00B20A11 /* JZAllDayHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZAllDayHeader.swift; sourceTree = "<group>"; };
 		034CBE702534700D00B20A11 /* JZCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZCollectionView.swift; sourceTree = "<group>"; };
 		034CBE892534751200B20A11 /* OptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsViewModel.swift; path = "Therapist TerraHeal/Source/HelperVC/CalenderGraph/OptionsViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		034DB713254BD09100128AA1 /* AvailabilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityVC.swift; sourceTree = "<group>"; };
+		034DB715254BD09100128AA1 /* AvailabilityVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailabilityVC.xib; sourceTree = "<group>"; };
+		034DB716254BD09100128AA1 /* AvailabilityVC + CaledarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AvailabilityVC + CaledarView.swift"; sourceTree = "<group>"; };
+		034DB71A254BE98100128AA1 /* AvailabilityVC + CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AvailabilityVC + CollectionView.swift"; sourceTree = "<group>"; };
+		034DB71D254BEC0200128AA1 /* AvailabilityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityCell.swift; sourceTree = "<group>"; };
+		034DB71E254BEC0200128AA1 /* AvailabilityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailabilityCell.xib; sourceTree = "<group>"; };
 		03521F03252B189F0094829E /* DateDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateDialog.xib; sourceTree = "<group>"; };
 		03521F04252B189F0094829E /* DateDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateDialog.swift; sourceTree = "<group>"; };
 		03521F09252B58FD0094829E /* NotificationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationVC.xib; sourceTree = "<group>"; };
@@ -991,6 +1003,35 @@
 			path = ReusableViews;
 			sourceTree = "<group>";
 		};
+		034DB712254BD09100128AA1 /* AvailabilityVC */ = {
+			isa = PBXGroup;
+			children = (
+				034DB71C254BEC0200128AA1 /* AvailabilityCell */,
+				034DB713254BD09100128AA1 /* AvailabilityVC.swift */,
+				034DB714254BD09100128AA1 /* xib */,
+				034DB716254BD09100128AA1 /* AvailabilityVC + CaledarView.swift */,
+				034DB71A254BE98100128AA1 /* AvailabilityVC + CollectionView.swift */,
+			);
+			path = AvailabilityVC;
+			sourceTree = "<group>";
+		};
+		034DB714254BD09100128AA1 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				034DB715254BD09100128AA1 /* AvailabilityVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		034DB71C254BEC0200128AA1 /* AvailabilityCell */ = {
+			isa = PBXGroup;
+			children = (
+				034DB71D254BEC0200128AA1 /* AvailabilityCell.swift */,
+				034DB71E254BEC0200128AA1 /* AvailabilityCell.xib */,
+			);
+			path = AvailabilityCell;
+			sourceTree = "<group>";
+		};
 		03521F02252B189F0094829E /* DateDialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -1356,6 +1397,7 @@
 		0366DCFB2546D85B002C2CDA /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				034DB712254BD09100128AA1 /* AvailabilityVC */,
 				03643FA1254AEB47004F9156 /* MassageDetailVC */,
 				03643F96254AD92A004F9156 /* MassageListVC */,
 				03643F8E254AD109004F9156 /* MissingDaysVC */,
@@ -2274,6 +2316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034DB720254BEC0200128AA1 /* AvailabilityCell.xib in Resources */,
 				034CBE2225346C4C00B20A11 /* EventCell.xib in Resources */,
 				03F915C2254854EF00C391AB /* ServiceCltCell.xib in Resources */,
 				038CAFDA252604AB001ACAD6 /* CustomAlert.xib in Resources */,
@@ -2347,6 +2390,7 @@
 				0341229F252F40E4000BCDAE /* ServiceStatusVC.xib in Resources */,
 				0366DD202546DB14002C2CDA /* CustomGenderPicker.xib in Resources */,
 				035EF5AE2526F3A400C64BD4 /* MenuCellVerticle.xib in Resources */,
+				034DB718254BD09100128AA1 /* AvailabilityVC.xib in Resources */,
 				03643F9D254AD92A004F9156 /* MassageListVC.xib in Resources */,
 				038CAFCC252604AB001ACAD6 /* CustomDatePicker.xib in Resources */,
 				03643F9F254AD92A004F9156 /* MyMassageTblCell.xib in Resources */,
@@ -2456,6 +2500,7 @@
 				038CB00A2526056E001ACAD6 /* RatingView.swift in Sources */,
 				03A2CC3B25303CE3005E3F29 /* MyBookingData.swift in Sources */,
 				03B960B925483AA500F8F214 /* DocumentTblCell.swift in Sources */,
+				034DB719254BD09100128AA1 /* AvailabilityVC + CaledarView.swift in Sources */,
 				038CB01B2526056E001ACAD6 /* JDImageExtension.swift in Sources */,
 				03412295252F3AFC000BCDAE /* CustomDocumentPicker.swift in Sources */,
 				0379EACE252C934A00303A59 /* RateVC.swift in Sources */,
@@ -2500,6 +2545,7 @@
 				03A2CC3C25303CE3005E3F29 /* MyBookingWebService.swift in Sources */,
 				0354F26C254947E100F3BEB7 /* BookingListVC.swift in Sources */,
 				038CAFE2252604D8001ACAD6 /* CoreDataManager.swift in Sources */,
+				034DB71F254BEC0200128AA1 /* AvailabilityCell.swift in Sources */,
 				03A2CC6425309E84005E3F29 /* MassageDetailTblCell.swift in Sources */,
 				034CBE822534700D00B20A11 /* JZGridLine.swift in Sources */,
 				03412292252F3AFC000BCDAE /* UIImageCropperVC.swift in Sources */,
@@ -2514,6 +2560,7 @@
 				03B960BD25483AA500F8F214 /* ManageDocumentTblCell.swift in Sources */,
 				03A2CC3625302468005E3F29 /* ServiceNavigationVC + MapView.swift in Sources */,
 				038CB0112526056E001ACAD6 /* NSLayoutHelper.swift in Sources */,
+				034DB717254BD09100128AA1 /* AvailabilityVC.swift in Sources */,
 				038CB0142526056E001ACAD6 /* String+Localization.swift in Sources */,
 				03643F59254A7EC4004F9156 /* FSCalendarTransitionCoordinator.m in Sources */,
 				030DB5CB252609FB004C7CC8 /* ThemeView.swift in Sources */,
@@ -2554,6 +2601,7 @@
 				030DB59A25260966004C7CC8 /* ImageAssets.swift in Sources */,
 				034CBE732534700D00B20A11 /* JZWeekViewHelper.swift in Sources */,
 				03643F4E254A7EC4004F9156 /* FSCalendarDelegationFactory.m in Sources */,
+				034DB71B254BE98100128AA1 /* AvailabilityVC + CollectionView.swift in Sources */,
 				03521F06252B18A00094829E /* DateDialog.swift in Sources */,
 				034CBE7C2534700D00B20A11 /* JZColumnHeader.swift in Sources */,
 				030DB5A625260966004C7CC8 /* AddressWebService.swift in Sources */,

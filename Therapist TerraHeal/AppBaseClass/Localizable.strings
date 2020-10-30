@@ -166,6 +166,12 @@
 "MISSING_DAYS" = "missings days";
 "MY_NUMBER_OF_MASSAGES_TITLE" =  "my number of massages";
 "MY_MASSAGES_DETAIL_TITLE" = "booking details";
+//MARK: My Availability Screen
+"MY_AVAILABILITY_TITLE" = "my availability";
+"MY_AVAILABILITY_BTN_SUBMIT" = "Proceed";
+"MY_AVAILABILITY_BTN_WEEK" = "this week";
+"MY_AVAILABILITY_BTN_SELECT_MORE" = "select more";
+"MY_AVAILABILITY_SECTION_HEADER" = "availability time";
 //MARK: -
 //MARK: Common Strings
 //MARK: -
