@@ -9,6 +9,31 @@ enum AvailabilityStatus: Int {
     case Available = 1
     case NotAvailable = 2
 }
+
+enum AvailabilityOptions: Int {
+    case FreeSpot = 1
+    case Absent = 2
+    case ExchangeWithOthers = 3
+
+    func name() -> String {
+        switch self {
+        case .FreeSpot:
+            return "AVAILABILITY_OPTION_FREE_SPOT".localized()
+        case .Absent:
+            return "AVAILABILITY_OPTION_ABSENT".localized()
+        case .ExchangeWithOthers:
+            return "AVAILABILITY_OPTION_EXCHANGE".localized()
+        default:
+            return "UNKNOWN".localized()
+        }
+    }
+
+
+
+
+
+
+}
 class AvailabilityVC: BaseVC {
 
     @IBOutlet weak var vwCalendar: FSCalendar!
@@ -115,6 +140,11 @@ class AvailabilityVC: BaseVC {
         self.popVC()
     }
 
+    @IBAction func btnSelectWeekTapped(_ sender: Any) {
+        let currentPage = self.vwCalendar.currentPage.nextWeek()
+        self.vwCalendar.setCurrentPage(currentPage, animated: true)
+    }
+
     @IBAction func btnPreviousTapped(_ sender: Any) {
            let currentPage = self.vwCalendar.currentPage.previousMonth()
            self.vwCalendar.setCurrentPage(currentPage, animated: true)
@@ -124,5 +154,91 @@ class AvailabilityVC: BaseVC {
            let currentPage = self.vwCalendar.currentPage.nextMonth()
            self.vwCalendar.setCurrentPage(currentPage, animated: true)
     }
+    @IBAction func btnSelectMoreTapped(_ sender: Any) {
+        self.openFreeSpotDialog()
+        //self.openSelectOptionForAvailability()
+    }
 
 }
+
+//MARK:- Dialogs
+extension AvailabilityVC {
+
+    func openTextViewPicker() {
+        let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
+        alert.initialize(title: "DIALOG_AVAILABILITY_ABSENT_TITLE".localized()
+            , data: "", buttonTitle: "DIALOG_AVAILABILITY_ABSENT_BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else {return}; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (description) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+
+        }
+    }
+    func openFreeSpotDialog() {
+        let alert: FreeSpotDialog = FreeSpotDialog.fromNib()
+        alert.initialize(title: "DIALOG_FREE_SPOT_TITLE".localized()
+            , buttonTitle: "DIALOG_FREE_SPOT_BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else {return}; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] () in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+
+        }
+    }
+
+    func openExchangeOfferDialog() {
+        let alert: ExchangeOfferDialog = ExchangeOfferDialog.fromNib()
+        alert.initialize(title: AvailabilityOptions.ExchangeWithOthers.name(), buttonTitle: "DIALOG_EXCHANGE_OFFER_BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else {return}; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] () in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+        }
+    }
+
+    func openSelectOptionForAvailability() {
+        self.btnSelectMore.isEnabled = false
+        let option1: SelectionBorderTableCellDetail = SelectionBorderTableCellDetail.init(id: AvailabilityOptions.FreeSpot.rawValue.toString(), title: AvailabilityOptions.FreeSpot.name())
+        let option2: SelectionBorderTableCellDetail = SelectionBorderTableCellDetail.init(id: AvailabilityOptions.Absent.rawValue.toString(), title: AvailabilityOptions.Absent.name())
+        let option3: SelectionBorderTableCellDetail = SelectionBorderTableCellDetail.init(id: AvailabilityOptions.ExchangeWithOthers.rawValue.toString(), title: AvailabilityOptions.ExchangeWithOthers.name())
+        let arrForData: [SelectionBorderTableCellDetail] = [option1,option2,option3]
+        let addNewDialog: CustomTblSelectionDialog = CustomTblSelectionDialog.fromNib()
+        addNewDialog.initialize(title: "DIALOG_AVAILABILITY_OPTION_TITLE".localized(), buttonTitle: "DIALOG_AVAILABILITY_BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
+        addNewDialog.setDataSource(dataList: arrForData)
+        addNewDialog.show(animated: true)
+        addNewDialog.onBtnCancelTapped = {
+            [weak addNewDialog, weak self] in
+            guard let self = self else {return}; print(self)
+            addNewDialog?.dismiss();
+            self.btnSelectMore.isEnabled = true
+        }
+        addNewDialog.onBtnDoneTapped = {
+            [weak addNewDialog, weak self] (selectionData) in
+            guard let self = self else {return}; print(self)
+            addNewDialog?.dismiss();
+            self.openExchangeOfferDialog()
+            self.btnSelectMore.isEnabled = true
+        }
+    }
+}
+
+

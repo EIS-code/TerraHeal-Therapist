@@ -45,7 +45,7 @@ class MyBookingExpandTblCell: TableCell {
     }
 
     func setData(data: [MyBookingUserPeople] ) {
-        self.arrForData = data
+        self.arrForData = [MyBookingUserPeople.init(fromDictionary: [:]),MyBookingUserPeople.init(fromDictionary: [:]),MyBookingUserPeople.init(fromDictionary: [:]),MyBookingUserPeople.init(fromDictionary: [:])]
         self.tableView.reloadData(heightToFit: self.htblVw) {
             self.layoutIfNeeded()
             self.vwExpanded?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)

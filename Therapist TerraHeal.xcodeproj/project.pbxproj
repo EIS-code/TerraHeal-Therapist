@@ -302,6 +302,13 @@
 		03B960C825483BB000F8F214 /* MyDocumentsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B960C625483BB000F8F214 /* MyDocumentsVC.xib */; };
 		03B960C925483BB000F8F214 /* MyDocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B960C725483BB000F8F214 /* MyDocumentsVC.swift */; };
 		03E3F79124CF166500997A16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3F79024CF166500997A16 /* CoreData.framework */; };
+		03EED643254FE7920010A2CF /* ExchangeOfferDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EED640254FE7920010A2CF /* ExchangeOfferDialog.xib */; };
+		03EED644254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EED641254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift */; };
+		03EED645254FE7920010A2CF /* ExchangeOfferDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EED642254FE7920010A2CF /* ExchangeOfferDialog.swift */; };
+		03EED64C255026AC0010A2CF /* FreeSpotCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EED648255026AC0010A2CF /* FreeSpotCltCell.swift */; };
+		03EED64D255026AC0010A2CF /* FreeSpotCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EED649255026AC0010A2CF /* FreeSpotCltCell.xib */; };
+		03EED64E255026AC0010A2CF /* FreeSpotDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EED64A255026AC0010A2CF /* FreeSpotDialog.swift */; };
+		03EED64F255026AC0010A2CF /* FreeSpotDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EED64B255026AC0010A2CF /* FreeSpotDialog.xib */; };
 		03F50388252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F50387252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift */; };
 		03F5038C252D937F00AF50A5 /* CustomFilterDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5038A252D937F00AF50A5 /* CustomFilterDialog.swift */; };
 		03F5038D252D937F00AF50A5 /* CustomFilterDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F5038B252D937F00AF50A5 /* CustomFilterDialog.xib */; };
@@ -635,6 +642,13 @@
 		03B960C625483BB000F8F214 /* MyDocumentsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDocumentsVC.xib; sourceTree = "<group>"; };
 		03B960C725483BB000F8F214 /* MyDocumentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDocumentsVC.swift; sourceTree = "<group>"; };
 		03E3F79024CF166500997A16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		03EED640254FE7920010A2CF /* ExchangeOfferDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeOfferDialog.xib; sourceTree = "<group>"; };
+		03EED641254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExchangeOfferDialog + Calender.swift"; sourceTree = "<group>"; };
+		03EED642254FE7920010A2CF /* ExchangeOfferDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeOfferDialog.swift; sourceTree = "<group>"; };
+		03EED648255026AC0010A2CF /* FreeSpotCltCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeSpotCltCell.swift; sourceTree = "<group>"; };
+		03EED649255026AC0010A2CF /* FreeSpotCltCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreeSpotCltCell.xib; sourceTree = "<group>"; };
+		03EED64A255026AC0010A2CF /* FreeSpotDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeSpotDialog.swift; sourceTree = "<group>"; };
+		03EED64B255026AC0010A2CF /* FreeSpotDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreeSpotDialog.xib; sourceTree = "<group>"; };
 		03F50387252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl + SetText + Extension.swift"; sourceTree = "<group>"; };
 		03F5038A252D937F00AF50A5 /* CustomFilterDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFilterDialog.swift; sourceTree = "<group>"; };
 		03F5038B252D937F00AF50A5 /* CustomFilterDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomFilterDialog.xib; sourceTree = "<group>"; };
@@ -1006,6 +1020,7 @@
 		034DB712254BD09100128AA1 /* AvailabilityVC */ = {
 			isa = PBXGroup;
 			children = (
+				03EED63E254FE7920010A2CF /* Dialogs */,
 				034DB71C254BEC0200128AA1 /* AvailabilityCell */,
 				034DB713254BD09100128AA1 /* AvailabilityVC.swift */,
 				034DB714254BD09100128AA1 /* xib */,
@@ -2118,6 +2133,44 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
+		03EED63E254FE7920010A2CF /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				03EED646255026AC0010A2CF /* FreeSpotDialog */,
+				03EED63F254FE7920010A2CF /* ExchangeOfferDialog */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		03EED63F254FE7920010A2CF /* ExchangeOfferDialog */ = {
+			isa = PBXGroup;
+			children = (
+				03EED640254FE7920010A2CF /* ExchangeOfferDialog.xib */,
+				03EED641254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift */,
+				03EED642254FE7920010A2CF /* ExchangeOfferDialog.swift */,
+			);
+			path = ExchangeOfferDialog;
+			sourceTree = "<group>";
+		};
+		03EED646255026AC0010A2CF /* FreeSpotDialog */ = {
+			isa = PBXGroup;
+			children = (
+				03EED647255026AC0010A2CF /* FreeSpotCltCell */,
+				03EED64A255026AC0010A2CF /* FreeSpotDialog.swift */,
+				03EED64B255026AC0010A2CF /* FreeSpotDialog.xib */,
+			);
+			path = FreeSpotDialog;
+			sourceTree = "<group>";
+		};
+		03EED647255026AC0010A2CF /* FreeSpotCltCell */ = {
+			isa = PBXGroup;
+			children = (
+				03EED648255026AC0010A2CF /* FreeSpotCltCell.swift */,
+				03EED649255026AC0010A2CF /* FreeSpotCltCell.xib */,
+			);
+			path = FreeSpotCltCell;
+			sourceTree = "<group>";
+		};
 		03F50389252D937F00AF50A5 /* CustomFilterDialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -2327,6 +2380,7 @@
 				03B960BC25483AA500F8F214 /* ManageDocumentVC.xib in Resources */,
 				03F915B625484E1800C391AB /* TherapistImages.xcassets in Resources */,
 				0366DD0D2546DA79002C2CDA /* VerificationAlert.xib in Resources */,
+				03EED64D255026AC0010A2CF /* FreeSpotCltCell.xib in Resources */,
 				0379EAB7252C4C2800303A59 /* SelectionBorderTableCell.xib in Resources */,
 				0366DD052546D85B002C2CDA /* EditProfileCell.xib in Resources */,
 				038CAFD0252604AB001ACAD6 /* PersonPickerDialog.xib in Resources */,
@@ -2371,6 +2425,7 @@
 				03521F13252B58FD0094829E /* NotificationTblCell.xib in Resources */,
 				03412294252F3AFC000BCDAE /* CustomDocumentPicker.xib in Resources */,
 				034CBE0925340C1100B20A11 /* UserDetailTblSection.xib in Resources */,
+				03EED64F255026AC0010A2CF /* FreeSpotDialog.xib in Resources */,
 				03B960C825483BB000F8F214 /* MyDocumentsVC.xib in Resources */,
 				0342137124C6B3C500ABB285 /* LaunchVC.xib in Resources */,
 				03A2CC6625309E84005E3F29 /* MyBookingExpandTblCell.xib in Resources */,
@@ -2412,6 +2467,7 @@
 				0366DD032546D85B002C2CDA /* EditProfileVC.xib in Resources */,
 				0345190924C85EBE00AF7026 /* styleable_map.json in Resources */,
 				03AE6A142535C8D100F7C629 /* ProfileVC.xib in Resources */,
+				03EED643254FE7920010A2CF /* ExchangeOfferDialog.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2508,6 +2564,7 @@
 				030DB5A425260966004C7CC8 /* CountriesWebService.swift in Sources */,
 				03643F4F254A7EC4004F9156 /* FSCalendarCell.m in Sources */,
 				030DB57725260869004C7CC8 /* DashedCircleView.swift in Sources */,
+				03EED64E255026AC0010A2CF /* FreeSpotDialog.swift in Sources */,
 				03A2CC4C2530976B005E3F29 /* MyBookingVC.swift in Sources */,
 				030DB5CF252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift in Sources */,
 				03B960A2254804F100F8F214 /* LanguageTableCell.swift in Sources */,
@@ -2579,6 +2636,7 @@
 				038CB01A2526056E001ACAD6 /* UITextField + Extension.swift in Sources */,
 				034CBE802534700D00B20A11 /* JZColumnHeaderBackground.swift in Sources */,
 				63ABC1A6246D650D00360F07 /* AppDelegate.swift in Sources */,
+				03EED64C255026AC0010A2CF /* FreeSpotCltCell.swift in Sources */,
 				03A2CC3D25303CE3005E3F29 /* MyBookingMassage.swift in Sources */,
 				034CBE872534700D00B20A11 /* JZCollectionView.swift in Sources */,
 				034CBE162534531300B20A11 /* CalendarGraphVC.swift in Sources */,
@@ -2626,11 +2684,13 @@
 				03643F94254AD109004F9156 /* MissingDaysVC + CaledarView.swift in Sources */,
 				03643F9E254AD92A004F9156 /* MyMassageTblCell.swift in Sources */,
 				03412293252F3AFC000BCDAE /* UIImage+FixOrientation.swift in Sources */,
+				03EED645254FE7920010A2CF /* ExchangeOfferDialog.swift in Sources */,
 				030DB5CE252609FB004C7CC8 /* ThemeTableCells.swift in Sources */,
 				03AE6A132535C8D100F7C629 /* ProfileVC.swift in Sources */,
 				03643FA5254AEB47004F9156 /* MassageDetailVC.swift in Sources */,
 				0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */,
 				030DB59625260966004C7CC8 /* Constant.swift in Sources */,
+				03EED644254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift in Sources */,
 				038CAFDB252604AB001ACAD6 /* CustomAlert.swift in Sources */,
 				03643F54254A7EC4004F9156 /* FSCalendarSeparatorDecorationView.m in Sources */,
 				03643F5B254A7EC4004F9156 /* FSCalendarAppearance.m in Sources */,

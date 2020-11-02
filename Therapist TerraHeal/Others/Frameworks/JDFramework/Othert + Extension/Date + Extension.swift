@@ -39,6 +39,13 @@ public extension Date {
         return Calendar.current.date(byAdding: dateComponent, to: self) ?? Date()
     }
 
+    func nextWeek() -> Date {
+        var dateComponent = DateComponents()
+        dateComponent.weekOfMonth = 1
+        return Calendar.current.date(byAdding: dateComponent, to: self) ?? Date()
+    }
+
+
     static func millisecondsOfDay(day: Int) -> Double {
         return Double(86400 * day)
     }

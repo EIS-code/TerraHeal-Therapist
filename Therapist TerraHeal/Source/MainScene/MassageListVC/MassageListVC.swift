@@ -115,7 +115,9 @@ extension MassageListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        Common.appDelegate.loadMassageDetailVC(navigaionVC: self.navigationController)
 
     }
+
     
 }

@@ -98,6 +98,9 @@
                             <state key="normal" title="this week" image="asset-arrow-down">
                                 <color key="titleColor" name="theme_dark_text"/>
                             </state>
+                            <connections>
+                                <action selector="btnSelectWeekTapped:" destination="-1" eventType="touchUpInside" id="PWz-e8-2wM"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -160,6 +163,9 @@
                             <state key="normal" title="select more">
                                 <color key="titleColor" name="theme_secondary"/>
                             </state>
+                            <connections>
+                                <action selector="btnSelectMoreTapped:" destination="-1" eventType="touchUpInside" id="eaA-Or-MLo"/>
+                            </connections>
                         </button>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Pu-Tt-hUt">
                             <rect key="frame" x="16" y="70" width="343" height="394"/>

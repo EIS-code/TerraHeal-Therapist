@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="451" height="119"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="10" width="265.5" height="81.5"/>
+                                <rect key="frame" x="0.0" y="10" width="365.5" height="81.5"/>
                                 <string key="text">Account Created
 loadTherapistKycInfoVC
 Account Created
@@ -32,45 +32,21 @@ loadTherapistKycInfoVC</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1110 min" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wDT-im-YtE" userLabel="lblDuration" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                <rect key="frame" x="275.5" y="40.5" width="65.5" height="20.5"/>
+                                <rect key="frame" x="375.5" y="40.5" width="65.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_hint_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qk-ol-3WO" userLabel="btnEdit">
-                                <rect key="frame" x="351" y="37" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="4Qk-ol-3WO" secondAttribute="height" multiplier="1:1" id="Q8T-KX-Jj2"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="asset-edit"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16n-Jf-gqR">
-                                <rect key="frame" x="406" y="37" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="16n-Jf-gqR" secondAttribute="height" multiplier="1:1" id="cq3-xb-VYd"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="asset-delete"/>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" name="theme_background"/>
                         <constraints>
-                            <constraint firstItem="4Qk-ol-3WO" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="8sU-EJ-nSW"/>
+                            <constraint firstAttribute="trailing" secondItem="wDT-im-YtE" secondAttribute="trailing" constant="10" id="BDW-nr-d9H"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" id="BDk-lU-4uV"/>
-                            <constraint firstItem="16n-Jf-gqR" firstAttribute="width" secondItem="fTr-D4-KiU" secondAttribute="width" multiplier="0.1" id="CLZ-Bf-9WL"/>
-                            <constraint firstItem="wDT-im-YtE" firstAttribute="trailing" secondItem="4Qk-ol-3WO" secondAttribute="leading" constant="-10" id="KNw-zM-0aH"/>
-                            <constraint firstItem="4Qk-ol-3WO" firstAttribute="width" secondItem="16n-Jf-gqR" secondAttribute="width" id="b9m-kA-96Z"/>
                             <constraint firstItem="wDT-im-YtE" firstAttribute="centerY" secondItem="zbl-J2-KSJ" secondAttribute="centerY" id="dAV-PK-Bcl"/>
-                            <constraint firstItem="16n-Jf-gqR" firstAttribute="leading" secondItem="4Qk-ol-3WO" secondAttribute="trailing" constant="10" id="jaB-jM-OoO"/>
-                            <constraint firstItem="16n-Jf-gqR" firstAttribute="centerY" secondItem="fTr-D4-KiU" secondAttribute="centerY" id="nGs-2M-MeS"/>
-                            <constraint firstAttribute="trailing" secondItem="16n-Jf-gqR" secondAttribute="trailing" id="pcG-Pg-jJD"/>
                             <constraint firstItem="wDT-im-YtE" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="10" id="yqT-uu-1BQ"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="10" id="zaC-hb-cUq"/>
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="theme_background"/>
                 <constraints>
                     <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2jg-EE-YxG"/>
                     <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" id="AWN-UN-JV4"/>
@@ -78,11 +54,8 @@ loadTherapistKycInfoVC</string>
                     <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" id="uHV-Oa-H3d"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" name="theme_background"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnDelete" destination="16n-Jf-gqR" id="pIv-FC-SFN"/>
-                <outlet property="btnEdit" destination="4Qk-ol-3WO" id="M1l-YJ-o5s"/>
                 <outlet property="lblDuration" destination="wDT-im-YtE" id="9Oj-FE-G4f"/>
                 <outlet property="lblName" destination="zbl-J2-KSJ" id="1rK-CQ-0FK"/>
             </connections>
@@ -90,11 +63,6 @@ loadTherapistKycInfoVC</string>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="asset-delete" width="24" height="24"/>
-        <image name="asset-edit" width="18" height="18"/>
-        <namedColor name="theme_background">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="theme_hint_text">
             <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

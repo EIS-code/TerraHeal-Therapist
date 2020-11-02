@@ -59,7 +59,6 @@ extension AvailabilityVC:  UICollectionViewDelegate, UICollectionViewDataSource,
         cell.setData(data: self.arrForData[indexPath.row])
         print((collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing)
         print((collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumLineSpacing)
-        cell.backgroundColor = .yellow
         return cell
     }
 

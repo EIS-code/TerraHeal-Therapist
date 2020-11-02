@@ -97,6 +97,7 @@ extension MassageDetailVC :  UITableViewDelegate,UITableViewDataSource {
     func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 40
         tableView.sectionHeaderHeight = UITableView.automaticDimension
@@ -119,7 +120,7 @@ extension MassageDetailVC :  UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: MassageDetailTblCell.name, for: indexPath) as?  MassageDetailTblCell
-
+        cell?.setData(data: MassageCellDetail.init(title: "ABC", subTitle: "abc"))
         return cell!
     }
 

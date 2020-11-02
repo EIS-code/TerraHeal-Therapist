@@ -25,8 +25,6 @@ class MassageDetailTblCell: TableCell {
     
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var lblDuration: ThemeLabel!
-    @IBOutlet weak var btnDelete: UIButton!
-    @IBOutlet weak var btnEdit: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblName.setFont(name: FontName.Regular, size: FontSize.detail)

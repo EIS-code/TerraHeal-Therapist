@@ -8,7 +8,7 @@ class MyBookingUserPeople{
     var gender: String = ""
     var id: String = ""
     var name: String = ""
-    var bookingMassages: [MyBookingMassage] = []
+    var bookingMassages: [MyBookingMassage] = [MyBookingMassage.init(),MyBookingMassage.init(),MyBookingMassage.init()]
 
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
