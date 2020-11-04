@@ -19,43 +19,42 @@ extension CustomFilterDialog: FSCalendarDataSource, FSCalendarDelegate {
 
     }
 
-func setupCalendarView(calendar: FSCalendar) {
-    calendar.delegate = self
-    calendar.dataSource = self
-    calendar.allowsMultipleSelection = false
-    calendar.appearance.todaySelectionColor = UIColor.themePrimary
-    calendar.appearance.todayColor = UIColor.darkGray
-    calendar.appearance.selectionColor =  UIColor.themePrimary
-    calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
+    func setupCalendarView(calendar: FSCalendar) {
+        calendar.delegate = self
+        calendar.dataSource = self
+        calendar.allowsMultipleSelection = false
+        calendar.appearance.todaySelectionColor = UIColor.themePrimary
+        calendar.appearance.todayColor = UIColor.themePrimary
+        calendar.appearance.selectionColor =  UIColor.themePrimary
+        calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
+        calendar.headerHeight = 0.0
+        calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.detail))
+        calendar.appearance.weekdayTextColor = UIColor.themeHintText
+        calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
+        calendar.appearance.headerTitleColor = UIColor.themeDarkText
+        calendar.appearance.subtitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
+        self.lblMonthYear.setFont(name: FontName.Regular, size: FontSize.subHeader)
+        self.lblMonthYear.setText(Date().toString(format: "MMM yyyy"))
+    }
 
-    calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.detail))
-    calendar.appearance.weekdayTextColor = UIColor.themeHintText
-    calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
-    calendar.appearance.headerTitleColor = UIColor.themeDarkText
-    calendar.appearance.subtitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
-}
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        let currentMonth: String = calendar.currentPage.toString(format: "MMM yyyy")
+        self.lblMonthYear.setTextWithAnimation(text:currentMonth )
 
-func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-}
+    }
 
-func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.selectDate(date: date)
         if monthPosition == .previous || monthPosition == .next {
             calendar.setCurrentPage(date, animated: true)
         }
-    self.selectedValue =  date.toString(format: DateFormat.BookingDateSelection)
-}
-func minimumDate(for calendar: FSCalendar) -> Date {
-    return minDate
-}
+        self.selectedValue =  date.toString(format: DateFormat.BookingDateSelection)
+    }
 
-func maximumDate(for calendar: FSCalendar) -> Date {
-    return maxDate
-}
 
-func selectDate(date:Date) {
-    self.vwCalendar.select(date)
-    self.selectedMilli = date.millisecondsSince1970
-}
+    func selectDate(date:Date) {
+        self.vwCalendar.select(date)
+        self.selectedMilli = date.millisecondsSince1970
+    }
 
 }

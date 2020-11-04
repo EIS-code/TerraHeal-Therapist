@@ -23,12 +23,27 @@ enum AvailabilityOptions: Int {
             return "AVAILABILITY_OPTION_ABSENT".localized()
         case .ExchangeWithOthers:
             return "AVAILABILITY_OPTION_EXCHANGE".localized()
-        default:
-            return "UNKNOWN".localized()
+        /*default:
+            return "UNKNOWN".localized()*/
         }
     }
 
+    func getID() -> String {
+           return self.rawValue.toString()
+    }
 
+    static func getAvailabilityOption(id:String) -> AvailabilityOptions {
+        switch id.toInt {
+        case 1:
+            return .FreeSpot
+        case 2:
+            return .Absent
+        case 3:
+            return .ExchangeWithOthers
+        default:
+            return .FreeSpot
+        }
+    }
 
 
 
@@ -111,9 +126,24 @@ class AvailabilityVC: BaseVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
+
+           // self.setupCollectionFlowLayout(collectionView: self.cltForAvailability)
         }
     }
-
+    func setupCollectionFlowLayout(collectionView: UICollectionView) {
+        let width = JDDeviceHelper.offseter(offset: collectionView.bounds.width/3.0)
+        let heightRatio =  JDDeviceHelper.offseter(offset: 3.66)
+        let size: CGSize = CGSize.init(width: width, height: width/heightRatio)
+        self.hCltVw.constant = size.height * 8.0
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = size
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView.reloadData()
+        collectionView.collectionViewLayout = layout
+    }
     private func initialViewSetup() {
 
         self.setBackground(color: UIColor.themeLightBackground)
@@ -146,17 +176,16 @@ class AvailabilityVC: BaseVC {
     }
 
     @IBAction func btnPreviousTapped(_ sender: Any) {
-           let currentPage = self.vwCalendar.currentPage.previousMonth()
-           self.vwCalendar.setCurrentPage(currentPage, animated: true)
+        let currentPage = self.vwCalendar.currentPage.previousMonth()
+        self.vwCalendar.setCurrentPage(currentPage, animated: true)
     }
 
     @IBAction func btnNextTapped(_ sender: Any) {
-           let currentPage = self.vwCalendar.currentPage.nextMonth()
-           self.vwCalendar.setCurrentPage(currentPage, animated: true)
+        let currentPage = self.vwCalendar.currentPage.nextMonth()
+        self.vwCalendar.setCurrentPage(currentPage, animated: true)
     }
     @IBAction func btnSelectMoreTapped(_ sender: Any) {
-        self.openFreeSpotDialog()
-        //self.openSelectOptionForAvailability()
+        self.openSelectOptionForAvailability()
     }
 
 }
@@ -235,7 +264,14 @@ extension AvailabilityVC {
             [weak addNewDialog, weak self] (selectionData) in
             guard let self = self else {return}; print(self)
             addNewDialog?.dismiss();
-            self.openExchangeOfferDialog()
+            switch AvailabilityOptions.getAvailabilityOption(id: selectionData.id) {
+            case .FreeSpot:
+                self.openFreeSpotDialog()
+            case .Absent:
+                self.openTextViewPicker()
+            default:
+                self.openExchangeOfferDialog()
+            }
             self.btnSelectMore.isEnabled = true
         }
     }

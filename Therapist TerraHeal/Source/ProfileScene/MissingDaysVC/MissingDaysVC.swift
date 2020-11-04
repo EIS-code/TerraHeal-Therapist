@@ -122,7 +122,8 @@ extension MissingDaysVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: WorkingScheduleTblCell.name, for: indexPath) as?  WorkingScheduleTblCell
-        cell?.lblDetails.setText(Date.init(milliseconds: arrForWorkingDays[indexPath.row]).toString(format: "ddd-MMM-yyyy"))
+        cell?.lblDetails.setText(Date.init(milliseconds: arrForWorkingDays[indexPath.row]).convertDateFormate())
+        cell?.lblDetails.textColor = UIColor.notAvailableColor
         return cell!
         
     }
@@ -133,8 +134,7 @@ extension MissingDaysVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: WorkingScheduleTblSection.name) as? WorkingScheduleTblSection {
-            view.lblTitle.textColor = UIColor.init(hex: "#33B199")
-
+            view.lblTitle.textColor = UIColor.notAvailableColor
             view.lblTitle.setText(arrForWorkingDays.count.toString() + " " + "MISSING_DAYS".localized())
             return view
         }

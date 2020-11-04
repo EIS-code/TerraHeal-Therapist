@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DCA3F71A-C818-477C-9E09-974291BED238"
+            uuid = "6C3ECDB9-4790-4515-8C98-05B04577847B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Therapist TerraHeal/Source/MainScene/MassageListVC/MassageDetailVC/MassageDetailVC.swift"
+            filePath = "Therapist TerraHeal/Source/MainScene/MainVC/MainVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "revealControllerTapGestureShouldBegin(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

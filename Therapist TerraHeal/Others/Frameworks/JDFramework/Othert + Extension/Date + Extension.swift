@@ -83,4 +83,28 @@ public extension Date {
         default: return "th"
         }
     }
+
+    func convertDateFormate() -> String{
+        // Day
+        let calendar = Calendar.current
+        let anchorComponents = calendar.dateComponents([.day, .month, .year], from: self)
+
+        // Formate
+        let dateFormate = DateFormatter()
+        dateFormate.dateFormat = "MMMM yyyy"
+        let newDate = dateFormate.string(from: self)
+
+        var day  = "\(anchorComponents.day!)"
+        switch (day) {
+        case "1" , "21" , "31":
+            day.append("st")
+        case "2" , "22":
+            day.append("nd")
+        case "3" ,"23":
+            day.append("rd")
+        default:
+            day.append("th")
+        }
+        return day + " " + newDate
+    }
 }

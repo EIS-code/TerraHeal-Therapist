@@ -7,7 +7,7 @@ import UIKit
 
 
 
-class MainVC: BaseVC {
+class MainVC: BaseVC, PBRevealViewControllerDelegate {
     
     @IBOutlet weak var btnProfile: FloatingRoundButton!
     @IBOutlet weak var btnMenu: FloatingRoundButton!
@@ -73,8 +73,17 @@ class MainVC: BaseVC {
         self.add(homeVC!, view:self.bookingView)
         vwFloatingBottom.allowChangeThumbWidth = false
         vwFloatingBottom.itemTitles = ["HOME_BTN_CALENDER".localized(),"HOME_BTN_BOOKING".localized(),"HOME_BTN_NEWS".localized()]
-        vwFloatingBottom.itemImages =  [UIImage.init(named: "asset-home-tab-news")!, UIImage.init(named: "asset-home-tab-news")!, UIImage.init(named: "asset-home-tab-news")!]
-        vwFloatingBottom.itemSelectedImages = [UIImage.init(named: "asset-home-tab-news-selected")!, UIImage.init(named: "asset-home-tab-news-selected")!,UIImage.init(named: "asset-home-tab-news-selected")!]
+
+        self.revealViewController()?.delegate = homeVC
+        vwFloatingBottom.itemImages =  [
+            ImageAsset.getImage(ImageAsset.BottomMenu.calender)!,
+            ImageAsset.getImage(ImageAsset.BottomMenu.booking)!,
+            ImageAsset.getImage(ImageAsset.BottomMenu.news)!]
+        vwFloatingBottom.itemSelectedImages = [
+        ImageAsset.getImage(ImageAsset.BottomMenu.Selected.calender)!,
+        ImageAsset.getImage(ImageAsset.BottomMenu.Selected.booking)!,
+        ImageAsset.getImage(ImageAsset.BottomMenu.Selected.news)!]
+
         vwFloatingBottom.changeThumbColor(UIColor.themeSecondary)
         vwFloatingBottom.changeBackgroundColor(UIColor.themeLightTextColor)
         vwFloatingBottom.didSelectItemWith = { [weak self] (index,title) in
@@ -126,6 +135,9 @@ class MainVC: BaseVC {
         self.calendarView.visible()
         self.newsVC?.removeFromParent()
         self.homeVC?.removeFromParent()
+    }
+    func revealControllerTapGestureShouldBegin(_ revealController: PBRevealViewController) -> Bool {
+        return false
     }
 }
 

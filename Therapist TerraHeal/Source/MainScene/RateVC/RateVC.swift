@@ -75,6 +75,9 @@ class RateVC: BaseVC {
         super.btnLeftTapped()
         self.popVC()
     }
+    @IBAction func btnCancelTapped(_ sender: Any) {
+        self.popVC()
+    }
 
     @IBAction func btnSubmitTapped(_ sender: Any) {
         Common.appDelegate.loadMainVC()

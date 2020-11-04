@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCardVC" customModule="Terra_Heal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnAddCard" destination="Rvk-lS-msT" id="bs9-BV-8tD"/>
+                <outlet property="btnCheckBox" destination="VHu-bC-x3D" id="kr7-Hw-CRh"/>
+                <outlet property="btnLeft" destination="3SF-7Z-2TP" id="mtL-8W-BdH"/>
+                <outlet property="footerGradient" destination="mi4-D7-vhf" id="0YV-1E-Zn6"/>
+                <outlet property="headerGradient" destination="YtI-tc-6lz" id="VKW-J7-nd6"/>
+                <outlet property="lblAccept" destination="iEj-mm-tga" id="n85-4C-AL4"/>
+                <outlet property="lblSaveDetailMsg" destination="YY9-pR-ePc" id="Ntg-Az-IBj"/>
+                <outlet property="lblTitle" destination="1tb-db-H1r" id="373-Hd-Rxf"/>
+                <outlet property="lblTitleMessage" destination="j8d-Xr-oPG" id="Nti-Ve-pX0"/>
+                <outlet property="mainScrollView" destination="xeM-9R-86B" id="J7C-as-ACl"/>
+                <outlet property="txtCardName" destination="EnU-5E-Jr6" id="Klv-XX-HDH"/>
+                <outlet property="txtCardNumber" destination="rMz-88-9Ib" id="Zqg-Wq-O4m"/>
+                <outlet property="txtCvv" destination="Okc-Yb-j3m" id="cuO-AN-LZw"/>
+                <outlet property="txtExpiryDate" destination="IJS-5M-Hel" id="smU-3B-7oy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="817"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeM-9R-86B" userLabel="scrVw">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="817"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQc-C6-2jQ" userLabel="vwContent">
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="381.5"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jLy-nt-QGy">
+                                    <rect key="frame" x="20" y="20" width="300" height="341.5"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EnU-5E-Jr6" userLabel="card holder name" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="EnU-5E-Jr6" secondAttribute="height" multiplier="30:5" id="Bng-dh-A2J"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="cc-number"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rMz-88-9Ib" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="70" width="300" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="rMz-88-9Ib" secondAttribute="height" multiplier="30:5" id="D36-Lz-2CX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="cc-number"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xRo-9q-zdB">
+                                            <rect key="frame" x="0.0" y="140" width="300" height="50"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EXPIRY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJS-5M-Hel" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="cc-number"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Okc-Yb-j3m" userLabel="cvv" customClass="ACFloatingTextfield" customModule="Terra_Heal" customModuleProvider="target">
+                                                    <rect key="frame" x="160" y="0.0" width="140" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="cc-number"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="xRo-9q-zdB" secondAttribute="height" multiplier="30:5" id="Xpz-za-CQa"/>
+                                            </constraints>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4V-YV-bqv" userLabel="vwTerms&amp;Condition">
+                                            <rect key="frame" x="0.0" y="210" width="300" height="50"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IBg-aa-Rok">
+                                                    <rect key="frame" x="0.0" y="8" width="300" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHu-bC-x3D" customClass="JDCheckboxButton" customModule="Terra_Heal" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="VHu-bC-x3D" secondAttribute="height" multiplier="15:15" id="7Pw-HZ-edE"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <action selector="btnCheckBoxTapped:" destination="-1" eventType="touchUpInside" id="JhC-rw-G6P"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="accept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEj-mm-tga" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                                            <rect key="frame" x="44" y="0.0" width="256" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" name="theme_dark_text"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="IBg-aa-Rok" firstAttribute="centerX" secondItem="X4V-YV-bqv" secondAttribute="centerX" id="9wT-f8-Hlr"/>
+                                                <constraint firstItem="IBg-aa-Rok" firstAttribute="centerY" secondItem="X4V-YV-bqv" secondAttribute="centerY" id="Hfx-Pi-Slf"/>
+                                                <constraint firstItem="IBg-aa-Rok" firstAttribute="leading" secondItem="X4V-YV-bqv" secondAttribute="leading" id="ShK-YZ-Ihy"/>
+                                                <constraint firstAttribute="height" constant="50" id="hie-at-Oy6"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YY9-pR-ePc" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="280" width="300" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="theme_dark_text"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-card-list" translatesAutoresizingMaskIntoConstraints="NO" id="q4a-Vd-gAf">
+                                            <rect key="frame" x="0.0" y="320.5" width="300" height="21"/>
+                                        </imageView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="jLy-nt-QGy" firstAttribute="leading" secondItem="eQc-C6-2jQ" secondAttribute="leading" constant="20" id="59M-dI-ho4"/>
+                                <constraint firstItem="jLy-nt-QGy" firstAttribute="top" secondItem="eQc-C6-2jQ" secondAttribute="top" constant="20" id="CYO-Bc-Mi3"/>
+                                <constraint firstAttribute="bottom" secondItem="jLy-nt-QGy" secondAttribute="bottom" constant="20" id="GTY-SK-XgE"/>
+                                <constraint firstAttribute="trailing" secondItem="jLy-nt-QGy" secondAttribute="trailing" constant="20" id="i1R-DL-6hG"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="joq-tM-28l"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="eQc-C6-2jQ" firstAttribute="width" secondItem="xeM-9R-86B" secondAttribute="width" id="2CH-dC-RGN"/>
+                        <constraint firstItem="eQc-C6-2jQ" firstAttribute="leading" secondItem="xeM-9R-86B" secondAttribute="leading" id="8oE-OS-Sue"/>
+                        <constraint firstItem="eQc-C6-2jQ" firstAttribute="top" secondItem="xeM-9R-86B" secondAttribute="top" id="MbK-Mr-uR3"/>
+                        <constraint firstAttribute="bottom" secondItem="eQc-C6-2jQ" secondAttribute="bottom" id="i1O-NO-UKf"/>
+                        <constraint firstAttribute="trailing" secondItem="eQc-C6-2jQ" secondAttribute="trailing" id="zQx-ud-aiC"/>
+                    </constraints>
+                </scrollView>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0P-Ek-R05" userLabel="GradientView">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="817"/>
+                    <subviews>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtI-tc-6lz" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="110.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mi4-D7-vhf" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="762.5" width="340" height="54.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="mi4-D7-vhf" firstAttribute="centerX" secondItem="K0P-Ek-R05" secondAttribute="centerX" id="12w-p0-jjr"/>
+                        <constraint firstItem="YtI-tc-6lz" firstAttribute="top" secondItem="K0P-Ek-R05" secondAttribute="top" id="Aq9-oP-TNT"/>
+                        <constraint firstItem="mi4-D7-vhf" firstAttribute="width" secondItem="K0P-Ek-R05" secondAttribute="width" id="Zb8-uR-jS7"/>
+                        <constraint firstItem="YtI-tc-6lz" firstAttribute="centerX" secondItem="K0P-Ek-R05" secondAttribute="centerX" id="a6z-g0-Qze"/>
+                        <constraint firstAttribute="bottom" secondItem="mi4-D7-vhf" secondAttribute="bottom" id="d1B-ZB-1eT"/>
+                        <constraint firstItem="mi4-D7-vhf" firstAttribute="height" secondItem="YtI-tc-6lz" secondAttribute="height" priority="250" id="phO-9b-Saa"/>
+                        <constraint firstItem="YtI-tc-6lz" firstAttribute="width" secondItem="K0P-Ek-R05" secondAttribute="width" id="zyq-eA-XWE"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewm-RK-wjj" userLabel="footerView">
+                    <rect key="frame" x="0.0" y="762.5" width="340" height="54.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvk-lS-msT" customClass="FilledRoundedButton" customModule="Terra_Heal" customModuleProvider="target">
+                            <rect key="frame" x="88.5" y="6.5" width="163" height="42"/>
+                            <color key="backgroundColor" name="theme_primary_light"/>
+                            <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
+                            <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            <state key="normal" title="Book Now"/>
+                            <connections>
+                                <action selector="btnAddCardTapped:" destination="-1" eventType="touchUpInside" id="ONa-7M-rfa"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Rvk-lS-msT" firstAttribute="centerX" secondItem="ewm-RK-wjj" secondAttribute="centerX" id="0OH-c6-ZYt"/>
+                        <constraint firstItem="Rvk-lS-msT" firstAttribute="centerY" secondItem="ewm-RK-wjj" secondAttribute="centerY" id="DJy-JD-zhw"/>
+                        <constraint firstAttribute="width" secondItem="ewm-RK-wjj" secondAttribute="height" multiplier="375:60" id="F49-oB-pgj"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tb-db-H1r" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="149" y="64.5" width="42" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_dark_text"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8d-Xr-oPG" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="149" y="90" width="42" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_hint_text"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SF-7Z-2TP" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
+                    <rect key="frame" x="16" y="16" width="117" height="117"/>
+                    <color key="backgroundColor" name="theme_primary_light"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="3SF-7Z-2TP" secondAttribute="height" multiplier="1:1" id="BQT-Xt-ELb"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <connections>
+                        <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="QKd-ig-G7N"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" name="theme_background"/>
+            <constraints>
+                <constraint firstItem="j8d-Xr-oPG" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0g6-U2-qvE"/>
+                <constraint firstItem="ewm-RK-wjj" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0ra-jb-gZY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xeM-9R-86B" secondAttribute="trailing" id="5BE-nv-hV9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xeM-9R-86B" secondAttribute="bottom" id="6kw-NM-BeQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ewm-RK-wjj" secondAttribute="bottom" id="AlV-Ti-dul"/>
+                <constraint firstItem="ewm-RK-wjj" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="Aum-3F-brz"/>
+                <constraint firstItem="1tb-db-H1r" firstAttribute="leading" secondItem="3SF-7Z-2TP" secondAttribute="trailing" constant="16" id="KlP-IC-XUy" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target"/>
+                <constraint firstItem="K0P-Ek-R05" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LvZ-kI-3wy"/>
+                <constraint firstItem="j8d-Xr-oPG" firstAttribute="top" secondItem="1tb-db-H1r" secondAttribute="bottom" constant="5" id="PLk-Zg-Fjq" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="1tb-db-H1r" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Rq6-9w-2QR"/>
+                <constraint firstItem="xeM-9R-86B" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YX6-mq-Cdv"/>
+                <constraint firstItem="3SF-7Z-2TP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="d89-G6-Zgu" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="xeM-9R-86B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dTB-Cw-ZXo"/>
+                <constraint firstAttribute="trailing" secondItem="K0P-Ek-R05" secondAttribute="trailing" id="eGG-7z-x95"/>
+                <constraint firstItem="3SF-7Z-2TP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="erj-WB-AAn" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="K0P-Ek-R05" secondAttribute="bottom" id="kUV-ia-FpJ"/>
+                <constraint firstItem="j8d-Xr-oPG" firstAttribute="leading" secondItem="1tb-db-H1r" secondAttribute="leading" id="pw0-rI-EPI"/>
+                <constraint firstItem="K0P-Ek-R05" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qfd-4x-42V"/>
+                <constraint firstItem="mi4-D7-vhf" firstAttribute="top" secondItem="ewm-RK-wjj" secondAttribute="top" id="reR-GD-gYa"/>
+                <constraint firstItem="YtI-tc-6lz" firstAttribute="bottom" secondItem="j8d-Xr-oPG" secondAttribute="bottom" id="vy0-3k-DBY"/>
+                <constraint firstItem="1tb-db-H1r" firstAttribute="centerY" secondItem="3SF-7Z-2TP" secondAttribute="centerY" id="w3j-AY-Wt4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="129.375" y="153.16901408450704"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="asset-card-list" width="343" height="21"/>
+        <namedColor name="theme_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_dark_text">
+            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_hint_text">
+            <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light">
+            <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

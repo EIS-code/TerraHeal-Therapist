@@ -1988,8 +1988,8 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
         }
         if recognizer == self.panGestureRecognizer {
             let velocity: CGFloat = (self.panGestureRecognizer?.velocity(in: self.contentView).x)!
-            if (delegate?.revealControllerPanGestureShouldBegin?(self, direction: velocity > 0.0 ? .right : .left)) == false {
-                return false
+            if (delegate?.revealControllerPanGestureShouldBegin?(self, direction: velocity > 0.0 ? .right : .left)) == true {
+                return true
             }
 
              if (isLeftViewOpen || isRightViewOpen) {
@@ -2005,7 +2005,7 @@ open class PBRevealViewController: UIViewController, UIGestureRecognizerDelegate
                 return false
             }
         }
-        return true
+        return false
     }
 
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {

@@ -57,9 +57,9 @@ class CameraVC: BaseVC {
         
     }
     func showHint(data:CameraMessageInfo) {
-        self.lblMsg.text = data.cameraMsg
-        self.imgHint.image = UIImage.init(named: data.hintImage)
-        self.vwHintLayer.isHidden = false
+        self.lblMsg?.text = data.cameraMsg
+        self.imgHint?.image = UIImage.init(named: data.hintImage)
+        self.vwHintLayer?.isHidden = false
     }
     func configureCameraController() {
                cameraController.prepare {(error) in

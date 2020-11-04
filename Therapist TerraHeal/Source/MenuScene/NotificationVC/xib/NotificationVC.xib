@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationVC" customModule="Terra_Heal" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <connections>
                 <outlet property="btnLeft" destination="dk0-AN-Hja" id="S4e-7L-yPg"/>
                 <outlet property="footerGradient" destination="4fO-Yl-jxO" id="RP2-Xj-Fus"/>
@@ -35,14 +35,14 @@
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLh-Uh-8On" userLabel="GradientView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                     <subviews>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QE-7k-Sht" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QE-7k-Sht" userLabel="TopGradient" customClass="ThemeTopGradientView" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="210.66666666666666"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="enableGradient" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fO-Yl-jxO" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Terra_Heal" customModuleProvider="target">
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fO-Yl-jxO" userLabel="BottomGradient" customClass="ThemeBottomGradientView" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="601.33333333333337" width="375" height="210.66666666666663"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
@@ -70,13 +70,13 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-no-notification" translatesAutoresizingMaskIntoConstraints="NO" id="ZeW-vF-o7f">
                                     <rect key="frame" x="0.0" y="0.0" width="281" height="227.33333333333334"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZB-hr-N1V" userLabel="lblTitle" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZB-hr-N1V" userLabel="lblTitle" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="247.33333333333334" width="281" height="20.333333333333343"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_dark_text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4I-An-Hdf" userLabel="lblMessage" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4I-An-Hdf" userLabel="lblMessage" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="287.66666666666663" width="281" height="20.333333333333314"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_hint_text"/>
@@ -92,11 +92,11 @@
                         <constraint firstItem="DVw-2W-ScE" firstAttribute="centerY" secondItem="G8W-EW-5fP" secondAttribute="centerY" id="svM-Xj-d1V"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxD-Gh-cJz" userLabel="vwNavigationBar" customClass="ThemeView" customModule="Terra_Heal" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxD-Gh-cJz" userLabel="vwNavigationBar" customClass="ThemeView" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="210.66666666666666"/>
                     <color key="backgroundColor" name="theme_background"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="BackButton" customModule="Terra_Heal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" customClass="BackButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="20.000000000000007" y="64" width="126.66666666666669" height="126.66666666666669"/>
                     <color key="backgroundColor" name="theme_primary_light"/>
                     <constraints>
@@ -107,7 +107,7 @@
                         <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="a2r-zG-Spv"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="166.66666666666666" y="117.33333333333333" width="41.666666666666657" height="20.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_primary"/>
@@ -146,16 +146,16 @@
     <resources>
         <image name="asset-no-notification" width="296.33334350585938" height="227.33332824707031"/>
         <namedColor name="theme_background">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_dark_text">
-            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_hint_text">
             <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_light_background">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -164,7 +164,7 @@
             <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary_light_background">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

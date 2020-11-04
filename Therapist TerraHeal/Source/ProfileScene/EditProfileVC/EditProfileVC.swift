@@ -134,7 +134,7 @@ extension EditProfileVC {
             photoPickerAlert?.dismiss()
             guard let self = self else { return } ; print(self)
         }
-        photoPickerAlert.onBtnInfoTapped = { [weak photoPickerAlert, weak self] in
+        photoPickerAlert.onBtnInfoTapped = { [/*weak photoPickerAlert,*/ weak self] in
             guard let self = self else { return } ; print(self)
             self.openProfilePicInfoDialog()
 

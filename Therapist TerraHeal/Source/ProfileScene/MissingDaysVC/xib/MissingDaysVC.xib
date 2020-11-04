@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
-                    <rect key="frame" x="0.0" y="416" width="375" height="362"/>
+                    <rect key="frame" x="16" y="416" width="343" height="362"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZU-Kq-BaI" customClass="FSCalendar">
@@ -139,7 +139,14 @@
                 <constraint firstItem="cwf-M0-SgY" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="6oP-kv-Jg6"/>
                 <constraint firstItem="qZU-Kq-BaI" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="8kF-XU-LSd"/>
                 <constraint firstItem="IBA-2V-gGf" firstAttribute="top" secondItem="qZU-Kq-BaI" secondAttribute="top" id="8sC-Ns-gRe"/>
-                <constraint firstItem="aVT-f3-Mwd" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="FOw-Mx-kMa"/>
+                <constraint firstItem="aVT-f3-Mwd" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="FOw-Mx-kMa" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="cwf-M0-SgY" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="KFc-mA-vCp"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="RPA-It-i75"/>
                 <constraint firstItem="2Yt-7w-NnC" firstAttribute="leading" secondItem="qZU-Kq-BaI" secondAttribute="leading" id="Skk-BR-mOB"/>

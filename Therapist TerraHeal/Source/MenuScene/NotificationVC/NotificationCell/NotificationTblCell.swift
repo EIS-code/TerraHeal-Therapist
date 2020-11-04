@@ -12,7 +12,7 @@ import UIKit
 class NotificationTblCell: TableCell {
 
     @IBOutlet weak var lblMessage: ThemeLabel!
-    @IBOutlet weak var vwBg: UIView!
+    @IBOutlet weak var vwCellBg: UIView!
     @IBOutlet weak var imgSelected: UIImageView!
     @IBOutlet weak var ivIcon: UIImageView!
     @IBOutlet weak var lblDate: ThemeLabel!
@@ -21,7 +21,7 @@ class NotificationTblCell: TableCell {
         super.awakeFromNib()
         self.lblMessage?.setFont(name: FontName.Bold, size: FontSize.subHeader)
         self.lblDate?.setFont(name: FontName.Bold, size: FontSize.detail)
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
+        self.vwCellBg?.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 15.0), borderWidth: 1.0)
     
     }
 

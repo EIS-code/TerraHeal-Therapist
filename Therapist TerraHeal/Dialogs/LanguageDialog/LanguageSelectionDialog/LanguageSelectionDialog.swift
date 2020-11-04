@@ -100,6 +100,7 @@ class LanguageSelectionDialog: ThemeBottomDialogView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: searchVw.bounds.height/2.0, borderWidth: 1.0)
         self.reloadTableDataToFitHeight(tableView: self.tableView)
     }
 

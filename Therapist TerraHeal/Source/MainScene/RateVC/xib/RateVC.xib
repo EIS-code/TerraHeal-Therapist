@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
-                    <rect key="frame" x="16" y="118" width="343" height="660"/>
+                    <rect key="frame" x="16" y="118" width="343" height="584"/>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5S5-SL-NCr" userLabel="Stack View - Button">
@@ -44,6 +44,9 @@
                             <state key="normal" title="Rate">
                                 <color key="titleColor" name="theme_light_text_color"/>
                             </state>
+                            <connections>
+                                <action selector="btnSubmitTapped:" destination="-1" eventType="touchUpInside" id="snZ-aR-RvN"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haO-KT-sqV" customClass="RoundedBorderButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                             <rect key="frame" x="181.66666666666663" y="0.0" width="161.33333333333337" height="60"/>
@@ -52,6 +55,9 @@
                             <state key="normal" title="Cancel">
                                 <color key="titleColor" name="theme_secondary"/>
                             </state>
+                            <connections>
+                                <action selector="btnCancelTapped:" destination="-1" eventType="touchUpInside" id="BXs-3i-prg"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
@@ -108,6 +114,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
+                <constraint firstItem="5S5-SL-NCr" firstAttribute="top" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="QHG-Sr-5ko"/>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="centerY" secondItem="dk0-AN-Hja" secondAttribute="centerY" id="Qb0-xD-7vO"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="aVT-f3-Mwd" secondAttribute="trailing" constant="16" id="jaq-Pv-ANN" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
@@ -116,7 +123,6 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="xL1-kH-6pc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>

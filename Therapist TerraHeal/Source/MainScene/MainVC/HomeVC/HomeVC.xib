@@ -85,7 +85,7 @@
                         <constraint firstAttribute="width" secondItem="e84-Fg-VKG" secondAttribute="height" multiplier="1:1" id="gaK-Hz-KZc"/>
                     </constraints>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                    <state key="normal" image="asset-filter"/>
+                    <state key="normal" image="asset-filter-main"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="YES"/>
                     </userDefinedRuntimeAttributes>
@@ -129,7 +129,7 @@
         </view>
     </objects>
     <resources>
-        <image name="asset-filter" width="27" height="23.333333969116211"/>
+        <image name="asset-filter-main" width="33.666667938232422" height="27"/>
         <image name="asset-filter-small" width="18" height="16.333333969116211"/>
         <namedColor name="theme_background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

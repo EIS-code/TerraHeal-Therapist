@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import Foundation
 
 class DefaultViewModel: NSObject {
 
 
-    private let firstDate = "14-10-2020 01:00".toDate(format: "dd-MM-yyyy HH:mm")//Date().add(component: .hour, value: 1)
-    private let secondDate = "14-10-2020 02:00".toDate(format: "dd-MM-yyyy HH:mm")//Date().add(component: .day, value: 1)
-    private let thirdDate = "14-10-2020 03:00".toDate(format: "dd-MM-yyyy HH:mm") //Date().add(component: .day, value: 2)
-    private let forthdDate = "15-10-2020 04:00".toDate(format: "dd-MM-yyyy HH:mm") //Date().add(component: .day, value: 2)
+    private let firstDate = Date().add(component: .hour, value: 1)
+    private let secondDate = Date().add(component: .day, value: 1)
+    private let thirdDate = Date().add(component: .day, value: 2)
+    private let forthdDate = Date().add(component: .day, value: 3)
+
 
     lazy var events = [
         DefaultEvent(id: "0", title: firstDate.toString(format: "dd MM yyyy, HH:mm"), startDate: firstDate, endDate: firstDate.add(component: .hour, value: 1)),

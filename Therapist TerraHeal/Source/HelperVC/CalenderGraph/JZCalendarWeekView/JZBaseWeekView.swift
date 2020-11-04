@@ -616,7 +616,7 @@ extension JZBaseWeekView: UICollectionViewDelegate, UICollectionViewDelegateFlow
         self.forceReload()
     }
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(self.getCurrentEvent(with: indexPath))
+
     }
 }
 

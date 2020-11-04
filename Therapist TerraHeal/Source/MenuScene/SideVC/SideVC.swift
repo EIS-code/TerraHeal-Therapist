@@ -88,7 +88,7 @@ class SideVC: BaseVC {
         SideMenuItem.init(id: SideMenu.SuggesionAndComplaints, image: "", isVerticle: false),
         SideMenuItem.init(id: SideMenu.SuspendCollaboration, image: "", isVerticle: false),
         SideMenuItem.init(id: SideMenu.TakeBreak, image: "", isVerticle: false),
-        SideMenuItem.init(id: SideMenu.News, image: "", isVerticle: false),
+        /*SideMenuItem.init(id: SideMenu.News, image: "", isVerticle: false),*/
         SideMenuItem.init(id: SideMenu.Notifications, image: "", isVerticle: false),
     ]
 
@@ -202,7 +202,7 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
     func openTextViewPicker(index:Int = 0) {
         let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
         alert.initialize(title: arrForMenu[index].id.name()
-            , data: arrForMenu[index].value, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+            , data: arrForMenu[index].value, buttonTitle: "DIALOG_QUIT_COLLABORATION_BTN_REQUEST".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in

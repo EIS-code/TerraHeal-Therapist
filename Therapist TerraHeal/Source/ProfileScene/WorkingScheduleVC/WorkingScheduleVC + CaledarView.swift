@@ -16,8 +16,9 @@ extension WorkingScheduleVC: FSCalendarDataSource, FSCalendarDelegate, FSCalenda
         calendar.delegate = self
         calendar.dataSource = self
         calendar.allowsMultipleSelection = false
-        //calendar.appearance.todaySelectionColor = self.selectionColor
+        calendar.appearance.todaySelectionColor = UIColor.themePrimary
         calendar.appearance.todayColor = UIColor.themeSecondary
+        calendar.headerHeight = 0.0
         //calendar.appearance.selectionColor =  self.selectionColor
         calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
 
@@ -26,7 +27,8 @@ extension WorkingScheduleVC: FSCalendarDataSource, FSCalendarDelegate, FSCalenda
         calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
         calendar.appearance.headerTitleColor = UIColor.themeDarkText
         calendar.appearance.subtitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
-       
+       self.lblMonthYear.setFont(name: FontName.Regular, size: FontSize.subHeader)
+       self.lblMonthYear.setText(Date().toString(format: "MMM yyyy"))
 
     }
 

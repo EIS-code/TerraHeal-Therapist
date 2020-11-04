@@ -55,23 +55,23 @@ extension AppDelegate {
     func loadMainVC(navigaionVC:UINavigationController? = nil) {
         loadMainVC(navigaionVC)
         /*
-        if !PreferenceHelper.shared.getUserId().isEmpty() {
-            AppWebApi.getUserDetail { (response) in
-                Loader.hideLoading()
-                let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
-                if ResponseModel.isSuccess(response: model, withSuccessToast: false, andErrorToast: false) {
-                    let user = response.data
-                    PreferenceHelper.shared.setUserId(user.id)
-                    appSingleton.user = user
-                    Singleton.saveInDb()
-                    self.loadMainVC(navigaionVC)
-                } else {
-                    self.loadMainVC(navigaionVC)
-                }
-            }
-        } else {
-            loadMainVC(navigaionVC)
-        }*/
+         if !PreferenceHelper.shared.getUserId().isEmpty() {
+         AppWebApi.getUserDetail { (response) in
+         Loader.hideLoading()
+         let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
+         if ResponseModel.isSuccess(response: model, withSuccessToast: false, andErrorToast: false) {
+         let user = response.data
+         PreferenceHelper.shared.setUserId(user.id)
+         appSingleton.user = user
+         Singleton.saveInDb()
+         self.loadMainVC(navigaionVC)
+         } else {
+         self.loadMainVC(navigaionVC)
+         }
+         }
+         } else {
+         loadMainVC(navigaionVC)
+         }*/
         
     }
 
@@ -104,6 +104,23 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
+
+    func loadMyRateVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MyRateVC =  nc.findVCs(ofType: MyRateVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: MyRateVC = MyRateVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: MyRateVC = MyRateVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+
     func loadRateVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: RateVC =  nc.findVCs(ofType: RateVC.self).first {
@@ -150,18 +167,21 @@ extension AppDelegate {
         }
     }
 
-    func loadCameraVC(navigaionVC:UINavigationController? = nil) -> CameraVC {
+    func loadCameraVC(navigaionVC:UINavigationController? = nil, cameraData:CameraMessageInfo = CameraMessageInfo.init()) -> CameraVC {
         if let nc = navigaionVC as? NC {
             if let targetVC: CameraVC =  nc.findVCs(ofType: CameraVC.self).first {
                 _ = nc.popToVc(targetVC)
+                targetVC.cameraMessage = cameraData
                 return targetVC
             } else {
                 let targetVC: CameraVC = CameraVC.fromNib()
+                targetVC.cameraMessage = cameraData
                 nc.pushVC(targetVC)
                 return targetVC
             }
         } else {
             let targetVC: CameraVC = CameraVC.fromNib()
+            targetVC.cameraMessage = cameraData
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
             return targetVC
@@ -325,19 +345,19 @@ extension AppDelegate {
     }
 
     func loadMyNumberOfMassageVC(navigaionVC:UINavigationController? = nil) {
-           if let nc = navigaionVC as? NC {
-               if let targetVC: MassageListVC =  nc.findVCs(ofType: MassageListVC.self).first {
-                   _ = nc.popToVc(targetVC)
-               } else {
-                   let targetVC: MassageListVC = MassageListVC.fromNib()
-                   nc.pushVC(targetVC)
-               }
-           } else {
-               let targetVC: MassageListVC = MassageListVC.fromNib()
-               let nC: NC = NC(rootViewController: targetVC)
-               self.windowConfig(withRootVC: nC)
-           }
-       }
+        if let nc = navigaionVC as? NC {
+            if let targetVC: MassageListVC =  nc.findVCs(ofType: MassageListVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: MassageListVC = MassageListVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: MassageListVC = MassageListVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
 
     func loadMassageDetailVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
@@ -354,18 +374,71 @@ extension AppDelegate {
         }
     }
     func loadAvailabilityVC(navigaionVC:UINavigationController? = nil) {
-           if let nc = navigaionVC as? NC {
-               if let targetVC: AvailabilityVC =  nc.findVCs(ofType: AvailabilityVC.self).first {
-                   _ = nc.popToVc(targetVC)
-               } else {
-                   let targetVC: AvailabilityVC = AvailabilityVC.fromNib()
-                   nc.pushVC(targetVC)
-               }
-           } else {
-               let targetVC: AvailabilityVC = AvailabilityVC.fromNib()
-               let nC: NC = NC(rootViewController: targetVC)
-               self.windowConfig(withRootVC: nC)
-           }
-       }
+        if let nc = navigaionVC as? NC {
+            if let targetVC: AvailabilityVC =  nc.findVCs(ofType: AvailabilityVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: AvailabilityVC = AvailabilityVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: AvailabilityVC = AvailabilityVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    func loadAddCardVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: AddCardVC =  nc.findVCs(ofType: AddCardVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: AddCardVC = AddCardVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: AddCardVC = AddCardVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+    func loadPaymentReferenceVC(amount: Double, navigaionVC:UINavigationController? = nil, fromVC: BaseVC?) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: PaymentPreferenceVC =  nc.findVCs(ofType: PaymentPreferenceVC.self).first {
+                targetVC.amount = amount
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: PaymentPreferenceVC = PaymentPreferenceVC.fromNib()
+                targetVC.comeFromVC = fromVC
+                targetVC.amount = amount
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: PaymentPreferenceVC = PaymentPreferenceVC.fromNib()
+            targetVC.amount = amount
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadScanVC(navigaionVC:UINavigationController? = nil, completion: (ScanVC) -> Void) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ScanVC =  nc.findVCs(ofType: ScanVC.self).first {
+                _ = nc.popToVc(targetVC)
+                completion(targetVC)
+
+            } else {
+                let targetVC: ScanVC = ScanVC.fromNib()
+                nc.pushVC(targetVC)
+                completion(targetVC)
+
+            }
+        } else {
+            let targetVC: ScanVC = ScanVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+            completion(targetVC)
+
+        }
+    }
 }
 

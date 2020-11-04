@@ -218,7 +218,6 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
             self.tableView.isScrollEnabled = false
             headerView.alpha = transLation
             headerView.transform = CGAffineTransform.init(scaleX: transLation, y: transLation)
-            
         } else {
             headerView.alpha = 0.0
             self.tableView.isScrollEnabled = true
@@ -239,7 +238,6 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         return cell!
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return tableView.frame.width * 0.2
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -252,17 +250,18 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         case .MyBookings:
             Common.appDelegate.loadBookingListVC(navigaionVC: self.navigationController)
         case .MyWorkingSchedule:
-            print("")
+            Common.appDelegate.loadWorkingScheduleVC(navigaionVC: self.navigationController)
         case .MyAvailability:
-            print("")
+            Common.appDelegate.loadAvailabilityVC(navigaionVC: self.navigationController)
         case .MyMissingDays:
-            print("")
+            Common.appDelegate.loadMissingDaysVC(navigaionVC: self.navigationController)
         case .MyRating:
-            print("")
+            Common.appDelegate.loadMyRateVC(navigaionVC: self.navigationController)
+            
         case .MyNumberOfMassages:
-            print("")
+            Common.appDelegate.loadMyNumberOfMassageVC(navigaionVC: self.navigationController)
         case .PaymentPreference:
-            print("")
+            Common.appDelegate.loadPaymentReferenceVC(amount: 0.0, navigaionVC: self.navigationController, fromVC: nil)
         case .Logout:
             Common.appDelegate.loadLoginVC()
         }

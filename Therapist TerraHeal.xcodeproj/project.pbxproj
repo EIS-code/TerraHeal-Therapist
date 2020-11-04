@@ -68,6 +68,22 @@
 		0344037E252F08D900C8C700 /* BookingDetailTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0344037C252F08D900C8C700 /* BookingDetailTblCell.swift */; };
 		0345190924C85EBE00AF7026 /* styleable_map.json in Resources */ = {isa = PBXBuildFile; fileRef = 0345190824C85EBE00AF7026 /* styleable_map.json */; };
 		03456BD7252DDADF00013231 /* CustomFilterDialog + DateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456BD6252DDADF00013231 /* CustomFilterDialog + DateFilter.swift */; };
+		034BB18B25510A04006B3842 /* PaymentPreferenceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034BB18225510A04006B3842 /* PaymentPreferenceVC.xib */; };
+		034BB18C25510A04006B3842 /* CreditCardTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BB18425510A04006B3842 /* CreditCardTblCell.swift */; };
+		034BB18D25510A04006B3842 /* CreditCardTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034BB18525510A04006B3842 /* CreditCardTblCell.xib */; };
+		034BB18E25510A04006B3842 /* AddCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034BB18825510A04006B3842 /* AddCardVC.xib */; };
+		034BB18F25510A04006B3842 /* AddCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BB18925510A04006B3842 /* AddCardVC.swift */; };
+		034BB19025510A04006B3842 /* PaymentPreferenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BB18A25510A04006B3842 /* PaymentPreferenceVC.swift */; };
+		034BB19F25510BC1006B3842 /* MonthYearDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034BB19C25510BC1006B3842 /* MonthYearDialog.xib */; };
+		034BB1A025510BC1006B3842 /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BB19D25510BC1006B3842 /* MonthYearPickerView.swift */; };
+		034BB1A125510BC1006B3842 /* MonthYearDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BB19E25510BC1006B3842 /* MonthYearDialog.swift */; };
+		034BB1AA255121AD006B3842 /* MyRateTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BB1A6255121AD006B3842 /* MyRateTblCell.swift */; };
+		034BB1AB255121AD006B3842 /* MyRateTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034BB1A7255121AD006B3842 /* MyRateTblCell.xib */; };
+		034BB1AC255121AD006B3842 /* MyRateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BB1A8255121AD006B3842 /* MyRateVC.swift */; };
+		034BB1AE255121CC006B3842 /* MyRateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034BB1AD255121CC006B3842 /* MyRateVC.xib */; };
+		034BB1B225515C4E006B3842 /* ScanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034BB1B025515C4E006B3842 /* ScanVC.xib */; };
+		034BB1B325515C4F006B3842 /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BB1B125515C4E006B3842 /* ScanVC.swift */; };
+		034BB1B5255172EA006B3842 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034BB1B4255172EA006B3842 /* SquareView.swift */; };
 		034CBE0925340C1100B20A11 /* UserDetailTblSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034CBE0725340C1100B20A11 /* UserDetailTblSection.xib */; };
 		034CBE0A25340C1100B20A11 /* UserDetailTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE0825340C1100B20A11 /* UserDetailTblSection.swift */; };
 		034CBE162534531300B20A11 /* CalendarGraphVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CBE132534531300B20A11 /* CalendarGraphVC.swift */; };
@@ -392,6 +408,22 @@
 		0344037C252F08D900C8C700 /* BookingDetailTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailTblCell.swift; sourceTree = "<group>"; };
 		0345190824C85EBE00AF7026 /* styleable_map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleable_map.json; sourceTree = "<group>"; };
 		03456BD6252DDADF00013231 /* CustomFilterDialog + DateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFilterDialog + DateFilter.swift"; sourceTree = "<group>"; };
+		034BB18225510A04006B3842 /* PaymentPreferenceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentPreferenceVC.xib; sourceTree = "<group>"; };
+		034BB18425510A04006B3842 /* CreditCardTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardTblCell.swift; sourceTree = "<group>"; };
+		034BB18525510A04006B3842 /* CreditCardTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardTblCell.xib; sourceTree = "<group>"; };
+		034BB18825510A04006B3842 /* AddCardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardVC.xib; sourceTree = "<group>"; };
+		034BB18925510A04006B3842 /* AddCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardVC.swift; sourceTree = "<group>"; };
+		034BB18A25510A04006B3842 /* PaymentPreferenceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentPreferenceVC.swift; sourceTree = "<group>"; };
+		034BB19C25510BC1006B3842 /* MonthYearDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthYearDialog.xib; sourceTree = "<group>"; };
+		034BB19D25510BC1006B3842 /* MonthYearPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
+		034BB19E25510BC1006B3842 /* MonthYearDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthYearDialog.swift; sourceTree = "<group>"; };
+		034BB1A6255121AD006B3842 /* MyRateTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRateTblCell.swift; sourceTree = "<group>"; };
+		034BB1A7255121AD006B3842 /* MyRateTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRateTblCell.xib; sourceTree = "<group>"; };
+		034BB1A8255121AD006B3842 /* MyRateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRateVC.swift; sourceTree = "<group>"; };
+		034BB1AD255121CC006B3842 /* MyRateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRateVC.xib; sourceTree = "<group>"; };
+		034BB1B025515C4E006B3842 /* ScanVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanVC.xib; sourceTree = "<group>"; };
+		034BB1B125515C4E006B3842 /* ScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
+		034BB1B4255172EA006B3842 /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		034CBE0725340C1100B20A11 /* UserDetailTblSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailTblSection.xib; sourceTree = "<group>"; };
 		034CBE0825340C1100B20A11 /* UserDetailTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailTblSection.swift; sourceTree = "<group>"; };
 		034CBE132534531300B20A11 /* CalendarGraphVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarGraphVC.swift; sourceTree = "<group>"; };
@@ -804,6 +836,7 @@
 		0341227F252F3AFB000BCDAE /* ImagePickerVC */ = {
 			isa = PBXGroup;
 			children = (
+				034BB1AF25515C4E006B3842 /* ScanVC */,
 				03412280252F3AFB000BCDAE /* ImageEditorVC */,
 				03412285252F3AFB000BCDAE /* CustomDocumentPicker */,
 				03412288252F3AFB000BCDAE /* CustomPhotoPicker */,
@@ -938,6 +971,99 @@
 				63ABC0C9246D650A00360F07 /* Therapist TerraHeal-Bridging-Header.h */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		034BB18025510A04006B3842 /* PaymentPreferenceVC */ = {
+			isa = PBXGroup;
+			children = (
+				034BB19B25510BC1006B3842 /* MonthYearDialog */,
+				034BB18125510A04006B3842 /* xib */,
+				034BB18325510A04006B3842 /* CreditCardCell */,
+				034BB18625510A04006B3842 /* AddCardVC */,
+				034BB18A25510A04006B3842 /* PaymentPreferenceVC.swift */,
+			);
+			path = PaymentPreferenceVC;
+			sourceTree = "<group>";
+		};
+		034BB18125510A04006B3842 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				034BB18225510A04006B3842 /* PaymentPreferenceVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		034BB18325510A04006B3842 /* CreditCardCell */ = {
+			isa = PBXGroup;
+			children = (
+				034BB18425510A04006B3842 /* CreditCardTblCell.swift */,
+				034BB18525510A04006B3842 /* CreditCardTblCell.xib */,
+			);
+			path = CreditCardCell;
+			sourceTree = "<group>";
+		};
+		034BB18625510A04006B3842 /* AddCardVC */ = {
+			isa = PBXGroup;
+			children = (
+				034BB18725510A04006B3842 /* xib */,
+				034BB18925510A04006B3842 /* AddCardVC.swift */,
+			);
+			path = AddCardVC;
+			sourceTree = "<group>";
+		};
+		034BB18725510A04006B3842 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				034BB18825510A04006B3842 /* AddCardVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		034BB19B25510BC1006B3842 /* MonthYearDialog */ = {
+			isa = PBXGroup;
+			children = (
+				034BB19C25510BC1006B3842 /* MonthYearDialog.xib */,
+				034BB19D25510BC1006B3842 /* MonthYearPickerView.swift */,
+				034BB19E25510BC1006B3842 /* MonthYearDialog.swift */,
+			);
+			path = MonthYearDialog;
+			sourceTree = "<group>";
+		};
+		034BB1A2255121AD006B3842 /* MyRateVC */ = {
+			isa = PBXGroup;
+			children = (
+				034BB1A3255121AD006B3842 /* xib */,
+				034BB1A5255121AD006B3842 /* MyRateTblCell */,
+				034BB1A8255121AD006B3842 /* MyRateVC.swift */,
+			);
+			path = MyRateVC;
+			sourceTree = "<group>";
+		};
+		034BB1A3255121AD006B3842 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				034BB1AD255121CC006B3842 /* MyRateVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		034BB1A5255121AD006B3842 /* MyRateTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				034BB1A6255121AD006B3842 /* MyRateTblCell.swift */,
+				034BB1A7255121AD006B3842 /* MyRateTblCell.xib */,
+			);
+			path = MyRateTblCell;
+			sourceTree = "<group>";
+		};
+		034BB1AF25515C4E006B3842 /* ScanVC */ = {
+			isa = PBXGroup;
+			children = (
+				034BB1B025515C4E006B3842 /* ScanVC.xib */,
+				034BB1B125515C4E006B3842 /* ScanVC.swift */,
+				034BB1B4255172EA006B3842 /* SquareView.swift */,
+			);
+			path = ScanVC;
 			sourceTree = "<group>";
 		};
 		034CBE0625340C1100B20A11 /* UserDetaillSection */ = {
@@ -1412,6 +1538,8 @@
 		0366DCFB2546D85B002C2CDA /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				034BB1A2255121AD006B3842 /* MyRateVC */,
+				034BB18025510A04006B3842 /* PaymentPreferenceVC */,
 				034DB712254BD09100128AA1 /* AvailabilityVC */,
 				03643FA1254AEB47004F9156 /* MassageDetailVC */,
 				03643F96254AD92A004F9156 /* MassageListVC */,
@@ -2373,6 +2501,7 @@
 				034CBE2225346C4C00B20A11 /* EventCell.xib in Resources */,
 				03F915C2254854EF00C391AB /* ServiceCltCell.xib in Resources */,
 				038CAFDA252604AB001ACAD6 /* CustomAlert.xib in Resources */,
+				034BB18E25510A04006B3842 /* AddCardVC.xib in Resources */,
 				034CBE182534546300B20A11 /* CalendarGraphVC.xib in Resources */,
 				63415E35246FB5C600F0D7A0 /* Nunito-SemiBold.ttf in Resources */,
 				0379EAD0252C934A00303A59 /* RateTblCell.xib in Resources */,
@@ -2395,6 +2524,7 @@
 				0379EAE5252CA89700303A59 /* NewsTblCell.xib in Resources */,
 				03F915C4254854EF00C391AB /* ServiceSelectionDialog.xib in Resources */,
 				038CAFC5252604AB001ACAD6 /* CustomCountryPhoneCodePicker.xib in Resources */,
+				034BB18B25510A04006B3842 /* PaymentPreferenceVC.xib in Resources */,
 				038CAFD2252604AB001ACAD6 /* PersonPickerCell.xib in Resources */,
 				035EF5C12526FA3A00C64BD4 /* HomeVC.xib in Resources */,
 				038CAFC3252604AB001ACAD6 /* country_list.json in Resources */,
@@ -2403,6 +2533,7 @@
 				63ABC1F1246D650D00360F07 /* Assets.xcassets in Resources */,
 				0354F2742549603700F3BEB7 /* WorkingScheduleVC.xib in Resources */,
 				03F5038D252D937F00AF50A5 /* CustomFilterDialog.xib in Resources */,
+				034BB1AB255121AD006B3842 /* MyRateTblCell.xib in Resources */,
 				03AE6A162535C8D100F7C629 /* ProfileTblCell.xib in Resources */,
 				0354F26625492F4100F3BEB7 /* ExperienceDialog.xib in Resources */,
 				03412297252F3AFC000BCDAE /* CustomPhotoPicker.xib in Resources */,
@@ -2426,6 +2557,7 @@
 				03412294252F3AFC000BCDAE /* CustomDocumentPicker.xib in Resources */,
 				034CBE0925340C1100B20A11 /* UserDetailTblSection.xib in Resources */,
 				03EED64F255026AC0010A2CF /* FreeSpotDialog.xib in Resources */,
+				034BB1AE255121CC006B3842 /* MyRateVC.xib in Resources */,
 				03B960C825483BB000F8F214 /* MyDocumentsVC.xib in Resources */,
 				0342137124C6B3C500ABB285 /* LaunchVC.xib in Resources */,
 				03A2CC6625309E84005E3F29 /* MyBookingExpandTblCell.xib in Resources */,
@@ -2454,6 +2586,7 @@
 				03521F2B252B612E0094829E /* SuggestionTblCell.xib in Resources */,
 				030DB59B25260966004C7CC8 /* Localizable.strings in Resources */,
 				03A2CC6525309E84005E3F29 /* MassageDetailTblCell.xib in Resources */,
+				034BB1B225515C4E006B3842 /* ScanVC.xib in Resources */,
 				03521F29252B612E0094829E /* SuggestionAndComplaintVC.xib in Resources */,
 				038CAFD6252604AB001ACAD6 /* CustomAlertConfirmation.xib in Resources */,
 				03B960A1254804F100F8F214 /* LanguageTableCell.xib in Resources */,
@@ -2464,7 +2597,9 @@
 				03B960BE25483AA500F8F214 /* ManageDocumentTblCell.xib in Resources */,
 				63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */,
 				03412291252F3AFC000BCDAE /* UIImageCropperVC.xib in Resources */,
+				034BB19F25510BC1006B3842 /* MonthYearDialog.xib in Resources */,
 				0366DD032546D85B002C2CDA /* EditProfileVC.xib in Resources */,
+				034BB18D25510A04006B3842 /* CreditCardTblCell.xib in Resources */,
 				0345190924C85EBE00AF7026 /* styleable_map.json in Resources */,
 				03AE6A142535C8D100F7C629 /* ProfileVC.xib in Resources */,
 				03EED643254FE7920010A2CF /* ExchangeOfferDialog.xib in Resources */,
@@ -2592,6 +2727,7 @@
 				030DB5CA252609FB004C7CC8 /* PinterestLayout.swift in Sources */,
 				038CB00E2526056E001ACAD6 /* DataType + Extesnion.swift in Sources */,
 				03A2CC6825309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift in Sources */,
+				034BB1B5255172EA006B3842 /* SquareView.swift in Sources */,
 				038CAF8F252601CF001ACAD6 /* LoginVC.swift in Sources */,
 				034122A0252F40E4000BCDAE /* ServiceStatusVC.swift in Sources */,
 				0354F26325492F4100F3BEB7 /* ManageExperienceTblCell.swift in Sources */,
@@ -2603,6 +2739,7 @@
 				0354F26C254947E100F3BEB7 /* BookingListVC.swift in Sources */,
 				038CAFE2252604D8001ACAD6 /* CoreDataManager.swift in Sources */,
 				034DB71F254BEC0200128AA1 /* AvailabilityCell.swift in Sources */,
+				034BB1AA255121AD006B3842 /* MyRateTblCell.swift in Sources */,
 				03A2CC6425309E84005E3F29 /* MassageDetailTblCell.swift in Sources */,
 				034CBE822534700D00B20A11 /* JZGridLine.swift in Sources */,
 				03412292252F3AFC000BCDAE /* UIImageCropperVC.swift in Sources */,
@@ -2635,6 +2772,7 @@
 				035EF5C72526FF3200C64BD4 /* PBRevealViewController.swift in Sources */,
 				038CB01A2526056E001ACAD6 /* UITextField + Extension.swift in Sources */,
 				034CBE802534700D00B20A11 /* JZColumnHeaderBackground.swift in Sources */,
+				034BB18F25510A04006B3842 /* AddCardVC.swift in Sources */,
 				63ABC1A6246D650D00360F07 /* AppDelegate.swift in Sources */,
 				03EED64C255026AC0010A2CF /* FreeSpotCltCell.swift in Sources */,
 				03A2CC3D25303CE3005E3F29 /* MyBookingMassage.swift in Sources */,
@@ -2655,6 +2793,7 @@
 				034CBE7D2534700D00B20A11 /* JZCornerHeader.swift in Sources */,
 				0366DD0E2546DA79002C2CDA /* OTPFieldView.swift in Sources */,
 				030DB5C5252609FB004C7CC8 /* RadioButton.swift in Sources */,
+				034BB19025510A04006B3842 /* PaymentPreferenceVC.swift in Sources */,
 				030DB5A225260966004C7CC8 /* CityWebService.swift in Sources */,
 				030DB59A25260966004C7CC8 /* ImageAssets.swift in Sources */,
 				034CBE732534700D00B20A11 /* JZWeekViewHelper.swift in Sources */,
@@ -2676,6 +2815,7 @@
 				038CB00B2526056E001ACAD6 /* HomeSegmentControl.swift in Sources */,
 				03643F50254A7EC4004F9156 /* FSCalendarStickyHeader.m in Sources */,
 				03643F4D254A7EC4004F9156 /* FSCalendarDelegationProxy.m in Sources */,
+				034BB18C25510A04006B3842 /* CreditCardTblCell.swift in Sources */,
 				030DB5C7252609FB004C7CC8 /* ThemeButton.swift in Sources */,
 				03643F53254A7EC4004F9156 /* FSCalendarWeekdayView.m in Sources */,
 				038CAFE4252604D8001ACAD6 /* Person+CoreDataProperties.swift in Sources */,
@@ -2716,6 +2856,7 @@
 				03456BD7252DDADF00013231 /* CustomFilterDialog + DateFilter.swift in Sources */,
 				03A7FB2325273058003A6025 /* HomeVC + TableView.swift in Sources */,
 				0366DD102546DA79002C2CDA /* VerificationAlert.swift in Sources */,
+				034BB1B325515C4F006B3842 /* ScanVC.swift in Sources */,
 				03B9608C2547ED5E00F8F214 /* EditProfile + CollectionView.swift in Sources */,
 				030DB5CD252609FB004C7CC8 /* ThemeScrollView.swift in Sources */,
 				030DB5C6252609FB004C7CC8 /* FloatingRoundButton.swift in Sources */,
@@ -2724,10 +2865,12 @@
 				034CBE852534700D00B20A11 /* JZRowHeaderBackground.swift in Sources */,
 				03B960A725481E3600F8F214 /* LanguageFluencyDialog.swift in Sources */,
 				034CBE752534700D00B20A11 /* JZWeekViewFlowLayout.swift in Sources */,
+				034BB1A125510BC1006B3842 /* MonthYearDialog.swift in Sources */,
 				030DB5D0252609FB004C7CC8 /* ThemeBottomDialog.swift in Sources */,
 				0366DD0F2546DA79002C2CDA /* OTPTextField.swift in Sources */,
 				0379EACF252C934A00303A59 /* RateTblCell.swift in Sources */,
 				0354F26225492F4100F3BEB7 /* ManageExperienceVC.swift in Sources */,
+				034BB1A025510BC1006B3842 /* MonthYearPickerView.swift in Sources */,
 				0354F26525492F4100F3BEB7 /* ExperienceDialog.swift in Sources */,
 				034CBE772534700D00B20A11 /* WeakTimer.swift in Sources */,
 				030DB5C2252609FB004C7CC8 /* ThemeCollectionCell.swift in Sources */,
@@ -2745,6 +2888,7 @@
 				038CB00D2526056E001ACAD6 /* JDSegmentControl.swift in Sources */,
 				03643F55254A7EC4004F9156 /* FSCalendarExtensions.m in Sources */,
 				034CBE712534700D00B20A11 /* JZLongPressWeekView.swift in Sources */,
+				034BB1AC255121AD006B3842 /* MyRateVC.swift in Sources */,
 				038CAFD1252604AB001ACAD6 /* PersonPickerCell.swift in Sources */,
 				0366DD292546DB14002C2CDA /* CustomCityPicker.swift in Sources */,
 				038CB00C2526056E001ACAD6 /* Loader.swift in Sources */,

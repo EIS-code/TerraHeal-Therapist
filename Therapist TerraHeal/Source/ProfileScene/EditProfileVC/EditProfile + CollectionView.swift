@@ -80,6 +80,8 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
         switch data.type {
         case .Name,.Surname,.Nif, .Email, .AccountNumber :
             self.openTextFieldPicker(index: indexPath.row)
+        case .Documents:
+            Common.appDelegate.loadMyDocumentsVC(navigaionVC: self.navigationController)
         case .Gender:
             self.openGenderPicker(index: indexPath.row)
         case .DOB:

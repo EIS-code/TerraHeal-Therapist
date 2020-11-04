@@ -7,10 +7,12 @@ class CustomFilterDialog: ThemeBottomDialogView {
     @IBOutlet var filterTypeButton: [SelectionButton]!
     @IBOutlet weak var activeView: UIView!
     @IBOutlet weak var dateView: UIView!
+
     //DateDialog
     @IBOutlet weak var vwCalendar: FSCalendar!
     @IBOutlet weak var btnPreviousMonth: ThemeButton!
     @IBOutlet weak var btnNextMonth: ThemeButton!
+    @IBOutlet weak var lblMonthYear: ThemeLabel!
     var selectedMilli:Double = 0
     var minDate = Date()
     var maxDate = Date()
@@ -66,32 +68,44 @@ class CustomFilterDialog: ThemeBottomDialogView {
             switch button.tag {
             case 0:
                 buttonTitle = "FILTER_BTN_DATE".localized()
+                self.filterButtonTapped(button)
             case 1:
+                button.deselect()
                 buttonTitle = "FILTER_BTN_CLIENT_NAME".localized()
             case 2:
+                button.deselect()
                 buttonTitle = "FILTER_BTN_SERVICES".localized()
             case 3:
+                button.deselect()
                 buttonTitle = "FILTER_BTN_BOOKING_TYPE".localized()
             case 4:
+                button.deselect()
                 buttonTitle = "FILTER_BTN_SESSION_TYPE".localized()
             default:
                 buttonTitle = ""
             }
-            button.deselect()
+
             button.setText(buttonTitle)
         }
-        self.handleDateView()
+
+
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         self.vwClientSearchBar.setRound(withBorderColor: .clear, andCornerRadious:
             self.vwClientSearchBar.bounds.height/2.0, borderWidth: 1.0)
-       self.vwServiceSearchBar.setRound(withBorderColor: .clear, andCornerRadious: self.vwServiceSearchBar.bounds.height/2.0, borderWidth: 1.0)
+        self.vwServiceSearchBar.setRound(withBorderColor: .clear, andCornerRadious: self.vwServiceSearchBar.bounds.height/2.0, borderWidth: 1.0)
 
     }
 
     @IBAction func filterButtonTapped(_ sender: SelectionButton) {
+        /*self.vwServiceSearch.frame = self.activeView.bounds
+        self.vwClientSearch.frame = self.activeView.bounds
+        self.vwBookingType.frame = self.activeView.bounds
+        self.vwSession.frame = self.activeView.bounds
+        self.dateView.frame = self.activeView.bounds*/
+        
         for button in filterTypeButton {
             if button.tag == sender.tag {
                 button.select(withAnimation: true)
@@ -252,14 +266,14 @@ extension CustomFilterDialog {
         self.vwServiceSelection.itemTitles = ["massages".localized(),"therapies".localized()]
         self.vwServiceSelection.changeBackgroundColor(UIColor.themeLightTextColor)
         self.vwServiceSelection.didSelectItemWith = { [weak self] (index,title) in
-                   guard let self = self else {
-                       return
-                   }
-                   if index == 0 {
-                       self.massagesTapped()
-                   } else {
-                       self.therapiesTapped()
-                   }
+            guard let self = self else {
+                return
+            }
+            if index == 0 {
+                self.massagesTapped()
+            } else {
+                self.therapiesTapped()
+            }
         }
     }
 

@@ -60,7 +60,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
-                                    <color key="backgroundColor" name="theme_background"/>
+                                    <color key="backgroundColor" name="theme_light_background"/>
                                     <constraints>
                                         <constraint firstItem="mKR-rW-JZi" firstAttribute="leading" secondItem="2d7-2c-74z" secondAttribute="trailing" constant="40.5" id="Abb-LM-9cr"/>
                                         <constraint firstAttribute="trailing" secondItem="mKR-rW-JZi" secondAttribute="trailing" constant="20" id="QIR-ok-dzd"/>
@@ -140,11 +140,11 @@
     </objects>
     <resources>
         <image name="asset-search-dark" width="15" height="15.5"/>
-        <namedColor name="theme_background">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="theme_dark_text">
             <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_light_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

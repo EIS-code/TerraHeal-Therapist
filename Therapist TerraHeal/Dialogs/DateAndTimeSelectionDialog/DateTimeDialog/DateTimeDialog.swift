@@ -124,7 +124,7 @@ class DateTimeDialog: ThemeBottomDialogView {
             print(date)
             timePickerAlert?.dismiss()
             self.timeMilli = date
-            var dateToConvert = Date.milliSecToDate(milliseconds: date - Double((TimeZone.current.secondsFromGMT() * 1000)), format: DateFormat.BookingTimeSelection)
+            let dateToConvert = Date.milliSecToDate(milliseconds: date - Double((TimeZone.current.secondsFromGMT() * 1000)), format: DateFormat.BookingTimeSelection)
             self.lblTimeValue.setText(dateToConvert)
         }
     }

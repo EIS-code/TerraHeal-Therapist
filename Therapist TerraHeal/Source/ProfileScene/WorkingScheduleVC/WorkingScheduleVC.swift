@@ -12,6 +12,7 @@ class WorkingScheduleVC: BaseVC {
     @IBOutlet weak var btnPreviousMonth: ThemeButton!
     @IBOutlet weak var btnNextMonth: ThemeButton!
     @IBOutlet weak var tblVwForData: UITableView!
+    @IBOutlet weak var lblMonthYear: ThemeLabel!
     let date = Date().startOfDay
     var arrForNotAvailableDays: [Double] = []
     var arrForWorkingDays: [Double] = []
@@ -81,6 +82,15 @@ class WorkingScheduleVC: BaseVC {
         self.setupTableView(tableView: self.tblVwForData)
         self.setupCalendarView(calendar: self.vwCalendar)
     }
+    @IBAction func btnPreviousTapped(_ sender: Any) {
+           let currentPage = self.vwCalendar.currentPage.previousMonth()
+           self.vwCalendar.setCurrentPage(currentPage, animated: true)
+    }
+
+    @IBAction func btnNextTapped(_ sender: Any) {
+           let currentPage = self.vwCalendar.currentPage.nextMonth()
+           self.vwCalendar.setCurrentPage(currentPage, animated: true)
+    }
 
 }
 
@@ -109,7 +119,7 @@ extension WorkingScheduleVC: UITableViewDelegate,UITableViewDataSource, UIScroll
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: WorkingScheduleTblCell.name, for: indexPath) as?  WorkingScheduleTblCell
-        cell?.lblDetails.setText(Date.init(milliseconds: arrForWorkingDays[indexPath.row]).toString(format: "ddd-MMM-yyyy"))
+        cell?.lblDetails.setText(Date.init(milliseconds: arrForWorkingDays[indexPath.row]).convertDateFormate())
         return cell!
         
     }

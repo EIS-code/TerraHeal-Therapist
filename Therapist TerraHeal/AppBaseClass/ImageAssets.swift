@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 struct ImageAsset {
+    
     static let upArrow = "asset-arrow-down"
     static let downArrow = "asset-arrow-down"
     static let rightArrow = "asset-arrow-right"
     static let leftArrow = "asset-arrow-left"
-    
+    static func getImage(_ name:String) -> UIImage? {
+        return UIImage.init(named: name)
+    }
     struct Button {
         static let backButton = "asset-back-button"
     }
@@ -71,7 +75,19 @@ struct ImageAsset {
         static let hotel = "asset-pricing-home-tab"
         static let center = "asset-pricing-therapist-tab"
     }
-    
+
+    struct BottomMenu {
+           static let news = "asset-home-tab-news"
+           static let booking = "asset-home-tab-booking"
+           static let calender = "asset-home-tab-calender"
+        struct Selected {
+            static let news = "asset-home-tab-news-selected"
+            static let booking = "asset-home-tab-booking-selected"
+            static let calender = "asset-home-tab-calender-selected"
+        }
+
+    }
+
     struct SideMenu {
         static let quitCollaboration = "asset-side-menu-quit-collaboration"
         static let suggestionCollaboration = "asset-side-menu-suggestion-collaboration"

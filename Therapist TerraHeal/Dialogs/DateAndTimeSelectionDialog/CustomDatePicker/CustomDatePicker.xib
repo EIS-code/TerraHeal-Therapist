@@ -31,10 +31,10 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="274" width="414" height="622"/>
+                    <rect key="frame" x="0.0" y="234" width="414" height="662"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="10" width="374" height="592"/>
+                            <rect key="frame" x="20" y="10" width="374" height="632"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -51,10 +51,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-MH-AIg" userLabel="vwMainCalender">
-                                    <rect key="frame" x="37.5" y="65.5" width="299" height="396.5"/>
+                                    <rect key="frame" x="37.5" y="65.5" width="299" height="436.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FH3-4N-FNi">
-                                            <rect key="frame" x="1" y="1" width="297" height="394.5"/>
+                                            <rect key="frame" x="1" y="1" width="297" height="434.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPt-2p-CpU" userLabel="vwSelectedDate">
                                                     <rect key="frame" x="0.0" y="0.0" width="297" height="144.5"/>
@@ -91,8 +91,57 @@
                                                         <constraint firstItem="pV3-L5-Xfu" firstAttribute="leading" secondItem="HPt-2p-CpU" secondAttribute="leading" constant="10" id="ko5-2h-4v5"/>
                                                     </constraints>
                                                 </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3JD-gh-wlI" userLabel="monthView">
+                                                    <rect key="frame" x="0.0" y="144.5" width="297" height="40"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfy-5A-Iky" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="nfy-5A-Iky" secondAttribute="height" multiplier="1:1" id="9GH-is-Z5J"/>
+                                                                <constraint firstAttribute="height" constant="40" id="IoK-hU-KtL" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="40"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
+                                                            </constraints>
+                                                            <state key="normal" title="&lt;">
+                                                                <color key="titleColor" name="theme_primary"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="btnPreviousTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="mAH-Cr-rzA"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="April 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G35-KQ-AHv" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                            <rect key="frame" x="40" y="0.0" width="217" height="40"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" name="theme_dark_text"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7r-se-dJP" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                            <rect key="frame" x="257" y="0.0" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="Vej-RR-YAx" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                            <real key="value" value="40"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </constraint>
+                                                                <constraint firstAttribute="width" secondItem="M7r-se-dJP" secondAttribute="height" multiplier="1:1" id="d5d-qj-hKK"/>
+                                                            </constraints>
+                                                            <state key="normal" title="&gt;">
+                                                                <color key="titleColor" name="theme_primary"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="btnNextTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="m9s-vm-SPC"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPe-ks-amL" customClass="FSCalendar">
-                                                    <rect key="frame" x="0.0" y="144.5" width="297" height="250"/>
+                                                    <rect key="frame" x="0.0" y="184.5" width="297" height="250"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" priority="999" constant="250" id="cbR-GV-dd9" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
@@ -106,59 +155,17 @@
                                                 </view>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIF-jh-Ad7" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                            <rect key="frame" x="1" y="145.5" width="59.5" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="gGu-Fw-zRa" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
-                                                            <real key="value" value="40"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </constraint>
-                                            </constraints>
-                                            <state key="normal" title="&lt;">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="btnPreviousTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="IRR-5w-85U"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-h3-HKj" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                            <rect key="frame" x="238.5" y="145.5" width="59.5" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="Twe-r7-Qbp" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
-                                                            <real key="value" value="40"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </constraint>
-                                            </constraints>
-                                            <state key="normal" title="&gt;">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="btnNextTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ENV-Bc-euH"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="FH3-4N-FNi" firstAttribute="leading" secondItem="ybQ-MH-AIg" secondAttribute="leading" constant="1" id="0NZ-ol-5VW"/>
-                                        <constraint firstItem="vIF-jh-Ad7" firstAttribute="top" secondItem="KPe-ks-amL" secondAttribute="top" id="73F-9n-oyR"/>
-                                        <constraint firstItem="8ea-h3-HKj" firstAttribute="top" secondItem="KPe-ks-amL" secondAttribute="top" id="8vT-TV-4Lz"/>
                                         <constraint firstItem="FH3-4N-FNi" firstAttribute="top" secondItem="ybQ-MH-AIg" secondAttribute="top" constant="1" id="CE2-y2-GFA"/>
-                                        <constraint firstItem="vIF-jh-Ad7" firstAttribute="width" secondItem="8ea-h3-HKj" secondAttribute="width" id="ODa-g6-Gal"/>
-                                        <constraint firstItem="vIF-jh-Ad7" firstAttribute="leading" secondItem="KPe-ks-amL" secondAttribute="leading" id="ZjE-x0-rvs"/>
-                                        <constraint firstItem="8ea-h3-HKj" firstAttribute="trailing" secondItem="KPe-ks-amL" secondAttribute="trailing" id="bDd-cM-IEN"/>
                                         <constraint firstItem="FH3-4N-FNi" firstAttribute="centerX" secondItem="ybQ-MH-AIg" secondAttribute="centerX" id="kOG-Rs-3I8"/>
-                                        <constraint firstItem="vIF-jh-Ad7" firstAttribute="width" secondItem="KPe-ks-amL" secondAttribute="width" multiplier="0.2" id="oaU-oo-h6k"/>
                                         <constraint firstAttribute="bottom" secondItem="FH3-4N-FNi" secondAttribute="bottom" constant="1" id="rBH-VA-17d"/>
                                         <constraint firstAttribute="trailing" secondItem="FH3-4N-FNi" secondAttribute="trailing" constant="1" id="ueB-IZ-8jn"/>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="93.5" y="482" width="187" height="60"/>
+                                    <rect key="frame" x="93.5" y="522" width="187" height="60"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                     <state key="normal" title="Sign In">
@@ -169,7 +176,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="DialogCancelButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="164" y="562" width="46" height="30"/>
+                                    <rect key="frame" x="164" y="602" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="EhO-GW-jUf"/>
@@ -206,9 +213,10 @@
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="lFA-bQ-tdV"/>
                 <outlet property="btnCancel" destination="BVl-el-UJJ" id="mZE-lE-kWH"/>
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="Cp0-qH-ylB"/>
-                <outlet property="btnNextMonth" destination="8ea-h3-HKj" id="E15-h7-Ddf"/>
-                <outlet property="btnPreviousMonth" destination="vIF-jh-Ad7" id="7Iy-HZ-gEv"/>
+                <outlet property="btnNextMonth" destination="M7r-se-dJP" id="5tP-LW-ydZ"/>
+                <outlet property="btnPreviousMonth" destination="nfy-5A-Iky" id="ZnS-PM-e8b"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="Sjt-cS-gvV"/>
+                <outlet property="lblMonthYear" destination="G35-KQ-AHv" id="xWu-kf-Zy8"/>
                 <outlet property="lblSelectedDate" destination="oyA-kj-E1P" id="zSK-Fv-qOB"/>
                 <outlet property="lblSelectedYear" destination="uh3-3K-ZQb" id="0Xw-o9-2hL"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
@@ -222,6 +230,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_light_text_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

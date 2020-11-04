@@ -24,7 +24,7 @@ class ServiceNavigationVC: BaseVC {
     
     
     @IBOutlet weak var btnCheckIn: ThemeButton!
-  
+
     @IBOutlet weak var btnBack: FloatingRoundButton!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var btnKm: ThemeButton!
@@ -112,14 +112,26 @@ class ServiceNavigationVC: BaseVC {
 
 
     func openCameraVC() {
-        let cameraVC: CameraVC =  Common.appDelegate.loadCameraVC(navigaionVC: self.navigationController)
-        cameraVC.onBtnCaptureTapped = { [weak self] (document)  in
-                   guard let self = self else {
-                       return
-                   }
-                self.popVC()
+        Common.appDelegate.loadScanVC(navigaionVC: self.navigationController) { (scanVC) in
+            print("\(scanVC)")
+            scanVC.delegate = self
         }
     }
 
 }
 
+extension ServiceNavigationVC : QRScannerCodeDelegate {
+    func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
+        print("\(#function)")
+        (controller as? BaseVC)?.popVC()
+        Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
+    }
+
+    func qrScannerDidFail(_ controller: UIViewController, error: String) {
+        print("\(#function)")
+    }
+
+    func qrScannerDidCancel(_ controller: UIViewController) {
+        print("\(#function)")
+    }
+}

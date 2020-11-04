@@ -18,8 +18,8 @@ class CustomDatePicker: ThemeBottomDialogView {
     @IBOutlet weak var vwCalendar: FSCalendar!
     @IBOutlet weak var btnPreviousMonth: ThemeButton!
     @IBOutlet weak var btnNextMonth: ThemeButton!
+    @IBOutlet weak var lblMonthYear: ThemeLabel!
     @IBOutlet weak var vwMainCalender: UIView!
-
     var onBtnDoneTapped: ((_ date:Double) -> Void)? = nil
     var selectedMilli:Double = 0
     var minDate = Date()
@@ -65,6 +65,8 @@ class CustomDatePicker: ThemeBottomDialogView {
         self.setupCalendarView(calendar: vwCalendar)
         self.vwSelectionDate.backgroundColor = self.selectionColor
         self.selectDate(date: Date())
+        self.lblMonthYear.setFont(name: FontName.Regular, size: FontSize.subHeader)
+        self.lblMonthYear.setText(Date().toString(format: "MMM yyyy"))
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -114,7 +116,7 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
         calendar.appearance.todayColor = UIColor.themeSecondary
         calendar.appearance.selectionColor =  self.selectionColor
         calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
-
+        calendar.headerHeight = 0.0
         calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.detail))
         calendar.appearance.weekdayTextColor = UIColor.themeHintText
         calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
@@ -124,6 +126,8 @@ extension CustomDatePicker: FSCalendarDataSource, FSCalendarDelegate {
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("change page to \(self.formatter.string(from: calendar.currentPage))")
+        let currentMonth: String = calendar.currentPage.toString(format: "MMM yyyy")
+        self.lblMonthYear.setTextWithAnimation(text:currentMonth )
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {

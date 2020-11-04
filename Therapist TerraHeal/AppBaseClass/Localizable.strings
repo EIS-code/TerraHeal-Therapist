@@ -25,6 +25,7 @@
 //MARK: Menu Screen
 "MENU_TITLE" = "Menu";
 "MENU_QUIT_COLLABORATION" = "quit collaboration";
+"DIALOG_QUIT_COLLABORATION_BTN_REQUEST" = "Request";
 "MENU_SUSPEND_COLLABORATION" = "suspend collaboration";
 "MENU_SUGGESTIONS_AND_COMPLAINTS" = "suggestions and complaints";
 "MENU_TAKE_BREAK" = "take break";
@@ -104,6 +105,7 @@
 "RATING_TITLE" = "rating";
 "RATING_BTN_RATE" = "Rate";
 "RATING_BTN_CANCEL" = "Cancel";
+"MY_RATING_TITLE" = "my ratings";
 //MARK: Filter Dialog
 "FILTER_BTN_DATE" = "Date";
 "FILTER_BTN_CLIENT_NAME" = "Client name";
@@ -123,7 +125,7 @@
 "BOOKING_DETAIL_BTN_CHECK_IN" = "Check In";
 "MY_BOOKING_TITLE" = "my bookings";
 //MARK: Scan Dialog
-"DIALOG_SCAN_TITLE" = "Scan QR";
+"DIALOG_SCAN_TITLE" = "scan QR";
 "DIALOG_BTN_SCAN" = "scan";
 "SCAN_MASSAGE" = "align the QR Code within frame to scan";
 "SCAN_TITLE" = "scan";
@@ -186,6 +188,30 @@
 "DIALOG_EXCHANGE_OFFER_BTN_PROCEED" = "Proceed";
 "DIALOG_FREE_SPOT_TITLE" = "choose free spots";
 "DIALOG_FREE_SPOT_BTN_PROCEED" = "Proceed";
+
+//MARK: Payment Screen
+"PAYMENT_PREFERENCE_TITLE" = "payment preference";
+"PAYMENT_LBL_PAYPAL" = "Paypal";
+"PAYMENT_PAYPAL_EMAIL_ID" = "Paypal email id";
+"PAYMENT_LBL_DEFAULT" = "Default";
+"PAYMENT_LBL_CARDS" = "credit, debit & ATM cards";
+"PAYMENT_BTN_ADD_NEW" = "Add New";
+"PAYMENT_BTN_ADD_NEW_PAYMENT" =  "Add New payment method";
+"PAYMENT_METHOD_PAYPAL" = "paypal";
+"PAYMENT_METHOD_CREDIT_CARD" = "credit, debit & ATM cards";
+"DIALOG_ADD_NEW_PAYMENT_TITLE" = "add new";
+"DIALOG_ADD_NEW_PAYMENT_BTN_PROCEED" = "Proceed";
+//MARK: Add Card SCREEN
+"ADD_CARD_TITLE" = "add credit card";
+"ADD_CARD_TITLE_MESSAGE" = "verify and secure your card";
+"ADD_CARD_TXT_NAME" = "card holder name";
+"ADD_CARD_TXT_CVV_NUMBER" = "cvv";
+"ADD_CARD_TXT_CARD_NUMBER" = "XXXX-XXXX-XXXX-XXXX";
+"ADD_CARD_TXT_EXPIRY" = "mm/yy";
+"ADD_CARD_SAVE_CARD_DETAILS" = "save your card details securely";
+"ADD_CARD_SAVE_CARD_DETAIL_MESSAGE" = "your card data is saved in a PCI DSS compliant secure vault.";
+"ADD_CARD_BTN_ADD_CARD" = "Add Card";
+
 //MARK: -
 //MARK: Common Strings
 //MARK: -

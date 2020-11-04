@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
+            <connections>
+                <outlet property="btnLeft" destination="jAF-2Y-wbl" id="8d5-4h-TJ4"/>
+                <outlet property="btnScan" destination="8Zq-O5-JSx" id="DsQ-P0-oUg"/>
+                <outlet property="lblTitle" destination="91i-2O-BNd" id="mnZ-Db-3yn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwNavigationBar" destination="ibG-ar-jbH" id="HZo-DM-PKl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibG-ar-jbH" userLabel="navigationView" customClass="ThemeView" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAF-2Y-wbl" customClass="BackButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                            <rect key="frame" x="16" y="16" width="42" height="42"/>
+                            <color key="backgroundColor" name="theme_primary_light"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="jAF-2Y-wbl" secondAttribute="height" multiplier="1:1" id="RQb-9A-dk6"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            <connections>
+                                <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="sYE-UM-KPp"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91i-2O-BNd" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                            <rect key="frame" x="74" y="27" width="172" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="theme_primary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="91i-2O-BNd" firstAttribute="leading" secondItem="jAF-2Y-wbl" secondAttribute="trailing" constant="16" id="4ZS-kW-RKD"/>
+                        <constraint firstItem="91i-2O-BNd" firstAttribute="centerY" secondItem="jAF-2Y-wbl" secondAttribute="centerY" id="IdS-sQ-kIN"/>
+                        <constraint firstItem="jAF-2Y-wbl" firstAttribute="top" secondItem="ibG-ar-jbH" secondAttribute="top" constant="16" id="e9U-aF-S8c" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                        <constraint firstAttribute="bottom" secondItem="jAF-2Y-wbl" secondAttribute="bottom" constant="16" id="lc1-Le-BNq"/>
+                        <constraint firstItem="jAF-2Y-wbl" firstAttribute="leading" secondItem="ibG-ar-jbH" secondAttribute="leading" constant="16" id="qLV-Qt-tXk" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                        <constraint firstItem="91i-2O-BNd" firstAttribute="centerX" secondItem="ibG-ar-jbH" secondAttribute="centerX" id="uWe-g1-48B"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zq-O5-JSx">
+                    <rect key="frame" x="142.5" y="518" width="35" height="30"/>
+                    <state key="normal" title="Scan"/>
+                    <connections>
+                        <action selector="btnScanTapped:" destination="-1" eventType="touchUpInside" id="Kdm-kV-SMP"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ibG-ar-jbH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3N0-7Z-hoO"/>
+                <constraint firstItem="8Zq-O5-JSx" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="8zZ-y4-NWF"/>
+                <constraint firstItem="ibG-ar-jbH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Fsu-tO-BXn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8Zq-O5-JSx" secondAttribute="bottom" constant="20" id="Rfp-gm-xvL"/>
+                <constraint firstItem="ibG-ar-jbH" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="eMk-Vw-tUj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="theme_primary">
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary_light">
+            <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

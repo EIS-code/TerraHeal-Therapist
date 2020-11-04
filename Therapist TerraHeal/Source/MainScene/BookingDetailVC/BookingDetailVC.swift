@@ -167,16 +167,35 @@ class BookingDetailVC: BaseVC {
         }
     }
     func openCameraVC() {
-        let cameraVC: CameraVC =  Common.appDelegate.loadCameraVC(navigaionVC: self.navigationController)
+        Common.appDelegate.loadScanVC(navigaionVC: self.navigationController) { (scanVC) in
+            print("\(scanVC)")
+            scanVC.delegate = self
+        }
+        /*let cameraVC: CameraVC =  Common.appDelegate.loadCameraVC(navigaionVC: self.navigationController)
         cameraVC.onBtnCaptureTapped = { [weak self] (document)  in
                    guard let self = self else {
                        return
                    }
                 self.popVC()
                 Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
-        }
+        }*/
+        
     }
 }
 
+extension BookingDetailVC : QRScannerCodeDelegate {
+    func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
+        print("\(#function)")
+        (controller as? BaseVC)?.popVC()
+        Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
+    }
 
+    func qrScannerDidFail(_ controller: UIViewController, error: String) {
+        print("\(#function)")
+    }
+
+    func qrScannerDidCancel(_ controller: UIViewController) {
+        print("\(#function)")
+    }
+}
 

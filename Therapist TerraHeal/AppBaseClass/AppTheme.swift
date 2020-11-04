@@ -27,6 +27,7 @@ extension UIColor {
 
     static var themeInfoButtonBackground: UIColor = UIColor.init(named: "theme_info_button_background") ?? UIColor.init(hex: "#B2B3B5")
 
+    static var notAvailableColor: UIColor = UIColor.init(named: "theme_not_available") ?? UIColor.init(hex: "#FD3A58")
 
     //Shadow Colors
 

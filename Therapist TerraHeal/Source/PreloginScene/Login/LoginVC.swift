@@ -53,7 +53,7 @@ class LoginVC: BaseVC {
     }
 
     private func initialViewSetup() {
-        self.setBackground(color: UIColor.themeBackground)
+        self.setBackground(color: UIColor.themeLightBackground)
         self.lblLoginTitle?.setText("LOGIN_LBL_TITLE".localized())
         self.lblLoginTitle?.setFont(name: FontName.Bold, size: FontSize.exLarge)
         self.lblMessage?.setText("LOGIN_LBL_MESSAGE".localized())
@@ -78,9 +78,11 @@ class LoginVC: BaseVC {
 
     @IBAction func btnLoginTapped(_ sender: UIButton) {
         self.btnLogin.isEnabled = false
-        if checkValidation() {
+        Common.appDelegate.loadMainVC()
+        /*if checkValidation() {
             self.wsLogin(username: txtEmail.text!.trim(), password: txtPassword.text!)
-        }
+        }*/
+
     }
 
     @IBAction func btnFingerPrintTapped(_ sender: UIButton) {

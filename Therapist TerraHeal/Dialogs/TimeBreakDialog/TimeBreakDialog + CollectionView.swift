@@ -22,7 +22,7 @@ extension TimeBreakDialog:  UICollectionViewDelegate, UICollectionViewDataSource
         collectionView.dataSource = self
         collectionView.register(TimeSlotCltCell.nib()
             , forCellWithReuseIdentifier: TimeSlotCltCell.name)
-
+        
     }
 
     // MARK: UICollectionViewDataSource
@@ -49,7 +49,7 @@ extension TimeBreakDialog:  UICollectionViewDelegate, UICollectionViewDataSource
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = collectionView.bounds.height / 2.0
+        let size = collectionView.bounds.width / 6.0
         return CGSize(width: size , height: size)
     }
 

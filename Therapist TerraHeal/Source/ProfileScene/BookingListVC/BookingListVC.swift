@@ -58,6 +58,7 @@ class BookingListVC: BaseVC {
         self.setNavigationTitle(title: "MY_BOOKING_TITLE".localized())
         self.vwTab.allowChangeThumbWidth = false
         self.vwTab.itemTitles = ["pending","upcoming","past"]
+        self.vwTab.changeThumbShadowColor(UIColor.themePrimary)
         self.vwTab.changeBackgroundColor(UIColor.themeLightTextColor)
         self.vwTab.didSelectItemWith = { [weak self] (index,title) in
             guard let self = self else { return } ; print(self)
@@ -112,7 +113,6 @@ extension BookingListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
                cell?.setData(data: [MyBookingUserPeople.init(fromDictionary: [:]),MyBookingUserPeople.init(fromDictionary: [:])])
                 self.tableView.reloadRows(at: [indexPath], with: .none)
                cell?.layoutIfNeeded()
-               print("Cell Height: \(cell?.bounds)")
                return cell!
            } else {
                let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingTblCell.name, for: indexPath) as?  MyBookingTblCell

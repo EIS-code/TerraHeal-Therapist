@@ -157,8 +157,7 @@ extension HomeVC {
                         self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: -10.0)
         }, completion: { Void in()
                 UIView.animate(withDuration: 0.5, animations: {
-
-                  self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: (self.view.frame.maxY - self.tblForFilter.frame.minY))
+                    self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: (self.view.frame.maxY - self.tblForFilter.frame.minY))
                    self.vwFilterDialog.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
                 }) { (success) in
                     self.vwFilter.isHidden = true
@@ -182,7 +181,7 @@ extension HomeVC {
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
             self.arrForMyPlaces.removeAll()
-            for i in 0...5 {
+            for _ in 0...5 {
                 self.arrForMyPlaces.append(MyBookingTblDetail.init(title: value as! String, isSelected: false))
             }
             self.tableView.reloadData()
@@ -193,3 +192,9 @@ extension HomeVC {
 
 
 
+extension HomeVC: PBRevealViewControllerDelegate {
+    func revealControllerPanGestureShouldBegin(_ revealController: PBRevealViewController, direction: PBRevealControllerPanDirection) -> Bool {
+        return true
+    }
+
+}

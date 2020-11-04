@@ -24,6 +24,7 @@ class DateDialog: ThemeDialogView, UIGestureRecognizerDelegate {
     @IBOutlet weak var vwSelectDate: UIView!
     @IBOutlet weak var lblSelectDate: ThemeLabel!
     @IBOutlet weak var btnSelectDate: UIButton!
+    @IBOutlet weak var lblMonthYear: ThemeLabel!
 
     var initialFrame: CGRect = CGRect.zero
     var onBtnDoneTapped: ((_ date:Double) -> Void)? = nil
@@ -121,6 +122,7 @@ extension DateDialog: FSCalendarDataSource, FSCalendarDelegate {
     func setupCalendarView(calendar: FSCalendar) {
         calendar.delegate = self
         calendar.dataSource = self
+        calendar.headerHeight = 0.0
         calendar.allowsMultipleSelection = false
         calendar.appearance.todaySelectionColor = self.selectionColor
         calendar.appearance.todayColor = UIColor.themeSecondary
@@ -132,10 +134,14 @@ extension DateDialog: FSCalendarDataSource, FSCalendarDelegate {
         calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
         calendar.appearance.headerTitleColor = UIColor.themeDarkText
         calendar.appearance.subtitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
+        self.lblMonthYear.setFont(name: FontName.Regular, size: FontSize.subHeader)
+        self.lblMonthYear.setText(Date().toString(format: "MMM yyyy"))
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("change page to \(self.formatter.string(from: calendar.currentPage))")
+        let currentMonth: String = calendar.currentPage.toString(format: "MMM yyyy")
+        self.lblMonthYear.setTextWithAnimation(text:currentMonth )
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {

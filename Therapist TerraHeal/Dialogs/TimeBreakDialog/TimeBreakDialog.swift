@@ -24,6 +24,7 @@ class TimeBreakDialog: ThemeBottomDialogView {
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var lblAvailableTime: ThemeLabel!
     @IBOutlet weak var vwForSelectedTime: UIView!
+    @IBOutlet weak var hcltVw: NSLayoutConstraint!
 
     var onBtnDoneTapped: ((_ data:SlotDetail) -> Void)? = nil
     var selectedData:SlotDetail? = nil
@@ -62,7 +63,9 @@ class TimeBreakDialog: ThemeBottomDialogView {
             self.btnDone.isHidden = false
         }
         vwForSelectedTime.setRound(withBorderColor: UIColor.themePrimary, andCornerRadious: 1.0, borderWidth: 1.0)
-
+        self.cltForTimeSlot.reloadData(heightToFit: self.hcltVw) {
+            print(self.cltForTimeSlot)
+        }
     }
 
     func select(data:SlotDetail) {
