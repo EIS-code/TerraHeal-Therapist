@@ -26,6 +26,7 @@ class MyBookingTblSection: UITableViewHeaderFooterView {
     override func layoutSubviews() {
         super.layoutSubviews()
     }
+    
     @IBAction func btnSelectDateTapped(_ sender: Any) {
         self.openDatePicker()
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ResponseModel: NSObject{
+class ResponseModel: NSObject {
 
     var success: String!
     var code: String!

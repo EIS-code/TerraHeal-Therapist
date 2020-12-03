@@ -150,15 +150,19 @@ extension DateDialog: FSCalendarDataSource, FSCalendarDelegate {
             if monthPosition == .previous || monthPosition == .next {
                 calendar.setCurrentPage(date, animated: true)
             }
+        if self.onBtnDoneTapped != nil {
+            self.onBtnDoneTapped!(selectedMilli);
+        }
         
     }
-    func minimumDate(for calendar: FSCalendar) -> Date {
+   /* func minimumDate(for calendar: FSCalendar) -> Date {
         return minDate
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
         return maxDate
-    }
+    }*/
+
     
     func selectDate(date:Date) {
         self.lblSelectedDate.setText(date.toString(format: "E, MMM dd"))

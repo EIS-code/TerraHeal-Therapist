@@ -79,7 +79,14 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
                     else {
                         return nil
                 }
+                if #available(iOS 14.0, *) {
+                    view.backgroundConfiguration = UIBackgroundConfiguration.clear()
+                } else {
+                    // Fallback on earlier versions
+                    view.backgroundColor = .clear
+                }
 
+                view.backgroundView?.backgroundColor = .blue
                 if selectedFilterType == .Past {
                     view.imgFilterType.image = UIImage.init(named: ImageAsset.Filter.pastDark)
                     view.lblFilterType.setText("Past")
@@ -105,24 +112,24 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             self.updateFilterButton(isShowFilter: false)
         }  else {
             if indexPath.row % 2 == 0 {
-                Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: { [weak self](bookingDetailVC) in
-                    bookingDetailVC.bookingDetail = MyBookingData.init(fromDictionary: [:])
+                Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: {/* [weak self]*/ (bookingDetailVC) in
+                    bookingDetailVC.bookingDetail = BookingWebSerive.BookingDetail.init(fromDictionary: [:])
+                    bookingDetailVC.bookingDetail.bookingInfoId = arrForMyPlaces[indexPath.row].id
                     bookingDetailVC.bookingDetail.bookingType = BookingType.MassageCenter.rawValue
-
                 })
             } else {
-                Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: { [weak self](bookingDetailVC) in
-                    bookingDetailVC.bookingDetail = MyBookingData.init(fromDictionary: [:])
+                Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: { /*[weak self]*/ (bookingDetailVC) in
+                    bookingDetailVC.bookingDetail = BookingWebSerive.BookingDetail.init(fromDictionary: [:])
+                    bookingDetailVC.bookingDetail.bookingInfoId = arrForMyPlaces[indexPath.row].id
                     bookingDetailVC.bookingDetail.bookingType = BookingType.AtHotelOrRoom.rawValue
-
                 })
             }
-            // Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController,isBookingFinished: self.arrForMyPlaces[indexPath.row].isSelected)
         }
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if selectedFilterType != .Today && tableView == self.tableView {
-            return 60
+
+            return JDDeviceHelper.offseter(offset: 60, direction: .vertical)
         } else {
             return 0
         }

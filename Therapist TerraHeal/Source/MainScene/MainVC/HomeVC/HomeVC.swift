@@ -25,14 +25,7 @@ class HomeVC: BaseVC {
 
     var selectedFilterType: FilterType = .Today
 
-    var arrForMyPlaces: [MyBookingTblDetail] = [
-        MyBookingTblDetail(title: "29 oct 2020 4:20pm", isSelected: false),
-        MyBookingTblDetail(title: "30 oct 2020 6:20pm", isSelected: false),
-        MyBookingTblDetail(title: "31 oct 2020 7:30pm", isSelected: false),
-        MyBookingTblDetail(title: "01 nov 2020 3:20pm", isSelected: true),
-        MyBookingTblDetail(title: "02 nov 2020 12:20pm", isSelected: true),
-        MyBookingTblDetail(title: "03 nov 2020 04:20pm", isSelected: true),
-    ]
+    var arrForMyPlaces: [MyBookingTblDetail] = []
     var arrForFilter: [ImageWithTitle] = [
         ImageWithTitle.init(name: "HOME_FILTER_TODAY".localized(), imageName: ImageAsset.Filter.today, data: FilterType.Today),
         ImageWithTitle.init(name: "HOME_FILTER_FUTURE".localized(), imageName: ImageAsset.Filter.future, data: FilterType.Future),
@@ -96,6 +89,7 @@ class HomeVC: BaseVC {
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
         self.setNavigationTitle(title: "".localized())
         self.vwFilter.backgroundColor = .clear
+        self.wsGetPastBooking()
     }
     
     @IBAction func btnMenuTapped(_ sender: Any) {
@@ -197,4 +191,42 @@ extension HomeVC: PBRevealViewControllerDelegate {
         return true
     }
 
+}
+
+//MARK:- Web Service Call
+extension HomeVC {
+    func wsGetTodaysBooking() {
+        AppWebApi.todayBookingList { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForMyPlaces.removeAll()
+                for data in response.bookingList {
+                    self.arrForMyPlaces.append(data.toBookingModel())
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
+    func wsGetFutureBooking() {
+        AppWebApi.futureBookingList { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForMyPlaces.removeAll()
+                for data in response.bookingList {
+                    self.arrForMyPlaces.append(data.toBookingModel())
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
+
+    func wsGetPastBooking() {
+        AppWebApi.pastBookingList { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForMyPlaces.removeAll()
+                for data in response.bookingList {
+                    self.arrForMyPlaces.append(data.toBookingModel())
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
 }

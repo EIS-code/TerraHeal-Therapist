@@ -62,6 +62,7 @@
 		034122A0252F40E4000BCDAE /* ServiceStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0341229E252F40E4000BCDAE /* ServiceStatusVC.swift */; };
 		0342137124C6B3C500ABB285 /* LaunchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0342136F24C6B3C500ABB285 /* LaunchVC.xib */; };
 		0342137224C6B3C500ABB285 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342137024C6B3C500ABB285 /* LaunchVC.swift */; };
+		034266952578FCD800920F98 /* BookingWebSerive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034266942578FCD800920F98 /* BookingWebSerive.swift */; };
 		03440371252F04FB00C8C700 /* BookingDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0344036C252F04FB00C8C700 /* BookingDetailVC.xib */; };
 		03440374252F04FB00C8C700 /* BookingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03440370252F04FB00C8C700 /* BookingDetailVC.swift */; };
 		0344037D252F08D900C8C700 /* BookingDetailTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0344037B252F08D900C8C700 /* BookingDetailTblCell.xib */; };
@@ -132,6 +133,9 @@
 		03521F2A252B612E0094829E /* SuggestionTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F26252B612E0094829E /* SuggestionTblCell.swift */; };
 		03521F2B252B612E0094829E /* SuggestionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F27252B612E0094829E /* SuggestionTblCell.xib */; };
 		03521F2C252B612E0094829E /* SuggestionAndComplaintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03521F28252B612E0094829E /* SuggestionAndComplaintVC.swift */; };
+		0352B013255EAE8E002E9D6D /* CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0352B00F255EAE8E002E9D6D /* CameraVC.xib */; };
+		0352B014255EAE8E002E9D6D /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352B011255EAE8E002E9D6D /* CameraController.swift */; };
+		0352B015255EAE8E002E9D6D /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352B012255EAE8E002E9D6D /* CameraVC.swift */; };
 		0354F26125492F4100F3BEB7 /* ManageExperienceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F25925492F4100F3BEB7 /* ManageExperienceVC.xib */; };
 		0354F26225492F4100F3BEB7 /* ManageExperienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F25A25492F4100F3BEB7 /* ManageExperienceVC.swift */; };
 		0354F26325492F4100F3BEB7 /* ManageExperienceTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F25C25492F4100F3BEB7 /* ManageExperienceTblCell.swift */; };
@@ -402,6 +406,7 @@
 		0341229E252F40E4000BCDAE /* ServiceStatusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceStatusVC.swift; sourceTree = "<group>"; };
 		0342136F24C6B3C500ABB285 /* LaunchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchVC.xib; sourceTree = "<group>"; };
 		0342137024C6B3C500ABB285 /* LaunchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
+		034266942578FCD800920F98 /* BookingWebSerive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingWebSerive.swift; sourceTree = "<group>"; };
 		0344036C252F04FB00C8C700 /* BookingDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingDetailVC.xib; sourceTree = "<group>"; };
 		03440370252F04FB00C8C700 /* BookingDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailVC.swift; sourceTree = "<group>"; };
 		0344037B252F08D900C8C700 /* BookingDetailTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingDetailTblCell.xib; sourceTree = "<group>"; };
@@ -472,6 +477,9 @@
 		03521F26252B612E0094829E /* SuggestionTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionTblCell.swift; sourceTree = "<group>"; };
 		03521F27252B612E0094829E /* SuggestionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestionTblCell.xib; sourceTree = "<group>"; };
 		03521F28252B612E0094829E /* SuggestionAndComplaintVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionAndComplaintVC.swift; sourceTree = "<group>"; };
+		0352B00F255EAE8E002E9D6D /* CameraVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraVC.xib; sourceTree = "<group>"; };
+		0352B011255EAE8E002E9D6D /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		0352B012255EAE8E002E9D6D /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		0354F25925492F4100F3BEB7 /* ManageExperienceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageExperienceVC.xib; sourceTree = "<group>"; };
 		0354F25A25492F4100F3BEB7 /* ManageExperienceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageExperienceVC.swift; sourceTree = "<group>"; };
 		0354F25C25492F4100F3BEB7 /* ManageExperienceTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageExperienceTblCell.swift; sourceTree = "<group>"; };
@@ -1236,6 +1244,33 @@
 			path = SuggestionAndComplaintCell;
 			sourceTree = "<group>";
 		};
+		0352B00D255EAE8E002E9D6D /* CameraVC */ = {
+			isa = PBXGroup;
+			children = (
+				0352B00E255EAE8E002E9D6D /* xib */,
+				0352B010255EAE8E002E9D6D /* CameraController */,
+				0352B012255EAE8E002E9D6D /* CameraVC.swift */,
+			);
+			name = CameraVC;
+			path = "Therapist TerraHeal/Source/HelperVC/ImagePickerVC/CameraVC";
+			sourceTree = SOURCE_ROOT;
+		};
+		0352B00E255EAE8E002E9D6D /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0352B00F255EAE8E002E9D6D /* CameraVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		0352B010255EAE8E002E9D6D /* CameraController */ = {
+			isa = PBXGroup;
+			children = (
+				0352B011255EAE8E002E9D6D /* CameraController.swift */,
+			);
+			path = CameraController;
+			sourceTree = "<group>";
+		};
 		0354F25725492F4100F3BEB7 /* ManageExperienceVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1944,6 +1979,7 @@
 		038CAFE62526056E001ACAD6 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				0352B00D255EAE8E002E9D6D /* CameraVC */,
 				038CAFE72526056E001ACAD6 /* TextField */,
 				038CAFEB2526056E001ACAD6 /* GoogleMapHelper.swift */,
 				038CAFEC2526056E001ACAD6 /* RatingView.swift */,
@@ -2072,6 +2108,7 @@
 				03A2CC3825303CE3005E3F29 /* MyBookingData.swift */,
 				03A2CC3925303CE3005E3F29 /* MyBookingWebService.swift */,
 				03A2CC3A25303CE3005E3F29 /* MyBookingMassage.swift */,
+				034266942578FCD800920F98 /* BookingWebSerive.swift */,
 			);
 			path = BookingDetailModel;
 			sourceTree = "<group>";
@@ -2539,6 +2576,7 @@
 				03412297252F3AFC000BCDAE /* CustomPhotoPicker.xib in Resources */,
 				0344037D252F08D900C8C700 /* BookingDetailTblCell.xib in Resources */,
 				0354F26125492F4100F3BEB7 /* ManageExperienceVC.xib in Resources */,
+				0352B013255EAE8E002E9D6D /* CameraVC.xib in Resources */,
 				0354F26B254947E100F3BEB7 /* BookingListVC.xib in Resources */,
 				63415E36246FB5C600F0D7A0 /* Nunito-Bold.ttf in Resources */,
 				0354F2762549603700F3BEB7 /* WorkingScheduleTblCell.xib in Resources */,
@@ -2726,6 +2764,7 @@
 				034CBE792534700D00B20A11 /* JZBaseWeekView.swift in Sources */,
 				030DB5CA252609FB004C7CC8 /* PinterestLayout.swift in Sources */,
 				038CB00E2526056E001ACAD6 /* DataType + Extesnion.swift in Sources */,
+				0352B014255EAE8E002E9D6D /* CameraController.swift in Sources */,
 				03A2CC6825309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift in Sources */,
 				034BB1B5255172EA006B3842 /* SquareView.swift in Sources */,
 				038CAF8F252601CF001ACAD6 /* LoginVC.swift in Sources */,
@@ -2821,6 +2860,7 @@
 				038CAFE4252604D8001ACAD6 /* Person+CoreDataProperties.swift in Sources */,
 				0354F2792549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift in Sources */,
 				03A2CC3F25306CFF005E3F29 /* BookingDetailVC + Tableview.swift in Sources */,
+				034266952578FCD800920F98 /* BookingWebSerive.swift in Sources */,
 				03643F94254AD109004F9156 /* MissingDaysVC + CaledarView.swift in Sources */,
 				03643F9E254AD92A004F9156 /* MyMassageTblCell.swift in Sources */,
 				03412293252F3AFC000BCDAE /* UIImage+FixOrientation.swift in Sources */,
@@ -2864,6 +2904,7 @@
 				030DB5A025260966004C7CC8 /* ResponseModel.swift in Sources */,
 				034CBE852534700D00B20A11 /* JZRowHeaderBackground.swift in Sources */,
 				03B960A725481E3600F8F214 /* LanguageFluencyDialog.swift in Sources */,
+				0352B015255EAE8E002E9D6D /* CameraVC.swift in Sources */,
 				034CBE752534700D00B20A11 /* JZWeekViewFlowLayout.swift in Sources */,
 				034BB1A125510BC1006B3842 /* MonthYearDialog.swift in Sources */,
 				030DB5D0252609FB004C7CC8 /* ThemeBottomDialog.swift in Sources */,
@@ -2955,7 +2996,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3009,7 +3050,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

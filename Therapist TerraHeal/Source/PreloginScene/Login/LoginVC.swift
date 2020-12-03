@@ -78,10 +78,9 @@ class LoginVC: BaseVC {
 
     @IBAction func btnLoginTapped(_ sender: UIButton) {
         self.btnLogin.isEnabled = false
-        Common.appDelegate.loadMainVC()
-        /*if checkValidation() {
+        if checkValidation() {
             self.wsLogin(username: txtEmail.text!.trim(), password: txtPassword.text!)
-        }*/
+        }
 
     }
 
@@ -110,10 +109,9 @@ extension LoginVC {
         request.email = username
         request.password = password
         AppWebApi.login(params: request) { (response) in
-            let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
             Loader.hideLoading()
             self.btnLogin?.isEnabled = true
-            if ResponseModel.isSuccess(response: model, withSuccessToast: false, andErrorToast: true) {
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 let user = response.data
                 PreferenceHelper.shared.setUserId(user.id)
                 //PreferenceHelper.shared.setSessionToken(user.token)

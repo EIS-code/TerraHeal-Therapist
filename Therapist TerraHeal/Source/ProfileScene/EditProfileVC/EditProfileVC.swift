@@ -114,8 +114,8 @@ class EditProfileVC: BaseVC {
             EditProfileTextFieldDetail.init(value: "", type: .HealthCodndition, rightImage: ""),
 
         ]
-        self.selectedCity = appSingleton.user.city
-        self.selectedCountry = appSingleton.user.country
+        //self.selectedCity = appSingleton.user.city
+        //self.selectedCountry = appSingleton.user.country
         self.collectionVwForProfile.reloadData()
         
     }
@@ -312,13 +312,14 @@ extension EditProfileVC {
 
     func openMobileNumberDialog(index:Int = 0) {
         let alert: CustomMobileNumberDialog = CustomMobileNumberDialog.fromNib()
-        switch self.arrForProfile[index].type {
+        /*switch self.arrForProfile[index].type {
         case .EmergencyContact:
             alert.initialize(title: arrForProfile[index].type.getPlaceHolder(),countryPhoneCode: appSingleton.user.emergencyTelNumberCode,phoneNumber: appSingleton.user.emergencyTelNumber, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         case .Phone:
             alert.initialize(title: arrForProfile[index].type.getPlaceHolder(),countryPhoneCode: appSingleton.user.telNumberCode,phoneNumber: appSingleton.user.telNumber, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         default : print("Default")
-        }
+        }*/
+
 
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
@@ -403,7 +404,6 @@ extension EditProfileVC {
             guard let self = self else { return } ; print(self)
             genderPickerAlert?.dismiss()
             var request: User.RequestProfile = User.RequestProfile()
-            request.gender = gender.rawValue
             self.wsUpdateProfile(request: request)
 
         }
@@ -415,9 +415,8 @@ extension EditProfileVC {
     func wsUpdateProfile(request: User.RequestProfile) {
         Loader.showLoading()
         AppWebApi.profile(params: request) { (response) in
-            let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
             Loader.hideLoading()
-            if ResponseModel.isSuccess(response: model, withSuccessToast: false, andErrorToast: true) {
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 let user = response.data
                 PreferenceHelper.shared.setUserId(user.id)
                 appSingleton.user = user
@@ -437,9 +436,8 @@ extension EditProfileVC {
             print("Image Size \(imgSizeInMB) MB")
         }
         AppWebApi.profile(params: User.RequestProfile(), image: selectedProfileDoc) { (response) in
-            let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
             Loader.hideLoading()
-            if ResponseModel.isSuccess(response: model, withSuccessToast: false, andErrorToast: true) {
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 let user = response.data
                 PreferenceHelper.shared.setUserId(user.id)
                 appSingleton.user = user

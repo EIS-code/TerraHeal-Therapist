@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2A3A15FF-860C-4475-B886-03756955B077"
+            uuid = "7C6F3DB4-5507-4830-88E7-4A08A92388ED"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Therapist TerraHeal/Source/MainScene/MyBooking/Cells/MyBookingExpandTblCell/MyBookingExpandTblCell + TableViewl.swift"
+            filePath = "Therapist TerraHeal/Source/MainScene/MainVC/HomeVC/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6C3ECDB9-4790-4515-8C98-05B04577847B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Therapist TerraHeal/Source/MainScene/MainVC/MainVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "revealControllerTapGestureShouldBegin(_:)"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "wsGetPastBooking()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

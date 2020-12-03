@@ -159,12 +159,14 @@ extension VerificationAlert:  OTPFieldViewDelegate {
 
 //MARK:   - WS Web API
 extension VerificationAlert {
-    
+
     private func wsVerifyEmail(isResend:Bool = false) {
         if appSingleton.user.isEmailVerified.toBool {
             return;
         }
-        Loader.showLoading()
+
+        /*
+         Loader.showLoading()
         var request: User.RequestEmailOTP = User.RequestEmailOTP()
         request.email = Singleton.shared.user.email
         AppWebApi.getEmailOtp(params: request) { (response) in
@@ -174,10 +176,11 @@ extension VerificationAlert {
             } else {
                 
             }
-        }
+        }*/
     }
     
     private func wsVerifyEmailOtp(code:String) {
+        /*
         Loader.showLoading()
         var request: User.RequestVerifyEmailOTP = User.RequestVerifyEmailOTP()
         request.otp = code
@@ -190,14 +193,15 @@ extension VerificationAlert {
             } else {
                 
             }
-        }
+        }*/
+
     }
     
     
     private func wsVerifyPhone(isResend:Bool = false) {
         if appSingleton.user.isMobileVerified.toBool {
             return;
-        }
+        }/*
         Loader.showLoading()
         var request: User.RequestPhoneOTP = User.RequestPhoneOTP()
         request.mobile = Singleton.shared.user.telNumber
@@ -208,11 +212,12 @@ extension VerificationAlert {
             } else {
                 
             }
-        }
+        }*/
+
     }
     
     private func wsVerifyPhoneOtp(code:String) {
-        Loader.showLoading()
+        /*Loader.showLoading()
         var request: User.RequestVerifyPhoneOTP = User.RequestVerifyPhoneOTP()
         request.otp = code
         AppWebApi.verifyPhoneOtp(params: request) { (response) in
@@ -223,8 +228,9 @@ extension VerificationAlert {
                 self.updateVerificationView()
             } else {
             }
-        }
+        }*/
     }
+
     
     
 }

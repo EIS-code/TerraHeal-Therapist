@@ -9,7 +9,8 @@
 import UIKit
 
 struct MyBookingTblDetail{
-    var title: String = "05 oct 2020 15:20"
+    var id:String = ""
+    var title: String = ""
     var isSelected: Bool = false
 }
 

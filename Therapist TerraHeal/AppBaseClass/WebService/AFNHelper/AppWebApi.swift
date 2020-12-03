@@ -46,23 +46,7 @@ class AppWebApi: NSObject {
             
         }
 
-        static var VerifyEmail: String {
-            return Domain + Routes.Client + "/verify/email"
-        }
-        static var VerifyPhone: String {
-            return Domain + Routes.Client + "/verify/mobile"
-        }
-        static var VerifyEmailOTP: String {
-            return Domain + Routes.Client + "/compare/otp/email"
-        }
-        static var VerifyPhoneOTP: String {
-            return Domain + Routes.Client + "/compare/otp/mobile"
-        }
 
-        
-        static var CheckExeption: String {
-            return Domain + Routes.Exception
-        }
         static var GetUserDetail: String {
             return  Domain + Routes.Client + "/get/" + PreferenceHelper.shared.getUserId()
         }
@@ -74,6 +58,24 @@ class AppWebApi: NSObject {
             return  Domain + Routes.Location + "/get/city"
         }
 
+        //MARK:- Booking Api
+        static var TodayBookingList: String {
+            return  Domain + Routes.Client + "/booking/list/today"
+        }
+        static var PastBookingList: String {
+            return  Domain + Routes.Client + "/booking/list/past"
+        }
+        static var FutureBookingList: String {
+            return  Domain + Routes.Client + "/booking/list/future"
+        }
+        static var BookingDetail: String {
+            return  Domain + Routes.Client + "/booking"
+        }
+
+        //MARK: Exception
+        static var CheckExeption: String {
+            return Domain + Routes.Exception
+        }
     }
 }
 
@@ -104,31 +106,7 @@ extension AppWebApi {
         }
     }
     
-    class func register(params:User.RequestRegister, completionHandler: @escaping ((User.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserRegister, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = User.Response.init(fromDictionary: dictionary)
-            completionHandler(response)
-        }
-    }
-    
 
-    
-    class func profile(params:User.RequestProfile, image:UploadDocumentDetail? = nil, paramName:String = "profile_photo", completionHandler: @escaping ((User.Response) -> Void)) {
-        
-        
-        if let imageToUpload = image {
-            AlamofireHelper().uploadDocumentToURL(urlString:AppWebApi.URL.UserProfile , paramData: params.dictionary, documents: [imageToUpload],paramName: paramName)  { (data, dictionary, error) in
-                let response = User.Response.init(fromDictionary: dictionary)
-                completionHandler(response)
-            }
-        } else {
-            AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserProfile, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-                let response = User.Response.init(fromDictionary: dictionary)
-                completionHandler(response)
-            }
-        }
-    }
-    
     
     class func exception(params:[String:String], completionHandler: @escaping ((User.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.CheckExeption, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
@@ -138,7 +116,20 @@ extension AppWebApi {
     }
 
 
-
+    class func profile(params:User.RequestProfile, image:UploadDocumentDetail? = nil, paramName:String = "profile_photo", completionHandler: @escaping ((User.Response) -> Void)) {
+        if let imageToUpload = image {
+            AlamofireHelper().uploadDocumentToURL(urlString:API_URL.UserProfile , paramData: params.dictionary, documents: [imageToUpload],paramName: paramName)  { (data, dictionary, error) in
+                let response = User.Response.init(fromDictionary: dictionary)
+                completionHandler(response)
+            }
+        }
+        else {
+            AlamofireHelper().getDataFrom(urlString: API_URL.UserProfile, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+                let response = User.Response.init(fromDictionary: dictionary)
+                completionHandler(response)        }
+        }
+    }
+    
     class func userLogout(params:User.RequestLogout = User.RequestLogout(), completionHandler: @escaping ((ResponseModel) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserLogout, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = ResponseModel.init(fromDictionary: dictionary)
@@ -146,43 +137,45 @@ extension AppWebApi {
         }
     }
 
-    class func getEmailOtp(params:User.RequestEmailOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: API_URL.VerifyEmail, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = User.ResponseVerification.init(fromDictionary: dictionary)
-            completionHandler(response)
-        }
-    }
-    class func getPhoneOtp(params:User.RequestPhoneOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: API_URL.VerifyPhone, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = User.ResponseVerification.init(fromDictionary: dictionary)
-            completionHandler(response)
-        }
-    }
-    class func verifyEmailOtp(params:User.RequestVerifyEmailOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: API_URL.VerifyEmailOTP, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = User.ResponseVerification.init(fromDictionary: dictionary)
-            completionHandler(response)
-        }
-    }
-    class func verifyPhoneOtp(params:User.RequestVerifyPhoneOTP, completionHandler: @escaping ((User.ResponseVerification) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: API_URL.VerifyPhoneOTP, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = User.ResponseVerification.init(fromDictionary: dictionary)
+    class func countryList(params:Countries.RequestCountrylist = Countries.RequestCountrylist(), completionHandler: @escaping ((Countries.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.GetCountryList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
+            let response = Countries.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
 
-    class func countryList(params:Countries.RequestCountrylist = Countries.RequestCountrylist(), completionHandler: @escaping ((Countries.Response) -> Void)) {
-            AlamofireHelper().getDataFrom(urlString: API_URL.GetCountryList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
-                let response = Countries.Response.init(fromDictionary: dictionary)
-                completionHandler(response)
-            }
-        }
     class func cityList(params:Cities.RequestCitylist, completionHandler: @escaping ((Cities.Response) -> Void)) {
-            AlamofireHelper().getDataFrom(urlString: API_URL.GetCityList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-                let response = Cities.Response.init(fromDictionary: dictionary)
-                completionHandler(response)
-            }
+        AlamofireHelper().getDataFrom(urlString: API_URL.GetCityList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = Cities.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
         }
+    }
+
+    class func todayBookingList(params:BookingWebSerive.RequestTodayBookingList = BookingWebSerive.RequestTodayBookingList.init(), completionHandler: @escaping ((BookingWebSerive.ResponseBookingList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.TodayBookingList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = BookingWebSerive.ResponseBookingList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func pastBookingList(params:BookingWebSerive.RequestPastBookingList = BookingWebSerive.RequestPastBookingList.init(), completionHandler: @escaping ((BookingWebSerive.ResponseBookingList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.PastBookingList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = BookingWebSerive.ResponseBookingList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func futureBookingList(params:BookingWebSerive.RequestTodayBookingList = BookingWebSerive.RequestTodayBookingList.init(), completionHandler: @escaping ((BookingWebSerive.ResponseBookingList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.FutureBookingList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = BookingWebSerive.ResponseBookingList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+
+    class func getBookingDetail(params:BookingWebSerive.RequestBookingDetail = BookingWebSerive.RequestBookingDetail.init(), completionHandler: @escaping ((BookingWebSerive.ResponseBookingDetail) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.BookingDetail, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = BookingWebSerive.ResponseBookingDetail.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
 }
 
 

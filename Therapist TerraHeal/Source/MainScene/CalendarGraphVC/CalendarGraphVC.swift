@@ -108,6 +108,17 @@ class CalendarGraphVC: BaseVC {
     }
 }
 
+extension CalendarGraphVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+            if (actualPosition.y > 40){
+                self.scrView.gone()
+                // Dragging down
+            }else{
+                // Dragging up
+            }
+    }
+}
 
 extension CalendarGraphVC: JZBaseViewDelegate {
     func initDateDidChange(_ weekView: JZBaseWeekView, initDate: Date) {

@@ -33,7 +33,7 @@ class BookingDetailVC: BaseVC {
     @IBOutlet weak var hTblCard3: NSLayoutConstraint!
     var arrForTbl3:  [BookingDetail] = []
 
-    var bookingDetail:MyBookingData = MyBookingData.init(fromDictionary: [:])
+    var bookingDetail: BookingWebSerive.BookingDetail = BookingWebSerive.BookingDetail.init(fromDictionary: [:])
 
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -53,15 +53,6 @@ class BookingDetailVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.arrForTbl1 = [BookingDetail.init(title: "client name", detail: bookingDetail.clientName),
-                           BookingDetail.init(title: "type of service", detail: bookingDetail.massageDetail.first!.name + " " + bookingDetail.massageDetail.first!.time + " " + "min")]
-        self.arrForTbl2 = [BookingDetail.init(title: "session type", detail: bookingDetail.sessionType),
-        BookingDetail.init(title: "date & time", detail: bookingDetail.massageDate + "\n" + bookingDetail.massageTime),
-        BookingDetail.init(title: "pressure preference", detail: bookingDetail.pressurePreference)]
-
-        self.arrForTbl3 = [BookingDetail.init(title: "Service Details", detail: bookingDetail.pressurePreference),
-               BookingDetail.init(title: "notes", detail: bookingDetail.notes),
-               BookingDetail.init(title: "focus area", detail: bookingDetail.focusPreference)]
 
         self.initialViewSetup()
         vwForCard1.topRound()
@@ -71,8 +62,8 @@ class BookingDetailVC: BaseVC {
         vwForCard2.addGradientFade(colors: [UIColor.init(hex: "##F6F6F4").cgColor,UIColor.init(hex: "#F6F6F4C8").cgColor,UIColor.init(hex: "#F6F6F48A").cgColor,UIColor.init(hex: "#F6F6F4").cgColor])
         vwForCard3.topRound()
         vwForCard3.addGradientFade(colors: [UIColor.init(hex: "#F6F6F4").cgColor,UIColor.init(hex: "#FFFFF8").cgColor])
-        
-        self.updateViewForBookingType()
+        self.wsGetBookingDetil(id: self.bookingDetail.bookingInfoId)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -171,15 +162,6 @@ class BookingDetailVC: BaseVC {
             print("\(scanVC)")
             scanVC.delegate = self
         }
-        /*let cameraVC: CameraVC =  Common.appDelegate.loadCameraVC(navigaionVC: self.navigationController)
-        cameraVC.onBtnCaptureTapped = { [weak self] (document)  in
-                   guard let self = self else {
-                       return
-                   }
-                self.popVC()
-                Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
-        }*/
-        
     }
 }
 
@@ -196,6 +178,32 @@ extension BookingDetailVC : QRScannerCodeDelegate {
 
     func qrScannerDidCancel(_ controller: UIViewController) {
         print("\(#function)")
+    }
+}
+
+extension BookingDetailVC {
+    func wsGetBookingDetil(id:String) {
+        AppWebApi.getBookingDetail(params: BookingWebSerive.RequestBookingDetail.init(booking_info_id: id)) { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.setupData(bookingDetail: response.bookingDetail)
+            }
+        }
+    }
+
+    func setupData(bookingDetail:BookingWebSerive.BookingDetail) {
+        self.arrForTbl1 = [BookingDetail.init(title: "client name", detail: bookingDetail.serviceName),
+                           BookingDetail.init(title: "type of service", detail: bookingDetail.serviceName + " " + bookingDetail.massageTime + " " + "min")]
+        self.arrForTbl2 = [BookingDetail.init(title: "session type", detail: bookingDetail.sessionType),
+        BookingDetail.init(title: "date & time", detail: bookingDetail.massageDate + "\n" + bookingDetail.massageTime),
+        BookingDetail.init(title: "pressure preference", detail: bookingDetail.pressurePreference)]
+
+        self.arrForTbl3 = [BookingDetail.init(title: "Service Details", detail: bookingDetail.pressurePreference),
+               BookingDetail.init(title: "notes", detail: bookingDetail.notes),
+               BookingDetail.init(title: "focus area", detail: bookingDetail.focusArea)]
+        self.tblForCard1.reloadData()
+        self.tblForCard2.reloadData()
+        self.tblForCard3.reloadData()
+        self.updateViewForBookingType()
     }
 }
 
