@@ -13,15 +13,24 @@
 "LOGIN_TXT_PASSWORD" = "password";
 "LOGIN_BTN_SIGN_IN" = "Sign In";
 "LOGIN_BTN_FORGOT_PASSWORD" = "forgot password?";
+//MARK: BOOKING DETAIL SCREEN
+"BOOKING_DETAIL_CLIENT_NAME" = "client name";
+"BOOKING_DETAIL_TYPE_OF_SERVICE" = "type of service";
+"BOOKING_DETAIL_SESSION_TYPE" = "session type";
+"BOOKING_DETAIL_DATE_AND_TIME" = "date & time";
+"BOOKING_DETAIL_PRESSURE_PREFERENCE" = "pressure preference";
+"BOOKING_DETAIL_SERVICE_DETAILS" = "Service Details";
+"BOOKING_DETAIL_NOTES" = "notes";
+"BOOKING_DETAIL_FOCUS_AREA" = "focus area";
 //MARK: Home SCREEN
 "HOME_BTN_NEWS" = "news";
 "HOME_BTN_CALENDER" = "calender";
 "HOME_BTN_BOOKING" = "booking";
-
 "HOME_FILTER_TODAY" = "today";
 "HOME_FILTER_FUTURE" = "future";
 "HOME_FILTER_PAST" = "past";
 "HOME_SECTION_BTN_SELECT_DATE" = "select date";
+
 //MARK: Menu Screen
 "MENU_TITLE" = "Menu";
 "MENU_QUIT_COLLABORATION" = "quit collaboration";

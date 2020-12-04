@@ -13,7 +13,8 @@ class CalendarGraphVC: BaseVC {
     @IBOutlet weak var calendarWeekView: DefaultWeekView!
     @IBOutlet weak var bookingView: UIView!
     var bookingVC: MyBookingVC? = nil
-    let viewModel = DefaultViewModel()
+    var arrForCalenderEvents:[DefaultEvent] = []
+    var currentSelectedData: OptionsSelectedData! = OptionsSelectedData.init(viewType: .defaultView, date:Date.init(milliseconds: 1599567170000), numOfDays: 7, scrollType: .pageScroll, firstDayOfWeek: .Monday, hourGridDivision: .noneDiv, scrollableRange: (nil,nil) )
 
     @IBOutlet weak var scrView: UIScrollView!
     // MARK: Object lifecycle
@@ -39,6 +40,7 @@ class CalendarGraphVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.wsGetTodaysBooking()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,14 +76,14 @@ class CalendarGraphVC: BaseVC {
         calendarWeekView.baseDelegate = self
 
         // For example only
-        if viewModel.currentSelectedData != nil {
+        if self.currentSelectedData != nil {
             setupCalendarViewWithSelectedData()
             return
         }
         // Basic setup
         calendarWeekView.setupCalendar(numOfDays: 7,
                                        setDate: Date(),
-                                       allEvents: viewModel.eventsByDate,
+                                       allEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: arrForCalenderEvents),
                                        scrollType: .pageScroll)
         // Optional
         calendarWeekView.updateFlowLayout(JZWeekViewFlowLayout(hourGridDivision: JZHourGridDivision.noneDiv))
@@ -89,10 +91,12 @@ class CalendarGraphVC: BaseVC {
 
     /// For example only
     private func setupCalendarViewWithSelectedData() {
-        guard let selectedData = viewModel.currentSelectedData else { return }
+
+        guard let selectedData = self.currentSelectedData else { return }
+        let eventForCal = JZWeekViewHelper.getIntraEventsByDate(originalEvents: arrForCalenderEvents)
         calendarWeekView.setupCalendar(numOfDays: selectedData.numOfDays,
                                        setDate: selectedData.date,
-                                       allEvents: viewModel.eventsByDate,
+                                       allEvents: eventForCal,
                                        scrollType: selectedData.scrollType,
                                        firstDayOfWeek: selectedData.firstDayOfWeek)
         calendarWeekView.updateFlowLayout(JZWeekViewFlowLayout(hourGridDivision: selectedData.hourGridDivision))
@@ -136,14 +140,30 @@ extension CalendarGraphVC: JZBaseViewDelegate {
 // For example only
 extension CalendarGraphVC {
 
+    func wsGetTodaysBooking() {
+        AppWebApi.todayBookingList { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForCalenderEvents.removeAll()
+                for i in 0..<response.bookingList.count {
+                    let data = response.bookingList[i]
+                    let newStartDate = Date.init(milliseconds: data.massageTime.toDouble).add(component: .day, value: i).add(component: .hour, value: i)
+                    self.arrForCalenderEvents.append(DefaultEvent.init(id: data.bookingInfoId, title: data.bookingInfoId, startDate: newStartDate, endDate: newStartDate.add(component: .minute, value: 15)))
+                }
+                if let selectedDate = self.arrForCalenderEvents.first?.startDate {
+                    self.currentSelectedData.date = selectedDate
+                }
+
+                self.setupCalendarView()
+                //self.calendarWeekView.collectionView.reloadData()
+
+            }
+        }
+    }
+
     func setupBasic() {
         // Add this to fix lower than iOS11 problems
 
     }
-
-
-
-
     private func updateNaviBarTitle() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM YYYY"

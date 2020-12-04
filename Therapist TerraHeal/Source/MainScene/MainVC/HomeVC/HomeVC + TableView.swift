@@ -22,14 +22,14 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
 
     func registerNib(tableView: UITableView) {
         tableView.register(MyBookingTblCell.nib()
-            , forCellReuseIdentifier: MyBookingTblCell.name)
+                           , forCellReuseIdentifier: MyBookingTblCell.name)
         tableView.register(MyBookingTblSection.nib(), forHeaderFooterViewReuseIdentifier: MyBookingTblSection.name)
         tableView.tableFooterView = UIView()
     }
 
     func registerFilterNib(tableView: UITableView) {
         tableView.register(FilterTblCell.nib()
-            , forCellReuseIdentifier: FilterTblCell.name)
+                           , forCellReuseIdentifier: FilterTblCell.name)
         tableView.tableFooterView = UIView()
     }
     
@@ -74,10 +74,10 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
                 return nil
             } else {
                 guard let view = tableView.dequeueReusableHeaderFooterView(
-                    withIdentifier: MyBookingTblSection.name)
-                    as? MyBookingTblSection
-                    else {
-                        return nil
+                        withIdentifier: MyBookingTblSection.name)
+                        as? MyBookingTblSection
+                else {
+                    return nil
                 }
                 if #available(iOS 14.0, *) {
                     view.backgroundConfiguration = UIBackgroundConfiguration.clear()
@@ -111,19 +111,11 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
 
             self.updateFilterButton(isShowFilter: false)
         }  else {
-            if indexPath.row % 2 == 0 {
-                Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: {/* [weak self]*/ (bookingDetailVC) in
-                    bookingDetailVC.bookingDetail = BookingWebSerive.BookingDetail.init(fromDictionary: [:])
-                    bookingDetailVC.bookingDetail.bookingInfoId = arrForMyPlaces[indexPath.row].id
-                    bookingDetailVC.bookingDetail.bookingType = BookingType.MassageCenter.rawValue
-                })
-            } else {
-                Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: { /*[weak self]*/ (bookingDetailVC) in
-                    bookingDetailVC.bookingDetail = BookingWebSerive.BookingDetail.init(fromDictionary: [:])
-                    bookingDetailVC.bookingDetail.bookingInfoId = arrForMyPlaces[indexPath.row].id
-                    bookingDetailVC.bookingDetail.bookingType = BookingType.AtHotelOrRoom.rawValue
-                })
-            }
+
+            Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: {/* [weak self]*/ (bookingDetailVC) in
+                bookingDetailVC.bookingDetail = BookingWebSerive.BookingDetail.init(fromDictionary: [:])
+                bookingDetailVC.bookingDetail.bookingInfoId = arrForMyPlaces[indexPath.row].id
+            })
         }
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

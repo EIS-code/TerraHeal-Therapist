@@ -14,12 +14,11 @@ import Foundation
 enum BookingWebSerive {
 
     struct RequestTodayBookingList: Codable {
-        var therapist_id: String = PreferenceHelper.shared.getUserId()
-        var massage_date: String = Date().millisecondsSince1970.toString()
+        var therapist_id: String = "3"//PreferenceHelper.shared.getUserId()
+        var massage_date: String = "1599523200000"//Date().millisecondsSince1970.toString()
         var client_name: String = "JD"
         var booking_type: String = "2"
         var session_id: String = "0"
-
     }
     struct RequestPastBookingList: Codable {
         var therapist_id: String = "3"//PreferenceHelper.shared.getUserId()
@@ -60,7 +59,7 @@ enum BookingWebSerive {
             super.init(fromDictionary: dictionary)
 
             if let dataArray = dictionary["data"] as? [[String:Any]] {
-                if let detail = dataArray.first {
+                if let detail = dataArray.last {
                     self.bookingDetail = BookingDetail.init(fromDictionary: detail)
                 }
             }
@@ -74,24 +73,29 @@ enum BookingWebSerive {
         var genderPreference: String = ""
         var injuries: String = ""
         var massageDate: String = ""
-        var massageTime: String = ""
+        var massageStartTime: String = ""
+        var massageEndTime: String = ""
         var notes: String = ""
         var pressurePreference: String = ""
         var serviceName: String = ""
         var sessionType: String = ""
         var tableFutonQuantity: String = ""
         var bookingType: String = ""
-
+        var clientName: String = ""
+        var rooomId: String = "01"
         /**
          * Instantiate the instance using the passed dictionary values to set the properties values
          */
         init(fromDictionary dictionary: [String:Any]){
             self.bookingInfoId = (dictionary["booking_info_id"] as? String) ?? ""
+            self.clientName = (dictionary["client_name"] as? String) ?? ""
+            self.bookingType = (dictionary["booking_type"] as? String) ?? ""
             self.focusArea = (dictionary["focus_area"] as? String) ?? ""
             self.genderPreference = (dictionary["gender_preference"] as? String) ?? ""
             self.injuries = (dictionary["injuries"] as? String) ?? ""
             self.massageDate = (dictionary["massage_date"] as? String) ?? ""
-            self.massageTime = (dictionary["massage_time"] as? String) ?? ""
+            self.massageStartTime = (dictionary["massage_start_time"] as? String) ?? ""
+            self.massageEndTime = (dictionary["massage_end_time"] as? String) ?? ""
             self.notes = (dictionary["notes"] as? String) ?? ""
             self.pressurePreference = (dictionary["pressure_preference"] as? String) ?? ""
             self.serviceName = (dictionary["service_name"] as? String) ?? ""

@@ -35,14 +35,14 @@
                     <rect key="frame" x="0.0" y="168" width="375" height="689"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ivl-gg-sTf" customClass="DefaultWeekView" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                            <rect key="frame" x="8" y="16" width="359" height="665"/>
+                            <rect key="frame" x="8" y="16" width="359" height="509"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Ivl-gg-sTf" secondAttribute="trailing" constant="8" id="WLv-oI-Uyj"/>
                         <constraint firstItem="Ivl-gg-sTf" firstAttribute="leading" secondItem="FD6-zP-WE3" secondAttribute="leading" constant="8" id="XMo-Kf-WmF"/>
-                        <constraint firstAttribute="bottom" secondItem="Ivl-gg-sTf" secondAttribute="bottom" constant="8" id="irG-nj-0tZ"/>
+                        <constraint firstAttribute="bottom" secondItem="Ivl-gg-sTf" secondAttribute="bottom" constant="164" id="irG-nj-0tZ"/>
                         <constraint firstItem="Ivl-gg-sTf" firstAttribute="top" secondItem="FD6-zP-WE3" secondAttribute="top" constant="16" id="zpr-lX-84z"/>
                     </constraints>
                 </view>

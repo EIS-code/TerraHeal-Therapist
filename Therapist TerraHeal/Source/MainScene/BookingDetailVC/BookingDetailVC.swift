@@ -106,9 +106,7 @@ class BookingDetailVC: BaseVC {
         self.setupTableView(tableView: self.tblForCard3)
         self.setNavigationTitle(title:"BOOKING_DETAILS_TITLE".localized())
         self.vwNavigationBar.backgroundColor = .white
-        self.lblBookingId.setText("062488475")
         self.lblBookingId.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
-        self.btnRoomNumber.setText("01")
         self.btnRoomNumber.backgroundColor = UIColor.themeSecondary
         self.btnRoomNumber.setTitleColor(UIColor.themeLightTextColor, for: .normal)
         self.btnRoomNumber.setRound()
@@ -188,18 +186,38 @@ extension BookingDetailVC {
                 self.setupData(bookingDetail: response.bookingDetail)
             }
         }
+
+
+
+
+
+
+
+
     }
 
     func setupData(bookingDetail:BookingWebSerive.BookingDetail) {
-        self.arrForTbl1 = [BookingDetail.init(title: "client name", detail: bookingDetail.serviceName),
-                           BookingDetail.init(title: "type of service", detail: bookingDetail.serviceName + " " + bookingDetail.massageTime + " " + "min")]
-        self.arrForTbl2 = [BookingDetail.init(title: "session type", detail: bookingDetail.sessionType),
-        BookingDetail.init(title: "date & time", detail: bookingDetail.massageDate + "\n" + bookingDetail.massageTime),
-        BookingDetail.init(title: "pressure preference", detail: bookingDetail.pressurePreference)]
+        self.lblBookingId.setText(bookingDetail.bookingInfoId)
+        self.btnRoomNumber.setText(bookingDetail.rooomId)
 
-        self.arrForTbl3 = [BookingDetail.init(title: "Service Details", detail: bookingDetail.pressurePreference),
-               BookingDetail.init(title: "notes", detail: bookingDetail.notes),
-               BookingDetail.init(title: "focus area", detail: bookingDetail.focusArea)]
+        self.arrForTbl1 = [
+            BookingDetail.init(title: "BOOKING_DETAIL_CLIENT_NAME".localized(), detail: bookingDetail.clientName),
+            BookingDetail.init(title: "BOOKING_DETAIL_TYPE_OF_SERVICE".localized(), detail: bookingDetail.serviceName )
+        ]
+        let date = Date.init(milliseconds: bookingDetail.massageDate.toDouble).toString(format: "dd MMM yyyy")
+        let startTime = Date.init(milliseconds: bookingDetail.massageStartTime.toDouble).toString(format: "hh:mm a")
+        let endTime = Date.init(milliseconds: bookingDetail.massageEndTime.toDouble).toString(format: "hh:mm a")
+        self.arrForTbl2 = [
+            BookingDetail.init(title: "BOOKING_DETAIL_SESSION_TYPE".localized(), detail: bookingDetail.sessionType),
+            BookingDetail.init(title: "BOOKING_DETAIL_DATE_AND_TIME".localized(), detail: date + "\n" + startTime + " - " + endTime),
+            BookingDetail.init(title: "BOOKING_DETAIL_PRESSURE_PREFERENCE".localized(), detail: bookingDetail.pressurePreference)
+        ]
+        self.arrForTbl3 = [
+            BookingDetail.init(title: "BOOKING_DETAIL_SERVICE_DETAILS".localized(), detail: bookingDetail.pressurePreference),
+            BookingDetail.init(title: "BOOKING_DETAIL_NOTES".localized(), detail: bookingDetail.notes),
+            BookingDetail.init(title: "BOOKING_DETAIL_FOCUS_AREA".localized(), detail: bookingDetail.focusArea)
+        ]
+
         self.tblForCard1.reloadData()
         self.tblForCard2.reloadData()
         self.tblForCard3.reloadData()
