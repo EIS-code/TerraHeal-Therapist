@@ -148,6 +148,13 @@
 //MARK: Gender Dialog
 "GENDER_MALE" = "Male";
 "GENDER_FEMALE" = "Female";
+//MARK: FingerPrint Dialog
+
+"FINGER_PRINT_DIALOG_REGISTER_TITLE" = "register your fingerprint";
+"FINGER_PRINT_DIALOG_VALIDATION" = "please verify your bio-matric authentication";
+"FINGER_PRINT_DIALOG_LOGIN_TITLE" = "login with fingerprint";
+"FINGER_PRINT_DIALOG_PASSWORD_TITLE" = "login with password";
+"FINGER_PRINT_DIALOG_BTN_PASSWORD" = "password";
 //MARK: Service Status SCREEN
 "SERVICE_PROGRESS_TITLE" = "Service in progress";
 "SERVICE_PROGRESS_BTN_FINISH" = "finish";

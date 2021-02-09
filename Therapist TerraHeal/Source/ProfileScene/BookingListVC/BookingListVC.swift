@@ -13,7 +13,7 @@ class BookingListVC: BaseVC {
     
     var arrForPastBooking: [MyBookingData] = []
     var arrForFutureBooking: [MyBookingData] = []
-    var arrForData: [MyBookingTblCellDetail] = [MyBookingTblCellDetail.init(data: MyBookingData.init(fromDictionary: [:])),MyBookingTblCellDetail.init(data: MyBookingData.init(fromDictionary: [:])),MyBookingTblCellDetail.init(data: MyBookingData.init(fromDictionary: [:])),MyBookingTblCellDetail.init(data: MyBookingData.init(fromDictionary: [:])),MyBookingTblCellDetail.init(data: MyBookingData.init(fromDictionary: [:]))]
+    var arrForData: [MyBookingTblCellDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -64,9 +64,11 @@ class BookingListVC: BaseVC {
             guard let self = self else { return } ; print(self)
             switch index {
             case 0:
-                self.getPastBookingList()
+                break
+                //self.getPastBookingList()
             default:
-                self.getPastBookingList()
+                break
+                //self.getPastBookingList()
             }
         }
     }
@@ -158,19 +160,53 @@ extension BookingListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
 
 extension BookingListVC {
     
-    func getPastBookingList() {
-        Loader.showLoading()
-        arrForPastBooking.removeAll()
-        Loader.hideLoading()
+    func wsGetTodaysBooking() {
 
+        BookingWebSerive.todayBookingList { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForPastBooking.removeAll()
+                /*for data in response.bookingList {
+                    self.arrForPastBooking.append(data)
+                }
+                self.setDataSourceForPendingBooking(dataSource: self.arrForPastBooking)*/
+                self.tableView.reloadData()
+            }
+        }
     }
-    func getFutureBookingList() {
-        Loader.showLoading()
-        arrForFutureBooking.removeAll()
-        Loader.hideLoading()
+    func wsGetFutureBooking() {
+        BookingWebSerive.futureBookingList { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForFutureBooking.removeAll()
+                /*for data in response.bookingList {
+                    self.arrForFutureBooking.append(data)
+                }
+                self.setDataSourceForPendingBooking(dataSource: self.arrForFutureBooking)*/
+                self.tableView.reloadData()
+            }
+        }
     }
 
-    func setDataSourceForPastBooking(dataSource:[MyBookingData]) {
+    func wsGetPastBooking() {
+        BookingWebSerive.pastBookingList { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForFutureBooking.removeAll()
+                /*for data in response.bookingList {
+                    self.arrForFutureBooking.append(data)
+                }
+                self.setDataSourceForPendingBooking(dataSource: self.arrForPastBooking)*/
+                self.tableView.reloadData()
+            }
+        }
+    }
+
+    func setDataSourceForUpcomingBooking(dataSource:[BookingWebSerive.BookingData]) {
+        self.arrForData.removeAll()
+        for data in dataSource {
+            self.arrForData.append(MyBookingTblCellDetail.init(data: data))
+        }
+    }
+
+    func setDataSourceForPendingBooking(dataSource:[BookingWebSerive.BookingData]) {
         self.arrForData.removeAll()
         for data in dataSource {
             self.arrForData.append(MyBookingTblCellDetail.init(data: data))

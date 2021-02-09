@@ -9,13 +9,13 @@
 import Foundation
 
 //MARK: Request Models
-enum User {
+class UserWebService {
 
+    private var apiService : AppWebApi!
     struct RequestLogout: Codable {
         var user_id: String = PreferenceHelper.shared.getUserId()
         // var token: String = PreferenceHelper.shared.getSessionToken()
     }
-
     struct RequestLogin: Codable {
         var email: String = ""
         var password: String = ""
@@ -54,7 +54,7 @@ enum User {
 }
 
 //MARK: Response Models
-extension User {
+extension UserWebService {
     class Response :  ResponseModel {
         var data: UserData = UserData.init(fromDictionary: [:])
         override init(fromDictionary dictionary: [String:Any]) {
@@ -65,7 +65,6 @@ extension User {
             }
         }
     }
-
     class UserData: Codable {
         var appVersion: String = ""
         var avatar: String = ""
@@ -134,7 +133,6 @@ extension User {
 
 
     }
-
     class SelectedTherapy: Codable {
 
         var id: String = ""
@@ -148,7 +146,6 @@ extension User {
         }
 
     }
-
     class SelectedMassage: Codable{
 
         var id: String = ""

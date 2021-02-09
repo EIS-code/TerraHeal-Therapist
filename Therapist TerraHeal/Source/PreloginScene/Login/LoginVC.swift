@@ -80,6 +80,7 @@ class LoginVC: BaseVC {
         self.btnLogin.isEnabled = false
         if checkValidation() {
             self.wsLogin(username: txtEmail.text!.trim(), password: txtPassword.text!)
+            //Common.appDelegate.loadMainVC()
         }
 
     }
@@ -105,7 +106,7 @@ extension LoginVC {
 
     func wsLogin(username:String, password:String) {
         Loader.showLoading()
-        var request: User.RequestLogin = User.RequestLogin()
+        var request: UserWebService.RequestLogin = UserWebService.RequestLogin()
         request.email = username
         request.password = password
         AppWebApi.login(params: request) { (response) in

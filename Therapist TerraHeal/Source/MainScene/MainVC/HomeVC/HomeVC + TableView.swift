@@ -37,7 +37,7 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         if tableView == tblForFilter {
             return arrForFilter.count
         }
-        return arrForMyPlaces.count
+        return self.arrForData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,7 +50,7 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingTblCell.name, for: indexPath) as?  MyBookingTblCell
             cell?.layoutIfNeeded()
-            cell?.setData(data: arrForMyPlaces[indexPath.row])
+            cell?.setData(data: self.arrForData[indexPath.row])
             cell?.layoutIfNeeded()
             return cell!
         }
@@ -79,6 +79,10 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
                 else {
                     return nil
                 }
+                if let date = self.selectedDate {
+                    view.lblSelectDate.setText(date.toString(format: "dd-MM-yyyy"))
+                }
+                view.btnSelectDate.addTarget(self, action: #selector(openDatePicker(sender:)), for: .touchUpInside)
                 if #available(iOS 14.0, *) {
                     view.backgroundConfiguration = UIBackgroundConfiguration.clear()
                 } else {
@@ -106,21 +110,25 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             if let data = self.arrForFilter[indexPath.row].data as? FilterType {
                 self.selectedFilterType = data
             }
-            print(self.selectedFilterType.rawValue)
+            switch self.selectedFilterType {
+            case .Future:
+                self.wsGetFutureBooking()
+            case .Past:
+                self.wsGetPastBooking()
+            default:
+                self.wsGetTodaysBooking()
+            }
             self.tableView.reloadData()
-
             self.updateFilterButton(isShowFilter: false)
         }  else {
-
             Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: {/* [weak self]*/ (bookingDetailVC) in
                 bookingDetailVC.bookingDetail = BookingWebSerive.BookingDetail.init(fromDictionary: [:])
-                bookingDetailVC.bookingDetail.bookingInfoId = arrForMyPlaces[indexPath.row].id
+                bookingDetailVC.bookingDetail.bookingInfoId = self.arrForOriginalData[indexPath.row].bookingInfos.first!.bookingInfoId
             })
         }
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if selectedFilterType != .Today && tableView == self.tableView {
-
             return JDDeviceHelper.offseter(offset: 60, direction: .vertical)
         } else {
             return 0

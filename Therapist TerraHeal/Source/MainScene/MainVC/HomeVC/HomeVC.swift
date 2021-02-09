@@ -22,16 +22,15 @@ class HomeVC: BaseVC {
     @IBOutlet weak var hFilterTble: NSLayoutConstraint!
     @IBOutlet weak var vwFilter: UIView!
     @IBOutlet weak var btnSubFilter: FloatingRoundButton!
-
     var selectedFilterType: FilterType = .Today
-
-    var arrForMyPlaces: [MyBookingTblDetail] = []
+    var arrForData: [MyBookingTblDetail] = []
+    var arrForOriginalData: [BookingWebSerive.BookingData] = []
     var arrForFilter: [ImageWithTitle] = [
         ImageWithTitle.init(name: "HOME_FILTER_TODAY".localized(), imageName: ImageAsset.Filter.today, data: FilterType.Today),
         ImageWithTitle.init(name: "HOME_FILTER_FUTURE".localized(), imageName: ImageAsset.Filter.future, data: FilterType.Future),
         ImageWithTitle.init(name: "HOME_FILTER_PAST".localized(), imageName: ImageAsset.Filter.past, data: FilterType.Past)
     ]
-
+    var selectedDate: Date? = nil
     
     
     // MARK: Object lifecycle
@@ -174,12 +173,48 @@ extension HomeVC {
             [weak alert, weak self] (filterType,value) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-            self.arrForMyPlaces.removeAll()
+            self.arrForData.removeAll()
             for _ in 0...5 {
-                self.arrForMyPlaces.append(MyBookingTblDetail.init(title: value as! String, isSelected: false))
+                self.arrForData.append(MyBookingTblDetail.init(title: value as! String, isSelected: false))
             }
             self.tableView.reloadData()
             self.btnSubFilter.isEnabled = true
+        }
+    }
+
+    @objc func openDatePicker(sender: UIButton) {
+        let alert: DateDialog = DateDialog.fromNib()
+        alert.initialize(title: "Date")
+        let initialFrame: CGRect =  sender.convert(sender.bounds, to: Common.appDelegate.window!)
+        print("Frame: \(initialFrame)")
+        alert.initialFrame = initialFrame
+        if self.selectedFilterType == .Past {
+            alert.maxDate = Date()
+       } else if self.selectedFilterType == .Future {
+            alert.minDate = Date()
+            self.wsGetFutureBooking()
+        } else {
+
+        }
+        alert.show(animated: true)
+
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (date) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+            self.selectedDate = Date.init(milliseconds: date)
+            if self.selectedFilterType == .Past {
+                self.wsGetPastBooking()
+            } else if self.selectedFilterType == .Future {
+                self.wsGetFutureBooking()
+            } else {
+
+            }
         }
     }
 }
@@ -196,22 +231,30 @@ extension HomeVC: PBRevealViewControllerDelegate {
 //MARK:- Web Service Call
 extension HomeVC {
     func wsGetTodaysBooking() {
-        AppWebApi.todayBookingList { (response) in
+        Loader.showLoading()
+        BookingWebSerive.todayBookingList { (response) in
+            Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
-                self.arrForMyPlaces.removeAll()
+                self.arrForOriginalData.removeAll()
+                self.arrForData.removeAll()
                 for data in response.bookingList {
-                    self.arrForMyPlaces.append(data.toBookingModel())
+                    self.arrForData.append(data.toBookingModel())
+                    self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()
             }
         }
     }
     func wsGetFutureBooking() {
-        AppWebApi.futureBookingList { (response) in
+        Loader.showLoading()
+        BookingWebSerive.futureBookingList { (response) in
+            Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
-                self.arrForMyPlaces.removeAll()
+                self.arrForOriginalData.removeAll()
+                self.arrForData.removeAll()
                 for data in response.bookingList {
-                    self.arrForMyPlaces.append(data.toBookingModel())
+                    self.arrForData.append(data.toBookingModel())
+                    self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()
             }
@@ -219,11 +262,15 @@ extension HomeVC {
     }
 
     func wsGetPastBooking() {
-        AppWebApi.pastBookingList { (response) in
+        Loader.showLoading()
+        BookingWebSerive.pastBookingList { (response) in
+            Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
-                self.arrForMyPlaces.removeAll()
+                self.arrForOriginalData.removeAll()
+                self.arrForData.removeAll()
                 for data in response.bookingList {
-                    self.arrForMyPlaces.append(data.toBookingModel())
+                    self.arrForData.append(data.toBookingModel())
+                    self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()
             }

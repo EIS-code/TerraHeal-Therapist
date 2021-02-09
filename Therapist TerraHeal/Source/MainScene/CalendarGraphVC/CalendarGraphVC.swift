@@ -141,12 +141,12 @@ extension CalendarGraphVC: JZBaseViewDelegate {
 extension CalendarGraphVC {
 
     func wsGetTodaysBooking() {
-        AppWebApi.todayBookingList { (response) in
+        BookingWebSerive.todayBookingList { (response) in
             if ResponseModel.isSuccess(response: response) {
                 self.arrForCalenderEvents.removeAll()
                 for i in 0..<response.bookingList.count {
                     let data = response.bookingList[i]
-                    let newStartDate = Date.init(milliseconds: data.massageTime.toDouble).add(component: .day, value: i).add(component: .hour, value: i)
+                    let newStartDate = Date.init(milliseconds: data.bookingDateTime.toDouble).add(component: .day, value: i).add(component: .hour, value: i)
                     self.arrForCalenderEvents.append(DefaultEvent.init(id: data.bookingInfoId, title: data.bookingInfoId, startDate: newStartDate, endDate: newStartDate.add(component: .minute, value: 15)))
                 }
                 if let selectedDate = self.arrForCalenderEvents.first?.startDate {

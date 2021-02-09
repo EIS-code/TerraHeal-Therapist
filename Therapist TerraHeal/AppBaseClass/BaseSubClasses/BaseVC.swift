@@ -7,7 +7,7 @@ import Foundation
 import UIKit
 // import JDFramework
 
-class BaseVC: UIViewController {
+class BaseVC: UIViewController, UIGestureRecognizerDelegate {
    
     @IBOutlet weak var lblTitle: ThemeLabel?
     @IBOutlet weak var btnLeft: BackButton?
@@ -30,13 +30,13 @@ class BaseVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.vwNavigationBar?.backgroundColor = .clear
         self.setBackground(color: .themeBackground)
         self.lblTitle?.textColor = UIColor.themeNavigationTitle
         self.lblTitle?.textColor = UIColor.themeDarkText
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.header)
-        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
     }
     
     override func viewDidLayoutSubviews() {

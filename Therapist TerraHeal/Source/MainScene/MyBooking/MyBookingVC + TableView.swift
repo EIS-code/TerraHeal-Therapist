@@ -84,12 +84,6 @@ extension MyBookingVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
 
 extension MyBookingVC {
 
-    func setDataSourceForPastBooking(dataSource:[MyBookingData]) {
-        self.arrForData.removeAll()
-        for data in dataSource {
-            self.arrForData.append(
-                .init(data: data))
-        }
-    }
+   
 }
 

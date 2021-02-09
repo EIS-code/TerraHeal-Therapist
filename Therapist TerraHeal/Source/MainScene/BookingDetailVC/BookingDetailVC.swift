@@ -181,24 +181,16 @@ extension BookingDetailVC : QRScannerCodeDelegate {
 
 extension BookingDetailVC {
     func wsGetBookingDetil(id:String) {
-        AppWebApi.getBookingDetail(params: BookingWebSerive.RequestBookingDetail.init(booking_info_id: id)) { (response) in
+        BookingWebSerive.getBookingDetail(params: BookingWebSerive.RequestBookingDetail.init(booking_info_id: id)) { (response) in
             if ResponseModel.isSuccess(response: response) {
                 self.setupData(bookingDetail: response.bookingDetail)
             }
         }
-
-
-
-
-
-
-
-
     }
 
     func setupData(bookingDetail:BookingWebSerive.BookingDetail) {
         self.lblBookingId.setText(bookingDetail.bookingInfoId)
-        self.btnRoomNumber.setText(bookingDetail.rooomId)
+        //self.btnRoomNumber.setText(bookingDetail.rooomId)
 
         self.arrForTbl1 = [
             BookingDetail.init(title: "BOOKING_DETAIL_CLIENT_NAME".localized(), detail: bookingDetail.clientName),
@@ -224,4 +216,5 @@ extension BookingDetailVC {
         self.updateViewForBookingType()
     }
 }
+
 

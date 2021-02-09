@@ -43,6 +43,7 @@
 		030DB5CE252609FB004C7CC8 /* ThemeTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB5BE252609FB004C7CC8 /* ThemeTableCells.swift */; };
 		030DB5CF252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB5C0252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift */; };
 		030DB5D0252609FB004C7CC8 /* ThemeBottomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB5C1252609FB004C7CC8 /* ThemeBottomDialog.swift */; };
+		03107D8025D1615800D82B7F /* ForgotWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03107D7F25D1615800D82B7F /* ForgotWebService.swift */; };
 		03405502252E043000B7077D /* RadioSelectionTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03405500252E043000B7077D /* RadioSelectionTblCell.swift */; };
 		03405503252E043000B7077D /* RadioSelectionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03405501252E043000B7077D /* RadioSelectionTblCell.xib */; };
 		03405505252E04BD00B7077D /* CustomFilterDialog + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03405504252E04BD00B7077D /* CustomFilterDialog + TableView.swift */; };
@@ -265,7 +266,6 @@
 		038CB0092526056E001ACAD6 /* GoogleMapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CAFEB2526056E001ACAD6 /* GoogleMapHelper.swift */; };
 		038CB00A2526056E001ACAD6 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CAFEC2526056E001ACAD6 /* RatingView.swift */; };
 		038CB00B2526056E001ACAD6 /* HomeSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CAFED2526056E001ACAD6 /* HomeSegmentControl.swift */; };
-		038CB00C2526056E001ACAD6 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CAFEE2526056E001ACAD6 /* Loader.swift */; };
 		038CB00D2526056E001ACAD6 /* JDSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CAFEF2526056E001ACAD6 /* JDSegmentControl.swift */; };
 		038CB00E2526056E001ACAD6 /* DataType + Extesnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CAFF32526056E001ACAD6 /* DataType + Extesnion.swift */; };
 		038CB00F2526056E001ACAD6 /* NSObject + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CAFF42526056E001ACAD6 /* NSObject + Extension.swift */; };
@@ -321,6 +321,9 @@
 		03B960BF25483AA500F8F214 /* ManageDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B960B725483AA500F8F214 /* ManageDocumentVC.swift */; };
 		03B960C825483BB000F8F214 /* MyDocumentsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B960C625483BB000F8F214 /* MyDocumentsVC.xib */; };
 		03B960C925483BB000F8F214 /* MyDocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B960C725483BB000F8F214 /* MyDocumentsVC.swift */; };
+		03E1662E25D2BC0E00DA30C0 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E1662A25D2BC0D00DA30C0 /* Loader.swift */; };
+		03E1662F25D2BC0E00DA30C0 /* LoaderDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E1662C25D2BC0D00DA30C0 /* LoaderDialog.swift */; };
+		03E1663025D2BC0E00DA30C0 /* LoaderDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E1662D25D2BC0D00DA30C0 /* LoaderDialog.xib */; };
 		03E3F79124CF166500997A16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3F79024CF166500997A16 /* CoreData.framework */; };
 		03EED643254FE7920010A2CF /* ExchangeOfferDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EED640254FE7920010A2CF /* ExchangeOfferDialog.xib */; };
 		03EED644254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EED641254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift */; };
@@ -387,6 +390,7 @@
 		030DB5BE252609FB004C7CC8 /* ThemeTableCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTableCells.swift; sourceTree = "<group>"; };
 		030DB5C0252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThemeBottomDialog + Animation.swift"; sourceTree = "<group>"; };
 		030DB5C1252609FB004C7CC8 /* ThemeBottomDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBottomDialog.swift; sourceTree = "<group>"; };
+		03107D7F25D1615800D82B7F /* ForgotWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotWebService.swift; sourceTree = "<group>"; };
 		03405500252E043000B7077D /* RadioSelectionTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioSelectionTblCell.swift; sourceTree = "<group>"; };
 		03405501252E043000B7077D /* RadioSelectionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioSelectionTblCell.xib; sourceTree = "<group>"; };
 		03405504252E04BD00B7077D /* CustomFilterDialog + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFilterDialog + TableView.swift"; sourceTree = "<group>"; };
@@ -625,7 +629,6 @@
 		038CAFEB2526056E001ACAD6 /* GoogleMapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapHelper.swift; sourceTree = "<group>"; };
 		038CAFEC2526056E001ACAD6 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		038CAFED2526056E001ACAD6 /* HomeSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSegmentControl.swift; sourceTree = "<group>"; };
-		038CAFEE2526056E001ACAD6 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		038CAFEF2526056E001ACAD6 /* JDSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegmentControl.swift; sourceTree = "<group>"; };
 		038CAFF32526056E001ACAD6 /* DataType + Extesnion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataType + Extesnion.swift"; sourceTree = "<group>"; };
 		038CAFF42526056E001ACAD6 /* NSObject + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject + Extension.swift"; sourceTree = "<group>"; };
@@ -681,6 +684,9 @@
 		03B960B725483AA500F8F214 /* ManageDocumentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDocumentVC.swift; sourceTree = "<group>"; };
 		03B960C625483BB000F8F214 /* MyDocumentsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDocumentsVC.xib; sourceTree = "<group>"; };
 		03B960C725483BB000F8F214 /* MyDocumentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDocumentsVC.swift; sourceTree = "<group>"; };
+		03E1662A25D2BC0D00DA30C0 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		03E1662C25D2BC0D00DA30C0 /* LoaderDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderDialog.swift; sourceTree = "<group>"; };
+		03E1662D25D2BC0D00DA30C0 /* LoaderDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoaderDialog.xib; sourceTree = "<group>"; };
 		03E3F79024CF166500997A16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		03EED640254FE7920010A2CF /* ExchangeOfferDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeOfferDialog.xib; sourceTree = "<group>"; };
 		03EED641254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExchangeOfferDialog + Calender.swift"; sourceTree = "<group>"; };
@@ -756,6 +762,7 @@
 				030DB58125260966004C7CC8 /* AFNHelper */,
 				030DB58525260966004C7CC8 /* ResponseModel.swift */,
 				030DB58625260966004C7CC8 /* UserWebService.swift */,
+				03107D7F25D1615800D82B7F /* ForgotWebService.swift */,
 				030DB58725260966004C7CC8 /* CityWebService.swift */,
 				030DB58825260966004C7CC8 /* Singleton.swift */,
 				030DB58925260966004C7CC8 /* CountriesWebService.swift */,
@@ -1979,12 +1986,12 @@
 		038CAFE62526056E001ACAD6 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				03E1662925D2BC0D00DA30C0 /* Loader */,
 				0352B00D255EAE8E002E9D6D /* CameraVC */,
 				038CAFE72526056E001ACAD6 /* TextField */,
 				038CAFEB2526056E001ACAD6 /* GoogleMapHelper.swift */,
 				038CAFEC2526056E001ACAD6 /* RatingView.swift */,
 				038CAFED2526056E001ACAD6 /* HomeSegmentControl.swift */,
-				038CAFEE2526056E001ACAD6 /* Loader.swift */,
 				038CAFEF2526056E001ACAD6 /* JDSegmentControl.swift */,
 				030DB57425260869004C7CC8 /* CircularProgressBar.swift */,
 				030DB57525260869004C7CC8 /* DashedCircleView.swift */,
@@ -2298,6 +2305,24 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
+		03E1662925D2BC0D00DA30C0 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				03E1662A25D2BC0D00DA30C0 /* Loader.swift */,
+				03E1662B25D2BC0D00DA30C0 /* LoaderDialog */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		03E1662B25D2BC0D00DA30C0 /* LoaderDialog */ = {
+			isa = PBXGroup;
+			children = (
+				03E1662C25D2BC0D00DA30C0 /* LoaderDialog.swift */,
+				03E1662D25D2BC0D00DA30C0 /* LoaderDialog.xib */,
+			);
+			path = LoaderDialog;
+			sourceTree = "<group>";
+		};
 		03EED63E254FE7920010A2CF /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
@@ -2578,6 +2603,7 @@
 				0354F26125492F4100F3BEB7 /* ManageExperienceVC.xib in Resources */,
 				0352B013255EAE8E002E9D6D /* CameraVC.xib in Resources */,
 				0354F26B254947E100F3BEB7 /* BookingListVC.xib in Resources */,
+				03E1663025D2BC0E00DA30C0 /* LoaderDialog.xib in Resources */,
 				63415E36246FB5C600F0D7A0 /* Nunito-Bold.ttf in Resources */,
 				0354F2762549603700F3BEB7 /* WorkingScheduleTblCell.xib in Resources */,
 				0366DD232546DB14002C2CDA /* CustomCountryPickerCell.xib in Resources */,
@@ -2775,6 +2801,7 @@
 				030DB5CC252609FB004C7CC8 /* ThemeImageView.swift in Sources */,
 				030DB57625260869004C7CC8 /* CircularProgressBar.swift in Sources */,
 				03A2CC3C25303CE3005E3F29 /* MyBookingWebService.swift in Sources */,
+				03107D8025D1615800D82B7F /* ForgotWebService.swift in Sources */,
 				0354F26C254947E100F3BEB7 /* BookingListVC.swift in Sources */,
 				038CAFE2252604D8001ACAD6 /* CoreDataManager.swift in Sources */,
 				034DB71F254BEC0200128AA1 /* AvailabilityCell.swift in Sources */,
@@ -2857,6 +2884,7 @@
 				034BB18C25510A04006B3842 /* CreditCardTblCell.swift in Sources */,
 				030DB5C7252609FB004C7CC8 /* ThemeButton.swift in Sources */,
 				03643F53254A7EC4004F9156 /* FSCalendarWeekdayView.m in Sources */,
+				03E1662F25D2BC0E00DA30C0 /* LoaderDialog.swift in Sources */,
 				038CAFE4252604D8001ACAD6 /* Person+CoreDataProperties.swift in Sources */,
 				0354F2792549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift in Sources */,
 				03A2CC3F25306CFF005E3F29 /* BookingDetailVC + Tableview.swift in Sources */,
@@ -2882,6 +2910,7 @@
 				034CBE742534700D00B20A11 /* JZLongPressEventCell.swift in Sources */,
 				0379EAC5252C72B800303A59 /* TimeSlotCltCell.swift in Sources */,
 				0354F27D25496E9100F3BEB7 /* WorkingScheduleTblSection.swift in Sources */,
+				03E1662E25D2BC0E00DA30C0 /* Loader.swift in Sources */,
 				03B960A3254804F100F8F214 /* LanguageSelectionDialog.swift in Sources */,
 				030DB5AF25260966004C7CC8 /* FontHelper.swift in Sources */,
 				03643F56254A7EC4004F9156 /* FSCalendarConstants.m in Sources */,
@@ -2932,7 +2961,6 @@
 				034BB1AC255121AD006B3842 /* MyRateVC.swift in Sources */,
 				038CAFD1252604AB001ACAD6 /* PersonPickerCell.swift in Sources */,
 				0366DD292546DB14002C2CDA /* CustomCityPicker.swift in Sources */,
-				038CB00C2526056E001ACAD6 /* Loader.swift in Sources */,
 				038CAFD9252604AB001ACAD6 /* CustomTextFieldDialog.swift in Sources */,
 				03F5038C252D937F00AF50A5 /* CustomFilterDialog.swift in Sources */,
 				03405505252E04BD00B7077D /* CustomFilterDialog + TableView.swift in Sources */,

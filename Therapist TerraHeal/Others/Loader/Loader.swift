@@ -7,10 +7,12 @@
 import Foundation
 import UIKit
 
+
 class Loader: NSObject {
     
     
     static var mainView = UIView();
+
 
     static func showLoading(color: UIColor = UIColor.white){
         DispatchQueue.main.async {
@@ -25,7 +27,15 @@ class Loader: NSObject {
                 else {
                     self.mainView.frame = UIScreen.main.bounds
                     self.mainView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
-                    if let activityIndicator: UIActivityIndicatorView = self.mainView.viewWithTag(701) as? UIActivityIndicatorView {
+                    let animationView: LoaderDialog = LoaderDialog.fromNib()
+                    animationView.initialize(message: "Progress")
+                    /*let stkVw = Loader.getGetContetview(text: "Progress")
+                    stkVw.center = animationView.center*/
+
+                    self.mainView.addSubview(animationView)
+                    animationView.center = self.mainView.center
+                    
+                   /* if let activityIndicator: UIActivityIndicatorView = self.mainView.viewWithTag(701) as? UIActivityIndicatorView {
                         activityIndicator.startAnimating()
                     } else {
                         let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView();
@@ -39,7 +49,7 @@ class Loader: NSObject {
                         self.mainView.addSubview(activityIndicator)
                         activityIndicator.startAnimating()
                         
-                    }
+                    }*/
                     self.mainView.tag = 701
                     window.addSubview(mainView)
                     print("Loader Added")
@@ -57,7 +67,9 @@ class Loader: NSObject {
         }
     }
 
+
 }
+
 
 
 

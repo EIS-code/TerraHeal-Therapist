@@ -15,14 +15,14 @@ class AppWebApi: NSObject {
     struct URL {
         
         private struct Domains {
-            static let Dev = "http://35.180.253.133"
-            static let Production = "http://35.180.253.133"
-            static let Local = "http://35.180.253.133"
+            static let Dev = "http://35.180.202.175"
+            static let Production = "http://35.180.202.175"
+            static let Local = "http://35.180.202.175"
             
         }
-        
+
         private  struct Routes {
-            static let Client = "/api/therapist"
+            static let Client = "/therapist"
             static let Exception = "/api/error"
             static let Location = "/api/location"
         }
@@ -33,10 +33,11 @@ class AppWebApi: NSObject {
         static var UserLogin: String {
             return Domain + Routes.Client  + "/signin"
         }
-        
-        static var UserRegister: String {
-            return Domain + Routes.Client + "/signup"
+
+        static var ForgotPassword: String {
+            return Domain + Routes.Client  + "/signin/forgot"
         }
+
         static var UserProfile: String {
             return Domain + Routes.Client + "/profile/update"
         }
@@ -45,7 +46,6 @@ class AppWebApi: NSObject {
             return Domain + Routes.Client  + "/logout"
             
         }
-
 
         static var GetUserDetail: String {
             return  Domain + Routes.Client + "/get/" + PreferenceHelper.shared.getUserId()
@@ -92,45 +92,52 @@ extension AppWebApi {
 
 extension AppWebApi {
     
-    class func login(params:User.RequestLogin, completionHandler: @escaping ((User.Response) -> Void)) {
+    class func login(params:UserWebService.RequestLogin, completionHandler: @escaping ((UserWebService.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserLogin, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = User.Response.init(fromDictionary: dictionary)
+            let response = UserWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-    
-    class func getUserDetail(completionHandler: @escaping ((User.Response) -> Void)) {
+
+    class func forgotPassword(params:UserWebService.RequestLogin, completionHandler: @escaping ((UserWebService.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserLogin, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = UserWebService.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+
+    class func getUserDetail(completionHandler: @escaping ((UserWebService.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetUserDetail, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
-            let response = User.Response.init(fromDictionary: dictionary)
+            let response = UserWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
     
 
     
-    class func exception(params:[String:String], completionHandler: @escaping ((User.Response) -> Void)) {
+    class func exception(params:[String:String], completionHandler: @escaping ((UserWebService.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.CheckExeption, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
-            let response = User.Response.init(fromDictionary: dictionary)
+            let response = UserWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
 
 
-    class func profile(params:User.RequestProfile, image:UploadDocumentDetail? = nil, paramName:String = "profile_photo", completionHandler: @escaping ((User.Response) -> Void)) {
+    class func profile(params:UserWebService.RequestProfile, image:UploadDocumentDetail? = nil, paramName:String = "profile_photo", completionHandler: @escaping ((UserWebService.Response) -> Void)) {
         if let imageToUpload = image {
             AlamofireHelper().uploadDocumentToURL(urlString:API_URL.UserProfile , paramData: params.dictionary, documents: [imageToUpload],paramName: paramName)  { (data, dictionary, error) in
-                let response = User.Response.init(fromDictionary: dictionary)
+                let response = UserWebService.Response.init(fromDictionary: dictionary)
                 completionHandler(response)
             }
         }
         else {
             AlamofireHelper().getDataFrom(urlString: API_URL.UserProfile, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-                let response = User.Response.init(fromDictionary: dictionary)
+                let response = UserWebService.Response.init(fromDictionary: dictionary)
                 completionHandler(response)        }
         }
     }
     
-    class func userLogout(params:User.RequestLogout = User.RequestLogout(), completionHandler: @escaping ((ResponseModel) -> Void)) {
+    class func userLogout(params:UserWebService.RequestLogout = UserWebService.RequestLogout(), completionHandler: @escaping ((ResponseModel) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserLogout, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = ResponseModel.init(fromDictionary: dictionary)
             completionHandler(response)
@@ -151,31 +158,7 @@ extension AppWebApi {
         }
     }
 
-    class func todayBookingList(params:BookingWebSerive.RequestTodayBookingList = BookingWebSerive.RequestTodayBookingList.init(), completionHandler: @escaping ((BookingWebSerive.ResponseBookingList) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: API_URL.PastBookingList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = BookingWebSerive.ResponseBookingList.init(fromDictionary: dictionary)
-            completionHandler(response)
-        }
-    }
-    class func pastBookingList(params:BookingWebSerive.RequestPastBookingList = BookingWebSerive.RequestPastBookingList.init(), completionHandler: @escaping ((BookingWebSerive.ResponseBookingList) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: API_URL.PastBookingList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = BookingWebSerive.ResponseBookingList.init(fromDictionary: dictionary)
-            completionHandler(response)
-        }
-    }
-    class func futureBookingList(params:BookingWebSerive.RequestTodayBookingList = BookingWebSerive.RequestTodayBookingList.init(), completionHandler: @escaping ((BookingWebSerive.ResponseBookingList) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: API_URL.FutureBookingList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = BookingWebSerive.ResponseBookingList.init(fromDictionary: dictionary)
-            completionHandler(response)
-        }
-    }
-
-    class func getBookingDetail(params:BookingWebSerive.RequestBookingDetail = BookingWebSerive.RequestBookingDetail.init(), completionHandler: @escaping ((BookingWebSerive.ResponseBookingDetail) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: API_URL.BookingDetail, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = BookingWebSerive.ResponseBookingDetail.init(fromDictionary: dictionary)
-            completionHandler(response)
-        }
-    }
+   
 }
 
 

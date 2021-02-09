@@ -210,7 +210,7 @@ extension EditProfileVC {
             guard let self = self else { return } ; print(self)
             countryPickerAlert?.dismiss()
             self.selectedCountry = country
-            var request: User.RequestProfile = User.RequestProfile()
+            var request: UserWebService.RequestProfile = UserWebService.RequestProfile()
             request.country_id = country.id
             self.wsUpdateProfile(request: request)
         }
@@ -235,7 +235,7 @@ extension EditProfileVC {
             guard let self = self else { return } ; print(self)
             cityPickerAlert?.dismiss()
             self.selectedCity = city
-            var request: User.RequestProfile = User.RequestProfile()
+            var request: UserWebService.RequestProfile = UserWebService.RequestProfile()
             request.city_id = city.id
             self.wsUpdateProfile(request: request)
         }
@@ -256,7 +256,7 @@ extension EditProfileVC {
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
             self.arrForProfile[index].value = description
-            var request: User.RequestProfile = User.RequestProfile()
+            var request: UserWebService.RequestProfile = UserWebService.RequestProfile()
             switch self.arrForProfile[index].type
             {
             case .Name:
@@ -331,7 +331,7 @@ extension EditProfileVC {
             [weak alert, weak self] (countryPhoneCode,mobileNumber) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-            var request: User.RequestProfile = User.RequestProfile()
+            var request: UserWebService.RequestProfile = UserWebService.RequestProfile()
             switch self.arrForProfile[index].type
             {
             case .EmergencyContact:
@@ -364,7 +364,7 @@ extension EditProfileVC {
             [weak datePickerAlert, weak self] (date) in
             guard let self = self else { return } ; print(self)
             datePickerAlert?.dismiss()
-            var request: User.RequestProfile = User.RequestProfile()
+            var request: UserWebService.RequestProfile = UserWebService.RequestProfile()
             request.dob = date.toString()
             self.wsUpdateProfile(request: request)
         }
@@ -403,7 +403,7 @@ extension EditProfileVC {
             [weak genderPickerAlert, weak self] (gender) in
             guard let self = self else { return } ; print(self)
             genderPickerAlert?.dismiss()
-            var request: User.RequestProfile = User.RequestProfile()
+            var request: UserWebService.RequestProfile = UserWebService.RequestProfile()
             self.wsUpdateProfile(request: request)
 
         }
@@ -412,7 +412,7 @@ extension EditProfileVC {
 
 //MARK: Web Service Calls
 extension EditProfileVC {
-    func wsUpdateProfile(request: User.RequestProfile) {
+    func wsUpdateProfile(request: UserWebService.RequestProfile) {
         Loader.showLoading()
         AppWebApi.profile(params: request) { (response) in
             Loader.hideLoading()
@@ -435,7 +435,7 @@ extension EditProfileVC {
             let imgSizeInMB = data.count/1024/1024
             print("Image Size \(imgSizeInMB) MB")
         }
-        AppWebApi.profile(params: User.RequestProfile(), image: selectedProfileDoc) { (response) in
+        AppWebApi.profile(params: UserWebService.RequestProfile(), image: selectedProfileDoc) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 let user = response.data

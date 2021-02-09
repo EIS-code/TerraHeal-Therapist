@@ -11,7 +11,7 @@ let appSingleton = Singleton.shared
 
 public class Singleton :NSObject {
     static let shared = Singleton()
-    var user:User.UserData = User.UserData.init(fromDictionary: [:])
+    var user:UserWebService.UserData = UserWebService.UserData.init(fromDictionary: [:])
     var myMassagePreference: MyMassagePreference = MyMassagePreference.init()
     var currencySymbol:String = ""
     //var settting:Setting.Response = Setting.Response.init(fromDictionary: [:])
@@ -32,7 +32,7 @@ public class Singleton :NSObject {
     }
     class func loadFrombDB() {
         guard let savedPersonData = UserDefaults.standard.object(forKey: "kUser") as? Data else { return }
-        guard let savedPerson = try? JSONDecoder().decode(User.UserData.self, from: savedPersonData) else { return }
+        guard let savedPerson = try? JSONDecoder().decode(UserWebService.UserData.self, from: savedPersonData) else { return }
         appSingleton.user = savedPerson
     }
 }
