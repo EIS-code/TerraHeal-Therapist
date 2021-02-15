@@ -12,13 +12,7 @@ class NewsVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
 
     var isHideNavigationBar: Bool = false
-    var arrForData: [NewsTblCellDetail] = [
-    NewsTblCellDetail.init(),
-    NewsTblCellDetail.init(),
-    NewsTblCellDetail.init(),
-    NewsTblCellDetail.init(),
-    NewsTblCellDetail.init(),
-    NewsTblCellDetail.init()]
+    var arrForData: [NewsWebService.NewsData] = []
     
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -46,6 +40,7 @@ class NewsVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.wsGetNews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -104,6 +99,8 @@ extension NewsVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTblCell.name, for: indexPath) as?  NewsTblCell
         cell?.layoutIfNeeded()
         cell?.setData(data: arrForData[indexPath.row])
+        cell?.btnCheck.tag = indexPath.row
+        cell?.btnCheck.addTarget(self, action: #selector(readNews(sender:)), for: .touchUpInside)
         cell?.layoutIfNeeded()
         return cell!
         
@@ -113,5 +110,35 @@ extension NewsVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         tableView.deselectRow(at: indexPath, animated: true)
 
     }
+    @objc func readNews(sender:UIButton) {
+        self.wsReadNews(id: self.arrForData[sender.tag].id)
+
+    }
     
+}
+
+extension NewsVC {
+    func wsGetNews() {
+        Loader.showLoading()
+        NewsWebService.getUpdatedNews { (response) in
+            Loader.hideLoading()
+            self.arrForData.removeAll()
+            if ResponseModel.isSuccess(response: response) {
+
+                for data in response.newsList {
+                    self.arrForData.append(data)
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
+    func wsReadNews(id:String) {
+        Loader.showLoading()
+        NewsWebService.readNews(params: NewsWebService.RequestReadNews.init(id: id)) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                self.wsGetNews()
+            }
+        }
+    }
 }

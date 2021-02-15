@@ -8,13 +8,6 @@
 
 import UIKit
 
-struct NewsTblCellDetail {
-    var header:String = "Lorem ipsum"
-    var subHeader:String = "Lorem ipsum dolor sit amet"
-    var date: Double = Date().millisecondsSince1970
-    var isRead: Bool = false
-    var details: String = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor. elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-}
 
 class NewsTblCell: TableCell {
 
@@ -36,11 +29,11 @@ class NewsTblCell: TableCell {
     
     }
 
-    func setData(data: NewsTblCellDetail ) {
-        self.lblHeader?.setText(data.header)
-        self.lblSubHeader?.setText(data.subHeader)
-        self.lblDetail?.setText(data.details)
-        self.lblDate?.setText(Date.milliSecToDate(milliseconds: data.date, format: DateFormat.DD_MM_YYYY))
+    func setData(data: NewsWebService.NewsData ) {
+        self.lblHeader?.setText(data.title)
+        self.lblSubHeader?.setText(data.subTitle)
+        self.lblDetail?.setText(data.descriptionField)
+        self.lblDate?.setText(Date.milliSecToDate(milliseconds: data.updatedAt.toDouble, format: DateFormat.DD_MM_YYYY))
         self.lblRead?.setText("Read")
         self.btnCheck.isSelected = data.isRead
     }

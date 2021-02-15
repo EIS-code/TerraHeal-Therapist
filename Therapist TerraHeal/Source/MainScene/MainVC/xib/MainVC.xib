@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -72,6 +72,7 @@
                     <state key="normal" backgroundImage="asset-logo"/>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <color key="backgroundColor" name="theme_background"/>
             <constraints>
                 <constraint firstItem="ag8-dd-022" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="0BR-fQ-e75"/>
@@ -128,7 +129,6 @@
                 <constraint firstItem="KCO-pn-G7e" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" id="sJa-Mx-Vbf"/>
                 <constraint firstItem="XUA-Xf-CmK" firstAttribute="bottom" secondItem="dk0-AN-Hja" secondAttribute="bottom" id="tVm-Ii-or9"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>
         </view>
     </objects>

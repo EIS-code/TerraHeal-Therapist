@@ -113,10 +113,6 @@ class MainVC: BaseVC, PBRevealViewControllerDelegate {
         self.newsView.visible()
         self.homeVC?.removeFromParent()
         self.calendarVC?.removeFromParent()
-        Loader.showLoading()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0) {
-            Loader.hideLoading()
-        }
     }
 
     func homeSelected() {

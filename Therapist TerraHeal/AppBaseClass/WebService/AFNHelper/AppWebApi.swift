@@ -71,6 +71,16 @@ class AppWebApi: NSObject {
         static var BookingDetail: String {
             return  Domain + Routes.Client + "/booking"
         }
+        static var GetCalender: String {
+            return  Domain + Routes.Client + "/calender/get"
+        }
+
+        static var GetNews: String {
+            return  Domain + "/news/get"
+        }
+        static var ReadNews: String {
+            return  Domain + "/news/read"
+        }
 
         //MARK: Exception
         static var CheckExeption: String {
@@ -123,17 +133,38 @@ extension AppWebApi {
     }
 
 
-    class func profile(params:UserWebService.RequestProfile, image:UploadDocumentDetail? = nil, paramName:String = "profile_photo", completionHandler: @escaping ((UserWebService.Response) -> Void)) {
+    class func getNews(completionHandler: @escaping ((NewsWebService.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetNews, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
+            let response = NewsWebService.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func readNews(params:NewsWebService.RequestReadNews, completionHandler: @escaping ((NewsWebService.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.ReadNews, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = NewsWebService.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+
+    static func updateProfileDetail(params:UserWebService.RequestProfile,image:UploadDocumentDetail? = nil,document:UploadDocumentDetail? = nil, completionHandler: @escaping ((UserWebService.Response) -> Void)) {
+        var arrForDocuments:[UploadDocumentDetail] = []
+
         if let imageToUpload = image {
-            AlamofireHelper().uploadDocumentToURL(urlString:API_URL.UserProfile , paramData: params.dictionary, documents: [imageToUpload],paramName: paramName)  { (data, dictionary, error) in
+            arrForDocuments.append(imageToUpload)
+        }
+        if let documentToUpload = document {
+            arrForDocuments.append(documentToUpload)
+        }
+        if arrForDocuments.isEmpty {
+            AlamofireHelper().getDataFrom(urlString: API_URL.UserProfile, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
                 let response = UserWebService.Response.init(fromDictionary: dictionary)
                 completionHandler(response)
             }
-        }
-        else {
-            AlamofireHelper().getDataFrom(urlString: API_URL.UserProfile, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+        } else {
+            AlamofireHelper().uploadDocumentToURL(urlString: API_URL.UserProfile, paramData: params.dictionary, documents: arrForDocuments) { (data, dictionary, error) in
                 let response = UserWebService.Response.init(fromDictionary: dictionary)
-                completionHandler(response)        }
+                completionHandler(response)
+            }
         }
     }
     

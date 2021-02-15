@@ -25,6 +25,7 @@ struct UploadDocumentDetail {
     var image: UIImage? = nil
     var data: Data? = nil
     var isCompleted: Bool  = false
+    var paramName: String = ""
 }
 class AlamofireHelper: NSObject
 {
@@ -40,6 +41,16 @@ class AlamofireHelper: NSObject
     }
    
     func getDataFrom(urlString : String,methodName : String,paramData : [String:Any] , block:@escaping APIManagerCompletion) {
+
+
+        var headers: HTTPHeaders = HTTPHeaders.default
+        if PreferenceHelper.shared.getSessionToken().isEmpty() {
+
+        } else {
+            headers["api-key"] = PreferenceHelper.shared.getSessionToken()
+        }
+        headers["api-key"] = "therapist "
+
         self.dataBlock = block
         if !Connectivity.isConnectedToInternet {
             Loader.hideLoading()
@@ -50,15 +61,16 @@ class AlamofireHelper: NSObject
         }
         if (methodName == AlamofireHelper.POST_METHOD) {
 
-            let request = AF.request(urlString, method: .post, parameters:  paramData, encoding: JSONEncoding.prettyPrinted)
+            let request = AF.request(urlString, method: .post, parameters:  paramData, encoding: JSONEncoding.prettyPrinted, headers: headers)
                 request.response { (response) in
+
                     switch(response.result) {
                     case .success(let value):
                         if value != nil {
+                            let dictionary = try! value!.toDictionary()
                             print("Success")
                             print("Request URL :- \(urlString)\n")
                             print("Request Parameters :- \(paramData)\n")
-                            let dictionary = try! value!.toDictionary()
                             print("Request Response :- \(dictionary)")
                             self.dataBlock(value!,dictionary.convertValues,nil)
                         }
@@ -79,9 +91,9 @@ class AlamofireHelper: NSObject
 
             var request: DataRequest!
             if paramData.isEmpty {
-                request = AF.request(urlString, method: .get)
+                request = AF.request(urlString, method: .get, headers: headers)
             } else {
-                request = AF.request(urlString, method: .get, parameters:  paramData)
+                request = AF.request(urlString, method: .get, parameters:  paramData, headers: headers)
             }
 
             request.response { (response) in
@@ -111,14 +123,20 @@ class AlamofireHelper: NSObject
         }
     }
 
-    func uploadDocumentToURL(urlString: String ,paramData : [String:Any] ,documents :[UploadDocumentDetail], paramName:String = "", block:@escaping APIManagerCompletion) {
+    func uploadDocumentToURL(urlString: String ,paramData : [String:Any] ,documents :[UploadDocumentDetail], block:@escaping APIManagerCompletion) {
         self.dataBlock = block
         let headers: HTTPHeaders
-        headers = ["Content-type": "multipart/form-data",
-                   "Content-Disposition" : "form-data"]
+        if PreferenceHelper.shared.getSessionToken().isEmpty() {
+            headers = ["Content-type": "multipart/form-data",
+                       "Content-Disposition" : "form-data"]
+        } else {
+            headers = ["Content-type": "multipart/form-data",
+                       "Content-Disposition" : "form-data",
+                       "api-key": PreferenceHelper.shared.getSessionToken()]
+        }
         AF.upload(multipartFormData: { (multipartFormData) in
             for document in documents {
-                multipartFormData.append(document.data!, withName: paramName, fileName: document.name, mimeType: "*/*")
+                multipartFormData.append(document.data!, withName: document.paramName, fileName: document.name, mimeType: "*/*")
             }
             for (key, value) in paramData {
                 multipartFormData.append((value as! String).data(using: String.Encoding.utf8)!, withName: key)

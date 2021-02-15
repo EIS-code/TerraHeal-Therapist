@@ -414,7 +414,7 @@ extension EditProfileVC {
 extension EditProfileVC {
     func wsUpdateProfile(request: UserWebService.RequestProfile) {
         Loader.showLoading()
-        AppWebApi.profile(params: request) { (response) in
+        AppWebApi.updateProfileDetail(params: request, image: self.selectedProfileDoc, document: selectedProfileDoc) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 let user = response.data
@@ -422,31 +422,12 @@ extension EditProfileVC {
                 appSingleton.user = user
                 Singleton.saveInDb()
                 self.setUserData()
-                
-            }
-        }
-    }
-    
-    func wsUpdateProfile() {
-        
-        Loader.showLoading()
-        if let data  = selectedProfileDoc?.image?.pngData() {
-            selectedProfileDoc?.data = data
-            let imgSizeInMB = data.count/1024/1024
-            print("Image Size \(imgSizeInMB) MB")
-        }
-        AppWebApi.profile(params: UserWebService.RequestProfile(), image: selectedProfileDoc) { (response) in
-            Loader.hideLoading()
-            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
-                let user = response.data
-                PreferenceHelper.shared.setUserId(user.id)
-                appSingleton.user = user
-                Singleton.saveInDb()
-                //self.setUserData()
+
             }
         }
     }
 }
+
 extension EditProfileVC: UIImageCropperProtocol {
     func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
         ivProfilePic.image = croppedImage

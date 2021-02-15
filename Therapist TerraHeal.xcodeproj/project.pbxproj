@@ -282,6 +282,8 @@
 		038CB01A2526056E001ACAD6 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CB0032526056E001ACAD6 /* UITextField + Extension.swift */; };
 		038CB01B2526056E001ACAD6 /* JDImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CB0042526056E001ACAD6 /* JDImageExtension.swift */; };
 		038CB01C2526056E001ACAD6 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CB0052526056E001ACAD6 /* LocationHelper.swift */; };
+		039C43CF25D662BF004295F1 /* CalenderWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039C43CE25D662BF004295F1 /* CalenderWebService.swift */; };
+		039C43D325D6852B004295F1 /* NewsWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039C43D225D6852B004295F1 /* NewsWebService.swift */; };
 		03A2CC2525301EF2005E3F29 /* CustomInformationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A2CC2325301EF2005E3F29 /* CustomInformationDialog.xib */; };
 		03A2CC2625301EF2005E3F29 /* CustomInformationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC2425301EF2005E3F29 /* CustomInformationDialog.swift */; };
 		03A2CC3425302468005E3F29 /* ServiceNavigationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A2CC3125302468005E3F29 /* ServiceNavigationVC.xib */; };
@@ -645,6 +647,8 @@
 		038CB0032526056E001ACAD6 /* UITextField + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		038CB0042526056E001ACAD6 /* JDImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDImageExtension.swift; sourceTree = "<group>"; };
 		038CB0052526056E001ACAD6 /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		039C43CE25D662BF004295F1 /* CalenderWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderWebService.swift; sourceTree = "<group>"; };
+		039C43D225D6852B004295F1 /* NewsWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsWebService.swift; sourceTree = "<group>"; };
 		03A2CC2325301EF2005E3F29 /* CustomInformationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInformationDialog.xib; sourceTree = "<group>"; };
 		03A2CC2425301EF2005E3F29 /* CustomInformationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInformationDialog.swift; sourceTree = "<group>"; };
 		03A2CC3125302468005E3F29 /* ServiceNavigationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceNavigationVC.xib; sourceTree = "<group>"; };
@@ -763,6 +767,8 @@
 				030DB58525260966004C7CC8 /* ResponseModel.swift */,
 				030DB58625260966004C7CC8 /* UserWebService.swift */,
 				03107D7F25D1615800D82B7F /* ForgotWebService.swift */,
+				039C43D225D6852B004295F1 /* NewsWebService.swift */,
+				039C43CE25D662BF004295F1 /* CalenderWebService.swift */,
 				030DB58725260966004C7CC8 /* CityWebService.swift */,
 				030DB58825260966004C7CC8 /* Singleton.swift */,
 				030DB58925260966004C7CC8 /* CountriesWebService.swift */,
@@ -2819,6 +2825,7 @@
 				034CBE2625346C4C00B20A11 /* DefaultWeekView.swift in Sources */,
 				03B960BD25483AA500F8F214 /* ManageDocumentTblCell.swift in Sources */,
 				03A2CC3625302468005E3F29 /* ServiceNavigationVC + MapView.swift in Sources */,
+				039C43D325D6852B004295F1 /* NewsWebService.swift in Sources */,
 				038CB0112526056E001ACAD6 /* NSLayoutHelper.swift in Sources */,
 				034DB717254BD09100128AA1 /* AvailabilityVC.swift in Sources */,
 				038CB0142526056E001ACAD6 /* String+Localization.swift in Sources */,
@@ -2944,6 +2951,7 @@
 				0354F26525492F4100F3BEB7 /* ExperienceDialog.swift in Sources */,
 				034CBE772534700D00B20A11 /* WeakTimer.swift in Sources */,
 				030DB5C2252609FB004C7CC8 /* ThemeCollectionCell.swift in Sources */,
+				039C43CF25D662BF004295F1 /* CalenderWebService.swift in Sources */,
 				038CB01C2526056E001ACAD6 /* LocationHelper.swift in Sources */,
 				038CB0102526056E001ACAD6 /* Date + Extension.swift in Sources */,
 				03643F57254A7EC4004F9156 /* FSCalendarCalculator.m in Sources */,

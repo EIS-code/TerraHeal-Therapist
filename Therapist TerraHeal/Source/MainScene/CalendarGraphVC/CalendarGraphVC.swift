@@ -14,13 +14,12 @@ class CalendarGraphVC: BaseVC {
     @IBOutlet weak var bookingView: UIView!
     var bookingVC: MyBookingVC? = nil
     var arrForCalenderEvents:[DefaultEvent] = []
-    var currentSelectedData: OptionsSelectedData! = OptionsSelectedData.init(viewType: .defaultView, date:Date.init(milliseconds: 1599567170000), numOfDays: 7, scrollType: .pageScroll, firstDayOfWeek: .Monday, hourGridDivision: .noneDiv, scrollableRange: (nil,nil) )
+    var currentSelectedData: OptionsSelectedData! = OptionsSelectedData.init(viewType: .defaultView, date:Date(), numOfDays: 7, scrollType: .pageScroll, firstDayOfWeek: .Monday, hourGridDivision: .noneDiv, scrollableRange: (nil,nil) )
 
     @IBOutlet weak var scrView: UIScrollView!
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -74,18 +73,16 @@ class CalendarGraphVC: BaseVC {
 
     private func setupCalendarView() {
         calendarWeekView.baseDelegate = self
-
-        // For example only
         if self.currentSelectedData != nil {
+            self.currentSelectedData.scrollableRange = (arrForCalenderEvents.first?.startDate, arrForCalenderEvents.last?.endDate)
             setupCalendarViewWithSelectedData()
             return
         }
-        // Basic setup
+
         calendarWeekView.setupCalendar(numOfDays: 7,
-                                       setDate: Date(),
+                                       setDate: (arrForCalenderEvents.first?.startDate) ?? Date.init(),
                                        allEvents: JZWeekViewHelper.getIntraEventsByDate(originalEvents: arrForCalenderEvents),
                                        scrollType: .pageScroll)
-        // Optional
         calendarWeekView.updateFlowLayout(JZWeekViewFlowLayout(hourGridDivision: JZHourGridDivision.noneDiv))
     }
 
@@ -106,6 +103,7 @@ class CalendarGraphVC: BaseVC {
         if bookingVC == nil {
             bookingVC = MyBookingVC.fromNib()
         }
+        bookingVC?.wsGetPastBooking()
         self.add(bookingVC!, view:self.bookingView)
         self.scrView.visible()
         //self.calendarWeekView.gone()
@@ -141,29 +139,25 @@ extension CalendarGraphVC: JZBaseViewDelegate {
 extension CalendarGraphVC {
 
     func wsGetTodaysBooking() {
-        BookingWebSerive.todayBookingList { (response) in
+        CalenderWebService.callCalenderEvents(params: CalenderWebService.RequestGetCalender.init(), completionHandler: { (response) in
             if ResponseModel.isSuccess(response: response) {
                 self.arrForCalenderEvents.removeAll()
                 for i in 0..<response.bookingList.count {
                     let data = response.bookingList[i]
-                    let newStartDate = Date.init(milliseconds: data.bookingDateTime.toDouble).add(component: .day, value: i).add(component: .hour, value: i)
-                    self.arrForCalenderEvents.append(DefaultEvent.init(id: data.bookingInfoId, title: data.bookingInfoId, startDate: newStartDate, endDate: newStartDate.add(component: .minute, value: 15)))
+                    let newStartDate = Date.init(milliseconds: data.massageDate.toDouble)
+                    self.arrForCalenderEvents.append(DefaultEvent.init(id: data.bookingInfoId, title: data.bookingInfoId, startDate: newStartDate, endDate: newStartDate.add(component: .minute, value: data.time.toInt)))
                 }
                 if let selectedDate = self.arrForCalenderEvents.first?.startDate {
                     self.currentSelectedData.date = selectedDate
                 }
-
                 self.setupCalendarView()
-                //self.calendarWeekView.collectionView.reloadData()
-
             }
-        }
-    }
 
-    func setupBasic() {
-        // Add this to fix lower than iOS11 problems
+        })
+
 
     }
+
     private func updateNaviBarTitle() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM YYYY"
