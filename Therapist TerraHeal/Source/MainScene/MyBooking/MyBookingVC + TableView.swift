@@ -18,38 +18,39 @@ extension MyBookingVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 500
-        tableView.register(MyBookingTblCell.nib()
-            , forCellReuseIdentifier: MyBookingTblCell.name)
+        tableView.register(MyBookingCollapseCell.nib()
+            , forCellReuseIdentifier: MyBookingCollapseCell.name)
         tableView.register(MyBookingExpandTblCell.nib()
         , forCellReuseIdentifier: MyBookingExpandTblCell.name)
         tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.width, height: JDDeviceHelper.offseter(offset: 88)))
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrForData.count
+        return arrForOriginalBooking.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        if arrForData[indexPath.row].isSelected {
+        let data = arrForOriginalBooking[indexPath.row]
+        if data.isSelected {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingExpandTblCell.name, for: indexPath) as?  MyBookingExpandTblCell
             cell?.parentVC = self
             cell?.indexPath = indexPath
             cell?.layoutIfNeeded()
-            cell?.setData(data: [MyBookingUserPeople.init(fromDictionary: [:]),MyBookingUserPeople.init(fromDictionary: [:])])
+            cell?.setData(data: data)
             self.tableView.reloadRows(at: [indexPath], with: .none)
             cell?.layoutIfNeeded()
             return cell!
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingTblCell.name, for: indexPath) as?  MyBookingTblCell
-            cell?.setData(data: MyBookingTblDetail.init())
+            let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingCollapseCell.name, for: indexPath) as?  MyBookingCollapseCell
+            cell?.setData(data: data)
             return cell!
         }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        if arrForData[indexPath.row].isSelected {
+        if arrForOriginalBooking[indexPath.row].isSelected {
             print("Row Height:- \(tableView.estimatedRowHeight)")
             return UITableView.automaticDimension
         }
@@ -59,16 +60,16 @@ extension MyBookingVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDe
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        for i in 0..<arrForData.count {
+        for i in 0..<arrForOriginalBooking.count {
             if indexPath.row != i {
-                arrForData[i].isSelected = false
+                arrForOriginalBooking[i].isSelected = false
             } else {
-                self.arrForData[indexPath.row].isSelected.toggle()
+                self.arrForOriginalBooking[indexPath.row].isSelected.toggle()
             }
 
         }
         tableView.beginUpdates()
-        if arrForData[indexPath.row].isSelected {
+        if arrForOriginalBooking[indexPath.row].isSelected {
             self.tableView.reloadRows(at: [indexPath], with: .fade)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
                 self.tableView.reloadData()

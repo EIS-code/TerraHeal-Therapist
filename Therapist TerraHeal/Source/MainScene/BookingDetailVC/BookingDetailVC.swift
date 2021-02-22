@@ -5,10 +5,7 @@
 
 import UIKit
 
-struct BookingDetail {
-    var title: String = ""
-    var detail: String = ""
-}
+
 class BookingDetailVC: BaseVC {
     
     @IBOutlet weak var btnStart: FilledRoundedButton!
@@ -21,19 +18,19 @@ class BookingDetailVC: BaseVC {
     @IBOutlet weak var hTblCard1: NSLayoutConstraint!
     @IBOutlet weak var lblBookingId: ThemeLabel!
     @IBOutlet weak var btnRoomNumber: UIButton!
-    var arrForTbl1:  [BookingDetail] = []
+    var arrForTbl1:  [(title:String, detail:String)] = []
     //MARK: Card2
     @IBOutlet weak var vwForCard2: ThemeCardView!
     @IBOutlet weak var tblForCard2: UITableView!
     @IBOutlet weak var hTblCard2: NSLayoutConstraint!
-    var arrForTbl2:  [BookingDetail] = []
+    var arrForTbl2:  [(title:String, detail:String)] = []
     //MARK: Card3
     @IBOutlet weak var vwForCard3: ThemeCardView!
     @IBOutlet weak var tblForCard3: UITableView!
     @IBOutlet weak var hTblCard3: NSLayoutConstraint!
-    var arrForTbl3:  [BookingDetail] = []
+    var arrForTbl3:  [(title:String, detail:String)] = []
 
-    var bookingDetail: BookingWebSerive.BookingDetail = BookingWebSerive.BookingDetail.init(fromDictionary: [:])
+    var bookingDetail: BookingDetail = BookingDetail.init(fromDictionary: [:])
 
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -188,26 +185,26 @@ extension BookingDetailVC {
         }
     }
 
-    func setupData(bookingDetail:BookingWebSerive.BookingDetail) {
+    func setupData(bookingDetail:BookingDetail) {
         self.lblBookingId.setText(bookingDetail.bookingInfoId)
         //self.btnRoomNumber.setText(bookingDetail.rooomId)
 
         self.arrForTbl1 = [
-            BookingDetail.init(title: "BOOKING_DETAIL_CLIENT_NAME".localized(), detail: bookingDetail.clientName),
-            BookingDetail.init(title: "BOOKING_DETAIL_TYPE_OF_SERVICE".localized(), detail: bookingDetail.serviceName )
+            (title: "BOOKING_DETAIL_CLIENT_NAME".localized(), detail: bookingDetail.clientName),
+            (title: "BOOKING_DETAIL_TYPE_OF_SERVICE".localized(), detail: bookingDetail.serviceName )
         ]
         let date = Date.init(milliseconds: bookingDetail.massageDate.toDouble).toString(format: "dd MMM yyyy")
         let startTime = Date.init(milliseconds: bookingDetail.massageStartTime.toDouble).toString(format: "hh:mm a")
         let endTime = Date.init(milliseconds: bookingDetail.massageEndTime.toDouble).toString(format: "hh:mm a")
         self.arrForTbl2 = [
-            BookingDetail.init(title: "BOOKING_DETAIL_SESSION_TYPE".localized(), detail: bookingDetail.sessionType),
-            BookingDetail.init(title: "BOOKING_DETAIL_DATE_AND_TIME".localized(), detail: date + "\n" + startTime + " - " + endTime),
-            BookingDetail.init(title: "BOOKING_DETAIL_PRESSURE_PREFERENCE".localized(), detail: bookingDetail.pressurePreference)
+            (title: "BOOKING_DETAIL_SESSION_TYPE".localized(), detail: bookingDetail.sessionType),
+            (title: "BOOKING_DETAIL_DATE_AND_TIME".localized(), detail: date + "\n" + startTime + " - " + endTime),
+            (title: "BOOKING_DETAIL_PRESSURE_PREFERENCE".localized(), detail: bookingDetail.pressurePreference)
         ]
         self.arrForTbl3 = [
-            BookingDetail.init(title: "BOOKING_DETAIL_SERVICE_DETAILS".localized(), detail: bookingDetail.pressurePreference),
-            BookingDetail.init(title: "BOOKING_DETAIL_NOTES".localized(), detail: bookingDetail.notes),
-            BookingDetail.init(title: "BOOKING_DETAIL_FOCUS_AREA".localized(), detail: bookingDetail.focusArea)
+            (title: "BOOKING_DETAIL_SERVICE_DETAILS".localized(), detail: bookingDetail.pressurePreference),
+            (title: "BOOKING_DETAIL_NOTES".localized(), detail: bookingDetail.notes),
+            (title: "BOOKING_DETAIL_FOCUS_AREA".localized(), detail: bookingDetail.focusArea)
         ]
 
         self.tblForCard1.reloadData()

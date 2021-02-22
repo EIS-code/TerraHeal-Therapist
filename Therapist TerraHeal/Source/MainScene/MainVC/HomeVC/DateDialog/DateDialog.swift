@@ -30,8 +30,8 @@ class DateDialog: ThemeDialogView, UIGestureRecognizerDelegate {
     var onBtnDoneTapped: ((_ date:Double) -> Void)? = nil
     var onBtnCancelTapped: (() -> Void)? = nil
     var selectedMilli:Double = 0
-    var minDate = Date()
-    var maxDate = Date()
+    var minDate: Date? = nil
+    var maxDate: Date? = nil
     
     var selectionColor: UIColor = UIColor.themePrimary
     fileprivate let formatter: DateFormatter = {
@@ -107,7 +107,7 @@ class DateDialog: ThemeDialogView, UIGestureRecognizerDelegate {
 
     }
     
-    func setDate(minDate:Date, maxDate: Date) {
+    func setDate(minDate:Date?, maxDate: Date?) {
         self.minDate = minDate
         self.maxDate = maxDate
         self.vwCalendar.reloadData()
@@ -155,13 +155,19 @@ extension DateDialog: FSCalendarDataSource, FSCalendarDelegate {
         }
         
     }
-   /* func minimumDate(for calendar: FSCalendar) -> Date {
-        return minDate
+    func minimumDate(for calendar: FSCalendar) -> Date {
+        if minDate != nil {
+            return minDate!
+        }
+        return Date().add(component: .year, value: -100)
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
-        return maxDate
-    }*/
+        if maxDate != nil {
+            return maxDate!
+        }
+        return Date().add(component: .year, value: 100)
+    }
 
     
     func selectDate(date:Date) {

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,7 +23,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ZW-DU-hOd">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
                     <rect key="frame" x="0.0" y="67" width="375" height="600"/>
@@ -44,7 +45,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rrC-Ze-lwD" userLabel="Stack View - selection">
                             <rect key="frame" x="0.0" y="60.5" width="120" height="290"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vu-Vw-1ed" customClass="SelectionButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vu-Vw-1ed" customClass="SelectionButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="58"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="58" id="jXq-ze-HRI"/>
@@ -54,28 +55,28 @@
                                         <action selector="filterButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="gCp-pp-xuu"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDf-D6-aT0" customClass="SelectionButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDf-D6-aT0" customClass="SelectionButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="58" width="120" height="58"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="filterButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="NJJ-Bz-v9c"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXz-x6-Imn" customClass="SelectionButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXz-x6-Imn" customClass="SelectionButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="116" width="120" height="58"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="filterButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="SMh-1t-crS"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDR-oI-9Wk" customClass="SelectionButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDR-oI-9Wk" customClass="SelectionButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="174" width="120" height="58"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="filterButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="pKW-uc-aS7"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vag-jz-ybI" customClass="SelectionButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vag-jz-ybI" customClass="SelectionButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="232" width="120" height="58"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
@@ -95,7 +96,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe" userLabel="Stack View - button">
                             <rect key="frame" x="16" y="544" width="343" height="40"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq8-yv-azP" customClass="RoundedBorderButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq8-yv-azP" customClass="RoundedBorderButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="167.5" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
@@ -106,7 +107,7 @@
                                         <action selector="btnClearAllTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZLD-0W-XvQ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="175.5" y="0.0" width="167.5" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
@@ -185,6 +186,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8dM-F7-kDK"/>
@@ -201,7 +203,6 @@
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="pYV-Pm-HG9"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="activeView" destination="kd0-zb-NHp" id="QuK-xG-aNl"/>
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="BnY-1h-4oF"/>
@@ -331,13 +332,13 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="MUk-aU-bgj"/>
             <color key="backgroundColor" name="theme_background"/>
             <constraints>
                 <constraint firstItem="tdt-a6-Sje" firstAttribute="leading" secondItem="MUk-aU-bgj" secondAttribute="leading" constant="8" id="5f6-R4-Ere"/>
                 <constraint firstItem="MUk-aU-bgj" firstAttribute="trailing" secondItem="tdt-a6-Sje" secondAttribute="trailing" constant="8" id="lf4-uB-FQO"/>
                 <constraint firstItem="tdt-a6-Sje" firstAttribute="top" secondItem="MUk-aU-bgj" secondAttribute="top" constant="8" id="qP3-lJ-nTI"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="MUk-aU-bgj"/>
             <point key="canvasLocation" x="61" y="-514"/>
         </view>
         <view contentMode="scaleToFill" id="vb6-IQ-2sk" userLabel="clientView">
@@ -373,6 +374,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="dWF-Kr-fCS"/>
             <color key="backgroundColor" name="theme_background"/>
             <constraints>
                 <constraint firstItem="dWF-Kr-fCS" firstAttribute="trailing" secondItem="pQi-3G-wdE" secondAttribute="trailing" constant="16" id="Jdm-HT-84G" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
@@ -399,7 +401,6 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="dWF-Kr-fCS"/>
             <point key="canvasLocation" x="917" y="12"/>
         </view>
         <view contentMode="scaleToFill" id="lCY-Q0-JGi" userLabel="serviceSearch">
@@ -456,6 +457,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="1Q7-CM-ekF"/>
             <color key="backgroundColor" name="theme_background"/>
             <constraints>
                 <constraint firstItem="Z0Z-a1-8El" firstAttribute="top" secondItem="1Q7-CM-ekF" secondAttribute="top" constant="16" id="0Sm-Lk-Lcx" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
@@ -490,7 +492,6 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="1Q7-CM-ekF"/>
             <point key="canvasLocation" x="1567" y="22"/>
         </view>
         <view contentMode="scaleToFill" id="Jmw-dq-Y9n" userLabel="SessionType">
@@ -499,9 +500,10 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Okn-er-jYH">
                     <rect key="frame" x="16" y="16" width="343" height="635"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="ALR-1m-7vu"/>
             <color key="backgroundColor" name="theme_background"/>
             <constraints>
                 <constraint firstItem="Okn-er-jYH" firstAttribute="top" secondItem="ALR-1m-7vu" secondAttribute="top" constant="16" id="1JB-TL-vYr" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
@@ -535,7 +537,6 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ALR-1m-7vu"/>
             <point key="canvasLocation" x="1604" y="668"/>
         </view>
         <view contentMode="scaleToFill" id="6h6-h5-xeu" userLabel="BookingTypeView">
@@ -548,7 +549,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTU-ve-9ly">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="62"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruc-dP-tc7" userLabel="btnCenter">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruc-dP-tc7" userLabel="btnCenter">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="62"/>
                                     <connections>
                                         <action selector="btnCenterTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="mgC-aZ-glx"/>
@@ -558,7 +559,7 @@
                                     <rect key="frame" x="16" y="0.0" width="30" height="62"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggv-Eb-3lu" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="62" y="16" width="42" height="30"/>
+                                    <rect key="frame" x="62" y="16" width="41.5" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -605,7 +606,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFY-hq-iaO">
                             <rect key="frame" x="0.0" y="62" width="343" height="62"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsE-OX-Kmx" userLabel="btnhome">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsE-OX-Kmx" userLabel="btnhome">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="62"/>
                                     <connections>
                                         <action selector="btnHomeTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="wmh-tb-hyp"/>
@@ -615,7 +616,7 @@
                                     <rect key="frame" x="16" y="0.0" width="30" height="62"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JI-iY-gwI" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="62" y="16" width="42" height="30"/>
+                                    <rect key="frame" x="62" y="16" width="41.5" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -662,6 +663,7 @@
                     </subviews>
                 </stackView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="TbN-eC-1Lx"/>
             <color key="backgroundColor" name="theme_background"/>
             <constraints>
                 <constraint firstItem="keI-PE-TZf" firstAttribute="leading" secondItem="TbN-eC-1Lx" secondAttribute="leading" constant="16" id="K7N-9E-cYr" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
@@ -688,10 +690,17 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="TbN-eC-1Lx"/>
             <point key="canvasLocation" x="1604" y="668"/>
         </view>
     </objects>
+    <designables>
+        <designable name="BLb-K4-hyz">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="t7Y-Na-TRw">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="asset-arrow-left" width="10.5" height="16.5"/>
         <image name="asset-arrow-right" width="10.5" height="16.5"/>
@@ -720,5 +729,8 @@
         <namedColor name="theme_secondary">
             <color red="0.97299998998641968" green="0.60000002384185791" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

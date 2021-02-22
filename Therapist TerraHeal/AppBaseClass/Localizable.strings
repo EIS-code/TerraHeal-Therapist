@@ -133,6 +133,9 @@
 "BOOKING_DETAILS_BTN_I_AM_SAFE" = "I am safe";
 "BOOKING_DETAIL_BTN_CHECK_IN" = "Check In";
 "MY_BOOKING_TITLE" = "my bookings";
+"SESSION_TYPE_SINGLE"= "Single";
+"SESSION_TYPE_COUPLE"= "Couple";
+"SESSION_TYPE_GROUPE"= "Groupe";
 //MARK: Scan Dialog
 "DIALOG_SCAN_TITLE" = "scan QR";
 "DIALOG_BTN_SCAN" = "scan";

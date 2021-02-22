@@ -74,7 +74,9 @@ class AppWebApi: NSObject {
         static var GetCalender: String {
             return  Domain + Routes.Client + "/calender/get"
         }
-
+        static var GetCalenderDetails: String {
+            return  Domain + Routes.Client + "/calender/booking/details"
+        }
         static var GetNews: String {
             return  Domain + "/news/get"
         }

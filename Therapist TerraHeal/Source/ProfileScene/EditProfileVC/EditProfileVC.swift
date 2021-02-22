@@ -90,28 +90,28 @@ class EditProfileVC: BaseVC {
 
     
     func setUserData() {
-        
+        let user = appSingleton.user
         self.ivProfilePic.downloadedFrom(link: appSingleton.user.profilePhoto)
 
         self.arrForProfile = [
-            EditProfileTextFieldDetail.init(value: "", type: .AccountNumber, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .Name, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .Surname, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .Gender, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .DOB, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .Nif, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .Ssn, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .City, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .Country, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .Phone, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .EmergencyContact, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .Email, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.accountNumber, type: .AccountNumber, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.name, type: .Name, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.surname, type: .Surname, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.gender, type: .Gender, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.dob, type: .DOB, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.nif, type: .Nif, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.socialSecurityNumber, type: .Ssn, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.cityId, type: .City, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.countryId, type: .Country, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.mobileNumber, type: .Phone, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.emergenceContactNumber, type: .EmergencyContact, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.email, type: .Email, rightImage: ""),
             EditProfileTextFieldDetail.init(value: "", type: .LanguageSpoken, rightImage: "1"),
             EditProfileTextFieldDetail.init(value: "", type: .Documents, rightImage: "1"),
             EditProfileTextFieldDetail.init(value: "", type: .Services, rightImage: "1"),
             EditProfileTextFieldDetail.init(value: "", type: .Experience, rightImage: "1"),
-            EditProfileTextFieldDetail.init(value: "", type: .Description, rightImage: "1"),
-            EditProfileTextFieldDetail.init(value: "", type: .HealthCodndition, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.personalDescription, type: .Description, rightImage: "1"),
+            EditProfileTextFieldDetail.init(value: user.healthConditionsAllergies, type: .HealthCodndition, rightImage: ""),
 
         ]
         //self.selectedCity = appSingleton.user.city
@@ -259,6 +259,8 @@ extension EditProfileVC {
             var request: UserWebService.RequestProfile = UserWebService.RequestProfile()
             switch self.arrForProfile[index].type
             {
+            case .AccountNumber:
+                request.account_number = description
             case .Name:
                 request.name = description
             case .Surname:
@@ -335,11 +337,11 @@ extension EditProfileVC {
             switch self.arrForProfile[index].type
             {
             case .EmergencyContact:
-                request.emergency_tel_number = mobileNumber
-                request.emergency_tel_number_code = countryPhoneCode
+                request.emergence_contact_number = mobileNumber
+                //request.emergency_tel_number_code = countryPhoneCode
             case .Phone:
-                request.tel_number = mobileNumber
-                request.tel_number_code = countryPhoneCode
+                request.mobile_number = mobileNumber
+                //request.tel_number_code = countryPhoneCode
             default : print("Default")
             }
             self.wsUpdateProfile(request: request)
@@ -404,6 +406,7 @@ extension EditProfileVC {
             guard let self = self else { return } ; print(self)
             genderPickerAlert?.dismiss()
             var request: UserWebService.RequestProfile = UserWebService.RequestProfile()
+            request.gender = gender.rawValue
             self.wsUpdateProfile(request: request)
 
         }

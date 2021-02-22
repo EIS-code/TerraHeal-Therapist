@@ -8,20 +8,12 @@
 
 import UIKit
 
-struct MyBookingTblDetail{
-    var id:String = ""
-    var title: String = ""
-    var isSelected: Bool = false
-}
-
-class MyBookingTblCell: TableCell {
+class MyBookingCollapseCell: TableCell {
 
     @IBOutlet weak var lblName: ThemeLabel!
     @IBOutlet weak var vwCollapse: UIView!
     @IBOutlet weak var btnAction: ThemeButton!
     @IBOutlet weak var ivForplace: UIImageView!
-    @IBOutlet weak var vwBar: UIView!
-
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -31,8 +23,8 @@ class MyBookingTblCell: TableCell {
         
     }
 
-    func setData(data: MyBookingTblDetail ) {
-        self.lblName.setText(data.title)
+    func setData(data: BookingDetail ) {
+        self.lblName.setText(Date.init(milliseconds: data.massageDate.toDouble).toString(format: "dd MMM yyyy hh:mm"))
     }
 
     override func layoutSubviews() {

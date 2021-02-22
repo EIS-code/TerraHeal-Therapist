@@ -36,6 +36,8 @@ class UserDetailTblSection: UITableViewHeaderFooterView {
         self.lblName.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblAge.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblGender.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
+        self.backgroundColor = UIColor.white
+        self.contentView.backgroundColor = UIColor.white
     }
 
     func setData(data: UserDetailSectionModel) {

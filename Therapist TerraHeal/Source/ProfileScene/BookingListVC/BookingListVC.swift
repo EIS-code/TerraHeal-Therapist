@@ -11,8 +11,8 @@ class BookingListVC: BaseVC {
     @IBOutlet weak var vwTab: JDSegmentedControl!
     @IBOutlet weak var vwBg: UIView!
     
-    var arrForPastBooking: [MyBookingData] = []
-    var arrForFutureBooking: [MyBookingData] = []
+    var arrForPastBooking: [BookingData] = []
+    var arrForFutureBooking: [BookingData] = []
     var arrForData: [MyBookingTblCellDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -112,7 +112,7 @@ extension BookingListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
                cell?.parentVC = self
                cell?.indexPath = indexPath
                cell?.layoutIfNeeded()
-               cell?.setData(data: [MyBookingUserPeople.init(fromDictionary: [:]),MyBookingUserPeople.init(fromDictionary: [:])])
+               //cell?.setData(data: [MyBookingUserPeople.init(fromDictionary: [:]),MyBookingUserPeople.init(fromDictionary: [:])])
                 self.tableView.reloadRows(at: [indexPath], with: .none)
                cell?.layoutIfNeeded()
                return cell!
@@ -199,14 +199,14 @@ extension BookingListVC {
         }
     }
 
-    func setDataSourceForUpcomingBooking(dataSource:[BookingWebSerive.BookingData]) {
+    func setDataSourceForUpcomingBooking(dataSource:[BookingData]) {
         self.arrForData.removeAll()
         for data in dataSource {
             self.arrForData.append(MyBookingTblCellDetail.init(data: data))
         }
     }
 
-    func setDataSourceForPendingBooking(dataSource:[BookingWebSerive.BookingData]) {
+    func setDataSourceForPendingBooking(dataSource:[BookingData]) {
         self.arrForData.removeAll()
         for data in dataSource {
             self.arrForData.append(MyBookingTblCellDetail.init(data: data))

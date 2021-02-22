@@ -48,7 +48,8 @@ extension CustomFilterDialog: FSCalendarDataSource, FSCalendarDelegate {
         if monthPosition == .previous || monthPosition == .next {
             calendar.setCurrentPage(date, animated: true)
         }
-        self.selectedValue =  date.toString(format: DateFormat.BookingDateSelection)
+        self.selectedValue =  self.selectedMilli.toString()//date.toString(format: DateFormat.BookingDateSelection)
+        self.selectedFilterValues.massage_date = self.selectedMilli.toString()
     }
 
 

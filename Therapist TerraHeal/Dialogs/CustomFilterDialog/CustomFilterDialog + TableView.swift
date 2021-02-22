@@ -16,10 +16,14 @@ extension CustomFilterDialog: UITableViewDelegate, UITableViewDataSource {
         self.activeView.addSubview(self.vwSession)
         self.setupSessionTableView(tableView: self.tblForSessionType)
         self.arrForData = [
-            RadioSelectionTblCellDetail.init(id: "0", title: "Single"),
-            RadioSelectionTblCellDetail.init(id: "1", title: "Couple"),
-            RadioSelectionTblCellDetail.init(id: "2", title: "Groupe")]
+            RadioSelectionTblCellDetail.init(id: "1", title: "SESSION_TYPE_SINGLE".localized()),
+            RadioSelectionTblCellDetail.init(id: "2", title: "SESSION_TYPE_COUPLE".localized()),
+            RadioSelectionTblCellDetail.init(id: "3", title: "SESSION_TYPE_GROUPE".localized())]
         self.tblForSessionType.reloadData()
+
+
+
+
     }
 
     private func setupSessionTableView(tableView: UITableView) {
@@ -52,6 +56,7 @@ extension CustomFilterDialog: UITableViewDelegate, UITableViewDataSource {
         }
         self.arrForData[indexPath.row].isSelected = true
         self.selectedValue = self.arrForData[indexPath.row].title
+        self.selectedFilterValues.massage_date = self.selectedMilli.toString()
         tableView.reloadData()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

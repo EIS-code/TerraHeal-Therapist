@@ -24,7 +24,7 @@ class HomeVC: BaseVC {
     @IBOutlet weak var btnSubFilter: FloatingRoundButton!
     var selectedFilterType: FilterType = .Today
     var arrForData: [MyBookingTblDetail] = []
-    var arrForOriginalData: [BookingWebSerive.BookingData] = []
+    var arrForOriginalData: [BookingData] = []
     var arrForFilter: [ImageWithTitle] = [
         ImageWithTitle.init(name: "HOME_FILTER_TODAY".localized(), imageName: ImageAsset.Filter.today, data: FilterType.Today),
         ImageWithTitle.init(name: "HOME_FILTER_FUTURE".localized(), imageName: ImageAsset.Filter.future, data: FilterType.Future),
@@ -32,7 +32,9 @@ class HomeVC: BaseVC {
     ]
     var selectedDate: Date? = nil
     
-    
+    var pastBookingRequest: BookingWebSerive.RequestPastBookingList = BookingWebSerive.RequestPastBookingList.init()
+    var futureBookingRequest: BookingWebSerive.RequestFutureBookingList = BookingWebSerive.RequestFutureBookingList.init()
+    var currentBookingRequest: BookingWebSerive.RequestTodayBookingList = BookingWebSerive.RequestTodayBookingList.init()
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -88,7 +90,9 @@ class HomeVC: BaseVC {
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
         self.setNavigationTitle(title: "".localized())
         self.vwFilter.backgroundColor = .clear
-        self.wsGetPastBooking()
+        self.pastBookingRequest.massage_date = Date().millisecondsSince1970.toString()
+        self.wsGetTodaysBooking(request: self.currentBookingRequest)
+        //self.wsGetPastBooking(request: self.pastBookingRequest)
     }
     
     @IBAction func btnMenuTapped(_ sender: Any) {
@@ -148,15 +152,15 @@ extension HomeVC {
                        animations: {
                         self.vwFilterDialog.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
                         self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: -10.0)
-        }, completion: { Void in()
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: (self.view.frame.maxY - self.tblForFilter.frame.minY))
-                   self.vwFilterDialog.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
-                }) { (success) in
-                    self.vwFilter.isHidden = true
-                    self.btnFilter.isSelected = false
-                }
-        })
+                       }, completion: { Void in()
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.tblForFilter.transform = CGAffineTransform(translationX: 0.0, y: (self.view.frame.maxY - self.tblForFilter.frame.minY))
+                            self.vwFilterDialog.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+                        }) { (success) in
+                            self.vwFilter.isHidden = true
+                            self.btnFilter.isSelected = false
+                        }
+                       })
 
     }
 
@@ -173,11 +177,52 @@ extension HomeVC {
             [weak alert, weak self] (filterType,value) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-            self.arrForData.removeAll()
-            for _ in 0...5 {
-                self.arrForData.append(MyBookingTblDetail.init(title: value as! String, isSelected: false))
+
+            if self.selectedFilterType == .Future {
+                switch filterType {
+                case .BookingType:
+                    self.futureBookingRequest.booking_type = value as! String
+                case .Date:
+                    self.futureBookingRequest.massage_date = value as! String
+                case .ClientName:
+                    self.futureBookingRequest.client_name = value as! String
+                case .ServiceType:
+                    self.futureBookingRequest.massage_date = value as! String
+                case .SessionType:
+                    self.futureBookingRequest.session_id = value as! String
+                }
+                self.wsGetFutureBooking(request: self.futureBookingRequest)
+
+            } else if self.selectedFilterType == .Past{
+                switch filterType {
+                case .BookingType:
+                    self.pastBookingRequest.booking_type = value as! String
+                case .Date:
+                    self.pastBookingRequest.massage_date = value as! String
+                case .ClientName:
+                    self.pastBookingRequest.client_name = value as! String
+                case .ServiceType:
+                    self.pastBookingRequest.massage_date = value as! String
+                case .SessionType:
+                    self.pastBookingRequest.session_id = value as! String
+                }
+                self.wsGetPastBooking(request: self.pastBookingRequest)
+            } else {
+                switch filterType {
+                case .BookingType:
+                    self.currentBookingRequest.booking_type = value as! String
+                case .Date:
+                    self.currentBookingRequest.massage_date = value as! String
+                case .ClientName:
+                    self.currentBookingRequest.client_name = value as! String
+                case .ServiceType:
+                    self.currentBookingRequest.massage_date = value as! String
+                case .SessionType:
+                    self.currentBookingRequest.session_id = value as! String
+                }
+                self.wsGetTodaysBooking(request: self.currentBookingRequest)
             }
-            self.tableView.reloadData()
+
             self.btnSubFilter.isEnabled = true
         }
     }
@@ -186,15 +231,13 @@ extension HomeVC {
         let alert: DateDialog = DateDialog.fromNib()
         alert.initialize(title: "Date")
         let initialFrame: CGRect =  sender.convert(sender.bounds, to: Common.appDelegate.window!)
-        print("Frame: \(initialFrame)")
         alert.initialFrame = initialFrame
         if self.selectedFilterType == .Past {
-            alert.maxDate = Date()
-       } else if self.selectedFilterType == .Future {
-            alert.minDate = Date()
-            self.wsGetFutureBooking()
+            alert.setDate(minDate: nil, maxDate: Date())
+        } else if self.selectedFilterType == .Future {
+            alert.setDate(minDate: Date(), maxDate: nil)
         } else {
-
+            alert.setDate(minDate: nil, maxDate: nil)
         }
         alert.show(animated: true)
 
@@ -209,11 +252,14 @@ extension HomeVC {
             alert?.dismiss()
             self.selectedDate = Date.init(milliseconds: date)
             if self.selectedFilterType == .Past {
-                self.wsGetPastBooking()
+                self.pastBookingRequest.massage_date = date.toString()
+                self.wsGetPastBooking(request: self.pastBookingRequest)
             } else if self.selectedFilterType == .Future {
-                self.wsGetFutureBooking()
+                self.futureBookingRequest.massage_date = date.toString()
+                self.wsGetFutureBooking(request: self.futureBookingRequest)
             } else {
-
+                self.currentBookingRequest.massage_date = Date().millisecondsSince1970.toString()
+                self.wsGetTodaysBooking(request: self.currentBookingRequest)
             }
         }
     }
@@ -230,7 +276,7 @@ extension HomeVC: PBRevealViewControllerDelegate {
 
 //MARK:- Web Service Call
 extension HomeVC {
-    func wsGetTodaysBooking() {
+    func wsGetTodaysBooking(request: BookingWebSerive.RequestTodayBookingList) {
         Loader.showLoading()
         BookingWebSerive.todayBookingList { (response) in
             Loader.hideLoading()
@@ -245,9 +291,9 @@ extension HomeVC {
             }
         }
     }
-    func wsGetFutureBooking() {
+    func wsGetFutureBooking(request: BookingWebSerive.RequestFutureBookingList) {
         Loader.showLoading()
-        BookingWebSerive.futureBookingList { (response) in
+        BookingWebSerive.futureBookingList(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()
@@ -261,9 +307,9 @@ extension HomeVC {
         }
     }
 
-    func wsGetPastBooking() {
+    func wsGetPastBooking(request: BookingWebSerive.RequestPastBookingList) {
         Loader.showLoading()
-        BookingWebSerive.pastBookingList { (response) in
+        BookingWebSerive.pastBookingList(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()

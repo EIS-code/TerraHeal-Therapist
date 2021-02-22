@@ -99,11 +99,11 @@ class CalendarGraphVC: BaseVC {
         calendarWeekView.updateFlowLayout(JZWeekViewFlowLayout(hourGridDivision: selectedData.hourGridDivision))
     }
 
-    func viewBookingSelected() {
+    func viewBookingSelected(date:String) {
         if bookingVC == nil {
             bookingVC = MyBookingVC.fromNib()
         }
-        bookingVC?.wsGetPastBooking()
+        bookingVC?.wsGetBookingList(date: date)
         self.add(bookingVC!, view:self.bookingView)
         self.scrView.visible()
         //self.calendarWeekView.gone()
@@ -128,7 +128,7 @@ extension CalendarGraphVC: JZBaseViewDelegate {
     }
     func eventClicked(_ event: JZBaseEvent) {
         print((event as! DefaultEvent).title)
-        self.viewBookingSelected()
+        self.viewBookingSelected(date: event.startDate.millisecondsSince1970.toString())
     }
 
 
@@ -151,6 +151,7 @@ extension CalendarGraphVC {
                     self.currentSelectedData.date = selectedDate
                 }
                 self.setupCalendarView()
+                self.calendarWeekView.scrollWeekView(to: self.currentSelectedData.date)
             }
 
         })

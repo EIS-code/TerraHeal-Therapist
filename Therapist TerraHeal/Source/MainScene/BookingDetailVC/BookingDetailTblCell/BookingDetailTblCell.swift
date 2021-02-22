@@ -22,7 +22,7 @@ class BookingDetailTblCell: TableCell {
         self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
     }
 
-    func setData(data: BookingDetail ) {
+    func setData(data: (title:String, detail:String) ) {
         self.lblTitle.setText(data.title)
         self.lblDetail.setText(data.detail)
     }

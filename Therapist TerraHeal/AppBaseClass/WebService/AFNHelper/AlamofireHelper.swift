@@ -67,10 +67,10 @@ class AlamofireHelper: NSObject
                     switch(response.result) {
                     case .success(let value):
                         if value != nil {
-                            let dictionary = try! value!.toDictionary()
                             print("Success")
                             print("Request URL :- \(urlString)\n")
                             print("Request Parameters :- \(paramData)\n")
+                            let dictionary = try! value!.toDictionary()
                             print("Request Response :- \(dictionary)")
                             self.dataBlock(value!,dictionary.convertValues,nil)
                         }

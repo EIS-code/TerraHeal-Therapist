@@ -284,20 +284,6 @@ extension AppDelegate {
         }
     }
 
-    func loadMyBookingVC(navigaionVC:UINavigationController? = nil) {
-        if let nc = navigaionVC as? NC {
-            if let targetVC: MyBookingVC =  nc.findVCs(ofType: MyBookingVC.self).first {
-                _ = nc.popToVc(targetVC)
-            } else {
-                let targetVC: MyBookingVC = MyBookingVC.fromNib()
-                nc.pushVC(targetVC)
-            }
-        } else {
-            let targetVC: MyBookingVC = MyBookingVC.fromNib()
-            let nC: NC = NC(rootViewController: targetVC)
-            self.windowConfig(withRootVC: nC)
-        }
-    }
 
     func loadBookingListVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {

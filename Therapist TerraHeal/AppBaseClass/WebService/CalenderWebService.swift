@@ -11,8 +11,12 @@ import Foundation
 //MARK: Request Models
 class CalenderWebService {
     static let url: String = API_URL.GetCalender
+    static let bookingDetailUrl: String = API_URL.GetCalenderDetails
     struct RequestGetCalender: Codable {
         var email: String = ""
+    }
+    struct RequestGetCalenderBookingDetail: Codable {
+        var booking_date: String = ""
     }
 }
 
@@ -26,6 +30,18 @@ extension CalenderWebService {
             if let dataArray = dictionary["data"] as? [[String:Any]] {
                 for data in dataArray {
                     bookingList.append(CalenderData.init(fromDictionary: data))
+                }
+            }
+        }
+    }
+    class ResponseBookingDetail :  ResponseModel {
+        var bookingList: [BookingDetail] = []
+        override init(fromDictionary dictionary: [String:Any]) {
+            super.init(fromDictionary: dictionary)
+            bookingList.removeAll()
+            if let dataArray = dictionary["data"] as? [[String:Any]] {
+                for data in dataArray {
+                    bookingList.append(BookingDetail.init(fromDictionary: data))
                 }
             }
         }
@@ -47,6 +63,9 @@ extension CalenderWebService {
         }
 
     }
+
+
+    
 }
 
 
@@ -55,6 +74,13 @@ extension CalenderWebService {
     static func callCalenderEvents(params:CalenderWebService.RequestGetCalender, completionHandler: @escaping ((CalenderWebService.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: CalenderWebService.url, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = CalenderWebService.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    //MARK:- Calender Booking Details
+    static func callCalenderBookingDetail(params:CalenderWebService.RequestGetCalenderBookingDetail, completionHandler: @escaping ((CalenderWebService.ResponseBookingDetail) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: CalenderWebService.bookingDetailUrl, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = CalenderWebService.ResponseBookingDetail.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }

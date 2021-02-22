@@ -39,6 +39,7 @@ class LaunchVC: BaseVC {
     fileprivate func loadNextScreen() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
             if !PreferenceHelper.shared.getUserId().isEmpty() {
+                Singleton.loadFrombDB()
                 Common.appDelegate.loadMainVC()
             } else {
                 Common.appDelegate.loadLoginVC()

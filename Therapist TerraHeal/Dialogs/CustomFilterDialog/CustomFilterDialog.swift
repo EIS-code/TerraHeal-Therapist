@@ -25,6 +25,7 @@ class CustomFilterDialog: ThemeBottomDialogView {
         case SessionType = 4
     }
 
+
     //ClientDialog
     @IBOutlet weak var vwClientSearch: UIView!
     @IBOutlet weak var vwClientSearchBar: UIView!
@@ -47,7 +48,7 @@ class CustomFilterDialog: ThemeBottomDialogView {
     @IBOutlet weak var btnCenter: JDRadioButton!
 
     var selectedTab: FilterTab = FilterTab.Date
-
+    var selectedFilterValues: BookingWebSerive.RequestTodayBookingList = BookingWebSerive.RequestTodayBookingList.init()
     override func awakeFromNib() {
         super.awakeFromNib()
         self.initialSetup()
@@ -100,12 +101,6 @@ class CustomFilterDialog: ThemeBottomDialogView {
     }
 
     @IBAction func filterButtonTapped(_ sender: SelectionButton) {
-        /*self.vwServiceSearch.frame = self.activeView.bounds
-        self.vwClientSearch.frame = self.activeView.bounds
-        self.vwBookingType.frame = self.activeView.bounds
-        self.vwSession.frame = self.activeView.bounds
-        self.dateView.frame = self.activeView.bounds*/
-        
         for button in filterTypeButton {
             if button.tag == sender.tag {
                 button.select(withAnimation: true)
@@ -308,7 +303,4 @@ extension CustomFilterDialog {
         self.btnHome.isSelected = false
         self.btnCenter.isSelected = false
     }
-
-
-
 }

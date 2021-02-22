@@ -44,8 +44,34 @@ class MyBookingExpandTblCell: TableCell {
         self.setupTableView(tableView: self.tableView)
     }
 
-    func setData(data: [MyBookingUserPeople] ) {
-        self.arrForData = [MyBookingUserPeople.init(fromDictionary: [:]),MyBookingUserPeople.init(fromDictionary: [:]),MyBookingUserPeople.init(fromDictionary: [:]),MyBookingUserPeople.init(fromDictionary: [:])]
+    func setData(data:BookingDetail) {
+
+        let bookingDate = Date.init(milliseconds: data.massageDate.toDouble).toString(format: "dd MMM yyyy")
+        let bookingTime = Date.init(milliseconds: data.massageStartTime.toDouble).toString(format: "hh:mm")
+
+        let bookingDateTime = Date.init(milliseconds:  data.massageDate.toDouble).toString(format: "hh:mm | EEE, dd MMM yyyy")
+
+        let people = MyBookingUserPeople.init(fromDictionary: [:])
+        people.age = data.clientAge
+        people.name = data.clientName
+        people.gender = data.clientGender
+        let bookingMassage = MyBookingMassage.init(fromDictionary: [:])
+        bookingMassage.name = data.serviceName
+        bookingMassage.time = data.massageDuration
+        people.bookingMassages = [bookingMassage]
+        self.arrForData = [people]
+
+        self.lblDate?.setText(bookingDate)
+        self.lblBookingTime.setText("booked: \(bookingTime)")
+        self.lblDelayTime.setText("")
+        self.lblBookingDetail.setText("Booking Details")
+
+        self.lblBookingTypeValue.setText(BookingType.init(rawValue: data.bookingType)?.name())
+        self.lblCenterName.setText(data.shopName)
+        self.lblCenterAddress.setText(data.shopAddress)
+        self.lblBookDateAndTime.setText(bookingDateTime)
+        self.lblSessionValue.setText(data.sessionType)
+
         self.tableView.reloadData(heightToFit: self.htblVw) {
             self.layoutIfNeeded()
             self.vwExpanded?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)

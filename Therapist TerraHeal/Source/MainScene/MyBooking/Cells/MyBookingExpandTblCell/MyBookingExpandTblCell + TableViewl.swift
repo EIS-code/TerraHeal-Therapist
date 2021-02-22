@@ -17,6 +17,7 @@ extension MyBookingExpandTblCell :  UITableViewDelegate,UITableViewDataSource {
         tableView.estimatedRowHeight = 40
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 50
+        tableView.separatorStyle = .none
         tableView.register(MassageDetailTblCell.nib()
                    , forCellReuseIdentifier: MassageDetailTblCell.name)
         tableView.register(UserDetailTblSection.nib(), forHeaderFooterViewReuseIdentifier: UserDetailTblSection.name)
@@ -50,7 +51,7 @@ extension MyBookingExpandTblCell :  UITableViewDelegate,UITableViewDataSource {
             else {
                 return nil
         }
-        view.setData(data: UserDetailSectionModel.init(name: "jaydeep", age: "25", gender: "Male"))
+        view.setData(data: UserDetailSectionModel.init(name:arrForData[0].name, age: arrForData[0].age, gender: arrForData[0].gender))
         return view
 
     }

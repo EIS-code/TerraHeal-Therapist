@@ -112,17 +112,17 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             }
             switch self.selectedFilterType {
             case .Future:
-                self.wsGetFutureBooking()
+                self.wsGetFutureBooking(request: self.futureBookingRequest)
             case .Past:
-                self.wsGetPastBooking()
+                self.wsGetPastBooking(request: self.pastBookingRequest)
             default:
-                self.wsGetTodaysBooking()
+                self.wsGetTodaysBooking(request: self.currentBookingRequest)
             }
             self.tableView.reloadData()
             self.updateFilterButton(isShowFilter: false)
         }  else {
             Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: {/* [weak self]*/ (bookingDetailVC) in
-                bookingDetailVC.bookingDetail = BookingWebSerive.BookingDetail.init(fromDictionary: [:])
+                bookingDetailVC.bookingDetail = BookingDetail.init(fromDictionary: [:])
                 bookingDetailVC.bookingDetail.bookingInfoId = self.arrForOriginalData[indexPath.row].bookingInfos.first!.bookingInfoId
             })
         }

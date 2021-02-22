@@ -45,7 +45,7 @@ extension BookingDetailVC: UITableViewDelegate,UITableViewDataSource, UIScrollVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 
-        var data: BookingDetail = BookingDetail.init()
+        var data: (title:String, detail:String) = ("","")
 
         switch tableView {
         case self.tblForCard1:
