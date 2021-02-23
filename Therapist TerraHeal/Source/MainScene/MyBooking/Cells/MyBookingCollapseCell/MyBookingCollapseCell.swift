@@ -27,6 +27,10 @@ class MyBookingCollapseCell: TableCell {
         self.lblName.setText(Date.init(milliseconds: data.massageDate.toDouble).toString(format: "dd MMM yyyy hh:mm"))
     }
 
+    func setData(data: BookingData ) {
+        self.lblName.setText(Date.init(milliseconds: data.bookingDateTime.toDouble).toString(format: "dd MMM yyyy hh:mm"))
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         self.vwCollapse?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)

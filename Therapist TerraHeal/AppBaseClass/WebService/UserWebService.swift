@@ -52,6 +52,8 @@ extension UserWebService {
             data = UserData.init(fromDictionary: [:])
             if let dictData = dictionary["data"] as? [String:Any] {
                 self.data = UserData.init(fromDictionary: dictData)
+            } else if let dictData = dictionary["data"] as? [[String:Any]] {
+                self.data = UserData.init(fromDictionary: dictData.first!)
             }
         }
     }
@@ -61,10 +63,13 @@ extension UserWebService {
         var avatar: String = ""
         var avatarOriginal: String = ""
         var cityId: String = ""
+        var cityName: String = ""
         var countryId: String = ""
+        var countryName: String = ""
         var deviceToken: String = ""
         var deviceType: String = ""
         var dob: String = ""
+        var documents : [Document]!
         var email: String = ""
         var emergenceContactNumber: String = ""
         var gender: String = ""
@@ -75,6 +80,7 @@ extension UserWebService {
         var isEmailVerified: String = ""
         var isFreelancer: String = ""
         var isMobileVerified: String = ""
+        var languageSpoken: String = ""
         var mobileNumber: String = ""
         var name: String = ""
         var nif: String = ""
@@ -83,6 +89,7 @@ extension UserWebService {
         var paidPercentage: String = ""
         var personalDescription: String = ""
         var profilePhoto: String = ""
+        var selectedMassages : [SelectedMassage]!
         var shopId: String = ""
         var shortDescription: String = ""
         var socialSecurityNumber: String = ""
@@ -95,10 +102,20 @@ extension UserWebService {
             self.avatar = (dictionary["avatar"] as? String) ?? ""
             self.avatarOriginal = (dictionary["avatar_original"] as? String) ?? ""
             self.cityId = (dictionary["city_id"] as? String) ?? ""
+            self.cityName = (dictionary["city_name"] as? String) ?? ""
             self.countryId = (dictionary["country_id"] as? String) ?? ""
+            self.countryName = (dictionary["country_name"] as? String) ?? ""
             self.deviceToken = (dictionary["device_token"] as? String) ?? ""
             self.deviceType = (dictionary["device_type"] as? String) ?? ""
             self.dob = (dictionary["dob"] as? String) ?? ""
+            self.documents = [Document]()
+            if let documentsArray = dictionary["documents"] as? [[String:Any]]{
+                for dic in documentsArray{
+                    let value = Document(fromDictionary: dic)
+                    documents.append(value)
+                }
+            }
+
             self.email = (dictionary["email"] as? String) ?? ""
             self.emergenceContactNumber = (dictionary["emergence_contact_number"] as? String) ?? ""
             self.gender = (dictionary["gender"] as? String) ?? ""
@@ -109,6 +126,7 @@ extension UserWebService {
             self.isEmailVerified = (dictionary["is_email_verified"] as? String) ?? ""
             self.isFreelancer = (dictionary["is_freelancer"] as? String) ?? ""
             self.isMobileVerified = (dictionary["is_mobile_verified"] as? String) ?? ""
+            self.languageSpoken = (dictionary["language_spoken"] as? String) ?? ""
             self.mobileNumber = (dictionary["mobile_number"] as? String) ?? ""
             self.name = (dictionary["name"] as? String) ?? ""
             self.nif = (dictionary["nif"] as? String) ?? ""
@@ -117,6 +135,13 @@ extension UserWebService {
             self.paidPercentage = (dictionary["paid_percentage"] as? String) ?? ""
             self.personalDescription = (dictionary["personal_description"] as? String) ?? ""
             self.profilePhoto = (dictionary["profile_photo"] as? String) ?? ""
+            selectedMassages = [SelectedMassage]()
+            if let selectedMassagesArray = dictionary["selected_massages"] as? [[String:Any]]{
+                for dic in selectedMassagesArray{
+                    let value = SelectedMassage(fromDictionary: dic)
+                    selectedMassages.append(value)
+                }
+            }
             self.shopId = (dictionary["shop_id"] as? String) ?? ""
             self.shortDescription = (dictionary["short_description"] as? String) ?? ""
             self.socialSecurityNumber = (dictionary["social_security_number"] as? String) ?? ""
@@ -126,32 +151,49 @@ extension UserWebService {
 
 
     }
-    class SelectedTherapy: Codable {
 
-        var id: String = ""
-        var therapistId: String = ""
-        var therapyId: String = ""
 
-        init(fromDictionary dictionary: [String:Any]){
-            self.id = (dictionary["id"] as? String) ?? ""
-            self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
-            self.therapyId = (dictionary["therapy_id"] as? String) ?? ""
-        }
+}
 
+
+class SelectedTherapy: Codable {
+
+    var id: String = ""
+    var therapistId: String = ""
+    var therapyId: String = ""
+
+    init(fromDictionary dictionary: [String:Any]){
+        self.id = (dictionary["id"] as? String) ?? ""
+        self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
+        self.therapyId = (dictionary["therapy_id"] as? String) ?? ""
     }
-    class SelectedMassage: Codable{
 
-        var id: String = ""
-        var massageId: String = ""
-        var therapistId: String = ""
+}
+class SelectedMassage: Codable{
 
-        init(fromDictionary dictionary: [String:Any]){
-            self.id = (dictionary["id"] as? String) ?? ""
-            self.massageId = (dictionary["massage_id"] as? String) ?? ""
-            self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
-        }
+    var id: String = ""
+    var massageId: String = ""
+    var therapistId: String = ""
 
+    init(fromDictionary dictionary: [String:Any]){
+        self.id = (dictionary["id"] as? String) ?? ""
+        self.massageId = (dictionary["massage_id"] as? String) ?? ""
+        self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
     }
 
 }
 
+class Document: Codable {
+
+    var fileName: String = ""
+    var id: String = ""
+    var therapistId: String = ""
+    var type: String = ""
+
+    init(fromDictionary dictionary: [String:Any]){
+        self.fileName = (dictionary["file_name"] as? String) ?? ""
+        self.id = (dictionary["id"] as? String) ?? ""
+        self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
+        self.type = (dictionary["type"] as? String) ?? ""
+    }
+}

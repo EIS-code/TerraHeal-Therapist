@@ -48,7 +48,7 @@ class AppWebApi: NSObject {
         }
 
         static var GetUserDetail: String {
-            return  Domain + Routes.Client + "/get/" + PreferenceHelper.shared.getUserId()
+            return  Domain + Routes.Client + "/profile/get"
         }
 
         static var GetCountryList: String {
@@ -82,6 +82,10 @@ class AppWebApi: NSObject {
         }
         static var ReadNews: String {
             return  Domain + "/news/read"
+        }
+
+        static var GetWorkingSchedule: String {
+            return  Domain + Routes.Client  + "/my/working/schedule"
         }
 
         //MARK: Exception
@@ -141,6 +145,14 @@ extension AppWebApi {
             completionHandler(response)
         }
     }
+
+    class func getWorkingSchedule(params:WorkingScheduleWebService.RequestSchedule,completionHandler: @escaping ((WorkingScheduleWebService.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetWorkingSchedule, methodName: AlamofireHelper.POST_METHOD, paramData:params.dictionary) { (data, dictionary, error) in
+            let response = WorkingScheduleWebService.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+
     class func readNews(params:NewsWebService.RequestReadNews, completionHandler: @escaping ((NewsWebService.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.ReadNews, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = NewsWebService.Response.init(fromDictionary: dictionary)

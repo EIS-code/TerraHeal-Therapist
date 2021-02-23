@@ -17,9 +17,9 @@ extension WorkingScheduleVC: FSCalendarDataSource, FSCalendarDelegate, FSCalenda
         calendar.dataSource = self
         calendar.allowsMultipleSelection = false
         calendar.appearance.todaySelectionColor = UIColor.themePrimary
-        calendar.appearance.todayColor = UIColor.themeSecondary
+        calendar.appearance.todayColor = UIColor.themePrimary
         calendar.headerHeight = 0.0
-        //calendar.appearance.selectionColor =  self.selectionColor
+        calendar.appearance.selectionColor =  UIColor.themePrimary
         calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
 
         calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.detail))

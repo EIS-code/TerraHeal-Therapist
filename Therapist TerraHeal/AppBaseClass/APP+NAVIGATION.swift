@@ -53,25 +53,22 @@ extension AppDelegate {
     
     
     func loadMainVC(navigaionVC:UINavigationController? = nil) {
-        loadMainVC(navigaionVC)
-        /*
-         if !PreferenceHelper.shared.getUserId().isEmpty() {
-         AppWebApi.getUserDetail { (response) in
-         Loader.hideLoading()
-         let model: ResponseModel = ResponseModel.init(fromDictionary: response.toDictionary())
-         if ResponseModel.isSuccess(response: model, withSuccessToast: false, andErrorToast: false) {
-         let user = response.data
-         PreferenceHelper.shared.setUserId(user.id)
-         appSingleton.user = user
-         Singleton.saveInDb()
-         self.loadMainVC(navigaionVC)
-         } else {
-         self.loadMainVC(navigaionVC)
-         }
-         }
-         } else {
-         loadMainVC(navigaionVC)
-         }*/
+        if !PreferenceHelper.shared.getUserId().isEmpty() {
+            AppWebApi.getUserDetail { (response) in
+                Loader.hideLoading()
+                if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
+                    let user = response.data
+                    PreferenceHelper.shared.setUserId(user.id)
+                    appSingleton.user = user
+                    Singleton.saveInDb()
+                    self.loadMainVC(navigaionVC)
+                } else {
+                    self.loadMainVC(navigaionVC)
+                }
+            }
+        } else {
+            self.loadLoginVC()
+        }
         
     }
 

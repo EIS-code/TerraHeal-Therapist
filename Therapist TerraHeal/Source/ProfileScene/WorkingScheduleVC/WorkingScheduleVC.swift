@@ -41,6 +41,7 @@ class WorkingScheduleVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.wsGetWorkingSchedule()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,23 +60,8 @@ class WorkingScheduleVC: BaseVC {
         self.popVC()
     }
     private func initialViewSetup() {
-        self.arrForWorkingDays = [date.add(component: .day, value: 1).millisecondsSince1970,
-        date.add(component: .day, value: 3).millisecondsSince1970,
-        date.add(component: .day, value: 5).millisecondsSince1970,
-        date.add(component: .day, value: 7).millisecondsSince1970,
-        date.add(component: .day, value: -1).millisecondsSince1970,
-        date.add(component: .day, value: -2).millisecondsSince1970,
-        date.add(component: .day, value: -4).millisecondsSince1970,
-        date.add(component: .day, value: -6).millisecondsSince1970]
-
-        self.arrForNotAvailableDays = [date.add(component: .day, value: 2).millisecondsSince1970,
-        date.add(component: .day, value: 3).millisecondsSince1970,
-        date.add(component: .day, value: 4).millisecondsSince1970,
-        date.add(component: .day, value: 6).millisecondsSince1970,
-        date.add(component: .day, value: 7).millisecondsSince1970,
-        date.add(component: .day, value: 8).millisecondsSince1970,
-        date.add(component: .day, value: 9).millisecondsSince1970,
-        date.add(component: .day, value: 10).millisecondsSince1970]
+        self.arrForWorkingDays = []
+        self.arrForNotAvailableDays = []
 
         self.setNavigationTitle(title: "MY_WORKING_SCHEDULE_TITLE".localized())
         self.setBackground(color: UIColor.themeLightBackground)
@@ -144,3 +130,21 @@ extension WorkingScheduleVC: UITableViewDelegate,UITableViewDataSource, UIScroll
     }
 }
 
+
+extension WorkingScheduleVC {
+    func wsGetWorkingSchedule(date:String = "") {
+        self.arrForWorkingDays.removeAll()
+        self.arrForNotAvailableDays.removeAll()
+        WorkingScheduleWebService.getWorkignSchedule(params: WorkingScheduleWebService.RequestSchedule.init(date: date)) { (response) in
+            for data in response.workingList {
+                if data.status.toBool {
+                    self.arrForWorkingDays.append(data.date.toDouble)
+                } else {
+                    self.arrForNotAvailableDays.append(data.date.toDouble)
+                }
+            }
+            self.tblVwForData.reloadData()
+        }
+    }
+
+}

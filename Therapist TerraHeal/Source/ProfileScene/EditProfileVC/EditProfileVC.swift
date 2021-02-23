@@ -101,12 +101,12 @@ class EditProfileVC: BaseVC {
             EditProfileTextFieldDetail.init(value: user.dob, type: .DOB, rightImage: ""),
             EditProfileTextFieldDetail.init(value: user.nif, type: .Nif, rightImage: ""),
             EditProfileTextFieldDetail.init(value: user.socialSecurityNumber, type: .Ssn, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: user.cityId, type: .City, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: user.countryId, type: .Country, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.cityName, type: .City, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.countryName, type: .Country, rightImage: ""),
             EditProfileTextFieldDetail.init(value: user.mobileNumber, type: .Phone, rightImage: ""),
             EditProfileTextFieldDetail.init(value: user.emergenceContactNumber, type: .EmergencyContact, rightImage: ""),
             EditProfileTextFieldDetail.init(value: user.email, type: .Email, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: "", type: .LanguageSpoken, rightImage: "1"),
+            EditProfileTextFieldDetail.init(value: user.languageSpoken, type: .LanguageSpoken, rightImage: "1"),
             EditProfileTextFieldDetail.init(value: "", type: .Documents, rightImage: "1"),
             EditProfileTextFieldDetail.init(value: "", type: .Services, rightImage: "1"),
             EditProfileTextFieldDetail.init(value: "", type: .Experience, rightImage: "1"),
@@ -114,6 +114,7 @@ class EditProfileVC: BaseVC {
             EditProfileTextFieldDetail.init(value: user.healthConditionsAllergies, type: .HealthCodndition, rightImage: ""),
 
         ]
+
         //self.selectedCity = appSingleton.user.city
         //self.selectedCountry = appSingleton.user.country
         self.collectionVwForProfile.reloadData()
@@ -425,7 +426,6 @@ extension EditProfileVC {
                 appSingleton.user = user
                 Singleton.saveInDb()
                 self.setUserData()
-
             }
         }
     }

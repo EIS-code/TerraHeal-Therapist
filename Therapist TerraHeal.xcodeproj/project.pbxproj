@@ -226,6 +226,7 @@
 		0379EAE4252CA89700303A59 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EADF252CA89700303A59 /* NewsVC.swift */; };
 		0379EAE5252CA89700303A59 /* NewsTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EAE1252CA89700303A59 /* NewsTblCell.xib */; };
 		0379EAE6252CA89700303A59 /* NewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EAE2252CA89700303A59 /* NewsTblCell.swift */; };
+		038581BF25E4C6BC00B20F00 /* WorkingScheduleWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038581BE25E4C6BC00B20F00 /* WorkingScheduleWebService.swift */; };
 		038CAF8E252601CF001ACAD6 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038CAF83252601CF001ACAD6 /* LoginVC.xib */; };
 		038CAF8F252601CF001ACAD6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CAF84252601CF001ACAD6 /* LoginVC.swift */; };
 		038CAFC1252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038CAF9A252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.swift */; };
@@ -591,6 +592,7 @@
 		0379EADF252CA89700303A59 /* NewsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		0379EAE1252CA89700303A59 /* NewsTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTblCell.xib; sourceTree = "<group>"; };
 		0379EAE2252CA89700303A59 /* NewsTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTblCell.swift; sourceTree = "<group>"; };
+		038581BE25E4C6BC00B20F00 /* WorkingScheduleWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingScheduleWebService.swift; sourceTree = "<group>"; };
 		038CAF83252601CF001ACAD6 /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		038CAF84252601CF001ACAD6 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		038CAF9A252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCountryPhoneCodePickerCell.swift; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 				030DB58625260966004C7CC8 /* UserWebService.swift */,
 				03107D7F25D1615800D82B7F /* ForgotWebService.swift */,
 				039C43D225D6852B004295F1 /* NewsWebService.swift */,
+				038581BE25E4C6BC00B20F00 /* WorkingScheduleWebService.swift */,
 				039C43CE25D662BF004295F1 /* CalenderWebService.swift */,
 				030DB58725260966004C7CC8 /* CityWebService.swift */,
 				030DB58825260966004C7CC8 /* Singleton.swift */,
@@ -2906,6 +2909,7 @@
 				0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */,
 				030DB59625260966004C7CC8 /* Constant.swift in Sources */,
 				03EED644254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift in Sources */,
+				038581BF25E4C6BC00B20F00 /* WorkingScheduleWebService.swift in Sources */,
 				038CAFDB252604AB001ACAD6 /* CustomAlert.swift in Sources */,
 				03643F54254A7EC4004F9156 /* FSCalendarSeparatorDecorationView.m in Sources */,
 				03643F5B254A7EC4004F9156 /* FSCalendarAppearance.m in Sources */,
