@@ -21,7 +21,6 @@ extension WorkingScheduleVC: FSCalendarDataSource, FSCalendarDelegate, FSCalenda
         calendar.headerHeight = 0.0
         calendar.appearance.selectionColor =  UIColor.themePrimary
         calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
-
         calendar.appearance.weekdayFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.detail))
         calendar.appearance.weekdayTextColor = UIColor.themeHintText
         calendar.appearance.headerTitleFont = FontHelper.font(name: FontName.Regular, size: JDDeviceHelper.offseter(offset: FontSize.subHeader))
@@ -52,7 +51,9 @@ extension WorkingScheduleVC: FSCalendarDataSource, FSCalendarDelegate, FSCalenda
     }*/
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+        
         if arrForWorkingDays.contains(date.millisecondsSince1970) {
+            print(date.millisecondsSince1970)
             return UIColor.init(hex: "#33B199")
         } else if arrForNotAvailableDays.contains(date.millisecondsSince1970) {
             return UIColor.init(hex: "#FD3A58")

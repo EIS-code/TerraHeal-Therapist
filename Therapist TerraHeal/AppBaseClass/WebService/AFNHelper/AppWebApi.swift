@@ -88,6 +88,39 @@ class AppWebApi: NSObject {
             return  Domain + Routes.Client  + "/my/working/schedule"
         }
 
+        static var GetAllSuggestion: String {
+            return Domain + Routes.Client  + "/signin/forgot"
+        }
+
+        static var AddSuggestion: String {
+            return Domain + Routes.Client  + "/suggestion"
+        }
+
+        static var GetAllComplaints: String {
+            return Domain + Routes.Client  + "/signin/forgot"
+        }
+
+        static var GetAllRatings: String {
+            return Domain + Routes.Client  + "/my/ratings"
+        }
+
+        static var SaveRating: String {
+            return Domain + Routes.Client  + "/rating/user/save"
+        }
+
+        static var AddComplaints: String {
+            return Domain + Routes.Client  + "/complaint"
+        }
+
+        static var StartService: String {
+            return Domain + Routes.Client  + "/booking/massage/start"
+        }
+        static var FinishService: String {
+            return Domain + Routes.Client  + "/booking/massage/end"
+        }
+
+
+
         //MARK: Exception
         static var CheckExeption: String {
             return Domain + Routes.Exception

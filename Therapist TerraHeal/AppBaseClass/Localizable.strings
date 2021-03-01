@@ -115,6 +115,12 @@
 "RATING_BTN_RATE" = "Rate";
 "RATING_BTN_CANCEL" = "Cancel";
 "MY_RATING_TITLE" = "my ratings";
+"RATE_TYPE_PUNCTUALITY" = "Punctuality And Presence For Reservations";
+"RATE_TYPE_BEHAVIOR" = "Behavior";
+"RATE_TYPE_SEXUAL_ISSUE" = "Sexual Issues";
+"RATE_TYPE_HYGIENE" = "Hygiene";
+"RATE_TYPE_LEFT_BAD_GOOD" = "Left Bad / Good Review";
+"RATE_TYPE_PAYMENT_ISSUE" = "Payment Issues";
 //MARK: Filter Dialog
 "FILTER_BTN_DATE" = "Date";
 "FILTER_BTN_CLIENT_NAME" = "Client name";

@@ -143,6 +143,7 @@ extension WorkingScheduleVC {
                     self.arrForNotAvailableDays.append(data.date.toDouble)
                 }
             }
+            self.vwCalendar.reloadData()
             self.tblVwForData.reloadData()
         }
     }

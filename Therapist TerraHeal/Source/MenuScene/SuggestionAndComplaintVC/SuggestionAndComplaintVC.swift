@@ -126,6 +126,8 @@ extension SuggestionAndComplaintVC {
             [weak alert, weak self] (description) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
+            Loader.showLoading()
+            self.wsAddComplaint(complaint: description)
         }
     }
 
@@ -142,6 +144,8 @@ extension SuggestionAndComplaintVC {
             [weak alert, weak self] (description) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
+            Loader.showLoading()
+            self.wsAddSuggestion(suggestion: description)
         }
     }
 }
@@ -189,5 +193,30 @@ extension SuggestionAndComplaintVC {
             }
             Loader.hideLoading()
         })*/
+    }
+    func wsAddSuggestion(suggestion:String) {
+        SuggestionWebService.requestAddSuggestion(params: SuggestionWebService.RequestAddSuggestion.init(suggestion: suggestion)) { (response) in
+            Loader.hideLoading()
+            self.arrForData.removeAll()
+            if ResponseModel.isSuccess(response: response) {
+                for item in response.suggestionList {
+                    self.arrForData.append(SuggestionTblCellDetail.init(name: item.id, designation: item.suggestion, date: Date.millisecondsOfDay(day: 1), type: "suggestion", details: "not available"))
+                }
+            }
+            self.tblForData.reloadData()
+        }
+    }
+
+    func wsAddComplaint(complaint:String) {
+        ComplaintWebService.requestAddComplaint(params: ComplaintWebService.RequestAddComplaint.init(complaint: complaint)) {  (response) in
+            Loader.hideLoading()
+            self.arrForData.removeAll()
+            if ResponseModel.isSuccess(response: response) {
+                for item in response.complaintList {
+                    self.arrForData.append(SuggestionTblCellDetail.init(name: item.id, designation: item.complaint, date: Date.millisecondsOfDay(day: 1), type: "complaint", details: "not available"))
+                }
+            }
+            self.tblForData.reloadData()
+        }
     }
 }

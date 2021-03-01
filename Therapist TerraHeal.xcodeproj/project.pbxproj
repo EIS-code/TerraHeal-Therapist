@@ -47,6 +47,9 @@
 		03405502252E043000B7077D /* RadioSelectionTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03405500252E043000B7077D /* RadioSelectionTblCell.swift */; };
 		03405503252E043000B7077D /* RadioSelectionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03405501252E043000B7077D /* RadioSelectionTblCell.xib */; };
 		03405505252E04BD00B7077D /* CustomFilterDialog + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03405504252E04BD00B7077D /* CustomFilterDialog + TableView.swift */; };
+		0340FA7725E8088700A064B3 /* SuggestionWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340FA7625E8088700A064B3 /* SuggestionWebService.swift */; };
+		0340FA7A25E80CB700A064B3 /* ComplaintWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340FA7925E80CB700A064B3 /* ComplaintWebService.swift */; };
+		0340FA7D25E8100100A064B3 /* RatingWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340FA7C25E8100100A064B3 /* RatingWebService.swift */; };
 		0341227C252F3882000BCDAE /* ScanDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0341227A252F3882000BCDAE /* ScanDialog.swift */; };
 		0341227D252F3882000BCDAE /* ScanDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0341227B252F3882000BCDAE /* ScanDialog.xib */; };
 		03412291252F3AFC000BCDAE /* UIImageCropperVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03412282252F3AFB000BCDAE /* UIImageCropperVC.xib */; };
@@ -397,6 +400,9 @@
 		03405500252E043000B7077D /* RadioSelectionTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioSelectionTblCell.swift; sourceTree = "<group>"; };
 		03405501252E043000B7077D /* RadioSelectionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioSelectionTblCell.xib; sourceTree = "<group>"; };
 		03405504252E04BD00B7077D /* CustomFilterDialog + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFilterDialog + TableView.swift"; sourceTree = "<group>"; };
+		0340FA7625E8088700A064B3 /* SuggestionWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionWebService.swift; sourceTree = "<group>"; };
+		0340FA7925E80CB700A064B3 /* ComplaintWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplaintWebService.swift; sourceTree = "<group>"; };
+		0340FA7C25E8100100A064B3 /* RatingWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingWebService.swift; sourceTree = "<group>"; };
 		0341227A252F3882000BCDAE /* ScanDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanDialog.swift; sourceTree = "<group>"; };
 		0341227B252F3882000BCDAE /* ScanDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanDialog.xib; sourceTree = "<group>"; };
 		03412282252F3AFB000BCDAE /* UIImageCropperVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIImageCropperVC.xib; sourceTree = "<group>"; };
@@ -768,6 +774,9 @@
 				030DB58125260966004C7CC8 /* AFNHelper */,
 				030DB58525260966004C7CC8 /* ResponseModel.swift */,
 				030DB58625260966004C7CC8 /* UserWebService.swift */,
+				0340FA7925E80CB700A064B3 /* ComplaintWebService.swift */,
+				0340FA7C25E8100100A064B3 /* RatingWebService.swift */,
+				0340FA7625E8088700A064B3 /* SuggestionWebService.swift */,
 				03107D7F25D1615800D82B7F /* ForgotWebService.swift */,
 				039C43D225D6852B004295F1 /* NewsWebService.swift */,
 				038581BE25E4C6BC00B20F00 /* WorkingScheduleWebService.swift */,
@@ -2764,6 +2773,7 @@
 				035EF5C32526FA3A00C64BD4 /* MyBookingTblCell.swift in Sources */,
 				038CB00A2526056E001ACAD6 /* RatingView.swift in Sources */,
 				03B960B925483AA500F8F214 /* DocumentTblCell.swift in Sources */,
+				0340FA7725E8088700A064B3 /* SuggestionWebService.swift in Sources */,
 				034DB719254BD09100128AA1 /* AvailabilityVC + CaledarView.swift in Sources */,
 				038CB01B2526056E001ACAD6 /* JDImageExtension.swift in Sources */,
 				03412295252F3AFC000BCDAE /* CustomDocumentPicker.swift in Sources */,
@@ -2771,6 +2781,7 @@
 				034CBE7F2534700D00B20A11 /* JZAllDayHeaderBackground.swift in Sources */,
 				030DB5A425260966004C7CC8 /* CountriesWebService.swift in Sources */,
 				03643F4F254A7EC4004F9156 /* FSCalendarCell.m in Sources */,
+				0340FA7A25E80CB700A064B3 /* ComplaintWebService.swift in Sources */,
 				030DB57725260869004C7CC8 /* DashedCircleView.swift in Sources */,
 				03EED64E255026AC0010A2CF /* FreeSpotDialog.swift in Sources */,
 				03A2CC4C2530976B005E3F29 /* MyBookingVC.swift in Sources */,
@@ -2969,6 +2980,7 @@
 				0342137224C6B3C500ABB285 /* LaunchVC.swift in Sources */,
 				038CB00D2526056E001ACAD6 /* JDSegmentControl.swift in Sources */,
 				03643F55254A7EC4004F9156 /* FSCalendarExtensions.m in Sources */,
+				0340FA7D25E8100100A064B3 /* RatingWebService.swift in Sources */,
 				034CBE712534700D00B20A11 /* JZLongPressWeekView.swift in Sources */,
 				034BB1AC255121AD006B3842 /* MyRateVC.swift in Sources */,
 				038CAFD1252604AB001ACAD6 /* PersonPickerCell.swift in Sources */,

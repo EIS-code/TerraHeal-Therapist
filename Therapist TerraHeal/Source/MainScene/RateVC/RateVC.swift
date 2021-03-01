@@ -14,12 +14,12 @@ class RateVC: BaseVC {
     @IBOutlet weak var btnCancel: RoundedBorderButton!
 
     var arrForData: [RateTblCellDetail] = [
-    RateTblCellDetail.init(title: "Punctuality And Presence For Reservations", rate: 1.0, isSelected: false),
-    RateTblCellDetail.init(title: "Behavior", rate: 2.0, isSelected: false),
-    RateTblCellDetail.init(title: "Sexual Issues", rate: 3.0, isSelected: false),
-    RateTblCellDetail.init(title: "Hygiene", rate: 4.0, isSelected: false),
-    RateTblCellDetail.init(title: "Left Bad / Good Review", rate: 5.0, isSelected: false),
-    RateTblCellDetail.init(title: "Payment Issues", rate: 1.0, isSelected: false)]
+        RateTblCellDetail.init(type: .Punctuality, rate: 0.0, isSelected: false),
+        RateTblCellDetail.init(type: .Behavior, rate: 0.0, isSelected: false),
+        RateTblCellDetail.init(type: .SexualIssue, rate: 0.0, isSelected: false),
+        RateTblCellDetail.init(type: .Hygiene, rate: 0.0, isSelected: false),
+        RateTblCellDetail.init(type: .LeftBadGood, rate: 0.0, isSelected: false),
+        RateTblCellDetail.init(type: .PaymentIssue, rate: 0.0, isSelected: false)]
     
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -80,7 +80,7 @@ class RateVC: BaseVC {
     }
 
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        Common.appDelegate.loadMainVC()
+        self.wsRateUser()
     }
 }
 
@@ -109,6 +109,8 @@ extension RateVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         let cell = tableView.dequeueReusableCell(withIdentifier: RateTblCell.name, for: indexPath) as?  RateTblCell
         cell?.layoutIfNeeded()
         cell?.setData(data: arrForData[indexPath.row])
+        cell?.vwRating.delegate = self
+        cell?.vwRating.tag = indexPath.row
         cell?.layoutIfNeeded()
         return cell!
         
@@ -117,6 +119,52 @@ extension RateVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
+    }
+    
+}
+extension RateVC: RatingViewDelegate {
+    func RatingView(_ ratingView: RatingView, didUpdate rating: Float) {
+        self.arrForData[ratingView.tag].rate = rating
+    }
+}
+
+//MARK:- WEB SERVICE CALLS
+extension RateVC {
+    func wsRateUser() {
+        var requestToRateUser: RatingWebService.RequestAddRating = RatingWebService.RequestAddRating.init()
+        for data in arrForData {
+            switch data.type {
+            case .Punctuality:
+                if data.rate != 0 {
+                    requestToRateUser.punctuality = data.rate.toString().toDouble
+                }
+            case .Behavior:
+                if data.rate != 0 {
+                    requestToRateUser.behavior = data.rate.toString().toDouble
+                }
+            case .SexualIssue:
+                if data.rate != 0 {
+                    requestToRateUser.sexualIssue = data.rate.toString().toDouble
+                }
+            case .Hygiene:
+                if data.rate != 0 {
+                    requestToRateUser.hygiene = data.rate.toString().toDouble
+                }
+            case .LeftBadGood:
+                if data.rate != 0 {
+                    requestToRateUser.leftBadGood = data.rate.toString().toDouble
+                }
+            case .PaymentIssue:
+                if data.rate != 0 {
+                    requestToRateUser.paymentIssue = data.rate.toString().toDouble
+                }
+            }
+        }
+        RatingWebService.saveRating(params: requestToRateUser) { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                Common.appDelegate.loadMainVC()
+            }
+        }
     }
     
 }

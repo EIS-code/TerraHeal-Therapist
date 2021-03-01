@@ -10,7 +10,7 @@ import UIKit
 
 
 struct RateTblCellDetail {
-    var title: String = ""
+    var type: RatingType = .Punctuality
     var rate: Float = 0.5
     var isSelected: Bool = false
 }
@@ -27,7 +27,7 @@ class RateTblCell: TableCell {
     }
 
     func setData(data: RateTblCellDetail ) {
-        self.lblCellTitle.setText(data.title)
+        self.lblCellTitle.setText(data.type.getText())
         self.vwRating.rating = data.rate
     }
     override func layoutSubviews() {

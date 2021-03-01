@@ -69,7 +69,7 @@ extension CalenderWebService {
 }
 
 
-//MARK: WebServiceCall
+//MARK: Web Service Calls
 extension CalenderWebService {
     static func callCalenderEvents(params:CalenderWebService.RequestGetCalender, completionHandler: @escaping ((CalenderWebService.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: CalenderWebService.url, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in

@@ -21,13 +21,6 @@ class WorkingScheduleTblCell: TableCell {
 
     }
 
-    func setData(data: UploadDocumentDetail ) {
-        self.lblDetails.text = data.name
-        //self.ivDocument?.image = data.image
-        //self.btnDelete.isHidden = !data.isCompleted
-       
-    }
-
     override func layoutSubviews() {
         super.layoutSubviews()
     }

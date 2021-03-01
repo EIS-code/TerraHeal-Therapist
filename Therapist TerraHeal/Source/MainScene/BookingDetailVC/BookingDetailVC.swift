@@ -150,6 +150,7 @@ class BookingDetailVC: BaseVC {
             }
             scanDialog?.dismiss()
             self.btnStart.isEnabled = true
+            self.wsStartService(id: self.bookingDetail.bookingMassageId)
         }
     }
     func openCameraVC() {
@@ -180,10 +181,29 @@ extension BookingDetailVC {
     func wsGetBookingDetil(id:String) {
         BookingWebSerive.getBookingDetail(params: BookingWebSerive.RequestBookingDetail.init(booking_info_id: id)) { (response) in
             if ResponseModel.isSuccess(response: response) {
+                self.bookingDetail = response.bookingDetail
                 self.setupData(bookingDetail: response.bookingDetail)
             }
         }
     }
+
+    func wsStartService(id:String) {
+        BookingWebSerive.startMassageService(params: BookingWebSerive.RequestStartService.init(booking_massage_id: id, start_time: Date().millisecondsSince1970.toString()), completionHandler: {  (response) in
+            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+
+            }
+        })
+    }
+
+
+    func wsFinishService(id:String) {
+        BookingWebSerive.finishMassageService(params: BookingWebSerive.RequestEndService.init(booking_massage_id: id, end_time: Date().millisecondsSince1970.toString()), completionHandler: {  (response) in
+            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+
+            }
+        })
+    }
+
 
     func setupData(bookingDetail:BookingDetail) {
         self.lblBookingId.setText(bookingDetail.bookingInfoId)

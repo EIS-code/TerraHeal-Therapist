@@ -12,12 +12,12 @@ class MyRateVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
 
     var arrForData: [MyRateTblCellDetail] = [
-    MyRateTblCellDetail.init(title: "Punctuality And Presence For Reservations", rate: 1.0, isSelected: false),
-    MyRateTblCellDetail.init(title: "Behavior", rate: 2.0, isSelected: false),
-    MyRateTblCellDetail.init(title: "Sexual Issues", rate: 3.0, isSelected: false),
-    MyRateTblCellDetail.init(title: "Hygiene", rate: 4.0, isSelected: false),
-    MyRateTblCellDetail.init(title: "Left Bad / Good Review", rate: 5.0, isSelected: false),
-    MyRateTblCellDetail.init(title: "Payment Issues", rate: 1.0, isSelected: false)]
+        MyRateTblCellDetail.init(title: "Punctuality And Presence For Reservations", rate: 1.0, isSelected: false),
+        MyRateTblCellDetail.init(title: "Behavior", rate: 2.0, isSelected: false),
+        MyRateTblCellDetail.init(title: "Sexual Issues", rate: 3.0, isSelected: false),
+        MyRateTblCellDetail.init(title: "Hygiene", rate: 4.0, isSelected: false),
+        MyRateTblCellDetail.init(title: "Left Bad / Good Review", rate: 5.0, isSelected: false),
+        MyRateTblCellDetail.init(title: "Payment Issues", rate: 1.0, isSelected: false)]
     
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -39,11 +39,12 @@ class MyRateVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-
+        self.wsGetAllRating()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,15 +66,12 @@ class MyRateVC: BaseVC {
         self.setNavigationTitle(title: "MY_RATING_TITLE".localized())
 
     }
-    
 
-    
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
         self.popVC()
     }
 
- 
 }
 
 extension MyRateVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
@@ -86,7 +84,7 @@ extension MyRateVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDeleg
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
         tableView.register(MyRateTblCell.nib()
-            , forCellReuseIdentifier: MyRateTblCell.name)
+                           , forCellReuseIdentifier: MyRateTblCell.name)
         tableView.tableFooterView = UIView()
     }
     
@@ -111,4 +109,20 @@ extension MyRateVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDeleg
 
     }
     
+}
+
+//MARK: Web Service Calls
+extension MyRateVC {
+    func wsGetAllRating() {
+        RatingWebService.getAllRating { (response) in
+            Loader.hideLoading()
+            self.arrForData.removeAll()
+            if ResponseModel.isSuccess(response: response) {
+                for item in response.ratingList {
+                    self.arrForData.append(MyRateTblCellDetail.init(title: item.question, rate: Float(item.averageRating.toDouble), isSelected: false))
+                }
+            }
+            self.tableView.reloadData()
+        }
+    }
 }

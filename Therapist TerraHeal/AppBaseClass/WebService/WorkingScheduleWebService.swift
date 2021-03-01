@@ -25,7 +25,6 @@ extension WorkingScheduleWebService {
             workingList.removeAll()
             if let dataDict = dictionary["data"] as? [String:Any] {
                 for (key, value) in dataDict {
-                    print(key)
                     if let dict = value as? [String:Any]  {
                         workingList.append(WorkingDate.init(fromDictionary: dict))
                     }

@@ -25,7 +25,7 @@ extension ForgotWebService {
     }
 }
 
-//MARK: WebServiceCall
+//MARK: Web Service Calls
 extension ForgotWebService {
     func callForgotPassword(params:ForgotWebService.RequestForgotPassword, completionHandler: @escaping ((ForgotWebService.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.ForgotPassword, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in

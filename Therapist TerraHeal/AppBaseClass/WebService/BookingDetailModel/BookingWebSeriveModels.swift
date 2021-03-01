@@ -67,6 +67,7 @@ class BookingDetail {
     var shopName: String = ""
     var tableFutonQuantity: String = ""
     var isSelected: Bool = false
+    var bookingMassageId: String = ""
 
 
     /**
@@ -93,6 +94,7 @@ class BookingDetail {
         self.shopAddress = (dictionary["shop_address"] as? String) ?? ""
         self.shopName = (dictionary["shop_name"] as? String) ?? ""
         self.tableFutonQuantity = (dictionary["table_futon_quantity"] as? String) ?? ""
+        self.bookingMassageId = (dictionary["booking_massage_id"] as? String) ?? ""
     }
 
 
