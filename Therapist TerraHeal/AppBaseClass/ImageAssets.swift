@@ -72,8 +72,8 @@ struct ImageAsset {
     }
     
     struct BookingType {
-        static let hotel = "asset-pricing-home-tab"
-        static let center = "asset-pricing-therapist-tab"
+        static let hotel = "asset-home-demo"
+        static let center = "asset-center-demo"
     }
 
     struct BottomMenu {

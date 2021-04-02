@@ -124,13 +124,11 @@ extension BookingListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
         if arrForData[indexPath.row].isSelected {
             print("Row Height:- \(tableView.estimatedRowHeight)")
             return UITableView.automaticDimension
         }
         return UITableView.automaticDimension
-
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -159,7 +157,7 @@ extension BookingListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
 }
 
 extension BookingListVC {
-    func wsGetTodaysBooking(request: BookingWebSerive.RequestTodayBookingList) {
+    func wsGetTodaysBooking(request: BookingWebSerive.RequestBookingList) {
         Loader.showLoading()
         BookingWebSerive.todayBookingList { (response) in
             Loader.hideLoading()
@@ -172,7 +170,7 @@ extension BookingListVC {
             }
         }
     }
-    func wsGetFutureBooking(request: BookingWebSerive.RequestFutureBookingList) {
+    func wsGetFutureBooking(request: BookingWebSerive.RequestBookingList) {
         Loader.showLoading()
         BookingWebSerive.futureBookingList(params: request) { (response) in
             Loader.hideLoading()
@@ -187,7 +185,7 @@ extension BookingListVC {
         }
     }
 
-    func wsGetPastBooking(request: BookingWebSerive.RequestPastBookingList) {
+    func wsGetPastBooking(request: BookingWebSerive.RequestBookingList) {
         Loader.showLoading()
         BookingWebSerive.pastBookingList(params: request) { (response) in
             Loader.hideLoading()

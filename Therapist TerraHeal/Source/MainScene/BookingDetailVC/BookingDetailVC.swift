@@ -30,8 +30,6 @@ class BookingDetailVC: BaseVC {
     @IBOutlet weak var hTblCard3: NSLayoutConstraint!
     var arrForTbl3:  [(title:String, detail:String)] = []
 
-    var bookingDetail: BookingDetail = BookingDetail.init(fromDictionary: [:])
-
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -59,7 +57,7 @@ class BookingDetailVC: BaseVC {
         vwForCard2.addGradientFade(colors: [UIColor.init(hex: "##F6F6F4").cgColor,UIColor.init(hex: "#F6F6F4C8").cgColor,UIColor.init(hex: "#F6F6F48A").cgColor,UIColor.init(hex: "#F6F6F4").cgColor])
         vwForCard3.topRound()
         vwForCard3.addGradientFade(colors: [UIColor.init(hex: "#F6F6F4").cgColor,UIColor.init(hex: "#FFFFF8").cgColor])
-        self.wsGetBookingDetil(id: self.bookingDetail.bookingInfoId)
+        self.wsGetBookingDetil(id: appSingleton.currentService.bookingInfoId)
 
     }
     
@@ -72,7 +70,7 @@ class BookingDetailVC: BaseVC {
     }
 
     func updateViewForBookingType() {
-        if bookingDetail.bookingType == BookingType.MassageCenter.rawValue {
+        if appSingleton.currentService.bookingType == BookingType.MassageCenter.rawValue {
             btnRoomNumber.isHidden = false
             btnNavigation.isHidden = true
             self.btnStart.setText("BOOKING_DETAILS_BTN_START".localized())
@@ -150,7 +148,7 @@ class BookingDetailVC: BaseVC {
             }
             scanDialog?.dismiss()
             self.btnStart.isEnabled = true
-            self.wsStartService(id: self.bookingDetail.bookingMassageId)
+
         }
     }
     func openCameraVC() {
@@ -164,8 +162,7 @@ class BookingDetailVC: BaseVC {
 extension BookingDetailVC : QRScannerCodeDelegate {
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
         print("\(#function)")
-        (controller as? BaseVC)?.popVC()
-        Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
+        self.wsStartService(id: appSingleton.currentService.bookingMassageId)
     }
 
     func qrScannerDidFail(_ controller: UIViewController, error: String) {
@@ -181,8 +178,8 @@ extension BookingDetailVC {
     func wsGetBookingDetil(id:String) {
         BookingWebSerive.getBookingDetail(params: BookingWebSerive.RequestBookingDetail.init(booking_info_id: id)) { (response) in
             if ResponseModel.isSuccess(response: response) {
-                self.bookingDetail = response.bookingDetail
-                self.setupData(bookingDetail: response.bookingDetail)
+                appSingleton.currentService = response.bookingDetail
+                self.setupData(bookingDetail: appSingleton.currentService )
             }
         }
     }
@@ -190,20 +187,13 @@ extension BookingDetailVC {
     func wsStartService(id:String) {
         BookingWebSerive.startMassageService(params: BookingWebSerive.RequestStartService.init(booking_massage_id: id, start_time: Date().millisecondsSince1970.toString()), completionHandler: {  (response) in
             if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
-
+                Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
             }
         })
     }
 
 
-    func wsFinishService(id:String) {
-        BookingWebSerive.finishMassageService(params: BookingWebSerive.RequestEndService.init(booking_massage_id: id, end_time: Date().millisecondsSince1970.toString()), completionHandler: {  (response) in
-            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
-
-            }
-        })
-    }
-
+    
 
     func setupData(bookingDetail:BookingDetail) {
         self.lblBookingId.setText(bookingDetail.bookingInfoId)
@@ -211,7 +201,7 @@ extension BookingDetailVC {
 
         self.arrForTbl1 = [
             (title: "BOOKING_DETAIL_CLIENT_NAME".localized(), detail: bookingDetail.clientName),
-            (title: "BOOKING_DETAIL_TYPE_OF_SERVICE".localized(), detail: bookingDetail.serviceName )
+            (title: "BOOKING_DETAIL_TYPE_OF_SERVICE".localized(), detail: bookingDetail.massageName )
         ]
         let date = Date.init(milliseconds: bookingDetail.massageDate.toDouble).toString(format: "dd MMM yyyy")
         let startTime = Date.init(milliseconds: bookingDetail.massageStartTime.toDouble).toString(format: "hh:mm a")
@@ -226,7 +216,6 @@ extension BookingDetailVC {
             (title: "BOOKING_DETAIL_NOTES".localized(), detail: bookingDetail.notes),
             (title: "BOOKING_DETAIL_FOCUS_AREA".localized(), detail: bookingDetail.focusArea)
         ]
-
         self.tblForCard1.reloadData()
         self.tblForCard2.reloadData()
         self.tblForCard3.reloadData()

@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+
+
 class MyBookingExpandTblCell: TableCell {
 
     @IBOutlet weak var vwExpanded: UIView!
@@ -27,6 +30,50 @@ class MyBookingExpandTblCell: TableCell {
     @IBOutlet weak var lblSessionValue: ThemeLabel!
     var arrForData: [MyBookingUserPeople] = []
 
+    class MyBookingUserPeople{
+
+        var age: String = ""
+        var gender: String = ""
+        var id: String = ""
+        var name: String = ""
+        var bookingMassages: [MyBookingMassage] = []
+
+        /**
+         * Instantiate the instance using the passed dictionary values to set the properties values
+         */
+        init(fromDictionary dictionary: [String:Any]){
+            self.age = (dictionary["age"] as? String) ?? ""
+            self.gender = (dictionary["gender"] as? String) ?? ""
+            self.id = (dictionary["id"] as? String) ?? ""
+            self.name = (dictionary["name"] as? String) ?? ""
+            bookingMassages = [MyBookingMassage]()
+            if let bookingMassagesArray = dictionary["booking_massages"] as? [[String:Any]]{
+                for dic in bookingMassagesArray{
+                    let value = MyBookingMassage(fromDictionary: dic)
+                    bookingMassages.append(value)
+                }
+            }
+        }
+
+    }
+    class MyBookingMassage{
+
+        var name : String = "thai yoga massage"
+        var price : String = "200"
+        var time : String = "90"
+        /**
+         * Instantiate the instance using the passed dictionary values to set the properties values
+         */
+        init() {
+        }
+        init(fromDictionary dictionary: [String:Any]){
+            self.name = (dictionary["name"] as? String) ?? ""
+            self.price = (dictionary["price"] as? String) ?? ""
+            self.time = (dictionary["time"] as? String) ?? ""
+        }
+
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblDate?.setFont(name: FontName.Bold, size: FontSize.subHeader)
@@ -44,9 +91,12 @@ class MyBookingExpandTblCell: TableCell {
         self.setupTableView(tableView: self.tableView)
     }
 
+    func setData(data:BookingData) {
+
+    }
     func setData(data:BookingDetail) {
 
-        let bookingDate = Date.init(milliseconds: data.massageDate.toDouble).toString(format: "dd MMM yyyy")
+        let bookingDate = data.massageDate.formatDate(from: "yyyy-MM-dd", to: "dd MMM yyyy")
         let bookingTime = Date.init(milliseconds: data.massageStartTime.toDouble).toString(format: "hh:mm")
 
         let bookingDateTime = Date.init(milliseconds:  data.massageStartTime.toDouble).toString(format: "hh:mm | EEE, dd MMM yyyy")
@@ -56,7 +106,7 @@ class MyBookingExpandTblCell: TableCell {
         people.name = data.clientName
         people.gender = data.clientGender
         let bookingMassage = MyBookingMassage.init(fromDictionary: [:])
-        bookingMassage.name = data.serviceName
+        bookingMassage.name = data.massageName
         bookingMassage.time = data.massageDuration
         people.bookingMassages = [bookingMassage]
         self.arrForData = [people]
@@ -71,7 +121,7 @@ class MyBookingExpandTblCell: TableCell {
         self.lblCenterAddress.setText(data.shopAddress)
         self.lblBookDateAndTime.setText(bookingDateTime)
         self.lblSessionValue.setText(data.sessionType)
-
+        self.ivForQr?.downloadedFrom(link: data.qrCodePath)
         self.tableView.reloadData(heightToFit: self.htblVw) {
             self.layoutIfNeeded()
             self.vwExpanded?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)
@@ -79,43 +129,6 @@ class MyBookingExpandTblCell: TableCell {
             print(#function)
         }
         
-    }
-
-    func setData(data:BookingData) {
-
-       /* let bookingDate = Date.init(milliseconds: data.massageDate.toDouble).toString(format: "dd MMM yyyy")
-        let bookingTime = Date.init(milliseconds: data.massageStartTime.toDouble).toString(format: "hh:mm")
-
-        let bookingDateTime = Date.init(milliseconds:  data.massageDate.toDouble).toString(format: "hh:mm | EEE, dd MMM yyyy")
-
-        let people = MyBookingUserPeople.init(fromDictionary: [:])
-        people.age = data.clientAge
-        people.name = data.clientName
-        people.gender = data.clientGender
-        let bookingMassage = MyBookingMassage.init(fromDictionary: [:])
-        bookingMassage.name = data.serviceName
-        bookingMassage.time = data.massageDuration
-        people.bookingMassages = [bookingMassage]
-        self.arrForData = [people]
-
-        self.lblDate?.setText(bookingDate)
-        self.lblBookingTime.setText("booked: \(bookingTime)")
-        self.lblDelayTime.setText("")
-        self.lblBookingDetail.setText("Booking Details")
-
-        self.lblBookingTypeValue.setText(BookingType.init(rawValue: data.bookingType)?.name())
-        self.lblCenterName.setText(data.shopName)
-        self.lblCenterAddress.setText(data.shopAddress)
-        self.lblBookDateAndTime.setText(bookingDateTime)
-        self.lblSessionValue.setText(data.sessionType)
-
-        self.tableView.reloadData(heightToFit: self.htblVw) {
-            self.layoutIfNeeded()
-            self.vwExpanded?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)
-            self.vwDate?.setRound(withBorderColor: .clear, andCornerRadious: 15, borderWidth: 1.0)
-            print(#function)
-        }*/
-
     }
 
     override func layoutSubviews() {

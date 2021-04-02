@@ -37,7 +37,7 @@ class SuggestionAndComplaintVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-        self.wsGetMenuDetail()
+        self.wsGetSuggestionAndComplaints()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -181,40 +181,42 @@ extension SuggestionAndComplaintVC: UITableViewDelegate,UITableViewDataSource, U
 
 //MARK: Web Service Call
 extension SuggestionAndComplaintVC {
-    func wsGetMenuDetail() {
-       /* Loader.showLoading()
-        AppWebApi.getMenuDetail(completionHandler: { (response) in
-            self.arrForData.removeAll()
-            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
-                for data in response.dataList {
-                    self.arrForData.append(data)
-                }
-                self.tableView.reloadData()
-            }
-            Loader.hideLoading()
-        })*/
-    }
-    func wsAddSuggestion(suggestion:String) {
-        SuggestionWebService.requestAddSuggestion(params: SuggestionWebService.RequestAddSuggestion.init(suggestion: suggestion)) { (response) in
+    func wsGetSuggestionAndComplaints() {
+        Loader.showLoading()
+        SuggestionAndComplaintWebService.getAllSuggestionAdnComplaints { (response) in
             Loader.hideLoading()
             self.arrForData.removeAll()
             if ResponseModel.isSuccess(response: response) {
-                for item in response.suggestionList {
-                    self.arrForData.append(SuggestionTblCellDetail.init(name: item.id, designation: item.suggestion, date: Date.millisecondsOfDay(day: 1), type: "suggestion", details: "not available"))
+                for item in response.suggestionAndComplaintList {
+                    let isComplaint: Bool = item.complaint.isNotEmpty()
+                    if isComplaint {
+                        self.arrForData.append(SuggestionTblCellDetail.init(name: item.complaint, designation: item.complaint, date: Date.millisecondsOfDay(day: 1), type:  "complaint", details: item.complaint))
+                    } else {
+                        self.arrForData.append(SuggestionTblCellDetail.init(name: item.suggestion, designation: item.suggestion, date: Date.millisecondsOfDay(day: 1), type:  "suggestion", details: item.suggestion))
+                    }
+
                 }
+                self.tblForData.reloadData()
+            }
+        }
+    }
+    func wsAddSuggestion(suggestion:String) {
+        SuggestionAndComplaintWebService.requestAddSuggestion(params: SuggestionAndComplaintWebService.RequestAddSuggestion.init(suggestion: suggestion)) { (response) in
+            Loader.hideLoading()
+            self.arrForData.removeAll()
+            if ResponseModel.isSuccess(response: response) {
+                self.wsGetSuggestionAndComplaints()
             }
             self.tblForData.reloadData()
         }
     }
 
     func wsAddComplaint(complaint:String) {
-        ComplaintWebService.requestAddComplaint(params: ComplaintWebService.RequestAddComplaint.init(complaint: complaint)) {  (response) in
+        SuggestionAndComplaintWebService.requestAddComplaint(params: SuggestionAndComplaintWebService.RequestAddComplaint.init(complaint: complaint)) {  (response) in
             Loader.hideLoading()
             self.arrForData.removeAll()
             if ResponseModel.isSuccess(response: response) {
-                for item in response.complaintList {
-                    self.arrForData.append(SuggestionTblCellDetail.init(name: item.id, designation: item.complaint, date: Date.millisecondsOfDay(day: 1), type: "complaint", details: "not available"))
-                }
+                self.wsGetSuggestionAndComplaints()
             }
             self.tblForData.reloadData()
         }

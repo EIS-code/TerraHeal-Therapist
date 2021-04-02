@@ -14,12 +14,12 @@ class LanguageTableCell: SelectionBorderTableCell {
     @IBOutlet weak var lblFlag: ThemeLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.lblFlag.isHidden = true
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.subHeader)
     }
 
     func setData(data: LanguageDetail ) {
         self.lblName.text = data.name
-        self.lblFlag.text = data.image
         super.setData(title: data.name, isSelected: data.isSelected)
     }
 

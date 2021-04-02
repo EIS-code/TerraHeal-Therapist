@@ -13,7 +13,7 @@ class CalenderWebService {
     static let url: String = API_URL.GetCalender
     static let bookingDetailUrl: String = API_URL.GetCalenderDetails
     struct RequestGetCalender: Codable {
-        var email: String = ""
+        var date: String = ""
     }
     struct RequestGetCalenderBookingDetail: Codable {
         var booking_date: String = ""
@@ -30,6 +30,9 @@ extension CalenderWebService {
             if let dataArray = dictionary["data"] as? [[String:Any]] {
                 for data in dataArray {
                     bookingList.append(CalenderData.init(fromDictionary: data))
+                }
+                bookingList.sort { (data1, data2) -> Bool in
+                    data1.massageDate.toDouble < data2.massageDate.toDouble
                 }
             }
         }

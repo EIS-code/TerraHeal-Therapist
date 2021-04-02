@@ -16,8 +16,8 @@ class EditProfileVC: BaseVC {
     @IBOutlet weak var btnAddPicture: UIButton!
     @IBOutlet weak var collectionVwForProfile: UICollectionView!
     var kTableHeaderHeight:CGFloat = 150.0
-    var selectedCountry:Country? = nil
-    var selectedCity:City? = nil
+    var selectedCountry: String? = nil
+    var selectedCity: String? = nil
     var arrForProfile: [EditProfileTextFieldDetail] = []
     var selectedProfileDoc: UploadDocumentDetail? = nil
     // MARK: Object lifecycle
@@ -83,6 +83,7 @@ class EditProfileVC: BaseVC {
     }
     
     @IBAction func btnAddPictureTapped(_ sender: Any) {
+        btnAddPicture.isUserInteractionEnabled = false
         self.openPhotoPicker()
     }
     // MARK: - Other Methods
@@ -115,8 +116,8 @@ class EditProfileVC: BaseVC {
 
         ]
 
-        //self.selectedCity = appSingleton.user.city
-        //self.selectedCountry = appSingleton.user.country
+        self.selectedCity = appSingleton.user.cityId
+        self.selectedCountry = appSingleton.user.countryId
         self.collectionVwForProfile.reloadData()
         
     }
@@ -129,21 +130,27 @@ extension EditProfileVC {
         photoPickerAlert.show(animated: true)
         photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
-            guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ;
+            self.btnAddPicture.isUserInteractionEnabled = true
         }
         photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
-            guard let self = self else { return } ; print(self)
+
+            guard let self = self else { return } ;
+            self.btnAddPicture.isUserInteractionEnabled = true
         }
         photoPickerAlert.onBtnInfoTapped = { [/*weak photoPickerAlert,*/ weak self] in
-            guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ;
+            self.btnAddPicture.isUserInteractionEnabled = true
             self.openProfilePicInfoDialog()
 
         }
         photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] (doc) in
             photoPickerAlert?.dismiss()
             guard let self = self else { return } ; print(self)
+            self.btnAddPicture.isUserInteractionEnabled = true
             self.selectedProfileDoc = doc
+            self.selectedProfileDoc?.paramName = "profile_photo"
             self.openCropper(image: doc.image ?? UIImage())
 
         }
@@ -151,6 +158,7 @@ extension EditProfileVC {
             photoPickerAlert?.dismiss()
             guard let self = self else { return } ; print(self)
             self.selectedProfileDoc = doc
+            self.selectedProfileDoc?.paramName = "profile_photo"
             self.openCropper(image: doc.image ?? UIImage())
             //let gallaryVC:GallaryVC = Common.appDelegate.loadGallaryVC(navigaionVC: self.navigationController)
         }
@@ -193,7 +201,7 @@ extension EditProfileVC {
         cropper.cropRatio = 1/1
         cropper.delegate = self
         cropper.picker = nil
-        //cropper.image = image
+        cropper.image = image
         cropper.cancelButtonText = "Cancel"
         cropper.view.layoutIfNeeded()
         self.navigationController?.pushViewController(cropper, animated: true)
@@ -210,7 +218,7 @@ extension EditProfileVC {
         countryPickerAlert.onBtnDoneTapped = { [weak countryPickerAlert, weak self] (country) in
             guard let self = self else { return } ; print(self)
             countryPickerAlert?.dismiss()
-            self.selectedCountry = country
+            self.selectedCountry = country.id
             var request: UserWebService.RequestProfile = UserWebService.RequestProfile()
             request.country_id = country.id
             self.wsUpdateProfile(request: request)
@@ -224,7 +232,7 @@ extension EditProfileVC {
             return
         }
         let cityPickerAlert: CustomCityPicker = CustomCityPicker.fromNib()
-        cityPickerAlert.initialize(title: arrForProfile[index].type.getPlaceHolder(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized(), countryId: selectedCountry!.id)
+        cityPickerAlert.initialize(title: arrForProfile[index].type.getPlaceHolder(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized(), countryId: selectedCountry ?? "")
         cityPickerAlert.show(animated: true)
         cityPickerAlert.onBtnCancelTapped = {
             [weak cityPickerAlert, weak self] in
@@ -235,7 +243,7 @@ extension EditProfileVC {
             [weak cityPickerAlert, weak self] (city) in
             guard let self = self else { return } ; print(self)
             cityPickerAlert?.dismiss()
-            self.selectedCity = city
+            self.selectedCity = city.id
             var request: UserWebService.RequestProfile = UserWebService.RequestProfile()
             request.city_id = city.id
             self.wsUpdateProfile(request: request)
@@ -268,6 +276,8 @@ extension EditProfileVC {
                 request.surname = description
             case .Nif :
                 request.nif = description
+            case .Ssn :
+                request.social_security_number = description
             case .Email :
                 request.email = description
             default : print("Default")
@@ -291,6 +301,7 @@ extension EditProfileVC {
                    guard let self = self else { return } ; print(self)
                    self.arrForProfile[index].value = description
                    self.collectionVwForProfile.reloadData()
+                self.wsUpdateProfile(request: UserWebService.RequestProfile.init( personal_description: description))
                }
     }
 
@@ -309,19 +320,21 @@ extension EditProfileVC {
             guard let self = self else { return } ; print(self)
             self.arrForProfile[index].value = description
             self.collectionVwForProfile.reloadData()
-
+            self.wsUpdateProfile(request:UserWebService.RequestProfile.init(health_conditions_allergies: description))
         }
     }
 
     func openMobileNumberDialog(index:Int = 0) {
         let alert: CustomMobileNumberDialog = CustomMobileNumberDialog.fromNib()
-        /*switch self.arrForProfile[index].type {
+        switch self.arrForProfile[index].type {
         case .EmergencyContact:
-            alert.initialize(title: arrForProfile[index].type.getPlaceHolder(),countryPhoneCode: appSingleton.user.emergencyTelNumberCode,phoneNumber: appSingleton.user.emergencyTelNumber, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+            let emergencyNumber: [String] = appSingleton.user.emergenceContactNumber.components(separatedBy: " ")
+            alert.initialize(title: arrForProfile[index].type.getPlaceHolder(),countryPhoneCode: emergencyNumber.first ?? "",phoneNumber: emergencyNumber.last ?? "", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         case .Phone:
-            alert.initialize(title: arrForProfile[index].type.getPlaceHolder(),countryPhoneCode: appSingleton.user.telNumberCode,phoneNumber: appSingleton.user.telNumber, buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+            let mobileNumber: [String] = appSingleton.user.mobileNumber.components(separatedBy: " ")
+            alert.initialize(title: arrForProfile[index].type.getPlaceHolder(),countryPhoneCode: mobileNumber.first ?? "",phoneNumber: mobileNumber.last ?? "", buttonTitle: "BTN_PROCEED".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         default : print("Default")
-        }*/
+        }
 
 
         alert.show(animated: true)
@@ -338,11 +351,9 @@ extension EditProfileVC {
             switch self.arrForProfile[index].type
             {
             case .EmergencyContact:
-                request.emergence_contact_number = mobileNumber
-                //request.emergency_tel_number_code = countryPhoneCode
+                request.emergence_contact_number = countryPhoneCode + " " + mobileNumber
             case .Phone:
-                request.mobile_number = mobileNumber
-                //request.tel_number_code = countryPhoneCode
+                request.mobile_number = countryPhoneCode + " " + mobileNumber
             default : print("Default")
             }
             self.wsUpdateProfile(request: request)
@@ -388,6 +399,8 @@ extension EditProfileVC {
             guard let self = self else { return } ; print(self)
             languagePicker?.dismiss()
             self.arrForProfile[index].value = language.name
+            print(language.fluency.rawValue)
+            print(language.name)
             self.collectionVwForProfile.reloadData()
         }
     }
@@ -437,7 +450,7 @@ extension EditProfileVC: UIImageCropperProtocol {
         self.popVC()
         self.ivProfilePic.image = croppedImage
         self.selectedProfileDoc?.image = croppedImage
-        //self.wsUpdateProfile()
+        self.wsUpdateProfile(request: UserWebService.RequestProfile.init())
     }
     
     //optional

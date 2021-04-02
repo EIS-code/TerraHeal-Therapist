@@ -8,7 +8,7 @@
 import UIKit
 
 struct SideMenuItem {
-    var id: SideMenu = SideMenu.News
+    var id: SideMenu = SideMenu.QuitColobration
     var image: String = ""
     var isVerticle: Bool = true
     var value:String = ""
@@ -18,8 +18,7 @@ enum SideMenu: String {
     case SuggesionAndComplaints = "1"
     case SuspendCollaboration = "2"
     case TakeBreak = "3"
-    case News = "4"
-    case Notifications = "5"
+    case Notifications = "4"
 
     func name() -> String {
         switch self {
@@ -31,8 +30,6 @@ enum SideMenu: String {
             return "MENU_SUSPEND_COLLABORATION".localized()
         case .TakeBreak:
             return "MENU_TAKE_BREAK".localized()
-        case .News:
-            return "MENU_NEWS".localized()
         case .Notifications:
             return "MENU_NOTIFICATIONS".localized()
         }
@@ -49,8 +46,6 @@ enum SideMenu: String {
             return ImageAsset.SideMenu.suspendCollaboration
         case .TakeBreak:
             return ImageAsset.SideMenu.takeBreak
-        case .News:
-            return ImageAsset.SideMenu.news
         case .Notifications:
             return ImageAsset.SideMenu.notifications
         }
@@ -66,8 +61,6 @@ enum SideMenu: String {
             return "MENU_SUGGESTIONS_AND_COMPLAINTS".localized()
         case .TakeBreak:
             return "MENU_TAKE_BREAK".localized()
-        case .News:
-            return "MENU_NEWS".localized()
         case .Notifications:
             return "MENU_NOTIFICATIONS".localized()
         }
@@ -181,7 +174,6 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
                 self.openTextViewPicker(index: indexPath.item)
                 break
             case .SuggesionAndComplaints:
-                //self.openTextViewPicker(index: indexPath.item)
                 Common.appDelegate.loadSuggestionVC(navigaionVC: baseVC)
                 break
             case .SuspendCollaboration:
@@ -189,10 +181,6 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
                 break
             case .TakeBreak:
                 self.openTimeBreakDialog()
-                break
-            case .News:
-                Common.appDelegate.loadNewsVC(navigaionVC: self.navigationController)
-                //Common.appDelegate.loadNotificationVC(navigaionVC: baseVC)
                 break
             }
         }
@@ -214,6 +202,7 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
             self.arrForMenu[index].value = description
+            self.wsQuitCollabration(reason: description)
         }
     }
 
@@ -233,6 +222,13 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
         }
     }
 
+    func wsQuitCollabration(reason:String) {
+        QuitCollabrationWebService.requestQuitCollabration(params: QuitCollabrationWebService.RequestQuitCollabration.init(reason: reason)) { (response) in
+            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+
+            }
+        }
+    }
 
 }
 

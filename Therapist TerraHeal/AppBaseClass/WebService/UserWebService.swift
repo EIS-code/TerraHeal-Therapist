@@ -40,6 +40,15 @@ class UserWebService {
         var email: String? = nil
         var short_description: String? = nil
         var health_conditions_allergies: String? = nil
+        var personal_description: String? = nil
+    }
+
+    struct RequestUpdateMassage: Codable {
+        var my_massages: [String] = []
+        // var token: String = PreferenceHelper.shared.getSessionToken()
+        func toDictionary() -> [String:Any] {
+            return ["my_massages[]": self.my_massages]
+        }
     }
 }
 
@@ -52,8 +61,11 @@ extension UserWebService {
             data = UserData.init(fromDictionary: [:])
             if let dictData = dictionary["data"] as? [String:Any] {
                 self.data = UserData.init(fromDictionary: dictData)
-            } else if let dictData = dictionary["data"] as? [[String:Any]] {
-                self.data = UserData.init(fromDictionary: dictData.first!)
+            } else if let dictArray = dictionary["data"] as? [[String:Any]] {
+                if let dictData = dictArray.first {
+                    self.data = UserData.init(fromDictionary: dictData)
+                }
+
             }
         }
     }

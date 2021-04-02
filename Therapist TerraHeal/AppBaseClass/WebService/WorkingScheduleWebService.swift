@@ -23,11 +23,9 @@ extension WorkingScheduleWebService {
         override init(fromDictionary dictionary: [String:Any]) {
             super.init(fromDictionary: dictionary)
             workingList.removeAll()
-            if let dataDict = dictionary["data"] as? [String:Any] {
-                for (key, value) in dataDict {
-                    if let dict = value as? [String:Any]  {
-                        workingList.append(WorkingDate.init(fromDictionary: dict))
-                    }
+            if let dataArray = dictionary["data"] as? [[String:Any]] {
+                for dataDict in dataArray {
+                    workingList.append(WorkingDate.init(fromDictionary: dataDict))
                 }
                 workingList.sort { (data1, data2) -> Bool in
                     return data1.date.toDouble < data2.date.toDouble
@@ -38,20 +36,20 @@ extension WorkingScheduleWebService {
 
 
     class WorkingDate{
-        var bookingId: String = ""
-        var bookingInfoId: String = ""
+        var absentReason: String = ""
         var date: String = ""
-        var massageDate: String = ""
-        var status: String = ""
+        var id: String = ""
+        var isAbsent: String = ""
+        var isWorking: String = ""
         /**
          * Instantiate the instance using the passed dictionary values to set the properties values
          */
         init(fromDictionary dictionary: [String:Any]){
-            self.bookingId = (dictionary["booking_id"] as? String) ?? ""
-            self.bookingInfoId = (dictionary["booking_info_id"] as? String) ?? ""
+            self.absentReason = (dictionary["absent_reason"] as? String) ?? ""
             self.date = (dictionary["date"] as? String) ?? ""
-            self.massageDate = (dictionary["massage_date"] as? String) ?? ""
-            self.status = (dictionary["status"] as? String) ?? ""
+            self.id = (dictionary["id"] as? String) ?? ""
+            self.isAbsent = (dictionary["is_absent"] as? String) ?? ""
+            self.isWorking = (dictionary["is_working"] as? String) ?? ""
         }
     }
 }

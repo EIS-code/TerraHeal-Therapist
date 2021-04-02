@@ -23,6 +23,8 @@ class HomeVC: BaseVC {
     @IBOutlet weak var vwFilter: UIView!
     @IBOutlet weak var btnSubFilter: FloatingRoundButton!
     var selectedFilterType: FilterType = .Today
+    var selectedSubFilterType: SubFilterType = .Date
+
     var arrForData: [MyBookingTblDetail] = []
     var arrForOriginalData: [BookingData] = []
     var arrForFilter: [ImageWithTitle] = [
@@ -31,10 +33,7 @@ class HomeVC: BaseVC {
         ImageWithTitle.init(name: "HOME_FILTER_PAST".localized(), imageName: ImageAsset.Filter.past, data: FilterType.Past)
     ]
     var selectedDate: Date? = nil
-    
-    var pastBookingRequest: BookingWebSerive.RequestPastBookingList = BookingWebSerive.RequestPastBookingList.init()
-    var futureBookingRequest: BookingWebSerive.RequestFutureBookingList = BookingWebSerive.RequestFutureBookingList.init()
-    var currentBookingRequest: BookingWebSerive.RequestTodayBookingList = BookingWebSerive.RequestTodayBookingList.init()
+    var currentBookingRequest: BookingWebSerive.RequestBookingList = BookingWebSerive.RequestBookingList.init()
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -82,15 +81,15 @@ class HomeVC: BaseVC {
     private func initialViewSetup() {
         
         self.setupTableView(tableView: self.tableView)
-        self.tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.width, height: JDDeviceHelper.offseter(offset: 80)))
-        self.tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.width, height: JDDeviceHelper.offseter(offset: 52)))
+        self.tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.width, height: JDDeviceHelper.offseter(offset: 0)))
+        self.tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.width, height: JDDeviceHelper.offseter(offset: 82)))
         self.registerNib(tableView: tableView)
         self.setupTableView(tableView: self.tblForFilter)
         self.registerFilterNib(tableView: self.tblForFilter)
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
         self.setNavigationTitle(title: "".localized())
         self.vwFilter.backgroundColor = .clear
-        self.pastBookingRequest.massage_date = Date().millisecondsSince1970.toString()
+        self.currentBookingRequest.massage_date = Date().millisecondsSince1970.toString()
         self.wsGetTodaysBooking(request: self.currentBookingRequest)
         //self.wsGetPastBooking(request: self.pastBookingRequest)
     }
@@ -173,57 +172,46 @@ extension HomeVC {
             alert?.dismiss()
             self.btnSubFilter.isEnabled = true
         }
+        alert.onBtnClearAllTapped = { [weak alert, weak self] in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+            self.btnSubFilter.isEnabled = true
+            self.currentBookingRequest = BookingWebSerive.RequestBookingList.init()
+            if self.selectedFilterType == .Past {
+                self.wsGetPastBooking(request: self.currentBookingRequest)
+            } else if self.selectedFilterType == .Future {
+                self.wsGetFutureBooking(request: self.currentBookingRequest)
+            } else {
+                self.wsGetTodaysBooking(request: self.currentBookingRequest)
+            }
+
+        }
         alert.onBtnDoneTapped = {
             [weak alert, weak self] (filterType,value) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-
+            self.btnSubFilter.isEnabled = true
+            self.selectedSubFilterType = filterType
+            switch filterType {
+            case .BookingType:
+                self.currentBookingRequest.booking_type = value as! String
+            case .Date:
+                self.currentBookingRequest.massage_date = value as! String
+                self.selectedDate = Date.init(milliseconds: (value as! String).toDouble)
+            case .ClientName:
+                self.currentBookingRequest.client_name = value as! String
+            case .ServiceType:
+                self.currentBookingRequest.massage_date = value as! String
+            case .SessionType:
+                self.currentBookingRequest.session_type = value as! String
+            }
             if self.selectedFilterType == .Future {
-                switch filterType {
-                case .BookingType:
-                    self.futureBookingRequest.booking_type = value as! String
-                case .Date:
-                    self.futureBookingRequest.massage_date = value as! String
-                case .ClientName:
-                    self.futureBookingRequest.client_name = value as! String
-                case .ServiceType:
-                    self.futureBookingRequest.massage_date = value as! String
-                case .SessionType:
-                    self.futureBookingRequest.session_id = value as! String
-                }
-                self.wsGetFutureBooking(request: self.futureBookingRequest)
-
+                self.wsGetFutureBooking(request: self.currentBookingRequest)
             } else if self.selectedFilterType == .Past{
-                switch filterType {
-                case .BookingType:
-                    self.pastBookingRequest.booking_type = value as! String
-                case .Date:
-                    self.pastBookingRequest.massage_date = value as! String
-                case .ClientName:
-                    self.pastBookingRequest.client_name = value as! String
-                case .ServiceType:
-                    self.pastBookingRequest.massage_date = value as! String
-                case .SessionType:
-                    self.pastBookingRequest.session_id = value as! String
-                }
-                self.wsGetPastBooking(request: self.pastBookingRequest)
+                self.wsGetPastBooking(request: self.currentBookingRequest)
             } else {
-                switch filterType {
-                case .BookingType:
-                    self.currentBookingRequest.booking_type = value as! String
-                case .Date:
-                    self.currentBookingRequest.massage_date = value as! String
-                case .ClientName:
-                    self.currentBookingRequest.client_name = value as! String
-                case .ServiceType:
-                    self.currentBookingRequest.massage_date = value as! String
-                case .SessionType:
-                    self.currentBookingRequest.session_id = value as! String
-                }
                 self.wsGetTodaysBooking(request: self.currentBookingRequest)
             }
-
-            self.btnSubFilter.isEnabled = true
         }
     }
 
@@ -252,11 +240,11 @@ extension HomeVC {
             alert?.dismiss()
             self.selectedDate = Date.init(milliseconds: date)
             if self.selectedFilterType == .Past {
-                self.pastBookingRequest.massage_date = date.toString()
-                self.wsGetPastBooking(request: self.pastBookingRequest)
+                self.currentBookingRequest.massage_date = date.toString()
+                self.wsGetPastBooking(request: self.currentBookingRequest)
             } else if self.selectedFilterType == .Future {
-                self.futureBookingRequest.massage_date = date.toString()
-                self.wsGetFutureBooking(request: self.futureBookingRequest)
+                self.currentBookingRequest.massage_date = date.toString()
+                self.wsGetFutureBooking(request: self.currentBookingRequest)
             } else {
                 self.currentBookingRequest.massage_date = Date().millisecondsSince1970.toString()
                 self.wsGetTodaysBooking(request: self.currentBookingRequest)
@@ -276,30 +264,33 @@ extension HomeVC: PBRevealViewControllerDelegate {
 
 //MARK:- Web Service Call
 extension HomeVC {
-    func wsGetTodaysBooking(request: BookingWebSerive.RequestTodayBookingList) {
+    func wsGetTodaysBooking(request: BookingWebSerive.RequestBookingList) {
         Loader.showLoading()
-        BookingWebSerive.todayBookingList { (response) in
+        self.selectedDate = Date.init(milliseconds: request.massage_date.toDouble)
+        BookingWebSerive.todayBookingList(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()
                 self.arrForData.removeAll()
                 for data in response.bookingList {
-                    self.arrForData.append(data.toBookingModel())
+                    self.arrForData.append(data.toBookingModel(filterType: self.selectedSubFilterType))
                     self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()
             }
         }
     }
-    func wsGetFutureBooking(request: BookingWebSerive.RequestFutureBookingList) {
+    func wsGetFutureBooking(request: BookingWebSerive.RequestBookingList) {
         Loader.showLoading()
+
+        self.selectedDate = Date.init(milliseconds: request.massage_date.toDouble)
         BookingWebSerive.futureBookingList(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()
                 self.arrForData.removeAll()
                 for data in response.bookingList {
-                    self.arrForData.append(data.toBookingModel())
+                    self.arrForData.append(data.toBookingModel(filterType: self.selectedSubFilterType))
                     self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()
@@ -307,15 +298,16 @@ extension HomeVC {
         }
     }
 
-    func wsGetPastBooking(request: BookingWebSerive.RequestPastBookingList) {
+    func wsGetPastBooking(request: BookingWebSerive.RequestBookingList) {
         Loader.showLoading()
+        self.selectedDate = Date.init(milliseconds: request.massage_date.toDouble)
         BookingWebSerive.pastBookingList(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()
                 self.arrForData.removeAll()
                 for data in response.bookingList {
-                    self.arrForData.append(data.toBookingModel())
+                    self.arrForData.append(data.toBookingModel(filterType: self.selectedSubFilterType))
                     self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()

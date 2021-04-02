@@ -125,6 +125,7 @@ class MainVC: BaseVC, PBRevealViewControllerDelegate {
         self.bookingView.visible()
         self.newsVC?.removeFromParent()
         self.calendarVC?.removeFromParent()
+
     }
     func calendarSelected() {
         if calendarVC == nil {

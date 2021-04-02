@@ -14,7 +14,6 @@ class ServiceStatusVC: BaseVC {
     @IBOutlet weak var circularProgressView: CircularProgressView!
     @IBOutlet weak var lblMinute: ThemeLabel!
     @IBOutlet weak var lblMinRemaining: ThemeLabel!
-
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -99,6 +98,14 @@ class ServiceStatusVC: BaseVC {
                    scanVC.delegate = self
                }
     }
+    func wsFinishService(id:String) {
+        BookingWebSerive.finishMassageService(params: BookingWebSerive.RequestEndService.init(booking_massage_id: id, end_time: Date().millisecondsSince1970.toString()), completionHandler: {  (response) in
+            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+                Common.appDelegate.loadRateVC(navigaionVC: self.navigationController)
+            }
+        })
+    }
+
 }
 
 
@@ -106,15 +113,18 @@ class ServiceStatusVC: BaseVC {
 extension ServiceStatusVC : QRScannerCodeDelegate {
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
         print("\(#function)")
-        (controller as? BaseVC)?.popVC()
-        Common.appDelegate.loadRateVC(navigaionVC: self.navigationController)
+        self.wsFinishService(id: appSingleton.currentService.bookingMassageId)
+
     }
 
     func qrScannerDidFail(_ controller: UIViewController, error: String) {
+        (controller as? BaseVC)?.popVC()
+        Common.showAlert(message: error)
         print("\(#function)")
     }
 
     func qrScannerDidCancel(_ controller: UIViewController) {
+        (controller as? BaseVC)?.popVC()
         print("\(#function)")
     }
 }

@@ -16,8 +16,8 @@ class CustomCityPicker: ThemeBottomDialogView {
 
     var onBtnDoneTapped: ((_ data: City) -> Void)? = nil
     var selectedData: City? = nil
-    var arrForFilteredData: [City] = []//City.getDemoArray()
-    var arrForForOriginalData: [City] = []//City.getDemoArray()
+    var arrForFilteredData: [City] = []
+    var arrForForOriginalData: [City] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -157,9 +157,11 @@ extension CustomCityPicker : UITextFieldDelegate {
 extension CustomCityPicker {
 
     func getCityList(countryId:String) {
-        var request = Cities.RequestCitylist()
+        Loader.showLoading()
+        var request = CityWebService.RequestCityList()
         request.country_id = countryId
-        AppWebApi.cityList(params: request) { (response) in
+        CityWebService.getAllCities(params: request) { (response) in
+            Loader.hideLoading()
             self.arrForForOriginalData.removeAll()
             self.arrForFilteredData.removeAll()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {

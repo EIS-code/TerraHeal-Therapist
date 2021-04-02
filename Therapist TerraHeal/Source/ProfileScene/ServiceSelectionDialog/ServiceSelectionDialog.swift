@@ -18,9 +18,9 @@ class ServiceSelectionDialog: ThemeBottomDialogView {
     @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
     var selectedService: ServiceType = ServiceType.Massages
     var onBtnDoneTapped: (( ) -> Void)? = nil
-    var arrForData: [ServiceDetail] = ServiceDetail.getDemoArray()
-    var arrForMassage: [ServiceDetail] = ServiceDetail.getDemoArray()
-    var arrForTherapies: [ServiceDetail] = ServiceDetail.getDemoArray()
+    var arrForData: [Service] = []
+    var arrForMassage: [Service] = []
+    var arrForTherapies: [Service] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,6 +43,7 @@ class ServiceSelectionDialog: ThemeBottomDialogView {
             self.btnDone.setTitle(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
+        self.wsGetServices()
         
     }
     
@@ -73,9 +74,9 @@ class ServiceSelectionDialog: ThemeBottomDialogView {
     }
     
     @IBAction func btnDoneTapped(_ sender: Any) {
-        if self.onBtnDoneTapped != nil {
-            self.onBtnDoneTapped!();
-        }
+        self.wsUpdateMassages()
+
+
     }
     
     func setServicesFor(type:ServiceType) {
@@ -142,4 +143,52 @@ extension ServiceSelectionDialog:  UICollectionViewDelegate, UICollectionViewDat
         return CGSize(width: size , height: size)
     }
     
+}
+
+//MARK:- Web Service Clls
+
+extension ServiceSelectionDialog {
+
+    func wsGetServices() {
+        ServiceWebService.getAllServices { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                for i in 0..<response.serviceList.count {
+                    var data = response.serviceList[i]
+                    if appSingleton.user.selectedMassages.contains(where: { (massages) -> Bool in
+                        massages.id == data.id
+                    }) {
+                        data.isSelected = true
+                    } else {
+                        data.isSelected = false
+                    }
+                    self.arrForData.append(data)
+                    self.arrForMassage.append(data)
+                    self.arrForTherapies.append(data)
+                }
+            }
+            self.collectionVw.reloadData()
+        }
+    }
+
+    func wsUpdateMassages() {
+        Loader.showLoading()
+        var arrForIds:[String] = []
+        for data in arrForData {
+            if data.isSelected {
+                arrForIds.append(data.id)
+            }
+        }
+        AppWebApi.updateMassages(params: UserWebService.RequestUpdateMassage.init(my_massages: arrForIds)) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+                let user = response.data
+                PreferenceHelper.shared.setUserId(user.id)
+                appSingleton.user = user
+                Singleton.saveInDb()
+                if self.onBtnDoneTapped != nil {
+                    self.onBtnDoneTapped!();
+                }
+            }
+        }
+    }
 }

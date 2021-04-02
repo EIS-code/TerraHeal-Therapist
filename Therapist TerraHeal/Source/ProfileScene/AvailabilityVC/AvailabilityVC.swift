@@ -112,6 +112,7 @@ class AvailabilityVC: BaseVC {
         super.viewDidLoad()
         self.hCltVw.constant = 80 * 8
         self.initialViewSetup()
+        self.wsAvailability()
 
     }
     
@@ -207,7 +208,8 @@ extension AvailabilityVC {
             [weak alert, weak self] (description) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-
+            let request: AbsentDayWebService.RequestToAbsent = AbsentDayWebService.RequestToAbsent.init(date: (self.vwCalendar.selectedDate ?? Date()).millisecondsSince1970.toString(), absent_reason: description)
+            self.wsAbsentRequest(request: request)
         }
     }
     func openFreeSpotDialog() {
@@ -278,3 +280,26 @@ extension AvailabilityVC {
 }
 
 
+extension AvailabilityVC {
+    func wsAbsentRequest(request:AbsentDayWebService.RequestToAbsent) {
+        Loader.showLoading()
+        AbsentDayWebService.requestToAbsent(params: request) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                self.popVC()
+            }
+        }
+
+    }
+    func wsAvailability() {
+        Loader.showLoading()
+        AvailabilityWebService.getAvailabilities(params: AvailabilityWebService.RequestGetAvailability.init()) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+
+            }
+        }
+
+
+    }
+}

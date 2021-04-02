@@ -50,9 +50,11 @@ extension MissingDaysVC: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDel
     }*/
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+        print("Date:- \(date.millisecondsSince1970)")
         if arrForWorkingDays.contains(date.millisecondsSince1970) {
             return UIColor.init(hex: "#33B199")
-        } else if arrForNotAvailableDays.contains(date.millisecondsSince1970) {
+        }
+        if arrForNotAvailableDays.contains(date.millisecondsSince1970) {
             return UIColor.init(hex: "#FD3A58")
         }
         return UIColor.init(hex: "#000000DE")

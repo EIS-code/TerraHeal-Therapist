@@ -21,8 +21,8 @@ class CustomCountryPicker: ThemeBottomDialogView {
     var onBtnDoneTapped: ((_ data: Country) -> Void)? = nil
     var selectedData: Country? = nil
 
-    var arrForFilteredData: [Country] = Country.getDemoArray()
-    var arrForForOriginalData: [Country] = Country.getDemoArray()
+    var arrForFilteredData: [Country] = []
+    var arrForForOriginalData: [Country] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -161,7 +161,9 @@ extension CustomCountryPicker : UITextFieldDelegate {
 extension CustomCountryPicker {
 
     private func getCountryList() {
-        AppWebApi.countryList(params: Countries.RequestCountrylist()) { (response) in
+        Loader.showLoading()
+        CountryWebService.getAllCountries { (response) in
+            Loader.hideLoading()
             self.arrForForOriginalData.removeAll()
             self.arrForFilteredData.removeAll()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {

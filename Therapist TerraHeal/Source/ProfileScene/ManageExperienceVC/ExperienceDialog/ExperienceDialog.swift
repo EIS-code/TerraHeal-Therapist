@@ -20,7 +20,7 @@ class ExperienceDialog: ThemeBottomDialogView {
     var imageSelected:UploadDocumentDetail?;
 
     var strEnteredData: String = ""
-    var onBtnDoneTapped: ((_ data:UploadDocumentDetail) -> Void)? = nil
+    var onBtnDoneTapped: ((_ data:UploadDocumentDetail, _ description: String) -> Void)? = nil
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -69,7 +69,7 @@ class ExperienceDialog: ThemeBottomDialogView {
             Common.showAlert(message: "VALIDATION_MSG_INVALID_DATA".localized())
         } else {
             if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!(self.imageSelected!);
+                self.onBtnDoneTapped!(self.imageSelected!, strEnteredData);
             }
         }
     }

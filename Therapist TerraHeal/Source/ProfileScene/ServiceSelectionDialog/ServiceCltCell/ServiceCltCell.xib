@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,9 +20,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kn-XN-5Zv" userLabel="contentView">
                         <rect key="frame" x="5" y="5" width="156" height="159"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo-massage" translatesAutoresizingMaskIntoConstraints="NO" id="fsl-wV-zjF" userLabel="imgMenu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-center-demo" translatesAutoresizingMaskIntoConstraints="NO" id="fsl-wV-zjF" userLabel="imgMenu">
                                 <rect key="frame" x="8" y="0.0" width="140" height="111.5"/>
-                                <color key="backgroundColor" name="theme_primary_light"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92m-kt-8e8" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                 <rect key="frame" x="15.5" y="111.5" width="125" height="47.5"/>
@@ -72,14 +71,11 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="asset-center-demo" width="30" height="26.5"/>
         <image name="asset-favourite" width="20.5" height="18"/>
         <image name="asset-favourite-selectd" width="20.5" height="18"/>
-        <image name="demo-massage" width="160" height="144"/>
         <namedColor name="theme_dark_text">
             <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="theme_primary_light">
-            <color red="0.49803921568627452" green="0.7686274509803922" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

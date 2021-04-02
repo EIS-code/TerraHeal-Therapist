@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -33,7 +34,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrG-Ru-Sax" userLabel="viewForNavigationBar">
                     <rect key="frame" x="0.0" y="44" width="375" height="96"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" userLabel="BtnUploadImage" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="16" y="55" width="54" height="54"/>
@@ -162,6 +163,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="NLI-7e-U6e"/>
                 </scrollView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="NZx-ty-sOI" firstAttribute="leading" secondItem="YhJ-oo-h2F" secondAttribute="leading" id="1Yt-kr-7hD"/>
@@ -244,12 +246,16 @@
                 <constraint firstItem="yrG-Ru-Sax" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="taj-pr-7fc"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="yrG-Ru-Sax" secondAttribute="trailing" id="ypl-bw-KY5"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>
         </view>
     </objects>
+    <designables>
+        <designable name="AqQ-4O-Wf7">
+            <size key="intrinsicContentSize" width="31.666666666666668" height="26.333333333333332"/>
+        </designable>
+    </designables>
     <resources>
-        <image name="asset-camera" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="asset-camera" width="31.666666030883789" height="26.333333969116211"/>
         <image name="asset-cancel" width="170.66667175292969" height="170.66667175292969"/>
         <image name="demo-qr" width="110.66666412353516" height="110.66666412353516"/>
         <namedColor name="theme_background">
@@ -267,5 +273,8 @@
         <namedColor name="theme_primary">
             <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -45,11 +45,14 @@ enum PreferLanguage: String {
 }
 
 struct LanguageDetail {
-    var type: PreferLanguage = PreferLanguage.English
     var fluency: LanguageFluent = .Basic
     var name: String = ""
-    var image: String = ""
+    var id: String = ""
     var isSelected: Bool = false
+    init(language:LanguageWebService.LanguageData) {
+        self.name = language.name
+
+    }
 }
 class LanguageSelectionDialog: ThemeBottomDialogView {
 
@@ -60,14 +63,8 @@ class LanguageSelectionDialog: ThemeBottomDialogView {
 
     var onBtnDoneTapped: ((_ Language:LanguageDetail) -> Void)? = nil
     var selectedLanguage: LanguageDetail?  = nil
-    var arrForFilteredData: [LanguageDetail] = [
-        LanguageDetail.init(type: PreferLanguage.English, name: PreferLanguage.English.name(), image: PreferLanguage.English.flag(), isSelected: true),
-        LanguageDetail.init(type: PreferLanguage.Portugues, name: PreferLanguage.Portugues.name(),image: PreferLanguage.Portugues.flag(), isSelected: false),
-    ]
-    var arrForForOriginalData: [LanguageDetail] = [
-        LanguageDetail.init(type: PreferLanguage.English, name: PreferLanguage.English.name(), image: PreferLanguage.English.flag(), isSelected: true),
-        LanguageDetail.init(type: PreferLanguage.Portugues, name: PreferLanguage.Portugues.name(),image: PreferLanguage.Portugues.flag(), isSelected: false),
-    ]
+    var arrForFilteredData: [LanguageDetail] = []
+    var arrForForOriginalData: [LanguageDetail] = []
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -91,6 +88,7 @@ class LanguageSelectionDialog: ThemeBottomDialogView {
         }
         self.setupTableView(tableView: self.tableView)
         self.setupSearchbar(searchBar: self.txtSearchBar)
+        self.wsGetLanguage()
     }
 
     override func initialSetup() {
@@ -142,7 +140,7 @@ extension LanguageSelectionDialog : UITextFieldDelegate {
         txtSearchBar.addTarget(self, action: #selector(searching(_:)), for: .editingChanged)
         txtSearchBar.textColor = UIColor.themeDarkText
         txtSearchBar.changePlaceHolder(color: UIColor.themeDarkText)
-        txtSearchBar.placeholder = "TXT_SEARCH_COUNTRY".localized()
+        txtSearchBar.placeholder = "TXT_SEARCH".localized()
     }
 
     func searchData(for text: String) {
@@ -216,3 +214,18 @@ extension LanguageSelectionDialog : UITableViewDelegate,UITableViewDataSource {
 
 
 
+extension LanguageSelectionDialog {
+    func wsGetLanguage() {
+        Loader.showLoading()
+        LanguageWebService.getAllLanguage { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                for data in response.languageList {
+                    self.arrForForOriginalData.append(LanguageDetail.init(language: data))
+                    self.arrForFilteredData.append(LanguageDetail.init(language: data))
+                }
+            }
+            self.reloadTableDataToFitHeight(tableView: self.tableView)
+        }
+    }
+}

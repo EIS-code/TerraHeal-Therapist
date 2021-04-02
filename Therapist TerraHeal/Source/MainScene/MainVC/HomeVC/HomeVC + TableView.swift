@@ -84,13 +84,11 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
                 }
                 view.btnSelectDate.addTarget(self, action: #selector(openDatePicker(sender:)), for: .touchUpInside)
                 if #available(iOS 14.0, *) {
-                    view.backgroundConfiguration = UIBackgroundConfiguration.clear()
+                    //view.backgroundConfiguration = UIBackgroundConfiguration.clear()
                 } else {
                     // Fallback on earlier versions
-                    view.backgroundColor = .clear
+                    //view.backgroundColor = .clear
                 }
-
-                view.backgroundView?.backgroundColor = .blue
                 if selectedFilterType == .Past {
                     view.imgFilterType.image = UIImage.init(named: ImageAsset.Filter.pastDark)
                     view.lblFilterType.setText("Past")
@@ -98,6 +96,7 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
                     view.imgFilterType.image = UIImage.init(named: ImageAsset.Filter.futureDark)
                     view.lblFilterType.setText("Future")
                 }
+                
                 return view
             }
         }
@@ -112,9 +111,9 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             }
             switch self.selectedFilterType {
             case .Future:
-                self.wsGetFutureBooking(request: self.futureBookingRequest)
+                self.wsGetFutureBooking(request: self.currentBookingRequest)
             case .Past:
-                self.wsGetPastBooking(request: self.pastBookingRequest)
+                self.wsGetPastBooking(request: self.currentBookingRequest)
             default:
                 self.wsGetTodaysBooking(request: self.currentBookingRequest)
             }
@@ -122,8 +121,8 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             self.updateFilterButton(isShowFilter: false)
         }  else {
             Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: {/* [weak self]*/ (bookingDetailVC) in
-                bookingDetailVC.bookingDetail = BookingDetail.init(fromDictionary: [:])
-                bookingDetailVC.bookingDetail.bookingInfoId = self.arrForOriginalData[indexPath.row].bookingInfos.first!.bookingInfoId
+                appSingleton.currentService = BookingDetail.init(fromDictionary: [:])
+                appSingleton.currentService.bookingInfoId = self.arrForOriginalData[indexPath.row].bookingInfoId
             })
         }
     }

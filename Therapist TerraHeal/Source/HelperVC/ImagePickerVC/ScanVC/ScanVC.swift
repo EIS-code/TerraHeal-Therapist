@@ -113,7 +113,7 @@ class ScanVC: BaseVC,AVCaptureMetadataOutputObjectsDelegate, UIImagePickerContro
         delCnt = 0
         print("\(#function)")
         prepareQRScannerView(self.view)
-        //startScanningQRCode()
+        startScanningQRCode()
 
     }
 

@@ -12,7 +12,7 @@ let appSingleton = Singleton.shared
 public class Singleton :NSObject {
     static let shared = Singleton()
     var user:UserWebService.UserData = UserWebService.UserData.init(fromDictionary: [:])
-    var myMassagePreference: MyMassagePreference = MyMassagePreference.init()
+    var currentService: BookingDetail = BookingDetail.init(fromDictionary: [:])
     var currencySymbol:String = ""
     //var settting:Setting.Response = Setting.Response.init(fromDictionary: [:])
     var myLatitude: String = ""
@@ -37,13 +37,3 @@ public class Singleton :NSObject {
     }
 }
 
-class MyMassagePreference: NSObject {
-    override init() {
-        super.init()
-    }
-    var treatmentDescription: String = ""
-    var problemsDescription: String = ""
-    var pastSurgeryDescription: String = ""
-    var allergiesDescription: String = ""
-    var healthConditionDescription: String = ""
-}

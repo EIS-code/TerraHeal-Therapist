@@ -76,14 +76,14 @@ class VerificationAlert: ThemeBottomDialogView {
     func mobileTapped(){
         self.currentTab = 0
         self.wsVerifyPhone()
-        self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + Singleton.shared.user.telNumber
+        self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + appSingleton.user.telNumber
         self.lblMessage.text = "verify your mobile number".localized()
         
     }
     func emailTapped(){
         self.currentTab = 1
         self.wsVerifyEmail()
-        self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + Singleton.shared.user.email
+        self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + appSingleton.user.email
         self.lblMessage.text = "verify your email address".localized()
         
     }
@@ -166,7 +166,7 @@ extension VerificationAlert {
         }
         /*Loader.showLoading()
         var request: User.RequestEmailOTP = User.RequestEmailOTP()
-        request.email = Singleton.shared.user.email
+        request.email = appSingleton.user.email
         AppWebApi.getEmailOtp(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
@@ -185,7 +185,7 @@ extension VerificationAlert {
             Loader.hideLoading()
             self.otpTextFieldView.clearTextField()
             if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
-                Singleton.shared.user.isEmailVerified = Constant.True
+                appSingleton.user.isEmailVerified = Constant.True
                 self.updateVerificationView()
             } else {
                 
@@ -200,7 +200,7 @@ extension VerificationAlert {
         }
        /* Loader.showLoading()
         var request: User.RequestPhoneOTP = User.RequestPhoneOTP()
-        request.mobile = Singleton.shared.user.telNumber
+        request.mobile = appSingleton.user.telNumber
         AppWebApi.getPhoneOtp(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
@@ -219,7 +219,7 @@ extension VerificationAlert {
             Loader.hideLoading()
             self.otpTextFieldView.clearTextField()
             if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
-                Singleton.shared.user.isMobileVerified = Constant.True
+                appSingleton.user.isMobileVerified = Constant.True
                 self.updateVerificationView()
             } else {
             }

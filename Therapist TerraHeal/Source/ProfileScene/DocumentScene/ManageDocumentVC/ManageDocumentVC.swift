@@ -213,9 +213,13 @@ extension ManageDocumentVC: UIImageCropperProtocol {
     func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
 
         if arrForData.isEmpty {
-                self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Front Side", image: croppedImage, data: nil, isCompleted: true))
+            self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Front Side", image: croppedImage, data: croppedImage?.pngData(), isCompleted: true, paramName: "document_id_passport_front"))
+
+            self.wsUpdateDocument()
         } else {
-            self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Back Side", image: croppedImage, data: nil, isCompleted: true))
+            self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Back Side", image: croppedImage, data: croppedImage?.pngData(), isCompleted: true, paramName: "document_id_passport_back"))
+
+            self.wsUpdateDocument()
         }
         self.updateUI()
     }
@@ -225,5 +229,22 @@ extension ManageDocumentVC: UIImageCropperProtocol {
         print("did cancel")
          self.popVC()
         //self.wsUpdateProfile()
+    }
+}
+//MARK:- Web Service Calls
+
+extension ManageDocumentVC {
+    func wsUpdateDocument() {
+        Loader.showLoading()
+        AppWebApi.updateDocuments(documents: self.arrForData) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+                let user = response.data
+                PreferenceHelper.shared.setUserId(user.id)
+                appSingleton.user = user
+                Singleton.saveInDb()
+                self.popVC()
+            }
+        }
     }
 }

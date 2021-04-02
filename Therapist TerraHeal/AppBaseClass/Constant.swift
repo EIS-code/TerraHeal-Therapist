@@ -104,31 +104,32 @@ struct LoginBy {
 }
 
 enum BookingType: String {
-    case MassageCenter  = "0"
-    case AtHotelOrRoom  = "1"
+    case MassageCenter  = "1"
+    case AtHotelOrRoom  = "2"
     func name()-> String {
         switch self {
         case .MassageCenter: return "MY_BOOKING_TYPE_AT_MASSAGE_CENTER".localized()
         case .AtHotelOrRoom: return "MY_BOOKING_TYPE_AT_HOME_OR_HOTEL".localized()
-        //default: return "Unknown"
         }
     }
-
-
-
-   /* func getImage()-> String {
+    func getImage()-> String {
         switch self {
         case .MassageCenter: return ImageAsset.BookingType.center
         case .AtHotelOrRoom: return ImageAsset.BookingType.hotel
-        //default: return "Unknown"
         }
-    }*/
-    
+    }
+    init?(rawValue: String) {
+        switch rawValue {
+        case "1":
+            self = .MassageCenter
+        default:
+            self = .AtHotelOrRoom
+        }
+    }
     func getParameterId() -> String {
         switch self {
-        case .MassageCenter: return "0"
-        case .AtHotelOrRoom: return "1"
-        //default: return "Unknown"
+        case .MassageCenter: return "1"
+        case .AtHotelOrRoom: return "2"
         }
     }
 }

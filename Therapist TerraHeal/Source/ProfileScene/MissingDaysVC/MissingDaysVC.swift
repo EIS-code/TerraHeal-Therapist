@@ -35,7 +35,7 @@ class MissingDaysVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-
+        self.wsGetMissingDays()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,33 +58,17 @@ class MissingDaysVC: BaseVC {
         self.popVC()
     }
     private func initialViewSetup() {
-        self.arrForWorkingDays = [date.add(component: .day, value: 1).millisecondsSince1970,
-        date.add(component: .day, value: 3).millisecondsSince1970,
-        date.add(component: .day, value: 5).millisecondsSince1970,
-        date.add(component: .day, value: 7).millisecondsSince1970,
-        date.add(component: .day, value: -1).millisecondsSince1970,
-        date.add(component: .day, value: -2).millisecondsSince1970,
-        date.add(component: .day, value: -4).millisecondsSince1970,
-        date.add(component: .day, value: -6).millisecondsSince1970]
-
-        self.arrForNotAvailableDays = [date.add(component: .day, value: 2).millisecondsSince1970,
-        date.add(component: .day, value: 3).millisecondsSince1970,
-        date.add(component: .day, value: 4).millisecondsSince1970,
-        date.add(component: .day, value: 6).millisecondsSince1970,
-        date.add(component: .day, value: 7).millisecondsSince1970,
-        date.add(component: .day, value: 8).millisecondsSince1970,
-        date.add(component: .day, value: 9).millisecondsSince1970,
-        date.add(component: .day, value: 10).millisecondsSince1970]
-
         self.setNavigationTitle(title: "MY_MISSING_DAYS_TITLE".localized())
         self.setBackground(color: UIColor.themeLightBackground)
         self.btnPreviousMonth.setText(FontSymbol.back_arrow, for: .normal)
         self.btnPreviousMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.btnNextMonth.setText(FontSymbol.next_arrow, for: .normal)
         self.btnNextMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-
         self.setupTableView(tableView: self.tblVwForData)
         self.setupCalendarView(calendar: self.vwCalendar)
+        self.arrForWorkingDays = []
+        self.arrForNotAvailableDays = []
+        
     }
     @IBAction func btnPreviousTapped(_ sender: Any) {
           let currentPage = self.vwCalendar.currentPage.previousMonth()
@@ -146,3 +130,22 @@ extension MissingDaysVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     }
 }
 
+extension MissingDaysVC {
+    func wsGetMissingDays(date:String = Date().millisecondsSince1970.toString()) {
+        self.arrForWorkingDays.removeAll()
+        self.arrForNotAvailableDays.removeAll()
+        MissingDayWebService.getMissingDays(params: MissingDayWebService.RequestSchedule.init(date: date)) { (response) in
+            for data in response.workingList {
+                if data.isWorking.toBool {
+                    self.arrForWorkingDays.append(data.date.toDouble - Double((TimeZone.current.secondsFromGMT() * 1000)))
+                }
+                if data.isAbsent.toBool{
+                    self.arrForNotAvailableDays.append(data.date.toDouble - Double((TimeZone.current.secondsFromGMT() * 1000)))
+                }
+            }
+            self.vwCalendar.reloadData()
+            self.tblVwForData.reloadData()
+        }
+    }
+
+}

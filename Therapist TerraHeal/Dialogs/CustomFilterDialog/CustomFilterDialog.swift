@@ -1,9 +1,18 @@
 import UIKit
 //import FSCalendar
 
+enum SubFilterType: Int {
+    case Date = 0
+    case ClientName = 1
+    case ServiceType = 2
+    case BookingType = 3
+    case SessionType = 4
+}
+
 class CustomFilterDialog: ThemeBottomDialogView {
 
-    var onBtnDoneTapped: ((_ filterType:FilterTab, _ value:Any) -> Void)? = nil
+    var onBtnDoneTapped: ((_ filterType:SubFilterType, _ value:Any) -> Void)? = nil
+    var onBtnClearAllTapped: (() -> Void)? = nil
     @IBOutlet var filterTypeButton: [SelectionButton]!
     @IBOutlet weak var activeView: UIView!
     @IBOutlet weak var dateView: UIView!
@@ -17,13 +26,6 @@ class CustomFilterDialog: ThemeBottomDialogView {
     var minDate = Date()
     var maxDate = Date()
     var selectedValue: Any? = nil
-    enum FilterTab: Int {
-        case Date = 0
-        case ClientName = 1
-        case ServiceType = 2
-        case BookingType = 3
-        case SessionType = 4
-    }
 
 
     //ClientDialog
@@ -39,7 +41,7 @@ class CustomFilterDialog: ThemeBottomDialogView {
     //SessionDialog
     @IBOutlet weak var vwSession: UIView!
     @IBOutlet weak var tblForSessionType: UITableView!
-    var arrForData: [RadioSelectionTblCellDetail] = []
+    var arrForData: [SessionTypeDetails] = []
     //BookingTypeView
     @IBOutlet weak var vwBookingType: UIView!
     @IBOutlet weak var lblCenter: ThemeLabel!
@@ -47,8 +49,8 @@ class CustomFilterDialog: ThemeBottomDialogView {
     @IBOutlet weak var btnHome: JDRadioButton!
     @IBOutlet weak var btnCenter: JDRadioButton!
 
-    var selectedTab: FilterTab = FilterTab.Date
-    var selectedFilterValues: BookingWebSerive.RequestTodayBookingList = BookingWebSerive.RequestTodayBookingList.init()
+    var selectedTab: SubFilterType = SubFilterType.Date
+    //var selectedFilterValues: BookingWebSerive.RequestBookingList = BookingWebSerive.RequestBookingList.init()
     override func awakeFromNib() {
         super.awakeFromNib()
         self.initialSetup()
@@ -57,6 +59,7 @@ class CustomFilterDialog: ThemeBottomDialogView {
         self.setupSession()
         self.setupDateView()
         self.setupBookingTypeView()
+        self.wsGetSessionList()
     }
 
     override func initialSetup() {
@@ -139,6 +142,10 @@ class CustomFilterDialog: ThemeBottomDialogView {
 
     @IBAction func btnClearAllTapped(_ sender: Any) {
         self.selectedValue = nil
+        if self.onBtnClearAllTapped != nil {
+            self.onBtnClearAllTapped!()
+        }
+
     }
 
     @IBAction func btnPreviousTapped(_ sender: Any) {
@@ -193,16 +200,17 @@ class CustomFilterDialog: ThemeBottomDialogView {
         self.vwClientSearch.gone()
         self.vwBookingType.gone()
         self.vwSession.visible()
+        self.tblForSessionType.reloadData()
     }
     @IBAction func btnHomeTapped(_ sender: Any) {
         btnHome.isSelected = true
         btnCenter.isSelected = false
-        self.selectedValue = "Home Booking"
+        self.selectedValue = BookingType.AtHotelOrRoom.getParameterId()
     }
     @IBAction func btnCenterTapped(_ sender: Any) {
         btnHome.isSelected = false
         btnCenter.isSelected = true
-        self.selectedValue = "Center Booking"
+        self.selectedValue = BookingType.MassageCenter.getParameterId()
     }
 }
 
@@ -302,5 +310,21 @@ extension CustomFilterDialog {
         self.lblCenter.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.btnHome.isSelected = false
         self.btnCenter.isSelected = false
+    }
+}
+
+//MARK: Web Service Calls
+
+extension CustomFilterDialog {
+
+    func wsGetSessionList() {
+        Loader.showLoading()
+        SessionWebService.getAllSessionTypes { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForData = response.groupBySession
+            }
+            self.tblForSessionType.reloadData()
+        }
     }
 }

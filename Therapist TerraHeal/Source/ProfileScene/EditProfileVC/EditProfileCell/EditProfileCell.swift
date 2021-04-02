@@ -70,7 +70,7 @@ extension EditProfileCell {
 
     func openEmailVerification() {
         /*let alertForVerification: VerificationAlert  = VerificationAlert.fromNib()
-        alertForVerification.initialize(message: "VERIFICATION_EMAIL_TITLE".localized(), data: Singleton.shared.user.email)
+        alertForVerification.initialize(message: "VERIFICATION_EMAIL_TITLE".localized(), data: appSingleton.user.email)
         alertForVerification.show(animated: true)
         alertForVerification.setVerificationFor(type: .Email)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in
@@ -88,7 +88,7 @@ extension EditProfileCell {
     }
     func openMobileVerification() {
         let alertForVerification: VerificationAlert  = VerificationAlert.fromNib()
-        alertForVerification.initialize(message: "VERIFICATION_MOBILE_TITLE".localized(), data: Singleton.shared.user.telNumber)
+        alertForVerification.initialize(message: "VERIFICATION_MOBILE_TITLE".localized(), data: appSingleton.user.telNumber)
         alertForVerification.show(animated: true)
         alertForVerification.setVerificationFor(type: .Phone)
         alertForVerification.onBtnDoneTapped = { [weak alertForVerification, weak self] (code:String) in

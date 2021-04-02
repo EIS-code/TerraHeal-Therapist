@@ -13,6 +13,24 @@
 "LOGIN_TXT_PASSWORD" = "password";
 "LOGIN_BTN_SIGN_IN" = "Sign In";
 "LOGIN_BTN_FORGOT_PASSWORD" = "forgot password?";
+//MARK: Home SCREEN
+"HOME_BTN_NEWS" = "news";
+"HOME_BTN_CALENDER" = "calender";
+"HOME_BTN_BOOKING" = "booking";
+"HOME_FILTER_TODAY" = "today";
+"HOME_FILTER_FUTURE" = "future";
+"HOME_FILTER_PAST" = "past";
+"HOME_SECTION_BTN_SELECT_DATE" = "select date";
+"MY_BOOKING_TYPE_AT_MASSAGE_CENTER" = "in massage center";
+"MY_BOOKING_TYPE_AT_HOME_OR_HOTEL" = "home / hotel visit";
+//MARK: Menu Screen
+"MENU_TITLE" = "Menu";
+"MENU_QUIT_COLLABORATION" = "quit collaboration";
+"MENU_SUSPEND_COLLABORATION" = "suspend collaboration";
+"MENU_SUGGESTIONS_AND_COMPLAINTS" = "suggestions and complaints";
+"MENU_TAKE_BREAK" = "take break";
+"MENU_NOTIFICATIONS" = "notifications";
+"DIALOG_QUIT_COLLABORATION_BTN_REQUEST" = "Request";
 //MARK: BOOKING DETAIL SCREEN
 "BOOKING_DETAIL_CLIENT_NAME" = "client name";
 "BOOKING_DETAIL_TYPE_OF_SERVICE" = "type of service";
@@ -22,24 +40,8 @@
 "BOOKING_DETAIL_SERVICE_DETAILS" = "Service Details";
 "BOOKING_DETAIL_NOTES" = "notes";
 "BOOKING_DETAIL_FOCUS_AREA" = "focus area";
-//MARK: Home SCREEN
-"HOME_BTN_NEWS" = "news";
-"HOME_BTN_CALENDER" = "calender";
-"HOME_BTN_BOOKING" = "booking";
-"HOME_FILTER_TODAY" = "today";
-"HOME_FILTER_FUTURE" = "future";
-"HOME_FILTER_PAST" = "past";
-"HOME_SECTION_BTN_SELECT_DATE" = "select date";
 
-//MARK: Menu Screen
-"MENU_TITLE" = "Menu";
-"MENU_QUIT_COLLABORATION" = "quit collaboration";
-"DIALOG_QUIT_COLLABORATION_BTN_REQUEST" = "Request";
-"MENU_SUSPEND_COLLABORATION" = "suspend collaboration";
-"MENU_SUGGESTIONS_AND_COMPLAINTS" = "suggestions and complaints";
-"MENU_TAKE_BREAK" = "take break";
-"MENU_NEWS" = "news";
-"MENU_NOTIFICATIONS" = "notifications";
+
 //MARK: Profile Menu
 "PROFILE_MENU_PROFILE" = "my profile";
 "PROFILE_MENU_MY_BOOKING" = "my bookings";
@@ -69,13 +71,12 @@
 "PROFILE_EXPERIENCE"  = "Personal Experience";
 "PROFILE_DESCRIPTION"  = "Personal Description";
 "HEALTH_CONDITION_OR_ALLERGIES"  = "Health conditions or allergies";
+"TXT_SEARCH" = "Search";
 "TXT_SEARCH_COUNTRY" = "Search Country";
-
+"PROFILE_TXT_SEARCH_CITY" = "Search City";
 "DIALOG_PERSONAL_DESCRIPTION_TITLE"  = "Personal Description";
 "DIALOG_PERSONAL_DESCRIPTION_PLACEHOLDER"  = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae";
 "DIALOG_PERSONAL_DESCRIPTION_BTN_SAVE"  = "Save";
-
-
 "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_TITLE"  = "Health conditions or allergies";
 "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_PLACEHOLDER"  = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae";
 "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_BTN_SAVE"  = "Save";

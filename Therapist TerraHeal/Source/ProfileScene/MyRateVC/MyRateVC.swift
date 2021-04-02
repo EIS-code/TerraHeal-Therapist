@@ -13,10 +13,10 @@ class MyRateVC: BaseVC {
 
     var arrForData: [MyRateTblCellDetail] = [
         MyRateTblCellDetail.init(title: "Punctuality And Presence For Reservations", rate: 1.0, isSelected: false),
-        MyRateTblCellDetail.init(title: "Behavior", rate: 2.0, isSelected: false),
-        MyRateTblCellDetail.init(title: "Sexual Issues", rate: 3.0, isSelected: false),
-        MyRateTblCellDetail.init(title: "Hygiene", rate: 4.0, isSelected: false),
-        MyRateTblCellDetail.init(title: "Left Bad / Good Review", rate: 5.0, isSelected: false),
+        MyRateTblCellDetail.init(title: "Behavior", rate: 1.0, isSelected: false),
+        MyRateTblCellDetail.init(title: "Sexual Issues", rate: 1.0, isSelected: false),
+        MyRateTblCellDetail.init(title: "Hygiene", rate: 1.0, isSelected: false),
+        MyRateTblCellDetail.init(title: "Left Bad / Good Review", rate: 1.0, isSelected: false),
         MyRateTblCellDetail.init(title: "Payment Issues", rate: 1.0, isSelected: false)]
     
     // MARK: Object lifecycle

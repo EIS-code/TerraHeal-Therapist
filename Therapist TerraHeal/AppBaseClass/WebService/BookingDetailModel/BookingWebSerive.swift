@@ -20,26 +20,13 @@ class BookingWebSerive {
     static let startSevice: String = API_URL.StartService
     static let endService: String = API_URL.FinishService
 
-    struct RequestTodayBookingList: Codable {
+    struct RequestBookingList: Codable {
         var therapist_id: String = "3"// PreferenceHelper.shared.getUserId()
         var massage_date: String = Date().millisecondsSince1970.toString()
         var client_name: String = ""
         var booking_type: String = ""
-        var session_id: String = ""
-    }
-    struct RequestPastBookingList: Codable {
-        var therapist_id: String = "3"// PreferenceHelper.shared.getUserId()
-        var massage_date: String = Date().millisecondsSince1970.toString()
-        var client_name: String = ""
-        var booking_type: String = ""
-        var session_id: String = ""
-    }
-    struct RequestFutureBookingList: Codable {
-        var therapist_id: String = "3"// PreferenceHelper.shared.getUserId()
-        var massage_date: String = Date().millisecondsSince1970.toString()
-        var client_name: String = ""
-        var booking_type: String = ""
-        var session_id: String = ""
+        var session_type: String = ""
+       
     }
 
     struct RequestBookingDetail: Codable {

@@ -105,10 +105,11 @@ class ManageExperienceVC: BaseVC {
              guard let self = self else { return } ; print(self)
             self.btnSubmit.isEnabled = true
         }
-        photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] (description) in
+        photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] (image,description) in
             photoPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ; print(self)
             self.btnSubmit.isEnabled = true
+            self.openCropper(image: image.image!)
         }
     }
     
@@ -170,9 +171,9 @@ extension ManageExperienceVC: UIImageCropperProtocol {
     func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
 
         if arrForData.isEmpty {
-                self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Front Side", image: croppedImage, data: nil, isCompleted: true))
+                self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Front Side", image: croppedImage, data: nil, isCompleted: true, paramName: "document_personal_experience"))
         } else {
-            self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Back Side", image: croppedImage, data: nil, isCompleted: true))
+            self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Back Side", image: croppedImage, data: nil, isCompleted: true, paramName: "document_personal_experience"))
         }
         self.updateUI()
     }
@@ -182,5 +183,20 @@ extension ManageExperienceVC: UIImageCropperProtocol {
         print("did cancel")
          self.popVC()
         //self.wsUpdateProfile()
+    }
+}
+extension ManageExperienceVC {
+    func wsUpdateProfile(request: UserWebService.RequestProfile) {
+        Loader.showLoading()
+        AppWebApi.updateDocuments(params: UserWebService.RequestProfile.init(), documents: self.arrForData) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+                let user = response.data
+                PreferenceHelper.shared.setUserId(user.id)
+                appSingleton.user = user
+                Singleton.saveInDb()
+                self.popVC()
+            }
+        }
     }
 }

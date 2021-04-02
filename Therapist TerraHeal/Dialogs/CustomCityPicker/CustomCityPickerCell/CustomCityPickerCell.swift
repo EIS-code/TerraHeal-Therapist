@@ -17,7 +17,7 @@ class CustomCityPickerCell: SelectionBorderTableCell {
     }
 
     func setData(data: City ) {
-       // self.setData(title: data.name, isSelected: data.isSelected)
+        self.setData(title: data.name, isSelected: data.isSelected)
     }
 
     override func layoutSubviews() {

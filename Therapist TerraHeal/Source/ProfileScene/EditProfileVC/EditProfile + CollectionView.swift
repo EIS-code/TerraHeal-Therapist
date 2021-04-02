@@ -78,7 +78,7 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
         print(indexPath.item)
         let data = arrForProfile[indexPath.item]
         switch data.type {
-        case .Name,.Surname,.Nif, .Email, .AccountNumber :
+        case .Name,.Surname,.Nif, .Email, .AccountNumber, .Ssn :
             self.openTextFieldPicker(index: indexPath.row)
         case .Documents:
             Common.appDelegate.loadMyDocumentsVC(navigaionVC: self.navigationController)
@@ -97,7 +97,7 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
         case .EmergencyContact:
             self.openMobileNumberDialog(index: indexPath.row)
         case .City:
-            self.openCityPicker(index: indexPath.row, countryId: (selectedCountry?.id) ??  "")
+            self.openCityPicker(index: indexPath.row, countryId: selectedCountry ??  "")
         case .Country:
             self.openCountryPicker(index: indexPath.row)
         case .Services:

@@ -9,10 +9,9 @@ import UIKit
 class WorkingScheduleVC: BaseVC {
 
     @IBOutlet weak var vwCalendar: FSCalendar!
+    @IBOutlet weak var tblVwForData: UITableView!
     @IBOutlet weak var btnPreviousMonth: ThemeButton!
     @IBOutlet weak var btnNextMonth: ThemeButton!
-    @IBOutlet weak var tblVwForData: UITableView!
-    @IBOutlet weak var lblMonthYear: ThemeLabel!
     let date = Date().startOfDay
     var arrForNotAvailableDays: [Double] = []
     var arrForWorkingDays: [Double] = []
@@ -36,7 +35,10 @@ class WorkingScheduleVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-
+        self.btnPreviousMonth.setText(FontSymbol.back_arrow, for: .normal)
+        self.btnPreviousMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.btnNextMonth.setText(FontSymbol.next_arrow, for: .normal)
+        self.btnNextMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +61,14 @@ class WorkingScheduleVC: BaseVC {
         super.btnLeftTapped()
         self.popVC()
     }
+    @IBAction func btnPreviousTapped(_ sender: Any) {
+          let currentPage = self.vwCalendar.currentPage.previousMonth()
+          self.vwCalendar.setCurrentPage(currentPage, animated: true)
+      }
+      @IBAction func btnNextTapped(_ sender: Any) {
+          let currentPage = self.vwCalendar.currentPage.nextMonth()
+          self.vwCalendar.setCurrentPage(currentPage, animated: true)
+      }
     private func initialViewSetup() {
         self.arrForWorkingDays = []
         self.arrForNotAvailableDays = []
@@ -68,15 +78,7 @@ class WorkingScheduleVC: BaseVC {
         self.setupTableView(tableView: self.tblVwForData)
         self.setupCalendarView(calendar: self.vwCalendar)
     }
-    @IBAction func btnPreviousTapped(_ sender: Any) {
-           let currentPage = self.vwCalendar.currentPage.previousMonth()
-           self.vwCalendar.setCurrentPage(currentPage, animated: true)
-    }
-
-    @IBAction func btnNextTapped(_ sender: Any) {
-           let currentPage = self.vwCalendar.currentPage.nextMonth()
-           self.vwCalendar.setCurrentPage(currentPage, animated: true)
-    }
+   
 
 }
 
@@ -117,7 +119,6 @@ extension WorkingScheduleVC: UITableViewDelegate,UITableViewDataSource, UIScroll
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: WorkingScheduleTblSection.name) as? WorkingScheduleTblSection {
             view.lblTitle.textColor = UIColor.init(hex: "#33B199")
-
             view.lblTitle.setText(arrForWorkingDays.count.toString() + " " + "WORKING_DAYS".localized())
             return view
         }
@@ -132,17 +133,22 @@ extension WorkingScheduleVC: UITableViewDelegate,UITableViewDataSource, UIScroll
 
 
 extension WorkingScheduleVC {
-    func wsGetWorkingSchedule(date:String = "") {
+    func wsGetWorkingSchedule(date:String = Date().millisecondsSince1970.toString()) {
         self.arrForWorkingDays.removeAll()
         self.arrForNotAvailableDays.removeAll()
         WorkingScheduleWebService.getWorkignSchedule(params: WorkingScheduleWebService.RequestSchedule.init(date: date)) { (response) in
             for data in response.workingList {
-                if data.status.toBool {
-                    self.arrForWorkingDays.append(data.date.toDouble)
-                } else {
-                    self.arrForNotAvailableDays.append(data.date.toDouble)
+                if data.isWorking.toBool {
+                    self.arrForWorkingDays.append(data.date.toDouble - Double((TimeZone.current.secondsFromGMT() * 1000)))
+
                 }
+                if data.isAbsent.toBool{
+                    self.arrForNotAvailableDays.append(data.date.toDouble - Double((TimeZone.current.secondsFromGMT() * 1000)))
+                }
+
             }
+            print(self.arrForWorkingDays)
+            print(self.arrForNotAvailableDays)
             self.vwCalendar.reloadData()
             self.tblVwForData.reloadData()
         }

@@ -38,10 +38,9 @@ extension MyBookingExpandTblCell :  UITableViewDelegate,UITableViewDataSource {
        let data = arrForData[indexPath.section].bookingMassages[indexPath.row]
        let cell = tableView.dequeueReusableCell(withIdentifier: MassageDetailTblCell.name, for: indexPath) as?  MassageDetailTblCell
         cell?.layoutIfNeeded()
-        
-        cell?.setData(data: MassageCellDetail.init(data: data))
+        cell?.setData(data: MassageCellDetail.init(title: data.name, subTitle: data.time + "min"))
         cell?.layoutIfNeeded()
-        return cell!
+        return cell!        
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

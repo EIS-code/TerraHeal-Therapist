@@ -47,6 +47,7 @@ class ExchangeOfferDialog: ThemeBottomDialogView {
         vwForSelectedTime.setRound(withBorderColor: UIColor.themePrimary, andCornerRadious: 1.0, borderWidth: 1.0)
         self.setupCalendarView(calendar: self.vwCalendar)
         self.setupSearchbar(searchBar: txtSearchBar)
+        self.wsGetTherapist()
     }
 
     override func initialSetup() {
@@ -98,23 +99,19 @@ extension ExchangeOfferDialog : UITextFieldDelegate {
     }
 
     func searchData(for text: String) {
-       /* if text.isEmpty {
-            self.arrForFilteredData.removeAll()
-            for data in self.arrForForOriginalData {
-                    self.arrForFilteredData.append(data)
-            }
-        } else {
-            self.arrForFilteredData.removeAll()
-            for data in self.arrForForOriginalData {
-                if data.name.lowercased().hasPrefix(text.lowercased()) {
-                    self.arrForFilteredData.append(data)
-                }
-            }
-        }
-        self.reloadTableDataToFitHeight(tableView: tableView)*/
+        self.wsGetTherapist()
     }
 
     @IBAction func searching(_ sender: UITextField) {
         searchData(for: sender.text ?? "")
+    }
+    func wsGetTherapist() {
+        Loader.showLoading()
+        ExchangeWithOtherWebService.requestToGetTherapistList(params: ExchangeWithOtherWebService.RequestToTherapistList.init(name: txtSearchBar.text!)) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+
+            }
+        }
     }
 }

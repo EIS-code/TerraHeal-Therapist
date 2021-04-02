@@ -32,13 +32,13 @@ class LanguageFluencyDialog: ThemeBottomDialogView {
     @IBOutlet weak var txtSearchBar: ThemeTextField!
 
     var onBtnDoneTapped: ((_ Language:LanguageDetail) -> Void)? = nil
-    var selectedLanguage: LanguageDetail = LanguageDetail.init()
+    var selectedLanguage: LanguageDetail = LanguageDetail.init(language: LanguageWebService.LanguageData.init(fromDictionary: [:]))
     var arrForOrignalData: [LanguageFluent] = [LanguageFluent.Basic,LanguageFluent.Good,LanguageFluent.Fluent]
 
     var arrForData: [RadioSelectionTblCellDetail] = [
-        RadioSelectionTblCellDetail.init(id: "0", title: LanguageFluent.Basic.name()),
-        RadioSelectionTblCellDetail.init(id: "1", title: LanguageFluent.Good.name()),
-        RadioSelectionTblCellDetail.init(id: "2", title: LanguageFluent.Fluent.name())]
+        RadioSelectionTblCellDetail.init(id: "1", title: LanguageFluent.Basic.name()),
+        RadioSelectionTblCellDetail.init(id: "2", title: LanguageFluent.Good.name()),
+        RadioSelectionTblCellDetail.init(id: "3", title: LanguageFluent.Fluent.name())]
 
     @IBOutlet weak var vwSelectedLanguage: UIView!
     @IBOutlet weak var lblLanguageName: ThemeLabel!
@@ -66,7 +66,6 @@ class LanguageFluencyDialog: ThemeBottomDialogView {
         }
         self.setupTableView(tableView: self.tableView)
         self.vwSelectedLanguage.backgroundColor = .themeWhite
-        self.lblLanguageFlag.setText(self.selectedLanguage.image)
         self.lblLanguageName.setText(self.selectedLanguage.name)
     }
 

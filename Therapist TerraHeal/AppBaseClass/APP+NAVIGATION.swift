@@ -66,6 +66,7 @@ extension AppDelegate {
                     self.loadMainVC(navigaionVC)
                 }
             }
+            //self.loadMainVC(navigaionVC)
         } else {
             self.loadLoginVC()
         }

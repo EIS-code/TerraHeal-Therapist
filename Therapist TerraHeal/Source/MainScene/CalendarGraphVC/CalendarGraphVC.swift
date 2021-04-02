@@ -15,7 +15,7 @@ class CalendarGraphVC: BaseVC {
     var bookingVC: MyBookingVC? = nil
     var arrForCalenderEvents:[DefaultEvent] = []
     var currentSelectedData: OptionsSelectedData! = OptionsSelectedData.init(viewType: .defaultView, date:Date(), numOfDays: 7, scrollType: .pageScroll, firstDayOfWeek: .Monday, hourGridDivision: .noneDiv, scrollableRange: (nil,nil) )
-
+    var dateOfMonth: String = Date().startOfMonth().millisecondsSince1970.toString()
     @IBOutlet weak var scrView: UIScrollView!
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -35,11 +35,11 @@ class CalendarGraphVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.wsGetCalendarBooking()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.wsGetTodaysBooking()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -127,7 +127,6 @@ extension CalendarGraphVC: JZBaseViewDelegate {
         updateNaviBarTitle()
     }
     func eventClicked(_ event: JZBaseEvent) {
-        print((event as! DefaultEvent).title)
         self.viewBookingSelected(date: event.startDate.millisecondsSince1970.toString())
     }
 
@@ -138,16 +137,18 @@ extension CalendarGraphVC: JZBaseViewDelegate {
 // For example only
 extension CalendarGraphVC {
 
-    func wsGetTodaysBooking() {
-        CalenderWebService.callCalenderEvents(params: CalenderWebService.RequestGetCalender.init(), completionHandler: { (response) in
+    func wsGetCalendarBooking() {
+        CalenderWebService.callCalenderEvents(params: CalenderWebService.RequestGetCalender.init(date: self.dateOfMonth), completionHandler: { (response) in
             if ResponseModel.isSuccess(response: response) {
                 self.arrForCalenderEvents.removeAll()
                 for i in 0..<response.bookingList.count {
                     let data = response.bookingList[i]
                     let newStartDate = Date.init(milliseconds: data.massageDate.toDouble)
-                    self.arrForCalenderEvents.append(DefaultEvent.init(id: data.bookingInfoId, title: data.bookingInfoId, startDate: newStartDate, endDate: newStartDate.add(component: .minute, value: data.time.toInt)))
+                    if newStartDate.millisecondsSince1970 > 0 {
+                        self.arrForCalenderEvents.append(DefaultEvent.init(id: data.bookingInfoId, title: data.bookingInfoId, startDate: newStartDate, endDate: newStartDate.add(component: .minute, value: data.time.toInt)))
+                    }
                 }
-                if let selectedDate = self.arrForCalenderEvents.first?.startDate {
+                if let selectedDate = self.arrForCalenderEvents.last?.startDate {
                     self.currentSelectedData.date = selectedDate
                 }
                 self.setupCalendarView()
@@ -160,10 +161,17 @@ extension CalendarGraphVC {
     }
 
     private func updateNaviBarTitle() {
+        let dateForMonth = calendarWeekView.initDate.add(component: .day, value: calendarWeekView.numOfDays)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM YYYY"
-        let month = dateFormatter.string(from: calendarWeekView.initDate.add(component: .day, value: calendarWeekView.numOfDays))
+        let month = dateFormatter.string(from:dateForMonth )
         self.btnMonth.setText(month)
+        let newDateOFMonth = dateForMonth.startOfMonth().millisecondsSince1970.toString()
+        if newDateOFMonth != self.dateOfMonth {
+            self.dateOfMonth = newDateOFMonth
+            self.wsGetCalendarBooking()
+        }
+
 
     }
 }

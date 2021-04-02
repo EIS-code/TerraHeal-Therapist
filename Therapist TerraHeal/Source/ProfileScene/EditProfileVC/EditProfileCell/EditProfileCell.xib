@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +33,7 @@
                                 <rect key="frame" x="12" y="21" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2S4-qJ-ebh" secondAttribute="height" multiplier="1:1" id="iUk-LX-YrO"/>
-                                    <constraint firstAttribute="height" constant="30" id="kNL-st-dQH" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="kNL-st-dQH" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                                 <real key="value" value="30"/>
@@ -68,7 +68,7 @@
                                     <constraint firstAttribute="width" secondItem="p2P-jw-pMP" secondAttribute="height" multiplier="1:1" id="gm0-U7-wla"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cr6-m1-qG1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cr6-m1-qG1">
                                 <rect key="frame" x="243" y="5" width="40" height="30"/>
                                 <state key="normal" title="Verify">
                                     <color key="titleColor" name="theme_primary"/>
@@ -87,13 +87,6 @@
                         </subviews>
                         <color key="backgroundColor" name="theme_background"/>
                         <constraints>
-                            <constraint firstItem="2S4-qJ-ebh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="582-VR-E0n" secondAttribute="top" constant="16" id="0PL-h9-QxC" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </constraint>
                             <constraint firstItem="2S4-qJ-ebh" firstAttribute="leading" secondItem="582-VR-E0n" secondAttribute="leading" constant="12" id="1t2-Fl-FDO" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
@@ -172,6 +165,7 @@
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="lmf-Xn-7Ot"/>
             <color key="backgroundColor" name="theme_background"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="582-VR-E0n" secondAttribute="bottom" id="5e7-Y5-4TN"/>
@@ -179,7 +173,6 @@
                 <constraint firstItem="582-VR-E0n" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Rsv-Xd-3ua"/>
                 <constraint firstAttribute="leading" secondItem="582-VR-E0n" secondAttribute="leading" id="rpl-CI-rSC"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="lmf-Xn-7Ot"/>
             <size key="customSize" width="215" height="108"/>
             <connections>
                 <outlet property="btnVerify" destination="Cr6-m1-qG1" id="ROv-M1-eNE"/>

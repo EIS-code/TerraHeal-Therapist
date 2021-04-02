@@ -7,20 +7,17 @@
 //
 
 import UIKit
+
 struct MassageCellDetail {
     var title: String = ""
     var subTitle:String = ""
-    init(data:MyBookingMassage) {
-        self.title = data.name
-        self.subTitle = data.time + " " + "min"
-    }
-    
-
     init(title:String?, subTitle:String?) {
         self.title = title ?? ""
         self.subTitle = subTitle ?? ""
     }
 }
+
+
 class MassageDetailTblCell: TableCell {
     
     @IBOutlet weak var lblName: ThemeLabel!

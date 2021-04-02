@@ -38,13 +38,19 @@ class AppWebApi: NSObject {
             return Domain + Routes.Client  + "/signin/forgot"
         }
 
+        static var SuggestionAndComplaints: String {
+            return Domain + Routes.Client  + "/complaintsSuggestion"
+        }
+        static var GetSessionTypes: String {
+            return Domain + Routes.Client  + "/getSessionTypes"
+        }
+
         static var UserProfile: String {
             return Domain + Routes.Client + "/profile/update"
         }
         
         static var UserLogout: String {
             return Domain + Routes.Client  + "/logout"
-            
         }
 
         static var GetUserDetail: String {
@@ -52,10 +58,16 @@ class AppWebApi: NSObject {
         }
 
         static var GetCountryList: String {
-            return Domain + Routes.Location + "/get/country"
+            return Domain + Routes.Client + "/getCountries"
         }
         static var GetCityList: String {
-            return  Domain + Routes.Location + "/get/city"
+            return  Domain + Routes.Client + "/getCities"
+        }
+        static var GetLanguageList: String {
+            return  Domain + Routes.Client + "/getLanguages"
+        }
+        static var GetClientList: String {
+            return  Domain + Routes.Client + "/searchClients"
         }
 
         //MARK:- Booking Api
@@ -119,8 +131,27 @@ class AppWebApi: NSObject {
             return Domain + Routes.Client  + "/booking/massage/end"
         }
 
-
-
+        static var QuitCollabration: String {
+            return Domain + Routes.Client  + "/my/collaboration/quit"
+        }
+        static var GetMissingDays: String {
+            return  Domain + Routes.Client  + "/my/missing/days"
+        }
+        static var Absent: String {
+            return  Domain + Routes.Client  + "/my/availability/absent/store"
+        }
+        static var ExchangeWithOther: String {
+            return  Domain + Routes.Client  + "/my/exchange"
+        }
+        static var GetTherapistList: String {
+            return  Domain + Routes.Client  + "/get"
+        }
+        static var GetServiceList: String {
+            return  Domain + Routes.Client  + "/service"
+        }
+        static var GetAvailability: String {
+            return  Domain + Routes.Client  + "/my/availability/get"
+        }
         //MARK: Exception
         static var CheckExeption: String {
             return Domain + Routes.Exception
@@ -155,7 +186,7 @@ extension AppWebApi {
         }
     }
 
-    class func getUserDetail(completionHandler: @escaping ((UserWebService.Response) -> Void)) {
+    class func  getUserDetail(completionHandler: @escaping ((UserWebService.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetUserDetail, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
             let response = UserWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
@@ -186,6 +217,8 @@ extension AppWebApi {
         }
     }
 
+    
+
     class func readNews(params:NewsWebService.RequestReadNews, completionHandler: @escaping ((NewsWebService.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.ReadNews, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = NewsWebService.Response.init(fromDictionary: dictionary)
@@ -214,7 +247,29 @@ extension AppWebApi {
             }
         }
     }
-    
+    static func updateMassages(params:UserWebService.RequestUpdateMassage, completionHandler: @escaping ((UserWebService.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: API_URL.UserProfile, methodName: AlamofireHelper.POST_METHOD, paramData: params.toDictionary()) { (data, dictionary, error) in
+            let response = UserWebService.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+
+    static func updateDocuments(params:UserWebService.RequestProfile = UserWebService.RequestProfile.init(),documents:[UploadDocumentDetail], completionHandler: @escaping ((UserWebService.Response) -> Void)) {
+        let arrForDocuments:[UploadDocumentDetail] = documents
+
+
+        if arrForDocuments.isEmpty {
+            AlamofireHelper().getDataFrom(urlString: API_URL.UserProfile, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+                let response = UserWebService.Response.init(fromDictionary: dictionary)
+                completionHandler(response)
+            }
+        } else {
+            AlamofireHelper().uploadDocumentToURL(urlString: API_URL.UserProfile, paramData: params.dictionary, documents: arrForDocuments) { (data, dictionary, error) in
+                let response = UserWebService.Response.init(fromDictionary: dictionary)
+                completionHandler(response)
+            }
+        }
+    }
     class func userLogout(params:UserWebService.RequestLogout = UserWebService.RequestLogout(), completionHandler: @escaping ((ResponseModel) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserLogout, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = ResponseModel.init(fromDictionary: dictionary)
@@ -222,21 +277,13 @@ extension AppWebApi {
         }
     }
 
-    class func countryList(params:Countries.RequestCountrylist = Countries.RequestCountrylist(), completionHandler: @escaping ((Countries.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: API_URL.GetCountryList, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
-            let response = Countries.Response.init(fromDictionary: dictionary)
-            completionHandler(response)
-        }
-    }
-
-    class func cityList(params:Cities.RequestCitylist, completionHandler: @escaping ((Cities.Response) -> Void)) {
+    
+    class func therapistList(params:CityWebService.RequestCityList, completionHandler: @escaping ((CityWebService.Response) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: API_URL.GetCityList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = Cities.Response.init(fromDictionary: dictionary)
+            let response = CityWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-
-   
 }
 
 

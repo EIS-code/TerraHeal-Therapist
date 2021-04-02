@@ -46,6 +46,7 @@
                     <rect key="frame" x="338" y="2" width="58" height="36.5"/>
                 </button>
             </subviews>
+            <color key="backgroundColor" name="theme_light_background"/>
             <constraints>
                 <constraint firstItem="1pL-Uf-qOc" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="8" id="BD5-NZ-T4U"/>
                 <constraint firstAttribute="trailing" secondItem="65z-cQ-Krc" secondAttribute="trailing" constant="8" id="IZP-uo-aLG"/>
@@ -73,6 +74,9 @@
         <image name="asset-filter-future" width="24" height="24.5"/>
         <namedColor name="theme_dark_text">
             <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_light_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

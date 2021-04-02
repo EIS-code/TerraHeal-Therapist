@@ -24,12 +24,7 @@ class MassageDetailVC: BaseVC {
        @IBOutlet weak var lblbSessionDetail: ThemeLabel!
        @IBOutlet weak var lblSessionValue: ThemeLabel!
 
-    var arrForData: [MyBookingTblCellDetail] = [
-        MyBookingTblCellDetail.init(data: BookingData.init(fromDictionary: [:])),
-        MyBookingTblCellDetail.init(data: BookingData.init(fromDictionary: [:])),
-        MyBookingTblCellDetail.init(data: BookingData.init(fromDictionary: [:])),
-        MyBookingTblCellDetail.init(data: BookingData.init(fromDictionary: [:])),
-        MyBookingTblCellDetail.init(data: BookingData.init(fromDictionary: [:]))]
+    var arrForData: [MyBookingTblCellDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

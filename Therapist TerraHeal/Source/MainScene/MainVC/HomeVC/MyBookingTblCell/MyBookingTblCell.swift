@@ -11,6 +11,7 @@ import UIKit
 struct MyBookingTblDetail{
     var id:String = ""
     var title: String = ""
+    var bookingType: BookingType = .AtHotelOrRoom
     var isSelected: Bool = false
 }
 
@@ -33,6 +34,7 @@ class MyBookingTblCell: TableCell {
 
     func setData(data: MyBookingTblDetail ) {
         self.lblName.setText(data.title)
+        self.ivForplace.image = ImageAsset.getImage(data.bookingType.getImage())
     }
 
     override func layoutSubviews() {

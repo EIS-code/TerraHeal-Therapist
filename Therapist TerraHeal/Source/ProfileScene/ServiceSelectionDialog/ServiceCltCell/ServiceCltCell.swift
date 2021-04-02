@@ -14,16 +14,16 @@ class ServiceCltCell: CollectionCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.ivUser?.setRound(withBorderColor: .clear, andCornerRadious: JDDeviceHelper.offseter(offset: 10), borderWidth: 1.0)
         self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.regular)
     }
-    func setData(data:ServiceDetail) {
-        
+
+    func setData(data:Service) {
         self.lblName.setText(data.name)
+        self.ivUser.downloadedFrom(link: data.image)
         self.btnFavourite.isSelected = data.isSelected
-        
     }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         self.ivUser?.layoutIfNeeded()

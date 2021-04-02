@@ -32,6 +32,10 @@ class RadioSelectionTblCell: TableCell {
         self.btnAction.isSelected =  data.isSelected
     }
 
+    func setData(data: SessionType ) {
+        self.lblName.text = data.type
+        self.btnAction.isSelected =  data.isSelected
+    }
     override func layoutSubviews() {
         super.layoutSubviews()
        // self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)

@@ -28,8 +28,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
-                    <rect key="frame" x="37.666666666666657" y="60" width="300" height="718"/>
+                    <rect key="frame" x="37.666666666666657" y="120" width="300" height="658"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <inset key="separatorInset" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkR-sL-uIL" userLabel="btnSubFilter" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="309" y="602" width="36" height="36"/>
@@ -118,7 +119,13 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="nkR-sL-uIL" firstAttribute="centerX" secondItem="e84-Fg-VKG" secondAttribute="centerX" id="VtT-s2-kXz"/>
-                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="16" id="jpH-7U-tSg"/>
+                <constraint firstItem="aVT-f3-Mwd" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="76" id="jpH-7U-tSg" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                            <real key="value" value="76"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </constraint>
                 <constraint firstItem="mQB-Qa-XCL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="o9v-Gb-F3k"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="e84-Fg-VKG" secondAttribute="trailing" constant="24" id="oEr-Po-GqS"/>
                 <constraint firstAttribute="trailing" secondItem="mQB-Qa-XCL" secondAttribute="trailing" id="qFm-66-8Se"/>

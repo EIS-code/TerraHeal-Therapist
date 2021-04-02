@@ -49,8 +49,7 @@ class AlamofireHelper: NSObject
         } else {
             headers["api-key"] = PreferenceHelper.shared.getSessionToken()
         }
-        headers["api-key"] = "therapist "
-
+        headers["api-key"] = "therapist"
         self.dataBlock = block
         if !Connectivity.isConnectedToInternet {
             Loader.hideLoading()
@@ -125,7 +124,7 @@ class AlamofireHelper: NSObject
 
     func uploadDocumentToURL(urlString: String ,paramData : [String:Any] ,documents :[UploadDocumentDetail], block:@escaping APIManagerCompletion) {
         self.dataBlock = block
-        let headers: HTTPHeaders
+        var headers: HTTPHeaders
         if PreferenceHelper.shared.getSessionToken().isEmpty() {
             headers = ["Content-type": "multipart/form-data",
                        "Content-Disposition" : "form-data"]
@@ -134,12 +133,21 @@ class AlamofireHelper: NSObject
                        "Content-Disposition" : "form-data",
                        "api-key": PreferenceHelper.shared.getSessionToken()]
         }
+        headers["api-key"] = "therapist"
         AF.upload(multipartFormData: { (multipartFormData) in
             for document in documents {
                 multipartFormData.append(document.data!, withName: document.paramName, fileName: document.name, mimeType: "*/*")
             }
             for (key, value) in paramData {
-                multipartFormData.append((value as! String).data(using: String.Encoding.utf8)!, withName: key)
+                if let arrValue = value as? [String] {
+                    for subValue in arrValue  {
+                        multipartFormData.append((subValue as! String).data(using: String.Encoding.utf8)!, withName: key)
+                    }
+
+                } else {
+                    multipartFormData.append((value as! String).data(using: String.Encoding.utf8)!, withName: key)
+                }
+
             }
         }, to: urlString, method: .post, headers: headers).response { (response) in
             switch(response.result) {

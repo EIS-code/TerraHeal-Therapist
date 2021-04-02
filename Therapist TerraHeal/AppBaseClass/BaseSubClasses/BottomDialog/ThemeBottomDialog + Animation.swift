@@ -16,13 +16,15 @@ extension ThemeBottomDialogView {
         self.isAnimated = animated
         self.backgroundView.alpha = 0
         self.frame = UIScreen.main.bounds
-        
+
         if let topController = Common.appDelegate.getCurrentViewController() {
             topController.view.endEditing(true)
-           // Common.appDelegate.window?.addSubview(self)
             topController.view.addSubview(self)
+            //Common.appDelegate.window?.addSubview(self)
+        } else {
+            Common.appDelegate.window?.addSubview(self)
         }
-        
+
         if animated {
             self.isUserInteractionEnabled = false
             self.dialogView.alpha = 0.1
@@ -39,7 +41,7 @@ extension ThemeBottomDialogView {
         else {
             self.backgroundView.alpha = 0.66
         }
-        
+
     }
     
     func dismiss(){
