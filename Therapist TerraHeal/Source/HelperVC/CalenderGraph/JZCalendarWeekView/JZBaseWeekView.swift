@@ -720,7 +720,8 @@ extension JZBaseWeekView: WeekViewFlowLayoutDelegate {
             let event = isAllDaySupported ? notAllDayEventsBySection[date]![indexPath.item] : events[indexPath.item]
             return event.intraStartDate
         } else {
-            fatalError("Cannot get events")
+            //fatalError("Cannot get events")
+            return date
         }
     }
 
@@ -731,7 +732,8 @@ extension JZBaseWeekView: WeekViewFlowLayoutDelegate {
             let event = isAllDaySupported ? notAllDayEventsBySection[date]![indexPath.item] : events[indexPath.item]
             return event.intraEndDate
         } else {
-            fatalError("Cannot get events")
+            //fatalError("Cannot get events")
+            return date
         }
     }
 

@@ -135,7 +135,9 @@ class AlamofireHelper: NSObject
         }
         headers["api-key"] = "therapist"
         AF.upload(multipartFormData: { (multipartFormData) in
+            print("Request Parameters :-\n")
             for document in documents {
+                print("\(document.paramName) - \(self.humanReadableByteCount(bytes: document.data!.count))")
                 multipartFormData.append(document.data!, withName: document.paramName, fileName: document.name, mimeType: "*/*")
             }
             for (key, value) in paramData {
@@ -155,7 +157,6 @@ class AlamofireHelper: NSObject
                 if value != nil {
                     print("Success")
                     print("Request URL :- \(urlString)\n")
-                    print("Request Parameters :- \(paramData)\n")
                     print("Request Headers :- \(String(describing: response.request?.allHTTPHeaderFields))\n")
                     let dictionary = try! value!.toDictionary()
                     print("Request Response :- \(dictionary)")
@@ -172,6 +173,19 @@ class AlamofireHelper: NSObject
                 self.dataBlock(nil,[:],error.localizedDescription)
             }
             print(response.data.dictionary)
+        }
+    }
+
+    func humanReadableByteCount(bytes: Int) -> String {
+        if (bytes < 1000) { return "\(bytes) B" }
+        let exp = Int(log2(Double(bytes)) / log2(1000.0))
+        let unit = ["KB", "MB", "GB", "TB", "PB", "EB"][exp - 1]
+        let number = Double(bytes) / pow(1000, Double(exp))
+        if exp <= 1 || number >= 100 {
+            return String(format: "%.0f %@", number, unit)
+        } else {
+            return String(format: "%.1f %@", number, unit)
+                .replacingOccurrences(of: ".0", with: "")
         }
     }
 }

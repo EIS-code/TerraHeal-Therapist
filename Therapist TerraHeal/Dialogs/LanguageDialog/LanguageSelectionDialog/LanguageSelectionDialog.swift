@@ -51,6 +51,7 @@ struct LanguageDetail {
     var isSelected: Bool = false
     init(language:LanguageWebService.LanguageData) {
         self.name = language.name
+        self.id = language.id
 
     }
 }

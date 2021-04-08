@@ -22,6 +22,15 @@ enum LanguageFluent: String {
         }
     }
 
+    func paramID()-> String {
+        switch self {
+        // Use Internationalization, as appropriate.
+        case .Basic: return "1"
+        case .Good: return "2"
+        case .Fluent: return "3"
+        default: return "LANGUAGE_NO_PREFERENCE".localized()
+        }
+    }
 }
 
 class LanguageFluencyDialog: ThemeBottomDialogView {
@@ -42,7 +51,6 @@ class LanguageFluencyDialog: ThemeBottomDialogView {
 
     @IBOutlet weak var vwSelectedLanguage: UIView!
     @IBOutlet weak var lblLanguageName: ThemeLabel!
-    @IBOutlet weak var lblLanguageFlag: ThemeLabel!
     var languageShadow = CellShadowProperty.init()
     override func awakeFromNib() {
         super.awakeFromNib()

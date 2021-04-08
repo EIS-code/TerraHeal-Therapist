@@ -18,9 +18,11 @@ public extension Date {
         self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
     }
 
-    func startOfMonth() -> Date {
+    func startOfMonth(utc:Bool = true) -> Date {
+        if utc {
+            return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!.addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT()))
+        }
         return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
-
     }
 
   

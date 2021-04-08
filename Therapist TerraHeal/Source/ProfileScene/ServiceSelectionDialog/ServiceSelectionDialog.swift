@@ -150,24 +150,14 @@ extension ServiceSelectionDialog:  UICollectionViewDelegate, UICollectionViewDat
 extension ServiceSelectionDialog {
 
     func wsGetServices() {
-        ServiceWebService.getAllServices { (response) in
-            if ResponseModel.isSuccess(response: response) {
-                for i in 0..<response.serviceList.count {
-                    var data = response.serviceList[i]
-                    if appSingleton.user.selectedMassages.contains(where: { (massages) -> Bool in
-                        massages.id == data.id
-                    }) {
-                        data.isSelected = true
-                    } else {
-                        data.isSelected = false
-                    }
-                    self.arrForData.append(data)
-                    self.arrForMassage.append(data)
-                    self.arrForTherapies.append(data)
-                }
-            }
-            self.collectionVw.reloadData()
+        for data in appSingleton.user.selectedServices.massages {
+            self.arrForMassage.append(Service.init(massage: data))
         }
+        for data in appSingleton.user.selectedServices.therapies {
+            self.arrForTherapies.append(Service.init(therapy:data))
+        }
+        self.arrForData = self.arrForMassage
+        self.collectionVw.reloadData()
     }
 
     func wsUpdateMassages() {

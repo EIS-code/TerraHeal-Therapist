@@ -22,10 +22,8 @@ class DocumentTblCell: TableCell {
 
     }
 
-    func setData(data: UploadDocumentDetail ) {
-        self.lblName.text = data.name
-        //self.btnDelete.isHidden = !data.isCompleted
-       
+    func setData(data: DocumentType ) {
+        self.lblName.text = data.name()
     }
 
     override func layoutSubviews() {

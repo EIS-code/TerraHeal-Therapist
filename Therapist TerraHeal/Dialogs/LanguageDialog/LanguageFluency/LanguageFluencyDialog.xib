@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,7 +23,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ZW-DU-hOd">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
                     <rect key="frame" x="0.0" y="445.5" width="414" height="450.5"/>
@@ -39,7 +40,7 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="158.5" y="25" width="57" height="20.5"/>
+                                    <rect key="frame" x="159" y="25" width="56.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
@@ -47,12 +48,6 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4px-AA-qAg" userLabel="vwForBackground">
                                     <rect key="frame" x="0.0" y="65.5" width="374" height="97"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdi-T7-FJB" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                            <rect key="frame" x="10" y="18.5" width="159.5" height="60"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpU-23-twM" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <rect key="frame" x="179.5" y="10" width="15.5" height="77"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -71,9 +66,6 @@
                                     <constraints>
                                         <constraint firstItem="rmu-8K-NRf" firstAttribute="top" secondItem="4px-AA-qAg" secondAttribute="top" constant="10" id="3Me-zQ-4bO"/>
                                         <constraint firstItem="LpU-23-twM" firstAttribute="centerY" secondItem="4px-AA-qAg" secondAttribute="centerY" id="LLD-6L-TOw"/>
-                                        <constraint firstItem="cdi-T7-FJB" firstAttribute="leading" secondItem="4px-AA-qAg" secondAttribute="leading" constant="10" id="OWY-N0-ABT"/>
-                                        <constraint firstItem="cdi-T7-FJB" firstAttribute="centerY" secondItem="4px-AA-qAg" secondAttribute="centerY" id="bgG-HF-rWd"/>
-                                        <constraint firstItem="LpU-23-twM" firstAttribute="leading" secondItem="cdi-T7-FJB" secondAttribute="trailing" constant="10" id="bwf-nz-5of"/>
                                         <constraint firstAttribute="trailing" secondItem="rmu-8K-NRf" secondAttribute="trailing" constant="10" id="d5W-Bz-MvC"/>
                                         <constraint firstItem="LpU-23-twM" firstAttribute="centerX" secondItem="4px-AA-qAg" secondAttribute="centerX" id="dIg-rT-qMl"/>
                                         <constraint firstItem="LpU-23-twM" firstAttribute="top" secondItem="4px-AA-qAg" secondAttribute="top" constant="10" id="vHy-gr-8VB"/>
@@ -86,7 +78,7 @@
                                         <constraint firstAttribute="height" constant="128" id="YYE-9t-jcw"/>
                                     </constraints>
                                 </tableView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="83.5" y="330.5" width="207" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
@@ -97,7 +89,7 @@
                                         <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="c2U-cc-MxJ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="DialogCancelButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="DialogCancelButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="164" y="390.5" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
@@ -120,6 +112,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="W3s-UH-gbE" firstAttribute="width" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.5" id="1YE-Sg-fci"/>
@@ -131,14 +124,12 @@
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="pYV-Pm-HG9"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="BnY-1h-4oF"/>
                 <outlet property="btnCancel" destination="BVl-el-UJJ" id="mZE-lE-kWH"/>
                 <outlet property="btnDone" destination="W3s-UH-gbE" id="Cp0-qH-ylB"/>
                 <outlet property="dialogView" destination="Yaj-p7-IIT" id="I5L-DG-Qv7"/>
                 <outlet property="hTblVw" destination="YYE-9t-jcw" id="TWI-WA-p54"/>
-                <outlet property="lblLanguageFlag" destination="cdi-T7-FJB" id="Hna-gH-zA6"/>
                 <outlet property="lblLanguageName" destination="LpU-23-twM" id="MOq-KV-zVb"/>
                 <outlet property="lblTitle" destination="eho-4J-xGz" id="W5C-eo-w8B"/>
                 <outlet property="tableView" destination="tfg-GV-f0f" id="Ira-PT-Aex"/>
@@ -160,5 +151,8 @@
         <namedColor name="theme_primary_light_background">
             <color red="0.94509803921568625" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -61,7 +61,7 @@ extension CustomFilterDialog: UITableViewDelegate, UITableViewDataSource {
         }
         self.arrForData[indexPath.section].sessions[indexPath.row].isSelected = true
         self.selectedValue = self.arrForData[indexPath.section].sessions[indexPath.row].id
-        self.selectedFilterValues.massage_date = self.selectedMilli.toString()
+        //self.selectedFilterValues.massage_date = self.selectedMilli.toString()
         tableView.reloadData()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

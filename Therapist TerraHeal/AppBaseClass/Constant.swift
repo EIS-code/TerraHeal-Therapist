@@ -9,10 +9,8 @@ import UIKit
 class Constant: NSObject {
     static let typeIOS: String = "ios"
     static let AppName: String = "Terra Heals"
-
     static let True: String = "1"
     static let False: String = "0"
-
 }
 
 class MessageCode: NSObject {
@@ -134,6 +132,68 @@ enum BookingType: String {
     }
 }
 
+
+enum DocumentType: String {
+    case AddressProof  = "1"
+    case IdentityProofFront  = "2"
+    case IdentityProofBack = "3"
+    case Insurance = "4"
+    case FreelancerFinancialDocument = "5"
+    case Certificates = "6"
+    case CV = "7"
+    case ReferenceLatter = "8"
+    case PersonalExperience = "9"
+    case Others = "10"
+
+    func name() -> String {
+        switch self {
+        case .AddressProof:
+            return "DOC_TYPE_ADDRESS_PROOF".localized()
+        case .IdentityProofFront:
+            return "DOC_TYPE_IDENTITY_PROOF_FRONT".localized()
+        case .IdentityProofBack:
+            return "DOC_TYPE_IDENTITY_PROOF_BACK".localized()
+        case .Insurance:
+            return "DOC_TYPE_INSURANCE".localized()
+        case .FreelancerFinancialDocument:
+            return "DOC_TYPE_FREELANCER_FINANCIAL_DOCUMENT".localized()
+        case .Certificates:
+            return "DOC_TYPE_CERTIFICATES".localized()
+        case .CV:
+            return "DOC_TYPE_CV".localized()
+        case .ReferenceLatter:
+            return "DOC_TYPE_REFERENCE_LATTER".localized()
+        case .PersonalExperience:
+            return "DOC_TYPE_PERSONAL_EXPERIENCE".localized()
+        case .Others:
+            return "DOC_TYPE_OTHERS".localized()
+        }
+    }
+    func paramName() -> String {
+        switch self {
+        case .AddressProof:
+            return "DOC_TYPE_ADDRESS_PROOF".localized()
+        case .IdentityProofFront:
+            return "document_id_passport_front"
+        case .IdentityProofBack:
+            return "document_id_passport_back"
+        case .Insurance:
+            return "document_insurance"
+        case .FreelancerFinancialDocument:
+            return "document_freelancer_financial_document"
+        case .Certificates:
+            return "document_certificates[]"
+        case .CV:
+            return "document_cv".localized()
+        case .ReferenceLatter:
+            return "document_reference_letter"
+        case .PersonalExperience:
+            return "document_personal_experience[]"
+        case .Others:
+            return "document_others[]"
+        }
+    }
+}
 
 struct DateFormat {
 

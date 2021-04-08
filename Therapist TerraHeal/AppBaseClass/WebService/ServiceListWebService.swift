@@ -44,7 +44,22 @@ class Service {
     var shopId: String = ""
     var isSelected: Bool = false
 
-
+    init(massage:Massage) {
+        self.descriptionField = "massage.massageName"
+        self.icon = massage.image
+        self.id = massage.id
+        self.image = massage.image
+        self.name = massage.massageName
+        self.shopId = massage.massageId
+    }
+    init(therapy:Therapy) {
+        self.descriptionField = "massage.massageName"
+        self.icon = therapy.image
+        self.id = therapy.id
+        self.image = therapy.image
+        self.name = therapy.therapyName
+        self.shopId = therapy.therapyId
+    }
     init(fromDictionary dictionary: [String:Any]){
         self.descriptionField = (dictionary["description"] as? String) ?? ""
         self.icon = (dictionary["icon"] as? String) ?? ""

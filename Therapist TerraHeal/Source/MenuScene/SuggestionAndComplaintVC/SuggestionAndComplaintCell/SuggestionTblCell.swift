@@ -9,11 +9,12 @@
 import UIKit
 
 struct SuggestionTblCellDetail {
-    var name:String = "Rita"
-    var designation:String = "Therapist"
+    var name:String = ""
+    var photo:String = ""
+    var designation:String = ""
     var date: Double = Date().millisecondsSince1970
-    var type: String = "suggestion"
-    var details: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    var type: String = ""
+    var details: String = ""
 }
 
 class SuggestionTblCell: TableCell {
@@ -41,6 +42,7 @@ class SuggestionTblCell: TableCell {
         self.lblDesignation?.setText(data.designation)
         self.lblDetail?.setText(data.details)
         self.lblDate?.setText(Date.milliSecToDate(milliseconds: data.date, format: DateFormat.DD_MM_YYYY))
+        self.ivCell.downloadedFrom(link: data.photo)
         self.lblType?.setText(data.type)
     }
 

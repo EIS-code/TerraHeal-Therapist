@@ -66,7 +66,7 @@ class SuggestionAndComplaintVC: BaseVC {
 
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
-         self.popVC()
+        self.popVC()
     }
 
     @IBAction func btnSubmitTapped(_ sender: Any) {
@@ -160,7 +160,7 @@ extension SuggestionAndComplaintVC: UITableViewDelegate,UITableViewDataSource, U
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(SuggestionTblCell.nib()
-            , forCellReuseIdentifier: SuggestionTblCell.name)
+                           , forCellReuseIdentifier: SuggestionTblCell.name)
         tableView.tableFooterView = UIView()
     }
     
@@ -173,7 +173,7 @@ extension SuggestionAndComplaintVC: UITableViewDelegate,UITableViewDataSource, U
         cell?.setData(data: arrForData[indexPath.row])
         return cell!
     }
- 
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -188,11 +188,10 @@ extension SuggestionAndComplaintVC {
             self.arrForData.removeAll()
             if ResponseModel.isSuccess(response: response) {
                 for item in response.suggestionAndComplaintList {
-                    let isComplaint: Bool = item.complaint.isNotEmpty()
-                    if isComplaint {
-                        self.arrForData.append(SuggestionTblCellDetail.init(name: item.complaint, designation: item.complaint, date: Date.millisecondsOfDay(day: 1), type:  "complaint", details: item.complaint))
+                    if item.receptionistId.isEmpty() {
+                        self.arrForData.append(SuggestionTblCellDetail.init(name: item.therapistName, photo: item.therapistPhoto, designation: "therapist", date: item.createdTime.toDouble, type:  item.type, details: item.text))
                     } else {
-                        self.arrForData.append(SuggestionTblCellDetail.init(name: item.suggestion, designation: item.suggestion, date: Date.millisecondsOfDay(day: 1), type:  "suggestion", details: item.suggestion))
+                        self.arrForData.append(SuggestionTblCellDetail.init(name: item.receptionisName,photo: item.receptionistPhoto, designation: "receptionist", date: item.createdTime.toDouble, type:  item.type, details: item.text))
                     }
 
                 }

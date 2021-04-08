@@ -159,7 +159,7 @@ extension BookingListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
 extension BookingListVC {
     func wsGetTodaysBooking(request: BookingWebSerive.RequestBookingList) {
         Loader.showLoading()
-        BookingWebSerive.todayBookingList { (response) in
+        BookingWebSerive.todayBookingList(params: BookingWebSerive.RequestBookingList.init(), completionHandler: { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()
@@ -168,8 +168,9 @@ extension BookingListVC {
                 }
                 self.tableView.reloadData()
             }
-        }
+        })
     }
+
     func wsGetFutureBooking(request: BookingWebSerive.RequestBookingList) {
         Loader.showLoading()
         BookingWebSerive.futureBookingList(params: request) { (response) in

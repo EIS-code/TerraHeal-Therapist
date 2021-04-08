@@ -15,6 +15,7 @@ extension WorkingScheduleVC: FSCalendarDataSource, FSCalendarDelegate, FSCalenda
     func setupCalendarView(calendar: FSCalendar) {
         calendar.delegate = self
         calendar.dataSource = self
+        //calendar.allowsSelection = false
         calendar.allowsMultipleSelection = false
         //calendar.appearance.todaySelectionColor = self.selectionColor
         calendar.appearance.todayColor = UIColor.themeSecondary
@@ -28,7 +29,7 @@ extension WorkingScheduleVC: FSCalendarDataSource, FSCalendarDelegate, FSCalenda
     }
 
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-
+        self.wsGetWorkingSchedule(date: calendar.currentPage.startOfMonth().millisecondsSince1970.toString())
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -48,10 +49,10 @@ extension WorkingScheduleVC: FSCalendarDataSource, FSCalendarDelegate, FSCalenda
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
         
-        if arrForWorkingDays.contains(date.millisecondsSince1970) {
+        if arrForWorkingDays.contains(date.addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT())).millisecondsSince1970) {
             return UIColor.init(hex: "#33B199")
         }
-        if arrForNotAvailableDays.contains(date.millisecondsSince1970) {
+        if arrForNotAvailableDays.contains(date.addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT())).millisecondsSince1970) {
             print(date.millisecondsSince1970)
             return UIColor.init(hex: "#FD3A58")
         }

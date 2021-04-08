@@ -109,7 +109,10 @@ class ManageExperienceVC: BaseVC {
             photoPickerAlert?.dismiss()
             guard let self = self else { return } ; print(self)
             self.btnSubmit.isEnabled = true
-            self.openCropper(image: image.image!)
+            var document: UploadDocumentDetail = image
+            document.paramName = "document_personal_experience[]"
+            self.wsUpdateProfile(documents: [document])
+            //self.openCropper(image: image.image!)
         }
     }
     
@@ -171,9 +174,9 @@ extension ManageExperienceVC: UIImageCropperProtocol {
     func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
 
         if arrForData.isEmpty {
-                self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Front Side", image: croppedImage, data: nil, isCompleted: true, paramName: "document_personal_experience"))
+                self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Front Side", image: croppedImage, data: nil, isCompleted: true, paramName: "document_certificates"))
         } else {
-            self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Back Side", image: croppedImage, data: nil, isCompleted: true, paramName: "document_personal_experience"))
+            self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Back Side", image: croppedImage, data: nil, isCompleted: true, paramName: "document_certificates"))
         }
         self.updateUI()
     }
@@ -186,9 +189,9 @@ extension ManageExperienceVC: UIImageCropperProtocol {
     }
 }
 extension ManageExperienceVC {
-    func wsUpdateProfile(request: UserWebService.RequestProfile) {
+    func wsUpdateProfile(documents: [UploadDocumentDetail]) {
         Loader.showLoading()
-        AppWebApi.updateDocuments(params: UserWebService.RequestProfile.init(), documents: self.arrForData) { (response) in
+        AppWebApi.updateDocuments(params: UserWebService.RequestProfile.init(), documents:documents) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 let user = response.data

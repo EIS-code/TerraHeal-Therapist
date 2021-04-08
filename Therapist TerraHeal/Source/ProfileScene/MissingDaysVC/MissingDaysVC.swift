@@ -100,13 +100,13 @@ extension MissingDaysVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrForWorkingDays.count
+        return arrForNotAvailableDays.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: WorkingScheduleTblCell.name, for: indexPath) as?  WorkingScheduleTblCell
-        cell?.lblDetails.setText(Date.init(milliseconds: arrForWorkingDays[indexPath.row]).convertDateFormate())
+        cell?.lblDetails.setText(Date.init(milliseconds: arrForNotAvailableDays[indexPath.row]).convertDateFormate())
         cell?.lblDetails.textColor = UIColor.notAvailableColor
         return cell!
         
@@ -119,7 +119,7 @@ extension MissingDaysVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: WorkingScheduleTblSection.name) as? WorkingScheduleTblSection {
             view.lblTitle.textColor = UIColor.notAvailableColor
-            view.lblTitle.setText(arrForWorkingDays.count.toString() + " " + "MISSING_DAYS".localized())
+            view.lblTitle.setText(arrForNotAvailableDays.count.toString() + " " + "MISSING_DAYS".localized())
             return view
         }
 
@@ -131,16 +131,18 @@ extension MissingDaysVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
 }
 
 extension MissingDaysVC {
-    func wsGetMissingDays(date:String = Date().millisecondsSince1970.toString()) {
+    func wsGetMissingDays(date:String = Date().startOfMonth().millisecondsSince1970.toString()) {
+        Loader.showLoading()
         self.arrForWorkingDays.removeAll()
         self.arrForNotAvailableDays.removeAll()
         MissingDayWebService.getMissingDays(params: MissingDayWebService.RequestSchedule.init(date: date)) { (response) in
+            Loader.hideLoading()
             for data in response.workingList {
                 if data.isWorking.toBool {
-                    self.arrForWorkingDays.append(data.date.toDouble - Double((TimeZone.current.secondsFromGMT() * 1000)))
+                    self.arrForWorkingDays.append(data.date.toDouble)
                 }
                 if data.isAbsent.toBool{
-                    self.arrForNotAvailableDays.append(data.date.toDouble - Double((TimeZone.current.secondsFromGMT() * 1000)))
+                    self.arrForNotAvailableDays.append(data.date.toDouble)
                 }
             }
             self.vwCalendar.reloadData()

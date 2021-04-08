@@ -194,6 +194,17 @@
 "MISSING_DAYS" = "missings days";
 "MY_NUMBER_OF_MASSAGES_TITLE" =  "my number of massages";
 "MY_MASSAGES_DETAIL_TITLE" = "booking details";
+
+"DOC_TYPE_ADDRESS_PROOF" = "Id / Passport";
+"DOC_TYPE_IDENTITY_PROOF_FRONT" = "Front";
+"DOC_TYPE_IDENTITY_PROOF_BACK" = "Back";
+"DOC_TYPE_INSURANCE" = "insurance";
+"DOC_TYPE_FREELANCER_FINANCIAL_DOCUMENT" = "freelancer financial document";
+"DOC_TYPE_CERTIFICATES" = "certificates";
+"DOC_TYPE_CV" = "cv";
+"DOC_TYPE_REFERENCE_LATTER" = "reference letter";
+"DOC_TYPE_PERSONAL_EXPERIENCE" = "personal experience";
+"DOC_TYPE_OTHERS" = "others";
 //MARK: My Availability Screen
 "MY_AVAILABILITY_TITLE" = "my availability";
 "MY_AVAILABILITY_BTN_SUBMIT" = "Proceed";

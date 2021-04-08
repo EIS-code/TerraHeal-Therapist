@@ -15,16 +15,14 @@ class MyDocumentsVC: BaseVC {
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!
-    @IBOutlet weak var lblDocumentId: ThemeLabel!
-    
-    var arrForData: [UploadDocumentDetail] = [
-    UploadDocumentDetail.init(id: "0", name: "id / passport"),
-    UploadDocumentDetail.init(id: "1", name: "insurance"),
-    UploadDocumentDetail.init(id: "2", name: "freelancer financial document"),
-    UploadDocumentDetail.init(id: "3", name: "certificates"),
-    UploadDocumentDetail.init(id: "4", name: "cv"),
-    UploadDocumentDetail.init(id: "5", name: "reference letter"),
-    UploadDocumentDetail.init(id: "6", name: "others")]
+
+    var arrForData: [DocumentType] = [.AddressProof,
+                                      .Insurance,
+                                      .FreelancerFinancialDocument,
+                                      .Certificates,
+                                      .CV,
+                                      .ReferenceLatter,
+                                      .Others]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -76,7 +74,6 @@ class MyDocumentsVC: BaseVC {
         self.lblEmptyTitle.text = "MY_DOCUMENT_EMPTY_TITLE".localized()
         self.lblEmptyMsg.text = "MY_DOCUMENT_EMPTY_MSG".localized()
         self.btnSubmit?.setTitle("MY_DOCUMENT_BTN_ADD_NEW".localized(), for: .normal)
-        self.lblDocumentId.setFont(name: FontName.Regular, size: FontSize.detail)
     }
     
     @IBAction func btnCancelTapped(_ sender: Any) {
@@ -168,7 +165,6 @@ extension MyDocumentsVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return arrForData.count
     }
     
@@ -185,7 +181,6 @@ extension MyDocumentsVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         Common.appDelegate.loadManageDocumentVC(navigaionVC: self.navigationController)
-        //self.openNewAddressDialog(index: indexPath.row)
     }
     
 }
@@ -193,12 +188,6 @@ extension MyDocumentsVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
 
 extension MyDocumentsVC: UIImageCropperProtocol {
     func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
-
-        if arrForData.isEmpty {
-                self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Front Side", image: croppedImage, data: nil, isCompleted: true))
-        } else {
-            self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Back Side", image: croppedImage, data: nil, isCompleted: true))
-        }
         self.updateUI()
     }
     

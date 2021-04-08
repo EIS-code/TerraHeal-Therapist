@@ -15,6 +15,7 @@ extension MissingDaysVC: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDel
     func setupCalendarView(calendar: FSCalendar) {
         calendar.delegate = self
         calendar.dataSource = self
+        calendar.allowsSelection = false
         calendar.allowsMultipleSelection = false
         //calendar.appearance.todaySelectionColor = self.selectionColor
         calendar.appearance.todayColor = UIColor.themeSecondary
@@ -31,7 +32,7 @@ extension MissingDaysVC: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDel
     }
 
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-
+        self.wsGetMissingDays(date: calendar.currentPage.startOfMonth().millisecondsSince1970.toString())
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -41,23 +42,16 @@ extension MissingDaysVC: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDel
             }
 
     }
-    /*func minimumDate(for calendar: FSCalendar) -> Date {
-        return minDate
-    }
-
-    func maximumDate(for calendar: FSCalendar) -> Date {
-        return maxDate
-    }*/
-    
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
         print("Date:- \(date.millisecondsSince1970)")
-        if arrForWorkingDays.contains(date.millisecondsSince1970) {
+        if arrForWorkingDays.contains(date.addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT())).millisecondsSince1970) {
             return UIColor.init(hex: "#33B199")
         }
-        if arrForNotAvailableDays.contains(date.millisecondsSince1970) {
+        if arrForNotAvailableDays.contains(date.addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT())).millisecondsSince1970) {
+            print(date.millisecondsSince1970)
             return UIColor.init(hex: "#FD3A58")
         }
-        return UIColor.init(hex: "#000000DE")
+        return UIColor.init(hex: "#0000005C")
     }
     func selectDate(date:Date) {
         self.vwCalendar.select(date)

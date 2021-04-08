@@ -101,12 +101,13 @@ extension UserWebService {
         var paidPercentage: String = ""
         var personalDescription: String = ""
         var profilePhoto: String = ""
-        var selectedMassages : [SelectedMassage]!
+        var selectedServices: SelectedServices!
         var shopId: String = ""
         var shortDescription: String = ""
         var socialSecurityNumber: String = ""
         var surname: String = ""
         var telNumber: String = ""
+        var languageSpokens : [SelectedLanguage] = []
 
         init(fromDictionary dictionary: [String:Any]){
             self.accountNumber = (dictionary["account_number"] as? String) ?? ""
@@ -147,18 +148,22 @@ extension UserWebService {
             self.paidPercentage = (dictionary["paid_percentage"] as? String) ?? ""
             self.personalDescription = (dictionary["personal_description"] as? String) ?? ""
             self.profilePhoto = (dictionary["profile_photo"] as? String) ?? ""
-            selectedMassages = [SelectedMassage]()
-            if let selectedMassagesArray = dictionary["selected_massages"] as? [[String:Any]]{
-                for dic in selectedMassagesArray{
-                    let value = SelectedMassage(fromDictionary: dic)
-                    selectedMassages.append(value)
-                }
+            selectedServices = SelectedServices.init(fromDictionary: [:])
+            if let selectedServicesData = dictionary["selected_services"] as? [String:Any]{
+                self.selectedServices = SelectedServices.init(fromDictionary: selectedServicesData)
             }
             self.shopId = (dictionary["shop_id"] as? String) ?? ""
             self.shortDescription = (dictionary["short_description"] as? String) ?? ""
             self.socialSecurityNumber = (dictionary["social_security_number"] as? String) ?? ""
             self.surname = (dictionary["surname"] as? String) ?? ""
             self.telNumber = (dictionary["tel_number"] as? String) ?? ""
+            languageSpokens = [SelectedLanguage]()
+            if let selectedLanguageArray = dictionary["language_spokens"] as? [[String:Any]]{
+                for dic in selectedLanguageArray{
+                    let value = SelectedLanguage(fromDictionary: dic)
+                    languageSpokens.append(value)
+                }
+            }
         }
 
 
@@ -168,29 +173,77 @@ extension UserWebService {
 }
 
 
-class SelectedTherapy: Codable {
+class SelectedLanguage: Codable{
 
     var id: String = ""
+    var languageId: String = ""
     var therapistId: String = ""
-    var therapyId: String = ""
+    var type: String = ""
+    var value: String = ""
 
     init(fromDictionary dictionary: [String:Any]){
         self.id = (dictionary["id"] as? String) ?? ""
+        self.languageId = (dictionary["language_id"] as? String) ?? ""
         self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
+        self.type = (dictionary["type"] as? String) ?? ""
+        self.value = (dictionary["value"] as? String) ?? ""
+    }
+}
+
+class SelectedServices: Codable{
+
+    var massages : [Massage]!
+    var therapies : [Therapy]!
+
+
+    init(fromDictionary dictionary: [String:Any]){
+        massages = [Massage]()
+        if let massagesArray = dictionary["massages"] as? [[String:Any]]{
+            for dic in massagesArray{
+                let value = Massage(fromDictionary: dic)
+                massages.append(value)
+            }
+        }
+        therapies = [Therapy]()
+        if let therapiesArray = dictionary["therapies"] as? [[String:Any]]{
+            for dic in therapiesArray{
+                let value = Therapy(fromDictionary: dic)
+                therapies.append(value)
+            }
+        }
+    }
+}
+
+class Therapy: Codable {
+
+    var id: String = ""
+    var image: String = ""
+    var therapyId: String = ""
+    var therapyName: String = ""
+
+
+    init(fromDictionary dictionary: [String:Any]){
+        self.id = (dictionary["id"] as? String) ?? ""
+        self.image = (dictionary["image"] as? String) ?? ""
         self.therapyId = (dictionary["therapy_id"] as? String) ?? ""
+        self.therapyName = (dictionary["therapy_name"] as? String) ?? ""
     }
 
 }
-class SelectedMassage: Codable{
+class Massage: Codable{
 
     var id: String = ""
+    var image: String = ""
     var massageId: String = ""
-    var therapistId: String = ""
+    var massageName: String = ""
+
 
     init(fromDictionary dictionary: [String:Any]){
         self.id = (dictionary["id"] as? String) ?? ""
+        self.image = (dictionary["image"] as? String) ?? ""
         self.massageId = (dictionary["massage_id"] as? String) ?? ""
-        self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
+        self.massageName = (dictionary["massage_name"] as? String) ?? ""
+
     }
 
 }
@@ -202,10 +255,14 @@ class Document: Codable {
     var therapistId: String = ""
     var type: String = ""
 
+
     init(fromDictionary dictionary: [String:Any]){
         self.fileName = (dictionary["file_name"] as? String) ?? ""
         self.id = (dictionary["id"] as? String) ?? ""
         self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
         self.type = (dictionary["type"] as? String) ?? ""
+    }
+    func getDocumentType() -> DocumentType {
+        return DocumentType.init(rawValue: self.type) ?? .AddressProof
     }
 }

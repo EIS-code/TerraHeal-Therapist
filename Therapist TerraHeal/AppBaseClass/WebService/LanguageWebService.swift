@@ -14,6 +14,8 @@ class LanguageWebService {
     struct RequestSelectLanguage: Codable {
         var language_id: String = ""
         var language_type: String = ""
+
+
     }
 }
 

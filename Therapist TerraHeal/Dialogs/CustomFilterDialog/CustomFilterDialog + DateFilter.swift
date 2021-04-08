@@ -49,7 +49,7 @@ extension CustomFilterDialog: FSCalendarDataSource, FSCalendarDelegate {
             calendar.setCurrentPage(date, animated: true)
         }
         self.selectedValue =  self.selectedMilli.toString()//date.toString(format: DateFormat.BookingDateSelection)
-        self.selectedFilterValues.massage_date = self.selectedMilli.toString()
+        //self.selectedFilterValues.massage_date = self.selectedMilli.toString()
     }
 
 

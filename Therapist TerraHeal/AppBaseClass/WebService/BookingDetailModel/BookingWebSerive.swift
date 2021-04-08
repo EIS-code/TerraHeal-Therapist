@@ -75,6 +75,8 @@ extension BookingWebSerive {
                 if let detail = dataArray.last {
                     self.bookingDetail = BookingDetail.init(fromDictionary: detail)
                 }
+            } else if let data = dictionary["data"] as? [String:Any] {
+                self.bookingDetail = BookingDetail.init(fromDictionary: data)
             }
         }
     }

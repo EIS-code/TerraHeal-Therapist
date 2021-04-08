@@ -47,6 +47,9 @@ extension CalenderWebService {
                     bookingList.append(BookingDetail.init(fromDictionary: data))
                 }
             }
+            else if let data = dictionary["data"] as? [String:Any] {
+                bookingList.append(BookingDetail.init(fromDictionary: data))
+            }
         }
     }
 

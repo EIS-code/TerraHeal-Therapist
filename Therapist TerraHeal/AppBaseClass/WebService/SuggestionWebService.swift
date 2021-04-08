@@ -45,26 +45,39 @@ extension SuggestionAndComplaintWebService {
 }
 
 class SuggestionAndComplaint {
-    var id: String = ""
-    var shopId: String = ""
-    var suggestion: String = ""
-    var complaint: String  = ""
-    var therapistId: String = ""
+        var createdTime: String = ""
+        var id: String = ""
+        var receptionistId: String = ""
+        var receptionistPhoto: String = ""
+        var text: String = ""
+        var therapistId: String = ""
+        var therapistName: String = ""
+        var therapistPhoto: String = ""
+        var type: String = ""
+        var receptionisName: String = ""
+
 
 
     init(fromDictionary dictionary: [String:Any]){
+        self.createdTime = (dictionary["created_time"] as? String) ?? ""
         self.id = (dictionary["id"] as? String) ?? ""
-        self.shopId = (dictionary["shop_id"] as? String) ?? ""
-        self.suggestion = (dictionary["suggestion"] as? String) ?? ""
-        self.complaint = (dictionary["complaint"] as? String) ?? ""
+        self.receptionistId = (dictionary["receptionist_id"] as? String) ?? ""
+        self.receptionistPhoto = (dictionary["receptionist_photo"] as? String) ?? ""
+        self.receptionisName = (dictionary["receptionist_name"] as? String) ?? ""
+        self.text = (dictionary["text"] as? String) ?? ""
         self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
+        self.therapistName = (dictionary["therapist_name"] as? String) ?? ""
+        self.therapistPhoto = (dictionary["therapist_photo"] as? String) ?? ""
+        self.type = (dictionary["type"] as? String) ?? ""
+
     }
 
 }
+
 //MARK: Web Service Calls
 extension SuggestionAndComplaintWebService {
     static func getAllSuggestionAdnComplaints(completionHandler: @escaping ((SuggestionAndComplaintWebService.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: Self.getAllSuggestionAndComplaintsUrl, methodName: AlamofireHelper.POST_METHOD, paramData: SuggestionAndComplaintWebService.RequestAllSuggestionAndComplaints.init().dictionary) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: Self.getAllSuggestionAndComplaintsUrl, methodName: AlamofireHelper.GET_METHOD, paramData: SuggestionAndComplaintWebService.RequestAllSuggestionAndComplaints.init().dictionary) { (data, dictionary, error) in
             let response = SuggestionAndComplaintWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }

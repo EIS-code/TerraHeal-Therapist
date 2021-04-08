@@ -133,22 +133,21 @@ extension WorkingScheduleVC: UITableViewDelegate,UITableViewDataSource, UIScroll
 
 
 extension WorkingScheduleVC {
-    func wsGetWorkingSchedule(date:String = Date().millisecondsSince1970.toString()) {
+    func wsGetWorkingSchedule(date:String = Date().startOfMonth().millisecondsSince1970.toString()) {
         self.arrForWorkingDays.removeAll()
         self.arrForNotAvailableDays.removeAll()
+        Loader.showLoading()
         WorkingScheduleWebService.getWorkignSchedule(params: WorkingScheduleWebService.RequestSchedule.init(date: date)) { (response) in
+            Loader.hideLoading()
             for data in response.workingList {
                 if data.isWorking.toBool {
-                    self.arrForWorkingDays.append(data.date.toDouble - Double((TimeZone.current.secondsFromGMT() * 1000)))
-
+                    self.arrForWorkingDays.append(data.date.toDouble)
                 }
                 if data.isAbsent.toBool{
-                    self.arrForNotAvailableDays.append(data.date.toDouble - Double((TimeZone.current.secondsFromGMT() * 1000)))
+                    self.arrForNotAvailableDays.append(data.date.toDouble)
                 }
 
             }
-            print(self.arrForWorkingDays)
-            print(self.arrForNotAvailableDays)
             self.vwCalendar.reloadData()
             self.tblVwForData.reloadData()
         }

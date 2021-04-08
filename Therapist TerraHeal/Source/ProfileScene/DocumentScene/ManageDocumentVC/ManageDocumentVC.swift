@@ -16,7 +16,8 @@ class ManageDocumentVC: BaseVC {
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!
     @IBOutlet weak var lblDocumentId: ThemeLabel!
-    
+
+    var selectedDocType: DocumentType = DocumentType.init(rawValue: "") ?? .AddressProof
     var arrForData: [UploadDocumentDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -214,7 +215,6 @@ extension ManageDocumentVC: UIImageCropperProtocol {
 
         if arrForData.isEmpty {
             self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Front Side", image: croppedImage, data: croppedImage?.pngData(), isCompleted: true, paramName: "document_id_passport_front"))
-
             self.wsUpdateDocument()
         } else {
             self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Back Side", image: croppedImage, data: croppedImage?.pngData(), isCompleted: true, paramName: "document_id_passport_back"))

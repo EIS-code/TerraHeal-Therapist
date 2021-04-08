@@ -184,7 +184,7 @@ extension EditProfileVC {
 
     func openServiceSelection(index:Int = 0) {
         let servicePicker: ServiceSelectionDialog = ServiceSelectionDialog.fromNib()
-        servicePicker.initialize(title:arrForProfile[index].type.getPlaceHolder(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        servicePicker.initialize(title:arrForProfile[index].type.getPlaceHolder(), buttonTitle: "".localized(),cancelButtonTitle: "BTN_CANCEL".localized())
         servicePicker.show(animated: true)
         servicePicker.onBtnCancelTapped = { [weak servicePicker, weak self] in
                    guard let self = self else { return } ; print(self)
@@ -402,6 +402,7 @@ extension EditProfileVC {
             print(language.fluency.rawValue)
             print(language.name)
             self.collectionVwForProfile.reloadData()
+            self.wsUpdateLanguage(request: LanguageWebService.RequestSelectLanguage.init(language_id: language.id, language_type: language.fluency.paramID()))
         }
     }
 
@@ -432,6 +433,19 @@ extension EditProfileVC {
     func wsUpdateProfile(request: UserWebService.RequestProfile) {
         Loader.showLoading()
         AppWebApi.updateProfileDetail(params: request, image: self.selectedProfileDoc, document: selectedProfileDoc) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+                let user = response.data
+                PreferenceHelper.shared.setUserId(user.id)
+                appSingleton.user = user
+                Singleton.saveInDb()
+                self.setUserData()
+            }
+        }
+    }
+    func wsUpdateLanguage(request: LanguageWebService.RequestSelectLanguage) {
+        Loader.showLoading()
+        LanguageWebService.selectLanguage(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 let user = response.data
