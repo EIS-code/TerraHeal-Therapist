@@ -28,6 +28,7 @@ class TimeBreakDialog: ThemeBottomDialogView {
 
     var onBtnDoneTapped: ((_ data:SlotDetail) -> Void)? = nil
     var selectedData:SlotDetail? = nil
+    var minutes: Int = 0
     var arrForData: [SlotDetail] = [
         SlotDetail.init(id: "1", minute: "05", milliseconds: 0.0, isSelected: false),
         SlotDetail.init(id: "2", minute: "10", milliseconds: 0.0, isSelected: false),
@@ -104,6 +105,7 @@ class TimeBreakDialog: ThemeBottomDialogView {
         self.lblAvailableTime.setFont(name: FontName.SemiBold, size: FontSize.header)
         self.timePicker.backgroundColor = UIColor.clear
         self.timePicker.setValue(UIColor.themeSecondary, forKeyPath: "textColor")
+        self.timePicker.isUserInteractionEnabled = false
         self.setupCollectionView(collectionView: self.cltForTimeSlot)
     }
 
@@ -115,9 +117,8 @@ class TimeBreakDialog: ThemeBottomDialogView {
         if selectedData == nil {
             Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_DATA".localized())
         } else {
-            if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!(selectedData!);
-            }
+            self.wsGetBreak()
+
         }
     }
 }
@@ -144,6 +145,26 @@ extension TimeBreakDialog: UITextFieldDelegate {
             self.arrForData[i].isSelected = false
         }
         self.cltForTimeSlot.reloadData()
+        self.timePicker.setDate(Date().add(component: .minute, value: self.txtBreakTime.text!.toInt), animated: true)
+        self.minutes = self.txtBreakTime.text!.toInt
+    }
+
+    func wsGetBreak() {
+        Loader.showLoading()
+        var request: MenuWebService.RequestTakeBreak = MenuWebService.RequestTakeBreak.init()
+        request.break_for = ""
+        request.break_reason = ""
+        request.minutes = self.minutes.toString()
+        request.date = Date().millisecondsSince1970.toString()
+        MenuWebService.requestTakeBreak(params: request) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                if self.onBtnDoneTapped != nil {
+                    self.onBtnDoneTapped!(self.selectedData!);
+                }
+            }
+        }
+
     }
 }
 

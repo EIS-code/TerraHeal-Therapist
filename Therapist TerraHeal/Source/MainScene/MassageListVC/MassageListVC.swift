@@ -14,14 +14,9 @@ class MassageListVC: BaseVC {
     @IBOutlet weak var lblNumberOfMassageValue: ThemeLabel!
     @IBOutlet weak var vwTotalNumberOfMassage: UIView!
 
-    var arrForData: [MyMassageTblCellDetail] = [
-    MyMassageTblCellDetail.init(title: "30 oct 2020 12:00", isSelected: true),
-    MyMassageTblCellDetail.init(title: "30 oct 2020 12:00", isSelected: false),
-    MyMassageTblCellDetail.init(title: "30 oct 2020 12:00", isSelected: false),
-    MyMassageTblCellDetail.init(title: "30 oct 2020 12:00", isSelected: false),
-    MyMassageTblCellDetail.init(title: "30 oct 2020 12:00", isSelected: false),
-    MyMassageTblCellDetail.init(title: "30 oct 2020 12:00", isSelected: false)]
-    
+    var arrForData: [MyBookingTblDetail] = []
+    var arrForOriginalData: [BookingData] = []
+
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -42,7 +37,7 @@ class MassageListVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
-
+        self.wsGetBookingList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +66,7 @@ class MassageListVC: BaseVC {
         self.lblNumberOfMassage.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblNumberOfMassageValue.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblNumberOfMassage.setText("MY_NUMBER_OF_MASSAGES_TITLE".localized())
-        self.lblNumberOfMassageValue.setText(arrForData.count.toString())
+        self.lblNumberOfMassageValue.setText(appSingleton.user.totalMassages)
     }
     
 
@@ -120,4 +115,21 @@ extension MassageListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     }
 
     
+}
+extension MassageListVC {
+    func wsGetBookingList() {
+        Loader.showLoading()
+        BookingWebSerive.numberOfBookingList {  (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForOriginalData.removeAll()
+                self.arrForData.removeAll()
+                for data in response.bookingList {
+                    self.arrForData.append(data.toBookingModel(filterType: .Date))
+                    self.arrForOriginalData.append(data)
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
 }

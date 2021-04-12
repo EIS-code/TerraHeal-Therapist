@@ -1,8 +1,16 @@
 import Foundation
 //MARK: Web Service Calls
 extension BookingWebSerive {
+
     class func todayBookingList(params:BookingWebSerive.RequestBookingList, completionHandler: @escaping ((BookingWebSerive.ResponseBookingList) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: API_URL.TodayBookingList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = BookingWebSerive.ResponseBookingList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+
+    class func numberOfBookingList(completionHandler: @escaping ((BookingWebSerive.ResponseBookingList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: Self.allBookingListURL, methodName: AlamofireHelper.POST_METHOD, paramData: [:]) { (data, dictionary, error) in
             let response = BookingWebSerive.ResponseBookingList.init(fromDictionary: dictionary)
             completionHandler(response)
         }

@@ -22,6 +22,7 @@ struct Connectivity {
 struct UploadDocumentDetail {
     var id: String  = ""
     var name: String  = ""
+    var url: String? = nil
     var image: UIImage? = nil
     var data: Data? = nil
     var isCompleted: Bool  = false
@@ -138,7 +139,7 @@ class AlamofireHelper: NSObject
             print("Request Parameters :-\n")
             for document in documents {
                 print("\(document.paramName) - \(self.humanReadableByteCount(bytes: document.data!.count))")
-                multipartFormData.append(document.data!, withName: document.paramName, fileName: document.name, mimeType: "*/*")
+                multipartFormData.append(document.data!, withName: document.paramName, fileName: document.paramName, mimeType: "*/*")
             }
             for (key, value) in paramData {
                 if let arrValue = value as? [String] {

@@ -63,11 +63,14 @@ class BookingListVC: BaseVC {
             guard let self = self else { return } ; print(self)
             switch index {
             case 0:
+                self.wsGetTodaysBooking(request: BookingWebSerive.RequestBookingList.init())
                 break
-            //self.getPastBookingList()
+            case 1:
+                self.wsGetFutureBooking(request: BookingWebSerive.RequestBookingList.init())
+                break
             default:
+                self.wsGetPastBooking(request: BookingWebSerive.RequestBookingList.init())
                 break
-            //self.getPastBookingList()
             }
         }
     }
@@ -159,30 +162,32 @@ extension BookingListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
 extension BookingListVC {
     func wsGetTodaysBooking(request: BookingWebSerive.RequestBookingList) {
         Loader.showLoading()
-        BookingWebSerive.todayBookingList(params: BookingWebSerive.RequestBookingList.init(), completionHandler: { (response) in
+        BookingWebSerive.todayBookingList(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()
+                self.arrForData.removeAll()
                 for data in response.bookingList {
+                   // self.arrForData.append(data.toBookingModel(filterType: .Date))
                     self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()
             }
-        })
+        }
     }
-
     func wsGetFutureBooking(request: BookingWebSerive.RequestBookingList) {
         Loader.showLoading()
         BookingWebSerive.futureBookingList(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()
+                self.arrForData.removeAll()
                 for data in response.bookingList {
+                    //self.arrForData.append(data.toBookingModel(filterType:.Date))
                     self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()
             }
-
         }
     }
 
@@ -192,7 +197,9 @@ extension BookingListVC {
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()
+                self.arrForData.removeAll()
                 for data in response.bookingList {
+                   // self.arrForData.append(data.toBookingModel(filterType: .Date))
                     self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()

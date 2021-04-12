@@ -28,6 +28,8 @@ struct ImageAsset {
     }
     struct Placeholder {
         static let user = "asset-user"
+        static let uploadDoc = "asset-upload-document"
+
     }
     struct Tutorial {
         static let first = "asset-tutorial-0"

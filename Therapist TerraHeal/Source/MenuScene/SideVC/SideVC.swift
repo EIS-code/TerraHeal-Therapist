@@ -201,8 +201,16 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
             [weak alert, weak self] (description) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-            self.arrForMenu[index].value = description
-            self.wsQuitCollabration(reason: description)
+            switch self.arrForMenu[index].id {
+            case .QuitColobration:
+                self.wsQuitCollabration(reason: description)
+                break
+            case .SuspendCollaboration:
+                self.wsSuspendCollabration(reason: description)
+                break
+            default :
+                print("")
+            }
         }
     }
 
@@ -223,7 +231,14 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     func wsQuitCollabration(reason:String) {
-        QuitCollabrationWebService.requestQuitCollabration(params: QuitCollabrationWebService.RequestQuitCollabration.init(reason: reason)) { (response) in
+        CollabrationWebService.requestQuitCollabration(params: CollabrationWebService.RequestQuitCollabration.init(reason: reason)) { (response) in
+            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+
+            }
+        }
+    }
+    func wsSuspendCollabration(reason:String) {
+        CollabrationWebService.requestSuspendCollabration(params: CollabrationWebService.RequestSuspendCollabration.init(reason: reason)) { (response) in
             if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
 
             }

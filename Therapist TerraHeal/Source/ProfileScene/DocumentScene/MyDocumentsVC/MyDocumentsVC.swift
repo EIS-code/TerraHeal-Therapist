@@ -180,7 +180,14 @@ extension MyDocumentsVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        Common.appDelegate.loadManageDocumentVC(navigaionVC: self.navigationController)
+        let docType = arrForData[indexPath.row]
+        switch docType {
+        case .AddressProof, .Certificates, .Others:
+            Common.appDelegate.loadManageDocumentVC(navigaionVC: self.navigationController, docType: docType)
+        default:
+            Common.appDelegate.loadManageSingleDocumentVC(navigaionVC: self.navigationController,docType: docType)
+        }
+
     }
     
 }

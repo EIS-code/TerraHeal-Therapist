@@ -183,7 +183,7 @@ extension SuggestionAndComplaintVC: UITableViewDelegate,UITableViewDataSource, U
 extension SuggestionAndComplaintVC {
     func wsGetSuggestionAndComplaints() {
         Loader.showLoading()
-        SuggestionAndComplaintWebService.getAllSuggestionAdnComplaints { (response) in
+        MenuWebService.getAllSuggestionAdnComplaints { (response) in
             Loader.hideLoading()
             self.arrForData.removeAll()
             if ResponseModel.isSuccess(response: response) {
@@ -200,7 +200,7 @@ extension SuggestionAndComplaintVC {
         }
     }
     func wsAddSuggestion(suggestion:String) {
-        SuggestionAndComplaintWebService.requestAddSuggestion(params: SuggestionAndComplaintWebService.RequestAddSuggestion.init(suggestion: suggestion)) { (response) in
+        MenuWebService.requestAddSuggestion(params: MenuWebService.RequestAddSuggestion.init(suggestion: suggestion)) { (response) in
             Loader.hideLoading()
             self.arrForData.removeAll()
             if ResponseModel.isSuccess(response: response) {
@@ -211,7 +211,7 @@ extension SuggestionAndComplaintVC {
     }
 
     func wsAddComplaint(complaint:String) {
-        SuggestionAndComplaintWebService.requestAddComplaint(params: SuggestionAndComplaintWebService.RequestAddComplaint.init(complaint: complaint)) {  (response) in
+        MenuWebService.requestAddComplaint(params: MenuWebService.RequestAddComplaint.init(complaint: complaint)) {  (response) in
             Loader.hideLoading()
             self.arrForData.removeAll()
             if ResponseModel.isSuccess(response: response) {

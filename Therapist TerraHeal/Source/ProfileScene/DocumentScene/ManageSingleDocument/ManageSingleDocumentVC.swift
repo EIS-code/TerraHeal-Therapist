@@ -9,12 +9,7 @@ import UIKit
 class ManageSingleDocumentVC: BaseVC {
     
     @IBOutlet weak var btnCancel: CancelButton!
-    @IBOutlet weak var vwForEmpty: UIView!
-    @IBOutlet weak var vwBg: UIView!
-    @IBOutlet weak var lblEmptyTitle: ThemeLabel!
-    @IBOutlet weak var lblEmptyMsg: ThemeLabel!
-    @IBOutlet weak var btnSubmit: FilledRoundedButton!
-    @IBOutlet weak var lblDocumentId: ThemeLabel!
+    @IBOutlet weak var btnAddPicture: ThemeButton!
     @IBOutlet weak var vwForDocument: UIView!
     @IBOutlet weak var imgDocument: UIImageView!
     @IBOutlet weak var btnDeleteDocument: UIButton!
@@ -60,26 +55,20 @@ class ManageSingleDocumentVC: BaseVC {
         
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeLightBackground)
-        self.setNavigationTitle(title: "MANAGE_DOCUMENT_TITLE".localized())
+        self.setNavigationTitle(title: self.selectedDocType.name())
         self.lblTitle?.textAlignment = .left
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
-        self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.subHeader)
-        self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.detail)
-        self.lblEmptyTitle.text = "DOCUMENT_EMPTY_TITLE".localized()
-        self.lblEmptyMsg.text = "DOCUMENT_EMPTY_MSG".localized()
-        self.btnSubmit?.setTitle("MANAGE_DOCUMENT_BTN_ADD_NEW".localized(), for: .normal)
-        self.lblDocumentId.setFont(name: FontName.Regular, size: FontSize.detail)
+
     }
     func updateUI() {
         if let document = appSingleton.user.documents.first(where: { (document) -> Bool in
             document.type == self.selectedDocType.rawValue
         }) {
             self.imgDocument.downloadedFrom(link: document.fileName)
-            self.vwForEmpty.isHidden = true
-            self.vwForDocument.isHidden = false
+            self.btnAddPicture.isHidden = true
         } else {
-            self.vwForEmpty.isHidden = false
-            self.vwForDocument.isHidden = true
+            self.imgDocument.image = ImageAsset.getImage(ImageAsset.Placeholder.uploadDoc)
+            self.btnAddPicture.isHidden = false
         }
     }
     @IBAction func btnCancelTapped(_ sender: Any) {
@@ -87,7 +76,7 @@ class ManageSingleDocumentVC: BaseVC {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        self.btnSubmit.isEnabled = false
+        self.btnAddPicture.isEnabled = false
         self.openPhotoPicker()
     }
     
@@ -127,12 +116,12 @@ extension ManageSingleDocumentVC: UIImageCropperProtocol {
         photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
              guard let self = self else { return } ; print(self)
-            self.btnSubmit.isEnabled = true
+            self.btnAddPicture.isEnabled = true
         }
         photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
             guard let self = self else { return } ; print(self)
-            self.btnSubmit.isEnabled = true
+            self.btnAddPicture.isEnabled = true
         }
         photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] (doc) in
             photoPickerAlert?.dismiss()
@@ -159,11 +148,12 @@ extension ManageSingleDocumentVC: UIImageCropperProtocol {
         cropper.view.layoutIfNeeded()
         cropper.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async {
-            self.btnSubmit.isEnabled = true
+            self.btnAddPicture.isEnabled = true
             Common.appDelegate.getTopViewController()?.present(cropper, animated: true, completion: nil)
         }
     }
     func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
+        self.selectedDocument = UploadDocumentDetail.init()
         self.selectedDocument?.paramName = self.selectedDocType.paramName()
         self.selectedDocument?.image = croppedImage
         self.selectedDocument?.data = croppedImage?.jpegData(compressionQuality: 1.0)

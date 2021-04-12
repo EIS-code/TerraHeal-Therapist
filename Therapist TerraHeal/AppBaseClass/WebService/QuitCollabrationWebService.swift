@@ -9,17 +9,29 @@
 import Foundation
 
 //MARK: Request Models
-class QuitCollabrationWebService {
+class CollabrationWebService {
     static let quitCollabrationUrl: String = API_URL.QuitCollabration
+    static let suspendCollabrationUrl: String = API_URL.SuspendCollaboration
+    
     struct RequestQuitCollabration: Codable {
         var reason: String = ""
     }
+    struct RequestSuspendCollabration: Codable {
+        var reason: String = ""
+    }
+
 }
 //MARK: Response Models
 //MARK: Web Service Calls
-extension QuitCollabrationWebService {
-    static func requestQuitCollabration(params:QuitCollabrationWebService.RequestQuitCollabration, completionHandler: @escaping ((ResponseModel) -> Void)) {
+extension CollabrationWebService {
+    static func requestQuitCollabration(params:CollabrationWebService.RequestQuitCollabration, completionHandler: @escaping ((ResponseModel) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: Self.quitCollabrationUrl, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = ResponseModel.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    static func requestSuspendCollabration(params:CollabrationWebService.RequestSuspendCollabration, completionHandler: @escaping ((ResponseModel) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: Self.suspendCollabrationUrl, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = ResponseModel.init(fromDictionary: dictionary)
             completionHandler(response)
         }

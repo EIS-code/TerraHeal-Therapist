@@ -220,6 +220,7 @@
 		0366DD282546DB14002C2CDA /* CustomCityPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0366DD1E2546DB14002C2CDA /* CustomCityPickerCell.xib */; };
 		0366DD292546DB14002C2CDA /* CustomCityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0366DD1F2546DB14002C2CDA /* CustomCityPicker.swift */; };
 		0366DD2B2546F963002C2CDA /* EditProfile + TextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0366DD2A2546F963002C2CDA /* EditProfile + TextContent.swift */; };
+		0377272D262429B70067C486 /* ManageSingleDocumentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0377272C262429B70067C486 /* ManageSingleDocumentVC.xib */; };
 		03776EA82612FEB000E8D8F0 /* ServiceListWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03776EA72612FEB000E8D8F0 /* ServiceListWebService.swift */; };
 		0379EAB7252C4C2800303A59 /* SelectionBorderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EAB4252C4C2800303A59 /* SelectionBorderTableCell.xib */; };
 		0379EAB8252C4C2800303A59 /* CustomTblSelectionDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EAB5252C4C2800303A59 /* CustomTblSelectionDialog.xib */; };
@@ -315,7 +316,6 @@
 		03A2CC6625309E84005E3F29 /* MyBookingExpandTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A2CC5E25309E84005E3F29 /* MyBookingExpandTblCell.xib */; };
 		03A2CC6725309E84005E3F29 /* MyBookingExpandTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC5F25309E84005E3F29 /* MyBookingExpandTblCell.swift */; };
 		03A2CC6825309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC6025309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift */; };
-		03A5597C261ED1C90018A20D /* ManageSingleDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A5597A261ED1C90018A20D /* ManageSingleDocument.xib */; };
 		03A5597D261ED1C90018A20D /* ManageSingleDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5597B261ED1C90018A20D /* ManageSingleDocumentVC.swift */; };
 		03A7FB2325273058003A6025 /* HomeVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7FB2225273058003A6025 /* HomeVC + TableView.swift */; };
 		03A7FB2825273ACC003A6025 /* MyBookingTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7FB2625273ACB003A6025 /* MyBookingTblSection.swift */; };
@@ -600,6 +600,7 @@
 		0366DD1E2546DB14002C2CDA /* CustomCityPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCityPickerCell.xib; sourceTree = "<group>"; };
 		0366DD1F2546DB14002C2CDA /* CustomCityPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCityPicker.swift; sourceTree = "<group>"; };
 		0366DD2A2546F963002C2CDA /* EditProfile + TextContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditProfile + TextContent.swift"; sourceTree = "<group>"; };
+		0377272C262429B70067C486 /* ManageSingleDocumentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageSingleDocumentVC.xib; sourceTree = "<group>"; };
 		03776EA72612FEB000E8D8F0 /* ServiceListWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceListWebService.swift; sourceTree = "<group>"; };
 		0379EAB4252C4C2800303A59 /* SelectionBorderTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionBorderTableCell.xib; sourceTree = "<group>"; };
 		0379EAB5252C4C2800303A59 /* CustomTblSelectionDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTblSelectionDialog.xib; sourceTree = "<group>"; };
@@ -695,7 +696,6 @@
 		03A2CC5E25309E84005E3F29 /* MyBookingExpandTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBookingExpandTblCell.xib; sourceTree = "<group>"; };
 		03A2CC5F25309E84005E3F29 /* MyBookingExpandTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingExpandTblCell.swift; sourceTree = "<group>"; };
 		03A2CC6025309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyBookingExpandTblCell + TableViewl.swift"; sourceTree = "<group>"; };
-		03A5597A261ED1C90018A20D /* ManageSingleDocument.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageSingleDocument.xib; sourceTree = "<group>"; };
 		03A5597B261ED1C90018A20D /* ManageSingleDocumentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageSingleDocumentVC.swift; sourceTree = "<group>"; };
 		03A7FB2225273058003A6025 /* HomeVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + TableView.swift"; sourceTree = "<group>"; };
 		03A7FB2625273ACB003A6025 /* MyBookingTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingTblSection.swift; sourceTree = "<group>"; };
@@ -2244,7 +2244,7 @@
 		03A55979261ED1C90018A20D /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				03A5597A261ED1C90018A20D /* ManageSingleDocument.xib */,
+				0377272C262429B70067C486 /* ManageSingleDocumentVC.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -2673,6 +2673,7 @@
 				03F5038D252D937F00AF50A5 /* CustomFilterDialog.xib in Resources */,
 				034BB1AB255121AD006B3842 /* MyRateTblCell.xib in Resources */,
 				03AE6A162535C8D100F7C629 /* ProfileTblCell.xib in Resources */,
+				0377272D262429B70067C486 /* ManageSingleDocumentVC.xib in Resources */,
 				0354F26625492F4100F3BEB7 /* ExperienceDialog.xib in Resources */,
 				03412297252F3AFC000BCDAE /* CustomPhotoPicker.xib in Resources */,
 				0344037D252F08D900C8C700 /* BookingDetailTblCell.xib in Resources */,
@@ -2685,7 +2686,6 @@
 				0366DD232546DB14002C2CDA /* CustomCountryPickerCell.xib in Resources */,
 				038CAFCE252604AB001ACAD6 /* TimeDialog.xib in Resources */,
 				0354F27E25496E9100F3BEB7 /* WorkingScheduleTblSection.xib in Resources */,
-				03A5597C261ED1C90018A20D /* ManageSingleDocument.xib in Resources */,
 				035EF5AB2526F3A400C64BD4 /* SideVC.xib in Resources */,
 				038CAFC9252604AB001ACAD6 /* CustomTextViewDialog.xib in Resources */,
 				63415E33246FB5C600F0D7A0 /* Nunito-Light.ttf in Resources */,

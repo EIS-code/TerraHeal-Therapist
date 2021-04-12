@@ -83,6 +83,9 @@ class AppWebApi: NSObject {
         static var BookingDetail: String {
             return  Domain + Routes.Client + "/booking"
         }
+        static var NumberOfBooking: String {
+            return  Domain + Routes.Client + "/booking/all"
+        }
         static var GetCalender: String {
             return  Domain + Routes.Client + "/calender/get"
         }
@@ -130,7 +133,9 @@ class AppWebApi: NSObject {
         static var FinishService: String {
             return Domain + Routes.Client  + "/booking/massage/end"
         }
-
+        static var TakeBreak: String {
+            return Domain + Routes.Client  + "/my/break"
+        }
         static var QuitCollabration: String {
             return Domain + Routes.Client  + "/my/collaboration/quit"
         }
@@ -152,6 +157,11 @@ class AppWebApi: NSObject {
         static var GetAvailability: String {
             return  Domain + Routes.Client  + "/my/availability/get"
         }
+        static var SuspendCollaboration: String {
+            return  Domain + Routes.Client  + "/my/collaboration/suspend"
+        }
+
+
         //MARK: Exception
         static var CheckExeption: String {
             return Domain + Routes.Exception
@@ -226,14 +236,11 @@ extension AppWebApi {
         }
     }
 
-    static func updateProfileDetail(params:UserWebService.RequestProfile,image:UploadDocumentDetail? = nil,document:UploadDocumentDetail? = nil, completionHandler: @escaping ((UserWebService.Response) -> Void)) {
+    static func updateProfileDetail(params:UserWebService.RequestProfile,image:UploadDocumentDetail? = nil, completionHandler: @escaping ((UserWebService.Response) -> Void)) {
         var arrForDocuments:[UploadDocumentDetail] = []
 
         if let imageToUpload = image {
             arrForDocuments.append(imageToUpload)
-        }
-        if let documentToUpload = document {
-            arrForDocuments.append(documentToUpload)
         }
         if arrForDocuments.isEmpty {
             AlamofireHelper().getDataFrom(urlString: API_URL.UserProfile, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in

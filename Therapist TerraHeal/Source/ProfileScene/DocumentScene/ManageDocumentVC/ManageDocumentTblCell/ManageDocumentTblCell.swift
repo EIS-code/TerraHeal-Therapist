@@ -25,7 +25,10 @@ class ManageDocumentTblCell: TableCell {
 
     func setData(data: UploadDocumentDetail ) {
         self.lblName.text = data.name
-        self.ivDocument?.image = data.image
+        if let url = data.url {
+            self.ivDocument?.downloadedFrom(link: url)
+        }
+
         //self.btnDelete.isHidden = !data.isCompleted
        
     }

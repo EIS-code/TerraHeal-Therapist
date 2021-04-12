@@ -8,10 +8,6 @@
 
 import UIKit
 
-struct MyMassageTblCellDetail{
-    var title: String = ""
-    var isSelected: Bool = false
-}
 class MyMassageTblCell: TableCell {
 
     @IBOutlet weak var lblName: ThemeLabel!
@@ -29,10 +25,11 @@ class MyMassageTblCell: TableCell {
         self.vwCollapse.backgroundColor = .white
     }
 
-    func setData(data: MyMassageTblCellDetail ) {
+    func setData(data:MyBookingTblDetail ) {
         self.lblName.setText(data.title)
+        self.ivForplace.image = ImageAsset.getImage(data.bookingType.getImage())
         self.ivCellChecked.isHidden = !data.isSelected
-       // self.vwBar.backgroundColor =  data.isSelected ? UIColor.themeBookingType1 : UIColor.themeBookingType2
+        // self.vwBar.backgroundColor =  data.isSelected ? UIColor.themeBookingType1 : UIColor.themeBookingType2
         
     }
 

@@ -9,10 +9,11 @@
 import Foundation
 
 //MARK: Request Models
-class SuggestionAndComplaintWebService {
+class MenuWebService {
     static let getAllSuggestionAndComplaintsUrl: String = API_URL.SuggestionAndComplaints
     static let addSuggestionUrl: String = API_URL.AddSuggestion
     static let addComplaintUrl: String = API_URL.AddComplaints
+    static let takeBreakUrl: String = API_URL.TakeBreak
     struct RequestAddSuggestion: Codable {
         var suggestion: String = ""
     }
@@ -23,10 +24,16 @@ class SuggestionAndComplaintWebService {
         var shop_id: String = appSingleton.user.shopId
         var therapist_id: String = appSingleton.user.id
     }
+    struct RequestTakeBreak: Codable {
+        var date: String = ""
+        var minutes: String = ""
+        var break_for: String = ""
+        var break_reason: String = ""
+    }
 }
 
 //MARK: Response Models
-extension SuggestionAndComplaintWebService {
+extension MenuWebService {
     class Response :  ResponseModel {
         var suggestionAndComplaintList: [SuggestionAndComplaint] = []
         override init(fromDictionary dictionary: [String:Any]) {
@@ -45,16 +52,16 @@ extension SuggestionAndComplaintWebService {
 }
 
 class SuggestionAndComplaint {
-        var createdTime: String = ""
-        var id: String = ""
-        var receptionistId: String = ""
-        var receptionistPhoto: String = ""
-        var text: String = ""
-        var therapistId: String = ""
-        var therapistName: String = ""
-        var therapistPhoto: String = ""
-        var type: String = ""
-        var receptionisName: String = ""
+    var createdTime: String = ""
+    var id: String = ""
+    var receptionistId: String = ""
+    var receptionistPhoto: String = ""
+    var text: String = ""
+    var therapistId: String = ""
+    var therapistName: String = ""
+    var therapistPhoto: String = ""
+    var type: String = ""
+    var receptionisName: String = ""
 
 
 
@@ -75,23 +82,30 @@ class SuggestionAndComplaint {
 }
 
 //MARK: Web Service Calls
-extension SuggestionAndComplaintWebService {
-    static func getAllSuggestionAdnComplaints(completionHandler: @escaping ((SuggestionAndComplaintWebService.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: Self.getAllSuggestionAndComplaintsUrl, methodName: AlamofireHelper.GET_METHOD, paramData: SuggestionAndComplaintWebService.RequestAllSuggestionAndComplaints.init().dictionary) { (data, dictionary, error) in
-            let response = SuggestionAndComplaintWebService.Response.init(fromDictionary: dictionary)
+extension MenuWebService {
+    static func getAllSuggestionAdnComplaints(completionHandler: @escaping ((MenuWebService.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: Self.getAllSuggestionAndComplaintsUrl, methodName: AlamofireHelper.GET_METHOD, paramData: MenuWebService.RequestAllSuggestionAndComplaints.init().dictionary) { (data, dictionary, error) in
+            let response = MenuWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
-    static func requestAddSuggestion(params:SuggestionAndComplaintWebService.RequestAddSuggestion, completionHandler: @escaping ((SuggestionAndComplaintWebService.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: SuggestionAndComplaintWebService.addSuggestionUrl, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = SuggestionAndComplaintWebService.Response.init(fromDictionary: dictionary)
+    static func requestAddSuggestion(params:MenuWebService.RequestAddSuggestion, completionHandler: @escaping ((MenuWebService.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: MenuWebService.addSuggestionUrl, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = MenuWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
 
-    static func requestAddComplaint(params:SuggestionAndComplaintWebService.RequestAddComplaint, completionHandler: @escaping ((SuggestionAndComplaintWebService.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: SuggestionAndComplaintWebService.addComplaintUrl, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = SuggestionAndComplaintWebService.Response.init(fromDictionary: dictionary)
+    static func requestAddComplaint(params:MenuWebService.RequestAddComplaint, completionHandler: @escaping ((MenuWebService.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: MenuWebService.addComplaintUrl, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = MenuWebService.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+
+    static func requestTakeBreak(params:MenuWebService.RequestTakeBreak, completionHandler: @escaping ((ResponseModel) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: Self.takeBreakUrl, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = ResponseModel.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }

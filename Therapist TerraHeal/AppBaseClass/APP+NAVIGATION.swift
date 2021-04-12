@@ -252,16 +252,37 @@ extension AppDelegate {
         }
     }
 
-    func loadManageDocumentVC(navigaionVC:UINavigationController? = nil) {
+    func loadManageDocumentVC(navigaionVC:UINavigationController? = nil, docType:DocumentType) {
         if let nc = navigaionVC as? NC {
             if let targetVC: ManageDocumentVC =  nc.findVCs(ofType: ManageDocumentVC.self).first {
+                targetVC.selectedDocType = docType
                 _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
+                targetVC.selectedDocType = docType
                 nc.pushVC(targetVC)
             }
         } else {
             let targetVC: ManageDocumentVC = ManageDocumentVC.fromNib()
+            targetVC.selectedDocType = docType
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+    func loadManageSingleDocumentVC(navigaionVC:UINavigationController? = nil, docType:DocumentType) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ManageSingleDocumentVC =  nc.findVCs(ofType: ManageSingleDocumentVC.self).first {
+                targetVC.selectedDocType = docType
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: ManageSingleDocumentVC = ManageSingleDocumentVC.fromNib()
+                targetVC.selectedDocType = docType
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: ManageSingleDocumentVC = ManageSingleDocumentVC.fromNib()
+            targetVC.selectedDocType = docType
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
         }

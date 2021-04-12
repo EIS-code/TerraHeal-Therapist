@@ -45,7 +45,8 @@ extension TimeBreakDialog:  UICollectionViewDelegate, UICollectionViewDataSource
         self.txtBreakTime.setText("")
         self.txtBreakTime.resignFirstResponder()
         self.select(data: self.arrForData[indexPath.row])
-
+        self.timePicker.setDate(Date().add(component: .minute, value: self.arrForData[indexPath.row].minute.toInt), animated: true)
+        self.minutes =  self.arrForData[indexPath.row].minute.toInt
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -107,6 +107,9 @@ extension UserWebService {
         var socialSecurityNumber: String = ""
         var surname: String = ""
         var telNumber: String = ""
+        var totalMassages: String = ""
+        var totalServices: String = ""
+
         var languageSpokens : [SelectedLanguage] = []
 
         init(fromDictionary dictionary: [String:Any]){
@@ -121,6 +124,8 @@ extension UserWebService {
             self.deviceToken = (dictionary["device_token"] as? String) ?? ""
             self.deviceType = (dictionary["device_type"] as? String) ?? ""
             self.dob = (dictionary["dob"] as? String) ?? ""
+            self.totalMassages = (dictionary["total_massages"] as? String) ?? ""
+            self.totalServices = (dictionary["total_services"] as? String) ?? ""
             self.documents = [Document]()
             if let documentsArray = dictionary["documents"] as? [[String:Any]]{
                 for dic in documentsArray{
@@ -128,7 +133,6 @@ extension UserWebService {
                     documents.append(value)
                 }
             }
-
             self.email = (dictionary["email"] as? String) ?? ""
             self.emergenceContactNumber = (dictionary["emergence_contact_number"] as? String) ?? ""
             self.gender = (dictionary["gender"] as? String) ?? ""

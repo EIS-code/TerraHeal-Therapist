@@ -159,6 +159,7 @@ extension EditProfileVC {
             guard let self = self else { return } ; print(self)
             self.selectedProfileDoc = doc
             self.selectedProfileDoc?.paramName = "profile_photo"
+
             self.openCropper(image: doc.image ?? UIImage())
             //let gallaryVC:GallaryVC = Common.appDelegate.loadGallaryVC(navigaionVC: self.navigationController)
         }
@@ -432,7 +433,7 @@ extension EditProfileVC {
 extension EditProfileVC {
     func wsUpdateProfile(request: UserWebService.RequestProfile) {
         Loader.showLoading()
-        AppWebApi.updateProfileDetail(params: request, image: self.selectedProfileDoc, document: selectedProfileDoc) { (response) in
+        AppWebApi.updateProfileDetail(params: request, image: self.selectedProfileDoc) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 let user = response.data
@@ -464,6 +465,7 @@ extension EditProfileVC: UIImageCropperProtocol {
         self.popVC()
         self.ivProfilePic.image = croppedImage
         self.selectedProfileDoc?.image = croppedImage
+
         self.wsUpdateProfile(request: UserWebService.RequestProfile.init())
     }
     

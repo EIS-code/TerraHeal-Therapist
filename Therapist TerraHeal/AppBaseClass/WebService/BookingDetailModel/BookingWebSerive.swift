@@ -17,6 +17,7 @@ class BookingWebSerive {
     static let pastBookingListURL: String = API_URL.PastBookingList
     static let futureBookingListURL: String = API_URL.FutureBookingList
     static let bookingDetailListURL: String = API_URL.BookingDetail
+    static let allBookingListURL: String = API_URL.NumberOfBooking
     static let startSevice: String = API_URL.StartService
     static let endService: String = API_URL.FinishService
 

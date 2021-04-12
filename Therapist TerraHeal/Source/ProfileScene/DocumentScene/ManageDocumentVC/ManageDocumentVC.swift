@@ -71,6 +71,23 @@ class ManageDocumentVC: BaseVC {
         self.lblEmptyMsg.text = "DOCUMENT_EMPTY_MSG".localized()
         self.btnSubmit?.setTitle("MANAGE_DOCUMENT_BTN_ADD_NEW".localized(), for: .normal)
         self.lblDocumentId.setFont(name: FontName.Regular, size: FontSize.detail)
+        switch self.selectedDocType {
+        case .AddressProof:
+            if let document = appSingleton.user.documents.first(where: { (document) -> Bool in
+                document.type == DocumentType.IdentityProofFront.rawValue
+            }) {
+                self.arrForData.append(UploadDocumentDetail.init(id: document.type, name: "Front", url: document.fileName,  image: nil, data: nil, isCompleted: true, paramName: document.getDocumentType().paramName()))
+            } 
+            if let document = appSingleton.user.documents.first(where: { (document) -> Bool in
+                document.type == DocumentType.IdentityProofBack.rawValue
+            }) {
+                self.arrForData.append(UploadDocumentDetail.init(id: document.type, name: "Back", url: document.fileName, image: nil, data: nil, isCompleted: true, paramName: document.getDocumentType().paramName()))
+            }
+            break;
+
+        default:
+            print("")
+        }
     }
     
     @IBAction func btnCancelTapped(_ sender: Any) {
@@ -154,7 +171,6 @@ class ManageDocumentVC: BaseVC {
     }
     
     func openCropper(image: UIImage) {
-        
         let cropper: UIImageCropperVC = UIImageCropperVC.fromNib()
         cropper.cropRatio = 1/1
         cropper.delegate = self
