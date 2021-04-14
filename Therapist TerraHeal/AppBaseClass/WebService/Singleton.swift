@@ -13,6 +13,7 @@ public class Singleton :NSObject {
     static let shared = Singleton()
     var user:UserWebService.UserData = UserWebService.UserData.init(fromDictionary: [:])
     var currentService: BookingDetail = BookingDetail.init(fromDictionary: [:])
+    var bookingTypeSelected: BookingDateFilterType = .Today
     var currencySymbol:String = ""
     //var settting:Setting.Response = Setting.Response.init(fromDictionary: [:])
     var myLatitude: String = ""

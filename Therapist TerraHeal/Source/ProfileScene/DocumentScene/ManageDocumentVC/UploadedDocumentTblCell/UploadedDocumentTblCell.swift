@@ -7,35 +7,33 @@
 //
 
 import UIKit
-
-class ManageDocumentTblCell: TableCell {
+import WebKit
+class UploadedDocumentTblCell: TableCell {
 
     @IBOutlet weak var lblName: ThemeLabel!
-    @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var btnDelete: FloatingRoundButton!
-    @IBOutlet weak var ivDocument: UIImageView!
-    
+    @IBOutlet weak var wkWebView: WKWebView!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
         self.lblName?.setFont(name: FontName.Bold, size: FontSize.header)
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.btnDelete?.setRound()
     }
 
     func setData(data: UploadDocumentDetail ) {
         self.lblName.text = data.name
         if let url = data.url {
-            self.ivDocument?.downloadedFrom(link: url)
+            self.wkWebView.load(URLRequest.init(url: URL.init(string: url)!))
+            self.wkWebView.backgroundColor = .clear
+            self.wkWebView.scrollView.backgroundColor = .clear
+            self.wkWebView.isOpaque = false;
         }
-        //self.btnDelete.isHidden = !data.isCompleted
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)
         self.btnDelete?.setRound()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

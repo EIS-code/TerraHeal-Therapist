@@ -4,9 +4,10 @@ import UIKit
 enum SubFilterType: Int {
     case Date = 0
     case ClientName = 1
-    case ServiceType = 2
-    case BookingType = 3
-    case SessionType = 4
+    case Massages = 2
+    case Therapies = 3
+    case BookingType = 4
+    case SessionType = 5
 }
 
 class CustomFilterDialog: ThemeBottomDialogView {
@@ -32,16 +33,21 @@ class CustomFilterDialog: ThemeBottomDialogView {
     @IBOutlet weak var vwClientSearch: UIView!
     @IBOutlet weak var vwClientSearchBar: UIView!
     @IBOutlet weak var txtClientSearch: ThemeTextField!
+    @IBOutlet weak var tblForClient: UITableView!
     //ServiceDialog
     @IBOutlet weak var vwServiceSearch: UIView!
     @IBOutlet weak var vwServiceSearchBar: UIView!
     @IBOutlet weak var txtServiceSearch: ThemeTextField!
     @IBOutlet weak var vwServiceSelection: JDSegmentedControl!
+    @IBOutlet weak var tblForServices: UITableView!
     var selectedServiceType: ServiceType = ServiceType.Massages
     //SessionDialog
     @IBOutlet weak var vwSession: UIView!
     @IBOutlet weak var tblForSessionType: UITableView!
     var arrForData: [SessionTypeDetails] = []
+    var arrForClientData: [Client] = []
+    var arrForMassageData: [Massage] = appSingleton.user.selectedServices.massages
+    var arrForTherapyData: [Therapy] = appSingleton.user.selectedServices.therapies
     //BookingTypeView
     @IBOutlet weak var vwBookingType: UIView!
     @IBOutlet weak var lblCenter: ThemeLabel!
@@ -167,7 +173,7 @@ class CustomFilterDialog: ThemeBottomDialogView {
     }
 
     func handleServiceView() {
-        self.selectedTab = .ServiceType
+        self.selectedTab = .Massages
         self.vwSession.gone()
         self.vwClientSearch.gone()
         self.dateView.gone()
@@ -182,6 +188,7 @@ class CustomFilterDialog: ThemeBottomDialogView {
         self.dateView.gone()
         self.vwBookingType.gone()
         self.vwClientSearch.visible()
+        self.wsGetClientList()
     }
 
     func handleBookingTypeView() {
@@ -233,6 +240,7 @@ extension CustomFilterDialog: UITextFieldDelegate {
         self.txtClientSearch.changePlaceHolder(color: UIColor.themeDarkText)
         self.txtClientSearch.placeholder = "FILTER_DIALOG_TXT_SEARCH_CLIENT".localized()
         self.vwClientSearchBar.setRound(withBorderColor: .clear, andCornerRadious: self.vwClientSearchBar.bounds.height/2.0, borderWidth: 1.0)
+        self.setupTableView(tableView: self.tblForClient)
     }
 
     @IBAction func searching(_ sender: UITextField) {
@@ -261,6 +269,7 @@ extension CustomFilterDialog {
         self.txtServiceSearch.placeholder = "FILTER_DIALOG_TXT_SEARCH_SERVICE".localized()
         self.vwServiceSearchBar.setRound(withBorderColor: .clear, andCornerRadious: self.vwServiceSearchBar.bounds.height/2.0, borderWidth: 1.0)
         self.setupSwitch()
+        self.setupTableView(tableView: self.tblForServices)
     }
 
     private func setupSwitch() {
@@ -284,12 +293,14 @@ extension CustomFilterDialog {
         self.vwServiceSelection.selectItemAt(index: 0)
         self.selectedServiceType = ServiceType.Therapies
         self.selectedValue = "Massages"
+        self.tblForServices.reloadData()
     }
 
     func therapiesTapped(){
         self.vwServiceSelection.selectItemAt(index: 1)
         self.selectedServiceType = ServiceType.Therapies
         self.selectedValue = "Therapy"
+        self.tblForServices.reloadData()
     }
 
     @IBAction func searchingService(_ sender: UITextField) {
@@ -327,4 +338,17 @@ extension CustomFilterDialog {
             self.tblForSessionType.reloadData()
         }
     }
+
+    func wsGetClientList() {
+        Loader.showLoading()
+        ClientWebService.getAllClients(params: ClientWebService.RequestClientList.init(search_val: txtClientSearch.text!), completionHandler: { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                self.arrForClientData = response.clientList
+            }
+            self.tblForClient.reloadData()
+        })
+    }
+
+
 }

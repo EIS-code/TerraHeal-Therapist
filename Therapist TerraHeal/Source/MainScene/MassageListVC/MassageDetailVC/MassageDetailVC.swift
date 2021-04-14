@@ -24,7 +24,8 @@ class MassageDetailVC: BaseVC {
        @IBOutlet weak var lblbSessionDetail: ThemeLabel!
        @IBOutlet weak var lblSessionValue: ThemeLabel!
 
-    var arrForData: [MyBookingTblCellDetail] = []
+    var arrForData: [MyBookingUserPeople] = []
+    var bookingDetail: BookingDetail = BookingDetail.init(fromDictionary: [:])
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -83,9 +84,44 @@ class MassageDetailVC: BaseVC {
         self.lblbSessionDetail.setFont(name: FontName.SemiBold, size: FontSize.subHeader)
         self.lblSessionValue.setFont(name: FontName.Regular, size: FontSize.detail)
         self.setupTableView(tableView: self.tableView)
+        self.setData(data: self.bookingDetail)
     }
     
+    func setData(data:BookingDetail) {
 
+        let bookingDate = data.massageDate.formatDate(from: "yyyy-MM-dd", to: "dd MMM yyyy")
+        let bookingTime = Date.init(milliseconds: data.massageStartTime.toDouble).toString(format: "hh:mm")
+
+        let bookingDateTime = Date.init(milliseconds:  data.massageStartTime.toDouble).toString(format: "hh:mm | EEE, dd MMM yyyy")
+
+        let people = MyBookingUserPeople.init(fromDictionary: [:])
+        people.age = data.clientAge
+        people.name = data.clientName
+        people.gender = data.clientGender
+        let bookingMassage = MyBookingMassage.init(fromDictionary: [:])
+        bookingMassage.name = data.massageName
+        bookingMassage.time = data.massageDuration
+        people.bookingMassages = [bookingMassage]
+        self.arrForData = [people]
+
+        self.lblDate?.setText(bookingDate)
+        self.lblBookingTime.setText("booked: \(bookingTime)")
+        self.lblDelayTime.setText("")
+        self.lblBookingDetail.setText("Booking Details")
+
+        self.lblBookingTypeValue.setText(BookingType.init(rawValue: data.bookingType)?.name())
+        self.lblCenterName.setText(data.shopName)
+        self.lblCenterAddress.setText(data.shopAddress)
+        self.lblBookDateAndTime.setText(bookingDateTime)
+        self.lblSessionValue.setText(data.sessionType)
+        self.ivForQr?.downloadedFrom(link: data.qrCodePath)
+        self.tableView.reloadData(heightToFit: self.htblVw) {
+            self.vwExpanded?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)
+            self.vwDate?.setRound(withBorderColor: .clear, andCornerRadious: 15, borderWidth: 1.0)
+            print(#function)
+        }
+
+    }
     
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
         super.btnLeftTapped()
@@ -117,11 +153,14 @@ extension MassageDetailVC :  UITableViewDelegate,UITableViewDataSource {
         return arrForData.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return arrForData[section].bookingMassages.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       let data = arrForData[indexPath.section].bookingMassages[indexPath.row]
        let cell = tableView.dequeueReusableCell(withIdentifier: MassageDetailTblCell.name, for: indexPath) as?  MassageDetailTblCell
-        cell?.setData(data: MassageCellDetail.init(title: "ABC", subTitle: "abc"))
+        cell?.layoutIfNeeded()
+        cell?.setData(data: MassageCellDetail.init(title: data.name, subTitle: data.time + "min"))
+        cell?.layoutIfNeeded()
         return cell!
     }
 
@@ -132,7 +171,7 @@ extension MassageDetailVC :  UITableViewDelegate,UITableViewDataSource {
             else {
                 return nil
         }
-        view.setData(data: UserDetailSectionModel.init(name: "jaydeep", age: "25", gender: "Male"))
+        view.setData(data: UserDetailSectionModel.init(name:arrForData[0].name, age: arrForData[0].age, gender: arrForData[0].gender))
         return view
 
     }

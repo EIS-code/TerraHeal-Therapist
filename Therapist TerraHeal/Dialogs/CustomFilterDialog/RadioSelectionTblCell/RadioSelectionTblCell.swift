@@ -36,6 +36,18 @@ class RadioSelectionTblCell: TableCell {
         self.lblName.text = data.type
         self.btnAction.isSelected =  data.isSelected
     }
+    func setData(data: Client ) {
+        self.lblName.text = data.name
+        self.btnAction.isSelected =  data.isSelected
+    }
+    func setData(data: Massage ) {
+        self.lblName.text = data.massageName
+        self.btnAction.isSelected =  data.isSelected
+    }
+    func setData(data: Therapy ) {
+        self.lblName.text = data.therapyName
+        self.btnAction.isSelected =  data.isSelected
+    }
     override func layoutSubviews() {
         super.layoutSubviews()
        // self.vwBg?.setRound(withBorderColor: .clear, andCornerRadious: 10.0, borderWidth: 1.0)

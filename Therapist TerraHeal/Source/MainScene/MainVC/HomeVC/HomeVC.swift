@@ -6,14 +6,14 @@
 import UIKit
 
 
-
+enum BookingDateFilterType : Int {
+    case Past = 0
+    case Today  = 1
+    case Future = 2
+}
 class HomeVC: BaseVC {
 
-    enum FilterType : Int {
-        case Past = 0
-        case Today  = 1
-        case Future = 2
-    }
+
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnFilter: FloatingRoundButton!
@@ -22,15 +22,15 @@ class HomeVC: BaseVC {
     @IBOutlet weak var hFilterTble: NSLayoutConstraint!
     @IBOutlet weak var vwFilter: UIView!
     @IBOutlet weak var btnSubFilter: FloatingRoundButton!
-    var selectedFilterType: FilterType = .Today
+    var selectedFilterType: BookingDateFilterType = .Today
     var selectedSubFilterType: SubFilterType = .Date
 
     var arrForData: [MyBookingTblDetail] = []
     var arrForOriginalData: [BookingData] = []
     var arrForFilter: [ImageWithTitle] = [
-        ImageWithTitle.init(name: "HOME_FILTER_TODAY".localized(), imageName: ImageAsset.Filter.today, data: FilterType.Today),
-        ImageWithTitle.init(name: "HOME_FILTER_FUTURE".localized(), imageName: ImageAsset.Filter.future, data: FilterType.Future),
-        ImageWithTitle.init(name: "HOME_FILTER_PAST".localized(), imageName: ImageAsset.Filter.past, data: FilterType.Past)
+        ImageWithTitle.init(name: "HOME_FILTER_TODAY".localized(), imageName: ImageAsset.Filter.today, data: BookingDateFilterType.Today),
+        ImageWithTitle.init(name: "HOME_FILTER_FUTURE".localized(), imageName: ImageAsset.Filter.future, data: BookingDateFilterType.Future),
+        ImageWithTitle.init(name: "HOME_FILTER_PAST".localized(), imageName: ImageAsset.Filter.past, data: BookingDateFilterType.Past)
     ]
     var selectedDate: Date? = nil
     var currentBookingRequest: BookingWebSerive.RequestBookingList = BookingWebSerive.RequestBookingList.init()
@@ -200,8 +200,10 @@ extension HomeVC {
                 self.selectedDate = Date.init(milliseconds: (value as! String).toDouble)
             case .ClientName:
                 self.currentBookingRequest.client_name = value as! String
-            case .ServiceType:
-                self.currentBookingRequest.massage_date = value as! String
+            case .Massages:
+                self.currentBookingRequest.massage_id = value as! String
+            case .Therapies:
+                self.currentBookingRequest.therapy_id = value as! String
             case .SessionType:
                 self.currentBookingRequest.session_type = value as! String
             }

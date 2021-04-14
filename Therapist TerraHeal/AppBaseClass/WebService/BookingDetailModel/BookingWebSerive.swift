@@ -20,11 +20,16 @@ class BookingWebSerive {
     static let allBookingListURL: String = API_URL.NumberOfBooking
     static let startSevice: String = API_URL.StartService
     static let endService: String = API_URL.FinishService
+    static let bookingListPendingURL: String = API_URL.BookingListPending
+    static let bookingListUpcomingURL: String = API_URL.BookingListUpcoming
+    static let bookingListPastURL: String = API_URL.BookingListPast
 
     struct RequestBookingList: Codable {
         var therapist_id: String = "3"// PreferenceHelper.shared.getUserId()
         var massage_date: String = Date().millisecondsSince1970.toString()
         var client_name: String = ""
+        var massage_id: String = ""
+        var therapy_id: String = ""
         var booking_type: String = ""
         var session_type: String = ""
        
@@ -66,7 +71,18 @@ extension BookingWebSerive {
             }
         }
     }
-
+    class ResponseMyBookingList: ResponseModel {
+        var bookingList: [BookingDetail] = []
+        override init(fromDictionary dictionary: [String:Any]) {
+            super.init(fromDictionary: dictionary)
+            bookingList.removeAll()
+            if let dataArray = dictionary["data"] as? [[String:Any]] {
+                for data in dataArray {
+                    bookingList.append(BookingDetail.init(fromDictionary: data))
+                }
+            }
+        }
+    }
     class ResponseBookingDetail: ResponseModel {
         var bookingDetail: BookingDetail = BookingDetail.init(fromDictionary: [:])
         override init(fromDictionary dictionary: [String:Any]) {

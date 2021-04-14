@@ -15,7 +15,7 @@ class MassageListVC: BaseVC {
     @IBOutlet weak var vwTotalNumberOfMassage: UIView!
 
     var arrForData: [MyBookingTblDetail] = []
-    var arrForOriginalData: [BookingData] = []
+    var arrForOriginalData: [BookingDetail] = []
 
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -110,7 +110,7 @@ extension MassageListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        Common.appDelegate.loadMassageDetailVC(navigaionVC: self.navigationController)
+        Common.appDelegate.loadMassageDetailVC(navigaionVC: self.navigationController, bookingDetail: self.arrForOriginalData[indexPath.row])
 
     }
 
@@ -125,7 +125,7 @@ extension MassageListVC {
                 self.arrForOriginalData.removeAll()
                 self.arrForData.removeAll()
                 for data in response.bookingList {
-                    self.arrForData.append(data.toBookingModel(filterType: .Date))
+                    self.arrForData.append(data.toBookingModel())
                     self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()

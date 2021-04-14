@@ -364,16 +364,19 @@ extension AppDelegate {
         }
     }
 
-    func loadMassageDetailVC(navigaionVC:UINavigationController? = nil) {
+    func loadMassageDetailVC(navigaionVC:UINavigationController? = nil, bookingDetail: BookingDetail) {
         if let nc = navigaionVC as? NC {
             if let targetVC: MassageDetailVC =  nc.findVCs(ofType: MassageDetailVC.self).first {
+                targetVC.bookingDetail = bookingDetail
                 _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: MassageDetailVC = MassageDetailVC.fromNib()
+                targetVC.bookingDetail = bookingDetail
                 nc.pushVC(targetVC)
             }
         } else {
             let targetVC: MassageDetailVC = MassageDetailVC.fromNib()
+            targetVC.bookingDetail = bookingDetail
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
         }

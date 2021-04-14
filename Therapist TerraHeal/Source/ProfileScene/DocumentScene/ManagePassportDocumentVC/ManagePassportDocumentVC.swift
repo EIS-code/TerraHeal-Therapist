@@ -6,7 +6,7 @@
 import UIKit
 
 
-class ManageDocumentVC: BaseVC {
+class ManagePassportDocumentVC: BaseVC {
     
     @IBOutlet weak var btnCancel: CancelButton!
     @IBOutlet weak var tableView: UITableView!

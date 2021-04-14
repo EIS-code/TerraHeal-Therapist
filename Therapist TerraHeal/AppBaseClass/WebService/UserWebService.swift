@@ -42,6 +42,9 @@ class UserWebService {
         var health_conditions_allergies: String? = nil
         var personal_description: String? = nil
     }
+    struct RequestRemoveDocument: Codable  {
+        var document_id: String? = nil
+    }
 
     struct RequestUpdateMassage: Codable {
         var my_massages: [String] = []
@@ -224,7 +227,7 @@ class Therapy: Codable {
     var image: String = ""
     var therapyId: String = ""
     var therapyName: String = ""
-
+    var isSelected: Bool = false
 
     init(fromDictionary dictionary: [String:Any]){
         self.id = (dictionary["id"] as? String) ?? ""
@@ -240,7 +243,7 @@ class Massage: Codable{
     var image: String = ""
     var massageId: String = ""
     var massageName: String = ""
-
+    var isSelected: Bool = false
 
     init(fromDictionary dictionary: [String:Any]){
         self.id = (dictionary["id"] as? String) ?? ""

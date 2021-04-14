@@ -11,8 +11,7 @@ class BookingListVC: BaseVC {
     @IBOutlet weak var vwTab: JDSegmentedControl!
     @IBOutlet weak var vwBg: UIView!
     
-    var arrForOriginalData: [BookingData] = []
-    var arrForData: [MyBookingTblCellDetail] = []
+    var arrForOriginalData: [BookingDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -63,13 +62,13 @@ class BookingListVC: BaseVC {
             guard let self = self else { return } ; print(self)
             switch index {
             case 0:
-                self.wsGetTodaysBooking(request: BookingWebSerive.RequestBookingList.init())
+                self.wsGetPendingBooking()
                 break
             case 1:
-                self.wsGetFutureBooking(request: BookingWebSerive.RequestBookingList.init())
+                self.wsGetUpcomingBooking()
                 break
             default:
-                self.wsGetPastBooking(request: BookingWebSerive.RequestBookingList.init())
+                self.wsGetPastBooking()
                 break
             }
         }
@@ -96,15 +95,15 @@ extension BookingListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 500
-        tableView.register(BookingDetailTblCell.nib()
-                           , forCellReuseIdentifier: BookingDetailTblCell.name)
+        tableView.register(MyBookingCollapseCell.nib()
+                           , forCellReuseIdentifier: MyBookingCollapseCell.name)
         tableView.register(MyBookingExpandTblCell.nib()
                            , forCellReuseIdentifier: MyBookingExpandTblCell.name)
         tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.width, height: JDDeviceHelper.offseter(offset: 88)))
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrForData.count
+        return arrForOriginalData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -127,7 +126,7 @@ extension BookingListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if arrForData[indexPath.row].isSelected {
+        if arrForOriginalData[indexPath.row].isSelected {
             print("Row Height:- \(tableView.estimatedRowHeight)")
             return UITableView.automaticDimension
         }
@@ -136,22 +135,17 @@ extension BookingListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        for i in 0..<arrForData.count {
+        for i in 0..<arrForOriginalData.count {
             if indexPath.row != i {
-                arrForData[i].isSelected = false
+                arrForOriginalData[i].isSelected = false
             } else {
-                self.arrForData[indexPath.row].isSelected.toggle()
+                self.arrForOriginalData[indexPath.row].isSelected.toggle()
             }
 
         }
         tableView.beginUpdates()
-        if arrForData[indexPath.row].isSelected {
-            self.tableView.reloadRows(at: [indexPath], with: .fade)
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
-                self.tableView.reloadData()
-            }
-        } else {
-            self.tableView.reloadRows(at: [indexPath], with: .fade)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+            self.tableView.reloadData()
         }
         tableView.endUpdates()
 
@@ -160,30 +154,26 @@ extension BookingListVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
 }
 
 extension BookingListVC {
-    func wsGetTodaysBooking(request: BookingWebSerive.RequestBookingList) {
+    func wsGetPendingBooking() {
         Loader.showLoading()
-        BookingWebSerive.todayBookingList(params: request) { (response) in
+        BookingWebSerive.myBookingPendingList { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()
-                self.arrForData.removeAll()
                 for data in response.bookingList {
-                   // self.arrForData.append(data.toBookingModel(filterType: .Date))
                     self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()
             }
         }
     }
-    func wsGetFutureBooking(request: BookingWebSerive.RequestBookingList) {
+    func wsGetUpcomingBooking() {
         Loader.showLoading()
-        BookingWebSerive.futureBookingList(params: request) { (response) in
+        BookingWebSerive.myBookingUpcomingList { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()
-                self.arrForData.removeAll()
                 for data in response.bookingList {
-                    //self.arrForData.append(data.toBookingModel(filterType:.Date))
                     self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()
@@ -191,15 +181,13 @@ extension BookingListVC {
         }
     }
 
-    func wsGetPastBooking(request: BookingWebSerive.RequestBookingList) {
+    func wsGetPastBooking() {
         Loader.showLoading()
-        BookingWebSerive.pastBookingList(params: request) { (response) in
+        BookingWebSerive.myBookingPastList { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForOriginalData.removeAll()
-                self.arrForData.removeAll()
                 for data in response.bookingList {
-                   // self.arrForData.append(data.toBookingModel(filterType: .Date))
                     self.arrForOriginalData.append(data)
                 }
                 self.tableView.reloadData()

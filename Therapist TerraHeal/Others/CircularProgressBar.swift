@@ -11,6 +11,8 @@ import UIKit
 
 class CircularProgressView: UIView {
     var progressLyr = CAShapeLayer()
+    var fromValue = 0.0
+    var progress: Float  = 0.0
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         makeCircularPath()
@@ -46,12 +48,15 @@ class CircularProgressView: UIView {
         }*/
         layer.addSublayer(progressLyr)
         animation.duration = duration
-        animation.fromValue = 0
+        animation.fromValue = self.fromValue
         animation.toValue = value
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         progressLyr.strokeEnd = CGFloat(value)
+        self.fromValue = Double(value)
+        self.progress = value
         progressLyr.add(animation, forKey: "animateprogress")
     }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         makeCircularPath()

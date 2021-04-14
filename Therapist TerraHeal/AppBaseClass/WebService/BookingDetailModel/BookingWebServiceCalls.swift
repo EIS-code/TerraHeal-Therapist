@@ -2,6 +2,24 @@ import Foundation
 //MARK: Web Service Calls
 extension BookingWebSerive {
 
+    class func myBookingPendingList(completionHandler: @escaping ((BookingWebSerive.ResponseMyBookingList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: Self.bookingListPendingURL, methodName: AlamofireHelper.POST_METHOD, paramData: [:]) { (data, dictionary, error) in
+            let response = BookingWebSerive.ResponseMyBookingList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func myBookingUpcomingList(completionHandler: @escaping ((BookingWebSerive.ResponseMyBookingList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: Self.bookingListUpcomingURL, methodName: AlamofireHelper.POST_METHOD, paramData: [:]) { (data, dictionary, error) in
+            let response = BookingWebSerive.ResponseMyBookingList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func myBookingPastList(completionHandler: @escaping ((BookingWebSerive.ResponseMyBookingList) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: Self.bookingListPastURL, methodName: AlamofireHelper.POST_METHOD, paramData: [:]) { (data, dictionary, error) in
+            let response = BookingWebSerive.ResponseMyBookingList.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
     class func todayBookingList(params:BookingWebSerive.RequestBookingList, completionHandler: @escaping ((BookingWebSerive.ResponseBookingList) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: API_URL.TodayBookingList, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = BookingWebSerive.ResponseBookingList.init(fromDictionary: dictionary)
@@ -9,9 +27,9 @@ extension BookingWebSerive {
         }
     }
 
-    class func numberOfBookingList(completionHandler: @escaping ((BookingWebSerive.ResponseBookingList) -> Void)) {
+    class func numberOfBookingList(completionHandler: @escaping ((BookingWebSerive.ResponseMyBookingList) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: Self.allBookingListURL, methodName: AlamofireHelper.POST_METHOD, paramData: [:]) { (data, dictionary, error) in
-            let response = BookingWebSerive.ResponseBookingList.init(fromDictionary: dictionary)
+            let response = BookingWebSerive.ResponseMyBookingList.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }

@@ -156,6 +156,8 @@
 		0354F2792549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F2782549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift */; };
 		0354F27D25496E9100F3BEB7 /* WorkingScheduleTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F27B25496E9100F3BEB7 /* WorkingScheduleTblSection.swift */; };
 		0354F27E25496E9100F3BEB7 /* WorkingScheduleTblSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F27C25496E9100F3BEB7 /* WorkingScheduleTblSection.xib */; };
+		035B343E26255A15001A4124 /* UploadedDocumentTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035B343C26255A15001A4124 /* UploadedDocumentTblCell.xib */; };
+		035B343F26255A15001A4124 /* UploadedDocumentTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B343D26255A15001A4124 /* UploadedDocumentTblCell.swift */; };
 		035B6DC62616053E00471DF9 /* ClientWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6DC52616053E00471DF9 /* ClientWebService.swift */; };
 		035B6DC92616079000471DF9 /* SessionWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6DC82616079000471DF9 /* SessionWebService.swift */; };
 		035EDFEF261448C000B1FD01 /* LanguageWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EDFEE261448C000B1FD01 /* LanguageWebService.swift */; };
@@ -520,6 +522,8 @@
 		0354F2782549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkingScheduleVC + CaledarView.swift"; sourceTree = "<group>"; };
 		0354F27B25496E9100F3BEB7 /* WorkingScheduleTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingScheduleTblSection.swift; sourceTree = "<group>"; };
 		0354F27C25496E9100F3BEB7 /* WorkingScheduleTblSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkingScheduleTblSection.xib; sourceTree = "<group>"; };
+		035B343C26255A15001A4124 /* UploadedDocumentTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadedDocumentTblCell.xib; sourceTree = "<group>"; };
+		035B343D26255A15001A4124 /* UploadedDocumentTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadedDocumentTblCell.swift; sourceTree = "<group>"; };
 		035B6DC52616053E00471DF9 /* ClientWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientWebService.swift; sourceTree = "<group>"; };
 		035B6DC82616079000471DF9 /* SessionWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionWebService.swift; sourceTree = "<group>"; };
 		035EDFEE261448C000B1FD01 /* LanguageWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageWebService.swift; sourceTree = "<group>"; };
@@ -1414,6 +1418,15 @@
 				0354F27C25496E9100F3BEB7 /* WorkingScheduleTblSection.xib */,
 			);
 			path = WorkingScheduleTblSection;
+			sourceTree = "<group>";
+		};
+		035B343B26255A15001A4124 /* UploadedDocumentTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				035B343C26255A15001A4124 /* UploadedDocumentTblCell.xib */,
+				035B343D26255A15001A4124 /* UploadedDocumentTblCell.swift */,
+			);
+			path = UploadedDocumentTblCell;
 			sourceTree = "<group>";
 		};
 		035EF59F2526F3A300C64BD4 /* MenuScene */ = {
@@ -2355,6 +2368,7 @@
 		03B960B125483AA500F8F214 /* ManageDocumentVC */ = {
 			isa = PBXGroup;
 			children = (
+				035B343B26255A15001A4124 /* UploadedDocumentTblCell */,
 				03B960B225483AA500F8F214 /* xib */,
 				03B960B425483AA500F8F214 /* ManageDocumentTblCell */,
 				03B960B725483AA500F8F214 /* ManageDocumentVC.swift */,
@@ -2709,6 +2723,7 @@
 				038CAF8E252601CF001ACAD6 /* LoginVC.xib in Resources */,
 				03B960BA25483AA500F8F214 /* DocumentTblCell.xib in Resources */,
 				03405503252E043000B7077D /* RadioSelectionTblCell.xib in Resources */,
+				035B343E26255A15001A4124 /* UploadedDocumentTblCell.xib in Resources */,
 				03521F05252B18A00094829E /* DateDialog.xib in Resources */,
 				03440371252F04FB00C8C700 /* BookingDetailVC.xib in Resources */,
 				0354F26425492F4100F3BEB7 /* ManageExperienceTblCell.xib in Resources */,
@@ -2893,6 +2908,7 @@
 				03412292252F3AFC000BCDAE /* UIImageCropperVC.swift in Sources */,
 				03412296252F3AFC000BCDAE /* CustomPhotoPicker.swift in Sources */,
 				03643FA0254AD92A004F9156 /* MassageListVC.swift in Sources */,
+				035B343F26255A15001A4124 /* UploadedDocumentTblCell.swift in Sources */,
 				03A2CC5825309D59005E3F29 /* MyBookingVC + TableView.swift in Sources */,
 				03B960BF25483AA500F8F214 /* ManageDocumentVC.swift in Sources */,
 				038CAFE5252604D8001ACAD6 /* PersonData.xcdatamodeld in Sources */,

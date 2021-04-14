@@ -14,13 +14,13 @@ extension CustomFilterDialog: UITableViewDelegate, UITableViewDataSource {
     func setupSession() {
         self.vwSession.frame = self.activeView.bounds
         self.activeView.addSubview(self.vwSession)
-        self.setupSessionTableView(tableView: self.tblForSessionType)
+        self.setupTableView(tableView: self.tblForSessionType)
         self.arrForData = []
         self.tblForSessionType.reloadData()
 
     }
 
-    private func setupSessionTableView(tableView: UITableView) {
+    func setupTableView(tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
@@ -33,34 +33,97 @@ extension CustomFilterDialog: UITableViewDelegate, UITableViewDataSource {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return arrForData.count
+        if tableView == tblForSessionType {
+            return arrForData.count
+        }
+        return 1
+
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if arrForData[section].isExpanded {
-            return arrForData[section].sessions.count
+        if tableView == tblForSessionType {
+            if arrForData[section].isExpanded {
+                return arrForData[section].sessions.count
+            } else {
+                return 0
+            }
+        } else if tableView == tblForClient {
+            return arrForClientData.count
         } else {
-            return 0
+            if self.vwServiceSelection.currentIndex == 0 {
+                return arrForMassageData.count
+            } else {
+                return arrForTherapyData.count
+            }
+
         }
+
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        if  tableView == self.tblForSessionType {
+            return 50
+        }
+        return 1
+
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RadioSelectionTblCell.name, for: indexPath) as?  RadioSelectionTblCell
         cell?.layoutIfNeeded()
-        cell?.setData(data: arrForData[indexPath.section].sessions[indexPath.row])
+        switch tableView {
+        case self.tblForClient:
+            cell?.setData(data: self.arrForClientData[indexPath.row])
+            break;
+        case self.tblForServices:
+            if vwServiceSelection.currentIndex == 0 {
+                cell?.setData(data: self.arrForMassageData[indexPath.row])
+            } else {
+                cell?.setData(data: self.arrForTherapyData[indexPath.row])
+            }
+            break;
+        default:
+            cell?.setData(data: arrForData[indexPath.section].sessions[indexPath.row])
+        }
+
         cell?.layoutIfNeeded()
         return cell!
 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        for i in 0..<arrForData[indexPath.section].sessions.count {
-            arrForData[indexPath.section].sessions[i].isSelected = false
+        switch tableView {
+        case self.tblForServices:
+            if self.selectedServiceType == .Massages {
+                for i in 0..<arrForMassageData.count {
+                    arrForMassageData[i].isSelected = false
+                }
+                self.arrForMassageData[indexPath.row].isSelected = true
+                self.selectedValue = self.arrForMassageData[indexPath.row].massageId
+            } else {
+                for i in 0..<arrForTherapyData.count {
+                    arrForTherapyData[i].isSelected = false
+                }
+                self.arrForTherapyData[indexPath.row].isSelected = true
+                self.selectedValue = self.arrForTherapyData[indexPath.row].therapyId
+            }
+            break;
+        case self.tblForClient:
+            for i in 0..<arrForClientData.count {
+                arrForClientData[i].isSelected = false
+            }
+            self.arrForClientData[indexPath.row].isSelected = true
+            self.selectedValue = self.arrForClientData[indexPath.row].id
+            break;
+        case self.tblForSessionType:
+            for i in 0..<arrForData[indexPath.section].sessions.count {
+                arrForData[indexPath.section].sessions[i].isSelected = false
+            }
+            self.arrForData[indexPath.section].sessions[indexPath.row].isSelected = true
+            self.selectedValue = self.arrForData[indexPath.section].sessions[indexPath.row].id
+            break;
+        default:
+            print("")
         }
-        self.arrForData[indexPath.section].sessions[indexPath.row].isSelected = true
-        self.selectedValue = self.arrForData[indexPath.section].sessions[indexPath.row].id
+
         //self.selectedFilterValues.massage_date = self.selectedMilli.toString()
         tableView.reloadData()
     }
@@ -68,16 +131,20 @@ extension CustomFilterDialog: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let view = tableView.dequeueReusableHeaderFooterView(
-                        withIdentifier: SessionTypeTblSection.name)
-                        as? SessionTypeTblSection
-        else {return nil}
-        view.ivForSessionType.image = ImageAsset.getImage(arrForData[section].image)
-        view.btnSelectSection.tag = section
-        view.lblSectionTitle.setText(arrForData[section].name)
-        print(arrForData[section].name)
-        view.btnSelectSection.addTarget(self, action: #selector(btnSelectSectionTapped(_:)), for: .touchUpInside)
-        return view
+        if tableView == tblForSessionType {
+            guard let view = tableView.dequeueReusableHeaderFooterView(
+                            withIdentifier: SessionTypeTblSection.name)
+                            as? SessionTypeTblSection
+            else {return nil}
+            view.ivForSessionType.image = ImageAsset.getImage(arrForData[section].image)
+            view.btnSelectSection.tag = section
+            view.lblSectionTitle.setText(arrForData[section].name)
+            print(arrForData[section].name)
+            view.btnSelectSection.addTarget(self, action: #selector(btnSelectSectionTapped(_:)), for: .touchUpInside)
+            return view
+        }
+        return nil
+
     }
 
     @IBAction func btnSelectSectionTapped(_ sender: UIButton) {

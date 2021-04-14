@@ -48,7 +48,11 @@ class AppWebApi: NSObject {
         static var UserProfile: String {
             return Domain + Routes.Client + "/profile/update"
         }
-        
+
+        static var RemoveDocument: String {
+            return Domain + Routes.Client + "/profile/document/remove"
+        }
+
         static var UserLogout: String {
             return Domain + Routes.Client  + "/logout"
         }
@@ -71,6 +75,18 @@ class AppWebApi: NSObject {
         }
 
         //MARK:- Booking Api
+
+        static var BookingListPast: String {
+            return  Domain + Routes.Client + "/booking/list/pasts"
+        }
+        static var BookingListPending: String {
+            return  Domain + Routes.Client + "/booking/list/pending"
+        }
+        static var BookingListUpcoming: String {
+            return  Domain + Routes.Client + "/booking/list/upcoming"
+        }
+
+
         static var TodayBookingList: String {
             return  Domain + Routes.Client + "/booking/list/today"
         }
@@ -279,6 +295,12 @@ extension AppWebApi {
     }
     class func userLogout(params:UserWebService.RequestLogout = UserWebService.RequestLogout(), completionHandler: @escaping ((ResponseModel) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.UserLogout, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = ResponseModel.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    class func removeDocument(params:UserWebService.RequestRemoveDocument, completionHandler: @escaping ((ResponseModel) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.RemoveDocument, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = ResponseModel.init(fromDictionary: dictionary)
             completionHandler(response)
         }

@@ -106,7 +106,7 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if tableView == tblForFilter {
-            if let data = self.arrForFilter[indexPath.row].data as? FilterType {
+            if let data = self.arrForFilter[indexPath.row].data as? BookingDateFilterType {
                 self.selectedFilterType = data
             }
             switch self.selectedFilterType {
@@ -121,6 +121,7 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             self.updateFilterButton(isShowFilter: false)
         }  else {
             Common.appDelegate.loadBookingDetailVC(navigaionVC: self.navigationController, completion: {/* [weak self]*/ (bookingDetailVC) in
+                appSingleton.bookingTypeSelected = self.selectedFilterType
                 appSingleton.currentService = BookingDetail.init(fromDictionary: [:])
                 appSingleton.currentService.bookingInfoId = self.arrForOriginalData[indexPath.row].bookingInfoId
             })

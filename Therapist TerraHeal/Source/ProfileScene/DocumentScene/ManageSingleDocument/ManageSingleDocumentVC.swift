@@ -17,6 +17,7 @@ class ManageSingleDocumentVC: BaseVC {
 
     var selectedDocType: DocumentType = DocumentType.init(rawValue: "") ?? .AddressProof
     var selectedDocument: UploadDocumentDetail? = nil
+    var documentID:String = ""
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -64,11 +65,14 @@ class ManageSingleDocumentVC: BaseVC {
         if let document = appSingleton.user.documents.first(where: { (document) -> Bool in
             document.type == self.selectedDocType.rawValue
         }) {
+            self.documentID = document.id
             self.imgDocument.downloadedFrom(link: document.fileName)
             self.btnAddPicture.isHidden = true
+            self.btnDeleteDocument.isHidden = false
         } else {
             self.imgDocument.image = ImageAsset.getImage(ImageAsset.Placeholder.uploadDoc)
             self.btnAddPicture.isHidden = false
+            self.btnDeleteDocument.isHidden = true
         }
     }
     @IBAction func btnCancelTapped(_ sender: Any) {
@@ -95,14 +99,13 @@ class ManageSingleDocumentVC: BaseVC {
             [weak alert, weak self]  in
             guard let self = self else {return}; print(self)
             alert?.dismiss()
-            self.updateUI()
+            self.wsRemoveDocument()
+
         }
     }
     @IBAction func btnDeleteTapped(_ sender: Any) {
         self.openConfirmationDialog()
     }
-
-
 }
 
 
@@ -182,5 +185,21 @@ extension ManageSingleDocumentVC {
                 self.popVC()
             }
         }
+    }
+    func wsRemoveDocument() {
+        Loader.showLoading()
+        AppWebApi.removeDocument(params: UserWebService.RequestRemoveDocument.init(document_id: self.documentID)) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+                if let index = appSingleton.user.documents.firstIndex(where: { (data) -> Bool in
+                    return data.type == self.selectedDocType.rawValue
+                }) {
+                    appSingleton.user.documents.remove(at: index)
+                }
+                Singleton.saveInDb()
+                self.popVC()
+            }
+        }
+
     }
 }

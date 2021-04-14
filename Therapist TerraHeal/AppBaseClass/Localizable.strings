@@ -170,6 +170,7 @@
 "SERVICE_PROGRESS_BTN_FINISH" = "finish";
 "SERVICE_DURATION" = "Service duration";
 "SERVICE_MIN_REMAINING" = "min\nremaining";
+"SERVICE_MIN_EXTRA" =  "min\nextra";
 //Language Selection Dialog
 "LANGUAGE_FLUENT_BASIC" = "basic";
 "LANGUAGE_FLUENT_GOOD" = "good";

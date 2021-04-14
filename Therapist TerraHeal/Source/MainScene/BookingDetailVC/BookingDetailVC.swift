@@ -105,6 +105,13 @@ class BookingDetailVC: BaseVC {
         self.btnRoomNumber.backgroundColor = UIColor.themeSecondary
         self.btnRoomNumber.setTitleColor(UIColor.themeLightTextColor, for: .normal)
         self.btnRoomNumber.setRound()
+        if appSingleton.bookingTypeSelected != .Today {
+            self.btnStart.isHidden = true
+            self.btnCancel.isHidden = true
+        } else {
+            self.btnStart.isHidden = false
+            self.btnCancel.isHidden = false
+        }
     }
 
     

@@ -5,18 +5,6 @@
 
 import UIKit
 
-struct MyBookingTblCellDetail {
-    var title: String = ""
-    var image: String = ""
-    var isSelected:Bool = false
-
-    init(data:BookingData) {
-        self.title = Date.milliSecToDate(milliseconds: data.bookingDateTime.toDouble, format: DateFormat.MyBookingCollapseDate)
-    }
-    init(data:BookingDetail) {
-        self.title = Date.milliSecToDate(milliseconds: data.massageDate.toDouble, format: DateFormat.MyBookingCollapseDate)
-    }
-}
 
 class MyBookingVC: BaseVC {
     

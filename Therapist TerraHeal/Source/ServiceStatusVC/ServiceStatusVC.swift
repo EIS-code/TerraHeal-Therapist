@@ -14,6 +14,11 @@ class ServiceStatusVC: BaseVC {
     @IBOutlet weak var circularProgressView: CircularProgressView!
     @IBOutlet weak var lblMinute: ThemeLabel!
     @IBOutlet weak var lblMinRemaining: ThemeLabel!
+    private var minuteTimer: Timer?
+    var serviceEndTime:Double = Date().add(component: .second, value: 20).millisecondsSince1970
+    var currentTime:Double = 0.0
+    var totalDuration:Double = 0.0
+    var serviceStartTime: Double = Date().add(component: .second, value: -20).millisecondsSince1970
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -48,7 +53,8 @@ class ServiceStatusVC: BaseVC {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        circularProgressView.setProgressWithAnimation(duration: 0.5, value: 0.6)
+        self.startTimer()
+
     }
 
     private func initialViewSetup() {
@@ -109,7 +115,49 @@ class ServiceStatusVC: BaseVC {
 }
 
 
+//MARK: Timer
+extension ServiceStatusVC {
 
+    func startTimer() {
+        self.totalDuration = (self.serviceEndTime -  self.serviceStartTime)/1000
+        self.endTimer()
+        minuteTimer = Timer.scheduledTimer(withTimeInterval: 03, repeats: true) { [weak self] _ in
+            self?.timerTrigger()
+        }
+    }
+    @objc private func timerTrigger() {
+        if self.minuteTimer != nil {
+            let differenceSecond = ((Date().millisecondsSince1970 - serviceStartTime)/1000)
+            self.currentTime = differenceSecond/totalDuration
+            let timeToDisplay = Int(self.totalDuration - differenceSecond)
+            if timeToDisplay <= 0 {
+                self.lblMinute.setTextWithAnimation(text: abs(timeToDisplay).toString())
+                if self.circularProgressView.progress != 1.0 {
+                    self.circularProgressView.setProgressWithAnimation(duration: 0.5, value: 1.0)
+                    self.circularProgressView.progressClr = UIColor.red
+                    self.lblMinRemaining.setText("SERVICE_MIN_EXTRA".localized())
+                }
+
+            } else {
+                self.circularProgressView.setProgressWithAnimation(duration: 0.5, value: Float(self.currentTime))
+                self.lblMinute.setTextWithAnimation(text: timeToDisplay.toString())
+            }
+        }
+    }
+    func configureProgress() {
+        if self.circularProgressView.fromValue != 0.0 {
+            self.circularProgressView.progressClr = UIColor.themeSecondary
+            self.circularProgressView.fromValue = 0.0
+            self.lblMinRemaining.setText("SERVICE_MIN_EXTRA".localized())
+        }
+
+    }
+
+    func endTimer() {
+        minuteTimer?.invalidate()
+        minuteTimer = nil
+    }
+}
 extension ServiceStatusVC : QRScannerCodeDelegate {
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
         print("\(#function)")
