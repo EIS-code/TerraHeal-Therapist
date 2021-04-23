@@ -1,7 +1,11 @@
 
 import Foundation
 
-
+enum ServiceStatus: String {
+    case Pending = "0"
+    case onGoing = "1"
+    case Completed = "2"
+}
 class BookingData {
     var bookingDateTime: String = ""
     var bookingId: String = ""
@@ -21,13 +25,18 @@ class BookingData {
     var userId: String = ""
     var userName: String = ""
     var userPeopleId: String = ""
+    var serviceStatus: String = ""
     var isSelected: Bool = false
 
+    func getServiceStatus() -> ServiceStatus {
+        return ServiceStatus.init(rawValue: self.serviceStatus) ?? .Pending
+    }
     init(fromDictionary dictionary: [String:Any]){
         self.bookingDateTime = (dictionary["booking_date_time"] as? String) ?? ""
         self.bookingId = (dictionary["booking_id"] as? String) ?? ""
         self.bookingInfoId = (dictionary["booking_info_id"] as? String) ?? ""
         self.bookingType = (dictionary["booking_type_value"] as? String) ?? ""
+        self.serviceStatus = (dictionary["service_status"] as? String) ?? ""
         if self.bookingType.isEmpty() {
             self.bookingType = (dictionary["booking_type"] as? String) ?? ""
         }
@@ -107,10 +116,16 @@ class BookingDetail {
     var userPeopleId: String = ""
     var isSelected: Bool = false
     var bookinType: Bool = false
+    var serviceStatus: String = ""
+
+    func getServiceStatus() -> ServiceStatus {
+        return ServiceStatus.init(rawValue: self.serviceStatus) ?? .Pending
+    }
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
+        self.serviceStatus = (dictionary["service_status"] as? String) ?? ""
         self.bookingId = (dictionary["booking_id"] as? String) ?? ""
         self.bookingInfoId = (dictionary["booking_info_id"] as? String) ?? ""
         self.bookingMassageId = (dictionary["booking_massage_id"] as? String) ?? ""

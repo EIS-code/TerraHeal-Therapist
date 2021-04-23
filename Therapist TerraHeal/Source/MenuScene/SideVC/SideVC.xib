@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideVC" customModule="Terra_Heal" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <connections>
                 <outlet property="btnClose" destination="fV3-Pw-zf9" id="oiu-ft-aCy"/>
                 <outlet property="cvForMenu" destination="eob-8f-sCl" id="d3h-Vf-RDp"/>
@@ -22,12 +23,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV3-Pw-zf9" customClass="CancelButton" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="354" y="60" width="44" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV3-Pw-zf9" customClass="CancelButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="376" y="60" width="22" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="fV3-Pw-zf9" secondAttribute="height" multiplier="1:1" id="v25-xO-BeZ"/>
                     </constraints>
-                    <state key="normal" image="asset-cross"/>
+                    <state key="normal" image="asset-close"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="enableFloating" value="NO"/>
                     </userDefinedRuntimeAttributes>
@@ -35,22 +36,23 @@
                         <action selector="btnCloseTapped:" destination="-1" eventType="touchUpInside" id="yK0-9m-UUc"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-In-rQJ" customClass="ThemeLabel" customModule="Terra_Heal" customModuleProvider="target">
-                    <rect key="frame" x="16" y="72" width="43" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-In-rQJ" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="16" y="61" width="43" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="theme_dark_text"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eob-8f-sCl">
-                    <rect key="frame" x="8" y="120" width="398" height="732"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <collectionViewLayout key="collectionViewLayout" id="eog-US-gn1" customClass="PinterestLayout" customModule="Terra_Heal" customModuleProvider="target"/>
+                    <rect key="frame" x="8" y="98" width="398" height="754"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewLayout key="collectionViewLayout" id="eog-US-gn1" customClass="PinterestLayout" customModule="Therapist_TerraHeal" customModuleProvider="target"/>
                 </collectionView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="Pha-Yw-JZd"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="KXp-In-rQJ" firstAttribute="centerY" secondItem="fV3-Pw-zf9" secondAttribute="centerY" id="5QF-El-2ii"/>
-                <constraint firstItem="Pha-Yw-JZd" firstAttribute="trailing" secondItem="fV3-Pw-zf9" secondAttribute="trailing" constant="16" id="EMs-5G-kV4" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                <constraint firstItem="Pha-Yw-JZd" firstAttribute="trailing" secondItem="fV3-Pw-zf9" secondAttribute="trailing" constant="16" id="EMs-5G-kV4" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="16"/>
@@ -58,7 +60,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="KXp-In-rQJ" firstAttribute="leading" secondItem="Pha-Yw-JZd" secondAttribute="leading" constant="16" id="MLe-4m-t8u" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                <constraint firstItem="KXp-In-rQJ" firstAttribute="leading" secondItem="Pha-Yw-JZd" secondAttribute="leading" constant="16" id="MLe-4m-t8u" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="16"/>
@@ -67,14 +69,14 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="Pha-Yw-JZd" firstAttribute="bottom" secondItem="eob-8f-sCl" secondAttribute="bottom" constant="10" id="SDr-WY-Hls"/>
-                <constraint firstItem="fV3-Pw-zf9" firstAttribute="top" secondItem="Pha-Yw-JZd" secondAttribute="top" constant="16" id="Y9b-2P-jnc" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                <constraint firstItem="fV3-Pw-zf9" firstAttribute="top" secondItem="Pha-Yw-JZd" secondAttribute="top" constant="16" id="Y9b-2P-jnc" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="Pha-Yw-JZd" firstAttribute="trailing" secondItem="eob-8f-sCl" secondAttribute="trailing" constant="8" id="YjE-hc-9OS" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                <constraint firstItem="Pha-Yw-JZd" firstAttribute="trailing" secondItem="eob-8f-sCl" secondAttribute="trailing" constant="8" id="YjE-hc-9OS" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
@@ -82,7 +84,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="eob-8f-sCl" firstAttribute="leading" secondItem="Pha-Yw-JZd" secondAttribute="leading" constant="8" id="hPS-RS-PLo" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                <constraint firstItem="eob-8f-sCl" firstAttribute="leading" secondItem="Pha-Yw-JZd" secondAttribute="leading" constant="8" id="hPS-RS-PLo" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
@@ -90,7 +92,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="eob-8f-sCl" firstAttribute="top" secondItem="fV3-Pw-zf9" secondAttribute="bottom" constant="16" id="zqf-Bh-43G" customClass="NSLayoutHelper" customModule="Terra_Heal" customModuleProvider="target">
+                <constraint firstItem="eob-8f-sCl" firstAttribute="top" secondItem="fV3-Pw-zf9" secondAttribute="bottom" constant="16" id="zqf-Bh-43G" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="16"/>
@@ -98,14 +100,16 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Pha-Yw-JZd"/>
             <point key="canvasLocation" x="9" y="117"/>
         </view>
     </objects>
     <resources>
-        <image name="asset-cross" width="44" height="44"/>
+        <image name="asset-close" width="20" height="22"/>
         <namedColor name="theme_dark_text">
-            <color red="0.42352941176470588" green="0.42745098039215684" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

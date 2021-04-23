@@ -50,7 +50,12 @@ class UIImageCropperVC: BaseVC, UIImagePickerControllerDelegate, UINavigationCon
                 return
             }
             layoutDone = false
-            ratio = image.size.height / image.size.width
+            if image.size.equalTo(CGSize.zero) {
+                ratio = 1
+            } else {
+                ratio = image.size.height / image.size.width
+            }
+
             self.view.layoutIfNeeded()
         }
     }

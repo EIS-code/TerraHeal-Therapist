@@ -55,12 +55,8 @@ class CustomTextViewDialog: ThemeBottomDialogView {
 
     @IBAction func btnDoneTapped(_ sender: Any) {
         strEnteredData = txtDescription.text?.trim() ?? ""
-        if strEnteredData.isEmpty() {
-            Common.showAlert(message: "VALIDATION_MSG_INVALID_DATA".localized())
-        } else {
-            if self.onBtnDoneTapped != nil {
+        if self.onBtnDoneTapped != nil {
                 self.onBtnDoneTapped!(strEnteredData);
-            }
         }
     }
 

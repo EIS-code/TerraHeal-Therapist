@@ -121,8 +121,13 @@ class BookingDetailVC: BaseVC {
     }
     
     @IBAction func btnStartTapped(_ sender: Any) {
-        btnStart.isEnabled = false
-        self.openScanDialog()
+        if appSingleton.currentService.getServiceStatus() == .onGoing {
+            Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
+        } else {
+            btnStart.isEnabled = false
+            self.openScanDialog()
+        }
+
     }
 
     @IBAction func btnCancelTapped(_ sender: Any) {

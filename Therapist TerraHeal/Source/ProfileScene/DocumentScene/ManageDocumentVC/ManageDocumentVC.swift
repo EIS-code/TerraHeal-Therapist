@@ -4,7 +4,7 @@
 //
 
 import UIKit
-
+import Mantis
 
 class ManageDocumentVC: BaseVC {
     
@@ -16,9 +16,10 @@ class ManageDocumentVC: BaseVC {
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
     @IBOutlet weak var btnSubmit: FilledRoundedButton!
     @IBOutlet weak var lblDocumentId: ThemeLabel!
-
+    var documentID: String = ""
     var selectedDocType: DocumentType = DocumentType.init(rawValue: "") ?? .AddressProof
-    var arrForData: [UploadDocumentDetail] = []
+    var arrForData: [Document] = []
+    var selectedDocument: UploadDocumentDetail? = nil
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -55,10 +56,10 @@ class ManageDocumentVC: BaseVC {
         if self.isViewAvailable() {
             self.tableView?.reloadData({
             })
-           self.tableView?.contentInset = self.getGradientInset()
+            self.tableView?.contentInset = self.getGradientInset()
         }
     }
-        
+
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeLightBackground)
         self.setupTableView(tableView: self.tableView)
@@ -71,91 +72,52 @@ class ManageDocumentVC: BaseVC {
         self.lblEmptyMsg.text = "DOCUMENT_EMPTY_MSG".localized()
         self.btnSubmit?.setTitle("MANAGE_DOCUMENT_BTN_ADD_NEW".localized(), for: .normal)
         self.lblDocumentId.setFont(name: FontName.Regular, size: FontSize.detail)
-        switch self.selectedDocType {
-        case .AddressProof:
-            if let document = appSingleton.user.documents.first(where: { (document) -> Bool in
-                document.type == DocumentType.IdentityProofFront.rawValue
-            }) {
-                self.arrForData.append(UploadDocumentDetail.init(id: document.type, name: "Front", url: document.fileName,  image: nil, data: nil, isCompleted: true, paramName: document.getDocumentType().paramName()))
-            } 
-            if let document = appSingleton.user.documents.first(where: { (document) -> Bool in
-                document.type == DocumentType.IdentityProofBack.rawValue
-            }) {
-                self.arrForData.append(UploadDocumentDetail.init(id: document.type, name: "Back", url: document.fileName, image: nil, data: nil, isCompleted: true, paramName: document.getDocumentType().paramName()))
-            }
-            break;
-
-        default:
-            if let document = appSingleton.user.documents.first(where: { (document) -> Bool in
-                document.type == DocumentType.IdentityProofBack.rawValue
-            }) {
-                self.arrForData.append(UploadDocumentDetail.init(id: document.type, name: "Back", url: document.fileName, image: nil, data: nil, isCompleted: true, paramName: document.getDocumentType().paramName()))
-            }
-
-            self.arrForData.removeAll()
-            print("")
-        }
+        self.updateUI()
     }
     
     @IBAction func btnCancelTapped(_ sender: Any) {
-         self.popVC()
+        self.popVC()
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
         self.btnSubmit.isEnabled = false
-        self.openPhotoPicker()
+        if self.selectedDocType == .PersonalExperience {
+            self.openExpriencePicker()
+        } else {
+            self.openPhotoPicker()
+        }
     }
     
     func updateUI()  {
-        if arrForData.isEmpty {
-            self.vwForEmpty.isHidden = false
+        let documents =  appSingleton.user.documents.filter { (document) -> Bool in
+            document.type == self.selectedDocType.rawValue
+        }
+        if documents.isEmpty {
             self.tableView.isHidden = true
+            self.vwForEmpty.isHidden = false
         } else {
-            self.vwForEmpty.isHidden = true
+
+            self.arrForData.removeAll()
+            for doc in documents {
+                self.arrForData.append(doc)
+            }
             self.tableView.isHidden = false
+            self.vwForEmpty.isHidden = true
         }
         self.tableView.reloadData()
-        if arrForData.count == 2 {
-            self.btnSubmit.isEnabled = false
-            self.btnSubmit.gone()
-        } else {
-            self.btnSubmit.visible()
-            self.btnSubmit.isEnabled = true
-        }
     }
-  
-    func openConfirmationDialog(index:Int) {
-        
-        let alert: CustomAlertConfirmation = CustomAlertConfirmation.fromNib()
-        
-        alert.initialize(title: "Remove Document", message: "Are you you want to delete this address",buttonTitle: "Ok", cancelButtonTitle: "Cancel")
-        alert.show(animated: true)
-        alert.onBtnCancelTapped = {
-            [weak alert, weak self] in
-            guard let self = self else {return}; print(self)
-            alert?.dismiss()
-        }
-        alert.onBtnDoneTapped = {
-            [weak alert, weak self]  in
-            guard let self = self else {return}; print(self)
-            alert?.dismiss()
-            self.arrForData.remove(at: index)
-            self.updateUI()
-            
-        }
-    }
-    @objc func removeDocument(button: UIButton) {
-        self.openConfirmationDialog(index: button.tag)
-    }
-   
+
+
+
     func openPhotoPicker() {
         
         let photoPickerAlert: CustomDocumentPicker = CustomDocumentPicker.fromNib()
-        photoPickerAlert.initialize(title:"ADD_NEW_DOCUMENT_TITLE".localized(), buttonTitle: "".localized(),cancelButtonTitle: "BTN_CANCEL".localized())
+        photoPickerAlert.isForDocument = true
+        photoPickerAlert.initialize(title: "ADD_NEW_DOCUMENT_TITLE".localized())
         photoPickerAlert.show(animated: true)
         photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
+            guard let self = self else { return } ; print(self)
             self.btnSubmit.isEnabled = true
         }
         photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] in
@@ -165,32 +127,26 @@ class ManageDocumentVC: BaseVC {
         }
         photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] (doc) in
             photoPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
-            self.openCropper(image: doc.image ?? UIImage())
-            
+            guard let self = self else { return } ; print(self)
+            Common.appDelegate.openImageCropper(vc: self, image: doc.image)
         }
         photoPickerAlert.onBtnGallaryTapped = { [weak photoPickerAlert, weak self] (doc) in
             photoPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
-            self.openCropper(image: doc.image ?? UIImage())
-            //let gallaryVC:GallaryVC = Common.appDelegate.loadGallaryVC(navigaionVC: self.navigationController)
+            guard let self = self else { return } ; print(self)
+            if doc.name.isImage() {
+                Common.appDelegate.openImageCropper(vc: self, image: doc.image)
+            } else {
+                self.selectedDocument = UploadDocumentDetail.init()
+                self.selectedDocument?.paramName = self.selectedDocType.paramName()
+                self.selectedDocument?.image = nil
+                self.selectedDocument?.data = doc.data
+                self.wsUpdateDocument()
+            }
+
         }
     }
     
-    func openCropper(image: UIImage) {
-        let cropper: UIImageCropperVC = UIImageCropperVC.fromNib()
-        cropper.cropRatio = 1/1
-        cropper.delegate = self
-        cropper.picker = nil
-        cropper.image = image
-        cropper.cancelButtonText = "BTN_CANCEL".localized()
-        cropper.view.layoutIfNeeded()
-        cropper.modalPresentationStyle = .fullScreen
-        DispatchQueue.main.async {
-            self.btnSubmit.isEnabled = true
-            Common.appDelegate.getTopViewController()?.present(cropper, animated: true, completion: nil)
-        }
-    }
+
 }
 
 
@@ -204,9 +160,7 @@ extension ManageDocumentVC: UITableViewDelegate,UITableViewDataSource, UIScrollV
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
         tableView.register(ManageDocumentTblCell.nib()
-            , forCellReuseIdentifier: ManageDocumentTblCell.name)
-        tableView.register(UploadedDocumentTblCell.nib()
-            , forCellReuseIdentifier: UploadedDocumentTblCell.name)
+                           , forCellReuseIdentifier: ManageDocumentTblCell.name)
         tableView.tableFooterView = UIView()
     }
 
@@ -215,71 +169,116 @@ extension ManageDocumentVC: UITableViewDelegate,UITableViewDataSource, UIScrollV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        if self.selectedDocType == .AddressProof {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ManageDocumentTblCell.name, for: indexPath) as?  ManageDocumentTblCell
-            cell?.layoutIfNeeded()
-            cell?.setData(data: arrForData[indexPath.row])
-            cell?.btnDelete.tag = indexPath.row
-            cell?.btnDelete.addTarget(self, action: #selector(removeDocument), for: .touchUpInside)
-            cell?.layoutIfNeeded()
-            return cell!
-        }  else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: UploadedDocumentTblCell.name, for: indexPath) as?  UploadedDocumentTblCell
-            cell?.layoutIfNeeded()
-            cell?.setData(data: arrForData[indexPath.row])
-            cell?.btnDelete.tag = indexPath.row
-            cell?.btnDelete.addTarget(self, action: #selector(removeDocument), for: .touchUpInside)
-            cell?.layoutIfNeeded()
-            return cell!
-        }
-
-
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: ManageDocumentTblCell.name, for: indexPath) as?  ManageDocumentTblCell
+        cell?.layoutIfNeeded()
+        cell?.setData(data: arrForData[indexPath.row])
+        cell?.btnDelete.tag = indexPath.row
+        cell?.btnDelete.addTarget(self, action: #selector(removeDocument), for: .touchUpInside)
+        cell?.layoutIfNeeded()
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //self.openNewAddressDialog(index: indexPath.row)
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 }
 
-
-extension ManageDocumentVC: UIImageCropperProtocol {
-    func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
-
-        if arrForData.isEmpty {
-            self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Front Side", image: croppedImage, data: croppedImage?.pngData(), isCompleted: true, paramName: "document_id_passport_front"))
-            self.wsUpdateDocument()
-        } else {
-            self.arrForData.append(UploadDocumentDetail.init(id: "599905", name:"Back Side", image: croppedImage, data: croppedImage?.pngData(), isCompleted: true, paramName: "document_id_passport_back"))
-
-            self.wsUpdateDocument()
+extension ManageDocumentVC: CropViewControllerDelegate {
+    func openExpriencePicker() {
+        let photoPickerAlert: ExperienceDialog = ExperienceDialog.fromNib()
+        photoPickerAlert.initialize(title: "DIALOG_EXPERIENCE_TITLE".localized(), placeholder: "DIALOG_EXPERIENCE_PLACEHOLDER".localized(), data: "", buttonTitle: "DIALOG_EXPERIENCE_BTN_SAVE".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        photoPickerAlert.show(animated: true)
+        photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
+            photoPickerAlert?.dismiss()
+             guard let self = self else { return } ; print(self)
+            self.btnSubmit.isEnabled = true
         }
-        self.updateUI()
+        photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] (doc,description) in
+            photoPickerAlert?.dismiss()
+            guard let self = self else { return } ; print(self)
+            self.btnSubmit.isEnabled = true
+            Common.appDelegate.openImageCropper(vc: self, image: doc.image)
+        }
     }
-    
-    //optional
-    func didCancel() {
-        print("did cancel")
-         self.popVC()
-        //self.wsUpdateProfile()
+
+    func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation) {
+        //self.uploadFileDetail?.image = cropped
+        do {
+            try cropped.compressImage(100, completion: { (image, compressRatio) in
+                print(image.size)
+                self.selectedDocument = UploadDocumentDetail.init()
+                self.selectedDocument?.paramName = self.selectedDocType.paramName()
+                self.selectedDocument?.image = image
+                self.selectedDocument?.data = image.sd_imageData(as: .JPEG)
+                self.wsUpdateDocument()
+            })
+        } catch {
+            print("Error")
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    func cropViewControllerDidCancel(_ cropViewController: CropViewController, original: UIImage) {
+        self.navigationController?.popViewController(animated: true)
+
     }
 }
 //MARK:- Web Service Calls
 
 extension ManageDocumentVC {
+
+    func openConfirmationDialog(index:Int) {
+
+        let alert: CustomAlertConfirmation = CustomAlertConfirmation.fromNib()
+
+        alert.initialize(title: "Remove Document", message: "Are you you want to delete this address",buttonTitle: "Ok", cancelButtonTitle: "Cancel")
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else {return}; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self]  in
+            guard let self = self else {return}; print(self)
+            alert?.dismiss()
+            self.documentID = self.arrForData[index].id
+            self.wsRemoveDocument()
+        }
+    }
+    @objc func removeDocument(button: UIButton) {
+        self.openConfirmationDialog(index: button.tag)
+    }
+
     func wsUpdateDocument() {
         Loader.showLoading()
-        AppWebApi.updateDocuments(documents: self.arrForData) { (response) in
+        AppWebApi.updateDocuments(documents: [self.selectedDocument!]) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 let user = response.data
                 PreferenceHelper.shared.setUserId(user.id)
                 appSingleton.user = user
                 Singleton.saveInDb()
-                self.popVC()
+                self.updateUI()
+            }
+        }
+    }
+    func wsRemoveDocument() {
+        Loader.showLoading()
+        AppWebApi.removeDocument(params: UserWebService.RequestRemoveDocument.init(document_id: self.documentID)) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
+                if let index = appSingleton.user.documents.firstIndex(where: { (data) -> Bool in
+                    return data.id == self.documentID
+                }) {
+                    appSingleton.user.documents.remove(at: index)
+                }
+                Singleton.saveInDb()
+                self.updateUI()
             }
         }
     }

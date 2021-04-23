@@ -50,18 +50,19 @@ class ServiceStatusVC: BaseVC {
         if self.isViewAvailable() {
         }
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.startTimer()
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.startTimer()
-
     }
 
     private func initialViewSetup() {
         self.setNavigationTitle(title: "SERVICE_PROGRESS_TITLE".localized())
         self.lblMinute.setFont(name: FontName.SemiBold, size: 80.0)
         self.lblMessage?.setFont(name: FontName.Bold, size: FontSize.header)
-        self.lblMessage.setText("SERVICE_DURATION".localized() + " 90 min")
+        self.lblMessage.setText("SERVICE_DURATION".localized() + " " + appSingleton.currentService.massageDuration)
          self.lblMinRemaining.setFont(name: FontName.Bold, size: FontSize.header)
         self.lblMinRemaining.setText("SERVICE_MIN_REMAINING".localized())
         self.btnSubmit?.setText("SERVICE_PROGRESS_BTN_FINISH".localized())
@@ -119,29 +120,35 @@ class ServiceStatusVC: BaseVC {
 extension ServiceStatusVC {
 
     func startTimer() {
-        self.totalDuration = (self.serviceEndTime -  self.serviceStartTime)/1000
+        self.serviceStartTime = appSingleton.currentService.massageStartTime.toDouble
+        self.serviceEndTime = appSingleton.currentService.massageStartTime.toDouble
+        self.totalDuration = (self.serviceEndTime -  self.serviceStartTime)/60000
         self.endTimer()
-        minuteTimer = Timer.scheduledTimer(withTimeInterval: 03, repeats: true) { [weak self] _ in
+        self.updateServiceTimer()
+        minuteTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
             self?.timerTrigger()
         }
     }
     @objc private func timerTrigger() {
         if self.minuteTimer != nil {
-            let differenceSecond = ((Date().millisecondsSince1970 - serviceStartTime)/1000)
-            self.currentTime = differenceSecond/totalDuration
-            let timeToDisplay = Int(self.totalDuration - differenceSecond)
-            if timeToDisplay <= 0 {
-                self.lblMinute.setTextWithAnimation(text: abs(timeToDisplay).toString())
-                if self.circularProgressView.progress != 1.0 {
-                    self.circularProgressView.setProgressWithAnimation(duration: 0.5, value: 1.0)
-                    self.circularProgressView.progressClr = UIColor.red
-                    self.lblMinRemaining.setText("SERVICE_MIN_EXTRA".localized())
-                }
-
-            } else {
-                self.circularProgressView.setProgressWithAnimation(duration: 0.5, value: Float(self.currentTime))
-                self.lblMinute.setTextWithAnimation(text: timeToDisplay.toString())
+            self.updateServiceTimer()
+        }
+    }
+    func updateServiceTimer() {
+        let differenceSecond = ((Date().millisecondsSince1970 - serviceStartTime)/60000)
+        self.currentTime = differenceSecond/totalDuration
+        let timeToDisplay = Int(self.totalDuration - differenceSecond)
+        if timeToDisplay <= 0 {
+            self.lblMinute.setTextWithAnimation(text: abs(timeToDisplay).toString())
+            if self.circularProgressView.progress != 1.0 {
+                self.circularProgressView.setProgressWithAnimation(duration: 0.5, value: 1.0)
+                self.circularProgressView.progressClr = UIColor.red
+                self.lblMinRemaining.setText("SERVICE_MIN_EXTRA".localized())
             }
+
+        } else {
+            self.circularProgressView.setProgressWithAnimation(duration: 0.5, value: Float(self.currentTime))
+            self.lblMinute.setTextWithAnimation(text: timeToDisplay.toString())
         }
     }
     func configureProgress() {

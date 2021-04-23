@@ -14,4 +14,5 @@ target 'Therapist TerraHeal' do
   # Recommended: Add the Firebase pod for Google Analytics and Crashlytics
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'
+  pod 'Mantis', '~> 1.5.2'
 end

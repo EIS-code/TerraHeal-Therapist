@@ -103,7 +103,7 @@ extension EditProfileVC:  UICollectionViewDelegate, UICollectionViewDataSource, 
         case .Services:
             self.openServiceSelection(index: indexPath.row)
         case .Experience:
-            Common.appDelegate.loadManageExperienceVC(navigaionVC: self.navigationController)
+            Common.appDelegate.loadManageDocumentVC(navigaionVC: self.navigationController, docType: .PersonalExperience)
         default:
             print("")
         }

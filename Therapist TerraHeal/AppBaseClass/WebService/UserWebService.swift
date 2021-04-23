@@ -112,7 +112,6 @@ extension UserWebService {
         var telNumber: String = ""
         var totalMassages: String = ""
         var totalServices: String = ""
-
         var languageSpokens : [SelectedLanguage] = []
 
         init(fromDictionary dictionary: [String:Any]){
@@ -172,7 +171,9 @@ extension UserWebService {
                 }
             }
         }
-
+        func getGenderType() -> Gender {
+            return Gender.init(rawValue: self.gender) ?? .Female
+        }
 
     }
 

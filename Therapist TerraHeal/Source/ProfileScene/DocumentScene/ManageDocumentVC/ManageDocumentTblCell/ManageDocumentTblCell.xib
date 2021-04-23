@@ -19,56 +19,55 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                        <rect key="frame" x="5" y="20" width="304" height="20.5"/>
+                        <rect key="frame" x="5" y="8" width="304" height="37"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="theme_dark_text"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoO-zy-EfQ" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                        <rect key="frame" x="329" y="20" width="37" height="37"/>
+                        <rect key="frame" x="329" y="8" width="37" height="37"/>
                         <color key="backgroundColor" name="theme_dialog_background"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="aoO-zy-EfQ" secondAttribute="height" multiplier="1:1" id="ESV-QN-g3W"/>
                         </constraints>
                         <state key="normal" image="asset-delete"/>
                     </button>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
-                        <rect key="frame" x="5" y="77" width="361" height="188"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-back-side-id" translatesAutoresizingMaskIntoConstraints="NO" id="j5m-7f-MSb">
-                                <rect key="frame" x="0.0" y="0.0" width="361" height="188"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" name="theme_background"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="asset-back-side-id" translatesAutoresizingMaskIntoConstraints="NO" id="j5m-7f-MSb">
+                        <rect key="frame" x="18.5" y="44" width="334" height="167"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="j5m-7f-MSb" secondAttribute="bottom" id="EFz-hg-BcA"/>
-                            <constraint firstItem="j5m-7f-MSb" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" id="TZj-Bh-3YN"/>
-                            <constraint firstItem="j5m-7f-MSb" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" id="aUQ-Mp-75U"/>
-                            <constraint firstAttribute="width" secondItem="fTr-D4-KiU" secondAttribute="height" multiplier="2:1" priority="999" id="hK8-IS-TM8"/>
-                            <constraint firstAttribute="trailing" secondItem="j5m-7f-MSb" secondAttribute="trailing" id="xw2-Ac-a2e"/>
+                            <constraint firstAttribute="width" secondItem="j5m-7f-MSb" secondAttribute="height" multiplier="2:1" id="egn-Dj-kDS"/>
                         </constraints>
-                    </view>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j6W-2t-4T2" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                        <rect key="frame" x="5" y="219" width="361" height="46"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" name="theme_dark_text"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="0WC-yN-BmQ"/>
-                    <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="5" id="AWN-UN-JV4"/>
-                    <constraint firstItem="aoO-zy-EfQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Aoo-2a-rII"/>
+                    <constraint firstItem="j6W-2t-4T2" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="4d7-np-pRu"/>
+                    <constraint firstItem="aoO-zy-EfQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Aoo-2a-rII"/>
+                    <constraint firstItem="j6W-2t-4T2" firstAttribute="top" secondItem="j5m-7f-MSb" secondAttribute="bottom" constant="8" id="IlB-0p-Bos"/>
                     <constraint firstAttribute="trailing" secondItem="aoO-zy-EfQ" secondAttribute="trailing" constant="5" id="NHJ-gz-Spj"/>
-                    <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="W78-We-JQq"/>
-                    <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="aoO-zy-EfQ" secondAttribute="bottom" constant="20" id="X0M-hs-FOR"/>
+                    <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="W78-We-JQq"/>
+                    <constraint firstItem="j5m-7f-MSb" firstAttribute="top" secondItem="zbl-J2-KSJ" secondAttribute="bottom" constant="-1" id="Yoi-Fw-3e4"/>
+                    <constraint firstItem="j5m-7f-MSb" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.9" id="aea-ei-Xfl"/>
                     <constraint firstItem="aoO-zy-EfQ" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="20" id="akj-9q-pzb"/>
+                    <constraint firstItem="aoO-zy-EfQ" firstAttribute="centerY" secondItem="zbl-J2-KSJ" secondAttribute="centerY" id="gIr-Vw-JBy"/>
                     <constraint firstItem="aoO-zy-EfQ" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.1" id="gU9-Lg-QWZ"/>
-                    <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="p1a-dc-cSm"/>
-                    <constraint firstItem="fTr-D4-KiU" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="ru1-Wn-v5S"/>
-                    <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" constant="5" id="uHV-Oa-H3d"/>
+                    <constraint firstItem="j5m-7f-MSb" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="nZI-h2-taM"/>
+                    <constraint firstItem="j6W-2t-4T2" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="leading" id="nkz-Ou-wof"/>
+                    <constraint firstAttribute="bottom" secondItem="j6W-2t-4T2" secondAttribute="bottom" constant="5" id="pwG-cj-hGP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="btnDelete" destination="aoO-zy-EfQ" id="rdp-0k-91S"/>
-                <outlet property="ivDocument" destination="j5m-7f-MSb" id="DdF-HB-x1S"/>
+                <outlet property="imgDocument" destination="j5m-7f-MSb" id="ekf-xz-78u"/>
+                <outlet property="lblDetail" destination="j6W-2t-4T2" id="jBx-IH-p1G"/>
                 <outlet property="lblName" destination="zbl-J2-KSJ" id="uPE-In-SOw"/>
-                <outlet property="vwBg" destination="fTr-D4-KiU" id="gMF-14-1KR"/>
             </connections>
             <point key="canvasLocation" x="-51.449275362318843" y="120.53571428571428"/>
         </tableViewCell>
@@ -76,9 +75,6 @@
     <resources>
         <image name="asset-back-side-id" width="319" height="226"/>
         <image name="asset-delete" width="24" height="24"/>
-        <namedColor name="theme_background">
-            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="theme_dark_text">
             <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

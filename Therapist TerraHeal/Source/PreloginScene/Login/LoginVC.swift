@@ -221,7 +221,7 @@ extension LoginVC {
     func checkFignerPrintData() {
         let count = CoreDataManager.sharedManager.fetchPersons().count
         if count == 0  {
-            Common.showAlert(message: "You need to do manual login first")
+            Common.showAlert(message: "VALIDATION_MSG_MANUAL_LOGIN_FIRST".localized())
             self.btnFigerPrint.isEnabled = true
         } else {
             self.authenticateUser()

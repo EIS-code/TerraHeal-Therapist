@@ -39,32 +39,15 @@
                         <action selector="btnCancelTapped:" destination="-1" eventType="touchUpInside" id="3mz-M4-PkP"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                    <rect key="frame" x="20" y="80" width="335" height="20.333333333333329"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" name="theme_primary"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onh-e5-CGs" userLabel="vwForDocument">
-                    <rect key="frame" x="16" y="312" width="343" height="198"/>
+                    <rect key="frame" x="16" y="325.33333333333331" width="343" height="171.33333333333331"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-upload-document" translatesAutoresizingMaskIntoConstraints="NO" id="8wI-vP-CwS">
-                            <rect key="frame" x="0.0" y="0.0" width="343" height="198"/>
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="171.33333333333334"/>
                             <color key="backgroundColor" name="theme_light_text_color"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skw-Ai-iZS" userLabel="btnDelete" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                            <rect key="frame" x="283" y="16" width="44" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="Ekq-sd-qba"/>
-                                <constraint firstAttribute="width" constant="44" id="ap2-cD-kWE"/>
-                            </constraints>
-                            <state key="normal" image="asset-delete"/>
-                            <connections>
-                                <action selector="btnDeleteTapped:" destination="-1" eventType="touchUpInside" id="Fgu-ec-jMZ"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciV-Tb-Oq4" userLabel="btnAddPicture" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="343" height="198"/>
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="171.33333333333334"/>
                             <connections>
                                 <action selector="btnSubmitTapped:" destination="-1" eventType="touchUpInside" id="RfI-om-HPL"/>
                             </connections>
@@ -72,8 +55,6 @@
                     </subviews>
                     <color key="backgroundColor" name="theme_background"/>
                     <constraints>
-                        <constraint firstItem="skw-Ai-iZS" firstAttribute="top" secondItem="onh-e5-CGs" secondAttribute="top" constant="16" id="1VW-Os-7s9"/>
-                        <constraint firstAttribute="trailing" secondItem="skw-Ai-iZS" secondAttribute="trailing" constant="16" id="Dhb-W1-Qe1"/>
                         <constraint firstItem="8wI-vP-CwS" firstAttribute="leading" secondItem="onh-e5-CGs" secondAttribute="leading" id="F8Z-HI-ulA"/>
                         <constraint firstAttribute="bottom" secondItem="8wI-vP-CwS" secondAttribute="bottom" id="Fhh-vx-tDM"/>
                         <constraint firstAttribute="width" secondItem="onh-e5-CGs" secondAttribute="height" multiplier="2:1" priority="999" id="K51-rv-pCD"/>
@@ -85,6 +66,23 @@
                         <constraint firstItem="ciV-Tb-Oq4" firstAttribute="bottom" secondItem="8wI-vP-CwS" secondAttribute="bottom" id="mBZ-UU-xQS"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-ds-8JK" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="80" width="335" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="theme_primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skw-Ai-iZS" userLabel="btnDelete" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="315" y="281.33333333333331" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Ekq-sd-qba"/>
+                        <constraint firstAttribute="width" constant="44" id="ap2-cD-kWE"/>
+                    </constraints>
+                    <state key="normal" image="asset-delete"/>
+                    <connections>
+                        <action selector="btnDeleteTapped:" destination="-1" eventType="touchUpInside" id="Fgu-ec-jMZ"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -93,11 +91,12 @@
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="20" id="9ab-69-o9H"/>
                 <constraint firstItem="onh-e5-CGs" firstAttribute="centerY" secondItem="VLJ-uh-dxO" secondAttribute="centerY" id="FUv-ML-k80"/>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="FaD-U6-LRB"/>
+                <constraint firstItem="onh-e5-CGs" firstAttribute="top" secondItem="skw-Ai-iZS" secondAttribute="bottom" id="Gin-LM-bBA"/>
+                <constraint firstItem="skw-Ai-iZS" firstAttribute="trailing" secondItem="onh-e5-CGs" secondAttribute="trailing" id="MRQ-Eg-9ci"/>
                 <constraint firstItem="onh-e5-CGs" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="Ook-2g-dF0"/>
                 <constraint firstItem="dk0-AN-Hja" firstAttribute="trailing" secondItem="VLJ-uh-dxO" secondAttribute="trailing" constant="-20" id="PCD-nQ-9GP"/>
                 <constraint firstItem="qXO-ds-8JK" firstAttribute="centerY" secondItem="dk0-AN-Hja" secondAttribute="centerY" id="Qb0-xD-7vO"/>
                 <constraint firstItem="onh-e5-CGs" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="Sa2-ID-quW"/>
-                <constraint firstItem="onh-e5-CGs" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="bottom" constant="196" id="s7V-zZ-0KD"/>
             </constraints>
             <point key="canvasLocation" x="131" y="154"/>
         </view>

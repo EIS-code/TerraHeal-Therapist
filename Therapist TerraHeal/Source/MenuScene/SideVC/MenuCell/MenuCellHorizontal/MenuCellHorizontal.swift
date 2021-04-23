@@ -8,6 +8,66 @@ import Foundation
 
 
 
+struct SideMenuItem {
+    var id: SideMenu = SideMenu.QuitColobration
+    var image: String = ""
+    var isVerticle: Bool = true
+    var value:String = ""
+}
+enum SideMenu: String {
+    case QuitColobration = "0"
+    case SuggesionAndComplaints = "1"
+    case SuspendCollaboration = "2"
+    case TakeBreak = "3"
+    case Notifications = "4"
+
+    func name() -> String {
+        switch self {
+        case .QuitColobration:
+            return "MENU_QUIT_COLLABORATION".localized()
+        case .SuggesionAndComplaints:
+            return "MENU_SUGGESTIONS_AND_COMPLAINTS".localized()
+        case .SuspendCollaboration:
+            return "MENU_SUSPEND_COLLABORATION".localized()
+        case .TakeBreak:
+            return "MENU_TAKE_BREAK".localized()
+        case .Notifications:
+            return "MENU_NOTIFICATIONS".localized()
+        }
+    }
+
+    func image() -> String {
+        switch self {
+        case .QuitColobration:
+
+            return ImageAsset.SideMenu.quitCollaboration
+        case .SuggesionAndComplaints:
+            return ImageAsset.SideMenu.suggestionCollaboration
+        case .SuspendCollaboration:
+            return ImageAsset.SideMenu.suspendCollaboration
+        case .TakeBreak:
+            return ImageAsset.SideMenu.takeBreak
+        case .Notifications:
+            return ImageAsset.SideMenu.notifications
+        }
+    }
+
+    func backgroundImage() -> String {
+        switch self {
+        case .QuitColobration:
+            return "MENU_QUIT_COLLABORATION".localized()
+        case .SuggesionAndComplaints:
+            return "MENU_SUSPEND_COLLABORATION".localized()
+        case .SuspendCollaboration:
+            return "MENU_SUGGESTIONS_AND_COMPLAINTS".localized()
+        case .TakeBreak:
+            return "MENU_TAKE_BREAK".localized()
+        case .Notifications:
+            return "MENU_NOTIFICATIONS".localized()
+        }
+    }
+}
+
 class MenuCellHorizontal: CollectionShadowCell {
 
     @IBOutlet weak var lblTitle: ThemeLabel!

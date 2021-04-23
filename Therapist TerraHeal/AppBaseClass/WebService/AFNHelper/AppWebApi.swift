@@ -152,7 +152,7 @@ class AppWebApi: NSObject {
         static var TakeBreak: String {
             return Domain + Routes.Client  + "/my/break"
         }
-        static var QuitCollabration: String {
+        static var QuitCollaboration: String {
             return Domain + Routes.Client  + "/my/collaboration/quit"
         }
         static var GetMissingDays: String {

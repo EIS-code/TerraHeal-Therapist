@@ -5,7 +5,7 @@
 
 import Foundation
 import UIKit
-
+import Mantis
 
 // MARK: - NAVIGATION
 extension AppDelegate {
@@ -288,19 +288,42 @@ extension AppDelegate {
         }
     }
 
-    func loadManageExperienceVC(navigaionVC:UINavigationController? = nil) {
+    func loadManageIdPassportVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
-            if let targetVC: ManageExperienceVC =  nc.findVCs(ofType: ManageExperienceVC.self).first {
+            if let targetVC: ManageIdPassportVC =  nc.findVCs(ofType: ManageIdPassportVC.self).first {
                 _ = nc.popToVc(targetVC)
             } else {
-                let targetVC: ManageExperienceVC = ManageExperienceVC.fromNib()
+                let targetVC: ManageIdPassportVC = ManageIdPassportVC.fromNib()
                 nc.pushVC(targetVC)
             }
         } else {
-            let targetVC: ManageExperienceVC = ManageExperienceVC.fromNib()
+            let targetVC: ManageIdPassportVC = ManageIdPassportVC.fromNib()
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
         }
+    }
+
+    func openImageCropper(vc: UIViewController & CropViewControllerDelegate, image:UIImage? = nil) {
+        if image == nil {
+            Common.showAlert(message: "Image not found")
+        } else {
+            if let nc = vc.navigationController as? NC {
+                if let targetVC: CropViewController =  nc.findVCs(ofType: CropViewController.self).first {
+                    targetVC.delegate = vc
+                    _ = nc.popToVc(targetVC)
+                } else {
+                    let targetVC = Mantis.cropViewController(image: image!)
+                    targetVC.delegate = vc
+                    nc.pushVC(targetVC)
+                }
+            } else {
+                let targetVC = Mantis.cropViewController(image: image!)
+                targetVC.delegate = vc
+                let nC: NC = NC(rootViewController: targetVC)
+                self.windowConfig(withRootVC: nC)
+            }
+        }
+
     }
 
 
@@ -438,14 +461,12 @@ extension AppDelegate {
                 let targetVC: ScanVC = ScanVC.fromNib()
                 nc.pushVC(targetVC)
                 completion(targetVC)
-
             }
         } else {
             let targetVC: ScanVC = ScanVC.fromNib()
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
             completion(targetVC)
-
         }
     }
 }

@@ -14,11 +14,20 @@ class MenuWebService {
     static let addSuggestionUrl: String = API_URL.AddSuggestion
     static let addComplaintUrl: String = API_URL.AddComplaints
     static let takeBreakUrl: String = API_URL.TakeBreak
+    static let quitCollaborationUrl: String = API_URL.QuitCollaboration
+    static let suspendCollaborationUrl: String = API_URL.SuspendCollaboration
+
     struct RequestAddSuggestion: Codable {
         var suggestion: String = ""
     }
     struct RequestAddComplaint: Codable {
         var complaint: String = ""
+    }
+    struct RequestQuitCollaboration: Codable {
+        var reason: String = ""
+    }
+    struct RequestSuspendCollaboration: Codable {
+        var reason: String = ""
     }
     struct RequestAllSuggestionAndComplaints: Codable {
         var shop_id: String = appSingleton.user.shopId
@@ -27,7 +36,7 @@ class MenuWebService {
     struct RequestTakeBreak: Codable {
         var date: String = ""
         var minutes: String = ""
-        var break_for: String = ""
+        var break_for: String = "0"
         var break_reason: String = ""
     }
 }
@@ -105,6 +114,18 @@ extension MenuWebService {
 
     static func requestTakeBreak(params:MenuWebService.RequestTakeBreak, completionHandler: @escaping ((ResponseModel) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: Self.takeBreakUrl, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = ResponseModel.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    static func requestQuitCollaboration(params:MenuWebService.RequestQuitCollaboration, completionHandler: @escaping ((ResponseModel) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: Self.quitCollaborationUrl, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = ResponseModel.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
+    static func requestSuspendCollaboration(params:MenuWebService.RequestSuspendCollaboration, completionHandler: @escaping ((ResponseModel) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: Self.suspendCollaborationUrl, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = ResponseModel.init(fromDictionary: dictionary)
             completionHandler(response)
         }

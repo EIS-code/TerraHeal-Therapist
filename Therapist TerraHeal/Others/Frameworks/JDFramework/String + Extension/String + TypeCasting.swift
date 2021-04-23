@@ -60,6 +60,36 @@ public extension String  {
         return attributedText
     }
 
+    func isImage() -> Bool {
+        // Add here your image formats.
+        let imageFormats = ["jpg", "jpeg", "png", "gif"]
+
+        if let ext = self.getExtension() {
+            return imageFormats.contains(ext)
+        }
+
+        return false
+    }
+
+    func isVideo() -> Bool {
+        // Add here your image formats.
+        let imageFormats = ["mov", "m4a", "mp4", "mkv"]
+
+        if let ext = self.getExtension() {
+            return imageFormats.contains(ext)
+        }
+
+        return false
+    }
+    public func getExtension() -> String? {
+        let ext = (self as NSString).pathExtension
+
+        if ext.isEmpty {
+            return nil
+        }
+
+        return ext.lowercased()
+    }
 
 }
 

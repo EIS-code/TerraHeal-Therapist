@@ -14,7 +14,6 @@ class MyDocumentsVC: BaseVC {
     @IBOutlet weak var vwBg: UIView!
     @IBOutlet weak var lblEmptyTitle: ThemeLabel!
     @IBOutlet weak var lblEmptyMsg: ThemeLabel!
-    @IBOutlet weak var btnSubmit: FilledRoundedButton!
 
     var arrForData: [DocumentType] = [.AddressProof,
                                       .Insurance,
@@ -73,16 +72,10 @@ class MyDocumentsVC: BaseVC {
         self.lblEmptyMsg.setFont(name: FontName.Regular, size: FontSize.detail)
         self.lblEmptyTitle.text = "MY_DOCUMENT_EMPTY_TITLE".localized()
         self.lblEmptyMsg.text = "MY_DOCUMENT_EMPTY_MSG".localized()
-        self.btnSubmit?.setTitle("MY_DOCUMENT_BTN_ADD_NEW".localized(), for: .normal)
     }
     
     @IBAction func btnCancelTapped(_ sender: Any) {
          self.popVC()
-    }
-    
-    @IBAction func btnSubmitTapped(_ sender: Any) {
-        self.btnSubmit.isEnabled = false
-        self.openPhotoPicker()
     }
     
     func updateUI()  {
@@ -94,58 +87,6 @@ class MyDocumentsVC: BaseVC {
             self.tableView.isHidden = false
         }
         self.tableView.reloadData()
-        if arrForData.count == 2 {
-            self.btnSubmit.isEnabled = false
-            self.btnSubmit.gone()
-        } else {
-            self.btnSubmit.visible()
-            self.btnSubmit.isEnabled = true
-        }
-    }
-  
-    func openPhotoPicker() {
-        
-        let photoPickerAlert: CustomDocumentPicker = CustomDocumentPicker.fromNib()
-        photoPickerAlert.initialize(title:"ADD_NEW_DOCUMENT_DIALOG_TITLE".localized(), buttonTitle: "".localized(),cancelButtonTitle: "BTN_CANCEL".localized())
-        photoPickerAlert.show(animated: true)
-        photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
-            photoPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
-            self.btnSubmit.isEnabled = true
-        }
-        photoPickerAlert.onBtnDoneTapped = { [weak photoPickerAlert, weak self] in
-            photoPickerAlert?.dismiss()
-            guard let self = self else { return } ; print(self)
-            self.btnSubmit.isEnabled = true
-        }
-        photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] (doc) in
-            photoPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
-            self.openCropper(image: doc.image ?? UIImage())
-            
-        }
-        photoPickerAlert.onBtnGallaryTapped = { [weak photoPickerAlert, weak self] (doc) in
-            photoPickerAlert?.dismiss()
-             guard let self = self else { return } ; print(self)
-            self.openCropper(image: doc.image ?? UIImage())
-            //let gallaryVC:GallaryVC = Common.appDelegate.loadGallaryVC(navigaionVC: self.navigationController)
-        }
-    }
-    
-    func openCropper(image: UIImage) {
-        
-        let cropper: UIImageCropperVC = UIImageCropperVC.fromNib()
-        cropper.cropRatio = 1/1
-        cropper.delegate = self
-        cropper.picker = nil
-        cropper.image = image
-        cropper.cancelButtonText = "BTN_CANCEL".localized()
-        cropper.view.layoutIfNeeded()
-        cropper.modalPresentationStyle = .fullScreen
-        DispatchQueue.main.async {
-            self.btnSubmit.isEnabled = true
-            Common.appDelegate.getTopViewController()?.present(cropper, animated: true, completion: nil)
-        }
     }
 }
 
@@ -182,7 +123,9 @@ extension MyDocumentsVC: UITableViewDelegate,UITableViewDataSource, UIScrollView
         tableView.deselectRow(at: indexPath, animated: true)
         let docType = arrForData[indexPath.row]
         switch docType {
-        case .AddressProof, .Certificates, .Others:
+        case .AddressProof:
+            Common.appDelegate.loadManageIdPassportVC(navigaionVC: self.navigationController)
+        case .Certificates, .Others:
             Common.appDelegate.loadManageDocumentVC(navigaionVC: self.navigationController, docType: docType)
         default:
             Common.appDelegate.loadManageSingleDocumentVC(navigaionVC: self.navigationController,docType: docType)

@@ -45,6 +45,7 @@ class MainVC: BaseVC, PBRevealViewControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.ivUser?.downloadedFrom(link: appSingleton.user.profilePhoto)
     }
     
     override func viewDidAppear(_ animated: Bool) {

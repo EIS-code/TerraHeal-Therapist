@@ -30,6 +30,7 @@ class BookingListVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.wsGetPendingBooking()
         //self.getPastBookingList()
     }
     

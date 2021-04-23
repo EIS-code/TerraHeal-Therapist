@@ -15,6 +15,7 @@
                 <outlet property="btnMenu" destination="dk0-AN-Hja" id="RF9-qg-wGI"/>
                 <outlet property="btnProfile" destination="XUA-Xf-CmK" id="INf-hi-P8A"/>
                 <outlet property="calendarView" destination="ag8-dd-022" id="EYq-OH-rpL"/>
+                <outlet property="ivUser" destination="ygd-7z-w4U" id="QX7-74-kyG"/>
                 <outlet property="newsView" destination="KCO-pn-G7e" id="7Qu-Nj-qYW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="vwFloatingBottom" destination="gC1-hu-GRW" id="qRw-XR-Zwt"/>
@@ -47,6 +48,9 @@
                         </constraint>
                     </constraints>
                 </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ygd-7z-w4U" customClass="RoundedImageView" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="315" y="60" width="44" height="44"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk0-AN-Hja" userLabel="btnMenu" customClass="FloatingRoundButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="16" y="60" width="44" height="44"/>
                     <color key="backgroundColor" name="theme_light_text_color"/>
@@ -69,7 +73,6 @@
                         <constraint firstAttribute="width" secondItem="XUA-Xf-CmK" secondAttribute="height" multiplier="1:1" id="mby-jt-zMd"/>
                     </constraints>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                    <state key="normal" backgroundImage="asset-logo"/>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
@@ -83,6 +86,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
+                <constraint firstItem="ygd-7z-w4U" firstAttribute="top" secondItem="XUA-Xf-CmK" secondAttribute="top" id="2Gt-vN-YeQ"/>
                 <constraint firstItem="XUA-Xf-CmK" firstAttribute="top" secondItem="dk0-AN-Hja" secondAttribute="top" id="3Lh-92-J40"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="gC1-hu-GRW" secondAttribute="bottom" constant="30" id="4Mp-xv-52N"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="KCO-pn-G7e" secondAttribute="bottom" constant="5" id="6sz-yu-Kbs"/>
@@ -96,6 +100,8 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
+                <constraint firstItem="ygd-7z-w4U" firstAttribute="leading" secondItem="XUA-Xf-CmK" secondAttribute="leading" id="KVl-2b-ehe"/>
+                <constraint firstItem="ygd-7z-w4U" firstAttribute="trailing" secondItem="XUA-Xf-CmK" secondAttribute="trailing" id="LMp-EP-wXn"/>
                 <constraint firstItem="gC1-hu-GRW" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="24" id="Oxa-UW-Bfb" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isVerticalDirection" value="NO"/>
@@ -120,6 +126,7 @@
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="fyW-nC-fRK" secondAttribute="trailing" id="SwY-ad-tB4"/>
+                <constraint firstItem="ygd-7z-w4U" firstAttribute="bottom" secondItem="XUA-Xf-CmK" secondAttribute="bottom" id="WmC-Ml-SHt"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="top" secondItem="ag8-dd-022" secondAttribute="top" id="ZsQ-ve-njT"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="KCO-pn-G7e" secondAttribute="trailing" id="fO5-fe-fuC"/>
                 <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="fyW-nC-fRK" secondAttribute="bottom" constant="5" id="hai-SO-l0e"/>
@@ -132,6 +139,11 @@
             <point key="canvasLocation" x="131" y="154"/>
         </view>
     </objects>
+    <designables>
+        <designable name="ygd-7z-w4U">
+            <size key="intrinsicContentSize" width="217" height="146"/>
+        </designable>
+    </designables>
     <resources>
         <image name="asset-logo" width="217" height="146"/>
         <image name="asset-menu" width="21.333333969116211" height="21.333333969116211"/>

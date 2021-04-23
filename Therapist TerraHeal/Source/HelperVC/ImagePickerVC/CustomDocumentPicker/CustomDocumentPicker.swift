@@ -20,32 +20,21 @@ class CustomDocumentPicker: ThemeBottomDialogView {
     @IBOutlet weak var vwGallary: UIView!
     @IBOutlet weak var btnGallary: UIButton!
     @IBOutlet weak var lblGallary: ThemeLabel!
-
+    var isForDocument: Bool = false
     var picker: UIImagePickerController! = UIImagePickerController()
-    var imageSelected:UploadDocumentDetail?;
+    var documentSelected:UploadDocumentDetail?;
     var onBtnCameraTapped: ((_ image: UploadDocumentDetail) -> Void)? = nil
     var onBtnGallaryTapped: ((_ image: UploadDocumentDetail) -> Void)? = nil
     var onBtnDoneTapped: (() -> Void)? = nil
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.isCancellable = true
     }
-    
-    func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
+
+    func initialize(title:String) {
         self.initialSetup()
         self.lblTitle.text = title
-        if cancelButtonTitle.isEmpty() {
-            self.btnCancel.isHidden = true
-        } else {
-            self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
-            self.btnCancel.isHidden = false
-        }
-        if buttonTitle.isEmpty() {
-            self.btnDone.isHidden = true
-        } else {
-            self.btnDone.setTitle(buttonTitle, for: .normal)
-            self.btnDone.isHidden = false
-        }
     }
 
 
@@ -53,9 +42,9 @@ class CustomDocumentPicker: ThemeBottomDialogView {
     override func initialSetup() {
         super.initialSetup()
         self.lblCamera.text = "PHOTO_DIALOG_SCAN_DOCUMENT".localized()
-        self.lblCamera.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblCamera.setFont(name: FontName.Regular, size: FontSize.header)
         self.lblGallary.text = "PHOTO_DIALOG_UPLODED".localized()
-        self.lblGallary.setFont(name: FontName.Bold, size: FontSize.subHeader)
+        self.lblGallary.setFont(name: FontName.Regular, size: FontSize.header)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
     }
     override func layoutSubviews() {
@@ -67,13 +56,17 @@ class CustomDocumentPicker: ThemeBottomDialogView {
     }
 
     @IBAction func btnGallaryTapped(_ sender: Any) {
-        self.photoFromGallary()
+        if isForDocument {
+            self.openDocumentPicker()
+        } else {
+            self.photoFromGallary()
+        }
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
-            if self.onBtnDoneTapped != nil {
-                self.onBtnDoneTapped!();
-            }
+        if self.onBtnDoneTapped != nil {
+            self.onBtnDoneTapped!();
+        }
     }
 
 
@@ -82,41 +75,33 @@ class CustomDocumentPicker: ThemeBottomDialogView {
 }
 
 extension CustomDocumentPicker:  UIImagePickerControllerDelegate {
-    
-     func photoFromGallary() {
+
+    func photoFromGallary() {
         picker.modalPresentationStyle = .fullScreen
-            picker.delegate = self
-            picker.allowsEditing = false
-            picker.sourceType = .savedPhotosAlbum
-            picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-            DispatchQueue.main.async {
-                Common.appDelegate.getTopViewController()?.present(self.picker, animated: true, completion: nil)
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.sourceType = .savedPhotosAlbum
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        DispatchQueue.main.async {
+            Common.appDelegate.getTopViewController()?.present(self.picker, animated: true, completion: nil)
         }
     }
     func photoFromCamera() {
-        let cameraVC:CameraVC =  CameraVC.fromNib()
-        cameraVC.modalPresentationStyle = .fullScreen
-        
-        DispatchQueue.main.async {
-                Common.appDelegate.getTopViewController()?.present(cameraVC, animated: true, completion: nil)
-                
-        }
-        cameraVC.onBtnCaptureTapped = { [weak self] (document)  in
-            guard let self = self else {
-                return
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.modalPresentationStyle = .fullScreen
+
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+         picker.sourceType = .camera
+            DispatchQueue.main.async {
+                Common.appDelegate.getTopViewController()?.present(self.picker, animated: true, completion: nil)
             }
-            self.imageSelected = document
-            
-            Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: {
-                    if self.onBtnCameraTapped != nil {
-                        if let image = self.imageSelected {
-                                self.onBtnCameraTapped!(image);
-                        }
-                        
-                    }
-            })
+        } else {
+            DispatchQueue.main.async {
+                Common.showAlert(message: "Device doesn't have a " + "Camera")
+            }
         }
-        
+
     }
 
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
@@ -124,7 +109,7 @@ extension CustomDocumentPicker:  UIImagePickerControllerDelegate {
             let fileManager = FileManager.default
             let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
             _ = documentsPath?.appendingPathComponent("image.jpg")
-            var imageName: String = "mydocumentImage"
+            var imageName: String = "mydocumentImage.png"
             if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
                 let assetResources = PHAssetResource.assetResources(for: asset)
                 print(assetResources.first!.originalFilename)
@@ -133,32 +118,34 @@ extension CustomDocumentPicker:  UIImagePickerControllerDelegate {
                 }
             }
 
-            self.imageSelected = UploadDocumentDetail.init(id: appSingleton.user.id, name: imageName, image: image, data: image.pngData(), isCompleted: true)
+            self.documentSelected = UploadDocumentDetail.init(id: appSingleton.user.id, name: imageName, image: image, data: image.pngData())
         }
         else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             let fileManager = FileManager.default
             let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
             _ = documentsPath?.appendingPathComponent("image.jpg")
-            var imageName: String = "mydocumentImage"
+            var imageName: String = "mydocumentImage.png"
+            print(documentsPath?.pathExtension)
+
             if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
                 let assetResources = PHAssetResource.assetResources(for: asset)
                 print(assetResources.first!.originalFilename)
                 if let name  = assetResources.first?.originalFilename {
                     imageName = name
                 }
-             }
-            self.imageSelected = UploadDocumentDetail.init(id: appSingleton.user.id, name: imageName, image: image, data: image.pngData(), isCompleted: true)
+            }
+            self.documentSelected = UploadDocumentDetail.init(id: appSingleton.user.id, name: imageName, image: image, data: image.pngData())
         }
         else {
-            imageSelected = nil
+            documentSelected = nil
         }
         Common.appDelegate.getTopViewController()?.dismiss(animated: true, completion: {
-                if self.onBtnGallaryTapped != nil {
-                    if let image = self.imageSelected {
-                            self.onBtnGallaryTapped!(image);
-                    }
-                    
+            if self.onBtnGallaryTapped != nil {
+                if let image = self.documentSelected {
+                    self.onBtnGallaryTapped!(image);
                 }
+
+            }
         })
     }
 
@@ -171,12 +158,20 @@ extension CustomDocumentPicker:  UIImagePickerControllerDelegate {
 
 extension CustomDocumentPicker: UIDocumentPickerDelegate, UINavigationControllerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        for url in urls {
+        if let url = urls.first {
             let data = try! Data(contentsOf: url)
-            let _: UploadDocumentDetail = UploadDocumentDetail(id: url.absoluteString, name: url.pathComponents.last!,image: nil , data: data,isCompleted: true)
-            //self.addFileToArray(document: document)
-
+            if url.absoluteString.isImage() {
+                self.documentSelected = UploadDocumentDetail(id: url.absoluteString, name: url.pathComponents.last!,image: UIImage.init(data: data), data: data)
+            } else {
+                self.documentSelected = UploadDocumentDetail(id: url.absoluteString, name: url.pathComponents.last!,image: nil , data: data)
+            }
         }
+        if self.onBtnGallaryTapped != nil {
+            if let image = self.documentSelected {
+                self.onBtnGallaryTapped!(image);
+            }
+        }
+
     }
 
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
@@ -191,3 +186,4 @@ extension CustomDocumentPicker: UIDocumentPickerDelegate, UINavigationController
         Common.appDelegate.getTopViewController()?.present(documentPicker, animated: true, completion: nil)
     }
 }
+

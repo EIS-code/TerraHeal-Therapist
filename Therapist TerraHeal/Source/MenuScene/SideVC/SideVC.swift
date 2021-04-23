@@ -7,66 +7,6 @@
 
 import UIKit
 
-struct SideMenuItem {
-    var id: SideMenu = SideMenu.QuitColobration
-    var image: String = ""
-    var isVerticle: Bool = true
-    var value:String = ""
-}
-enum SideMenu: String {
-    case QuitColobration = "0"
-    case SuggesionAndComplaints = "1"
-    case SuspendCollaboration = "2"
-    case TakeBreak = "3"
-    case Notifications = "4"
-
-    func name() -> String {
-        switch self {
-        case .QuitColobration:
-            return "MENU_QUIT_COLLABORATION".localized()
-        case .SuggesionAndComplaints:
-            return "MENU_SUGGESTIONS_AND_COMPLAINTS".localized()
-        case .SuspendCollaboration:
-            return "MENU_SUSPEND_COLLABORATION".localized()
-        case .TakeBreak:
-            return "MENU_TAKE_BREAK".localized()
-        case .Notifications:
-            return "MENU_NOTIFICATIONS".localized()
-        }
-    }
-
-    func image() -> String {
-        switch self {
-        case .QuitColobration:
-
-            return ImageAsset.SideMenu.quitCollaboration
-        case .SuggesionAndComplaints:
-            return ImageAsset.SideMenu.suggestionCollaboration
-        case .SuspendCollaboration:
-            return ImageAsset.SideMenu.suspendCollaboration
-        case .TakeBreak:
-            return ImageAsset.SideMenu.takeBreak
-        case .Notifications:
-            return ImageAsset.SideMenu.notifications
-        }
-    }
-
-    func backgroundImage() -> String {
-        switch self {
-        case .QuitColobration:
-            return "MENU_QUIT_COLLABORATION".localized()
-        case .SuggesionAndComplaints:
-            return "MENU_SUSPEND_COLLABORATION".localized()
-        case .SuspendCollaboration:
-            return "MENU_SUGGESTIONS_AND_COMPLAINTS".localized()
-        case .TakeBreak:
-            return "MENU_TAKE_BREAK".localized()
-        case .Notifications:
-            return "MENU_NOTIFICATIONS".localized()
-        }
-    }
-}
-
 class SideVC: BaseVC {
 
     @IBOutlet weak var lblMenu: ThemeLabel!
@@ -81,7 +21,6 @@ class SideVC: BaseVC {
         SideMenuItem.init(id: SideMenu.SuggesionAndComplaints, image: "", isVerticle: false),
         SideMenuItem.init(id: SideMenu.SuspendCollaboration, image: "", isVerticle: false),
         SideMenuItem.init(id: SideMenu.TakeBreak, image: "", isVerticle: false),
-        /*SideMenuItem.init(id: SideMenu.News, image: "", isVerticle: false),*/
         SideMenuItem.init(id: SideMenu.Notifications, image: "", isVerticle: false),
     ]
 
@@ -118,6 +57,17 @@ extension UITableView {
 
 
 // MARK: - CollectionView Methods
+extension SideVC: PinterestLayoutDelegate {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+        return (collectionView.bounds.width/4.0)
+        /*let heightSizes =  [(collectionView.bounds.height/3.5),(collectionView.bounds.height/7)]
+         return CGFloat(heightSizes[arrForMenu[indexPath.row].isVerticle ? 0 : 1])*/
+
+
+    }
+}
 extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
 
     private func setupCollectionView() {
@@ -171,13 +121,13 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
             case SideMenu.Notifications:
                 Common.appDelegate.loadNotificationVC(navigaionVC: baseVC)
             case .QuitColobration:
-                self.openTextViewPicker(index: indexPath.item)
+                self.openQuitCollaboration()
                 break
             case .SuggesionAndComplaints:
                 Common.appDelegate.loadSuggestionVC(navigaionVC: baseVC)
                 break
             case .SuspendCollaboration:
-                self.openTextViewPicker(index: indexPath.item)
+                self.openSuspendCollaboration()
                 break
             case .TakeBreak:
                 self.openTimeBreakDialog()
@@ -187,10 +137,10 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
 
     }
 
-    func openTextViewPicker(index:Int = 0) {
+    func openSuspendCollaboration(index:Int = 0) {
         let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
         alert.initialize(title: arrForMenu[index].id.name()
-            , data: arrForMenu[index].value, buttonTitle: "DIALOG_QUIT_COLLABORATION_BTN_REQUEST".localized(), cancelButtonTitle: "BTN_SKIP".localized())
+                         , placeholder: "DIALOG_SUSPEND_COLLABORATION_TYPE_REASON_HERE".localized(), data: arrForMenu[index].value, buttonTitle: "DIALOG_SUSPEND_COLLABORATION_BTN_REQUEST".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -201,15 +151,35 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
             [weak alert, weak self] (description) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-            switch self.arrForMenu[index].id {
-            case .QuitColobration:
-                self.wsQuitCollabration(reason: description)
-                break
-            case .SuspendCollaboration:
-                self.wsSuspendCollabration(reason: description)
-                break
-            default :
-                print("")
+            if description.isEmpty() {
+                Common.showAlert(message: "DIALOG_VALIDATION_SUSPEND_COLLABORATION_MSG".localized())
+            } else {
+                self.wsSuspendCollaboration(reason: description)
+            }
+        }
+    }
+
+    func openQuitCollaboration(index:Int = 0) {
+        let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
+        alert.initialize(title: SideMenu.QuitColobration.name(),
+                         placeholder: "DIALOG_QUIT_COLLABORATION_TYPE_REASON_HERE".localized(),
+                         data: "",
+                         buttonTitle: "DIALOG_QUIT_COLLABORATION_BTN_REQUEST".localized(),
+                         cancelButtonTitle: "BTN_SKIP".localized())
+        alert.show(animated: true)
+        alert.onBtnCancelTapped = {
+            [weak alert, weak self] in
+            guard let self = self else {return}; print(self)
+            alert?.dismiss()
+        }
+        alert.onBtnDoneTapped = {
+            [weak alert, weak self] (description) in
+            guard let self = self else { return } ; print(self)
+            alert?.dismiss()
+            if description.isEmpty() {
+                Common.showAlert(message: "DIALOG_VALIDATION_QUIT_COLLABORATION_MSG".localized())
+            } else {
+                self.wsQuitCollaboration(reason: description)
             }
         }
     }
@@ -229,32 +199,25 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
             alert?.dismiss()
         }
     }
-
-    func wsQuitCollabration(reason:String) {
-        CollabrationWebService.requestQuitCollabration(params: CollabrationWebService.RequestQuitCollabration.init(reason: reason)) { (response) in
-            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
-
-            }
-        }
-    }
-    func wsSuspendCollabration(reason:String) {
-        CollabrationWebService.requestSuspendCollabration(params: CollabrationWebService.RequestSuspendCollabration.init(reason: reason)) { (response) in
-            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
-
-            }
-        }
-    }
-
 }
 
-extension SideVC: PinterestLayoutDelegate {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
-        return (collectionView.bounds.width/4.0)
-        /*let heightSizes =  [(collectionView.bounds.height/3.5),(collectionView.bounds.height/7)]
-         return CGFloat(heightSizes[arrForMenu[indexPath.row].isVerticle ? 0 : 1])*/
 
 
+//MARK: Web Service Call
+
+extension SideVC {
+    func wsQuitCollaboration(reason:String) {
+        MenuWebService.requestQuitCollaboration(params: MenuWebService.RequestQuitCollaboration.init(reason: reason)) { (response) in
+            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+
+            }
+        }
     }
+    func wsSuspendCollaboration(reason:String) {
+        MenuWebService.requestSuspendCollaboration(params: MenuWebService.RequestSuspendCollaboration.init(reason: reason)) { (response) in
+            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+            }
+        }
+    }
+
 }

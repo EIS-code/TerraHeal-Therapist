@@ -74,6 +74,7 @@ PODS:
   - GoogleUtilities/UserDefaults (6.7.2):
     - GoogleUtilities/Logger
   - IQKeyboardManager (6.5.5)
+  - Mantis (1.5.2)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
@@ -91,6 +92,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - IQKeyboardManager
+  - Mantis (~> 1.5.2)
   - SDWebImage
 
 SPEC REPOS:
@@ -108,6 +110,7 @@ SPEC REPOS:
     - GooglePlaces
     - GoogleUtilities
     - IQKeyboardManager
+    - Mantis
     - nanopb
     - PromisesObjC
     - SDWebImage
@@ -126,10 +129,11 @@ SPEC CHECKSUMS:
   GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  Mantis: 2d820f8d7a2f576ad028d5418faab8f5656c2997
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
 
-PODFILE CHECKSUM: 317f819e0708f25bf2c930a8b6aa4be26b35ca95
+PODFILE CHECKSUM: f3b63d31933596837b0f4a827c1d5e97ec9c5ee0
 
 COCOAPODS: 1.8.4

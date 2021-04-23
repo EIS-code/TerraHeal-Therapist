@@ -22,7 +22,6 @@ struct Connectivity {
 struct UploadDocumentDetail {
     var id: String  = ""
     var name: String  = ""
-    var url: String? = nil
     var image: UIImage? = nil
     var data: Data? = nil
     var isCompleted: Bool  = false
@@ -162,14 +161,6 @@ class AlamofireHelper: NSObject
                     let dictionary = try! value!.toDictionary()
                     print("Request Response :- \(dictionary)")
                     self.dataBlock(value!,dictionary.convertValues,nil)
-                    /*do {
-                        let dictionary = try? value!.toDictionary() ?? [:]
-
-                        self.dataBlock(value!,dictionary ?? [:].convertValues,nil)
-                    } catch {
-
-                    }*/
-
                 }
                 break
             case .failure(let error):

@@ -4,7 +4,7 @@
 //
 
 import UIKit
-
+import Mantis
 
 class ManageSingleDocumentVC: BaseVC {
     
@@ -111,10 +111,11 @@ class ManageSingleDocumentVC: BaseVC {
 
 
 
-extension ManageSingleDocumentVC: UIImageCropperProtocol {
+extension ManageSingleDocumentVC {
     func openPhotoPicker() {
         let photoPickerAlert: CustomDocumentPicker = CustomDocumentPicker.fromNib()
-        photoPickerAlert.initialize(title:"ADD_NEW_DOCUMENT_TITLE".localized(), buttonTitle: "".localized(),cancelButtonTitle: "BTN_CANCEL".localized())
+        photoPickerAlert.isForDocument = true
+        photoPickerAlert.initialize(title:"ADD_NEW_DOCUMENT_TITLE".localized())
         photoPickerAlert.show(animated: true)
         photoPickerAlert.onBtnCancelTapped = { [weak photoPickerAlert, weak self] in
             photoPickerAlert?.dismiss()
@@ -129,47 +130,50 @@ extension ManageSingleDocumentVC: UIImageCropperProtocol {
         photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] (doc) in
             photoPickerAlert?.dismiss()
              guard let self = self else { return } ; print(self)
-            self.openCropper(image: doc.image ?? UIImage())
+            Common.appDelegate.openImageCropper(vc: self, image: doc.image)
 
         }
         photoPickerAlert.onBtnGallaryTapped = { [weak photoPickerAlert, weak self] (doc) in
             photoPickerAlert?.dismiss()
              guard let self = self else { return } ; print(self)
-            self.openCropper(image: doc.image ?? UIImage())
-            //let gallaryVC:GallaryVC = Common.appDelegate.loadGallaryVC(navigaionVC: self.navigationController)
+            if doc.name.isImage() {
+                Common.appDelegate.openImageCropper(vc: self, image: doc.image)
+            } else {
+                self.selectedDocument = UploadDocumentDetail.init()
+                self.selectedDocument?.paramName = self.selectedDocType.paramName()
+                self.selectedDocument?.image = nil
+                self.selectedDocument?.data = doc.data
+                self.wsUpdateDocument()
+            }
         }
     }
 
-    func openCropper(image: UIImage) {
+}
+extension ManageSingleDocumentVC: CropViewControllerDelegate {
 
-        let cropper: UIImageCropperVC = UIImageCropperVC.fromNib()
-        cropper.cropRatio = 1/1
-        cropper.delegate = self
-        cropper.picker = nil
-        cropper.image = image
-        cropper.cancelButtonText = "BTN_CANCEL".localized()
-        cropper.view.layoutIfNeeded()
-        cropper.modalPresentationStyle = .fullScreen
-        DispatchQueue.main.async {
-            self.btnAddPicture.isEnabled = true
-            Common.appDelegate.getTopViewController()?.present(cropper, animated: true, completion: nil)
+    func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation) {
+        //self.uploadFileDetail?.image = cropped
+        do {
+            try cropped.compressImage(100, completion: { (image, compressRatio) in
+                print(image.size)
+                self.selectedDocument = UploadDocumentDetail.init()
+                self.selectedDocument?.paramName = self.selectedDocType.paramName()
+                self.selectedDocument?.image = image
+                self.selectedDocument?.data = image.sd_imageData(as: .JPEG)
+                self.wsUpdateDocument()
+            })
+        } catch {
+            print("Error")
         }
+        self.navigationController?.popViewController(animated: true)
     }
-    func didCropImage(originalImage: UIImage?, croppedImage: UIImage?) {
-        self.selectedDocument = UploadDocumentDetail.init()
-        self.selectedDocument?.paramName = self.selectedDocType.paramName()
-        self.selectedDocument?.image = croppedImage
-        self.selectedDocument?.data = croppedImage?.jpegData(compressionQuality: 1.0)
-        self.wsUpdateDocument()
-    }
-    
-    //optional
-    func didCancel() {
-        print("did cancel")
-         self.popVC()
+
+    func cropViewControllerDidCancel(_ cropViewController: CropViewController, original: UIImage) {
+        self.navigationController?.popViewController(animated: true)
 
     }
 }
+
 //MARK:- Web Service Calls
 
 extension ManageSingleDocumentVC {
@@ -200,6 +204,5 @@ extension ManageSingleDocumentVC {
                 self.popVC()
             }
         }
-
     }
 }

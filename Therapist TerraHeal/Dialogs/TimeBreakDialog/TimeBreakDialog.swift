@@ -152,8 +152,6 @@ extension TimeBreakDialog: UITextFieldDelegate {
     func wsGetBreak() {
         Loader.showLoading()
         var request: MenuWebService.RequestTakeBreak = MenuWebService.RequestTakeBreak.init()
-        request.break_for = ""
-        request.break_reason = ""
         request.minutes = self.minutes.toString()
         request.date = Date().millisecondsSince1970.toString()
         MenuWebService.requestTakeBreak(params: request) { (response) in

@@ -24,7 +24,7 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
         tableView.register(MyBookingTblCell.nib()
                            , forCellReuseIdentifier: MyBookingTblCell.name)
         tableView.register(MyBookingTblSection.nib(), forHeaderFooterViewReuseIdentifier: MyBookingTblSection.name)
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.width, height: JDDeviceHelper.offseter(offset: 100)))
     }
 
     func registerFilterNib(tableView: UITableView) {
@@ -46,26 +46,25 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
             let cell = tableView.dequeueReusableCell(withIdentifier: FilterTblCell.name, for: indexPath) as?  FilterTblCell
             cell?.setData(data: arrForFilter[indexPath.row])
             return cell!
-
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyBookingTblCell.name, for: indexPath) as?  MyBookingTblCell
             cell?.layoutIfNeeded()
+            cell?.vwBar.isHidden = true
             cell?.setData(data: self.arrForData[indexPath.row])
             cell?.layoutIfNeeded()
             return cell!
         }
-
-
     }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == tblForFilter {
             return UITableView.automaticDimension
         }
         return UITableView.automaticDimension
-
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -91,12 +90,11 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
                 }
                 if selectedFilterType == .Past {
                     view.imgFilterType.image = UIImage.init(named: ImageAsset.Filter.pastDark)
-                    view.lblFilterType.setText("Past")
+                    view.lblFilterType.setText("HOME_FILTER_PAST".localized())
                 } else {
                     view.imgFilterType.image = UIImage.init(named: ImageAsset.Filter.futureDark)
-                    view.lblFilterType.setText("Future")
+                    view.lblFilterType.setText("HOME_FILTER_FUTURE".localized())
                 }
-                
                 return view
             }
         }

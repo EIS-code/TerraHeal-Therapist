@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030D0FD4262945770057E4E9 /* ExperienceDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030D0FD2262945770057E4E9 /* ExperienceDialog.swift */; };
+		030D0FD5262945770057E4E9 /* ExperienceDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030D0FD3262945770057E4E9 /* ExperienceDialog.xib */; };
+		030D0FDB26294BB70057E4E9 /* ManageIdPassportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030D0FD926294BB70057E4E9 /* ManageIdPassportVC.xib */; };
+		030D0FDC26294BB70057E4E9 /* ManageIdPassportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030D0FDA26294BB70057E4E9 /* ManageIdPassportVC.swift */; };
 		030DB57625260869004C7CC8 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB57425260869004C7CC8 /* CircularProgressBar.swift */; };
 		030DB57725260869004C7CC8 /* DashedCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB57525260869004C7CC8 /* DashedCircleView.swift */; };
 		030DB59625260966004C7CC8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB57925260966004C7CC8 /* Constant.swift */; };
@@ -44,7 +48,6 @@
 		030DB5CF252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB5C0252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift */; };
 		030DB5D0252609FB004C7CC8 /* ThemeBottomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB5C1252609FB004C7CC8 /* ThemeBottomDialog.swift */; };
 		03107D8025D1615800D82B7F /* ForgotWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03107D7F25D1615800D82B7F /* ForgotWebService.swift */; };
-		0325EF98260C8817009FD74C /* QuitCollabrationWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325EF97260C8816009FD74C /* QuitCollabrationWebService.swift */; };
 		0325EF9B260C9190009FD74C /* MissingDayWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325EF9A260C918F009FD74C /* MissingDayWebService.swift */; };
 		03405502252E043000B7077D /* RadioSelectionTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03405500252E043000B7077D /* RadioSelectionTblCell.swift */; };
 		03405503252E043000B7077D /* RadioSelectionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03405501252E043000B7077D /* RadioSelectionTblCell.xib */; };
@@ -141,12 +144,6 @@
 		0352B013255EAE8E002E9D6D /* CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0352B00F255EAE8E002E9D6D /* CameraVC.xib */; };
 		0352B014255EAE8E002E9D6D /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352B011255EAE8E002E9D6D /* CameraController.swift */; };
 		0352B015255EAE8E002E9D6D /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352B012255EAE8E002E9D6D /* CameraVC.swift */; };
-		0354F26125492F4100F3BEB7 /* ManageExperienceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F25925492F4100F3BEB7 /* ManageExperienceVC.xib */; };
-		0354F26225492F4100F3BEB7 /* ManageExperienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F25A25492F4100F3BEB7 /* ManageExperienceVC.swift */; };
-		0354F26325492F4100F3BEB7 /* ManageExperienceTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F25C25492F4100F3BEB7 /* ManageExperienceTblCell.swift */; };
-		0354F26425492F4100F3BEB7 /* ManageExperienceTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F25D25492F4100F3BEB7 /* ManageExperienceTblCell.xib */; };
-		0354F26525492F4100F3BEB7 /* ExperienceDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F25F25492F4100F3BEB7 /* ExperienceDialog.swift */; };
-		0354F26625492F4100F3BEB7 /* ExperienceDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F26025492F4100F3BEB7 /* ExperienceDialog.xib */; };
 		0354F26B254947E100F3BEB7 /* BookingListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F269254947E100F3BEB7 /* BookingListVC.xib */; };
 		0354F26C254947E100F3BEB7 /* BookingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F26A254947E100F3BEB7 /* BookingListVC.swift */; };
 		0354F2742549603700F3BEB7 /* WorkingScheduleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F26F2549603700F3BEB7 /* WorkingScheduleVC.xib */; };
@@ -156,8 +153,6 @@
 		0354F2792549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F2782549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift */; };
 		0354F27D25496E9100F3BEB7 /* WorkingScheduleTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F27B25496E9100F3BEB7 /* WorkingScheduleTblSection.swift */; };
 		0354F27E25496E9100F3BEB7 /* WorkingScheduleTblSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F27C25496E9100F3BEB7 /* WorkingScheduleTblSection.xib */; };
-		035B343E26255A15001A4124 /* UploadedDocumentTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035B343C26255A15001A4124 /* UploadedDocumentTblCell.xib */; };
-		035B343F26255A15001A4124 /* UploadedDocumentTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B343D26255A15001A4124 /* UploadedDocumentTblCell.swift */; };
 		035B6DC62616053E00471DF9 /* ClientWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6DC52616053E00471DF9 /* ClientWebService.swift */; };
 		035B6DC92616079000471DF9 /* SessionWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6DC82616079000471DF9 /* SessionWebService.swift */; };
 		035EDFEF261448C000B1FD01 /* LanguageWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EDFEE261448C000B1FD01 /* LanguageWebService.swift */; };
@@ -373,6 +368,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030D0FD2262945770057E4E9 /* ExperienceDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDialog.swift; sourceTree = "<group>"; };
+		030D0FD3262945770057E4E9 /* ExperienceDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExperienceDialog.xib; sourceTree = "<group>"; };
+		030D0FD926294BB70057E4E9 /* ManageIdPassportVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageIdPassportVC.xib; sourceTree = "<group>"; };
+		030D0FDA26294BB70057E4E9 /* ManageIdPassportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageIdPassportVC.swift; sourceTree = "<group>"; };
 		030DB57425260869004C7CC8 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		030DB57525260869004C7CC8 /* DashedCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashedCircleView.swift; sourceTree = "<group>"; };
 		030DB57925260966004C7CC8 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -410,7 +409,6 @@
 		030DB5C0252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThemeBottomDialog + Animation.swift"; sourceTree = "<group>"; };
 		030DB5C1252609FB004C7CC8 /* ThemeBottomDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBottomDialog.swift; sourceTree = "<group>"; };
 		03107D7F25D1615800D82B7F /* ForgotWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotWebService.swift; sourceTree = "<group>"; };
-		0325EF97260C8816009FD74C /* QuitCollabrationWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuitCollabrationWebService.swift; sourceTree = "<group>"; };
 		0325EF9A260C918F009FD74C /* MissingDayWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissingDayWebService.swift; sourceTree = "<group>"; };
 		03405500252E043000B7077D /* RadioSelectionTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioSelectionTblCell.swift; sourceTree = "<group>"; };
 		03405501252E043000B7077D /* RadioSelectionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioSelectionTblCell.xib; sourceTree = "<group>"; };
@@ -507,12 +505,6 @@
 		0352B00F255EAE8E002E9D6D /* CameraVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraVC.xib; sourceTree = "<group>"; };
 		0352B011255EAE8E002E9D6D /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		0352B012255EAE8E002E9D6D /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
-		0354F25925492F4100F3BEB7 /* ManageExperienceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageExperienceVC.xib; sourceTree = "<group>"; };
-		0354F25A25492F4100F3BEB7 /* ManageExperienceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageExperienceVC.swift; sourceTree = "<group>"; };
-		0354F25C25492F4100F3BEB7 /* ManageExperienceTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageExperienceTblCell.swift; sourceTree = "<group>"; };
-		0354F25D25492F4100F3BEB7 /* ManageExperienceTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageExperienceTblCell.xib; sourceTree = "<group>"; };
-		0354F25F25492F4100F3BEB7 /* ExperienceDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDialog.swift; sourceTree = "<group>"; };
-		0354F26025492F4100F3BEB7 /* ExperienceDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExperienceDialog.xib; sourceTree = "<group>"; };
 		0354F269254947E100F3BEB7 /* BookingListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingListVC.xib; sourceTree = "<group>"; };
 		0354F26A254947E100F3BEB7 /* BookingListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingListVC.swift; sourceTree = "<group>"; };
 		0354F26F2549603700F3BEB7 /* WorkingScheduleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkingScheduleVC.xib; sourceTree = "<group>"; };
@@ -522,8 +514,6 @@
 		0354F2782549676900F3BEB7 /* WorkingScheduleVC + CaledarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkingScheduleVC + CaledarView.swift"; sourceTree = "<group>"; };
 		0354F27B25496E9100F3BEB7 /* WorkingScheduleTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingScheduleTblSection.swift; sourceTree = "<group>"; };
 		0354F27C25496E9100F3BEB7 /* WorkingScheduleTblSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkingScheduleTblSection.xib; sourceTree = "<group>"; };
-		035B343C26255A15001A4124 /* UploadedDocumentTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UploadedDocumentTblCell.xib; sourceTree = "<group>"; };
-		035B343D26255A15001A4124 /* UploadedDocumentTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadedDocumentTblCell.swift; sourceTree = "<group>"; };
 		035B6DC52616053E00471DF9 /* ClientWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientWebService.swift; sourceTree = "<group>"; };
 		035B6DC82616079000471DF9 /* SessionWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionWebService.swift; sourceTree = "<group>"; };
 		035EDFEE261448C000B1FD01 /* LanguageWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageWebService.swift; sourceTree = "<group>"; };
@@ -775,6 +765,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030D0FD1262945770057E4E9 /* ExperienceDialog */ = {
+			isa = PBXGroup;
+			children = (
+				030D0FD2262945770057E4E9 /* ExperienceDialog.swift */,
+				030D0FD3262945770057E4E9 /* ExperienceDialog.xib */,
+			);
+			path = ExperienceDialog;
+			sourceTree = "<group>";
+		};
+		030D0FD726294BB70057E4E9 /* ManageIdPassportVC */ = {
+			isa = PBXGroup;
+			children = (
+				030D0FD826294BB70057E4E9 /* xib */,
+				030D0FDA26294BB70057E4E9 /* ManageIdPassportVC.swift */,
+			);
+			name = ManageIdPassportVC;
+			path = "Therapist TerraHeal/Source/ProfileScene/ManageIdPassportVC";
+			sourceTree = SOURCE_ROOT;
+		};
+		030D0FD826294BB70057E4E9 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				030D0FD926294BB70057E4E9 /* ManageIdPassportVC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
 		030DB57825260966004C7CC8 /* AppBaseClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -808,7 +825,6 @@
 				0340FA7C25E8100100A064B3 /* RatingWebService.swift */,
 				0340FA7625E8088700A064B3 /* SuggestionWebService.swift */,
 				035B6DC82616079000471DF9 /* SessionWebService.swift */,
-				0325EF97260C8816009FD74C /* QuitCollabrationWebService.swift */,
 				03107D7F25D1615800D82B7F /* ForgotWebService.swift */,
 				039C43D225D6852B004295F1 /* NewsWebService.swift */,
 				038581BE25E4C6BC00B20F00 /* WorkingScheduleWebService.swift */,
@@ -1328,43 +1344,6 @@
 			path = CameraController;
 			sourceTree = "<group>";
 		};
-		0354F25725492F4100F3BEB7 /* ManageExperienceVC */ = {
-			isa = PBXGroup;
-			children = (
-				0354F25825492F4100F3BEB7 /* xib */,
-				0354F25A25492F4100F3BEB7 /* ManageExperienceVC.swift */,
-				0354F25B25492F4100F3BEB7 /* ManageExperienceTblCell */,
-				0354F25E25492F4100F3BEB7 /* ExperienceDialog */,
-			);
-			path = ManageExperienceVC;
-			sourceTree = "<group>";
-		};
-		0354F25825492F4100F3BEB7 /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				0354F25925492F4100F3BEB7 /* ManageExperienceVC.xib */,
-			);
-			path = xib;
-			sourceTree = "<group>";
-		};
-		0354F25B25492F4100F3BEB7 /* ManageExperienceTblCell */ = {
-			isa = PBXGroup;
-			children = (
-				0354F25C25492F4100F3BEB7 /* ManageExperienceTblCell.swift */,
-				0354F25D25492F4100F3BEB7 /* ManageExperienceTblCell.xib */,
-			);
-			path = ManageExperienceTblCell;
-			sourceTree = "<group>";
-		};
-		0354F25E25492F4100F3BEB7 /* ExperienceDialog */ = {
-			isa = PBXGroup;
-			children = (
-				0354F25F25492F4100F3BEB7 /* ExperienceDialog.swift */,
-				0354F26025492F4100F3BEB7 /* ExperienceDialog.xib */,
-			);
-			path = ExperienceDialog;
-			sourceTree = "<group>";
-		};
 		0354F267254947E100F3BEB7 /* BookingListVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1418,15 +1397,6 @@
 				0354F27C25496E9100F3BEB7 /* WorkingScheduleTblSection.xib */,
 			);
 			path = WorkingScheduleTblSection;
-			sourceTree = "<group>";
-		};
-		035B343B26255A15001A4124 /* UploadedDocumentTblCell */ = {
-			isa = PBXGroup;
-			children = (
-				035B343C26255A15001A4124 /* UploadedDocumentTblCell.xib */,
-				035B343D26255A15001A4124 /* UploadedDocumentTblCell.swift */,
-			);
-			path = UploadedDocumentTblCell;
 			sourceTree = "<group>";
 		};
 		035EF59F2526F3A300C64BD4 /* MenuScene */ = {
@@ -1647,7 +1617,6 @@
 				03643F8E254AD109004F9156 /* MissingDaysVC */,
 				0354F26D2549603700F3BEB7 /* WorkingScheduleVC */,
 				0354F267254947E100F3BEB7 /* BookingListVC */,
-				0354F25725492F4100F3BEB7 /* ManageExperienceVC */,
 				03F915BC254854EF00C391AB /* ServiceSelectionDialog */,
 				03B960A925483AA500F8F214 /* DocumentScene */,
 				0366DCFC2546D85B002C2CDA /* EditProfileVC */,
@@ -2339,6 +2308,8 @@
 		03B960A925483AA500F8F214 /* DocumentScene */ = {
 			isa = PBXGroup;
 			children = (
+				030D0FD726294BB70057E4E9 /* ManageIdPassportVC */,
+				030D0FD1262945770057E4E9 /* ExperienceDialog */,
 				03A55978261ED1C90018A20D /* ManageSingleDocument */,
 				03B960AA25483AA500F8F214 /* MyDocumentsVC */,
 				03B960B125483AA500F8F214 /* ManageDocumentVC */,
@@ -2368,7 +2339,6 @@
 		03B960B125483AA500F8F214 /* ManageDocumentVC */ = {
 			isa = PBXGroup;
 			children = (
-				035B343B26255A15001A4124 /* UploadedDocumentTblCell */,
 				03B960B225483AA500F8F214 /* xib */,
 				03B960B425483AA500F8F214 /* ManageDocumentTblCell */,
 				03B960B725483AA500F8F214 /* ManageDocumentVC.swift */,
@@ -2688,10 +2658,9 @@
 				034BB1AB255121AD006B3842 /* MyRateTblCell.xib in Resources */,
 				03AE6A162535C8D100F7C629 /* ProfileTblCell.xib in Resources */,
 				0377272D262429B70067C486 /* ManageSingleDocumentVC.xib in Resources */,
-				0354F26625492F4100F3BEB7 /* ExperienceDialog.xib in Resources */,
 				03412297252F3AFC000BCDAE /* CustomPhotoPicker.xib in Resources */,
 				0344037D252F08D900C8C700 /* BookingDetailTblCell.xib in Resources */,
-				0354F26125492F4100F3BEB7 /* ManageExperienceVC.xib in Resources */,
+				030D0FDB26294BB70057E4E9 /* ManageIdPassportVC.xib in Resources */,
 				0352B013255EAE8E002E9D6D /* CameraVC.xib in Resources */,
 				0354F26B254947E100F3BEB7 /* BookingListVC.xib in Resources */,
 				03E1663025D2BC0E00DA30C0 /* LoaderDialog.xib in Resources */,
@@ -2723,10 +2692,8 @@
 				038CAF8E252601CF001ACAD6 /* LoginVC.xib in Resources */,
 				03B960BA25483AA500F8F214 /* DocumentTblCell.xib in Resources */,
 				03405503252E043000B7077D /* RadioSelectionTblCell.xib in Resources */,
-				035B343E26255A15001A4124 /* UploadedDocumentTblCell.xib in Resources */,
 				03521F05252B18A00094829E /* DateDialog.xib in Resources */,
 				03440371252F04FB00C8C700 /* BookingDetailVC.xib in Resources */,
-				0354F26425492F4100F3BEB7 /* ManageExperienceTblCell.xib in Resources */,
 				0379EAC4252C72B800303A59 /* TimeSlotCltCell.xib in Resources */,
 				038CAFD8252604AB001ACAD6 /* CustomTextFieldDialog.xib in Resources */,
 				03B960A825481E3600F8F214 /* LanguageFluencyDialog.xib in Resources */,
@@ -2757,6 +2724,7 @@
 				034BB19F25510BC1006B3842 /* MonthYearDialog.xib in Resources */,
 				0366DD032546D85B002C2CDA /* EditProfileVC.xib in Resources */,
 				034BB18D25510A04006B3842 /* CreditCardTblCell.xib in Resources */,
+				030D0FD5262945770057E4E9 /* ExperienceDialog.xib in Resources */,
 				0345190924C85EBE00AF7026 /* styleable_map.json in Resources */,
 				03AE6A142535C8D100F7C629 /* ProfileVC.xib in Resources */,
 				03EED643254FE7920010A2CF /* ExchangeOfferDialog.xib in Resources */,
@@ -2892,7 +2860,6 @@
 				034BB1B5255172EA006B3842 /* SquareView.swift in Sources */,
 				038CAF8F252601CF001ACAD6 /* LoginVC.swift in Sources */,
 				034122A0252F40E4000BCDAE /* ServiceStatusVC.swift in Sources */,
-				0354F26325492F4100F3BEB7 /* ManageExperienceTblCell.swift in Sources */,
 				0354F2752549603700F3BEB7 /* WorkingScheduleVC.swift in Sources */,
 				038CAFD3252604AB001ACAD6 /* PersonPickerDialog.swift in Sources */,
 				030DB5CC252609FB004C7CC8 /* ThemeImageView.swift in Sources */,
@@ -2908,7 +2875,7 @@
 				03412292252F3AFC000BCDAE /* UIImageCropperVC.swift in Sources */,
 				03412296252F3AFC000BCDAE /* CustomPhotoPicker.swift in Sources */,
 				03643FA0254AD92A004F9156 /* MassageListVC.swift in Sources */,
-				035B343F26255A15001A4124 /* UploadedDocumentTblCell.swift in Sources */,
+				030D0FDC26294BB70057E4E9 /* ManageIdPassportVC.swift in Sources */,
 				03A2CC5825309D59005E3F29 /* MyBookingVC + TableView.swift in Sources */,
 				03B960BF25483AA500F8F214 /* ManageDocumentVC.swift in Sources */,
 				038CAFE5252604D8001ACAD6 /* PersonData.xcdatamodeld in Sources */,
@@ -2923,7 +2890,6 @@
 				038CB0142526056E001ACAD6 /* String+Localization.swift in Sources */,
 				03643F59254A7EC4004F9156 /* FSCalendarTransitionCoordinator.m in Sources */,
 				030DB5CB252609FB004C7CC8 /* ThemeView.swift in Sources */,
-				0325EF98260C8817009FD74C /* QuitCollabrationWebService.swift in Sources */,
 				034CBE8A2534751200B20A11 /* OptionsViewModel.swift in Sources */,
 				030DB59C25260966004C7CC8 /* PreferenceHelper.swift in Sources */,
 				034CBE862534700D00B20A11 /* JZAllDayHeader.swift in Sources */,
@@ -3042,11 +3008,10 @@
 				034BB1A125510BC1006B3842 /* MonthYearDialog.swift in Sources */,
 				035B6DC92616079000471DF9 /* SessionWebService.swift in Sources */,
 				030DB5D0252609FB004C7CC8 /* ThemeBottomDialog.swift in Sources */,
+				030D0FD4262945770057E4E9 /* ExperienceDialog.swift in Sources */,
 				0366DD0F2546DA79002C2CDA /* OTPTextField.swift in Sources */,
 				0379EACF252C934A00303A59 /* RateTblCell.swift in Sources */,
-				0354F26225492F4100F3BEB7 /* ManageExperienceVC.swift in Sources */,
 				034BB1A025510BC1006B3842 /* MonthYearPickerView.swift in Sources */,
-				0354F26525492F4100F3BEB7 /* ExperienceDialog.swift in Sources */,
 				034CBE772534700D00B20A11 /* WeakTimer.swift in Sources */,
 				030DB5C2252609FB004C7CC8 /* ThemeCollectionCell.swift in Sources */,
 				039C43CF25D662BF004295F1 /* CalenderWebService.swift in Sources */,

@@ -98,7 +98,7 @@ class EditProfileVC: BaseVC {
             EditProfileTextFieldDetail.init(value: user.accountNumber, type: .AccountNumber, rightImage: ""),
             EditProfileTextFieldDetail.init(value: user.name, type: .Name, rightImage: ""),
             EditProfileTextFieldDetail.init(value: user.surname, type: .Surname, rightImage: ""),
-            EditProfileTextFieldDetail.init(value: user.gender, type: .Gender, rightImage: ""),
+            EditProfileTextFieldDetail.init(value: user.getGenderType().name(), type: .Gender, rightImage: ""),
             EditProfileTextFieldDetail.init(value: user.dob, type: .DOB, rightImage: ""),
             EditProfileTextFieldDetail.init(value: user.nif, type: .Nif, rightImage: ""),
             EditProfileTextFieldDetail.init(value: user.socialSecurityNumber, type: .Ssn, rightImage: ""),
@@ -289,7 +289,7 @@ extension EditProfileVC {
 
     func openPersonalDetailDialog(index:Int) {
          let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
-               alert.initialize(title: "DIALOG_PERSONAL_DESCRIPTION_TITLE".localized(), placeholder: "DIALOG_PERSONAL_DESCRIPTION_PLACEHOLDER".localized(), data: "", buttonTitle: "DIALOG_PERSONAL_DESCRIPTION_BTN_SAVE".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.initialize(title: "DIALOG_PERSONAL_DESCRIPTION_TITLE".localized(), placeholder: "DIALOG_PERSONAL_DESCRIPTION_PLACEHOLDER".localized(), data: appSingleton.user.personalDescription, buttonTitle: "DIALOG_PERSONAL_DESCRIPTION_BTN_SAVE".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
                alert.show(animated: true)
                alert.onBtnCancelTapped = {
                    [weak alert, weak self] in
@@ -308,7 +308,7 @@ extension EditProfileVC {
 
     func openHeathConditionDialog(index:Int) {
         let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
-        alert.initialize(title: "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_TITLE".localized(), placeholder: "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_PLACEHOLDER".localized(), data: "", buttonTitle: "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_BTN_SAVE".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+        alert.initialize(title: "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_TITLE".localized(), placeholder: "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_PLACEHOLDER".localized(), data: appSingleton.user.healthConditionsAllergies, buttonTitle: "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_BTN_SAVE".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
@@ -389,6 +389,7 @@ extension EditProfileVC {
 
         let languagePicker: LanguageSelectionDialog = LanguageSelectionDialog.fromNib()
         languagePicker.initialize(title: arrForProfile[index].type.getPlaceHolder(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        
         languagePicker.show(animated: true)
         languagePicker.onBtnCancelTapped = {
             [weak languagePicker, weak self] in
@@ -409,7 +410,7 @@ extension EditProfileVC {
 
     func openGenderPicker(index:Int = 0) {
         let genderPickerAlert: CustomGenderPicker = CustomGenderPicker.fromNib()
-        genderPickerAlert.selectedGender = Gender.Female
+        genderPickerAlert.selectedGender = Gender(rawValue: appSingleton.user.gender) ?? .Female
         genderPickerAlert.initialize(title: arrForProfile[index].type.getPlaceHolder(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
         genderPickerAlert.show(animated: true)
         genderPickerAlert.onBtnCancelTapped = {

@@ -172,7 +172,7 @@ enum DocumentType: String {
     func paramName() -> String {
         switch self {
         case .AddressProof:
-            return "DOC_TYPE_ADDRESS_PROOF".localized()
+            return "".localized()
         case .IdentityProofFront:
             return "document_id_passport_front"
         case .IdentityProofBack:
