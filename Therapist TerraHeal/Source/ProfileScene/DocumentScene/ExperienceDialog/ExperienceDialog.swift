@@ -67,7 +67,10 @@ class ExperienceDialog: ThemeBottomDialogView {
         strEnteredData = txtDescription.text?.trim() ?? ""
         if strEnteredData.isEmpty() {
             Common.showAlert(message: "VALIDATION_MSG_INVALID_DATA".localized())
-        } else {
+        } else if self.imageSelected == nil {
+            Common.showAlert(message: "VALIDATION_MSG_UPLOAD_EXPERIANCE_CERTIFICATE".localized())
+        }
+        else {
             if self.onBtnDoneTapped != nil {
                 self.onBtnDoneTapped!(self.imageSelected!, strEnteredData);
             }

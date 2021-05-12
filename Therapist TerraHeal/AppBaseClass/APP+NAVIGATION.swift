@@ -54,6 +54,7 @@ extension AppDelegate {
     
     func loadMainVC(navigaionVC:UINavigationController? = nil) {
         if !PreferenceHelper.shared.getUserId().isEmpty() {
+            /*
             AppWebApi.getUserDetail { (response) in
                 Loader.hideLoading()
                 if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
@@ -65,14 +66,27 @@ extension AppDelegate {
                 } else {
                     self.loadMainVC(navigaionVC)
                 }
-            }
-            //self.loadMainVC(navigaionVC)
+            }*/
+            self.loadMainVC(navigaionVC)
         } else {
             self.loadLoginVC()
         }
         
     }
-
+    func loadExchangeOfferVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ExchangeOfferVC =  nc.findVCs(ofType: ExchangeOfferVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: ExchangeOfferVC = ExchangeOfferVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: ExchangeOfferVC = ExchangeOfferVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
     func loadNotificationVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
             if let targetVC: NotificationVC =  nc.findVCs(ofType: NotificationVC.self).first {

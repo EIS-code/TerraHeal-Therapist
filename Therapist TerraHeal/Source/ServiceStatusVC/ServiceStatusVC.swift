@@ -15,10 +15,10 @@ class ServiceStatusVC: BaseVC {
     @IBOutlet weak var lblMinute: ThemeLabel!
     @IBOutlet weak var lblMinRemaining: ThemeLabel!
     private var minuteTimer: Timer?
-    var serviceEndTime:Double = Date().add(component: .second, value: 20).millisecondsSince1970
+    var serviceEndTime:Double = 0.0
     var currentTime:Double = 0.0
     var totalDuration:Double = 0.0
-    var serviceStartTime: Double = Date().add(component: .second, value: -20).millisecondsSince1970
+    var serviceStartTime: Double = 0.0
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -112,6 +112,15 @@ class ServiceStatusVC: BaseVC {
             }
         })
     }
+    func wsMatchQRCode(json:[String:Any]) {
+        var newJson: [String:Any] = json
+        newJson["booking_id"] = appSingleton.currentService.bookingId
+        BookingWebSerive.matchQRCode(params: newJson, completionHandler: { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.wsFinishService(id: appSingleton.currentService.bookingMassageId)
+            }
+        })
+    }
 
 }
 
@@ -120,8 +129,8 @@ class ServiceStatusVC: BaseVC {
 extension ServiceStatusVC {
 
     func startTimer() {
-        self.serviceStartTime = appSingleton.currentService.massageStartTime.toDouble
-        self.serviceEndTime = appSingleton.currentService.massageStartTime.toDouble
+        self.serviceStartTime = appSingleton.currentService.actualStartTime.toDouble
+        self.serviceEndTime = appSingleton.currentService.actualEndTime.toDouble
         self.totalDuration = (self.serviceEndTime -  self.serviceStartTime)/60000
         self.endTimer()
         self.updateServiceTimer()
@@ -166,10 +175,8 @@ extension ServiceStatusVC {
     }
 }
 extension ServiceStatusVC : QRScannerCodeDelegate {
-    func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
-        print("\(#function)")
-        self.wsFinishService(id: appSingleton.currentService.bookingMassageId)
-
+    func qrScanner(_ controller: UIViewController, scanDidComplete result: [String : Any]) {
+        self.wsMatchQRCode(json: result)
     }
 
     func qrScannerDidFail(_ controller: UIViewController, error: String) {
@@ -182,4 +189,6 @@ extension ServiceStatusVC : QRScannerCodeDelegate {
         (controller as? BaseVC)?.popVC()
         print("\(#function)")
     }
+
+
 }

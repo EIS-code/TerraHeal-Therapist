@@ -9,7 +9,7 @@ import Photos
 
 public protocol QRScannerCodeDelegate: class {
 
-    func qrScanner(_ controller: UIViewController, scanDidComplete result: String)
+    func qrScanner(_ controller: UIViewController, scanDidComplete result: [String:Any])
     func qrScannerDidFail(_ controller: UIViewController,  error: String)
     func qrScannerDidCancel(_ controller: UIViewController)
 }
@@ -19,10 +19,8 @@ class ScanVC: BaseVC,AVCaptureMetadataOutputObjectsDelegate, UIImagePickerContro
 
     var squareView: SquareView? = nil
     public weak var delegate: QRScannerCodeDelegate?
-    @IBOutlet weak var btnScan: UIButton!
-
     //Default Properties
-    private let bottomSpace: CGFloat = 80.0
+    private let bottomSpace: CGFloat = 0.0
     private let spaceFactor: CGFloat = 16.0
     private let devicePosition: AVCaptureDevice.Position = .back
     private var delCnt: Int = 0
@@ -103,7 +101,7 @@ class ScanVC: BaseVC,AVCaptureMetadataOutputObjectsDelegate, UIImagePickerContro
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setNavigationTitle(title: "SCAN_TITLE".localized())
+        self.setNavigationTitle(title: "".localized())
     }
     //MARK: Life cycle methods
     override public func viewWillAppear(_ animated: Bool) {
@@ -126,7 +124,6 @@ class ScanVC: BaseVC,AVCaptureMetadataOutputObjectsDelegate, UIImagePickerContro
         addViedoPreviewLayer(view)
         createCornerFrame()
         self.view.bringSubviewToFront(self.vwNavigationBar)
-        self.view.bringSubviewToFront(self.btnScan)
         print("\(#function)")
     }
 
@@ -190,7 +187,7 @@ class ScanVC: BaseVC,AVCaptureMetadataOutputObjectsDelegate, UIImagePickerContro
     //MARK: - Setup and start capturing session
 
     @IBAction func btnScanTapped(_ sender: Any) {
-        delegate?.qrScanner(self, scanDidComplete: "ABV")
+        //delegate?.qrScanner(self, scanDidComplete: "ABV")
     }
     open func startScanningQRCode() {
         if captureSession.isRunning { return }
@@ -252,8 +249,15 @@ class ScanVC: BaseVC,AVCaptureMetadataOutputObjectsDelegate, UIImagePickerContro
                 if view.bounds.contains(unwraped.bounds) {
                     delCnt = delCnt + 1
                     if delCnt > delayCount {
+
                         if let unwrapedStringValue = unwraped.stringValue {
-                            delegate?.qrScanner(self, scanDidComplete: unwrapedStringValue)
+
+                            if let res = try? JSONSerialization.jsonObject(with:Data(unwrapedStringValue.utf8), options: []) as? [String:Any] {
+                                delegate?.qrScanner(self, scanDidComplete: res)
+                            }
+                            else {
+                                delegate?.qrScannerDidFail(self, error: "json not found \(unwrapedStringValue)")
+                            }
                         } else {
                             delegate?.qrScannerDidFail(self, error: "Empty string found")
                         }

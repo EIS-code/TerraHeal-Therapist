@@ -127,7 +127,6 @@ class MyBookingExpandTblCell: TableCell {
             self.layoutIfNeeded()
             self.vwExpanded?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)
             self.vwDate?.setRound(withBorderColor: .clear, andCornerRadious: 15, borderWidth: 1.0)
-            print(#function)
         }
         
     }

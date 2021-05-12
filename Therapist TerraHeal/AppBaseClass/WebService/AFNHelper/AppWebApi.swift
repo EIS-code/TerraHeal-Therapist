@@ -177,6 +177,9 @@ class AppWebApi: NSObject {
             return  Domain + Routes.Client  + "/my/collaboration/suspend"
         }
 
+        static var MatchQR: String {
+            return  Domain + "/user"  + "/match/qr"
+        }
 
         //MARK: Exception
         static var CheckExeption: String {

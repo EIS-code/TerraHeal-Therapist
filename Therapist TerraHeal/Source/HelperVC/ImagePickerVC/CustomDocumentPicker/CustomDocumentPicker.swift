@@ -46,6 +46,8 @@ class CustomDocumentPicker: ThemeBottomDialogView {
         self.lblGallary.text = "PHOTO_DIALOG_UPLODED".localized()
         self.lblGallary.setFont(name: FontName.Regular, size: FontSize.header)
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
+        self.btnDone.isHidden = true
+        self.btnCancel.setText("BTN_CANCEL".localized())
     }
     override func layoutSubviews() {
         super.layoutSubviews()

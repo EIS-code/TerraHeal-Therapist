@@ -15,6 +15,9 @@ class ExchangeWithOtherWebService {
     struct RequestToTherapistList: Codable {
         var name: String = ""
     }
+    struct RequestToExchangeOffer: Codable {
+        var name: String = ""
+    }
 }
 
 
@@ -57,7 +60,7 @@ class TherapistData {
 
 //MARK: WebServiceCall
 extension ExchangeWithOtherWebService {
-    static func requestToAbsent(params: AbsentDayWebService.RequestToAbsent ,completionHandler: @escaping ((ResponseModel) -> Void)) {
+    static func requestToExchangeOffer(params: ExchangeWithOtherWebService.RequestToExchangeOffer ,completionHandler: @escaping ((ResponseModel) -> Void)) {
 
         AlamofireHelper().getDataFrom(urlString: Self.exchangeURL, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
             let response = ResponseModel.init(fromDictionary: dictionary)

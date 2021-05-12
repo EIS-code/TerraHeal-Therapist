@@ -38,7 +38,10 @@ class CustomDatePicker: ThemeBottomDialogView {
         super.awakeFromNib()
     }
     
-    
+    @IBAction func btnYearTapped(_ sender: Any) {
+
+    }
+
     func initialize(title:String, buttonTitle:String, cancelButtonTitle:String) {
 
         self.initialSetup()
@@ -79,9 +82,21 @@ class CustomDatePicker: ThemeBottomDialogView {
     @IBAction func btnPreviousTapped(_ sender: Any) {
         let currentPage = self.vwCalendar.currentPage.previousMonth()
         self.vwCalendar.setCurrentPage(currentPage, animated: true)
+        self.selectDate(date: currentPage)
     }
     @IBAction func btnNextTapped(_ sender: Any) {
         let currentPage = self.vwCalendar.currentPage.nextMonth()
+        self.vwCalendar.setCurrentPage(currentPage, animated: true)
+    }
+
+    @IBAction func btnPreviousYearTapped(_ sender: Any) {
+        let currentPage = self.vwCalendar.currentPage.previousYear()
+        self.vwCalendar.setCurrentPage(currentPage, animated: true)
+        self.selectDate(date: currentPage)
+
+    }
+    @IBAction func btnNextYearTapped(_ sender: Any) {
+        let currentPage = self.vwCalendar.currentPage.nextYear()
         self.vwCalendar.setCurrentPage(currentPage, animated: true)
     }
 

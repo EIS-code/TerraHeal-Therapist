@@ -189,7 +189,7 @@ extension UITableView {
                     self.contentOffset = CGPoint.zero
                     self.reloadData({
                         cntrnt?.constant = ceil(self.contentSize.height)
-                        self.superview?.layoutIfNeeded()
+                        //self.superview?.layoutIfNeeded()
                         if self.isHEqualToCH {
                             completion?()
                         }

@@ -43,7 +43,6 @@ extension MissingDaysVC: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDel
 
     }
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
-        print("Date:- \(date.millisecondsSince1970)")
         if arrForWorkingDays.contains(date.addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT())).millisecondsSince1970) {
             return UIColor.init(hex: "#33B199")
         }

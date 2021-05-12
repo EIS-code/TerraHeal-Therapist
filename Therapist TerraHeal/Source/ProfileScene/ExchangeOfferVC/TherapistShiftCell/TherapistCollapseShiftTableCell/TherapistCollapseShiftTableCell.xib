@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="KGk-i7-Jjw" userLabel="TherapistCollapseShiftTableCell" customClass="TherapistCollapseShiftTableCell" customModule="Therapist_TerraHeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="83"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTr-D4-KiU" userLabel="vwForBackground">
+                        <rect key="frame" x="8" y="8" width="334" height="67"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="i6D-3T-OIR">
+                                <rect key="frame" x="24" y="16" width="286" height="35"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-edit-profile-account-number" translatesAutoresizingMaskIntoConstraints="NO" id="ht2-rh-lzd">
+                                        <rect key="frame" x="0.0" y="0.5" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ht2-rh-lzd" secondAttribute="height" multiplier="1:1" id="r7n-Dc-9Ur"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30G-Mb-3dc" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="9" width="186" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" name="theme_dark_text"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rl5-sF-9R9" customClass="JDRadioButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                        <rect key="frame" x="252" y="0.5" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rl5-sF-9R9" secondAttribute="height" multiplier="1:1" id="Omd-gj-zyu"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" name="theme_primary"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                <color key="value" name="theme_light_text_color"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                <color key="value" name="theme_secondary"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ht2-rh-lzd" firstAttribute="width" secondItem="rl5-sF-9R9" secondAttribute="width" id="83I-5Y-Qtm"/>
+                                    <constraint firstItem="rl5-sF-9R9" firstAttribute="width" secondItem="rl5-sF-9R9" secondAttribute="height" multiplier="1:1" id="NUm-Ws-ZaR"/>
+                                    <constraint firstItem="ht2-rh-lzd" firstAttribute="height" secondItem="rl5-sF-9R9" secondAttribute="height" id="euV-q7-a6q"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="i6D-3T-OIR" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" constant="24" id="g11-Hy-nbs"/>
+                            <constraint firstAttribute="bottom" secondItem="i6D-3T-OIR" secondAttribute="bottom" constant="16" id="tcb-q9-nFj"/>
+                            <constraint firstAttribute="trailing" secondItem="i6D-3T-OIR" secondAttribute="trailing" constant="24" id="xQd-38-r4K"/>
+                            <constraint firstItem="i6D-3T-OIR" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="16" id="zb9-m7-xyW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="2jg-EE-YxG"/>
+                    <constraint firstAttribute="trailing" secondItem="fTr-D4-KiU" secondAttribute="trailing" constant="8" id="AWN-UN-JV4"/>
+                    <constraint firstAttribute="bottom" secondItem="fTr-D4-KiU" secondAttribute="bottom" constant="8" id="E6U-2U-bkO"/>
+                    <constraint firstItem="fTr-D4-KiU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="p1a-dc-cSm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="btnSelectTherapist" destination="rl5-sF-9R9" id="1HC-xO-gST"/>
+                <outlet property="imgCell" destination="ht2-rh-lzd" id="PSg-b1-obV"/>
+                <outlet property="lblTherapistName" destination="30G-Mb-3dc" id="WRX-qv-CQY"/>
+                <outlet property="vwCellBg" destination="fTr-D4-KiU" id="ie6-ew-Ecd"/>
+            </connections>
+            <point key="canvasLocation" x="144.92753623188406" y="143.63839285714286"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="rl5-sF-9R9">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="asset-edit-profile-account-number" width="24" height="24"/>
+        <namedColor name="theme_dark_text">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_light_text_color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_primary">
+            <color red="0.3843137254901961" green="0.7686274509803922" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="theme_secondary">
+            <color red="0.97299998998641968" green="0.60000002384185791" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -59,35 +59,18 @@ class AvailabilityVC: BaseVC {
     @IBOutlet weak var btnProceed: FilledRoundedButton!
     @IBOutlet weak var lblAvailableTime: ThemeLabel!
     @IBOutlet weak var btnSelectMore: RoundedBorderButton!
-    @IBOutlet weak var cltForAvailability: UICollectionView!
-    @IBOutlet weak var hCltVw: NSLayoutConstraint!
+    @IBOutlet weak var tblForAvailability: UITableView!
 
     var arrForAvailability:[Any] = []
     var arrForData:[AvailabilityCellDetail] = [
-        AvailabilityCellDetail.init(value: "9 AM", availabilityStatus: .Available),
-        AvailabilityCellDetail.init(value: "10 AM", availabilityStatus: .Available),
-        AvailabilityCellDetail.init(value: "11 AM", availabilityStatus: .Available),
-        AvailabilityCellDetail.init(value: "12 AM", availabilityStatus: .Available),
-        AvailabilityCellDetail.init(value: "1 PM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "2 PM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "3 PM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "4 PM", availabilityStatus: .Available),
-        AvailabilityCellDetail.init(value: "5 PM", availabilityStatus: .Available),
-        AvailabilityCellDetail.init(value: "6 PM", availabilityStatus: .Available),
-        AvailabilityCellDetail.init(value: "7 PM", availabilityStatus: .Available),
-        AvailabilityCellDetail.init(value: "8 PM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "9 PM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "10 PM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "11 PM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "12 PM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "1 AM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "2 AM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "3 AM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "4 AM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "5 AM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "6 AM", availabilityStatus: .NotAvailable),
-        AvailabilityCellDetail.init(value: "7 AM", availabilityStatus: .Available),
-        AvailabilityCellDetail.init(value: "8 AM", availabilityStatus: .Available),
+        AvailabilityCellDetail.init(shiftName: "shift - 1", shiftTime: "10 - 12", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 2", shiftTime: "12 - 14", availabilityStatus: .Available, isSelected: true),
+        AvailabilityCellDetail.init(shiftName: "shift - 3", shiftTime: "12 - 16", availabilityStatus: .Available, isSelected: true),
+        AvailabilityCellDetail.init(shiftName: "shift - 4", shiftTime: "16 - 18", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 5", shiftTime: "16 - 20", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 6", shiftTime: "20 - 24", availabilityStatus: .Available, isSelected: true),
+        AvailabilityCellDetail.init(shiftName: "shift - 7", shiftTime: "00 - 08", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 8", shiftTime: "08 - 04", availabilityStatus: .Available, isSelected: true),
     ]
 
     let date = Date().startOfDay
@@ -110,7 +93,6 @@ class AvailabilityVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hCltVw.constant = 80 * 8
         self.initialViewSetup()
         self.wsAvailability()
 
@@ -128,23 +110,9 @@ class AvailabilityVC: BaseVC {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
 
-           // self.setupCollectionFlowLayout(collectionView: self.cltForAvailability)
         }
     }
-    func setupCollectionFlowLayout(collectionView: UICollectionView) {
-        let width = JDDeviceHelper.offseter(offset: collectionView.bounds.width/3.0)
-        let heightRatio =  JDDeviceHelper.offseter(offset: 3.66)
-        let size: CGSize = CGSize.init(width: width, height: width/heightRatio)
-        self.hCltVw.constant = size.height * 8.0
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = size
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        collectionView.reloadData()
-        collectionView.collectionViewLayout = layout
-    }
+    
     private func initialViewSetup() {
 
         self.setBackground(color: UIColor.themeLightBackground)
@@ -162,8 +130,7 @@ class AvailabilityVC: BaseVC {
         self.lblAvailableTime.setFont(name: FontName.SemiBold, size: FontSize.header)
         self.btnSelectMore.setText("MY_AVAILABILITY_BTN_SELECT_MORE".localized())
         self.setupCalendarView(calendar: self.vwCalendar)
-        self.setupCollectionView(collectionView: self.cltForAvailability)
-
+        self.setupAvailabilityView(tableView: self.tblForAvailability)
     }
 
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
@@ -231,7 +198,8 @@ extension AvailabilityVC {
     }
 
     func openExchangeOfferDialog() {
-        let alert: ExchangeOfferDialog = ExchangeOfferDialog.fromNib()
+        Common.appDelegate.loadExchangeOfferVC(navigaionVC: self.navigationController)
+        /*let alert: ExchangeOfferDialog = ExchangeOfferDialog.fromNib()
         alert.initialize(title: AvailabilityOptions.ExchangeWithOthers.name(), buttonTitle: "DIALOG_EXCHANGE_OFFER_BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
@@ -243,7 +211,8 @@ extension AvailabilityVC {
             [weak alert, weak self] () in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
-        }
+        }*/
+        
     }
 
     func openSelectOptionForAvailability() {

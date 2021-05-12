@@ -11,7 +11,7 @@ import UIKit
 
 
 // MARK: - CollectionView Methods
-extension ExchangeOfferDialog: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
+extension ExchangeOfferVC: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
 
     func setupCalendarView(calendar: FSCalendar) {
         calendar.backgroundColor = .clear

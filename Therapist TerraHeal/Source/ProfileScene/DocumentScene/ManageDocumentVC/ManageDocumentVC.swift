@@ -63,7 +63,7 @@ class ManageDocumentVC: BaseVC {
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeLightBackground)
         self.setupTableView(tableView: self.tableView)
-        self.setNavigationTitle(title: "MANAGE_DOCUMENT_TITLE".localized())
+        self.setNavigationTitle(title: self.selectedDocType.name())
         self.lblTitle?.textAlignment = .left
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
         self.lblEmptyTitle.setFont(name: FontName.Bold, size: FontSize.subHeader)
@@ -128,11 +128,13 @@ class ManageDocumentVC: BaseVC {
         photoPickerAlert.onBtnCameraTapped = { [weak photoPickerAlert, weak self] (doc) in
             photoPickerAlert?.dismiss()
             guard let self = self else { return } ; print(self)
+            self.btnSubmit.isEnabled = true
             Common.appDelegate.openImageCropper(vc: self, image: doc.image)
         }
         photoPickerAlert.onBtnGallaryTapped = { [weak photoPickerAlert, weak self] (doc) in
             photoPickerAlert?.dismiss()
             guard let self = self else { return } ; print(self)
+            self.btnSubmit.isEnabled = true
             if doc.name.isImage() {
                 Common.appDelegate.openImageCropper(vc: self, image: doc.image)
             } else {

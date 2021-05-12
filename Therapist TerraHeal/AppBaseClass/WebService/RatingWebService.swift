@@ -39,7 +39,7 @@ class RatingWebService {
     static let getAllRatingUrl: String = API_URL.GetAllRatings
     static let saveRatingUrl: String = API_URL.SaveRating
     struct RequestAddRating: Codable {
-        var user_id: String = "1"
+        var user_id: String = appSingleton.currentService.userId
         var punctuality: Double = 0.0
         var behavior: Double = 0.0
         var sexualIssue: Double = 0.0

@@ -20,6 +20,7 @@ struct ImageAsset {
     }
     struct Button {
         static let backButton = "asset-back-button"
+        static let shiftSelected = "asset-shift-selected"
     }
     struct Camera {
         static let square = "asset-square-cutter"

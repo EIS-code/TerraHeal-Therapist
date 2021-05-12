@@ -16,7 +16,7 @@ class SuggestionAndComplaintVC: BaseVC {
         static let Suggestion: String = "0"
         static let Complaint: String = "1"
     }
-    var arrForData: [SuggestionTblCellDetail] = [SuggestionTblCellDetail.init(),SuggestionTblCellDetail.init(),SuggestionTblCellDetail.init(),SuggestionTblCellDetail.init()]
+    var arrForData: [SuggestionTblCellDetail] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

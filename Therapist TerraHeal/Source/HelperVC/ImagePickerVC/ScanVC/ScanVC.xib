@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <connections>
                 <outlet property="btnLeft" destination="jAF-2Y-wbl" id="8d5-4h-TJ4"/>
-                <outlet property="btnScan" destination="8Zq-O5-JSx" id="DsQ-P0-oUg"/>
                 <outlet property="lblTitle" destination="91i-2O-BNd" id="mnZ-Db-3yn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="vwNavigationBar" destination="ibG-ar-jbH" id="HZo-DM-PKl"/>
@@ -66,23 +65,13 @@
                         <constraint firstItem="91i-2O-BNd" firstAttribute="centerX" secondItem="ibG-ar-jbH" secondAttribute="centerX" id="uWe-g1-48B"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zq-O5-JSx" customClass="FilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                    <rect key="frame" x="80" y="518" width="160" height="30"/>
-                    <state key="normal" title="Scan"/>
-                    <connections>
-                        <action selector="btnScanTapped:" destination="-1" eventType="touchUpInside" id="Kdm-kV-SMP"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ibG-ar-jbH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3N0-7Z-hoO"/>
-                <constraint firstItem="8Zq-O5-JSx" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="8zZ-y4-NWF"/>
                 <constraint firstItem="ibG-ar-jbH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Fsu-tO-BXn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8Zq-O5-JSx" secondAttribute="bottom" constant="20" id="Rfp-gm-xvL"/>
                 <constraint firstItem="ibG-ar-jbH" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="eMk-Vw-tUj"/>
-                <constraint firstItem="8Zq-O5-JSx" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.5" id="xlH-0E-iCq" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target"/>
             </constraints>
             <point key="canvasLocation" x="131" y="154"/>
         </view>

@@ -23,6 +23,7 @@ class BookingWebSerive {
     static let bookingListPendingURL: String = API_URL.BookingListPending
     static let bookingListUpcomingURL: String = API_URL.BookingListUpcoming
     static let bookingListPastURL: String = API_URL.BookingListPast
+    static let matchQRCode: String = API_URL.MatchQR
 
     struct RequestBookingList: Codable {
         var therapist_id: String = "3"// PreferenceHelper.shared.getUserId()
@@ -83,6 +84,19 @@ extension BookingWebSerive {
             }
         }
     }
+    class ResponseStartService: ResponseModel {
+        var timeDetail: CreateStartService = CreateStartService.init(fromDictionary: [:])
+        override init(fromDictionary dictionary: [String:Any]) {
+            super.init(fromDictionary: dictionary)
+
+            if let dataArray = dictionary["data"] as? [String:Any] {
+                if let detail = dataArray["create"] as? [String:Any] {
+                    self.timeDetail = CreateStartService.init(fromDictionary: detail)
+                }
+            }
+        }
+    }
+
     class ResponseBookingDetail: ResponseModel {
         var bookingDetail: BookingDetail = BookingDetail.init(fromDictionary: [:])
         override init(fromDictionary dictionary: [String:Any]) {

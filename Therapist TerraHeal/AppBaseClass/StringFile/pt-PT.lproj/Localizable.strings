@@ -1,0 +1,313 @@
+//
+//  Created by Jaydeep Vyas
+//  Copyright © 2019 Jaydeep. All rights reserved.
+//
+
+//MARK: - Screen Wise Strings
+"APP_NAME" = "P_Terra Heal Therapist";
+
+//MARK: LOGIN SCREEN
+"LOGIN_LBL_TITLE" = "P_welcome back";
+"LOGIN_LBL_MESSAGE" = "P_you need to identify\nto sign back in";
+"LOGIN_TXT_EMAIL" = "P_email/username";
+"LOGIN_TXT_PASSWORD" = "P_password";
+"LOGIN_BTN_SIGN_IN" = "P_Sign In";
+"LOGIN_BTN_FORGOT_PASSWORD" = "P_forgot password?";
+//MARK: Home SCREEN
+"HOME_BTN_NEWS" = "P_news";
+"HOME_BTN_CALENDER" = "P_calender";
+"HOME_BTN_BOOKING" = "P_booking";
+"HOME_FILTER_TODAY" = "P_today";
+"HOME_FILTER_FUTURE" = "P_future";
+"HOME_FILTER_PAST" = "P_past";
+"HOME_SECTION_BTN_SELECT_DATE" = "P_select date";
+"MY_BOOKING_TYPE_AT_MASSAGE_CENTER" = "P_in massage center";
+"MY_BOOKING_TYPE_AT_HOME_OR_HOTEL" = "P_home / hotel visit";
+//MARK: Menu Screen
+"MENU_TITLE" = "P_Menu";
+"MENU_QUIT_COLLABORATION" = "P_quit collaboration";
+"MENU_SUSPEND_COLLABORATION" = "P_suspend collaboration";
+"MENU_SUGGESTIONS_AND_COMPLAINTS" = "P_suggestions and complaints";
+"MENU_TAKE_BREAK" = "P_take break";
+"MENU_NOTIFICATIONS" = "P_notifications";
+
+//Quit Collabration Dialog
+"DIALOG_QUIT_COLLABORATION_TYPE_REASON_HERE" = "P_type reason here";
+"DIALOG_QUIT_COLLABORATION_BTN_REQUEST" = "P_Request";
+"DIALOG_VALIDATION_QUIT_COLLABORATION_MSG" = "P_Please enter reason to quit collaboration";
+//Suspend Collabration Dialog
+"DIALOG_SUSPEND_COLLABORATION_TYPE_REASON_HERE" = "P_type reason here";
+"DIALOG_SUSPEND_COLLABORATION_BTN_REQUEST" = "P_Request";
+"DIALOG_VALIDATION_SUSPEND_COLLABORATION_MSG" = "P_Please enter reason to suspend collaboration";
+
+
+
+//MARK: BOOKING DETAIL SCREEN
+"BOOKING_DETAIL_CLIENT_NAME" = "P_client name";
+"BOOKING_DETAIL_TYPE_OF_SERVICE" = "P_type of service";
+"BOOKING_DETAIL_SESSION_TYPE" = "P_session type";
+"BOOKING_DETAIL_DATE_AND_TIME" = "P_date & time";
+"BOOKING_DETAIL_PRESSURE_PREFERENCE" = "P_pressure preference";
+"BOOKING_DETAIL_SERVICE_DETAILS" = "P_Service Details";
+"BOOKING_DETAIL_NOTES" = "P_notes";
+"BOOKING_DETAIL_FOCUS_AREA" = "P_focus area";
+
+
+//MARK: Profile Menu
+"PROFILE_MENU_PROFILE" = "P_my profile";
+"PROFILE_MENU_MY_BOOKING" = "P_my bookings";
+"PROFILE_MENU_MY_WORKING_SCHEDULE" = "P_my working schedule";
+"PROFILE_MENU_MY_AVAILABILITY" = "P_my availability";
+"PROFILE_MENU_MY_MISSING_DAYS" = "P_my missings days";
+"PROFILE_MENU_MY_RATING" = "P_my ratings";
+"PROFILE_MENU_MY_NUMBER_OF_MASSAGE" = "P_my number of massages";
+"PROFILE_MENU_LOGOUT" = "P_logout";
+"PROFILE_MENU_PAYMENT_PREFERENCE" = "P_payout preferences";
+//MARK: Edit Profile Menu
+"PROFILE_ACCOUN_NUMBER" = "P_Account Number";
+"PROFILE_NAME" = "P_Name";
+"PROFILE_SURNAME" = "P_Surname";
+"PROFILE_GENDER" = "P_Gender";
+"PROFILE_DOB" = "P_Date Of Birth";
+"PROFILE_NIF" = "P_Nif";
+"PROFILE_SSN" = "P_Social Security Number";
+"PROFILE_CITY" = "P_City";
+"PROFILE_COUNTRY" = "P_Country";
+"PROFILE_MOBILE" = "P_Mobile";
+"PROFILE_EMERGENCY_CONTACT" = "P_Emergency Contact";
+"PROFILE_EMAIL" = "P_Email";
+"PROFILE_LANGUAGE_SPOKEN" = "P_Languages Spoken";
+"PROFILE_MY_DOCUMENTS" = "P_My Documents";
+"PROFILE_MY_SERVICES" = "P_My Services";
+"PROFILE_EXPERIENCE" = "P_Personal Experience";
+"PROFILE_DESCRIPTION" = "P_Personal Description";
+"HEALTH_CONDITION_OR_ALLERGIES" = "P_Health conditions or allergies";
+"TXT_SEARCH" = "P_Search";
+"TXT_SEARCH_COUNTRY" = "P_Search Country";
+"PROFILE_TXT_SEARCH_CITY" = "P_Search City";
+"DIALOG_PERSONAL_DESCRIPTION_TITLE" = "P_Personal Description";
+"DIALOG_PERSONAL_DESCRIPTION_PLACEHOLDER" = "P_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae";
+"DIALOG_PERSONAL_DESCRIPTION_BTN_SAVE" = "P_Save";
+"DIALOG_HEALTH_CONDITION_OR_ALLERGIES_TITLE" = "P_Health conditions or allergies";
+"DIALOG_HEALTH_CONDITION_OR_ALLERGIES_PLACEHOLDER" = "P_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae";
+"DIALOG_HEALTH_CONDITION_OR_ALLERGIES_BTN_SAVE" = "P_Save";
+//MARK: Experience Screen
+"MANAGE_EXPERIENCE_TITLE" = "P_Personal Experience";
+"MANAGE_EXPERIENCE_EMPTY_TITLE" = "P_No Personal Experience Added";
+"MANAGE_EXPERIENCET_EMPTY_MSG" = "P_--";
+"MANAGE_EXPERIENCE_BTN_ADD_NEW" = "P_Add";
+"DIALOG_EXPERIENCE_TITLE" = "P_Health conditions or allergies";
+"DIALOG_EXPERIENCE_PLACEHOLDER" = "P_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae";
+"DIALOG_EXPERIENCE_BTN_SAVE" = "P_Save";
+
+//MARK: Notification
+"NOTIFICATION_TITLE" = "P_notifications";
+"NO_NOTIFICATION_TITLE" = "P_no more notifications";
+//MARK: Prefer Language
+"PREFERE_LANGUAGE_TITTLE" = "P_preferred language";
+"LANGUAGE_ENGLISH" = "P_English";
+"LANGUAGE_PORTUGUES" = "P_Portugues";
+//MARK: Suggestions And Complaints
+"SUGGESTIONS_AND_COMPLAINTS_TITLE" = "P_suggestions and complaints";
+"SUGGESTIONS_AND_COMPLAINTS_EMPTY_TITLE" = "P_no more suggestions and complaints";
+"SUGGESTIONS_AND_COMPLAINTS_BTN_ADD" = "P_Add";
+"ADD_SUGGESTIONS_OR_COMPLAINTS_DIALOG_TITLE" = "P_add suggestions\nor complaints";
+"SUGGESTIONS" = "P_suggestions";
+"COMPLATIONS" = "P_complations";
+"ADD_COMPLAINTS_DIALOG_TITLE" = "P_add complaints";
+"ADD_COMPLAINTS_DIALOG_PLACEHOLDER" = "P_type a complaints here";
+"ADD_SUGGESTION_DIALOG_TITLE" = "P_add suggestions";
+"ADD_SUGGESTION_DIALOG_PLACEHOLDER" = "P_type a suggestions here";
+//MARK: TimeBreak Dialog
+"TIME_BREAK_DIALOG_TITLE" = "P_break minutes";
+"TIME_BREAK_PLACEHOLDER" = "P_or type here";
+"TIME_BREAK_AVAILABLE" = "P_available in";
+//MARK: Rating Screen
+"RATING_TITLE" = "P_rating";
+"RATING_BTN_RATE" = "P_Rate";
+"RATING_BTN_CANCEL" = "P_Cancel";
+"MY_RATING_TITLE" = "P_my ratings";
+"RATE_TYPE_PUNCTUALITY" = "P_Punctuality And Presence For Reservations";
+"RATE_TYPE_BEHAVIOR" = "P_Behavior";
+"RATE_TYPE_SEXUAL_ISSUE" = "P_Sexual Issues";
+"RATE_TYPE_HYGIENE" = "P_Hygiene";
+"RATE_TYPE_LEFT_BAD_GOOD" = "P_Left Bad / Good Review";
+"RATE_TYPE_PAYMENT_ISSUE" = "P_Payment Issues";
+//MARK: Filter Dialog
+"FILTER_BTN_DATE" = "P_Date";
+"FILTER_BTN_CLIENT_NAME" = "P_Client name";
+"FILTER_BTN_SERVICES" = "P_Services";
+"FILTER_BTN_BOOKING_TYPE" = "P_Booking type";
+"FILTER_BTN_SESSION_TYPE" = "P_Session type";
+"FILTER_DIALOG_TXT_SEARCH_CLIENT" = "P_search client name here";
+"FILTER_DIALOG_TXT_SEARCH_SERVICE" = "P_search services here";
+"FILTER_DIALOG_HOME" = "P_home/hotel";
+"FILTER_DIALOG_CENTER" = "P_center";
+//MARK: Booking Detail Screen
+"BOOKING_DETAILS_TITLE" = "P_booking details";
+"BOOKING_DETAILS_BTN_START" = "P_Start";
+"BOOKING_DETAILS_BTN_CANCEL" = "P_Cancel";
+"BOOKING_DETAILS_BTN_I_GO" = "P_I Go";
+"BOOKING_DETAILS_BTN_I_AM_SAFE" = "P_I am safe";
+"BOOKING_DETAIL_BTN_CHECK_IN" = "P_Check In";
+"MY_BOOKING_TITLE" = "P_my bookings";
+"SESSION_TYPE_SINGLE"= "Single";
+"SESSION_TYPE_COUPLE"= "Couple";
+"SESSION_TYPE_GROUPE"= "Groupe";
+//MARK: Scan Dialog
+"DIALOG_SCAN_TITLE" = "P_scan QR";
+"DIALOG_BTN_SCAN" = "P_scan";
+"SCAN_MASSAGE" = "P_align the QR Code within frame to scan";
+"SCAN_TITLE" = "P_scan";
+//MARK: Photo Dialog
+"PHOTO_DIALOG_EDIT_PROFILE_TITLE" = "P_upload a photo";
+"PHOTO_DIALOG_FROM_CAMERA" = "P_take a photo";
+"PHOTO_DIALOG_FROM_GALLARY" = "P_upload photo";
+"PHOTO_DIALOG_PROFILE_PIC_INFO_TITLE" = "P_what photo to upload?";
+"PHOTO_DIALOG_PROFILE_PIC_INFO_MSG" = "P_The picture should be taken in day light with white wall behind, with the uniform of Terra Heal. No strong make up and discrete jewelry.";
+"CAMERA_FACE_MSG" = "P_Hold your phone at eye level so that your selfie is similar to your passport photo";
+//MARK: Gender Dialog
+"GENDER_MALE" = "P_Male";
+"GENDER_FEMALE" = "P_Female";
+//MARK: FingerPrint Dialog
+
+"FINGER_PRINT_DIALOG_REGISTER_TITLE" = "P_register your fingerprint";
+"FINGER_PRINT_DIALOG_VALIDATION" = "P_please verify your bio-matric authentication";
+"FINGER_PRINT_DIALOG_LOGIN_TITLE" = "P_login with fingerprint";
+"FINGER_PRINT_DIALOG_PASSWORD_TITLE" = "P_login with password";
+"FINGER_PRINT_DIALOG_BTN_PASSWORD" = "P_password";
+//MARK: Service Status SCREEN
+"SERVICE_PROGRESS_TITLE" = "P_Service in progress";
+"SERVICE_PROGRESS_BTN_FINISH" = "P_finish";
+"SERVICE_DURATION" = "P_Service duration";
+"SERVICE_MIN_REMAINING" = "P_min\nremaining";
+"SERVICE_MIN_EXTRA" = "P_min\nextra";
+//Language Selection Dialog
+"LANGUAGE_FLUENT_BASIC" = "P_basic";
+"LANGUAGE_FLUENT_GOOD" = "P_good";
+"LANGUAGE_FLUENT_FLUENT" = "P_fluent";
+//MARK: - Document Scene
+"MY_DOCUMENT_TITLE" = "P_my documents";
+"MY_DOCUMENT_EMPTY_TITLE" = "P_No Documents";
+"MY_DOCUMENT_EMPTY_MSG" = "P_Document message";
+"MY_DOCUMENT_BTN_ADD_NEW" = "P_Add New";
+"PHOTO_DIALOG_SCAN_DOCUMENT" = "P_Scan";
+"PHOTO_DIALOG_UPLODED" = "P_Uploaded";
+"ADD_NEW_DOCUMENT_DIALOG_TITLE" = "P_add new document";
+//MARK: Manage Document Screen
+"MANAGE_DOCUMENT_TITLE" = "P_Id / Passport";
+"DOCUMENT_EMPTY_TITLE" = "P_no documents available";
+"DOCUMENT_EMPTY_MSG" = "P_add document to continue";
+"MANAGE_DOCUMENT_BTN_ADD_NEW" = "P_Add New";
+"ADD_NEW_DOCUMENT_TITLE" = "P_add new document";
+"MY_WORKING_SCHEDULE_TITLE" = "P_my working schedule";
+"WORKING_DAYS" = "P_working days";
+"MY_MISSING_DAYS_TITLE" = "P_my missings days";
+"MISSING_DAYS" = "P_missings days";
+"MY_NUMBER_OF_MASSAGES_TITLE" = "P_my number of massages";
+"MY_MASSAGES_DETAIL_TITLE" = "P_booking details";
+
+"DOC_TYPE_ADDRESS_PROOF" = "P_Id / Passport";
+"DOC_TYPE_IDENTITY_PROOF_FRONT" = "P_Front";
+"DOC_TYPE_IDENTITY_PROOF_BACK" = "P_Back";
+"DOC_TYPE_INSURANCE" = "P_insurance";
+"DOC_TYPE_FREELANCER_FINANCIAL_DOCUMENT" = "P_freelancer financial document";
+"DOC_TYPE_CERTIFICATES" = "P_certificates";
+"DOC_TYPE_CV" = "P_cv";
+"DOC_TYPE_REFERENCE_LATTER" = "P_reference letter";
+"DOC_TYPE_PERSONAL_EXPERIENCE" = "P_personal experience";
+"DOC_TYPE_OTHERS" = "P_others";
+//MARK: My Availability Screen
+"MY_AVAILABILITY_TITLE" = "P_my availability";
+"MY_AVAILABILITY_BTN_SUBMIT" = "P_Proceed";
+"MY_AVAILABILITY_BTN_WEEK" = "P_this week";
+"MY_AVAILABILITY_BTN_SELECT_MORE" = "P_select more";
+"MY_AVAILABILITY_SECTION_HEADER" = "P_availability time";
+//Availability Optios
+"DIALOG_AVAILABILITY_OPTION_TITLE" = "P_Select";
+"AVAILABILITY_OPTION_FREE_SPOT" = "P_free spots";
+"AVAILABILITY_OPTION_ABSENT" = "P_absent";
+"AVAILABILITY_OPTION_EXCHANGE" = "P_exchange with others";
+"DIALOG_AVAILABILITY_BTN_PROCEED" = "P_Proceed";
+"DIALOG_AVAILABILITY_ABSENT_TITLE" = "P_reason";
+"DIALOG_AVAILABILITY_ABSENT_BTN_PROCEED" = "P_Proceed";
+"TXT_SEARCH_FOR_NAME" = "P_enter name";
+"DIALOG_EXCHANGE_OFFER_BTN_PROCEED" = "P_Proceed";
+"DIALOG_FREE_SPOT_TITLE" = "P_choose free spots";
+"DIALOG_FREE_SPOT_BTN_PROCEED" = "P_Proceed";
+//MARK: Payment Screen
+"PAYMENT_PREFERENCE_TITLE" = "P_payment preference";
+"PAYMENT_LBL_PAYPAL" = "P_Paypal";
+"PAYMENT_PAYPAL_EMAIL_ID" = "P_Paypal email id";
+"PAYMENT_LBL_DEFAULT" = "P_Default";
+"PAYMENT_LBL_CARDS" = "P_credit, debit & ATM cards";
+"PAYMENT_BTN_ADD_NEW" = "P_Add New";
+"PAYMENT_BTN_ADD_NEW_PAYMENT" = "P_Add New payment method";
+"PAYMENT_METHOD_PAYPAL" = "P_paypal";
+"PAYMENT_METHOD_CREDIT_CARD" = "P_credit, debit & ATM cards";
+"DIALOG_ADD_NEW_PAYMENT_TITLE" = "P_add new";
+"DIALOG_ADD_NEW_PAYMENT_BTN_PROCEED" = "P_Proceed";
+//MARK: Add Card SCREEN
+"ADD_CARD_TITLE" = "P_add credit card";
+"ADD_CARD_TITLE_MESSAGE" = "P_verify and secure your card";
+"ADD_CARD_TXT_NAME" = "P_card holder name";
+"ADD_CARD_TXT_CVV_NUMBER" = "P_cvv";
+"ADD_CARD_TXT_CARD_NUMBER" = "P_XXXX-XXXX-XXXX-XXXX";
+"ADD_CARD_TXT_EXPIRY" = "P_mm/yy";
+"ADD_CARD_SAVE_CARD_DETAILS" = "P_save your card details securely";
+"ADD_CARD_SAVE_CARD_DETAIL_MESSAGE" = "P_your card data is saved in a PCI DSS compliant secure vault.";
+"ADD_CARD_BTN_ADD_CARD" = "P_Add Card";
+//MARK: Remove Document Dialog
+"DIALOG_REMOVE_DOCUMENT" = "P_Remove Document";
+"DIALOG_REMOVE_DOCUMENT_MESSAGE" = "P_Are you you want to delete this document";
+"DIALOG_REMOVE_DOCUMENT_BTN_OK" = "P_Ok";
+"DIALOG_REMOVE_DOCUMENT_BTN_CANCEL" = "P_Cancel";
+
+//MARK: -
+//MARK: Common Strings
+//MARK: -
+"LABEL_DEFAULT_PLACEHOLDER" = "P_--";
+"TEXT_DEFAULT_PLACEHOLDER" = "P_--";
+"TEXT_VIEW_DEFAULT_PLACEHOLDER" = "P_Lorem ipsum dolor";
+"BTN_CONNECT" = "P_Connect";
+"LBL_UPLOAD" = "P_Upload";
+"BTN_SUBMIT" = "P_Submit";
+"BTN_NEXT" = "P_next";
+"BTN_SAVE" = "P_Save";
+"BTN_PROCEED" = "P_Proceed";
+"BTN_YES_PROCEED" = "P_yes proceed";
+"BTN_BACK" = "P_Back";
+"BTN_SEND" = "P_Send";
+"BTN_CANCEL" = "P_Cancel";
+"BTN_SKIP" = "P_skip";
+"BTN_APPLY" = "P_Apply";
+//MARK: -
+//MARK: VALIDATION TOAST MESSAGES
+//MARK: -
+"VALIDATION_MSG_INVALID_EMAIL" = "P_Please enter valid email address";
+"VALIDATION_MSG_INVALID_PASSWORD" = "P_Please enter valid password";
+"VALIDATION_MSG_INVALID_NAME" = "P_Please enter valid name";
+"VALIDATION_MSG_MANUAL_LOGIN_FIRST" = "P_You need to do manual login first";
+
+"VALIDATION_MSG_MISMATCH_CONFIRM_PASSWORD" = "P_Confirm password does not match with your entered password.\nConfirm and password must be same.";
+"VALIDATION_MSG_INVALID_MOBILE" = "P_Please enter valid mobile number";
+"VALIDATION_MSG_PLEASE_ENTER_OTP" = "P_Please enter valid otp";
+"VALIDATION_MSG_PLEASE_UPLOAD_ALL_DOCUMENTS" = "P_Please Upload all documents";
+"VALIDATION_MSG_INVALID_DATA" = "P_Please enter valid data";
+"VALIDATION_MSG_SELECT_TERMS_AND_CONDITION" = "P_Please select terms and conditions";
+"VALIDATION_MSG_SELECT_COUNTRY_FIRST" = "P_Please select country first";
+"VALIDATION_MSG_PLEASE_SELECT_DATA" = "P_Please select valid data";
+"VALIDATION_MSG_PLEASE_SELECT_DATE" = "P_Please select valid date";
+"VALIDATION_MSG_PLEASE_SELECT_LOCATION" = "P_Please select loccation";
+"VALIDATION_MSG_INVALID_NAME" = "P_Please enter valid name";
+"VALIDATION_MSG_INVALID_SURNAME" = "P_Please enter valid surname";
+"VALIDATION_MSG_INVALID_GENDER" = "P_Please select gender";
+"VALIDATION_MSG_INVALID_DOB" = "P_Please select valid Date Of Birth";
+"VALIDATION_MSG_INVALID_CITY" = "P_Please select valid city";
+"VALIDATION_MSG_INVALID_COUNTRY" = "P_Please select valid country";
+"VALIDATION_MSG_INVALID_NIF" = "P_Please enter valid nif";
+"VALIDATION_MSG_INVALID_ID" = "P_Please enter valid id";
+"VALIDATION_MSG_NUMBER_ONLY" = "P_Please enter numbers only";
+"VALIDATION_MSG_DATE_SELECTION" = "P_Please select date";
+"VALIDATION_MSG_TIME_SELECTION" = "P_Please select time";
+"VALIDATION_MSG_UPLOAD_EXPERIANCE_CERTIFICATE" = "P_Please select exeperience certificate";

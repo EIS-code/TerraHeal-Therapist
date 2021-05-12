@@ -10,8 +10,10 @@ import Foundation
 
 
 struct AvailabilityCellDetail {
-    var value:String = ""
+    var shiftName:String = ""
+    var shiftTime:String = ""
     var availabilityStatus: AvailabilityStatus = .Available
+    var isSelected: Bool = false
 
 }
 
@@ -30,7 +32,7 @@ class AvailabilityCell: CollectionCell {
     
     func setData(data:AvailabilityCellDetail) {
         self.data = data
-        self.lblCellTitle.setText(data.value)
+        self.lblCellTitle.setText(data.shiftName)
         switch  data.availabilityStatus {
         case .Available:
             vwForCellBg.backgroundColor = .init(hex: "#33B199")

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -28,13 +29,13 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ZW-DU-hOd">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yaj-p7-IIT" userLabel="contetnView">
-                    <rect key="frame" x="0.0" y="234" width="414" height="662"/>
+                    <rect key="frame" x="0.0" y="189" width="414" height="707"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXW-IL-cWe">
-                            <rect key="frame" x="20" y="10" width="374" height="632"/>
+                            <rect key="frame" x="20" y="10" width="374" height="677"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsI-uf-Fb8">
                                     <rect key="frame" x="167" y="0.0" width="40" height="5"/>
@@ -45,37 +46,80 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Of Birth" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-4J-xGz" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="137" y="25" width="100" height="20.5"/>
+                                    <rect key="frame" x="137.5" y="25" width="99.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="theme_primary"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-MH-AIg" userLabel="vwMainCalender">
-                                    <rect key="frame" x="37.5" y="65.5" width="299" height="436.5"/>
+                                    <rect key="frame" x="37.5" y="65.5" width="299" height="481.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FH3-4N-FNi">
-                                            <rect key="frame" x="1" y="1" width="297" height="434.5"/>
+                                            <rect key="frame" x="1" y="1" width="297" height="479.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPt-2p-CpU" userLabel="vwSelectedDate">
-                                                    <rect key="frame" x="0.0" y="0.0" width="297" height="144.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="297" height="189.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-L5-Xfu">
-                                                            <rect key="frame" x="10" y="10" width="277" height="124.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-L5-Xfu">
+                                                            <rect key="frame" x="10" y="10" width="277" height="169.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh3-3K-ZQb" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="21"/>
-                                                                    <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
-                                                                    <color key="textColor" name="theme_light_text_color"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LK2-md-w0b" userLabel="yearView">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="120.5" height="40"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adP-DI-YGB" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="adP-DI-YGB" secondAttribute="height" multiplier="1:1" id="6of-Nh-8fi"/>
+                                                                                <constraint firstAttribute="height" constant="40" id="YvY-G1-nrT" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                                            <real key="value" value="40"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                    </userDefinedRuntimeAttributes>
+                                                                                </constraint>
+                                                                            </constraints>
+                                                                            <state key="normal" title="&lt;">
+                                                                                <color key="titleColor" name="theme_light_text_color"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="btnPreviousYearTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="MUg-NT-eAO"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh3-3K-ZQb" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                                            <rect key="frame" x="40" y="0.0" width="40.5" height="40"/>
+                                                                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
+                                                                            <color key="textColor" name="theme_light_text_color"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1B-RU-zz4" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                                            <rect key="frame" x="80.5" y="0.0" width="40" height="40"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="o1B-RU-zz4" secondAttribute="height" multiplier="1:1" id="hUR-jw-StF"/>
+                                                                                <constraint firstAttribute="height" constant="40" id="mG1-ND-eIi" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                                                                            <real key="value" value="40"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                    </userDefinedRuntimeAttributes>
+                                                                                </constraint>
+                                                                            </constraints>
+                                                                            <state key="normal" title="&gt;">
+                                                                                <color key="titleColor" name="theme_light_text_color"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="btnNextYearTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="b3g-Ke-ZR2"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="MON, OCT 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyA-kj-E1P" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="21" width="277" height="53.5"/>
+                                                                    <rect key="frame" x="0.0" y="40" width="229" height="79.5"/>
                                                                     <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="36"/>
                                                                     <color key="textColor" name="theme_light_text_color"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqN-uw-J6a">
-                                                                    <rect key="frame" x="0.0" y="74.5" width="277" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="119.5" width="277" height="50"/>
                                                                     <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
                                                                     <color key="textColor" name="theme_light_text_color"/>
                                                                     <nil key="highlightedColor"/>
@@ -92,9 +136,9 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3JD-gh-wlI" userLabel="monthView">
-                                                    <rect key="frame" x="0.0" y="144.5" width="297" height="40"/>
+                                                    <rect key="frame" x="0.0" y="189.5" width="297" height="40"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfy-5A-Iky" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfy-5A-Iky" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="nfy-5A-Iky" secondAttribute="height" multiplier="1:1" id="9GH-is-Z5J"/>
@@ -119,7 +163,7 @@
                                                             <color key="textColor" name="theme_dark_text"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7r-se-dJP" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7r-se-dJP" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                                             <rect key="frame" x="257" y="0.0" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="Vej-RR-YAx" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
@@ -141,8 +185,8 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPe-ks-amL" customClass="FSCalendar">
-                                                    <rect key="frame" x="0.0" y="184.5" width="297" height="250"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <rect key="frame" x="0.0" y="229.5" width="297" height="250"/>
+                                                    <color key="backgroundColor" name="theme_light_background"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" priority="999" constant="250" id="cbR-GV-dd9" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                                             <userDefinedRuntimeAttributes>
@@ -156,6 +200,7 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
+                                    <color key="backgroundColor" name="theme_light_background"/>
                                     <constraints>
                                         <constraint firstItem="FH3-4N-FNi" firstAttribute="leading" secondItem="ybQ-MH-AIg" secondAttribute="leading" constant="1" id="0NZ-ol-5VW"/>
                                         <constraint firstItem="FH3-4N-FNi" firstAttribute="top" secondItem="ybQ-MH-AIg" secondAttribute="top" constant="1" id="CE2-y2-GFA"/>
@@ -164,8 +209,8 @@
                                         <constraint firstAttribute="trailing" secondItem="FH3-4N-FNi" secondAttribute="trailing" constant="1" id="ueB-IZ-8jn"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="93.5" y="522" width="187" height="60"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3s-UH-gbE" customClass="DialogFilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                    <rect key="frame" x="93.5" y="567" width="187" height="60"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                     <state key="normal" title="Sign In">
@@ -175,8 +220,8 @@
                                         <action selector="btnDoneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="c2U-cc-MxJ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="DialogCancelButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                    <rect key="frame" x="164" y="602" width="46" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-el-UJJ" customClass="DialogCancelButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                                    <rect key="frame" x="164" y="647" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="EhO-GW-jUf"/>
@@ -188,6 +233,13 @@
                                 <constraint firstItem="ybQ-MH-AIg" firstAttribute="width" secondItem="cXW-IL-cWe" secondAttribute="width" multiplier="0.8" id="RnE-Ph-Uak"/>
                             </constraints>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QB-5L-wl5" userLabel="btnYear">
+                            <rect key="frame" x="68.5" y="86.5" width="277" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="btnYearTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="DP1-Oq-LZ1"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" name="theme_primary_light_background"/>
                     <constraints>
@@ -198,6 +250,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8dM-F7-kDK"/>
@@ -208,7 +261,6 @@
                 <constraint firstItem="Yaj-p7-IIT" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="pYV-Pm-HG9"/>
                 <constraint firstAttribute="bottom" secondItem="6ZW-DU-hOd" secondAttribute="bottom" id="xcn-ZA-5s5"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="backgroundView" destination="6ZW-DU-hOd" id="lFA-bQ-tdV"/>
                 <outlet property="btnCancel" destination="BVl-el-UJJ" id="mZE-lE-kWH"/>
@@ -233,6 +285,9 @@
         <namedColor name="theme_dark_text">
             <color red="0.42699998617172241" green="0.4309999942779541" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="theme_light_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_light_text_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -245,5 +300,8 @@
         <namedColor name="theme_secondary">
             <color red="0.97299998998641968" green="0.60000002384185791" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

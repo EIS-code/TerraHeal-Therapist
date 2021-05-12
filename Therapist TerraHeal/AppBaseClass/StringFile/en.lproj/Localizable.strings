@@ -7,12 +7,12 @@
 "APP_NAME" = "Terra Heal Therapist";
 
 //MARK: LOGIN SCREEN
-"LOGIN_LBL_TITLE" = "JD welcome back";
-"LOGIN_LBL_MESSAGE" = "JD you need to identify\nto sign back in";
-"LOGIN_TXT_EMAIL" = "JD email/username";
-"LOGIN_TXT_PASSWORD" = "JD password";
-"LOGIN_BTN_SIGN_IN" = "JD Sign In";
-"LOGIN_BTN_FORGOT_PASSWORD" = "JD forgot password?";
+"LOGIN_LBL_TITLE" = "welcome back";
+"LOGIN_LBL_MESSAGE" = "you need to identify\nto sign back in";
+"LOGIN_TXT_EMAIL" = "email/username";
+"LOGIN_TXT_PASSWORD" = "password";
+"LOGIN_BTN_SIGN_IN" = "Sign In";
+"LOGIN_BTN_FORGOT_PASSWORD" = "forgot password?";
 //MARK: Home SCREEN
 "HOME_BTN_NEWS" = "news";
 "HOME_BTN_CALENDER" = "calender";
@@ -218,6 +218,9 @@
 "DOC_TYPE_PERSONAL_EXPERIENCE" = "personal experience";
 "DOC_TYPE_OTHERS" = "others";
 //MARK: My Availability Screen
+"EXCHANGE_OFFER_TITLE" = "exchange with others";
+"EXCHANGE_OFFER_BTN_SUBMIT" = "Proceed";
+//MARK: Exchange Offer  Screen
 "MY_AVAILABILITY_TITLE" = "my availability";
 "MY_AVAILABILITY_BTN_SUBMIT" = "Proceed";
 "MY_AVAILABILITY_BTN_WEEK" = "this week";
@@ -231,8 +234,9 @@
 "DIALOG_AVAILABILITY_BTN_PROCEED" = "Proceed";
 "DIALOG_AVAILABILITY_ABSENT_TITLE" = "reason";
 "DIALOG_AVAILABILITY_ABSENT_BTN_PROCEED" = "Proceed";
+"EXCHANGE_OFFER_BTN_PROCEED" = "Proceed";
 "TXT_SEARCH_FOR_NAME" = "enter name";
-"DIALOG_EXCHANGE_OFFER_BTN_PROCEED" = "Proceed";
+
 "DIALOG_FREE_SPOT_TITLE" = "choose free spots";
 "DIALOG_FREE_SPOT_BTN_PROCEED" = "Proceed";
 //MARK: Payment Screen
@@ -310,3 +314,4 @@
 "VALIDATION_MSG_NUMBER_ONLY" = "Please enter numbers only";
 "VALIDATION_MSG_DATE_SELECTION" = "Please select date";
 "VALIDATION_MSG_TIME_SELECTION" = "Please select time";
+"VALIDATION_MSG_UPLOAD_EXPERIANCE_CERTIFICATE" = "Please select exeperience certificate";

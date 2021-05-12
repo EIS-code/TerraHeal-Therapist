@@ -63,9 +63,9 @@ extension BookingWebSerive {
         }
     }
 
-    class func startMassageService(params:BookingWebSerive.RequestStartService, completionHandler: @escaping ((BookingWebSerive.ResponseBookingDetail) -> Void)) {
+    class func startMassageService(params:BookingWebSerive.RequestStartService, completionHandler: @escaping ((BookingWebSerive.ResponseStartService) -> Void)) {
         AlamofireHelper().getDataFrom(urlString: BookingWebSerive.startSevice, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
-            let response = BookingWebSerive.ResponseBookingDetail.init(fromDictionary: dictionary)
+            let response = BookingWebSerive.ResponseStartService.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
@@ -76,5 +76,10 @@ extension BookingWebSerive {
             completionHandler(response)
         }
     }
-
+    class func matchQRCode(params:[String:Any], completionHandler: @escaping ((ResponseModel) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: BookingWebSerive.matchQRCode, methodName: AlamofireHelper.POST_METHOD, paramData: params) { (data, dictionary, error) in
+            let response = ResponseModel.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
+    }
 }

@@ -121,10 +121,14 @@ class ServiceNavigationVC: BaseVC {
 }
 
 extension ServiceNavigationVC : QRScannerCodeDelegate {
+    func qrScanner(_ controller: UIViewController, scanDidComplete result: [String : Any]) {
+        Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
+    }
+
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
         print("\(#function)")
         (controller as? BaseVC)?.popVC()
-        Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
+       // Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
     }
 
     func qrScannerDidFail(_ controller: UIViewController, error: String) {

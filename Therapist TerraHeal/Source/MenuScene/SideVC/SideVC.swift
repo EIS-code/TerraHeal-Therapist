@@ -139,7 +139,7 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
 
     func openSuspendCollaboration(index:Int = 0) {
         let alert: CustomTextViewDialog = CustomTextViewDialog.fromNib()
-        alert.initialize(title: arrForMenu[index].id.name()
+        alert.initialize(title:SideMenu.SuspendCollaboration.name()
                          , placeholder: "DIALOG_SUSPEND_COLLABORATION_TYPE_REASON_HERE".localized(), data: arrForMenu[index].value, buttonTitle: "DIALOG_SUSPEND_COLLABORATION_BTN_REQUEST".localized(), cancelButtonTitle: "BTN_SKIP".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {

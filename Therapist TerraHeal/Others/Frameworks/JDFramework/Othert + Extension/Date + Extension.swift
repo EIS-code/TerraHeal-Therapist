@@ -35,9 +35,21 @@ public extension Date {
         dateComponent.month = 1
         return Calendar.current.date(byAdding: dateComponent, to: self) ?? Date()
     }
+
+    func nextYear() -> Date {
+        var dateComponent = DateComponents()
+        dateComponent.year = 1
+        return Calendar.current.date(byAdding: dateComponent, to: self) ?? Date()
+    }
     func previousMonth() ->  Date {
         var dateComponent = DateComponents()
         dateComponent.month = -1
+        return Calendar.current.date(byAdding: dateComponent, to: self) ?? Date()
+    }
+
+    func previousYear() ->  Date {
+        var dateComponent = DateComponents()
+        dateComponent.year = -1
         return Calendar.current.date(byAdding: dateComponent, to: self) ?? Date()
     }
 
@@ -47,6 +59,11 @@ public extension Date {
         return Calendar.current.date(byAdding: dateComponent, to: self) ?? Date()
     }
 
+    func previousWeek() -> Date {
+        var dateComponent = DateComponents()
+        dateComponent.weekOfMonth = -1
+        return Calendar.current.date(byAdding: dateComponent, to: self) ?? Date()
+    }
 
     static func millisecondsOfDay(day: Int) -> Double {
         return Double(86400 * day)

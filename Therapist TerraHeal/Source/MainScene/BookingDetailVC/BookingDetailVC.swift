@@ -123,9 +123,11 @@ class BookingDetailVC: BaseVC {
     @IBAction func btnStartTapped(_ sender: Any) {
         if appSingleton.currentService.getServiceStatus() == .onGoing {
             Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
-        } else {
-            btnStart.isEnabled = false
+        } else if appSingleton.currentService.getServiceStatus() == .Pending {
+            self.btnStart.isEnabled = false
             self.openScanDialog()
+        } else {
+            Common.showAlert(message: "Booking is completed")
         }
 
     }
@@ -172,13 +174,13 @@ class BookingDetailVC: BaseVC {
 }
 
 extension BookingDetailVC : QRScannerCodeDelegate {
-    func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
-        print("\(#function)")
-        self.wsStartService(id: appSingleton.currentService.bookingMassageId)
+    func qrScanner(_ controller: UIViewController, scanDidComplete result: [String : Any]) {
+        self.wsMatchQRCode(json: result)
     }
 
     func qrScannerDidFail(_ controller: UIViewController, error: String) {
         print("\(#function)")
+        print("\(error)")
     }
 
     func qrScannerDidCancel(_ controller: UIViewController) {
@@ -199,7 +201,19 @@ extension BookingDetailVC {
     func wsStartService(id:String) {
         BookingWebSerive.startMassageService(params: BookingWebSerive.RequestStartService.init(booking_massage_id: id, start_time: Date().millisecondsSince1970.toString()), completionHandler: {  (response) in
             if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+                appSingleton.currentService.actualStartTime = response.timeDetail.start_time
+                appSingleton.currentService.actualEndTime = response.timeDetail.end_time
                 Common.appDelegate.loadServiceStatusVC(navigaionVC: self.navigationController)
+            }
+        })
+    }
+
+    func wsMatchQRCode(json:[String:Any]) {
+        var newJson: [String:Any] = json
+        newJson["booking_id"] = appSingleton.currentService.bookingId
+        BookingWebSerive.matchQRCode(params: newJson, completionHandler: { (response) in
+            if ResponseModel.isSuccess(response: response) {
+                self.wsStartService(id: appSingleton.currentService.bookingMassageId)
             }
         })
     }

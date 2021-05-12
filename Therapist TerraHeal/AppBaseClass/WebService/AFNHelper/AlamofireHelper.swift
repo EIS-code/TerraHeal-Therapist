@@ -69,7 +69,11 @@ class AlamofireHelper: NSObject
                             print("Success")
                             print("Request URL :- \(urlString)\n")
                             print("Request Parameters :- \(paramData)\n")
-                            let dictionary = try! value!.toDictionary()
+
+                            guard let dictionary = try? value!.toDictionary() else {
+                                self.dataBlock(value!,[:],nil)
+                                return
+                            }
                             print("Request Response :- \(dictionary)")
                             self.dataBlock(value!,dictionary.convertValues,nil)
                         }
@@ -102,7 +106,10 @@ class AlamofireHelper: NSObject
                         print("Success")
                         print("Request URL :- \(urlString)\n")
                         print("Request Parameters :- \(paramData)\n")
-                        let dictionary = try! value!.toDictionary()
+                        guard let dictionary = try? value!.toDictionary() else {
+                            self.dataBlock(value!,[:],nil)
+                            return
+                        }
                         print("Request Response :- \(dictionary)")
                         self.dataBlock(value!,dictionary.convertValues,nil)
                     }
@@ -158,7 +165,10 @@ class AlamofireHelper: NSObject
                     print("Success")
                     print("Request URL :- \(urlString)\n")
                     print("Request Headers :- \(String(describing: response.request?.allHTTPHeaderFields))\n")
-                    let dictionary = try! value!.toDictionary()
+                    guard let dictionary = try? value!.toDictionary() else {
+                        self.dataBlock(value!,[:],nil)
+                        return
+                    }
                     print("Request Response :- \(dictionary)")
                     self.dataBlock(value!,dictionary.convertValues,nil)
                 }

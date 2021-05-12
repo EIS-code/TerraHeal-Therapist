@@ -15,7 +15,7 @@ extension WorkingScheduleVC: FSCalendarDataSource, FSCalendarDelegate, FSCalenda
     func setupCalendarView(calendar: FSCalendar) {
         calendar.delegate = self
         calendar.dataSource = self
-        //calendar.allowsSelection = false
+        calendar.allowsSelection = false
         calendar.allowsMultipleSelection = false
         //calendar.appearance.todaySelectionColor = self.selectionColor
         calendar.appearance.todayColor = UIColor.themeSecondary

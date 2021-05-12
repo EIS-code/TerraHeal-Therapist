@@ -186,7 +186,8 @@ extension ManageSingleDocumentVC {
                 PreferenceHelper.shared.setUserId(user.id)
                 appSingleton.user = user
                 Singleton.saveInDb()
-                self.popVC()
+                //self.popVC()
+                self.updateUI()
             }
         }
     }
@@ -201,7 +202,8 @@ extension ManageSingleDocumentVC {
                     appSingleton.user.documents.remove(at: index)
                 }
                 Singleton.saveInDb()
-                self.popVC()
+                self.updateUI()
+                //self.popVC()
             }
         }
     }

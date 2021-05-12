@@ -12,8 +12,6 @@ import UIKit
 
 class ExchangeOfferDialog: ThemeBottomDialogView {
 
-    @IBOutlet weak var timePicker: UIDatePicker!
-    @IBOutlet weak var vwForSelectedTime: UIView!
     @IBOutlet weak var vwCalendar: FSCalendar!
     @IBOutlet weak var btnPreviousMonth: ThemeButton!
     @IBOutlet weak var btnNextMonth: ThemeButton!
@@ -21,14 +19,24 @@ class ExchangeOfferDialog: ThemeBottomDialogView {
     @IBOutlet weak var lblMonthYear: ThemeLabel!
     @IBOutlet weak var searchVw: UIView!
     @IBOutlet weak var txtSearchBar: ThemeTextField!
+    @IBOutlet weak var tblForAvailability: UITableView!
 
     var onBtnDoneTapped: (() -> Void)? = nil
-
+    var arrForData:[AvailabilityCellDetail] = [
+        AvailabilityCellDetail.init(shiftName: "shift - 1", shiftTime: "10 - 12", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 2", shiftTime: "12 - 14", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 3", shiftTime: "12 - 16", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 4", shiftTime: "16 - 18", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 5", shiftTime: "16 - 20", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 6", shiftTime: "20 - 24", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 7", shiftTime: "00 - 08", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 8", shiftTime: "08 - 04", availabilityStatus: .Available, isSelected: false),
+    ]
     override func awakeFromNib() {
         super.awakeFromNib()
+        //self.setupAvailabilityView(tableView: self.tblForAvailability)
     }
-    
-    
+
     func initialize(title:String,buttonTitle:String,cancelButtonTitle:String) {
         self.initialSetup()
         self.lblTitle.setText(title)
@@ -44,22 +52,25 @@ class ExchangeOfferDialog: ThemeBottomDialogView {
             self.btnDone.setText(buttonTitle, for: .normal)
             self.btnDone.isHidden = false
         }
-        vwForSelectedTime.setRound(withBorderColor: UIColor.themePrimary, andCornerRadious: 1.0, borderWidth: 1.0)
-        self.setupCalendarView(calendar: self.vwCalendar)
+        self.setDataForStepUpAnimation()
+        self.setDialogHeight(height: 0.95)
+       // self.setupCalendarView(calendar: self.vwCalendar)
         self.setupSearchbar(searchBar: txtSearchBar)
-        self.wsGetTherapist()
+        DispatchQueue.main.async {
+            self.tblForAvailability.reloadData()
+        }
+       // self.wsGetTherapist()
     }
 
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.Bold, size: FontSize.header)
-        self.timePicker.backgroundColor = UIColor.clear
-        self.timePicker.setValue(UIColor.themeSecondary, forKeyPath: "textColor")
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         self.searchVw.setRound(withBorderColor: .clear, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
+        self.tblForAvailability.reloadData()
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
@@ -114,4 +125,16 @@ extension ExchangeOfferDialog : UITextFieldDelegate {
             }
         }
     }
+
+    func wsExchangeWithOther() {
+        Loader.showLoading()
+        ExchangeWithOtherWebService.requestToExchangeOffer(params: ExchangeWithOtherWebService.RequestToExchangeOffer.init()) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+            }
+        }
+    }
+
+
 }
+

@@ -18,7 +18,6 @@
 		030DB59825260966004C7CC8 /* APP+NAVIGATION.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB57B25260966004C7CC8 /* APP+NAVIGATION.swift */; };
 		030DB59925260966004C7CC8 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB57C25260966004C7CC8 /* Common.swift */; };
 		030DB59A25260966004C7CC8 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB57D25260966004C7CC8 /* ImageAssets.swift */; };
-		030DB59B25260966004C7CC8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 030DB57E25260966004C7CC8 /* Localizable.strings */; };
 		030DB59C25260966004C7CC8 /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB57F25260966004C7CC8 /* PreferenceHelper.swift */; };
 		030DB59D25260966004C7CC8 /* AlamofireHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB58225260966004C7CC8 /* AlamofireHelper.swift */; };
 		030DB59E25260966004C7CC8 /* AppWebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB58325260966004C7CC8 /* AppWebApi.swift */; };
@@ -128,7 +127,6 @@
 		034DB717254BD09100128AA1 /* AvailabilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034DB713254BD09100128AA1 /* AvailabilityVC.swift */; };
 		034DB718254BD09100128AA1 /* AvailabilityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034DB715254BD09100128AA1 /* AvailabilityVC.xib */; };
 		034DB719254BD09100128AA1 /* AvailabilityVC + CaledarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034DB716254BD09100128AA1 /* AvailabilityVC + CaledarView.swift */; };
-		034DB71B254BE98100128AA1 /* AvailabilityVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034DB71A254BE98100128AA1 /* AvailabilityVC + CollectionView.swift */; };
 		034DB71F254BEC0200128AA1 /* AvailabilityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034DB71D254BEC0200128AA1 /* AvailabilityCell.swift */; };
 		034DB720254BEC0200128AA1 /* AvailabilityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034DB71E254BEC0200128AA1 /* AvailabilityCell.xib */; };
 		03521F05252B18A00094829E /* DateDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03521F03252B189F0094829E /* DateDialog.xib */; };
@@ -144,6 +142,15 @@
 		0352B013255EAE8E002E9D6D /* CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0352B00F255EAE8E002E9D6D /* CameraVC.xib */; };
 		0352B014255EAE8E002E9D6D /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352B011255EAE8E002E9D6D /* CameraController.swift */; };
 		0352B015255EAE8E002E9D6D /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352B012255EAE8E002E9D6D /* CameraVC.swift */; };
+		0354A1D8264BCED8002923D6 /* ExchangeOfferVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354A1C9264BCED7002923D6 /* ExchangeOfferVC.xib */; };
+		0354A1DB264BCED8002923D6 /* TherapistCollapseShiftTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1CF264BCED7002923D6 /* TherapistCollapseShiftTableCell.swift */; };
+		0354A1DC264BCED8002923D6 /* TherapistCollapseShiftTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354A1D0264BCED7002923D6 /* TherapistCollapseShiftTableCell.xib */; };
+		0354A1DD264BCED8002923D6 /* TherapistExpandedShiftTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354A1D2264BCED7002923D6 /* TherapistExpandedShiftTableCell.xib */; };
+		0354A1DE264BCED8002923D6 /* TherapistShiftTableCell + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1D3264BCED7002923D6 /* TherapistShiftTableCell + TableView.swift */; };
+		0354A1DF264BCED8002923D6 /* TherapistExpandedShiftTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1D4264BCED7002923D6 /* TherapistExpandedShiftTableCell.swift */; };
+		0354A1E0264BCED8002923D6 /* ExchangeOfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1D5264BCED7002923D6 /* ExchangeOfferVC.swift */; };
+		0354A1E4264BDBAB002923D6 /* ExchangeOfferVC + Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1E2264BDBAA002923D6 /* ExchangeOfferVC + Calender.swift */; };
+		0354A1E5264BDBAB002923D6 /* ExchangeOfferVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1E3264BDBAA002923D6 /* ExchangeOfferVC + TableView.swift */; };
 		0354F26B254947E100F3BEB7 /* BookingListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F269254947E100F3BEB7 /* BookingListVC.xib */; };
 		0354F26C254947E100F3BEB7 /* BookingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F26A254947E100F3BEB7 /* BookingListVC.swift */; };
 		0354F2742549603700F3BEB7 /* WorkingScheduleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F26F2549603700F3BEB7 /* WorkingScheduleVC.xib */; };
@@ -313,6 +320,9 @@
 		03A2CC6625309E84005E3F29 /* MyBookingExpandTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A2CC5E25309E84005E3F29 /* MyBookingExpandTblCell.xib */; };
 		03A2CC6725309E84005E3F29 /* MyBookingExpandTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC5F25309E84005E3F29 /* MyBookingExpandTblCell.swift */; };
 		03A2CC6825309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2CC6025309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift */; };
+		03A3A4FE264A5271000E9505 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03A3A4F9264A5270000E9505 /* Localizable.strings */; };
+		03A3A4FF264A5271000E9505 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03A3A4FC264A5270000E9505 /* Localizable.strings */; };
+		03A3A501264A626C000E9505 /* AvailabilityVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3A500264A626C000E9505 /* AvailabilityVC + TableView.swift */; };
 		03A5597D261ED1C90018A20D /* ManageSingleDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5597B261ED1C90018A20D /* ManageSingleDocumentVC.swift */; };
 		03A7FB2325273058003A6025 /* HomeVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7FB2225273058003A6025 /* HomeVC + TableView.swift */; };
 		03A7FB2825273ACC003A6025 /* MyBookingTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A7FB2625273ACB003A6025 /* MyBookingTblSection.swift */; };
@@ -336,13 +346,12 @@
 		03B960BF25483AA500F8F214 /* ManageDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B960B725483AA500F8F214 /* ManageDocumentVC.swift */; };
 		03B960C825483BB000F8F214 /* MyDocumentsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B960C625483BB000F8F214 /* MyDocumentsVC.xib */; };
 		03B960C925483BB000F8F214 /* MyDocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B960C725483BB000F8F214 /* MyDocumentsVC.swift */; };
+		03C004D4264906DB00513ABA /* ShiftTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C004D2264906DA00513ABA /* ShiftTableCell.swift */; };
+		03C004D5264906DB00513ABA /* ShiftTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C004D3264906DA00513ABA /* ShiftTableCell.xib */; };
 		03E1662E25D2BC0E00DA30C0 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E1662A25D2BC0D00DA30C0 /* Loader.swift */; };
 		03E1662F25D2BC0E00DA30C0 /* LoaderDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E1662C25D2BC0D00DA30C0 /* LoaderDialog.swift */; };
 		03E1663025D2BC0E00DA30C0 /* LoaderDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E1662D25D2BC0D00DA30C0 /* LoaderDialog.xib */; };
 		03E3F79124CF166500997A16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3F79024CF166500997A16 /* CoreData.framework */; };
-		03EED643254FE7920010A2CF /* ExchangeOfferDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EED640254FE7920010A2CF /* ExchangeOfferDialog.xib */; };
-		03EED644254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EED641254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift */; };
-		03EED645254FE7920010A2CF /* ExchangeOfferDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EED642254FE7920010A2CF /* ExchangeOfferDialog.swift */; };
 		03EED64C255026AC0010A2CF /* FreeSpotCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EED648255026AC0010A2CF /* FreeSpotCltCell.swift */; };
 		03EED64D255026AC0010A2CF /* FreeSpotCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03EED649255026AC0010A2CF /* FreeSpotCltCell.xib */; };
 		03EED64E255026AC0010A2CF /* FreeSpotDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EED64A255026AC0010A2CF /* FreeSpotDialog.swift */; };
@@ -379,7 +388,6 @@
 		030DB57B25260966004C7CC8 /* APP+NAVIGATION.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APP+NAVIGATION.swift"; sourceTree = "<group>"; };
 		030DB57C25260966004C7CC8 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		030DB57D25260966004C7CC8 /* ImageAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
-		030DB57E25260966004C7CC8 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		030DB57F25260966004C7CC8 /* PreferenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceHelper.swift; sourceTree = "<group>"; };
 		030DB58225260966004C7CC8 /* AlamofireHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireHelper.swift; sourceTree = "<group>"; };
 		030DB58325260966004C7CC8 /* AppWebApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWebApi.swift; sourceTree = "<group>"; };
@@ -489,7 +497,6 @@
 		034DB713254BD09100128AA1 /* AvailabilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityVC.swift; sourceTree = "<group>"; };
 		034DB715254BD09100128AA1 /* AvailabilityVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailabilityVC.xib; sourceTree = "<group>"; };
 		034DB716254BD09100128AA1 /* AvailabilityVC + CaledarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AvailabilityVC + CaledarView.swift"; sourceTree = "<group>"; };
-		034DB71A254BE98100128AA1 /* AvailabilityVC + CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AvailabilityVC + CollectionView.swift"; sourceTree = "<group>"; };
 		034DB71D254BEC0200128AA1 /* AvailabilityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityCell.swift; sourceTree = "<group>"; };
 		034DB71E254BEC0200128AA1 /* AvailabilityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailabilityCell.xib; sourceTree = "<group>"; };
 		03521F03252B189F0094829E /* DateDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateDialog.xib; sourceTree = "<group>"; };
@@ -505,6 +512,15 @@
 		0352B00F255EAE8E002E9D6D /* CameraVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraVC.xib; sourceTree = "<group>"; };
 		0352B011255EAE8E002E9D6D /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		0352B012255EAE8E002E9D6D /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		0354A1C9264BCED7002923D6 /* ExchangeOfferVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeOfferVC.xib; sourceTree = "<group>"; };
+		0354A1CF264BCED7002923D6 /* TherapistCollapseShiftTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistCollapseShiftTableCell.swift; sourceTree = "<group>"; };
+		0354A1D0264BCED7002923D6 /* TherapistCollapseShiftTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TherapistCollapseShiftTableCell.xib; sourceTree = "<group>"; };
+		0354A1D2264BCED7002923D6 /* TherapistExpandedShiftTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TherapistExpandedShiftTableCell.xib; sourceTree = "<group>"; };
+		0354A1D3264BCED7002923D6 /* TherapistShiftTableCell + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TherapistShiftTableCell + TableView.swift"; sourceTree = "<group>"; };
+		0354A1D4264BCED7002923D6 /* TherapistExpandedShiftTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistExpandedShiftTableCell.swift; sourceTree = "<group>"; };
+		0354A1D5264BCED7002923D6 /* ExchangeOfferVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeOfferVC.swift; sourceTree = "<group>"; };
+		0354A1E2264BDBAA002923D6 /* ExchangeOfferVC + Calender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExchangeOfferVC + Calender.swift"; sourceTree = "<group>"; };
+		0354A1E3264BDBAA002923D6 /* ExchangeOfferVC + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExchangeOfferVC + TableView.swift"; sourceTree = "<group>"; };
 		0354F269254947E100F3BEB7 /* BookingListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingListVC.xib; sourceTree = "<group>"; };
 		0354F26A254947E100F3BEB7 /* BookingListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingListVC.swift; sourceTree = "<group>"; };
 		0354F26F2549603700F3BEB7 /* WorkingScheduleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkingScheduleVC.xib; sourceTree = "<group>"; };
@@ -690,6 +706,9 @@
 		03A2CC5E25309E84005E3F29 /* MyBookingExpandTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBookingExpandTblCell.xib; sourceTree = "<group>"; };
 		03A2CC5F25309E84005E3F29 /* MyBookingExpandTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingExpandTblCell.swift; sourceTree = "<group>"; };
 		03A2CC6025309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyBookingExpandTblCell + TableViewl.swift"; sourceTree = "<group>"; };
+		03A3A4FA264A5270000E9505 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		03A3A4FD264A5270000E9505 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = Localizable.strings; sourceTree = "<group>"; };
+		03A3A500264A626C000E9505 /* AvailabilityVC + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AvailabilityVC + TableView.swift"; sourceTree = "<group>"; };
 		03A5597B261ED1C90018A20D /* ManageSingleDocumentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageSingleDocumentVC.swift; sourceTree = "<group>"; };
 		03A7FB2225273058003A6025 /* HomeVC + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC + TableView.swift"; sourceTree = "<group>"; };
 		03A7FB2625273ACB003A6025 /* MyBookingTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingTblSection.swift; sourceTree = "<group>"; };
@@ -713,13 +732,12 @@
 		03B960B725483AA500F8F214 /* ManageDocumentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDocumentVC.swift; sourceTree = "<group>"; };
 		03B960C625483BB000F8F214 /* MyDocumentsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDocumentsVC.xib; sourceTree = "<group>"; };
 		03B960C725483BB000F8F214 /* MyDocumentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDocumentsVC.swift; sourceTree = "<group>"; };
+		03C004D2264906DA00513ABA /* ShiftTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftTableCell.swift; sourceTree = "<group>"; };
+		03C004D3264906DA00513ABA /* ShiftTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShiftTableCell.xib; sourceTree = "<group>"; };
 		03E1662A25D2BC0D00DA30C0 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		03E1662C25D2BC0D00DA30C0 /* LoaderDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderDialog.swift; sourceTree = "<group>"; };
 		03E1662D25D2BC0D00DA30C0 /* LoaderDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoaderDialog.xib; sourceTree = "<group>"; };
 		03E3F79024CF166500997A16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		03EED640254FE7920010A2CF /* ExchangeOfferDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeOfferDialog.xib; sourceTree = "<group>"; };
-		03EED641254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExchangeOfferDialog + Calender.swift"; sourceTree = "<group>"; };
-		03EED642254FE7920010A2CF /* ExchangeOfferDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeOfferDialog.swift; sourceTree = "<group>"; };
 		03EED648255026AC0010A2CF /* FreeSpotCltCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeSpotCltCell.swift; sourceTree = "<group>"; };
 		03EED649255026AC0010A2CF /* FreeSpotCltCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreeSpotCltCell.xib; sourceTree = "<group>"; };
 		03EED64A255026AC0010A2CF /* FreeSpotDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeSpotDialog.swift; sourceTree = "<group>"; };
@@ -795,13 +813,13 @@
 		030DB57825260966004C7CC8 /* AppBaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				03A3A4F2264A5226000E9505 /* StringFile */,
 				030DB5B0252609FB004C7CC8 /* BaseSubClasses */,
 				030DB57925260966004C7CC8 /* Constant.swift */,
 				030DB57A25260966004C7CC8 /* LanguageManager.swift */,
 				030DB57B25260966004C7CC8 /* APP+NAVIGATION.swift */,
 				030DB57C25260966004C7CC8 /* Common.swift */,
 				030DB57D25260966004C7CC8 /* ImageAssets.swift */,
-				030DB57E25260966004C7CC8 /* Localizable.strings */,
 				030DB57F25260966004C7CC8 /* PreferenceHelper.swift */,
 				030DB58025260966004C7CC8 /* WebService */,
 				030DB58C25260966004C7CC8 /* AppTheme.swift */,
@@ -1227,12 +1245,13 @@
 		034DB712254BD09100128AA1 /* AvailabilityVC */ = {
 			isa = PBXGroup;
 			children = (
+				03C004D1264906DA00513ABA /* ShiftTableCell */,
 				03EED63E254FE7920010A2CF /* Dialogs */,
 				034DB71C254BEC0200128AA1 /* AvailabilityCell */,
 				034DB713254BD09100128AA1 /* AvailabilityVC.swift */,
 				034DB714254BD09100128AA1 /* xib */,
 				034DB716254BD09100128AA1 /* AvailabilityVC + CaledarView.swift */,
-				034DB71A254BE98100128AA1 /* AvailabilityVC + CollectionView.swift */,
+				03A3A500264A626C000E9505 /* AvailabilityVC + TableView.swift */,
 			);
 			path = AvailabilityVC;
 			sourceTree = "<group>";
@@ -1342,6 +1361,46 @@
 				0352B011255EAE8E002E9D6D /* CameraController.swift */,
 			);
 			path = CameraController;
+			sourceTree = "<group>";
+		};
+		0354A1C7264BCED7002923D6 /* ExchangeOfferVC */ = {
+			isa = PBXGroup;
+			children = (
+				0354A1CD264BCED7002923D6 /* TherapistShiftCell */,
+				0354A1C9264BCED7002923D6 /* ExchangeOfferVC.xib */,
+				0354A1D5264BCED7002923D6 /* ExchangeOfferVC.swift */,
+				0354A1E2264BDBAA002923D6 /* ExchangeOfferVC + Calender.swift */,
+				0354A1E3264BDBAA002923D6 /* ExchangeOfferVC + TableView.swift */,
+			);
+			path = ExchangeOfferVC;
+			sourceTree = "<group>";
+		};
+		0354A1CD264BCED7002923D6 /* TherapistShiftCell */ = {
+			isa = PBXGroup;
+			children = (
+				0354A1CE264BCED7002923D6 /* TherapistCollapseShiftTableCell */,
+				0354A1D1264BCED7002923D6 /* TherapistExpandedShiftTableCell */,
+			);
+			path = TherapistShiftCell;
+			sourceTree = "<group>";
+		};
+		0354A1CE264BCED7002923D6 /* TherapistCollapseShiftTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				0354A1CF264BCED7002923D6 /* TherapistCollapseShiftTableCell.swift */,
+				0354A1D0264BCED7002923D6 /* TherapistCollapseShiftTableCell.xib */,
+			);
+			path = TherapistCollapseShiftTableCell;
+			sourceTree = "<group>";
+		};
+		0354A1D1264BCED7002923D6 /* TherapistExpandedShiftTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				0354A1D2264BCED7002923D6 /* TherapistExpandedShiftTableCell.xib */,
+				0354A1D3264BCED7002923D6 /* TherapistShiftTableCell + TableView.swift */,
+				0354A1D4264BCED7002923D6 /* TherapistExpandedShiftTableCell.swift */,
+			);
+			path = TherapistExpandedShiftTableCell;
 			sourceTree = "<group>";
 		};
 		0354F267254947E100F3BEB7 /* BookingListVC */ = {
@@ -1609,6 +1668,7 @@
 		0366DCFB2546D85B002C2CDA /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				0354A1C7264BCED7002923D6 /* ExchangeOfferVC */,
 				034BB1A2255121AD006B3842 /* MyRateVC */,
 				034BB18025510A04006B3842 /* PaymentPreferenceVC */,
 				034DB712254BD09100128AA1 /* AvailabilityVC */,
@@ -2214,6 +2274,31 @@
 			path = MyBookingExpandTblCell;
 			sourceTree = "<group>";
 		};
+		03A3A4F2264A5226000E9505 /* StringFile */ = {
+			isa = PBXGroup;
+			children = (
+				03A3A4F8264A5270000E9505 /* en.lproj */,
+				03A3A4FB264A5270000E9505 /* pt-PT.lproj */,
+			);
+			path = StringFile;
+			sourceTree = "<group>";
+		};
+		03A3A4F8264A5270000E9505 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				03A3A4F9264A5270000E9505 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		03A3A4FB264A5270000E9505 /* pt-PT.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				03A3A4FC264A5270000E9505 /* Localizable.strings */,
+			);
+			path = "pt-PT.lproj";
+			sourceTree = "<group>";
+		};
 		03A55978261ED1C90018A20D /* ManageSingleDocument */ = {
 			isa = PBXGroup;
 			children = (
@@ -2371,6 +2456,15 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
+		03C004D1264906DA00513ABA /* ShiftTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				03C004D2264906DA00513ABA /* ShiftTableCell.swift */,
+				03C004D3264906DA00513ABA /* ShiftTableCell.xib */,
+			);
+			path = ShiftTableCell;
+			sourceTree = "<group>";
+		};
 		03E1662925D2BC0D00DA30C0 /* Loader */ = {
 			isa = PBXGroup;
 			children = (
@@ -2393,19 +2487,8 @@
 			isa = PBXGroup;
 			children = (
 				03EED646255026AC0010A2CF /* FreeSpotDialog */,
-				03EED63F254FE7920010A2CF /* ExchangeOfferDialog */,
 			);
 			path = Dialogs;
-			sourceTree = "<group>";
-		};
-		03EED63F254FE7920010A2CF /* ExchangeOfferDialog */ = {
-			isa = PBXGroup;
-			children = (
-				03EED640254FE7920010A2CF /* ExchangeOfferDialog.xib */,
-				03EED641254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift */,
-				03EED642254FE7920010A2CF /* ExchangeOfferDialog.swift */,
-			);
-			path = ExchangeOfferDialog;
 			sourceTree = "<group>";
 		};
 		03EED646255026AC0010A2CF /* FreeSpotDialog */ = {
@@ -2601,7 +2684,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				"pt-PT",
 			);
 			mainGroup = 63ABC0A9246D64B500360F07;
 			productRefGroup = 63ABC0B3246D64B500360F07 /* Products */;
@@ -2663,6 +2746,7 @@
 				030D0FDB26294BB70057E4E9 /* ManageIdPassportVC.xib in Resources */,
 				0352B013255EAE8E002E9D6D /* CameraVC.xib in Resources */,
 				0354F26B254947E100F3BEB7 /* BookingListVC.xib in Resources */,
+				03A3A4FF264A5271000E9505 /* Localizable.strings in Resources */,
 				03E1663025D2BC0E00DA30C0 /* LoaderDialog.xib in Resources */,
 				63415E36246FB5C600F0D7A0 /* Nunito-Bold.ttf in Resources */,
 				0354F2762549603700F3BEB7 /* WorkingScheduleTblCell.xib in Resources */,
@@ -2679,6 +2763,7 @@
 				038CAFC2252604AB001ACAD6 /* CustomCountryPhoneCodePickerCell.xib in Resources */,
 				037F74332616EBD500CA17AF /* SessionTypeTblSection.xib in Resources */,
 				03521F13252B58FD0094829E /* NotificationTblCell.xib in Resources */,
+				03A3A4FE264A5271000E9505 /* Localizable.strings in Resources */,
 				03412294252F3AFC000BCDAE /* CustomDocumentPicker.xib in Resources */,
 				034CBE0925340C1100B20A11 /* UserDetailTblSection.xib in Resources */,
 				03EED64F255026AC0010A2CF /* FreeSpotDialog.xib in Resources */,
@@ -2698,6 +2783,7 @@
 				038CAFD8252604AB001ACAD6 /* CustomTextFieldDialog.xib in Resources */,
 				03B960A825481E3600F8F214 /* LanguageFluencyDialog.xib in Resources */,
 				03A2CC2525301EF2005E3F29 /* CustomInformationDialog.xib in Resources */,
+				0354A1D8264BCED8002923D6 /* ExchangeOfferVC.xib in Resources */,
 				0341229F252F40E4000BCDAE /* ServiceStatusVC.xib in Resources */,
 				0366DD202546DB14002C2CDA /* CustomGenderPicker.xib in Resources */,
 				035EF5AE2526F3A400C64BD4 /* MenuCellVerticle.xib in Resources */,
@@ -2708,16 +2794,18 @@
 				0341227D252F3882000BCDAE /* ScanDialog.xib in Resources */,
 				0366DD282546DB14002C2CDA /* CustomCityPickerCell.xib in Resources */,
 				03521F2B252B612E0094829E /* SuggestionTblCell.xib in Resources */,
-				030DB59B25260966004C7CC8 /* Localizable.strings in Resources */,
 				03A2CC6525309E84005E3F29 /* MassageDetailTblCell.xib in Resources */,
 				034BB1B225515C4E006B3842 /* ScanVC.xib in Resources */,
 				03521F29252B612E0094829E /* SuggestionAndComplaintVC.xib in Resources */,
+				0354A1DD264BCED8002923D6 /* TherapistExpandedShiftTableCell.xib in Resources */,
 				038CAFD6252604AB001ACAD6 /* CustomAlertConfirmation.xib in Resources */,
 				03B960A1254804F100F8F214 /* LanguageTableCell.xib in Resources */,
 				03521F11252B58FD0094829E /* NotificationVC.xib in Resources */,
 				038CAFC6252604AB001ACAD6 /* CustomMobileNumberDialog.xib in Resources */,
+				0354A1DC264BCED8002923D6 /* TherapistCollapseShiftTableCell.xib in Resources */,
 				0379EACD252C934A00303A59 /* RateVC.xib in Resources */,
 				0366DD262546DB14002C2CDA /* CustomCityPicker.xib in Resources */,
+				03C004D5264906DB00513ABA /* ShiftTableCell.xib in Resources */,
 				03B960BE25483AA500F8F214 /* ManageDocumentTblCell.xib in Resources */,
 				63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */,
 				03412291252F3AFC000BCDAE /* UIImageCropperVC.xib in Resources */,
@@ -2727,7 +2815,6 @@
 				030D0FD5262945770057E4E9 /* ExperienceDialog.xib in Resources */,
 				0345190924C85EBE00AF7026 /* styleable_map.json in Resources */,
 				03AE6A142535C8D100F7C629 /* ProfileVC.xib in Resources */,
-				03EED643254FE7920010A2CF /* ExchangeOfferDialog.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2881,6 +2968,7 @@
 				038CAFE5252604D8001ACAD6 /* PersonData.xcdatamodeld in Sources */,
 				03521F12252B58FD0094829E /* NotificationTblCell.swift in Sources */,
 				03B960C925483BB000F8F214 /* MyDocumentsVC.swift in Sources */,
+				0354A1E4264BDBAB002923D6 /* ExchangeOfferVC + Calender.swift in Sources */,
 				034CBE2625346C4C00B20A11 /* DefaultWeekView.swift in Sources */,
 				03B960BD25483AA500F8F214 /* ManageDocumentTblCell.swift in Sources */,
 				03A2CC3625302468005E3F29 /* ServiceNavigationVC + MapView.swift in Sources */,
@@ -2894,12 +2982,15 @@
 				030DB59C25260966004C7CC8 /* PreferenceHelper.swift in Sources */,
 				034CBE862534700D00B20A11 /* JZAllDayHeader.swift in Sources */,
 				034CBE0A25340C1100B20A11 /* UserDetailTblSection.swift in Sources */,
+				0354A1E0264BCED8002923D6 /* ExchangeOfferVC.swift in Sources */,
 				03643F4C254A7EC4004F9156 /* FSCalendarCollectionView.m in Sources */,
 				03A2CC2625301EF2005E3F29 /* CustomInformationDialog.swift in Sources */,
+				0354A1DB264BCED8002923D6 /* TherapistCollapseShiftTableCell.swift in Sources */,
 				038CAFE3252604D8001ACAD6 /* Person+CoreDataClass.swift in Sources */,
 				03521F2C252B612E0094829E /* SuggestionAndComplaintVC.swift in Sources */,
 				0366DD042546D85B002C2CDA /* EditProfileCell.swift in Sources */,
 				0366DD252546DB14002C2CDA /* CustomCountryPicker.swift in Sources */,
+				03A3A501264A626C000E9505 /* AvailabilityVC + TableView.swift in Sources */,
 				030DB5A325260966004C7CC8 /* Singleton.swift in Sources */,
 				035EF5C72526FF3200C64BD4 /* PBRevealViewController.swift in Sources */,
 				038CB01A2526056E001ACAD6 /* UITextField + Extension.swift in Sources */,
@@ -2921,6 +3012,7 @@
 				03643F52254A7EC4004F9156 /* FSCalendarCollectionViewLayout.m in Sources */,
 				034CBE722534700D00B20A11 /* JZAllDayEvent.swift in Sources */,
 				0379EAE6252CA89700303A59 /* NewsTblCell.swift in Sources */,
+				0354A1DE264BCED8002923D6 /* TherapistShiftTableCell + TableView.swift in Sources */,
 				030DB5C9252609FB004C7CC8 /* BaseVC.swift in Sources */,
 				034CBE7D2534700D00B20A11 /* JZCornerHeader.swift in Sources */,
 				0366DD0E2546DA79002C2CDA /* OTPFieldView.swift in Sources */,
@@ -2930,7 +3022,6 @@
 				030DB59A25260966004C7CC8 /* ImageAssets.swift in Sources */,
 				034CBE732534700D00B20A11 /* JZWeekViewHelper.swift in Sources */,
 				03643F4E254A7EC4004F9156 /* FSCalendarDelegationFactory.m in Sources */,
-				034DB71B254BE98100128AA1 /* AvailabilityVC + CollectionView.swift in Sources */,
 				03521F06252B18A00094829E /* DateDialog.swift in Sources */,
 				034CBE7C2534700D00B20A11 /* JZColumnHeader.swift in Sources */,
 				030DB5A625260966004C7CC8 /* AddressWebService.swift in Sources */,
@@ -2960,13 +3051,11 @@
 				0361552E260D9F6400898DA8 /* AbsentDayWebService.swift in Sources */,
 				03643F9E254AD92A004F9156 /* MyMassageTblCell.swift in Sources */,
 				03412293252F3AFC000BCDAE /* UIImage+FixOrientation.swift in Sources */,
-				03EED645254FE7920010A2CF /* ExchangeOfferDialog.swift in Sources */,
 				030DB5CE252609FB004C7CC8 /* ThemeTableCells.swift in Sources */,
 				03AE6A132535C8D100F7C629 /* ProfileVC.swift in Sources */,
 				03643FA5254AEB47004F9156 /* MassageDetailVC.swift in Sources */,
 				0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */,
 				030DB59625260966004C7CC8 /* Constant.swift in Sources */,
-				03EED644254FE7920010A2CF /* ExchangeOfferDialog + Calender.swift in Sources */,
 				038581BF25E4C6BC00B20F00 /* WorkingScheduleWebService.swift in Sources */,
 				038CAFDB252604AB001ACAD6 /* CustomAlert.swift in Sources */,
 				03643F54254A7EC4004F9156 /* FSCalendarSeparatorDecorationView.m in Sources */,
@@ -2986,11 +3075,13 @@
 				03643F56254A7EC4004F9156 /* FSCalendarConstants.m in Sources */,
 				030DB59E25260966004C7CC8 /* AppWebApi.swift in Sources */,
 				030DB59725260966004C7CC8 /* LanguageManager.swift in Sources */,
+				03C004D4264906DB00513ABA /* ShiftTableCell.swift in Sources */,
 				038CAFCB252604AB001ACAD6 /* DateTimeDialog.swift in Sources */,
 				038CB0122526056E001ACAD6 /* String + TypeCasting.swift in Sources */,
 				0379EAE4252CA89700303A59 /* NewsVC.swift in Sources */,
 				0366DD062546D85B002C2CDA /* EditProfileVC.swift in Sources */,
 				03F915C5254854EF00C391AB /* ServiceSelectionDialog.swift in Sources */,
+				0354A1DF264BCED8002923D6 /* TherapistExpandedShiftTableCell.swift in Sources */,
 				034CBE832534700D00B20A11 /* JZAllDayCorner.swift in Sources */,
 				03456BD7252DDADF00013231 /* CustomFilterDialog + DateFilter.swift in Sources */,
 				03A7FB2325273058003A6025 /* HomeVC + TableView.swift in Sources */,
@@ -3038,6 +3129,7 @@
 				03F5038C252D937F00AF50A5 /* CustomFilterDialog.swift in Sources */,
 				03405505252E04BD00B7077D /* CustomFilterDialog + TableView.swift in Sources */,
 				038CAFC7252604AB001ACAD6 /* CustomMobileNumberDialog.swift in Sources */,
+				0354A1E5264BDBAB002923D6 /* ExchangeOfferVC + TableView.swift in Sources */,
 				038CB0092526056E001ACAD6 /* GoogleMapHelper.swift in Sources */,
 				63ABC1A5246D650D00360F07 /* SceneDelegate.swift in Sources */,
 				0366DD222546DB14002C2CDA /* CustomCountryPickerCell.swift in Sources */,
@@ -3045,6 +3137,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		03A3A4F9264A5270000E9505 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03A3A4FA264A5270000E9505 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		03A3A4FC264A5270000E9505 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03A3A4FD264A5270000E9505 /* pt-PT */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		63ABC0C4246D64B700360F07 /* Debug */ = {

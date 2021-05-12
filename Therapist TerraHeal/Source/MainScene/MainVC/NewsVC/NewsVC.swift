@@ -134,7 +134,7 @@ extension NewsVC {
     }
     func wsReadNews(id:String) {
         Loader.showLoading()
-        NewsWebService.readNews(params: NewsWebService.RequestReadNews.init(id: id)) { (response) in
+        NewsWebService.readNews(params: NewsWebService.RequestReadNews.init(news_id: id)) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.wsGetNews()

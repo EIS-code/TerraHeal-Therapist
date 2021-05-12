@@ -122,7 +122,7 @@ public class JDRadioButton: UIButton {
     // MARK: Custom
     private func setFillState() {
         if self.isSelected {
-            innerCircleLayer.fillColor = UIColor.themePrimary.cgColor
+            innerCircleLayer.fillColor =  self.innerCircleCircleColor.cgColor  //UIColor.themePrimary.cgColor
         } else {
             innerCircleLayer.fillColor = UIColor.themePrimaryLightBackground.cgColor
         }
