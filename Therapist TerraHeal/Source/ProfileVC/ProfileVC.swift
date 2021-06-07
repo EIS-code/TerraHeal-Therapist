@@ -260,7 +260,8 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
         case .MyNumberOfMassages:
             Common.appDelegate.loadMyNumberOfMassageVC(navigaionVC: self.navigationController)
         case .PaymentPreference:
-            Common.appDelegate.loadPaymentReferenceVC(amount: 0.0, navigaionVC: self.navigationController, fromVC: nil)
+            //Common.appDelegate.loadPaymentReferenceVC(amount: 0.0, navigaionVC: self.navigationController, fromVC: nil)
+            Common.appDelegate.loadExchangeOfferRequestVC(navigaionVC: self.navigationController)
         case .Logout:
             Common.appDelegate.loadLoginVC()
         }

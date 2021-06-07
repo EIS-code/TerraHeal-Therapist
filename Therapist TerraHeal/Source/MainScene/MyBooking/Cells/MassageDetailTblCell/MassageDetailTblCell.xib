@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="451" height="119"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-J2-KSJ" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="10" width="365.5" height="81.5"/>
+                                <rect key="frame" x="0.0" y="10" width="366" height="81.5"/>
                                 <string key="text">Account Created
 loadTherapistKycInfoVC
 Account Created
@@ -32,15 +32,15 @@ loadTherapistKycInfoVC</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1110 min" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wDT-im-YtE" userLabel="lblDuration" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                                <rect key="frame" x="375.5" y="40.5" width="65.5" height="20.5"/>
+                                <rect key="frame" x="376" y="40.5" width="65" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="theme_hint_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="wDT-im-YtE" secondAttribute="trailing" constant="10" id="BDW-nr-d9H"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="leading" secondItem="fTr-D4-KiU" secondAttribute="leading" id="BDk-lU-4uV"/>
+                            <constraint firstAttribute="trailing" secondItem="wDT-im-YtE" secondAttribute="trailing" constant="10" id="LP8-vb-M84"/>
                             <constraint firstItem="wDT-im-YtE" firstAttribute="centerY" secondItem="zbl-J2-KSJ" secondAttribute="centerY" id="dAV-PK-Bcl"/>
                             <constraint firstItem="wDT-im-YtE" firstAttribute="leading" secondItem="zbl-J2-KSJ" secondAttribute="trailing" constant="10" id="yqT-uu-1BQ"/>
                             <constraint firstItem="zbl-J2-KSJ" firstAttribute="top" secondItem="fTr-D4-KiU" secondAttribute="top" constant="10" id="zaC-hb-cUq"/>
@@ -55,6 +55,7 @@ loadTherapistKycInfoVC</string>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="theme_background"/>
             <connections>
                 <outlet property="lblDuration" destination="wDT-im-YtE" id="9Oj-FE-G4f"/>
                 <outlet property="lblName" destination="zbl-J2-KSJ" id="1rK-CQ-0FK"/>
@@ -63,6 +64,9 @@ loadTherapistKycInfoVC</string>
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="theme_background">
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="theme_hint_text">
             <color red="0.69800001382827759" green="0.70200002193450928" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

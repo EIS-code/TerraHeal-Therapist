@@ -12,10 +12,9 @@ import Foundation
 class LanguageWebService {
     static let url: String = API_URL.GetLanguageList
     struct RequestSelectLanguage: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var language_id: String = ""
         var language_type: String = ""
-
-
     }
 }
 

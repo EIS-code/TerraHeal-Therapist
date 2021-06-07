@@ -15,6 +15,16 @@ class WorkingScheduleVC: BaseVC {
     let date = Date().startOfDay
     var arrForNotAvailableDays: [Double] = []
     var arrForWorkingDays: [Double] = []
+    var arrForData:[AvailabilityCellDetail] = [
+        AvailabilityCellDetail.init(shiftName: "shift - 1", shiftTime: "10 - 12", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 2", shiftTime: "12 - 14", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 3", shiftTime: "12 - 16", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 4", shiftTime: "16 - 18", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 5", shiftTime: "16 - 20", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 6", shiftTime: "20 - 24", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 7", shiftTime: "00 - 08", availabilityStatus: .Available, isSelected: false),
+        AvailabilityCellDetail.init(shiftName: "shift - 8", shiftTime: "08 - 04", availabilityStatus: .Available, isSelected: false),
+    ]
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -79,57 +89,13 @@ class WorkingScheduleVC: BaseVC {
         self.setupCalendarView(calendar: self.vwCalendar)
     }
    
+    @IBAction func btnExchangeTapped(_ sender: Any) {
+        Common.appDelegate.loadExchangeOfferVC(navigaionVC: self.navigationController)
+    }
 
 }
 
 
-extension WorkingScheduleVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
-    
-    private func setupTableView(tableView: UITableView) {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = .clear
-        tableView.showsVerticalScrollIndicator = false
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 200
-        tableView.register(WorkingScheduleTblCell.nib()
-            , forCellReuseIdentifier: WorkingScheduleTblCell.name)
-        tableView.register(WorkingScheduleTblSection.nib(), forHeaderFooterViewReuseIdentifier: WorkingScheduleTblSection.name)
-        tableView.tableFooterView = UIView()
-    }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrForWorkingDays.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: WorkingScheduleTblCell.name, for: indexPath) as?  WorkingScheduleTblCell
-        cell?.lblDetails.setText(Date.init(milliseconds: arrForWorkingDays[indexPath.row]).convertDateFormate())
-        return cell!
-        
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: WorkingScheduleTblSection.name) as? WorkingScheduleTblSection {
-            view.lblTitle.textColor = UIColor.init(hex: "#33B199")
-            view.lblTitle.setText(arrForWorkingDays.count.toString() + " " + "WORKING_DAYS".localized())
-            return view
-        }
-
-
-        return UIView.init()
-    }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-}
 
 
 extension WorkingScheduleVC {

@@ -12,14 +12,12 @@ import Foundation
 enum SettingPreference {
     
     struct RequestSettingPrefenceList: Codable {
-        var user_id: String = PreferenceHelper.shared.getUserId()
-        //var token: String = PreferenceHelper.shared.getSessionToken()
+        var id: String = PreferenceHelper.shared.getUserId()
     }
     
     
     struct SaveSettingPrefence: Codable {
-        var user_id: String = PreferenceHelper.shared.getUserId()
-        //var token: String = PreferenceHelper.shared.getSessionToken()
+        var id: String = PreferenceHelper.shared.getUserId()
         var language_code: String? = nil
         var notification: String? = nil
         var unit: String? = nil

@@ -9,32 +9,32 @@
 import UIKit
 
 class VerificationAlert: ThemeBottomDialogView {
-    
+
     @IBOutlet weak var lblMessage: ThemeLabel!
     @IBOutlet weak var lblMessageDetail: ThemeLabel!
     @IBOutlet weak var btnVerify: DialogFilledRoundedButton!
-    
+
     @IBOutlet var otpTextFieldView: OTPFieldView!
     @IBOutlet weak var btnResend: DialogCancelButton!
-    
+
     var currentTab = 0
-    
+
     var verificationData: String = ""
-    
+
     var onBtnResendTapped: (() -> Void)? = nil
     var onBtnDoneTapped: ((_ code:String) -> Void)? = nil
-    
+
     var strEnteredOtp:String = ""
-    
+
     @IBOutlet weak var vwSwitch: JDSegmentedControl!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    
+
+
     func initialize(message:String, data:String) {
-        
+
         self.lblTitle.text = "VERIFICATION_LBL_TITLE".localized()
         self.lblMessage.text = message
         self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + data
@@ -43,7 +43,7 @@ class VerificationAlert: ThemeBottomDialogView {
         self.btnResend.setTitle("VERIFICATION_BTN_RESEND".localized(), for: .normal)
         self.initialSetup()
     }
-    
+
     func setVerificationFor(type:TextFieldContentType) {
         if type == .Email {
             self.vwSwitch.selectItemAt(index: 1)
@@ -53,7 +53,7 @@ class VerificationAlert: ThemeBottomDialogView {
             self.mobileTapped()
         }
     }
-    
+
     override func initialSetup() {
         super.initialSetup()
         self.lblTitle.setFont(name: FontName.SemiBold, size: FontSize.header)
@@ -72,29 +72,29 @@ class VerificationAlert: ThemeBottomDialogView {
             }
         }
     }
-    
+
     func mobileTapped(){
         self.currentTab = 0
         self.wsVerifyPhone()
-        self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + appSingleton.user.telNumber
+        self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + Singleton.shared.user.telNumber
         self.lblMessage.text = "verify your mobile number".localized()
-        
+
     }
     func emailTapped(){
         self.currentTab = 1
         self.wsVerifyEmail()
-        self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + appSingleton.user.email
+        self.lblMessageDetail.text = "VERIFICATION_MSG_DETAIL".localized() + " " + Singleton.shared.user.email
         self.lblMessage.text = "verify your email address".localized()
-        
+
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         self.vwSwitch.center = CGPoint.init(x: self.center.x, y: self.vwSwitch.center.y)
     }
-    
-    
+
+
     @IBAction func btnResendTapped(_ sender: Any) {
         if self.onBtnResendTapped != nil {
             self.onBtnResendTapped!();
@@ -105,7 +105,7 @@ class VerificationAlert: ThemeBottomDialogView {
             }
         }
     }
-    
+
     @IBAction func btnDoneTapped(_ sender: Any) {
         if strEnteredOtp.isEmpty() {
             Common.showAlert(message: "VALIDATION_MSG_PLEASE_ENTER_OTP".localized())
@@ -117,11 +117,11 @@ class VerificationAlert: ThemeBottomDialogView {
             }
         }
     }
-    
+
 }
 //OTP  Setup
 extension VerificationAlert:  OTPFieldViewDelegate {
-    
+
     func setupOtpView(){
         self.otpTextFieldView.fieldsCount = 4
         self.otpTextFieldView.fieldBorderWidth = 0
@@ -138,11 +138,11 @@ extension VerificationAlert:  OTPFieldViewDelegate {
     func hasEnteredAllOTP(hasEnteredAll hasEntered: Bool) -> Bool {
         return false
     }
-    
+
     func shouldBecomeFirstResponderForOTP(otpTextFieldIndex index: Int) -> Bool {
         return true
     }
-    
+
     func enteredOTP(otp otpString: String) {
         self.strEnteredOtp = otpString
     }
@@ -157,72 +157,74 @@ extension VerificationAlert:  OTPFieldViewDelegate {
 
 
 
-//MARK: Web Service Calls
+//MARK:   - WS Web API
 extension VerificationAlert {
 
     private func wsVerifyEmail(isResend:Bool = false) {
         if appSingleton.user.isEmailVerified.toBool {
             return;
         }
-        /*Loader.showLoading()
-        var request: User.RequestEmailOTP = User.RequestEmailOTP()
-        request.email = appSingleton.user.email
-        AppWebApi.getEmailOtp(params: request) { (response) in
+        Loader.showLoading()
+        var request: VerificationWebService.RequestEmailOTP = VerificationWebService.RequestEmailOTP()
+        request.email = Singleton.shared.user.email
+        VerificationWebService.getEmailOtp(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 self.otpTextFieldView.clearTextField()
             } else {
-                
+
             }
-        }*/
+        }
     }
-    
+
     private func wsVerifyEmailOtp(code:String) {
-       /* Loader.showLoading()
-        var request: User.RequestVerifyEmailOTP = User.RequestVerifyEmailOTP()
+        Loader.showLoading()
+        var request: VerificationWebService.RequestVerifyEmailOTP = VerificationWebService.RequestVerifyEmailOTP()
         request.otp = code
-        AppWebApi.verifyEmailOtp(params: request) { (response) in
+        VerificationWebService.verifyEmailOtp(params: request) { (response) in
             Loader.hideLoading()
             self.otpTextFieldView.clearTextField()
             if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
-                appSingleton.user.isEmailVerified = Constant.True
+                Singleton.shared.user.isEmailVerified = Constant.True
                 self.updateVerificationView()
             } else {
-                
+
             }
-        }*/
+        }
     }
-    
-    
+
+
     private func wsVerifyPhone(isResend:Bool = false) {
         if appSingleton.user.isMobileVerified.toBool {
             return;
         }
-       /* Loader.showLoading()
-        var request: User.RequestPhoneOTP = User.RequestPhoneOTP()
-        request.mobile = appSingleton.user.telNumber
-        AppWebApi.getPhoneOtp(params: request) { (response) in
+        Loader.showLoading()
+        var request: VerificationWebService.RequestPhoneOTP = VerificationWebService.RequestPhoneOTP()
+        request.mobile = Singleton.shared.user.telNumber
+        VerificationWebService.getPhoneOtp(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: true) {
                 self.otpTextFieldView.clearTextField()
             } else {
-                
+
             }
-        }*/
+        }
     }
-    
+
     private func wsVerifyPhoneOtp(code:String) {
         Loader.showLoading()
-        /*var request: User.RequestVerifyPhoneOTP = User.RequestVerifyPhoneOTP()
+        var request: VerificationWebService.RequestVerifyPhoneOTP = VerificationWebService.RequestVerifyPhoneOTP()
         request.otp = code
-        AppWebApi.verifyPhoneOtp(params: request) { (response) in
+        VerificationWebService.verifyPhoneOtp(params: request) { (response) in
             Loader.hideLoading()
             self.otpTextFieldView.clearTextField()
             if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
-                appSingleton.user.isMobileVerified = Constant.True
+                Singleton.shared.user.isMobileVerified = Constant.True
                 self.updateVerificationView()
             } else {
             }
-        }*/
+        }
     }
+
+
 }

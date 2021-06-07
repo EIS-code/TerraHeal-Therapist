@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,6 +38,7 @@
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="lmf-Xn-7Ot"/>
             <color key="backgroundColor" name="theme_background"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="582-VR-E0n" secondAttribute="bottom" constant="4" id="5e7-Y5-4TN"/>
@@ -45,7 +46,6 @@
                 <constraint firstItem="582-VR-E0n" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Rsv-Xd-3ua"/>
                 <constraint firstItem="582-VR-E0n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="rpl-CI-rSC"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="lmf-Xn-7Ot"/>
             <size key="customSize" width="215" height="108"/>
             <connections>
                 <outlet property="lblCellTitle" destination="JTy-Qs-oWs" id="iKe-yh-Wyq"/>

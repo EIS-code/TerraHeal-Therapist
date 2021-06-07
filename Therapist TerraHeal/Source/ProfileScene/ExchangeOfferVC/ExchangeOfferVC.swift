@@ -70,17 +70,9 @@ class ExchangeOfferVC: BaseVC {
     private func initialViewSetup() {
         self.setBackground(color: UIColor.themeLightBackground)
         self.setNavigationTitle(title: "EXCHANGE_OFFER_TITLE".localized())
-        self.btnPreviousMonth.setText(FontSymbol.back_arrow, for: .normal)
-        self.btnPreviousMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        self.btnNextMonth.setText(FontSymbol.next_arrow, for: .normal)
-        self.btnNextMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
-        self.lblMonthYear.setFont(name: FontName.Regular, size: FontSize.subHeader)
-        self.lblMonthYear.setText(Date().toString(format: "MMM yyyy"))
         self.btnProceed.setText("EXCHANGE_OFFER_BTN_SUBMIT".localized())
         self.setupSearchbar(searchBar: txtSearchBar)
         self.setupAvailabilityView(tableView: self.tblForAvailability)
-        self.setupCalendarView(calendar: self.vwCalendar)
-        self.vwCalendar.reloadData()
         DispatchQueue.main.async {
             self.tblForAvailability.reloadData()
         }
@@ -91,20 +83,7 @@ class ExchangeOfferVC: BaseVC {
         self.popVC()
     }
 
-    @IBAction func btnSelectWeekTapped(_ sender: Any) {
-        let currentPage = self.vwCalendar.currentPage.nextWeek()
-        self.vwCalendar.setCurrentPage(currentPage, animated: true)
-    }
 
-    @IBAction func btnPreviousTapped(_ sender: Any) {
-        let currentPage = self.vwCalendar.currentPage.previousWeek()
-        self.vwCalendar.setCurrentPage(currentPage, animated: true)
-    }
-
-    @IBAction func btnNextTapped(_ sender: Any) {
-        let currentPage = self.vwCalendar.currentPage.nextWeek()
-        self.vwCalendar.setCurrentPage(currentPage, animated: true)
-    }
 }
 
 extension ExchangeOfferVC : UITextFieldDelegate {

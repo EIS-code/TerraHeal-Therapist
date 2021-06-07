@@ -69,7 +69,7 @@ class EditProfileCell: CollectionCell {
 extension EditProfileCell {
 
     func openEmailVerification() {
-        /*let alertForVerification: VerificationAlert  = VerificationAlert.fromNib()
+        let alertForVerification: VerificationAlert  = VerificationAlert.fromNib()
         alertForVerification.initialize(message: "VERIFICATION_EMAIL_TITLE".localized(), data: appSingleton.user.email)
         alertForVerification.show(animated: true)
         alertForVerification.setVerificationFor(type: .Email)
@@ -84,7 +84,7 @@ extension EditProfileCell {
         alertForVerification.onBtnCancelTapped = { [weak alertForVerification,  weak self] in
             guard let self = self else { return } ; print(self)
             alertForVerification?.dismiss()
-        }*/
+        }
     }
     func openMobileVerification() {
         let alertForVerification: VerificationAlert  = VerificationAlert.fromNib()

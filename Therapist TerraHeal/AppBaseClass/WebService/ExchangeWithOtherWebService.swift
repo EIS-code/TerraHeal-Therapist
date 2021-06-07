@@ -13,9 +13,11 @@ class ExchangeWithOtherWebService {
     static let exchangeURL: String = API_URL.ExchangeWithOther
     static let therapistListURL: String = API_URL.GetTherapistList
     struct RequestToTherapistList: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var name: String = ""
     }
     struct RequestToExchangeOffer: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var name: String = ""
     }
 }

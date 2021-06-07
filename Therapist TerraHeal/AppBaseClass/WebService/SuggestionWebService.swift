@@ -18,22 +18,28 @@ class MenuWebService {
     static let suspendCollaborationUrl: String = API_URL.SuspendCollaboration
 
     struct RequestAddSuggestion: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var suggestion: String = ""
     }
     struct RequestAddComplaint: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var complaint: String = ""
     }
     struct RequestQuitCollaboration: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var reason: String = ""
     }
     struct RequestSuspendCollaboration: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var reason: String = ""
     }
     struct RequestAllSuggestionAndComplaints: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var shop_id: String = appSingleton.user.shopId
         var therapist_id: String = appSingleton.user.id
     }
     struct RequestTakeBreak: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var date: String = ""
         var minutes: String = ""
         var break_for: String = "0"

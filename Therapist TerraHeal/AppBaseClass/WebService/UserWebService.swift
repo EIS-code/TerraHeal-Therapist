@@ -13,8 +13,7 @@ class UserWebService {
 
     private var apiService : AppWebApi!
     struct RequestLogout: Codable {
-        var user_id: String = PreferenceHelper.shared.getUserId()
-        // var token: String = PreferenceHelper.shared.getSessionToken()
+        var id: String = PreferenceHelper.shared.getUserId()
     }
     struct RequestLogin: Codable {
         var email: String = ""
@@ -26,6 +25,8 @@ class UserWebService {
         var oauth_provider: String = LoginBy.Manual
     }
     struct RequestProfile: Codable  {
+        var id: String = PreferenceHelper.shared.getUserId()
+        var shop_id: String = appSingleton.user.shopId
         var account_number: String? = nil
         var name: String? = nil
         var surname: String? = nil
@@ -43,12 +44,13 @@ class UserWebService {
         var personal_description: String? = nil
     }
     struct RequestRemoveDocument: Codable  {
+        var id: String = PreferenceHelper.shared.getUserId()
         var document_id: String? = nil
     }
 
     struct RequestUpdateMassage: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var my_massages: [String] = []
-        // var token: String = PreferenceHelper.shared.getSessionToken()
         func toDictionary() -> [String:Any] {
             return ["my_massages[]": self.my_massages]
         }
@@ -142,9 +144,9 @@ extension UserWebService {
             self.hobbies = (dictionary["hobbies"] as? String) ?? ""
             self.id = (dictionary["id"] as? String) ?? ""
             self.isDocumentVerified = (dictionary["is_document_verified"] as? String) ?? ""
-            self.isEmailVerified = (dictionary["is_email_verified"] as? String) ?? ""
+            self.isEmailVerified = "0"//(dictionary["is_email_verified"] as? String) ?? ""
+            self.isMobileVerified = "0"//(dictionary["is_mobile_verified"] as? String) ?? ""
             self.isFreelancer = (dictionary["is_freelancer"] as? String) ?? ""
-            self.isMobileVerified = (dictionary["is_mobile_verified"] as? String) ?? ""
             self.languageSpoken = (dictionary["language_spoken"] as? String) ?? ""
             self.mobileNumber = (dictionary["mobile_number"] as? String) ?? ""
             self.name = (dictionary["name"] as? String) ?? ""

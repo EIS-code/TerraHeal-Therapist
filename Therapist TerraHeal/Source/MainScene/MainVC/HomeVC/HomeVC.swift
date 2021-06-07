@@ -278,7 +278,7 @@ extension HomeVC {
                     self.arrForData.append(data.toBookingModel(filterType: self.selectedSubFilterType))
                     self.arrForOriginalData.append(data)
                 }
-                self.tableView.reloadData()
+                self.tableView?.reloadData()
             }
         }
     }

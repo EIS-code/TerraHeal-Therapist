@@ -183,7 +183,7 @@ extension AvailabilityVC {
         let alert: FreeSpotDialog = FreeSpotDialog.fromNib()
         alert.initialize(title: "DIALOG_FREE_SPOT_TITLE".localized()
             , buttonTitle: "DIALOG_FREE_SPOT_BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
-        alert.show(animated: true)
+        alert.wsGetFreeSlots()
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in
             guard let self = self else {return}; print(self)

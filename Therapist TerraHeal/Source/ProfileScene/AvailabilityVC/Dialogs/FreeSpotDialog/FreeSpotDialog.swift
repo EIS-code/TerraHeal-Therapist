@@ -120,3 +120,18 @@ extension FreeSpotDialog:  UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
 }
+
+//MARK: Web Service Calls
+
+extension FreeSpotDialog {
+    func wsGetFreeSlots() {
+        Loader.showLoading()
+        FreeSlotWebService.getFreeSlots(params: FreeSlotWebService.RequestFreeSlots.init()) { response in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+
+            }
+            self.show(animated: true)
+        }
+    }
+}

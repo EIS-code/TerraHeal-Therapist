@@ -12,6 +12,7 @@ import Foundation
 class MissingDayWebService {
     static let url: String = API_URL.GetMissingDays
     struct RequestSchedule: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var date: String = ""
     }
 }

@@ -39,6 +39,7 @@ class RatingWebService {
     static let getAllRatingUrl: String = API_URL.GetAllRatings
     static let saveRatingUrl: String = API_URL.SaveRating
     struct RequestAddRating: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var user_id: String = appSingleton.currentService.userId
         var punctuality: Double = 0.0
         var behavior: Double = 0.0
@@ -111,7 +112,7 @@ class RatingData {
 //MARK: Web Service Calls
 extension RatingWebService {
     static func getAllRating( completionHandler: @escaping ((RatingWebService.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: RatingWebService.getAllRatingUrl, methodName: AlamofireHelper.GET_METHOD, paramData: [:]) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: RatingWebService.getAllRatingUrl, methodName: AlamofireHelper.POST_METHOD, paramData: RequestCommon.init().dictionary) { (data, dictionary, error) in
             let response = RatingWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }

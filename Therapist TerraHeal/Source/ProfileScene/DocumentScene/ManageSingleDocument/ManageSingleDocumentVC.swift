@@ -87,8 +87,7 @@ class ManageSingleDocumentVC: BaseVC {
     func openConfirmationDialog() {
         
         let alert: CustomAlertConfirmation = CustomAlertConfirmation.fromNib()
-        
-        alert.initialize(title: "Remove Document", message: "Are you you want to delete this document",buttonTitle: "Ok", cancelButtonTitle: "Cancel")
+        alert.initialize(title: "DIALOG_REMOVE_DOCUMENT".localized(), message: "DIALOG_REMOVE_DOCUMENT_MESSAGE".localized(),buttonTitle: "DIALOG_REMOVE_DOCUMENT_BTN_OK", cancelButtonTitle: "DIALOG_REMOVE_DOCUMENT_BTN_CANCEL".localized())
         alert.show(animated: true)
         alert.onBtnCancelTapped = {
             [weak alert, weak self] in

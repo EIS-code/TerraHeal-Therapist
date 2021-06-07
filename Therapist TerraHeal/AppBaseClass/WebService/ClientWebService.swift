@@ -12,6 +12,7 @@ import Foundation
 class ClientWebService {
     static let url: String = API_URL.GetClientList
     struct RequestClientList: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var search_val: String = ""
     }
     class Response: ResponseModel {

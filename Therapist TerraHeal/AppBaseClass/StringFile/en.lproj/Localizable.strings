@@ -91,6 +91,8 @@
 "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_TITLE" = "Health conditions or allergies";
 "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_PLACEHOLDER" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae";
 "DIALOG_HEALTH_CONDITION_OR_ALLERGIES_BTN_SAVE" = "Save";
+"PROFILE_TXT_SEARCH_COUNTRY" = "search country";
+"COUNTRY_PHONE_CODE_TITLE" = "Country Phone Code";
 //MARK: Experience Screen
 "MANAGE_EXPERIENCE_TITLE" = "Personal Experience";
 "MANAGE_EXPERIENCE_EMPTY_TITLE" = "No Personal Experience Added";
@@ -170,7 +172,6 @@
 "GENDER_MALE" = "Male";
 "GENDER_FEMALE" = "Female";
 //MARK: FingerPrint Dialog
-
 "FINGER_PRINT_DIALOG_REGISTER_TITLE" = "register your fingerprint";
 "FINGER_PRINT_DIALOG_VALIDATION" = "please verify your bio-matric authentication";
 "FINGER_PRINT_DIALOG_LOGIN_TITLE" = "login with fingerprint";
@@ -266,6 +267,16 @@
 "DIALOG_REMOVE_DOCUMENT_MESSAGE" = "Are you you want to delete this document";
 "DIALOG_REMOVE_DOCUMENT_BTN_OK" = "Ok";
 "DIALOG_REMOVE_DOCUMENT_BTN_CANCEL" = "Cancel";
+//MARK: Verification Dialog
+
+"VERIFICATION_LBL_TITLE" = "Enter OTP";
+"VERIFICATION_BTN_EMAIL" = "email";
+"VERIFICATION_BTN_MOBILE" = "mobile";
+"VERIFICATION_MOBILE_TITLE" = "Verify Your Mobile Number";
+"VERIFICATION_EMAIL_TITLE" = "Verify Your Email Id";
+"VERIFICATION_MSG_DETAIL" = "Please enter the 4 digit code that is\nsent to ";
+"VERIFICATION_BTN_VERIFY" = "Verify";
+"VERIFICATION_BTN_RESEND" = "resend";
 
 //MARK: -
 //MARK: Common Strings

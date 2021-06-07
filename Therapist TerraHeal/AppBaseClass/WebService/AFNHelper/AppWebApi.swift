@@ -38,6 +38,13 @@ class AppWebApi: NSObject {
             return Domain + Routes.Client  + "/signin/forgot"
         }
 
+        static var FreeSlot: String {
+            return Domain + "/shops/freeSlots/get"
+        }
+        static var AddFreeSlot: String {
+            return Domain + Routes.Client  + "/my/availability/add/free/spots"
+        }
+
         static var SuggestionAndComplaints: String {
             return Domain + Routes.Client  + "/complaintsSuggestion"
         }
@@ -180,6 +187,18 @@ class AppWebApi: NSObject {
         static var MatchQR: String {
             return  Domain + "/user"  + "/match/qr"
         }
+        static var VerifyEmail: String {
+            return Domain + Routes.Client + "/verify/email"
+        }
+        static var VerifyPhone: String {
+            return Domain + Routes.Client + "/verify/mobile"
+        }
+        static var VerifyEmailOTP: String {
+            return Domain + Routes.Client + "/compare/otp/email"
+        }
+        static var VerifyPhoneOTP: String {
+            return Domain + Routes.Client + "/compare/otp/mobile"
+        }
 
         //MARK: Exception
         static var CheckExeption: String {
@@ -216,7 +235,7 @@ extension AppWebApi {
     }
 
     class func  getUserDetail(completionHandler: @escaping ((UserWebService.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetUserDetail, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetUserDetail, methodName: AlamofireHelper.POST_METHOD, paramData:["id":PreferenceHelper.shared.getUserId()]) { (data, dictionary, error) in
             let response = UserWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }
@@ -233,7 +252,7 @@ extension AppWebApi {
 
 
     class func getNews(completionHandler: @escaping ((NewsWebService.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetNews, methodName: AlamofireHelper.GET_METHOD, paramData:[:]) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetNews, methodName: AlamofireHelper.GET_METHOD, paramData:RequestCommon.init().dictionary) { (data, dictionary, error) in
             let response = NewsWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }

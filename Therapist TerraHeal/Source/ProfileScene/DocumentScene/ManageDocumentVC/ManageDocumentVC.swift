@@ -182,7 +182,6 @@ extension ManageDocumentVC: UITableViewDelegate,UITableViewDataSource, UIScrollV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //self.openNewAddressDialog(index: indexPath.row)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -208,7 +207,6 @@ extension ManageDocumentVC: CropViewControllerDelegate {
     }
 
     func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation) {
-        //self.uploadFileDetail?.image = cropped
         do {
             try cropped.compressImage(100, completion: { (image, compressRatio) in
                 print(image.size)

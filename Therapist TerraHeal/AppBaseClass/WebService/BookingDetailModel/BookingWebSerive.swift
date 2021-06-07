@@ -26,7 +26,7 @@ class BookingWebSerive {
     static let matchQRCode: String = API_URL.MatchQR
 
     struct RequestBookingList: Codable {
-        var therapist_id: String = "3"// PreferenceHelper.shared.getUserId()
+        var id: String = PreferenceHelper.shared.getUserId()
         var massage_date: String = Date().millisecondsSince1970.toString()
         var client_name: String = ""
         var massage_id: String = ""
@@ -37,23 +37,27 @@ class BookingWebSerive {
     }
 
     struct RequestBookingDetail: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var booking_info_id: String = ""
     }
 
     struct RequestStartService: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var booking_massage_id: String = ""
         var start_time: String = ""
     }
 
     struct RequestEndService: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var booking_massage_id: String = ""
         var end_time: String = ""
     }
 
     struct RequestBookingDetailWithDate: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var booking_date: String = ""
     }
-
+    
 
 
 }

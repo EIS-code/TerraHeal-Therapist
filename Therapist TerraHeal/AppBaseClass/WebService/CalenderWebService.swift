@@ -13,9 +13,11 @@ class CalenderWebService {
     static let url: String = API_URL.GetCalender
     static let bookingDetailUrl: String = API_URL.GetCalenderDetails
     struct RequestGetCalender: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var date: String = ""
     }
     struct RequestGetCalenderBookingDetail: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var booking_date: String = ""
     }
 }

@@ -8,6 +8,12 @@
 
 import Foundation
 
+struct RequestCommon: Codable {
+    var id: String = PreferenceHelper.shared.getUserId()
+    var shop_id: String = appSingleton.user.shopId
+
+}
+
 class ResponseModel: NSObject {
 
     var success: String!

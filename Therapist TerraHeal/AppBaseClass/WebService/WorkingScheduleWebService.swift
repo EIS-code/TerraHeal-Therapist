@@ -12,6 +12,7 @@ import Foundation
 class WorkingScheduleWebService {
     static let url: String = API_URL.GetWorkingSchedule
     struct RequestSchedule: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var date: String = ""
     }
 }

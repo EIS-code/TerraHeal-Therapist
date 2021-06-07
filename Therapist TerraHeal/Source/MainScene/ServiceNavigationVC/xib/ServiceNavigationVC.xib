@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,15 +33,15 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                     <color key="backgroundColor" name="theme_primary_border"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-YA-ha4" customClass="FilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
-                    <rect key="frame" x="20" y="114" width="89" height="38"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-YA-ha4" customClass="FilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                    <rect key="frame" x="20" y="114" width="88" height="38"/>
                     <color key="backgroundColor" name="theme_primary"/>
                     <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                     <state key="normal" title="2.9 Km">
                         <color key="titleColor" name="theme_light_text_color"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHi-gD-f1Z" userLabel="btnBack" customClass="BackButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHi-gD-f1Z" userLabel="btnBack" customClass="BackButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="20" y="64" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ZHi-gD-f1Z" secondAttribute="height" multiplier="1:1" id="unm-sn-dTn"/>
@@ -64,7 +64,7 @@
                         <action selector="btnCurrentLocationTapped:" destination="-1" eventType="touchUpInside" id="E9z-6N-gp3"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-OS-aMX" userLabel="BtnCheckService" customClass="FilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-OS-aMX" userLabel="BtnCheckService" customClass="FilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="116.66666666666669" y="718" width="142" height="40"/>
                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
@@ -76,6 +76,7 @@
                     </connections>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ZHi-gD-f1Z" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" constant="20" id="4CR-2J-WUp"/>
@@ -91,7 +92,6 @@
                 <constraint firstItem="4bD-XR-1BI" firstAttribute="top" secondItem="ZHi-gD-f1Z" secondAttribute="bottom" constant="20" id="qQo-O6-7AZ"/>
                 <constraint firstAttribute="bottom" secondItem="0ux-6h-A7d" secondAttribute="bottom" id="sRi-2g-R09"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>
             <point key="canvasLocation" x="131" y="154"/>
         </view>
     </objects>

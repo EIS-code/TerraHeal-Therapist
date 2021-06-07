@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GRANDDUKE.ttf">
+            <string>GRANDDUKERegular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkingScheduleVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <connections>
@@ -28,7 +33,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-f3-Mwd">
-                    <rect key="frame" x="16" y="416" width="343" height="362"/>
+                    <rect key="frame" x="16" y="416" width="343" height="293"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZU-Kq-BaI" customClass="FSCalendar">
@@ -82,6 +87,30 @@
                         <action selector="btnPreviousTapped:" destination="-1" eventType="touchUpInside" id="o2I-lk-ayf"/>
                     </connections>
                 </button>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="U39-oH-2Ac" userLabel="Stack View - button">
+                    <rect key="frame" x="16" y="709" width="330" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZH-Mq-Y3M" customClass="RoundedBorderButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="161" height="40"/>
+                            <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                            <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                            <state key="normal" title="Exchange">
+                                <color key="titleColor" name="theme_primary"/>
+                            </state>
+                            <connections>
+                                <action selector="btnExchangeTapped:" destination="-1" eventType="touchUpInside" id="sRh-YS-OMM"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMC-vb-pvX" customClass="FilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
+                            <rect key="frame" x="169" y="0.0" width="161" height="40"/>
+                            <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
+                            <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" name="theme_primary"/>
+                            </state>
+                        </button>
+                    </subviews>
+                </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwf-M0-SgY" userLabel="navigationView" customClass="ThemeView" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="44" width="375" height="74"/>
                     <subviews>
@@ -138,16 +167,19 @@
                 </constraint>
                 <constraint firstItem="cwf-M0-SgY" firstAttribute="top" secondItem="VLJ-uh-dxO" secondAttribute="top" id="6oP-kv-Jg6"/>
                 <constraint firstItem="qZU-Kq-BaI" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="8kF-XU-LSd"/>
+                <constraint firstItem="U39-oH-2Ac" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="C35-WD-aml"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="16" id="FOw-Mx-kMa"/>
                 <constraint firstItem="jig-WF-UXj" firstAttribute="trailing" secondItem="qZU-Kq-BaI" secondAttribute="trailing" id="IJP-3v-7jD"/>
                 <constraint firstItem="cwf-M0-SgY" firstAttribute="width" secondItem="VLJ-uh-dxO" secondAttribute="width" id="KFc-mA-vCp"/>
                 <constraint firstItem="qZU-Kq-BaI" firstAttribute="top" secondItem="cwf-M0-SgY" secondAttribute="bottom" constant="32" id="Kl8-pV-Q70"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="trailing" secondItem="U39-oH-2Ac" secondAttribute="trailing" constant="29" id="MNo-gu-AW1"/>
                 <constraint firstItem="aVT-f3-Mwd" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="RPA-It-i75"/>
                 <constraint firstItem="cwf-M0-SgY" firstAttribute="centerX" secondItem="VLJ-uh-dxO" secondAttribute="centerX" id="h5q-Eh-GVh"/>
                 <constraint firstItem="jig-WF-UXj" firstAttribute="top" secondItem="qZU-Kq-BaI" secondAttribute="top" id="n8h-ip-VYw"/>
                 <constraint firstItem="RWD-Wz-7iT" firstAttribute="top" secondItem="qZU-Kq-BaI" secondAttribute="top" id="nbh-JV-T3Z"/>
+                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="U39-oH-2Ac" secondAttribute="bottom" constant="29" id="oFf-8k-dHD"/>
                 <constraint firstItem="RWD-Wz-7iT" firstAttribute="leading" secondItem="qZU-Kq-BaI" secondAttribute="leading" id="uFF-Z4-4ug"/>
-                <constraint firstItem="VLJ-uh-dxO" firstAttribute="bottom" secondItem="aVT-f3-Mwd" secondAttribute="bottom" id="xL1-kH-6pc"/>
+                <constraint firstItem="aVT-f3-Mwd" firstAttribute="bottom" secondItem="U39-oH-2Ac" secondAttribute="top" id="xL1-kH-6pc"/>
                 <constraint firstItem="RWD-Wz-7iT" firstAttribute="width" secondItem="jig-WF-UXj" secondAttribute="width" id="ycZ-Ds-TdS"/>
                 <constraint firstItem="qZU-Kq-BaI" firstAttribute="leading" secondItem="VLJ-uh-dxO" secondAttribute="leading" constant="32" id="zth-DQ-5vb" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>

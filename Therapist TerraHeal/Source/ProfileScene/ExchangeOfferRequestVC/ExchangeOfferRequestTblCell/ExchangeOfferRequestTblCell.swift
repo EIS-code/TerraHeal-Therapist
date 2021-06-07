@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TherapistExpandedShiftTableCell: TableCell {
+class ExchangeOfferRequestTblCell: TableCell {
 
     @IBOutlet weak var imgCell: UIImageView!
     @IBOutlet weak var lblName: ThemeLabel!

@@ -3,19 +3,19 @@ import Foundation
 extension BookingWebSerive {
 
     class func myBookingPendingList(completionHandler: @escaping ((BookingWebSerive.ResponseMyBookingList) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: Self.bookingListPendingURL, methodName: AlamofireHelper.POST_METHOD, paramData: [:]) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: Self.bookingListPendingURL, methodName: AlamofireHelper.POST_METHOD, paramData: RequestCommon.init().dictionary) { (data, dictionary, error) in
             let response = BookingWebSerive.ResponseMyBookingList.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
     class func myBookingUpcomingList(completionHandler: @escaping ((BookingWebSerive.ResponseMyBookingList) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: Self.bookingListUpcomingURL, methodName: AlamofireHelper.POST_METHOD, paramData: [:]) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: Self.bookingListUpcomingURL, methodName: AlamofireHelper.POST_METHOD, paramData: RequestCommon.init().dictionary) { (data, dictionary, error) in
             let response = BookingWebSerive.ResponseMyBookingList.init(fromDictionary: dictionary)
             completionHandler(response)
         }
     }
     class func myBookingPastList(completionHandler: @escaping ((BookingWebSerive.ResponseMyBookingList) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: Self.bookingListPastURL, methodName: AlamofireHelper.POST_METHOD, paramData: [:]) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: Self.bookingListPastURL, methodName: AlamofireHelper.POST_METHOD, paramData: RequestCommon.init().dictionary) { (data, dictionary, error) in
             let response = BookingWebSerive.ResponseMyBookingList.init(fromDictionary: dictionary)
             completionHandler(response)
         }
@@ -28,7 +28,7 @@ extension BookingWebSerive {
     }
 
     class func numberOfBookingList(completionHandler: @escaping ((BookingWebSerive.ResponseMyBookingList) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: Self.allBookingListURL, methodName: AlamofireHelper.POST_METHOD, paramData: [:]) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: Self.allBookingListURL, methodName: AlamofireHelper.POST_METHOD, paramData: RequestCommon.init().dictionary) { (data, dictionary, error) in
             let response = BookingWebSerive.ResponseMyBookingList.init(fromDictionary: dictionary)
             completionHandler(response)
         }

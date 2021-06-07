@@ -12,6 +12,7 @@ import Foundation
 class CityWebService {
     static let url: String = API_URL.GetCityList
     struct RequestCityList: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var country_id: String = ""
     }
     class Response: ResponseModel {

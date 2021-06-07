@@ -11,7 +11,7 @@ import Foundation
 class AvailabilityWebService {
     static let getAvailibilityUrl: String = API_URL.GetAvailability
     struct RequestGetAvailability: Codable {
-        var user_id: String = PreferenceHelper.shared.getUserId()
+        var id: String = PreferenceHelper.shared.getUserId()
         var date: String = "1617084784777"
     }
 

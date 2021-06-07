@@ -12,6 +12,7 @@ import Foundation
 class AbsentDayWebService {
     static let url: String = API_URL.Absent
     struct RequestToAbsent: Codable {
+        var id: String = PreferenceHelper.shared.getUserId()
         var date: String = ""
         var absent_reason: String = ""
     }

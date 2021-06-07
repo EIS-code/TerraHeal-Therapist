@@ -94,10 +94,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="btnSelectTherapist" destination="B7H-yZ-4in" id="Fgt-ix-mBv"/>
+                <outlet property="btnSelect" destination="B7H-yZ-4in" id="cin-Pf-h6H"/>
                 <outlet property="hTblView" destination="FoV-Qp-b41" id="4uR-Z4-PCx"/>
                 <outlet property="imgCell" destination="ht2-rh-lzd" id="PSg-b1-obV"/>
-                <outlet property="lblTherapistName" destination="30G-Mb-3dc" id="WRX-qv-CQY"/>
+                <outlet property="lblName" destination="30G-Mb-3dc" id="lDW-n7-abR"/>
                 <outlet property="tblForAvailability" destination="GHw-fE-6MH" id="PHu-86-fms"/>
                 <outlet property="vwCellBg" destination="fTr-D4-KiU" id="ie6-ew-Ecd"/>
             </connections>

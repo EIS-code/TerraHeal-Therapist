@@ -54,7 +54,7 @@ extension AppDelegate {
     
     func loadMainVC(navigaionVC:UINavigationController? = nil) {
         if !PreferenceHelper.shared.getUserId().isEmpty() {
-            /*
+            self.loadMainVC(navigaionVC)
             AppWebApi.getUserDetail { (response) in
                 Loader.hideLoading()
                 if ResponseModel.isSuccess(response: response, withSuccessToast: false, andErrorToast: false) {
@@ -66,8 +66,7 @@ extension AppDelegate {
                 } else {
                     self.loadMainVC(navigaionVC)
                 }
-            }*/
-            self.loadMainVC(navigaionVC)
+            }
         } else {
             self.loadLoginVC()
         }
@@ -101,6 +100,23 @@ extension AppDelegate {
             self.windowConfig(withRootVC: nC)
         }
     }
+
+    func loadExchangeOfferRequestVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: ExchangeOfferRequestVC =  nc.findVCs(ofType: ExchangeOfferRequestVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: ExchangeOfferRequestVC = ExchangeOfferRequestVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: ExchangeOfferRequestVC = ExchangeOfferRequestVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
+
+
 
     func loadSuggestionVC(navigaionVC:UINavigationController? = nil) {
         if let nc = navigaionVC as? NC {
