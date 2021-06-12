@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TherapistCollapseShiftTableCell: TableCell {
+class CollapseShiftTableCell: TableCell {
 
     @IBOutlet weak var imgCell: UIImageView!
     @IBOutlet weak var lblTherapistName: ThemeLabel!
@@ -23,8 +23,9 @@ class TherapistCollapseShiftTableCell: TableCell {
         self.imgCell.setRound()
     }
 
-    func setData(data:AvailabilityCellDetail) {
-        self.lblTherapistName?.setText("Therapist name")
+    func setData(data:ShiftContainerCellDetail) {
+        self.lblTherapistName?.setText(data.name)
+        self.imgCell.downloadedFrom(link: data.image)
         self.btnSelectTherapist.isSelected = false
     }
 
@@ -34,6 +35,7 @@ class TherapistCollapseShiftTableCell: TableCell {
         self.vwCellBg.setRound(withBorderColor: .themePrimary, andCornerRadious: 9.0, borderWidth: 1.0)
 
     }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

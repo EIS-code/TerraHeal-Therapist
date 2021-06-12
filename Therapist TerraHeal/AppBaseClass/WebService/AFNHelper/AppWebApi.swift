@@ -30,180 +30,62 @@ class AppWebApi: NSObject {
         private  static let Domain = Domains.Production
         
         
-        static var UserLogin: String {
-            return Domain + Routes.Client  + "/signin"
-        }
+        static let UserLogin: String = Domain + Routes.Client  + "/signin"
+        static let ForgotPassword: String = Domain + Routes.Client  + "/signin/forgot"
+        static let FreeSlot: String = Domain + "/shops/freeSlots/get"
+        static let AddFreeSlot: String = Domain + Routes.Client  + "/my/availability/add/free/spots"
+        static let SuggestionAndComplaints: String = Domain + Routes.Client  + "/complaintsSuggestion"
+        static let GetSessionTypes: String = Domain + Routes.Client  + "/getSessionTypes"
+        static let UserProfile: String = Domain + Routes.Client + "/profile/update"
+        static let RemoveDocument: String = Domain + Routes.Client + "/profile/document/remove"
+        static let UserLogout: String = Domain + Routes.Client  + "/logout"
+        static let GetUserDetail: String = Domain + Routes.Client + "/profile/get"
+        static let GetCountryList: String = Domain + Routes.Client + "/getCountries"
+        static let GetCityList: String = Domain + Routes.Client + "/getCities"
+        static let GetLanguageList: String = Domain + Routes.Client + "/getLanguages"
+        static let GetClientList: String = Domain + Routes.Client + "/searchClients"
+        static let BookingListPast: String = Domain + Routes.Client + "/booking/list/pasts"
+        static let BookingListPending: String = Domain + Routes.Client + "/booking/list/pending"
+        static let BookingListUpcoming: String = Domain + Routes.Client + "/booking/list/upcoming"
+        static let TodayBookingList: String = Domain + Routes.Client + "/booking/list/today"
+        static let PastBookingList: String = Domain + Routes.Client + "/booking/list/past"
+        static let FutureBookingList: String = Domain + Routes.Client + "/booking/list/future"
+        static let BookingDetail: String = Domain + Routes.Client + "/booking"
+        static let NumberOfBooking: String = Domain + Routes.Client + "/booking/all"
+        static let GetCalender: String = Domain + Routes.Client + "/calender/get"
+        static let GetCalenderDetails: String = Domain + Routes.Client + "/calender/booking/details"
+        static let GetNews: String = Domain + "/news/get"
+        static let ReadNews: String = Domain + "/news/read"
+        static let GetWorkingSchedule: String = Domain + Routes.Client  + "/my/working/schedule"
+        static let GetAllSuggestion: String = Domain + Routes.Client  + "/signin/forgot"
+        static let AddSuggestion: String = Domain + Routes.Client  + "/suggestion"
+        static let GetAllComplaints: String = Domain + Routes.Client  + "/signin/forgot"
+        static let GetAllRatings: String = Domain + Routes.Client  + "/my/ratings"
+        static let SaveRating: String = Domain + Routes.Client  + "/rating/user/save"
+        static let AddComplaints: String = Domain + Routes.Client  + "/complaint"
+        static let StartService: String = Domain + Routes.Client  + "/booking/massage/start"
+        static let FinishService: String = Domain + Routes.Client  + "/booking/massage/end"
+        static let TakeBreak: String = Domain + Routes.Client  + "/my/break"
+        static let QuitCollaboration: String = Domain + Routes.Client  + "/my/collaboration/quit"
+        static let GetMissingDays: String = Domain + Routes.Client  + "/my/missing/days"
+        static let Absent: String = Domain + Routes.Client  + "/my/availability/absent/store"
+        static let ExchangeWithOther: String = Domain + Routes.Client  + "/my/exchange"
+        static let GetTherapistList: String = Domain + Routes.Client  + "/get"
+        static let GetServiceList: String = Domain + Routes.Client  + "/service"
+        static let GetAvailability: String = Domain + Routes.Client  + "/my/availability/get"
+        static let SuspendCollaboration: String = Domain + Routes.Client  + "/my/collaboration/suspend"
+        static let MatchQR: String = Domain + "/user"  + "/match/qr"
+        static let VerifyEmail: String = Domain + Routes.Client + "/verify/email"
+        static let VerifyPhone: String = Domain + Routes.Client + "/verify/mobile"
+        static let VerifyEmailOTP: String = Domain + Routes.Client + "/compare/otp/email"
+        static let VerifyPhoneOTP: String = Domain + Routes.Client + "/compare/otp/mobile"
 
-        static var ForgotPassword: String {
-            return Domain + Routes.Client  + "/signin/forgot"
-        }
-
-        static var FreeSlot: String {
-            return Domain + "/shops/freeSlots/get"
-        }
-        static var AddFreeSlot: String {
-            return Domain + Routes.Client  + "/my/availability/add/free/spots"
-        }
-
-        static var SuggestionAndComplaints: String {
-            return Domain + Routes.Client  + "/complaintsSuggestion"
-        }
-        static var GetSessionTypes: String {
-            return Domain + Routes.Client  + "/getSessionTypes"
-        }
-
-        static var UserProfile: String {
-            return Domain + Routes.Client + "/profile/update"
-        }
-
-        static var RemoveDocument: String {
-            return Domain + Routes.Client + "/profile/document/remove"
-        }
-
-        static var UserLogout: String {
-            return Domain + Routes.Client  + "/logout"
-        }
-
-        static var GetUserDetail: String {
-            return  Domain + Routes.Client + "/profile/get"
-        }
-
-        static var GetCountryList: String {
-            return Domain + Routes.Client + "/getCountries"
-        }
-        static var GetCityList: String {
-            return  Domain + Routes.Client + "/getCities"
-        }
-        static var GetLanguageList: String {
-            return  Domain + Routes.Client + "/getLanguages"
-        }
-        static var GetClientList: String {
-            return  Domain + Routes.Client + "/searchClients"
-        }
-
-        //MARK:- Booking Api
-
-        static var BookingListPast: String {
-            return  Domain + Routes.Client + "/booking/list/pasts"
-        }
-        static var BookingListPending: String {
-            return  Domain + Routes.Client + "/booking/list/pending"
-        }
-        static var BookingListUpcoming: String {
-            return  Domain + Routes.Client + "/booking/list/upcoming"
-        }
-
-
-        static var TodayBookingList: String {
-            return  Domain + Routes.Client + "/booking/list/today"
-        }
-        static var PastBookingList: String {
-            return  Domain + Routes.Client + "/booking/list/past"
-        }
-        static var FutureBookingList: String {
-            return  Domain + Routes.Client + "/booking/list/future"
-        }
-        static var BookingDetail: String {
-            return  Domain + Routes.Client + "/booking"
-        }
-        static var NumberOfBooking: String {
-            return  Domain + Routes.Client + "/booking/all"
-        }
-        static var GetCalender: String {
-            return  Domain + Routes.Client + "/calender/get"
-        }
-        static var GetCalenderDetails: String {
-            return  Domain + Routes.Client + "/calender/booking/details"
-        }
-        static var GetNews: String {
-            return  Domain + "/news/get"
-        }
-        static var ReadNews: String {
-            return  Domain + "/news/read"
-        }
-
-        static var GetWorkingSchedule: String {
-            return  Domain + Routes.Client  + "/my/working/schedule"
-        }
-
-        static var GetAllSuggestion: String {
-            return Domain + Routes.Client  + "/signin/forgot"
-        }
-
-        static var AddSuggestion: String {
-            return Domain + Routes.Client  + "/suggestion"
-        }
-
-        static var GetAllComplaints: String {
-            return Domain + Routes.Client  + "/signin/forgot"
-        }
-
-        static var GetAllRatings: String {
-            return Domain + Routes.Client  + "/my/ratings"
-        }
-
-        static var SaveRating: String {
-            return Domain + Routes.Client  + "/rating/user/save"
-        }
-
-        static var AddComplaints: String {
-            return Domain + Routes.Client  + "/complaint"
-        }
-
-        static var StartService: String {
-            return Domain + Routes.Client  + "/booking/massage/start"
-        }
-        static var FinishService: String {
-            return Domain + Routes.Client  + "/booking/massage/end"
-        }
-        static var TakeBreak: String {
-            return Domain + Routes.Client  + "/my/break"
-        }
-        static var QuitCollaboration: String {
-            return Domain + Routes.Client  + "/my/collaboration/quit"
-        }
-        static var GetMissingDays: String {
-            return  Domain + Routes.Client  + "/my/missing/days"
-        }
-        static var Absent: String {
-            return  Domain + Routes.Client  + "/my/availability/absent/store"
-        }
-        static var ExchangeWithOther: String {
-            return  Domain + Routes.Client  + "/my/exchange"
-        }
-        static var GetTherapistList: String {
-            return  Domain + Routes.Client  + "/get"
-        }
-        static var GetServiceList: String {
-            return  Domain + Routes.Client  + "/service"
-        }
-        static var GetAvailability: String {
-            return  Domain + Routes.Client  + "/my/availability/get"
-        }
-        static var SuspendCollaboration: String {
-            return  Domain + Routes.Client  + "/my/collaboration/suspend"
-        }
-
-        static var MatchQR: String {
-            return  Domain + "/user"  + "/match/qr"
-        }
-        static var VerifyEmail: String {
-            return Domain + Routes.Client + "/verify/email"
-        }
-        static var VerifyPhone: String {
-            return Domain + Routes.Client + "/verify/mobile"
-        }
-        static var VerifyEmailOTP: String {
-            return Domain + Routes.Client + "/compare/otp/email"
-        }
-        static var VerifyPhoneOTP: String {
-            return Domain + Routes.Client + "/compare/otp/mobile"
-        }
-
-        //MARK: Exception
-        static var CheckExeption: String {
-            return Domain + Routes.Exception
-        }
+        //Mark: Exchange API
+        static let ExcahngeRequestList = Domain + Routes.Client + "/my/exchange/shifts/list"
+        static let AcceptExcahngeRequest = Domain + Routes.Client + "/my/exchange/shifts/approve"
+        static let RejectExcahngeRequest = Domain + Routes.Client + "/my/exchange/shifts/reject"
+        static let GetAllTherapistShift = Domain + Routes.Client +  "/shifts/get"
+        static let CheckExeption: String = Domain + Routes.Exception
     }
 }
 

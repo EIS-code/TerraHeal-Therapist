@@ -41,7 +41,6 @@
 "DIALOG_VALIDATION_SUSPEND_COLLABORATION_MSG" = "Please enter reason to suspend collaboration";
 
 
-
 //MARK: BOOKING DETAIL SCREEN
 "BOOKING_DETAIL_CLIENT_NAME" = "client name";
 "BOOKING_DETAIL_TYPE_OF_SERVICE" = "type of service";
@@ -218,10 +217,20 @@
 "DOC_TYPE_REFERENCE_LATTER" = "reference letter";
 "DOC_TYPE_PERSONAL_EXPERIENCE" = "personal experience";
 "DOC_TYPE_OTHERS" = "others";
-//MARK: My Availability Screen
+
+"WORKING_SCHEDULE_PLEASE_SELECT_SHIFT" = "Plese select shift to exchange";
+//MARK: Exchange Offer  Screen
 "EXCHANGE_OFFER_TITLE" = "exchange with others";
 "EXCHANGE_OFFER_BTN_SUBMIT" = "Proceed";
-//MARK: Exchange Offer  Screen
+"EXCHANGE_OFFER_REQUEST_TITLE" = "exchange request";
+"EXCHANGE_OFFER_REQUEST_MESSAGE" = "You Received New Exchange Request from ";
+"EXCHANGE_OFFER_REQUEST_BTN_ACCEPT" = "Accept";
+"EXCHANGE_OFFER_REQUEST_BTN_REJECT" = "Reject";
+"YOUR_SHIFT" = "Your Shift - ";
+"EXCHANGE_WITH_SHIFT" = "Exchange With Shift";
+//MARK: My Availability Screen
+"ADD_OBSERVATION_TITLE" = "add observation";
+//MARK: My Availability Screen
 "MY_AVAILABILITY_TITLE" = "my availability";
 "MY_AVAILABILITY_BTN_SUBMIT" = "Proceed";
 "MY_AVAILABILITY_BTN_WEEK" = "this week";

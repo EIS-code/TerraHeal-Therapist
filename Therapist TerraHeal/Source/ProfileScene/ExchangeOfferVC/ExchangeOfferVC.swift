@@ -8,27 +8,12 @@ import UIKit
 
 class ExchangeOfferVC: BaseVC {
 
-    @IBOutlet weak var vwCalendar: FSCalendar!
-    @IBOutlet weak var btnPreviousMonth: ThemeButton!
-    @IBOutlet weak var btnNextMonth: ThemeButton!
-    @IBOutlet weak var lblMonthYear: ThemeLabel!
     @IBOutlet weak var searchVw: UIView!
     @IBOutlet weak var txtSearchBar: ThemeTextField!
-    @IBOutlet weak var tblForAvailability: UITableView!
+    @IBOutlet weak var tblVwForData: UITableView!
     @IBOutlet weak var btnProceed: ThemeButton!
-    var arrForAvailability:[Any] = []
-    var arrForData:[AvailabilityCellDetail] = [
-        AvailabilityCellDetail.init(shiftName: "shift - 1", shiftTime: "10 - 12", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 2", shiftTime: "12 - 14", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 3", shiftTime: "12 - 16", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 4", shiftTime: "16 - 18", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 5", shiftTime: "16 - 20", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 6", shiftTime: "20 - 24", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 7", shiftTime: "00 - 08", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 8", shiftTime: "08 - 04", availabilityStatus: .Available, isSelected: false),
-    ]
-
-    let date = Date().startOfDay
+    var arrForData:[ShiftContainerCellDetail] = []
+    var selectedShiftForExchange: RequestExchangeShift!
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -49,6 +34,7 @@ class ExchangeOfferVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
+        self.wsGetTherapistShiftList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,7 +49,7 @@ class ExchangeOfferVC: BaseVC {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
             self.searchVw.setRound(withBorderColor: .themeDarkText, andCornerRadious: self.searchVw.bounds.height/2.0, borderWidth: 1.0)
-            self.tblForAvailability.reloadData()
+            self.tblVwForData.reloadData()
         }
     }
     
@@ -72,9 +58,9 @@ class ExchangeOfferVC: BaseVC {
         self.setNavigationTitle(title: "EXCHANGE_OFFER_TITLE".localized())
         self.btnProceed.setText("EXCHANGE_OFFER_BTN_SUBMIT".localized())
         self.setupSearchbar(searchBar: txtSearchBar)
-        self.setupAvailabilityView(tableView: self.tblForAvailability)
+        self.setupTableView(tableView: self.tblVwForData)
         DispatchQueue.main.async {
-            self.tblForAvailability.reloadData()
+            self.tblVwForData.reloadData()
         }
     }
 
@@ -83,6 +69,32 @@ class ExchangeOfferVC: BaseVC {
         self.popVC()
     }
 
+    @IBAction func btnSubmitTapped(_ sender: Any) {
+
+        if selectedShiftForExchange.with_shift_id == nil {
+            self.confirmationDialog()
+           // Common.showAlert(message: "WORKING_SCHEDULE_PLEASE_SELECT_SHIFT".localized())
+        } else {
+            self.wsExchangeWithOther()
+        }
+    }
+
+    func confirmationDialog() {
+        let message = "your exchange request with \(self.selectedShiftForExchange!.shop_id) is processing, Please wait for the approval"
+            let alert: CustomInformationDialog = CustomInformationDialog.fromNib()
+            alert.initialize(title: "Exchange Shift!".localized(), data:message, buttonTitle: "BTN_DONE".localized(), cancelButtonTitle: "BTN_CANCEL".localized())
+            alert.show(animated: true)
+            alert.onBtnCancelTapped = {
+                [weak alert, weak self] in
+                guard let self = self else {return} ; print(self)
+                alert?.dismiss()
+            }
+            alert.onBtnDoneTapped = {
+                [weak alert, weak self]  in
+                guard let self = self else {return} ; print(self)
+                alert?.dismiss()
+            }
+    }
 
 }
 
@@ -116,12 +128,26 @@ extension ExchangeOfferVC : UITextFieldDelegate {
 
     func wsExchangeWithOther() {
         Loader.showLoading()
-        ExchangeWithOtherWebService.requestToExchangeOffer(params: ExchangeWithOtherWebService.RequestToExchangeOffer.init()) { (response) in
+        let request: ExchangeWithOtherWebService.RequestToExchangeOffer = ExchangeWithOtherWebService.RequestToExchangeOffer.init(from: self.selectedShiftForExchange)
+        ExchangeWithOtherWebService.requestToExchangeOffer(params: request) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
             }
         }
     }
 
-
+    func wsGetTherapistShiftList() {
+        Loader.showLoading()
+        self.arrForData.removeAll()
+        let request = ExchangeWithOtherWebService.RequestAllTherapistShift.init(date: self.selectedShiftForExchange.date ?? "", shop_id: self.selectedShiftForExchange.shop_id ?? "")
+        ExchangeWithOtherWebService.requestToGetTherapistShiftList(params: request) { response in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                for data in response.data {
+                    self.arrForData.append(ShiftContainerCellDetail.init(data: data))
+                }
+            }
+            self.tblVwForData.reloadData()
+        }
+    }
 }

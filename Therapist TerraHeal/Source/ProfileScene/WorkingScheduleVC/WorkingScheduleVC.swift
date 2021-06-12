@@ -15,16 +15,8 @@ class WorkingScheduleVC: BaseVC {
     let date = Date().startOfDay
     var arrForNotAvailableDays: [Double] = []
     var arrForWorkingDays: [Double] = []
-    var arrForData:[AvailabilityCellDetail] = [
-        AvailabilityCellDetail.init(shiftName: "shift - 1", shiftTime: "10 - 12", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 2", shiftTime: "12 - 14", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 3", shiftTime: "12 - 16", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 4", shiftTime: "16 - 18", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 5", shiftTime: "16 - 20", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 6", shiftTime: "20 - 24", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 7", shiftTime: "00 - 08", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 8", shiftTime: "08 - 04", availabilityStatus: .Available, isSelected: false),
-    ]
+    var arrForData:[ShiftContainerCellDetail] = []
+    var selectedShiftForExchange: RequestExchangeShift? = nil
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -90,7 +82,13 @@ class WorkingScheduleVC: BaseVC {
     }
    
     @IBAction func btnExchangeTapped(_ sender: Any) {
-        Common.appDelegate.loadExchangeOfferVC(navigaionVC: self.navigationController)
+        if self.selectedShiftForExchange != nil {
+            Common.appDelegate.loadExchangeOfferVC(navigaionVC: self.navigationController, shiftData: self.selectedShiftForExchange!)
+        }
+        else {
+            Common.showAlert(message: "WORKING_SCHEDULE_PLEASE_SELECT_SHIFT".localized())
+        }
+
     }
 
 }
@@ -119,4 +117,25 @@ extension WorkingScheduleVC {
         }
     }
 
+    func wsAvailability(date:Double = Date().millisecondsSince1970WithUTC) {
+        Loader.showLoading()
+        AvailabilityWebService.getAvailabilities(params: AvailabilityWebService.RequestGetAvailability.init(id: "2", date: date.toString())) { (response) in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+                for data in response.availabilityList {
+                    self.arrForData.append(ShiftContainerCellDetail.init(data: data))
+                }
+            }
+
+            if !self.arrForData.isEmpty {
+                self.arrForData[0].isSelected = true
+                self.tblVwForData.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                    self.tblVwForData.reloadData {
+                        self.tblVwForData.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+                    }
+                }
+            }
+        }
+    }
 }

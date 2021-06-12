@@ -14,7 +14,13 @@ struct AvailabilityCellDetail {
     var shiftTime:String = ""
     var availabilityStatus: AvailabilityStatus = .Available
     var isSelected: Bool = false
+    init(shift:Shift) {
+        self.shiftName =  "shift - " + shift.shiftId
+        let sDate = Date.init(milliseconds: shift.from.toDouble)
+        let eDate = Date.init(milliseconds: shift.to.toDouble)
+        self.shiftTime = sDate.toString(format: "hh:mm") + " - " + eDate.toString(format: "hh:mm")
 
+    }
 }
 
 class AvailabilityCell: CollectionCell {

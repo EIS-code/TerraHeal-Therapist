@@ -8,6 +8,23 @@
 
 import UIKit
 
+struct ShiftCellDetail {
+    var shiftID:String = ""
+    var shiftName:String = ""
+    var shiftTime:String = ""
+    var isSelected: Bool = false
+    init(shift:Shift) {
+        self.shiftName =  "shift - " + shift.shiftId
+        let sDate = Date.init(milliseconds: shift.from.toDouble)
+        let eDate = Date.init(milliseconds: shift.to.toDouble)
+        self.shiftTime = sDate.toString(format: "hh:mm") + " - " + eDate.toString(format: "hh:mm")
+        self.shiftID = shift.shiftId
+    }
+    mutating func removeSelection() {
+        self.isSelected = false
+    }
+}
+
 class ShiftTableCell: TableCell {
 
     @IBOutlet weak var lblShifName: ThemeLabel!
@@ -23,7 +40,7 @@ class ShiftTableCell: TableCell {
         self.btnSelectShift.setRound(withBorderColor: .clear, andCornerRadious: 5.0, borderWidth: 1.0)
     }
 
-    func setData(data:AvailabilityCellDetail) {
+    func setData(data:ShiftCellDetail) {
         self.lblShifName.setText(data.shiftName)
         self.lblTime.setText(data.shiftTime)
         if data.isSelected {
@@ -31,8 +48,6 @@ class ShiftTableCell: TableCell {
         } else {
             self.btnSelectShift.setImage(nil, for: .normal)
         }
-
-
     }
 
     override func layoutSubviews() {

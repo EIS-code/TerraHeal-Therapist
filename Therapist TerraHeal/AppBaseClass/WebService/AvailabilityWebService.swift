@@ -12,7 +12,7 @@ class AvailabilityWebService {
     static let getAvailibilityUrl: String = API_URL.GetAvailability
     struct RequestGetAvailability: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
-        var date: String = "1617084784777"
+        var date: String = "1620432000000"
     }
 
 }
@@ -20,83 +20,49 @@ class AvailabilityWebService {
 //MARK: Response Models
 extension AvailabilityWebService {
     class Response :  ResponseModel {
-        var availabilityList: [Availability] = []
+        var availabilityData: AvailabilityData = AvailabilityData.init(fromDictionary: [:])
+        var availabilityList: [AvailabilityData] = []
         override init(fromDictionary dictionary: [String:Any]) {
             super.init(fromDictionary: dictionary)
-            availabilityList.removeAll()
             if let dataArray = dictionary["data"] as? [[String:Any]] {
-                for data in dataArray {
-                    availabilityList.append(Availability.init(fromDictionary: data))
-                }
+                availabilityData = AvailabilityData.init(fromDictionary: dataArray.first!)
+                availabilityList.append(availabilityData)
             }
             else if let data = dictionary["data"] as? [String:Any] {
-                availabilityList.append(Availability.init(fromDictionary: data))
+                availabilityData = AvailabilityData.init(fromDictionary: data)
+                availabilityList.append(availabilityData)
             }
         }
     }
 }
 
-class Availability {
-    var breaks : [Break]!
-    var absentReason: String = ""
-    var date: String = ""
-    var endTime: String = ""
-    var id: String = ""
-    var isAbsent: String = ""
-    var isWorking: String = ""
-    var scheduleId: String = ""
-    var startTime: String = ""
-
-
+class AvailabilityData {
+    var featuredImage: String = ""
+    var shiftDate: String = ""
+    var shifts: [Shift] = []
+    var shopId: String = ""
+    var shopName: String = ""
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
-        self.breaks = [Break]()
-        if let breaksArray = dictionary["breaks"] as? [[String:Any]]{
-            for dic in breaksArray{
-                let value = Break(fromDictionary: dic)
-                breaks.append(value)
+        self.featuredImage = (dictionary["featured_image"] as? String) ?? ""
+        self.shiftDate = (dictionary["shift_date"] as? String) ?? ""
+        self.shifts = [Shift]()
+        if let shiftsArray = dictionary["shifts"] as? [[String:Any]]{
+            for dic in shiftsArray{
+                let value = Shift(fromDictionary: dic)
+                shifts.append(value)
             }
         }
-        self.absentReason = (dictionary["absent_reason"] as? String) ?? ""
-        self.date = (dictionary["date"] as? String) ?? ""
-        self.endTime = (dictionary["end_time"] as? String) ?? ""
-        self.id = (dictionary["id"] as? String) ?? ""
-        self.isAbsent = (dictionary["is_absent"] as? String) ?? ""
-        self.isWorking = (dictionary["is_working"] as? String) ?? ""
-        self.scheduleId = (dictionary["schedule_id"] as? String) ?? ""
-        self.startTime = (dictionary["start_time"] as? String) ?? ""
+        self.shopId = (dictionary["shop_id"] as? String) ?? ""
+        self.shopName = (dictionary["shop_name"] as? String) ?? ""
+
     }
 
 }
 
 
-class Break{
-
-    var breakFor: String = ""
-    var breakReason: String = ""
-    var from: String = ""
-    var id: String = ""
-    var scheduleId: String = ""
-    var scheduleTimeId: String = ""
-    var to: String = ""
-
-
-    /**
-     * Instantiate the instance using the passed dictionary values to set the properties values
-     */
-    init(fromDictionary dictionary: [String:Any]){
-        self.breakFor = (dictionary["break_for"] as? String) ?? ""
-        self.breakReason = (dictionary["break_reason"] as? String) ?? ""
-        self.from = (dictionary["from"] as? String) ?? ""
-        self.id = (dictionary["id"] as? String) ?? ""
-        self.scheduleId = (dictionary["schedule_id"] as? String) ?? ""
-        self.scheduleTimeId = (dictionary["schedule_time_id"] as? String) ?? ""
-        self.to = (dictionary["to"] as? String) ?? ""
-    }
-
-}
 //MARK: Web Service Calls
 extension AvailabilityWebService {
     static func getAvailabilities(params:AvailabilityWebService.RequestGetAvailability, completionHandler: @escaping ((AvailabilityWebService.Response) -> Void)) {

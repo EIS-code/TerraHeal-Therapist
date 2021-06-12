@@ -12,7 +12,7 @@ import UIKit
 
 // MARK: - CollectionView Methods
 extension ExchangeOfferVC:  UITableViewDelegate, UITableViewDataSource {
-     func setupAvailabilityView(tableView:  UITableView) {
+     func setupTableView(tableView:  UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
@@ -20,10 +20,10 @@ extension ExchangeOfferVC:  UITableViewDelegate, UITableViewDataSource {
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.register(TherapistCollapseShiftTableCell.nib()
-            , forCellReuseIdentifier: TherapistCollapseShiftTableCell.name)
-        tableView.register(TherapistExpandedShiftTableCell.nib()
-            , forCellReuseIdentifier: TherapistExpandedShiftTableCell.name)
+        tableView.register(CollapseShiftTableCell.nib()
+            , forCellReuseIdentifier: CollapseShiftTableCell.name)
+        tableView.register(ExpandedShiftTableCell.nib()
+            , forCellReuseIdentifier: ExpandedShiftTableCell.name)
         tableView.tableFooterView = UIView()
     }
 
@@ -33,38 +33,41 @@ extension ExchangeOfferVC:  UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let therapistData: AvailabilityCellDetail = self.arrForData[indexPath.row]
-        if therapistData.isSelected {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TherapistExpandedShiftTableCell.name, for: indexPath) as?  TherapistExpandedShiftTableCell
+        let cellData: ShiftContainerCellDetail = self.arrForData[indexPath.row]
+        if cellData.isSelected {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ExpandedShiftTableCell.name, for: indexPath) as?  ExpandedShiftTableCell
             cell?.parentVC = self
-            cell?.setData(data: arrForData[indexPath.row])
+            cell?.delegate = self
+            cell?.setData(data: cellData)
             return cell!
         }
         else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TherapistCollapseShiftTableCell.name, for: indexPath) as?  TherapistCollapseShiftTableCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CollapseShiftTableCell.name, for: indexPath) as?  CollapseShiftTableCell
             cell?.parentVC = self
-            cell?.setData(data: arrForData[indexPath.row])
+            cell?.setData(data: cellData)
             return cell!
         }
 
     }
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        for index in 0..<self.arrForData.count{
-            self.arrForData[index].isSelected = false
-        }
-        self.arrForData[indexPath.row].isSelected = true
-        self.tblForAvailability.reloadData()
+        self.selectShiftData(index: indexPath.row)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            self.tblForAvailability.reloadData {
-                self.tblForAvailability.scrollToRow(at: indexPath, at: .top, animated: true)
+            self.tblVwForData.reloadData {
+                self.tblVwForData.scrollToRow(at: indexPath, at: .top, animated: true)
             }
 
         }
-
     }
 
+    func  selectShiftData(index:Int) {
+        for i in 0..<self.arrForData.count{
+            self.arrForData[i].isSelected = false
+        }
+        self.arrForData[index].isSelected = true
+        self.tblVwForData.reloadData()
+
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if arrForData[indexPath.row].isSelected {
             return UITableView.automaticDimension
@@ -74,5 +77,13 @@ extension ExchangeOfferVC:  UITableViewDelegate, UITableViewDataSource {
 
     }
     
+
+}
+
+extension ExchangeOfferVC: ShiftSelected {
+    func dataChanged(data: ShiftContainerCellDetail) {
+        self.selectedShiftForExchange.exchangeShiftData(data: data)
+    }
+
 
 }

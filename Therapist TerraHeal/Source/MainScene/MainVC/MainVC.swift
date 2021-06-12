@@ -95,7 +95,8 @@ class MainVC: BaseVC, PBRevealViewControllerDelegate {
             case 1:
                 self.homeSelected()
             default:
-                self.newsSelected()
+                //self.newsSelected()
+                Common.appDelegate.loadAddObservationVC(navigaionVC: self.navigationController)
             }
         }
         self.vwFloatingBottom.selectItemAt(index: 1)

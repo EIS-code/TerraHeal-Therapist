@@ -16,7 +16,7 @@
                 <outlet property="btnProceed" destination="crf-ge-1OR" id="kHL-Jx-orq"/>
                 <outlet property="lblTitle" destination="m9m-Nh-gir" id="Xw8-Pf-j1t"/>
                 <outlet property="searchVw" destination="zhT-5j-MVp" id="Uo6-eD-nwz"/>
-                <outlet property="tblForAvailability" destination="2V8-MU-cUc" id="xKF-3a-qht"/>
+                <outlet property="tblVwForData" destination="2V8-MU-cUc" id="SAe-ht-bWO"/>
                 <outlet property="txtSearchBar" destination="RRz-f3-HLb" id="meu-9H-5wR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="vwNavigationBar" destination="cwf-M0-SgY" id="N8o-9g-qEH"/>
@@ -125,6 +125,9 @@
                     <rect key="frame" x="93.666666666666671" y="724" width="187.66666666666663" height="38"/>
                     <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                     <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="btnSubmitTapped:" destination="-1" eventType="touchUpInside" id="mm6-fj-eyd"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VLJ-uh-dxO"/>

@@ -46,13 +46,19 @@
 		030DB5CF252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB5C0252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift */; };
 		030DB5D0252609FB004C7CC8 /* ThemeBottomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DB5C1252609FB004C7CC8 /* ThemeBottomDialog.swift */; };
 		03107D8025D1615800D82B7F /* ForgotWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03107D7F25D1615800D82B7F /* ForgotWebService.swift */; };
+		0319960B2674BF1A00FA4C67 /* CollapseShiftTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031996022674BF1A00FA4C67 /* CollapseShiftTableCell.swift */; };
+		0319960C2674BF1A00FA4C67 /* CollapseShiftTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031996032674BF1A00FA4C67 /* CollapseShiftTableCell.xib */; };
+		0319960D2674BF1A00FA4C67 /* ExpandedShiftTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031996052674BF1A00FA4C67 /* ExpandedShiftTableCell.xib */; };
+		0319960E2674BF1A00FA4C67 /* ExpandedShiftTableCell + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031996062674BF1A00FA4C67 /* ExpandedShiftTableCell + TableView.swift */; };
+		0319960F2674BF1A00FA4C67 /* ExpandedShiftTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031996072674BF1A00FA4C67 /* ExpandedShiftTableCell.swift */; };
+		031996102674BF1A00FA4C67 /* ShiftTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031996092674BF1A00FA4C67 /* ShiftTableCell.swift */; };
+		031996112674BF1A00FA4C67 /* ShiftTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0319960A2674BF1A00FA4C67 /* ShiftTableCell.xib */; };
 		0325EF9B260C9190009FD74C /* MissingDayWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325EF9A260C918F009FD74C /* MissingDayWebService.swift */; };
 		033F5152266E554800EECD8D /* ExchangeOfferRequestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033F514B266E554800EECD8D /* ExchangeOfferRequestVC.xib */; };
 		033F5153266E554800EECD8D /* ExchangeOfferRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F514C266E554800EECD8D /* ExchangeOfferRequestVC.swift */; };
 		033F5154266E554800EECD8D /* ExchangeOfferRequestTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033F514E266E554800EECD8D /* ExchangeOfferRequestTblCell.xib */; };
 		033F5155266E554800EECD8D /* ExchangeOfferRequestTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F514F266E554800EECD8D /* ExchangeOfferRequestTblCell.swift */; };
 		033F5157266E554800EECD8D /* ExchangeOfferRequestVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F5151266E554800EECD8D /* ExchangeOfferRequestVC + TableView.swift */; };
-		033F5159266E59FC00EECD8D /* ExchangeOfferRequestTblCell + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F5158266E59FB00EECD8D /* ExchangeOfferRequestTblCell + TableView.swift */; };
 		03405502252E043000B7077D /* RadioSelectionTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03405500252E043000B7077D /* RadioSelectionTblCell.swift */; };
 		03405503252E043000B7077D /* RadioSelectionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03405501252E043000B7077D /* RadioSelectionTblCell.xib */; };
 		03405505252E04BD00B7077D /* CustomFilterDialog + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03405504252E04BD00B7077D /* CustomFilterDialog + TableView.swift */; };
@@ -148,13 +154,7 @@
 		0352B014255EAE8E002E9D6D /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352B011255EAE8E002E9D6D /* CameraController.swift */; };
 		0352B015255EAE8E002E9D6D /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352B012255EAE8E002E9D6D /* CameraVC.swift */; };
 		0354A1D8264BCED8002923D6 /* ExchangeOfferVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354A1C9264BCED7002923D6 /* ExchangeOfferVC.xib */; };
-		0354A1DB264BCED8002923D6 /* TherapistCollapseShiftTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1CF264BCED7002923D6 /* TherapistCollapseShiftTableCell.swift */; };
-		0354A1DC264BCED8002923D6 /* TherapistCollapseShiftTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354A1D0264BCED7002923D6 /* TherapistCollapseShiftTableCell.xib */; };
-		0354A1DD264BCED8002923D6 /* TherapistExpandedShiftTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354A1D2264BCED7002923D6 /* TherapistExpandedShiftTableCell.xib */; };
-		0354A1DE264BCED8002923D6 /* TherapistShiftTableCell + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1D3264BCED7002923D6 /* TherapistShiftTableCell + TableView.swift */; };
-		0354A1DF264BCED8002923D6 /* TherapistExpandedShiftTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1D4264BCED7002923D6 /* TherapistExpandedShiftTableCell.swift */; };
 		0354A1E0264BCED8002923D6 /* ExchangeOfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1D5264BCED7002923D6 /* ExchangeOfferVC.swift */; };
-		0354A1E4264BDBAB002923D6 /* ExchangeOfferVC + Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1E2264BDBAA002923D6 /* ExchangeOfferVC + Calender.swift */; };
 		0354A1E5264BDBAB002923D6 /* ExchangeOfferVC + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354A1E3264BDBAA002923D6 /* ExchangeOfferVC + TableView.swift */; };
 		0354F26B254947E100F3BEB7 /* BookingListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354F269254947E100F3BEB7 /* BookingListVC.xib */; };
 		0354F26C254947E100F3BEB7 /* BookingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354F26A254947E100F3BEB7 /* BookingListVC.swift */; };
@@ -249,6 +249,8 @@
 		0379EAE4252CA89700303A59 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EADF252CA89700303A59 /* NewsVC.swift */; };
 		0379EAE5252CA89700303A59 /* NewsTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EAE1252CA89700303A59 /* NewsTblCell.xib */; };
 		0379EAE6252CA89700303A59 /* NewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EAE2252CA89700303A59 /* NewsTblCell.swift */; };
+		037CC029267244F000452452 /* AddObserverationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037CC027267244F000452452 /* AddObserverationVC.xib */; };
+		037CC02A267244F000452452 /* AddObserverationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CC028267244F000452452 /* AddObserverationVC.swift */; };
 		037F74332616EBD500CA17AF /* SessionTypeTblSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037F74312616EBD500CA17AF /* SessionTypeTblSection.xib */; };
 		037F74342616EBD500CA17AF /* SessionTypeTblSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037F74322616EBD500CA17AF /* SessionTypeTblSection.swift */; };
 		038581BF25E4C6BC00B20F00 /* WorkingScheduleWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038581BE25E4C6BC00B20F00 /* WorkingScheduleWebService.swift */; };
@@ -354,8 +356,6 @@
 		03B960BF25483AA500F8F214 /* ManageDocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B960B725483AA500F8F214 /* ManageDocumentVC.swift */; };
 		03B960C825483BB000F8F214 /* MyDocumentsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B960C625483BB000F8F214 /* MyDocumentsVC.xib */; };
 		03B960C925483BB000F8F214 /* MyDocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B960C725483BB000F8F214 /* MyDocumentsVC.swift */; };
-		03C004D4264906DB00513ABA /* ShiftTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C004D2264906DA00513ABA /* ShiftTableCell.swift */; };
-		03C004D5264906DB00513ABA /* ShiftTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C004D3264906DA00513ABA /* ShiftTableCell.xib */; };
 		03E1662E25D2BC0E00DA30C0 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E1662A25D2BC0D00DA30C0 /* Loader.swift */; };
 		03E1662F25D2BC0E00DA30C0 /* LoaderDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E1662C25D2BC0D00DA30C0 /* LoaderDialog.swift */; };
 		03E1663025D2BC0E00DA30C0 /* LoaderDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E1662D25D2BC0D00DA30C0 /* LoaderDialog.xib */; };
@@ -424,13 +424,19 @@
 		030DB5C0252609FB004C7CC8 /* ThemeBottomDialog + Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThemeBottomDialog + Animation.swift"; sourceTree = "<group>"; };
 		030DB5C1252609FB004C7CC8 /* ThemeBottomDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBottomDialog.swift; sourceTree = "<group>"; };
 		03107D7F25D1615800D82B7F /* ForgotWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotWebService.swift; sourceTree = "<group>"; };
+		031996022674BF1A00FA4C67 /* CollapseShiftTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapseShiftTableCell.swift; sourceTree = "<group>"; };
+		031996032674BF1A00FA4C67 /* CollapseShiftTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollapseShiftTableCell.xib; sourceTree = "<group>"; };
+		031996052674BF1A00FA4C67 /* ExpandedShiftTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandedShiftTableCell.xib; sourceTree = "<group>"; };
+		031996062674BF1A00FA4C67 /* ExpandedShiftTableCell + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExpandedShiftTableCell + TableView.swift"; sourceTree = "<group>"; };
+		031996072674BF1A00FA4C67 /* ExpandedShiftTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedShiftTableCell.swift; sourceTree = "<group>"; };
+		031996092674BF1A00FA4C67 /* ShiftTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftTableCell.swift; sourceTree = "<group>"; };
+		0319960A2674BF1A00FA4C67 /* ShiftTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShiftTableCell.xib; sourceTree = "<group>"; };
 		0325EF9A260C918F009FD74C /* MissingDayWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissingDayWebService.swift; sourceTree = "<group>"; };
 		033F514B266E554800EECD8D /* ExchangeOfferRequestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeOfferRequestVC.xib; sourceTree = "<group>"; };
 		033F514C266E554800EECD8D /* ExchangeOfferRequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeOfferRequestVC.swift; sourceTree = "<group>"; };
 		033F514E266E554800EECD8D /* ExchangeOfferRequestTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeOfferRequestTblCell.xib; sourceTree = "<group>"; };
 		033F514F266E554800EECD8D /* ExchangeOfferRequestTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeOfferRequestTblCell.swift; sourceTree = "<group>"; };
 		033F5151266E554800EECD8D /* ExchangeOfferRequestVC + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExchangeOfferRequestVC + TableView.swift"; sourceTree = "<group>"; };
-		033F5158266E59FB00EECD8D /* ExchangeOfferRequestTblCell + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExchangeOfferRequestTblCell + TableView.swift"; sourceTree = "<group>"; };
 		03405500252E043000B7077D /* RadioSelectionTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioSelectionTblCell.swift; sourceTree = "<group>"; };
 		03405501252E043000B7077D /* RadioSelectionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioSelectionTblCell.xib; sourceTree = "<group>"; };
 		03405504252E04BD00B7077D /* CustomFilterDialog + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFilterDialog + TableView.swift"; sourceTree = "<group>"; };
@@ -526,13 +532,7 @@
 		0352B011255EAE8E002E9D6D /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		0352B012255EAE8E002E9D6D /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		0354A1C9264BCED7002923D6 /* ExchangeOfferVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeOfferVC.xib; sourceTree = "<group>"; };
-		0354A1CF264BCED7002923D6 /* TherapistCollapseShiftTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistCollapseShiftTableCell.swift; sourceTree = "<group>"; };
-		0354A1D0264BCED7002923D6 /* TherapistCollapseShiftTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TherapistCollapseShiftTableCell.xib; sourceTree = "<group>"; };
-		0354A1D2264BCED7002923D6 /* TherapistExpandedShiftTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TherapistExpandedShiftTableCell.xib; sourceTree = "<group>"; };
-		0354A1D3264BCED7002923D6 /* TherapistShiftTableCell + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TherapistShiftTableCell + TableView.swift"; sourceTree = "<group>"; };
-		0354A1D4264BCED7002923D6 /* TherapistExpandedShiftTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TherapistExpandedShiftTableCell.swift; sourceTree = "<group>"; };
 		0354A1D5264BCED7002923D6 /* ExchangeOfferVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeOfferVC.swift; sourceTree = "<group>"; };
-		0354A1E2264BDBAA002923D6 /* ExchangeOfferVC + Calender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExchangeOfferVC + Calender.swift"; sourceTree = "<group>"; };
 		0354A1E3264BDBAA002923D6 /* ExchangeOfferVC + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExchangeOfferVC + TableView.swift"; sourceTree = "<group>"; };
 		0354F269254947E100F3BEB7 /* BookingListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingListVC.xib; sourceTree = "<group>"; };
 		0354F26A254947E100F3BEB7 /* BookingListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingListVC.swift; sourceTree = "<group>"; };
@@ -643,6 +643,8 @@
 		0379EADF252CA89700303A59 /* NewsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		0379EAE1252CA89700303A59 /* NewsTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTblCell.xib; sourceTree = "<group>"; };
 		0379EAE2252CA89700303A59 /* NewsTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTblCell.swift; sourceTree = "<group>"; };
+		037CC027267244F000452452 /* AddObserverationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddObserverationVC.xib; sourceTree = "<group>"; };
+		037CC028267244F000452452 /* AddObserverationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddObserverationVC.swift; sourceTree = "<group>"; };
 		037F74312616EBD500CA17AF /* SessionTypeTblSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionTypeTblSection.xib; sourceTree = "<group>"; };
 		037F74322616EBD500CA17AF /* SessionTypeTblSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTypeTblSection.swift; sourceTree = "<group>"; };
 		038581BE25E4C6BC00B20F00 /* WorkingScheduleWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkingScheduleWebService.swift; sourceTree = "<group>"; };
@@ -748,8 +750,6 @@
 		03B960B725483AA500F8F214 /* ManageDocumentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDocumentVC.swift; sourceTree = "<group>"; };
 		03B960C625483BB000F8F214 /* MyDocumentsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDocumentsVC.xib; sourceTree = "<group>"; };
 		03B960C725483BB000F8F214 /* MyDocumentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDocumentsVC.swift; sourceTree = "<group>"; };
-		03C004D2264906DA00513ABA /* ShiftTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftTableCell.swift; sourceTree = "<group>"; };
-		03C004D3264906DA00513ABA /* ShiftTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShiftTableCell.xib; sourceTree = "<group>"; };
 		03E1662A25D2BC0D00DA30C0 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		03E1662C25D2BC0D00DA30C0 /* LoaderDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderDialog.swift; sourceTree = "<group>"; };
 		03E1662D25D2BC0D00DA30C0 /* LoaderDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoaderDialog.xib; sourceTree = "<group>"; };
@@ -923,6 +923,44 @@
 			path = BottomDialog;
 			sourceTree = "<group>";
 		};
+		031996002674BF1A00FA4C67 /* ShiftCell */ = {
+			isa = PBXGroup;
+			children = (
+				031996012674BF1A00FA4C67 /* CollapseShiftTableCell */,
+				031996042674BF1A00FA4C67 /* ExpandedShiftTableCell */,
+				031996082674BF1A00FA4C67 /* ShiftTableCell */,
+			);
+			path = ShiftCell;
+			sourceTree = "<group>";
+		};
+		031996012674BF1A00FA4C67 /* CollapseShiftTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				031996022674BF1A00FA4C67 /* CollapseShiftTableCell.swift */,
+				031996032674BF1A00FA4C67 /* CollapseShiftTableCell.xib */,
+			);
+			path = CollapseShiftTableCell;
+			sourceTree = "<group>";
+		};
+		031996042674BF1A00FA4C67 /* ExpandedShiftTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				031996052674BF1A00FA4C67 /* ExpandedShiftTableCell.xib */,
+				031996062674BF1A00FA4C67 /* ExpandedShiftTableCell + TableView.swift */,
+				031996072674BF1A00FA4C67 /* ExpandedShiftTableCell.swift */,
+			);
+			path = ExpandedShiftTableCell;
+			sourceTree = "<group>";
+		};
+		031996082674BF1A00FA4C67 /* ShiftTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				031996092674BF1A00FA4C67 /* ShiftTableCell.swift */,
+				0319960A2674BF1A00FA4C67 /* ShiftTableCell.xib */,
+			);
+			path = ShiftTableCell;
+			sourceTree = "<group>";
+		};
 		033F5149266E554800EECD8D /* ExchangeOfferRequestVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -946,7 +984,6 @@
 			isa = PBXGroup;
 			children = (
 				033F514E266E554800EECD8D /* ExchangeOfferRequestTblCell.xib */,
-				033F5158266E59FB00EECD8D /* ExchangeOfferRequestTblCell + TableView.swift */,
 				033F514F266E554800EECD8D /* ExchangeOfferRequestTblCell.swift */,
 			);
 			path = ExchangeOfferRequestTblCell;
@@ -1291,7 +1328,6 @@
 		034DB712254BD09100128AA1 /* AvailabilityVC */ = {
 			isa = PBXGroup;
 			children = (
-				03C004D1264906DA00513ABA /* ShiftTableCell */,
 				03EED63E254FE7920010A2CF /* Dialogs */,
 				034DB71C254BEC0200128AA1 /* AvailabilityCell */,
 				034DB713254BD09100128AA1 /* AvailabilityVC.swift */,
@@ -1412,41 +1448,11 @@
 		0354A1C7264BCED7002923D6 /* ExchangeOfferVC */ = {
 			isa = PBXGroup;
 			children = (
-				0354A1CD264BCED7002923D6 /* TherapistShiftCell */,
 				0354A1C9264BCED7002923D6 /* ExchangeOfferVC.xib */,
 				0354A1D5264BCED7002923D6 /* ExchangeOfferVC.swift */,
-				0354A1E2264BDBAA002923D6 /* ExchangeOfferVC + Calender.swift */,
 				0354A1E3264BDBAA002923D6 /* ExchangeOfferVC + TableView.swift */,
 			);
 			path = ExchangeOfferVC;
-			sourceTree = "<group>";
-		};
-		0354A1CD264BCED7002923D6 /* TherapistShiftCell */ = {
-			isa = PBXGroup;
-			children = (
-				0354A1CE264BCED7002923D6 /* TherapistCollapseShiftTableCell */,
-				0354A1D1264BCED7002923D6 /* TherapistExpandedShiftTableCell */,
-			);
-			path = TherapistShiftCell;
-			sourceTree = "<group>";
-		};
-		0354A1CE264BCED7002923D6 /* TherapistCollapseShiftTableCell */ = {
-			isa = PBXGroup;
-			children = (
-				0354A1CF264BCED7002923D6 /* TherapistCollapseShiftTableCell.swift */,
-				0354A1D0264BCED7002923D6 /* TherapistCollapseShiftTableCell.xib */,
-			);
-			path = TherapistCollapseShiftTableCell;
-			sourceTree = "<group>";
-		};
-		0354A1D1264BCED7002923D6 /* TherapistExpandedShiftTableCell */ = {
-			isa = PBXGroup;
-			children = (
-				0354A1D2264BCED7002923D6 /* TherapistExpandedShiftTableCell.xib */,
-				0354A1D3264BCED7002923D6 /* TherapistShiftTableCell + TableView.swift */,
-				0354A1D4264BCED7002923D6 /* TherapistExpandedShiftTableCell.swift */,
-			);
-			path = TherapistExpandedShiftTableCell;
 			sourceTree = "<group>";
 		};
 		0354F267254947E100F3BEB7 /* BookingListVC */ = {
@@ -1556,6 +1562,7 @@
 		035EF5B02526FA3A00C64BD4 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				037CC026267244F000452452 /* AddObserverationVC */,
 				03AE6A0C2535C8D100F7C629 /* ProfileVC */,
 				034CBE112534531300B20A11 /* CalendarGraphVC */,
 				03A2CC402530976B005E3F29 /* MyBooking */,
@@ -1715,6 +1722,7 @@
 		0366DCFB2546D85B002C2CDA /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				031996002674BF1A00FA4C67 /* ShiftCell */,
 				033F5149266E554800EECD8D /* ExchangeOfferRequestVC */,
 				0354A1C7264BCED7002923D6 /* ExchangeOfferVC */,
 				034BB1A2255121AD006B3842 /* MyRateVC */,
@@ -1918,6 +1926,16 @@
 			);
 			path = NewsTblCell;
 			sourceTree = "<group>";
+		};
+		037CC026267244F000452452 /* AddObserverationVC */ = {
+			isa = PBXGroup;
+			children = (
+				037CC027267244F000452452 /* AddObserverationVC.xib */,
+				037CC028267244F000452452 /* AddObserverationVC.swift */,
+			);
+			name = AddObserverationVC;
+			path = "Therapist TerraHeal/Source/ProfileScene/AddObserverationVC";
+			sourceTree = SOURCE_ROOT;
 		};
 		037F74302616EBD500CA17AF /* SessionTypeSection */ = {
 			isa = PBXGroup;
@@ -2504,15 +2522,6 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
-		03C004D1264906DA00513ABA /* ShiftTableCell */ = {
-			isa = PBXGroup;
-			children = (
-				03C004D2264906DA00513ABA /* ShiftTableCell.swift */,
-				03C004D3264906DA00513ABA /* ShiftTableCell.xib */,
-			);
-			path = ShiftTableCell;
-			sourceTree = "<group>";
-		};
 		03E1662925D2BC0D00DA30C0 /* Loader */ = {
 			isa = PBXGroup;
 			children = (
@@ -2786,6 +2795,7 @@
 				63ABC1F1246D650D00360F07 /* Assets.xcassets in Resources */,
 				0354F2742549603700F3BEB7 /* WorkingScheduleVC.xib in Resources */,
 				03F5038D252D937F00AF50A5 /* CustomFilterDialog.xib in Resources */,
+				031996112674BF1A00FA4C67 /* ShiftTableCell.xib in Resources */,
 				034BB1AB255121AD006B3842 /* MyRateTblCell.xib in Resources */,
 				03AE6A162535C8D100F7C629 /* ProfileTblCell.xib in Resources */,
 				0377272D262429B70067C486 /* ManageSingleDocumentVC.xib in Resources */,
@@ -2799,6 +2809,7 @@
 				63415E36246FB5C600F0D7A0 /* Nunito-Bold.ttf in Resources */,
 				0354F2762549603700F3BEB7 /* WorkingScheduleTblCell.xib in Resources */,
 				0366DD232546DB14002C2CDA /* CustomCountryPickerCell.xib in Resources */,
+				0319960D2674BF1A00FA4C67 /* ExpandedShiftTableCell.xib in Resources */,
 				038CAFCE252604AB001ACAD6 /* TimeDialog.xib in Resources */,
 				033F5152266E554800EECD8D /* ExchangeOfferRequestVC.xib in Resources */,
 				0354F27E25496E9100F3BEB7 /* WorkingScheduleTblSection.xib in Resources */,
@@ -2842,20 +2853,18 @@
 				038CAFCC252604AB001ACAD6 /* CustomDatePicker.xib in Resources */,
 				03643F9F254AD92A004F9156 /* MyMassageTblCell.xib in Resources */,
 				0341227D252F3882000BCDAE /* ScanDialog.xib in Resources */,
+				0319960C2674BF1A00FA4C67 /* CollapseShiftTableCell.xib in Resources */,
 				0366DD282546DB14002C2CDA /* CustomCityPickerCell.xib in Resources */,
 				03521F2B252B612E0094829E /* SuggestionTblCell.xib in Resources */,
 				03A2CC6525309E84005E3F29 /* MassageDetailTblCell.xib in Resources */,
 				034BB1B225515C4E006B3842 /* ScanVC.xib in Resources */,
 				03521F29252B612E0094829E /* SuggestionAndComplaintVC.xib in Resources */,
-				0354A1DD264BCED8002923D6 /* TherapistExpandedShiftTableCell.xib in Resources */,
 				038CAFD6252604AB001ACAD6 /* CustomAlertConfirmation.xib in Resources */,
 				03B960A1254804F100F8F214 /* LanguageTableCell.xib in Resources */,
 				03521F11252B58FD0094829E /* NotificationVC.xib in Resources */,
 				038CAFC6252604AB001ACAD6 /* CustomMobileNumberDialog.xib in Resources */,
-				0354A1DC264BCED8002923D6 /* TherapistCollapseShiftTableCell.xib in Resources */,
 				0379EACD252C934A00303A59 /* RateVC.xib in Resources */,
 				0366DD262546DB14002C2CDA /* CustomCityPicker.xib in Resources */,
-				03C004D5264906DB00513ABA /* ShiftTableCell.xib in Resources */,
 				03B960BE25483AA500F8F214 /* ManageDocumentTblCell.xib in Resources */,
 				63415E34246FB5C600F0D7A0 /* Nunito-Regular.ttf in Resources */,
 				03412291252F3AFC000BCDAE /* UIImageCropperVC.xib in Resources */,
@@ -2865,6 +2874,7 @@
 				030D0FD5262945770057E4E9 /* ExperienceDialog.xib in Resources */,
 				0345190924C85EBE00AF7026 /* styleable_map.json in Resources */,
 				03AE6A142535C8D100F7C629 /* ProfileVC.xib in Resources */,
+				037CC029267244F000452452 /* AddObserverationVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2994,6 +3004,7 @@
 				034CBE792534700D00B20A11 /* JZBaseWeekView.swift in Sources */,
 				030DB5CA252609FB004C7CC8 /* PinterestLayout.swift in Sources */,
 				038CB00E2526056E001ACAD6 /* DataType + Extesnion.swift in Sources */,
+				037CC02A267244F000452452 /* AddObserverationVC.swift in Sources */,
 				0352B014255EAE8E002E9D6D /* CameraController.swift in Sources */,
 				03A2CC6825309E84005E3F29 /* MyBookingExpandTblCell + TableViewl.swift in Sources */,
 				034BB1B5255172EA006B3842 /* SquareView.swift in Sources */,
@@ -3022,9 +3033,9 @@
 				038CAFE5252604D8001ACAD6 /* PersonData.xcdatamodeld in Sources */,
 				03521F12252B58FD0094829E /* NotificationTblCell.swift in Sources */,
 				03B960C925483BB000F8F214 /* MyDocumentsVC.swift in Sources */,
-				0354A1E4264BDBAB002923D6 /* ExchangeOfferVC + Calender.swift in Sources */,
 				034CBE2625346C4C00B20A11 /* DefaultWeekView.swift in Sources */,
 				03B960BD25483AA500F8F214 /* ManageDocumentTblCell.swift in Sources */,
+				031996102674BF1A00FA4C67 /* ShiftTableCell.swift in Sources */,
 				03A2CC3625302468005E3F29 /* ServiceNavigationVC + MapView.swift in Sources */,
 				039C43D325D6852B004295F1 /* NewsWebService.swift in Sources */,
 				038CB0112526056E001ACAD6 /* NSLayoutHelper.swift in Sources */,
@@ -3039,7 +3050,6 @@
 				0354A1E0264BCED8002923D6 /* ExchangeOfferVC.swift in Sources */,
 				03643F4C254A7EC4004F9156 /* FSCalendarCollectionView.m in Sources */,
 				03A2CC2625301EF2005E3F29 /* CustomInformationDialog.swift in Sources */,
-				0354A1DB264BCED8002923D6 /* TherapistCollapseShiftTableCell.swift in Sources */,
 				038CAFE3252604D8001ACAD6 /* Person+CoreDataClass.swift in Sources */,
 				03521F2C252B612E0094829E /* SuggestionAndComplaintVC.swift in Sources */,
 				0366DD042546D85B002C2CDA /* EditProfileCell.swift in Sources */,
@@ -3050,6 +3060,7 @@
 				038CB01A2526056E001ACAD6 /* UITextField + Extension.swift in Sources */,
 				034CBE802534700D00B20A11 /* JZColumnHeaderBackground.swift in Sources */,
 				034BB18F25510A04006B3842 /* AddCardVC.swift in Sources */,
+				0319960F2674BF1A00FA4C67 /* ExpandedShiftTableCell.swift in Sources */,
 				63ABC1A6246D650D00360F07 /* AppDelegate.swift in Sources */,
 				03EED64C255026AC0010A2CF /* FreeSpotCltCell.swift in Sources */,
 				03A2CC3D25303CE3005E3F29 /* BookingWebSeriveModels.swift in Sources */,
@@ -3067,7 +3078,6 @@
 				03643F52254A7EC4004F9156 /* FSCalendarCollectionViewLayout.m in Sources */,
 				034CBE722534700D00B20A11 /* JZAllDayEvent.swift in Sources */,
 				0379EAE6252CA89700303A59 /* NewsTblCell.swift in Sources */,
-				0354A1DE264BCED8002923D6 /* TherapistShiftTableCell + TableView.swift in Sources */,
 				030DB5C9252609FB004C7CC8 /* BaseVC.swift in Sources */,
 				034CBE7D2534700D00B20A11 /* JZCornerHeader.swift in Sources */,
 				0366DD0E2546DA79002C2CDA /* OTPFieldView.swift in Sources */,
@@ -3076,6 +3086,7 @@
 				030DB5A225260966004C7CC8 /* CityWebService.swift in Sources */,
 				030DB59A25260966004C7CC8 /* ImageAssets.swift in Sources */,
 				034CBE732534700D00B20A11 /* JZWeekViewHelper.swift in Sources */,
+				0319960E2674BF1A00FA4C67 /* ExpandedShiftTableCell + TableView.swift in Sources */,
 				03643F4E254A7EC4004F9156 /* FSCalendarDelegationFactory.m in Sources */,
 				03521F06252B18A00094829E /* DateDialog.swift in Sources */,
 				034CBE7C2534700D00B20A11 /* JZColumnHeader.swift in Sources */,
@@ -3085,6 +3096,7 @@
 				0366DD2B2546F963002C2CDA /* EditProfile + TextContent.swift in Sources */,
 				03A7FB2825273ACC003A6025 /* MyBookingTblSection.swift in Sources */,
 				0390CA5525E3E803006FDAA9 /* MyBookingCollapseCell.swift in Sources */,
+				0319960B2674BF1A00FA4C67 /* CollapseShiftTableCell.swift in Sources */,
 				03F50388252D8ACE00AF50A5 /* UIControl + SetText + Extension.swift in Sources */,
 				034CBE782534700D00B20A11 /* Extensions.swift in Sources */,
 				038CB0192526056E001ACAD6 /* UIViewController + Extension.swift in Sources */,
@@ -3107,7 +3119,6 @@
 				03412293252F3AFC000BCDAE /* UIImage+FixOrientation.swift in Sources */,
 				030DB5CE252609FB004C7CC8 /* ThemeTableCells.swift in Sources */,
 				03AE6A132535C8D100F7C629 /* ProfileVC.swift in Sources */,
-				033F5159266E59FC00EECD8D /* ExchangeOfferRequestTblCell + TableView.swift in Sources */,
 				03643FA5254AEB47004F9156 /* MassageDetailVC.swift in Sources */,
 				0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */,
 				030DB59625260966004C7CC8 /* Constant.swift in Sources */,
@@ -3130,13 +3141,11 @@
 				03643F56254A7EC4004F9156 /* FSCalendarConstants.m in Sources */,
 				030DB59E25260966004C7CC8 /* AppWebApi.swift in Sources */,
 				030DB59725260966004C7CC8 /* LanguageManager.swift in Sources */,
-				03C004D4264906DB00513ABA /* ShiftTableCell.swift in Sources */,
 				038CAFCB252604AB001ACAD6 /* DateTimeDialog.swift in Sources */,
 				038CB0122526056E001ACAD6 /* String + TypeCasting.swift in Sources */,
 				0379EAE4252CA89700303A59 /* NewsVC.swift in Sources */,
 				0366DD062546D85B002C2CDA /* EditProfileVC.swift in Sources */,
 				03F915C5254854EF00C391AB /* ServiceSelectionDialog.swift in Sources */,
-				0354A1DF264BCED8002923D6 /* TherapistExpandedShiftTableCell.swift in Sources */,
 				034CBE832534700D00B20A11 /* JZAllDayCorner.swift in Sources */,
 				03456BD7252DDADF00013231 /* CustomFilterDialog + DateFilter.swift in Sources */,
 				03A7FB2325273058003A6025 /* HomeVC + TableView.swift in Sources */,

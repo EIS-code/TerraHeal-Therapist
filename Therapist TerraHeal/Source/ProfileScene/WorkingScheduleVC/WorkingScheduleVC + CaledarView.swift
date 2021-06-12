@@ -15,7 +15,7 @@ extension WorkingScheduleVC: FSCalendarDataSource, FSCalendarDelegate, FSCalenda
     func setupCalendarView(calendar: FSCalendar) {
         calendar.delegate = self
         calendar.dataSource = self
-        calendar.allowsSelection = false
+        calendar.allowsSelection = true
         calendar.allowsMultipleSelection = false
         //calendar.appearance.todaySelectionColor = self.selectionColor
         calendar.appearance.todayColor = UIColor.themeSecondary
@@ -60,5 +60,6 @@ extension WorkingScheduleVC: FSCalendarDataSource, FSCalendarDelegate, FSCalenda
     }
     func selectDate(date:Date) {
         self.vwCalendar.select(date)
+        self.wsAvailability(date: date.millisecondsSince1970WithUTC)
     }
 }

@@ -12,46 +12,50 @@ class ExchangeOfferRequestTblCell: TableCell {
 
     @IBOutlet weak var imgCell: UIImageView!
     @IBOutlet weak var lblName: ThemeLabel!
-    @IBOutlet weak var btnSelect: JDRadioButton!
     @IBOutlet weak var vwCellBg: UIView!
-    @IBOutlet weak var tblForAvailability: UITableView!
-    @IBOutlet weak var hTblView: NSLayoutConstraint!
-    var parentDialog: UIView? = nil
-    var arrForData:[AvailabilityCellDetail] = [
-        AvailabilityCellDetail.init(shiftName: "shift - 1", shiftTime: "10 - 12", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 2", shiftTime: "12 - 14", availabilityStatus: .Available, isSelected: true),
-        AvailabilityCellDetail.init(shiftName: "shift - 3", shiftTime: "12 - 16", availabilityStatus: .Available, isSelected: true),
-        AvailabilityCellDetail.init(shiftName: "shift - 4", shiftTime: "16 - 18", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 5", shiftTime: "16 - 20", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 6", shiftTime: "20 - 24", availabilityStatus: .Available, isSelected: true),
-        AvailabilityCellDetail.init(shiftName: "shift - 7", shiftTime: "00 - 08", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 8", shiftTime: "08 - 04", availabilityStatus: .Available, isSelected: true),
-    ]
+    @IBOutlet weak var lblTime: ThemeLabel!
+    @IBOutlet weak var vwMyShift: UIView!
+    @IBOutlet weak var vwExchangeShift: UIView!
+    @IBOutlet weak var lblMyShift: ThemeLabel!
+    @IBOutlet weak var lblMyShiftTime: ThemeLabel!
+    @IBOutlet weak var lblExchangeShift: ThemeLabel!
+    @IBOutlet weak var lblExchangeShiftTime: ThemeLabel!
+    @IBOutlet weak var btnAccept: FilledRoundedButton!
+    @IBOutlet weak var btnReject: FilledRoundedButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lblName?.setFont(name: FontName.Regular, size: FontSize.regular)
-        self.setupAvailabilityView(tableView: self.tblForAvailability)
+        self.lblName?.setFont(name: FontName.SemiBold, size: FontSize.regular)
+        self.lblTime?.setFont(name: FontName.Regular, size: FontSize.small)
+        self.lblMyShift?.setFont(name: FontName.SemiBold, size: FontSize.regular)
+        self.lblMyShiftTime?.setFont(name: FontName.SemiBold, size: FontSize.regular)
+        self.lblExchangeShift?.setFont(name: FontName.SemiBold, size: FontSize.regular)
+        self.lblExchangeShiftTime?.setFont(name: FontName.SemiBold, size: FontSize.regular)
         self.imgCell.setRound()
-        self.btnSelect.innerCircleCircleColor = UIColor.themeSecondary
+        self.btnAccept.setText("EXCHANGE_OFFER_REQUEST_BTN_ACCEPT".localized())
+        self.btnReject.setText("EXCHANGE_OFFER_REQUEST_BTN_REJECT".localized())
+        self.lblName.setText("EXCHANGE_OFFER_REQUEST_MESSAGE".localized())
+        self.btnReject.fillButton(backgroundColor: .rejectColor)
+        self.btnAccept.fillButton(backgroundColor: .acceptColor)
     }
 
-    func setData(data:AvailabilityCellDetail) {
-        self.lblName?.setText("Therapist name")
-        self.btnSelect.isSelected = true
-        self.tblForAvailability.isHidden = false
-        self.tblForAvailability.reloadData(heightToFit: self.hTblView) {
-                //self.tblForAvailability.reloadData()
-                //(self.parentDialog as! ExchangeOfferDialog).tblForAvailability.reloadData()
-        }
-
+    func setData(data:ExchangeShiftData) {
+        self.lblName.setText("EXCHANGE_OFFER_REQUEST_MESSAGE".localized() + data.withShift.therapistName)
+        let strTime = Date.init(milliseconds: data.date.toDouble).toString(format: "hh:mm")
+        self.lblTime?.setText(strTime)
+        self.lblMyShift?.setText("Your Shift - " + data.yourShift.shiftId)
+        self.lblMyShiftTime?.setText(data.yourShift.shiftStartTime + " - " + data.yourShift.shiftEndTime)
+        self.lblExchangeShift?.setText("Exchange With Shift")
+        self.lblExchangeShiftTime?.setText(data.withShift.shiftStartTime + " - " + data.withShift.shiftEndTime)
+        self.imgCell.setRound()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         self.imgCell.setRound()
-        self.vwCellBg.setRound(withBorderColor: .themePrimary, andCornerRadious: 9.0, borderWidth: 1.0)
-        self.tblForAvailability.reloadData()
+        self.vwCellBg.setRound(withBorderColor: .clear, andCornerRadious: 9.0, borderWidth: 1.0)
+        self.vwMyShift.setRound(withBorderColor: .clear, andCornerRadious: 9.0, borderWidth: 1.0)
+        self.vwExchangeShift.setRound(withBorderColor: .clear, andCornerRadious: 9.0, borderWidth: 1.0)
 
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

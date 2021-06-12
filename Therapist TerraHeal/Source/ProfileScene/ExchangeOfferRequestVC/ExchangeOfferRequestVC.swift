@@ -9,7 +9,7 @@ import UIKit
 class ExchangeOfferRequestVC: BaseVC {
 
    @IBOutlet weak var tblVwForData: UITableView!
-    var arrForData:[AvailabilityCellDetail] = [AvailabilityCellDetail.init(),AvailabilityCellDetail.init(),AvailabilityCellDetail.init(),AvailabilityCellDetail.init(),AvailabilityCellDetail.init(),AvailabilityCellDetail.init(),AvailabilityCellDetail.init()]
+    var arrForData:[ExchangeShiftData] = []
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -21,8 +21,7 @@ class ExchangeOfferRequestVC: BaseVC {
         setup()
     }
     private func setup() {
-        
-        
+        self.wsGetExchangeRequestList()
     }
     
     // MARK: View lifecycle
@@ -43,7 +42,7 @@ class ExchangeOfferRequestVC: BaseVC {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.isViewAvailable() {
-
+            self.tblVwForData.reloadData()
         }
     }
 
@@ -53,8 +52,7 @@ class ExchangeOfferRequestVC: BaseVC {
     }
 
     private func initialViewSetup() {
-
-        self.setNavigationTitle(title: "MY_WORKING_SCHEDULE_TITLE".localized())
+        self.setNavigationTitle(title: "EXCHANGE_OFFER_REQUEST_TITLE".localized())
         self.setBackground(color: UIColor.themeLightBackground)
         self.setupTableView(tableView: self.tblVwForData)
     }
@@ -66,21 +64,35 @@ class ExchangeOfferRequestVC: BaseVC {
 
 
 extension ExchangeOfferRequestVC {
-    func wsGetWorkingSchedule(date:String = Date().startOfMonth().millisecondsSince1970.toString()) {
+    func wsGetExchangeRequestList() {
         Loader.showLoading()
-        WorkingScheduleWebService.getWorkignSchedule(params: WorkingScheduleWebService.RequestSchedule.init(date: date)) { (response) in
+        ExchangeWithOtherWebService.requestToGetExchangeOffers { response in
             Loader.hideLoading()
-            for data in response.workingList {
-                if data.isWorking.toBool {
-            //        self.arrForWorkingDays.append(data.date.toDouble)
-                }
-                if data.isAbsent.toBool{
-             //       self.arrForNotAvailableDays.append(data.date.toDouble)
-                }
-
+            self.arrForData.removeAll()
+            for data in response.data {
+                self.arrForData.append(data)
             }
             self.tblVwForData.reloadData()
         }
     }
 
+    func wsAcceptRequest(id:String) {
+        Loader.showLoading()
+        ExchangeWithOtherWebService.requestToAcceptExchangeOffer(params: ExchangeWithOtherWebService.RequestToChangeStatus.init(exchange_shift_id: id)) { response in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+
+            }
+        }
+    }
+
+    func wsRejectRequest(id:String) {
+        Loader.showLoading()
+        ExchangeWithOtherWebService.requestToRejectExchangeOffer(params: ExchangeWithOtherWebService.RequestToChangeStatus.init(exchange_shift_id: id)) { response in
+            Loader.hideLoading()
+            if ResponseModel.isSuccess(response: response) {
+
+            }
+        }
+    }
 }

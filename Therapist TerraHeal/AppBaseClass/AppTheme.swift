@@ -29,6 +29,12 @@ extension UIColor {
 
     static var notAvailableColor: UIColor = UIColor.init(named: "theme_not_available") ?? UIColor.init(hex: "#FD3A58")
 
+    static var acceptColor: UIColor = UIColor.init(named: "theme_booking_type_1") ?? UIColor.init(hex: "#FD3A58")
+
+    static var rejectColor: UIColor = UIColor.init(named: "theme_booking_type_2") ?? UIColor.init(hex: "#FD3A58")
+
+
+
     //Shadow Colors
 
     static var themeShadowColor: UIColor = UIColor.init(named: "theme_shadow")!

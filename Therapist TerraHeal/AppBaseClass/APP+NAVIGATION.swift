@@ -72,16 +72,19 @@ extension AppDelegate {
         }
         
     }
-    func loadExchangeOfferVC(navigaionVC:UINavigationController? = nil) {
+    func loadExchangeOfferVC(navigaionVC:UINavigationController? = nil, shiftData: RequestExchangeShift) {
         if let nc = navigaionVC as? NC {
             if let targetVC: ExchangeOfferVC =  nc.findVCs(ofType: ExchangeOfferVC.self).first {
+                targetVC.selectedShiftForExchange = shiftData
                 _ = nc.popToVc(targetVC)
             } else {
                 let targetVC: ExchangeOfferVC = ExchangeOfferVC.fromNib()
+                targetVC.selectedShiftForExchange = shiftData
                 nc.pushVC(targetVC)
             }
         } else {
             let targetVC: ExchangeOfferVC = ExchangeOfferVC.fromNib()
+            targetVC.selectedShiftForExchange = shiftData
             let nC: NC = NC(rootViewController: targetVC)
             self.windowConfig(withRootVC: nC)
         }
@@ -116,6 +119,20 @@ extension AppDelegate {
         }
     }
 
+    func loadAddObservationVC(navigaionVC:UINavigationController? = nil) {
+        if let nc = navigaionVC as? NC {
+            if let targetVC: AddObserverationVC =  nc.findVCs(ofType: AddObserverationVC.self).first {
+                _ = nc.popToVc(targetVC)
+            } else {
+                let targetVC: AddObserverationVC = AddObserverationVC.fromNib()
+                nc.pushVC(targetVC)
+            }
+        } else {
+            let targetVC: AddObserverationVC = AddObserverationVC.fromNib()
+            let nC: NC = NC(rootViewController: targetVC)
+            self.windowConfig(withRootVC: nC)
+        }
+    }
 
 
     func loadSuggestionVC(navigaionVC:UINavigationController? = nil) {

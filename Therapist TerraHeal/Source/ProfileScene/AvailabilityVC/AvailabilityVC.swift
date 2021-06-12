@@ -62,15 +62,8 @@ class AvailabilityVC: BaseVC {
     @IBOutlet weak var tblForAvailability: UITableView!
 
     var arrForAvailability:[Any] = []
-    var arrForData:[AvailabilityCellDetail] = [
-        AvailabilityCellDetail.init(shiftName: "shift - 1", shiftTime: "10 - 12", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 2", shiftTime: "12 - 14", availabilityStatus: .Available, isSelected: true),
-        AvailabilityCellDetail.init(shiftName: "shift - 3", shiftTime: "12 - 16", availabilityStatus: .Available, isSelected: true),
-        AvailabilityCellDetail.init(shiftName: "shift - 4", shiftTime: "16 - 18", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 5", shiftTime: "16 - 20", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 6", shiftTime: "20 - 24", availabilityStatus: .Available, isSelected: true),
-        AvailabilityCellDetail.init(shiftName: "shift - 7", shiftTime: "00 - 08", availabilityStatus: .Available, isSelected: false),
-        AvailabilityCellDetail.init(shiftName: "shift - 8", shiftTime: "08 - 04", availabilityStatus: .Available, isSelected: true),
+    var arrForData:[ShiftCellDetail] = [
+      
     ]
 
     let date = Date().startOfDay
@@ -198,7 +191,7 @@ extension AvailabilityVC {
     }
 
     func openExchangeOfferDialog() {
-        Common.appDelegate.loadExchangeOfferVC(navigaionVC: self.navigationController)
+        //Common.appDelegate.loadExchangeOfferVC(navigaionVC: self.navigationController)
         /*let alert: ExchangeOfferDialog = ExchangeOfferDialog.fromNib()
         alert.initialize(title: AvailabilityOptions.ExchangeWithOthers.name(), buttonTitle: "DIALOG_EXCHANGE_OFFER_BTN_PROCEED".localized(), cancelButtonTitle: "BTN_BACK".localized())
         alert.show(animated: true)
@@ -265,8 +258,12 @@ extension AvailabilityVC {
         AvailabilityWebService.getAvailabilities(params: AvailabilityWebService.RequestGetAvailability.init()) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
-
+                for data in response.availabilityData.shifts {
+                    self.arrForData.append(ShiftCellDetail.init(shift: data))
+                }
             }
+            self.tblForAvailability.reloadData()
+
         }
 
 
