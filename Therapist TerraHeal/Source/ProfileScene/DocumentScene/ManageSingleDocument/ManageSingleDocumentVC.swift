@@ -80,12 +80,12 @@ class ManageSingleDocumentVC: BaseVC {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        self.btnAddPicture.isEnabled = false
+        self.view.tempDisable()
         self.openPhotoPicker()
     }
     
     func openConfirmationDialog() {
-        
+        self.view.tempDisable()
         let alert: CustomAlertConfirmation = CustomAlertConfirmation.fromNib()
         alert.initialize(title: "DIALOG_REMOVE_DOCUMENT".localized(), message: "DIALOG_REMOVE_DOCUMENT_MESSAGE".localized(),buttonTitle: "DIALOG_REMOVE_DOCUMENT_BTN_OK", cancelButtonTitle: "DIALOG_REMOVE_DOCUMENT_BTN_CANCEL".localized())
         alert.show(animated: true)

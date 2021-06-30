@@ -70,7 +70,7 @@ class BookingDetailVC: BaseVC {
     }
 
     func updateViewForBookingType() {
-        if appSingleton.currentService.bookingType == BookingType.MassageCenter.rawValue {
+        if appSingleton.currentService.getBookType() == .MassageCenter {
             btnRoomNumber.isHidden = false
             btnNavigation.isHidden = true
             self.btnStart.setText("BOOKING_DETAILS_BTN_START".localized())
@@ -227,7 +227,7 @@ extension BookingDetailVC {
 
         self.arrForTbl1 = [
             (title: "BOOKING_DETAIL_CLIENT_NAME".localized(), detail: bookingDetail.clientName),
-            (title: "BOOKING_DETAIL_TYPE_OF_SERVICE".localized(), detail: bookingDetail.massageName )
+            (title: "BOOKING_DETAIL_TYPE_OF_SERVICE".localized(), detail: bookingDetail.serviceName )
         ]
         let date = Date.init(milliseconds: bookingDetail.massageDate.toDouble).toString(format: "dd MMM yyyy")
         let startTime = Date.init(milliseconds: bookingDetail.massageStartTime.toDouble).toString(format: "hh:mm a")

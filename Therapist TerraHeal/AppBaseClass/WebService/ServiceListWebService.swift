@@ -42,6 +42,7 @@ class Service {
     var image: String = ""
     var name: String = ""
     var shopId: String = ""
+    var type: ServiceType = .Massages
     var isSelected: Bool = false
 
     init(massage:Massage) {
@@ -51,6 +52,7 @@ class Service {
         self.image = massage.image
         self.name = massage.massageName
         self.shopId = massage.massageId
+        self.type =  .Massages
     }
     init(therapy:Therapy) {
         self.descriptionField = "massage.massageName"
@@ -59,6 +61,7 @@ class Service {
         self.image = therapy.image
         self.name = therapy.therapyName
         self.shopId = therapy.therapyId
+        self.type =  .Therapies
     }
     init(fromDictionary dictionary: [String:Any]){
         self.descriptionField = (dictionary["description"] as? String) ?? ""

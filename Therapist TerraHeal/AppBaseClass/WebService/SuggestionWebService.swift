@@ -19,18 +19,22 @@ class MenuWebService {
 
     struct RequestAddSuggestion: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
+        var shop_id: String = appSingleton.user.shopId
         var suggestion: String = ""
     }
     struct RequestAddComplaint: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
+        var shop_id: String = appSingleton.user.shopId
         var complaint: String = ""
     }
     struct RequestQuitCollaboration: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
+        var shop_id: String = appSingleton.user.shopId
         var reason: String = ""
     }
     struct RequestSuspendCollaboration: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
+        var shop_id: String = appSingleton.user.shopId
         var reason: String = ""
     }
     struct RequestAllSuggestionAndComplaints: Codable {
@@ -40,6 +44,7 @@ class MenuWebService {
     }
     struct RequestTakeBreak: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
+        var shop_id: String = appSingleton.user.shopId
         var date: String = ""
         var minutes: String = ""
         var break_for: String = "0"

@@ -331,6 +331,12 @@ extension UIView {
         self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         self.layer.shadowColor = UIColor.clear.cgColor
     }
+    func tempDisable() {
+        self.isUserInteractionEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+            self.isUserInteractionEnabled = true
+        }
+    }
 }
 //MARK: Dashed UIView
 extension UIView {

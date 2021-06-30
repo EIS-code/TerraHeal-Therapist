@@ -93,9 +93,8 @@ enum Pressure: String {
 
 struct Google {
     static let Key = "AIzaSyBSc9WayQOORGQpEecPbFOnUnBOPiuFeRg"
-
-
 }
+
 struct LoginBy {
     static let Social  = "1"
     static let Manual  = "0"

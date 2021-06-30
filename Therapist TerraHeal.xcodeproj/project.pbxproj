@@ -238,7 +238,6 @@
 		0379EAB9252C4C2800303A59 /* CustomTblSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EAB6252C4C2800303A59 /* CustomTblSelectionDialog.swift */; };
 		0379EABD252C574B00303A59 /* TimeBreakDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EABB252C574B00303A59 /* TimeBreakDialog.swift */; };
 		0379EABE252C574B00303A59 /* TimeBreakDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EABC252C574B00303A59 /* TimeBreakDialog.xib */; };
-		0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EABF252C725B00303A59 /* TimeBreakDialog + CollectionView.swift */; };
 		0379EAC4252C72B800303A59 /* TimeSlotCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EAC2252C72B800303A59 /* TimeSlotCltCell.xib */; };
 		0379EAC5252C72B800303A59 /* TimeSlotCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379EAC3252C72B800303A59 /* TimeSlotCltCell.swift */; };
 		0379EACD252C934A00303A59 /* RateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0379EAC8252C934A00303A59 /* RateVC.xib */; };
@@ -341,6 +340,11 @@
 		03AE6A142535C8D100F7C629 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AE6A0F2535C8D100F7C629 /* ProfileVC.xib */; };
 		03AE6A152535C8D100F7C629 /* ProfileTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE6A112535C8D100F7C629 /* ProfileTblCell.swift */; };
 		03AE6A162535C8D100F7C629 /* ProfileTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03AE6A122535C8D100F7C629 /* ProfileTblCell.xib */; };
+		03B3A15726860C4000810277 /* DatePickerTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B3A15526860C4000810277 /* DatePickerTableCell.xib */; };
+		03B3A15826860C4000810277 /* DatePickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3A15626860C4000810277 /* DatePickerTableCell.swift */; };
+		03B3A15C26860E3500810277 /* ShiftTableSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B3A15A26860E3500810277 /* ShiftTableSection.xib */; };
+		03B3A15D26860E3500810277 /* ShiftTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3A15B26860E3500810277 /* ShiftTableSection.swift */; };
+		03B3A15F268614A300810277 /* TimeBreakDialog + Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3A15E268614A300810277 /* TimeBreakDialog + Tableview.swift */; };
 		03B9608C2547ED5E00F8F214 /* EditProfile + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9608B2547ED5E00F8F214 /* EditProfile + CollectionView.swift */; };
 		03B960A0254804F100F8F214 /* LanguageSelectionDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B9609B254804F100F8F214 /* LanguageSelectionDialog.xib */; };
 		03B960A1254804F100F8F214 /* LanguageTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03B9609D254804F100F8F214 /* LanguageTableCell.xib */; };
@@ -632,7 +636,6 @@
 		0379EAB6252C4C2800303A59 /* CustomTblSelectionDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTblSelectionDialog.swift; sourceTree = "<group>"; };
 		0379EABB252C574B00303A59 /* TimeBreakDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeBreakDialog.swift; sourceTree = "<group>"; };
 		0379EABC252C574B00303A59 /* TimeBreakDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeBreakDialog.xib; sourceTree = "<group>"; };
-		0379EABF252C725B00303A59 /* TimeBreakDialog + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeBreakDialog + CollectionView.swift"; sourceTree = "<group>"; };
 		0379EAC2252C72B800303A59 /* TimeSlotCltCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeSlotCltCell.xib; sourceTree = "<group>"; };
 		0379EAC3252C72B800303A59 /* TimeSlotCltCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSlotCltCell.swift; sourceTree = "<group>"; };
 		0379EAC8252C934A00303A59 /* RateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RateVC.xib; sourceTree = "<group>"; };
@@ -735,6 +738,11 @@
 		03AE6A0F2535C8D100F7C629 /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		03AE6A112535C8D100F7C629 /* ProfileTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTblCell.swift; sourceTree = "<group>"; };
 		03AE6A122535C8D100F7C629 /* ProfileTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTblCell.xib; sourceTree = "<group>"; };
+		03B3A15526860C4000810277 /* DatePickerTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerTableCell.xib; sourceTree = "<group>"; };
+		03B3A15626860C4000810277 /* DatePickerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTableCell.swift; sourceTree = "<group>"; };
+		03B3A15A26860E3500810277 /* ShiftTableSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShiftTableSection.xib; sourceTree = "<group>"; };
+		03B3A15B26860E3500810277 /* ShiftTableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftTableSection.swift; sourceTree = "<group>"; };
+		03B3A15E268614A300810277 /* TimeBreakDialog + Tableview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeBreakDialog + Tableview.swift"; sourceTree = "<group>"; };
 		03B9608B2547ED5E00F8F214 /* EditProfile + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditProfile + CollectionView.swift"; sourceTree = "<group>"; };
 		03B9609B254804F100F8F214 /* LanguageSelectionDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LanguageSelectionDialog.xib; sourceTree = "<group>"; };
 		03B9609D254804F100F8F214 /* LanguageTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LanguageTableCell.xib; sourceTree = "<group>"; };
@@ -926,6 +934,7 @@
 		031996002674BF1A00FA4C67 /* ShiftCell */ = {
 			isa = PBXGroup;
 			children = (
+				03B3A15926860E3500810277 /* ShiftTableSection */,
 				031996012674BF1A00FA4C67 /* CollapseShiftTableCell */,
 				031996042674BF1A00FA4C67 /* ExpandedShiftTableCell */,
 				031996082674BF1A00FA4C67 /* ShiftTableCell */,
@@ -1858,7 +1867,7 @@
 			children = (
 				0379EAC1252C72B800303A59 /* TimeSlotCltCell */,
 				0379EABB252C574B00303A59 /* TimeBreakDialog.swift */,
-				0379EABF252C725B00303A59 /* TimeBreakDialog + CollectionView.swift */,
+				03B3A15E268614A300810277 /* TimeBreakDialog + Tableview.swift */,
 				0379EABC252C574B00303A59 /* TimeBreakDialog.xib */,
 			);
 			path = TimeBreakDialog;
@@ -1974,6 +1983,7 @@
 		038CAF96252604AB001ACAD6 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				03B3A15426860C4000810277 /* DatePickerTableCell */,
 				03B96098254804F100F8F214 /* LanguageDialog */,
 				0366DD1A2546DB14002C2CDA /* CustomCityPicker */,
 				0366DD142546DB13002C2CDA /* CustomCountryPicker */,
@@ -2419,6 +2429,24 @@
 			path = ProfileTblCell;
 			sourceTree = "<group>";
 		};
+		03B3A15426860C4000810277 /* DatePickerTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				03B3A15526860C4000810277 /* DatePickerTableCell.xib */,
+				03B3A15626860C4000810277 /* DatePickerTableCell.swift */,
+			);
+			path = DatePickerTableCell;
+			sourceTree = "<group>";
+		};
+		03B3A15926860E3500810277 /* ShiftTableSection */ = {
+			isa = PBXGroup;
+			children = (
+				03B3A15A26860E3500810277 /* ShiftTableSection.xib */,
+				03B3A15B26860E3500810277 /* ShiftTableSection.swift */,
+			);
+			path = ShiftTableSection;
+			sourceTree = "<group>";
+		};
 		03B96098254804F100F8F214 /* LanguageDialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -2856,8 +2884,10 @@
 				0319960C2674BF1A00FA4C67 /* CollapseShiftTableCell.xib in Resources */,
 				0366DD282546DB14002C2CDA /* CustomCityPickerCell.xib in Resources */,
 				03521F2B252B612E0094829E /* SuggestionTblCell.xib in Resources */,
+				03B3A15C26860E3500810277 /* ShiftTableSection.xib in Resources */,
 				03A2CC6525309E84005E3F29 /* MassageDetailTblCell.xib in Resources */,
 				034BB1B225515C4E006B3842 /* ScanVC.xib in Resources */,
+				03B3A15726860C4000810277 /* DatePickerTableCell.xib in Resources */,
 				03521F29252B612E0094829E /* SuggestionAndComplaintVC.xib in Resources */,
 				038CAFD6252604AB001ACAD6 /* CustomAlertConfirmation.xib in Resources */,
 				03B960A1254804F100F8F214 /* LanguageTableCell.xib in Resources */,
@@ -2982,12 +3012,14 @@
 				035EF5AF2526F3A400C64BD4 /* MenuCellVerticle.swift in Sources */,
 				0341229A252F3AFC000BCDAE /* CameraVC.swift in Sources */,
 				030DB5C4252609FB004C7CC8 /* CheckBoxButton.swift in Sources */,
+				03B3A15826860C4000810277 /* DatePickerTableCell.swift in Sources */,
 				038CB0062526056E001ACAD6 /* EditProfileTextfield.swift in Sources */,
 				03643F95254AD109004F9156 /* MissingDaysVC.swift in Sources */,
 				038CAFC4252604AB001ACAD6 /* CustomCountryPhoneCodePicker.swift in Sources */,
 				0379EABD252C574B00303A59 /* TimeBreakDialog.swift in Sources */,
 				034CBE762534700D00B20A11 /* JZWeekViewColors.swift in Sources */,
 				034CBE2125346C4C00B20A11 /* EventCell.swift in Sources */,
+				03B3A15D26860E3500810277 /* ShiftTableSection.swift in Sources */,
 				03521F2A252B612E0094829E /* SuggestionTblCell.swift in Sources */,
 				03A2CC3525302468005E3F29 /* ServiceNavigationVC.swift in Sources */,
 				03412299252F3AFC000BCDAE /* CameraController.swift in Sources */,
@@ -3120,7 +3152,6 @@
 				030DB5CE252609FB004C7CC8 /* ThemeTableCells.swift in Sources */,
 				03AE6A132535C8D100F7C629 /* ProfileVC.swift in Sources */,
 				03643FA5254AEB47004F9156 /* MassageDetailVC.swift in Sources */,
-				0379EAC0252C725B00303A59 /* TimeBreakDialog + CollectionView.swift in Sources */,
 				030DB59625260966004C7CC8 /* Constant.swift in Sources */,
 				038581BF25E4C6BC00B20F00 /* WorkingScheduleWebService.swift in Sources */,
 				038CAFDB252604AB001ACAD6 /* CustomAlert.swift in Sources */,
@@ -3177,6 +3208,7 @@
 				038CB0162526056E001ACAD6 /* JDSubclasses + UIControl.swift in Sources */,
 				038CAFD7252604AB001ACAD6 /* CustomAlertConfirmation.swift in Sources */,
 				038CAFCD252604AB001ACAD6 /* CustomDatePicker.swift in Sources */,
+				03B3A15F268614A300810277 /* TimeBreakDialog + Tableview.swift in Sources */,
 				03521F16252B58FD0094829E /* NotificationVC.swift in Sources */,
 				038CAFC8252604AB001ACAD6 /* CustomTextViewDialog.swift in Sources */,
 				0366DD212546DB14002C2CDA /* CustomGenderPicker.swift in Sources */,

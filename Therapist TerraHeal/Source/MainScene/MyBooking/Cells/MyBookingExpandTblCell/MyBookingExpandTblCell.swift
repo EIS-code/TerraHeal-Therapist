@@ -107,7 +107,7 @@ class MyBookingExpandTblCell: TableCell {
         people.name = data.clientName
         people.gender = data.clientGender
         let bookingMassage = MyBookingMassage.init(fromDictionary: [:])
-        bookingMassage.name = data.massageName
+        bookingMassage.name = data.serviceName
         bookingMassage.time = data.massageDuration
         people.bookingMassages = [bookingMassage]
         self.arrForData = [people]
@@ -117,7 +117,7 @@ class MyBookingExpandTblCell: TableCell {
         self.lblDelayTime.setText("")
         self.lblBookingDetail.setText("Booking Details")
 
-        self.lblBookingTypeValue.setText(BookingType.init(rawValue: data.bookingType)?.name())
+        self.lblBookingTypeValue.setText(BookingType.init(rawValue: data.bookingTypeValue)?.name())
         self.lblCenterName.setText(data.shopName)
         self.lblCenterAddress.setText(data.shopAddress)
         self.lblBookDateAndTime.setText(bookingDateTime)

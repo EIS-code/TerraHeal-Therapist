@@ -80,6 +80,7 @@ class ManageDocumentVC: BaseVC {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
+        self.view.tempDisable()
         self.btnSubmit.isEnabled = false
         if self.selectedDocType == .PersonalExperience {
             self.openExpriencePicker()

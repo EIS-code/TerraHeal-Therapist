@@ -23,6 +23,7 @@
 "HOME_SECTION_BTN_SELECT_DATE" = "select date";
 "MY_BOOKING_TYPE_AT_MASSAGE_CENTER" = "in massage center";
 "MY_BOOKING_TYPE_AT_HOME_OR_HOTEL" = "home / hotel visit";
+"NEWS_TITLE" = "News";
 //MARK: Menu Screen
 "MENU_TITLE" = "Menu";
 "MENU_QUIT_COLLABORATION" = "quit collaboration";

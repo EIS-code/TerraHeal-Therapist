@@ -224,6 +224,7 @@ class SelectedServices: Codable{
     }
 }
 
+
 class Therapy: Codable {
 
     var id: String = ""
@@ -235,11 +236,13 @@ class Therapy: Codable {
     init(fromDictionary dictionary: [String:Any]){
         self.id = (dictionary["id"] as? String) ?? ""
         self.image = (dictionary["image"] as? String) ?? ""
-        self.therapyId = (dictionary["therapy_id"] as? String) ?? ""
-        self.therapyName = (dictionary["therapy_name"] as? String) ?? ""
+        self.therapyId = (dictionary["service_id"] as? String) ?? ""
+        self.therapyName = (dictionary["name"] as? String) ?? ""
     }
 
 }
+
+
 class Massage: Codable{
 
     var id: String = ""
@@ -251,8 +254,8 @@ class Massage: Codable{
     init(fromDictionary dictionary: [String:Any]){
         self.id = (dictionary["id"] as? String) ?? ""
         self.image = (dictionary["image"] as? String) ?? ""
-        self.massageId = (dictionary["massage_id"] as? String) ?? ""
-        self.massageName = (dictionary["massage_name"] as? String) ?? ""
+        self.massageId = (dictionary["service_id"] as? String) ?? ""
+        self.massageName = (dictionary["name"] as? String) ?? ""
 
     }
 

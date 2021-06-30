@@ -38,6 +38,7 @@ class BookingWebSerive {
 
     struct RequestBookingDetail: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
+        var shop_id: String = appSingleton.user.shopId
         var booking_info_id: String = ""
     }
 

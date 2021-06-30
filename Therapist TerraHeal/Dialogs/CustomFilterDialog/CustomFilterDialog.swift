@@ -135,7 +135,7 @@ class CustomFilterDialog: ThemeBottomDialogView {
 
     @IBAction func btnDoneTapped(_ sender: Any) {
         if selectedTab == .ClientName {
-            self.selectedValue = txtClientSearch.text!
+            //self.selectedValue = txtClientSearch.text!
         }
         if self.selectedValue != nil {
             if self.onBtnDoneTapped != nil {

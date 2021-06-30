@@ -61,6 +61,7 @@ class FilledRoundedButton: ThemeButton {
         self.height(constant: buttonHeight, direction: .horizontal)
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
+        self.setTitleColor(textColor, for: .selected)
     }
     
 }
@@ -155,6 +156,7 @@ class DialogFilledRoundedButton: ThemeButton {
         self.contentEdgeInsets = UIEdgeInsets.init(top: 10, left: 0, bottom: 10, right: 0)
         self.backgroundColor = backgroundColor
         self.setTitleColor(textColor, for: .normal)
+        self.setTitleColor(textColor, for: .selected)
         self.setRound(withBorderColor: borderColor, andCornerRadious: self.frame.height/2.0, borderWidth: 1.0)
     }
 }
