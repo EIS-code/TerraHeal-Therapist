@@ -46,8 +46,19 @@ extension TimeBreakDialog:  UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerTableCell.name, for: indexPath) as?  DatePickerTableCell
+        if self.startTime != 0.0 {
+            let startStrTime = Date.milliSecToDate(milliseconds: startTime - Double((TimeZone.current.secondsFromGMT() * 1000)), format: DateFormat.BookingTimeSelection)
+            cell?.btnStartTime.setText(startStrTime)
+        }
+        if self.endTime != 0.0 {
+            let endStrTime = Date.milliSecToDate(milliseconds: endTime - Double((TimeZone.current.secondsFromGMT() * 1000)), format: DateFormat.BookingTimeSelection)
+            cell?.btnEndTime.setText(endStrTime)
+        }
+        cell?.btnStartTime.addTarget(self, action: #selector(openStartTimePicker), for: .touchUpInside)
+        cell?.btnEndTime.addTarget(self, action: #selector(openEndTimePicker), for: .touchUpInside)
         return cell!
     }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()

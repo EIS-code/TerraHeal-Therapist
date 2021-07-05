@@ -49,7 +49,6 @@ class BookingData {
     var tableFutonQuantity: String = ""
     var therapistId: String = ""
     var therapistName: String = ""
-    var userId: String = ""
     var userName: String = ""
     var userPeopleId: String = ""
 
@@ -80,8 +79,8 @@ class BookingData {
         self.tableFutonQuantity = (dictionary["table_futon_quantity"] as? String) ?? ""
         self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
         self.therapistName = (dictionary["therapist_name"] as? String) ?? ""
-        self.userId = (dictionary["user_id"] as? String) ?? ""
-        self.userName = (dictionary["user_name"] as? String) ?? ""
+        self.sessionName = (dictionary["session_name"] as? String) ?? ""
+        self.userName = (dictionary["user_people_name"] as? String) ?? ""
         self.userPeopleId = (dictionary["user_people_id"] as? String) ?? ""
         if self.bookingType.isEmpty() {
             self.bookingType = (dictionary["booking_type"] as? String) ?? ""
@@ -103,7 +102,7 @@ class BookingData {
         case .Therapies:
             return MyBookingTblDetail.init(id:self.bookingInfoId , title: self.serviceName, bookingType: bookingType!, isSelected: false)
         case .SessionType:
-            return MyBookingTblDetail.init(id:self.bookingInfoId , title: self.sessionId, bookingType: bookingType!, isSelected: false)
+            return MyBookingTblDetail.init(id:self.bookingInfoId , title: self.sessionName, bookingType: bookingType!, isSelected: false)
         }
 
     }

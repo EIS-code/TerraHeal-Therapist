@@ -11,7 +11,9 @@ import Foundation
 //MARK: Request Models
 class UserWebService {
 
-    private var apiService : AppWebApi!
+    private static let loginURL: String = API_URL.UserLogin
+    private static let userDetailURL: String = API_URL.GetUserDetail
+    private static let updateProfielURL: String = API_URL.UserProfile
     struct RequestLogout: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
     }
@@ -277,5 +279,15 @@ class Document: Codable {
     }
     func getDocumentType() -> DocumentType {
         return DocumentType.init(rawValue: self.type) ?? .AddressProof
+    }
+}
+
+
+extension UserWebService {
+    class func callLoginAPI(params:UserWebService.RequestLogin, completionHandler: @escaping ((UserWebService.Response) -> Void)) {
+        AlamofireHelper().getDataFrom(urlString: Self.loginURL, methodName: AlamofireHelper.POST_METHOD, paramData: params.dictionary) { (data, dictionary, error) in
+            let response = UserWebService.Response.init(fromDictionary: dictionary)
+            completionHandler(response)
+        }
     }
 }

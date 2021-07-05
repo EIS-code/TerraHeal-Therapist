@@ -129,12 +129,6 @@ import UIKit
         self.isSecureTextEntry = true
 
     }
-    public func configureTextField(_ configuration: InputTextFieldDetail) {
-            self.inputConfiguration = configuration
-           self.maxLength = self.inputConfiguration.maxLength
-           self.textContentType = self.inputConfiguration.textContentType
-           self.keyboardType = self.inputConfiguration.keyBoardType
-    }
     public func validate() -> (isValid: Bool, message: String) {
            if !self.inputConfiguration.isMadatory {
                return (true,"")
@@ -375,10 +369,75 @@ fileprivate extension ACFloatingTextfield {
         self.floatTheLabel()
     }
    
-    
-   
+
+    func configureTextField(_ configuration: FormItemUIProperties) {
+        self.maxLength = configuration.maxLength
+        self.textContentType = configuration.textContentType
+        self.keyboardType = configuration.keyboardType
+        self.autocorrectionType = configuration.suggesion
+        self.isSecureTextEntry = configuration.secureEntry
+        self.autocapitalizationType = .sentences
+        if isSecureTextEntry {
+            self.autocapitalizationType = .none
+            self.setupPasswordTextFielad()
+
+        } else {
+            if configuration.textContentType == .emailAddress {
+                self.autocapitalizationType = .none
+            }
+            if let strRightImage = configuration.rightImage, strRightImage.isNotEmpty() {
+                if let image: UIImage = UIImage.init(named: strRightImage) {
+                    self.rightButton.setImage(image, for: .normal)
+                 } else {
+                    self.rightButton.setImage(nil, for: .normal)
+                }
+            } else {
+                self.rightButton.setImage(nil, for: .normal)
+            }
+        }
+
+    }
+
+    public func configureTextField(_ configuration: InputTextFieldDetail) {
+            self.inputConfiguration = configuration
+           self.maxLength = self.inputConfiguration.maxLength
+           self.textContentType = self.inputConfiguration.textContentType
+           self.keyboardType = self.inputConfiguration.keyBoardType
+    }
+
 }
 
 
 
 
+class RoundedRectTextField: ThemeTextField {
+    let padding = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.initialze()
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.initialze()
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+
+    func initialze() {
+
+        //self.setShadow(radius: 10.0, opacity: 1.0, offset: CGSize.init(width: 0.0, height: 5.0), color: UIColor.init(hex: "#0000001A"))
+
+    }
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        var textRect = super.editingRect(forBounds: bounds)
+        textRect.origin.x += padding.left
+        return textRect
+    }
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        var textRect = super.textRect(forBounds: bounds)
+        textRect.origin.x += padding.left
+        return textRect
+    }
+}

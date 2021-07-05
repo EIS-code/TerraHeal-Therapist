@@ -18,6 +18,9 @@ struct ImageAsset {
     static func getImage(_ name:String) -> UIImage? {
         return UIImage.init(named: name)
     }
+    struct TextField {
+        static let password = "asset-password"
+    }
     struct Button {
         static let backButton = "asset-back-button"
         static let shiftSelected = "asset-shift-selected"

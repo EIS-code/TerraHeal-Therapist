@@ -41,7 +41,9 @@
 "DIALOG_SUSPEND_COLLABORATION_BTN_REQUEST" = "Request";
 "DIALOG_VALIDATION_SUSPEND_COLLABORATION_MSG" = "Please enter reason to suspend collaboration";
 
-
+"DATE_DIALOG_LBL_SELECT_END_TIME" = "Select End Time";
+"DATE_DIALOG_LBL_SELECT_START_TIME" = "Select Start Time";
+"VALIDATION_MSG_FROM_TIME_MUST_BE_LESS_THAN_END_TIME" = "Please select end time greater than end time";
 //MARK: BOOKING DETAIL SCREEN
 "BOOKING_DETAIL_CLIENT_NAME" = "client name";
 "BOOKING_DETAIL_TYPE_OF_SERVICE" = "type of service";

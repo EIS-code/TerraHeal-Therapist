@@ -26,6 +26,8 @@ extension AppDelegate {
     }
     
     func loadLoginVC(navigaionVC:UINavigationController? = nil) {
+        PreferenceHelper.shared.setUserId("")
+        PreferenceHelper.shared.setSessionToken("")
         if let nc = navigaionVC as? NC {
             if let targetVC: LoginVC =  nc.findVCs(ofType: LoginVC.self).first {
                 _ = nc.popToVc(targetVC)

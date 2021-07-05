@@ -263,6 +263,7 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
             //Common.appDelegate.loadPaymentReferenceVC(amount: 0.0, navigaionVC: self.navigationController, fromVC: nil)
             Common.appDelegate.loadExchangeOfferRequestVC(navigaionVC: self.navigationController)
         case .Logout:
+
             Common.appDelegate.loadLoginVC()
         }
 

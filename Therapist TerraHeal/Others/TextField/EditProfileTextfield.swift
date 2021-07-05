@@ -167,7 +167,7 @@ extension EditProfileTextfield {
         
         self.addLeftView()
         self.textColor = textForeColor
-        self.setFont(name:FontName.Regular,size:FontSize.textField_14)
+        self.setFont(name:FontName.Regular,size:FontSize.regular)
         addBottomLine()
         addFloatingLabel()
         self.contentVerticalAlignment =  .top
@@ -272,7 +272,7 @@ extension EditProfileTextfield {
             return
         }
         placeholderLabelHeight?.constant = JDDeviceHelper.offseter(offset: 15);
-        labelPlaceholder?.setFont(name: FontName.Regular, size: FontSize.placeHolder_14)
+        labelPlaceholder?.setFont(name: FontName.Regular, size: FontSize.textField_regular)
         UIView.animate(withDuration: 0.2, animations: {
             self.layoutIfNeeded()
         })

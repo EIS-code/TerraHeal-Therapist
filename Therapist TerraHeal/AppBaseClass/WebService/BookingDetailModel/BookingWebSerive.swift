@@ -27,10 +27,11 @@ class BookingWebSerive {
 
     struct RequestBookingList: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
+        var type: String = ""
         var massage_date: String = Date().millisecondsSince1970.toString()
-        var client_name: String = ""
-        var massage_id: String = ""
-        var therapy_id: String = ""
+        var shop_id: String = appSingleton.user.shopId
+        var user_id: String = ""
+        var service_id: String = ""
         var booking_type: String = ""
         var session_type: String = ""
        

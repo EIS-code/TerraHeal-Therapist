@@ -16,6 +16,7 @@ open class ThemeTextField: UITextField {
         let finalSize = JDDeviceHelper.fontCalculator(size: size)
         self.font = FontHelper.font(name: name, size: finalSize)
     }
+    
 }
 
 extension ThemeTextField {
@@ -35,8 +36,9 @@ extension ThemeTextField {
     @objc func fix(textField: UITextField) {
         if let t = textField.text  {
             if maxLength != 0 {
-                    textField.setText(String(t.prefix(maxLength)))
+                    textField.text = String(t.prefix(maxLength))
             }
+            
         }
     }
 }
@@ -50,9 +52,21 @@ extension UITextField {
             self.attributedPlaceholder = NSAttributedString(string: attributedPlaceholder.string, attributes: attributes)
         }
         else {
-            self.setValue(UIColor.themeLightTextColor, forKeyPath: "_placeholderLabel.textColor")
+            self.setValue(color, forKeyPath: "_placeholderLabel.textColor")
         }
     }
+
+    func setIcon(_ image: UIImage) {
+       let iconView = UIImageView(frame:
+                      CGRect(x: 0, y: 0, width: 0, height: 0))
+       iconView.image = image
+       let iconContainerView: UIView = UIView(frame:
+                      CGRect(x: 0, y: 0, width: 0, height: 0))
+       iconContainerView.addSubview(iconView)
+       rightView = iconContainerView
+       rightViewMode = .always
+    }
+
 }
 
 
@@ -60,7 +74,7 @@ extension UITextField {
 //MARK: UITextView
 class ThemeTextView: UITextView {
 
-    @IBInspectable open var borderLineColor : UIColor = UIColor.themeDarkText {
+    @IBInspectable open var borderLineColor : UIColor = UIColor.themePrimary {
            didSet{
                self.updateView()
            }
@@ -72,7 +86,7 @@ class ThemeTextView: UITextView {
            }
     }
     
-    let padding = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    var padding = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 
     func setFont(name:String,size:CGFloat){
         let finalSize = JDDeviceHelper.fontCalculator(size: size)
@@ -86,8 +100,11 @@ class ThemeTextView: UITextView {
     }
     func updateView() {
         self.backgroundColor = bgColor
-        self.setRound(withBorderColor: borderLineColor, andCornerRadious: 25.0, borderWidth: 1.0)
+       /* self.setRound(withBorderColor: borderLineColor, andCornerRadious: 35.0, borderWidth: 1.0)*/
         textContainerInset = padding
+    }
+    func setUpTextView(cornerRaidus: CGFloat) {
+        self.setRound(withBorderColor: borderLineColor, andCornerRadious: JDDeviceHelper.offseter(offset: cornerRaidus), borderWidth: 1.0)
     }
 }
 
@@ -121,7 +138,7 @@ extension UITextView: NSTextStorageDelegate {
         }
         set {
             let placeholderLabel = self.placeholderLabel
-            placeholderLabel.setText(newValue)
+            placeholderLabel.text = newValue
             placeholderLabel.numberOfLines = 0
             let width = frame.width - 40
             let size = placeholderLabel.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude))
@@ -141,4 +158,29 @@ extension UITextView: NSTextStorageDelegate {
     
 }
 
+extension UITextField {
+     func configureTextFieldNative(_ configuration: FormItemUIProperties) {
+        self.textContentType = configuration.textContentType
+        self.keyboardType = configuration.keyboardType
+        self.autocorrectionType = configuration.suggesion
+        self.isSecureTextEntry = configuration.secureEntry
+        self.autocapitalizationType = .sentences
+        if isSecureTextEntry {
+            self.autocapitalizationType = .none
+            self.autocorrectionType = .no
+        } else {
+            if configuration.textContentType == .emailAddress || configuration.keyboardType == .emailAddress {
+                self.autocapitalizationType = .none
+            }
+        }
 
+    }
+
+    func focusNext() {
+        /*if IQKeyboardManager.shared.canGoNext {
+            IQKeyboardManager.shared.goNext()
+        } else {
+            self.resignFirstResponder()
+        }*/
+    }
+}

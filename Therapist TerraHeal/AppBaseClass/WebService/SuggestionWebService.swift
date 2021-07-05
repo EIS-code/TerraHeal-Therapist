@@ -45,10 +45,12 @@ class MenuWebService {
     struct RequestTakeBreak: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
         var shop_id: String = appSingleton.user.shopId
-        var date: String = ""
-        var minutes: String = ""
-        var break_for: String = "0"
-        var break_reason: String = ""
+        var date: String = "1622851200000"
+        var break_reason: String = "--"
+        var shift_id: String = ""
+        var from: String = ""
+        var to: String = ""
+
     }
 }
 

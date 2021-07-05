@@ -111,7 +111,7 @@ extension CustomFilterDialog: UITableViewDelegate, UITableViewDataSource {
                 arrForClientData[i].isSelected = false
             }
             self.arrForClientData[indexPath.row].isSelected = true
-            self.selectedValue = self.arrForClientData[indexPath.row].name
+            self.selectedValue = self.arrForClientData[indexPath.row].id
             break;
         case self.tblForSessionType:
             for i in 0..<arrForData[indexPath.section].sessions.count {

@@ -27,40 +27,42 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ji6-14-kjx">
                                         <rect key="frame" x="8" y="8" width="347" height="141"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="idn-DD-47n">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="idn-DD-47n">
                                                 <rect key="frame" x="0.0" y="0.0" width="165.5" height="141"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rja-Xa-sem">
-                                                        <rect key="frame" x="64" y="0.0" width="37.5" height="20.5"/>
+                                                        <rect key="frame" x="64" y="0.0" width="37.5" height="62.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="4vX-UF-cSn">
-                                                        <rect key="frame" x="0.0" y="20.5" width="165.5" height="120.5"/>
-                                                        <locale key="locale" localeIdentifier="en_150"/>
-                                                        <connections>
-                                                            <action selector="time1Changed:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Cxt-jL-r0D"/>
-                                                        </connections>
-                                                    </datePicker>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xK-N4-Tsh">
+                                                        <rect key="frame" x="48" y="78.5" width="70" height="62.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="70" id="v7W-Ka-daY"/>
+                                                        </constraints>
+                                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                                        <state key="normal" title="00 : 00"/>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sZp-Tk-yQA">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sZp-Tk-yQA">
                                                 <rect key="frame" x="181.5" y="0.0" width="165.5" height="141"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="end" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pog-BX-ggS">
-                                                        <rect key="frame" x="68.5" y="0.0" width="29" height="20.5"/>
+                                                        <rect key="frame" x="68.5" y="0.0" width="29" height="62.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="2pA-52-p7n">
-                                                        <rect key="frame" x="0.0" y="20.5" width="165.5" height="120.5"/>
-                                                        <locale key="locale" localeIdentifier="en_150"/>
-                                                        <connections>
-                                                            <action selector="time2Changed:" destination="KGk-i7-Jjw" eventType="valueChanged" id="hM9-Pk-ViA"/>
-                                                        </connections>
-                                                    </datePicker>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdz-yT-aTw">
+                                                        <rect key="frame" x="48" y="78.5" width="70" height="62.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="70" id="L4v-A4-F6j"/>
+                                                        </constraints>
+                                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                                        <state key="normal" title="00 : 00"/>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -95,8 +97,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="timePicker1" destination="4vX-UF-cSn" id="EOh-Gs-Dz4"/>
-                <outlet property="timePicker2" destination="2pA-52-p7n" id="RNT-X4-xBQ"/>
+                <outlet property="btnEndTime" destination="zdz-yT-aTw" id="dhi-kc-M42"/>
+                <outlet property="btnStartTime" destination="5xK-N4-Tsh" id="42T-bq-FBr"/>
                 <outlet property="vwCellBg" destination="fTr-D4-KiU" id="zRW-ra-TCm"/>
             </connections>
             <point key="canvasLocation" x="170.28985507246378" y="171.76339285714286"/>

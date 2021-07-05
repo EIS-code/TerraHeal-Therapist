@@ -194,9 +194,10 @@ extension SideVC:  UICollectionViewDelegate, UICollectionViewDataSource {
             alert?.dismiss()
         }
         alert.onBtnDoneTapped = {
-            [weak alert, weak self] (description) in
+            [weak alert, weak self] (request) in
             guard let self = self else { return } ; print(self)
             alert?.dismiss()
+            self.wsTimeBreak(request: request)
         }
     }
 }
@@ -215,6 +216,13 @@ extension SideVC {
     }
     func wsSuspendCollaboration(reason:String) {
         MenuWebService.requestSuspendCollaboration(params: MenuWebService.RequestSuspendCollaboration.init(reason: reason)) { (response) in
+            if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
+            }
+        }
+    }
+
+    func wsTimeBreak(request:MenuWebService.RequestTakeBreak) {
+        MenuWebService.requestTakeBreak(params: request) { (response) in
             if ResponseModel.isSuccess(response: response, withSuccessToast: true, andErrorToast: true) {
             }
         }

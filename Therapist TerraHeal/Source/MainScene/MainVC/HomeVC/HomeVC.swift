@@ -199,11 +199,13 @@ extension HomeVC {
                 self.currentBookingRequest.massage_date = value as! String
                 self.selectedDate = Date.init(milliseconds: (value as! String).toDouble)
             case .ClientName:
-                self.currentBookingRequest.client_name = value as! String
+                self.currentBookingRequest.user_id = value as! String
             case .Massages:
-                self.currentBookingRequest.massage_id = value as! String
+                self.currentBookingRequest.type = (ServiceType.Massages.rawValue).toString()
+                self.currentBookingRequest.service_id = value as! String
             case .Therapies:
-                self.currentBookingRequest.therapy_id = value as! String
+                self.currentBookingRequest.type = (ServiceType.Therapies.rawValue).toString()
+                self.currentBookingRequest.service_id = value as! String
             case .SessionType:
                 self.currentBookingRequest.session_type = value as! String
             }

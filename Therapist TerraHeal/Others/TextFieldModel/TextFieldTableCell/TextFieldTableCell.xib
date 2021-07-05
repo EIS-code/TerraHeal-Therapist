@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="ueX-Fw-GYv" customClass="TextFieldTableCell" customModule="TerraHealAdmin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="84"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ueX-Fw-GYv" id="45m-IB-ETZ">
+                <rect key="frame" x="0.0" y="0.0" width="410" height="84"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISt-k6-5tu" userLabel="textField">
+                        <rect key="frame" x="5" y="0.0" width="400" height="84"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="--" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bge-Gz-FPq" userLabel="txtEmail" customClass="ACFloatingTextfield" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="36" width="400" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="itL-pm-N2K"/>
+                                </constraints>
+                                <color key="textColor" name="theme_dark"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="bge-Gz-FPq" secondAttribute="bottom" id="CjY-W1-mEe"/>
+                            <constraint firstItem="bge-Gz-FPq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ISt-k6-5tu" secondAttribute="top" constant="16" id="Tdh-pf-N3U"/>
+                            <constraint firstItem="bge-Gz-FPq" firstAttribute="leading" secondItem="ISt-k6-5tu" secondAttribute="leading" id="fGw-zH-SjP"/>
+                            <constraint firstItem="bge-Gz-FPq" firstAttribute="centerX" secondItem="ISt-k6-5tu" secondAttribute="centerX" id="vlC-dI-C0B"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ISt-k6-5tu" firstAttribute="leading" secondItem="45m-IB-ETZ" secondAttribute="leading" constant="5" id="IX1-qO-ot3"/>
+                    <constraint firstItem="ISt-k6-5tu" firstAttribute="top" secondItem="45m-IB-ETZ" secondAttribute="top" id="LhN-3e-D9O"/>
+                    <constraint firstAttribute="bottom" secondItem="ISt-k6-5tu" secondAttribute="bottom" id="R22-dw-ZhY"/>
+                    <constraint firstAttribute="trailing" secondItem="ISt-k6-5tu" secondAttribute="trailing" constant="5" id="ham-zA-XjS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="txtCellItem" destination="bge-Gz-FPq" id="TTc-UD-hfJ"/>
+            </connections>
+            <point key="canvasLocation" x="382.5" y="83.450704225352112"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="bge-Gz-FPq">
+            <size key="intrinsicContentSize" width="13" height="18.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="theme_dark">
+            <color red="0.18823529411764706" green="0.18431372549019609" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

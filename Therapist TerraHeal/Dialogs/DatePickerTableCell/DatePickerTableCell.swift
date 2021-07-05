@@ -10,21 +10,19 @@ import UIKit
 
 class DatePickerTableCell: SelectionBorderTableCell {
 
-    @IBOutlet weak var timePicker2: UIDatePicker!
-    @IBOutlet weak var timePicker1: UIDatePicker!
+
+    @IBOutlet weak var btnStartTime: UIButton!
+    @IBOutlet weak var btnEndTime: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupTimer()
     }
     func setupTimer() {
-        timePicker1.maximumDate = timePicker2.minimumDate
-    }
+        self.btnStartTime.setRound(withBorderColor: .themePrimary, andCornerRadious: 3.0, borderWidth: 1.0)
+        self.btnEndTime.setRound(withBorderColor: .themePrimary, andCornerRadious: 3.0, borderWidth: 1.0)
+        self.btnStartTime.setTitleColor(.themeSecondary, for: .normal)
+        self.btnEndTime.setTitleColor(.themeSecondary, for: .normal)
 
-    @IBAction func time2Changed(_ sender: Any) {
-        timePicker1.maximumDate = timePicker2.minimumDate
-    }
-    @IBAction func time1Changed(_ sender: Any) {
-        timePicker2.minimumDate = timePicker1.maximumDate
     }
 
     override func layoutSubviews() {
@@ -36,4 +34,5 @@ class DatePickerTableCell: SelectionBorderTableCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+
 }

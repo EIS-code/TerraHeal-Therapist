@@ -21,12 +21,11 @@ class TimeBreakDialog: ThemeBottomDialogView {
     @IBOutlet weak var vwForShift: UIView!
     @IBOutlet weak var tblForData: UITableView!
     @IBOutlet weak var hTblVw: NSLayoutConstraint!
-
-    var onBtnDoneTapped: ((_ data:SlotDetail) -> Void)? = nil
-    var selectedData:SlotDetail? = nil
-
+    var startTime: Double = 0.0
+    var endTime: Double = 0.0
+    var onBtnDoneTapped: ((_ data:MenuWebService.RequestTakeBreak) -> Void)? = nil
     var arrForData: [ShiftCellDetail] = []
-
+    var request: MenuWebService.RequestTakeBreak = MenuWebService.RequestTakeBreak.init()
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -63,11 +62,58 @@ class TimeBreakDialog: ThemeBottomDialogView {
     }
 
     @IBAction func btnDoneTapped(_ sender: Any) {
-        if selectedData == nil {
+        for data in arrForData {
+            if data.isSelected {
+                self.request = MenuWebService.RequestTakeBreak.init( shift_id: data.shiftID, from: startTime.toString(), to: endTime.toString())
+                break;
+            }
+        }
+        if self.request.shift_id.isEmpty(){
             Common.showAlert(message: "VALIDATION_MSG_PLEASE_SELECT_DATA".localized())
+        } else if self.request.from.toDouble > self.request.to.toDouble {
+            Common.showAlert(message: "VALIDATION_MSG_FROM_TIME_MUST_BE_LESS_THAN_END_TIME".localized())
         } else {
-            self.wsGetBreak()
 
+            if self.onBtnDoneTapped != nil {
+                self.onBtnDoneTapped!(self.request);
+            }
+        }
+    }
+
+   @objc @IBAction func openStartTimePicker() {
+        let timePickerAlert: TimeDialog = TimeDialog.fromNib()
+        timePickerAlert.initialize(title: "DATE_DIALOG_LBL_SELECT_START_TIME".localized(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        timePickerAlert.show(animated: true)
+        timePickerAlert.onBtnCancelTapped = {
+            [weak timePickerAlert, weak self] in
+            guard let self = self else { return } ; print(self)
+            timePickerAlert?.dismiss()
+        }
+        timePickerAlert.onBtnDoneTapped = {
+            [weak timePickerAlert, weak self] (date) in
+            guard let self = self else { return } ; print(self)
+            print(date)
+            timePickerAlert?.dismiss()
+            self.startTime = date
+            self.tblForData.reloadData()
+        }
+    }
+    @objc @IBAction func openEndTimePicker() {
+        let timePickerAlert: TimeDialog = TimeDialog.fromNib()
+        timePickerAlert.initialize(title: "DATE_DIALOG_LBL_SELECT_END_TIME".localized(), buttonTitle: "BTN_PROCEED".localized(),cancelButtonTitle: "BTN_BACK".localized())
+        timePickerAlert.show(animated: true)
+        timePickerAlert.onBtnCancelTapped = {
+            [weak timePickerAlert, weak self] in
+            guard let self = self else { return } ; print(self)
+            timePickerAlert?.dismiss()
+        }
+        timePickerAlert.onBtnDoneTapped = {
+            [weak timePickerAlert, weak self] (date) in
+            guard let self = self else { return } ; print(self)
+            print(date)
+            timePickerAlert?.dismiss()
+            self.endTime = date
+            self.tblForData.reloadData()
         }
     }
 }
@@ -82,22 +128,6 @@ extension TimeBreakDialog {
         }
     }
 
-    func wsGetBreak() {
-       /* Loader.showLoading()
-        var request: MenuWebService.RequestTakeBreak = MenuWebService.RequestTakeBreak.init()
-        request.minutes = self.minutes.toString()
-        request.date = Date().millisecondsSince1970.toString()
-        MenuWebService.requestTakeBreak(params: request) { (response) in
-            Loader.hideLoading()
-            if ResponseModel.isSuccess(response: response) {
-                if self.onBtnDoneTapped != nil {
-                    self.onBtnDoneTapped!(self.selectedData!);
-                }
-            }
-        }*/
-
-
-    }
 
     func wsAvailability() {
         Loader.showLoading()

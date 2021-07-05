@@ -41,6 +41,7 @@ class WorkingScheduleVC: BaseVC {
         self.btnPreviousMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
         self.btnNextMonth.setText(FontSymbol.next_arrow, for: .normal)
         self.btnNextMonth.setFont(name: FontName.SemiBold, size: FontSize.button_22)
+        self.wsAvailability(date: 1622851200000)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,7 +120,7 @@ extension WorkingScheduleVC {
 
     func wsAvailability(date:Double = Date().millisecondsSince1970WithUTC) {
         Loader.showLoading()
-        AvailabilityWebService.getAvailabilities(params: AvailabilityWebService.RequestGetAvailability.init(id: "2", date: date.toString())) { (response) in
+        AvailabilityWebService.getAvailabilities(params: AvailabilityWebService.RequestGetAvailability.init(id: "3", date: date.toString())) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 for data in response.availabilityList {
