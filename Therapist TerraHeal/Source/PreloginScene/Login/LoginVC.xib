@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="TerraHealAdmin" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="Therapist_TerraHeal" customModuleProvider="target">
             <connections>
                 <outlet property="btnFigerPrint" destination="iSh-UG-VZm" id="5CN-3P-m8R"/>
                 <outlet property="btnForgotPassword" destination="QtW-ja-aCe" id="DPb-nR-20B"/>
@@ -39,6 +39,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-login-left" translatesAutoresizingMaskIntoConstraints="NO" id="BUY-e9-nJA">
+                    <rect key="frame" x="12" y="637" width="139" height="175"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-login-right" translatesAutoresizingMaskIntoConstraints="NO" id="cbW-hg-DCy">
+                    <rect key="frame" x="252" y="698" width="111" height="114"/>
+                </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agl-Wb-btm" userLabel="scrVw">
                     <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                     <subviews>
@@ -51,13 +57,13 @@
                                         <constraint firstAttribute="width" secondItem="LZo-vT-jyU" secondAttribute="height" multiplier="1.5:1" id="xlh-rf-Px3"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rG-EW-05Z" customClass="ThemeLabel" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rG-EW-05Z" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="60" y="140" width="255" height="18.666666666666657"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="16"/>
                                     <color key="textColor" name="theme_dark_text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jV-sf-aUO" customClass="ThemeLabel" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jV-sf-aUO" customClass="ThemeLabel" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="60" y="166.66666666666666" width="255" height="37.333333333333343"/>
                                     <string key="text">You need to identify 
 to sign back in</string>
@@ -72,13 +78,13 @@ to sign back in</string>
                                         <constraint firstAttribute="height" constant="128" id="uFI-wi-as1"/>
                                     </constraints>
                                 </tableView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtW-ja-aCe" customClass="ThemeButton" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtW-ja-aCe" customClass="ThemeButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="210.66666666666663" y="364" width="127" height="30"/>
                                     <state key="normal" title="Forgot Password ?">
                                         <color key="titleColor" name="theme_secondary"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="FilledRoundedButton" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="FilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="121" y="410" width="133" height="40"/>
                                     <fontDescription key="fontDescription" name="GRANDDUKERegular" family="GRAND DUKE" pointSize="17"/>
                                     <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
@@ -120,7 +126,7 @@ to sign back in</string>
                                         <constraint firstItem="iSh-UG-VZm" firstAttribute="leading" secondItem="ImM-Vg-CDA" secondAttribute="leading" id="Dhp-Qp-Yyu"/>
                                         <constraint firstItem="iSh-UG-VZm" firstAttribute="centerX" secondItem="aP0-Wu-Qbj" secondAttribute="centerX" id="Dkg-TT-zxz"/>
                                         <constraint firstItem="HBI-U1-SLQ" firstAttribute="top" secondItem="ImM-Vg-CDA" secondAttribute="top" id="ObK-OO-Heq"/>
-                                        <constraint firstAttribute="width" constant="50" id="RRG-DI-1Qd" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                                        <constraint firstAttribute="width" constant="50" id="RRG-DI-1Qd" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                                     <real key="value" value="50"/>
@@ -128,7 +134,7 @@ to sign back in</string>
                                             </userDefinedRuntimeAttributes>
                                         </constraint>
                                         <constraint firstItem="iSh-UG-VZm" firstAttribute="top" secondItem="ImM-Vg-CDA" secondAttribute="top" id="bcC-YU-xng"/>
-                                        <constraint firstAttribute="height" constant="50" id="gGG-KL-AND" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                                        <constraint firstAttribute="height" constant="50" id="gGG-KL-AND" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                                     <real key="value" value="50"/>
@@ -144,21 +150,21 @@ to sign back in</string>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="aP0-Wu-Qbj" firstAttribute="top" secondItem="KCc-Ig-liE" secondAttribute="bottom" constant="24" id="5Yn-up-HBF" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <constraint firstItem="aP0-Wu-Qbj" firstAttribute="top" secondItem="KCc-Ig-liE" secondAttribute="bottom" constant="24" id="5Yn-up-HBF" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                             <real key="value" value="24"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </constraint>
-                                <constraint firstAttribute="trailing" secondItem="7rG-EW-05Z" secondAttribute="trailing" constant="60" id="6Q5-nH-fdz" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <constraint firstAttribute="trailing" secondItem="7rG-EW-05Z" secondAttribute="trailing" constant="60" id="6Q5-nH-fdz" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                             <real key="value" value="60"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </constraint>
-                                <constraint firstItem="7jV-sf-aUO" firstAttribute="top" secondItem="7rG-EW-05Z" secondAttribute="bottom" constant="8" id="6ek-Tu-W9d" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <constraint firstItem="7jV-sf-aUO" firstAttribute="top" secondItem="7rG-EW-05Z" secondAttribute="bottom" constant="8" id="6ek-Tu-W9d" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                             <real key="value" value="8"/>
@@ -166,7 +172,7 @@ to sign back in</string>
                                     </userDefinedRuntimeAttributes>
                                 </constraint>
                                 <constraint firstItem="LZo-vT-jyU" firstAttribute="width" secondItem="hp5-yH-riX" secondAttribute="width" multiplier="0.4" id="8ix-ue-cp5"/>
-                                <constraint firstAttribute="trailing" secondItem="7jV-sf-aUO" secondAttribute="trailing" constant="60" id="CAH-3r-Qdy" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <constraint firstAttribute="trailing" secondItem="7jV-sf-aUO" secondAttribute="trailing" constant="60" id="CAH-3r-Qdy" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                             <real key="value" value="60"/>
@@ -178,7 +184,7 @@ to sign back in</string>
                                 <constraint firstItem="QtW-ja-aCe" firstAttribute="trailing" secondItem="bEf-ac-mcQ" secondAttribute="trailing" id="SWQ-wF-u8u"/>
                                 <constraint firstItem="QtW-ja-aCe" firstAttribute="top" secondItem="bEf-ac-mcQ" secondAttribute="bottom" constant="16" id="WS9-LH-DrK"/>
                                 <constraint firstItem="KCc-Ig-liE" firstAttribute="centerX" secondItem="hp5-yH-riX" secondAttribute="centerX" id="XAZ-PE-ETa"/>
-                                <constraint firstItem="LZo-vT-jyU" firstAttribute="top" secondItem="hp5-yH-riX" secondAttribute="top" constant="16" id="XB0-0Z-g2n" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <constraint firstItem="LZo-vT-jyU" firstAttribute="top" secondItem="hp5-yH-riX" secondAttribute="top" constant="16" id="XB0-0Z-g2n" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                             <real key="value" value="16"/>
@@ -187,21 +193,21 @@ to sign back in</string>
                                 </constraint>
                                 <constraint firstItem="bEf-ac-mcQ" firstAttribute="width" secondItem="hp5-yH-riX" secondAttribute="width" multiplier="0.8" id="fTF-py-Hlp"/>
                                 <constraint firstItem="LZo-vT-jyU" firstAttribute="centerX" secondItem="hp5-yH-riX" secondAttribute="centerX" id="hM1-xG-cNb"/>
-                                <constraint firstItem="7rG-EW-05Z" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="60" id="n2R-7r-t5n" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <constraint firstItem="7rG-EW-05Z" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="60" id="n2R-7r-t5n" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                             <real key="value" value="60"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </constraint>
-                                <constraint firstItem="7rG-EW-05Z" firstAttribute="top" secondItem="LZo-vT-jyU" secondAttribute="bottom" constant="24" id="nkV-5I-hGo" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <constraint firstItem="7rG-EW-05Z" firstAttribute="top" secondItem="LZo-vT-jyU" secondAttribute="bottom" constant="24" id="nkV-5I-hGo" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                             <real key="value" value="24"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </constraint>
-                                <constraint firstAttribute="bottom" secondItem="aP0-Wu-Qbj" secondAttribute="bottom" constant="16" id="nvy-7F-K8Y" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <constraint firstAttribute="bottom" secondItem="aP0-Wu-Qbj" secondAttribute="bottom" constant="16" id="nvy-7F-K8Y" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                             <real key="value" value="16"/>
@@ -210,7 +216,7 @@ to sign back in</string>
                                 </constraint>
                                 <constraint firstItem="aP0-Wu-Qbj" firstAttribute="centerX" secondItem="hp5-yH-riX" secondAttribute="centerX" id="oxc-Re-0on"/>
                                 <constraint firstItem="KCc-Ig-liE" firstAttribute="top" secondItem="QtW-ja-aCe" secondAttribute="bottom" constant="16" id="rtE-aL-MUk"/>
-                                <constraint firstItem="7jV-sf-aUO" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="60" id="u6g-xm-8BP" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                                <constraint firstItem="7jV-sf-aUO" firstAttribute="leading" secondItem="hp5-yH-riX" secondAttribute="leading" constant="60" id="u6g-xm-8BP" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                             <real key="value" value="60"/>
@@ -229,13 +235,7 @@ to sign back in</string>
                         <constraint firstItem="hp5-yH-riX" firstAttribute="top" secondItem="Agl-Wb-btm" secondAttribute="top" id="kqv-yZ-rqA"/>
                     </constraints>
                 </scrollView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-login-left" translatesAutoresizingMaskIntoConstraints="NO" id="BUY-e9-nJA">
-                    <rect key="frame" x="12" y="637" width="139" height="175"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset-login-right" translatesAutoresizingMaskIntoConstraints="NO" id="cbW-hg-DCy">
-                    <rect key="frame" x="252" y="698" width="111" height="114"/>
-                </imageView>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1P-U5-noU" customClass="BackButton" customModule="TerraHealAdmin" customModuleProvider="target">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1P-U5-noU" customClass="BackButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <rect key="frame" x="16" y="60" width="34" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="h1P-U5-noU" secondAttribute="height" multiplier="1:1" id="Sdi-EZ-Cgg"/>
@@ -250,7 +250,7 @@ to sign back in</string>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="BUY-e9-nJA" secondAttribute="bottom" id="8gw-re-yLf"/>
                 <constraint firstItem="cbW-hg-DCy" firstAttribute="bottom" secondItem="BUY-e9-nJA" secondAttribute="bottom" id="94S-vV-qVU"/>
-                <constraint firstItem="BUY-e9-nJA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="9Do-FB-gBW" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                <constraint firstItem="BUY-e9-nJA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="9Do-FB-gBW" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="12"/>
@@ -261,14 +261,14 @@ to sign back in</string>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Agl-Wb-btm" secondAttribute="trailing" id="A7l-Sb-LQw"/>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RLs-Nt-G9K"/>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="ThZ-8V-yrK"/>
-                <constraint firstItem="h1P-U5-noU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VRE-4K-gkm" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                <constraint firstItem="h1P-U5-noU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VRE-4K-gkm" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </constraint>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cbW-hg-DCy" secondAttribute="trailing" constant="12" id="YDW-bb-EFx" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cbW-hg-DCy" secondAttribute="trailing" constant="12" id="YDW-bb-EFx" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="12"/>
@@ -277,7 +277,7 @@ to sign back in</string>
                     </userDefinedRuntimeAttributes>
                 </constraint>
                 <constraint firstItem="Agl-Wb-btm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kN4-Se-iQP"/>
-                <constraint firstItem="h1P-U5-noU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="r9z-Vd-ltn" customClass="NSLayoutHelper" customModule="TerraHealAdmin" customModuleProvider="target">
+                <constraint firstItem="h1P-U5-noU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="r9z-Vd-ltn" customClass="NSLayoutHelper" customModule="Therapist_TerraHeal" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                             <real key="value" value="16"/>

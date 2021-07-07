@@ -51,6 +51,10 @@ class BookingData {
     var therapistName: String = ""
     var userName: String = ""
     var userPeopleId: String = ""
+    var clientAge: String = ""
+    var clientGender: String = ""
+    var clientId: String = ""
+    var clientName: String = ""
 
     var isSelected: Bool = false
 
@@ -82,6 +86,10 @@ class BookingData {
         self.sessionName = (dictionary["session_name"] as? String) ?? ""
         self.userName = (dictionary["user_people_name"] as? String) ?? ""
         self.userPeopleId = (dictionary["user_people_id"] as? String) ?? ""
+        self.clientAge = (dictionary["client_age"] as? String) ?? ""
+        self.clientGender = (dictionary["client_gender"] as? String) ?? ""
+        self.clientId = (dictionary["client_id"] as? String) ?? ""
+        self.clientName = (dictionary["client_name"] as? String) ?? ""
         if self.bookingType.isEmpty() {
             self.bookingType = (dictionary["booking_type"] as? String) ?? ""
         }
@@ -96,7 +104,7 @@ class BookingData {
             let newDate = Date.init(milliseconds: self.massageDate.toDouble)
             return MyBookingTblDetail.init(id:self.bookingInfoId , title: newDate.toString(format: "dd MMM yyy hh:mm"), bookingType: bookingType!,isSelected: false)
         case .ClientName:
-            return MyBookingTblDetail.init(id:self.bookingInfoId , title: self.userName, bookingType: bookingType!, isSelected: false)
+            return MyBookingTblDetail.init(id:self.bookingInfoId , title: self.clientName, bookingType: bookingType!, isSelected: false)
         case .Massages:
             return MyBookingTblDetail.init(id:self.bookingInfoId , title: self.serviceName, bookingType: bookingType!, isSelected: false)
         case .Therapies:

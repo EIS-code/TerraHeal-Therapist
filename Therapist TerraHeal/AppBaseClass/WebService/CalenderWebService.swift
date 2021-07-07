@@ -14,10 +14,12 @@ class CalenderWebService {
     static let bookingDetailUrl: String = API_URL.GetCalenderDetails
     struct RequestGetCalender: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
+        var shop_id: String = appSingleton.user.shopId
         var date: String = ""
     }
     struct RequestGetCalenderBookingDetail: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
+        var shop_id: String = appSingleton.user.shopId
         var booking_date: String = ""
     }
 }
