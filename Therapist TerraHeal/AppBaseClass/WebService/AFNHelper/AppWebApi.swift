@@ -54,8 +54,8 @@ class AppWebApi: NSObject {
         static let NumberOfBooking: String = Domain + Routes.Client + "/booking/all"
         static let GetCalender: String = Domain + Routes.Client + "/calender/get"
         static let GetCalenderDetails: String = Domain + Routes.Client + "/calender/booking/details"
-        static let GetNews: String = Domain + "/news/get"
-        static let ReadNews: String = Domain + "/news/read"
+        static let GetNews: String = Domain + Routes.Client + "/news/get"
+        static let ReadNews: String = Domain + Routes.Client  + "/news/read"
         static let GetWorkingSchedule: String = Domain + Routes.Client  + "/my/working/schedule"
         static let GetAllSuggestion: String = Domain + Routes.Client  + "/signin/forgot"
         static let AddSuggestion: String = Domain + Routes.Client  + "/suggestion"
@@ -134,7 +134,7 @@ extension AppWebApi {
 
 
     class func getNews(completionHandler: @escaping ((NewsWebService.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetNews, methodName: AlamofireHelper.GET_METHOD, paramData:RequestCommon.init().dictionary) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: AppWebApi.URL.GetNews, methodName: AlamofireHelper.POST_METHOD, paramData:RequestCommon.init().dictionary) { (data, dictionary, error) in
             let response = NewsWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }

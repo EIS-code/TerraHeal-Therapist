@@ -89,9 +89,8 @@ class HomeVC: BaseVC {
         self.lblTitle?.setFont(name: FontName.Bold, size: FontSize.large)
         self.setNavigationTitle(title: "".localized())
         self.vwFilter.backgroundColor = .clear
-        self.currentBookingRequest.massage_date = "1617926400000"//Date().millisecondsSince1970.toString()
+        self.currentBookingRequest.massage_date = Date().millisecondsSince1970.toString()
         self.wsGetTodaysBooking(request: self.currentBookingRequest)
-        //self.wsGetPastBooking(request: self.pastBookingRequest)
     }
     
     @IBAction func btnMenuTapped(_ sender: Any) {

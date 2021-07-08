@@ -65,6 +65,7 @@
 "PROFILE_MENU_MY_NUMBER_OF_MASSAGE" = "my number of massages";
 "PROFILE_MENU_LOGOUT" = "logout";
 "PROFILE_MENU_PAYMENT_PREFERENCE" = "payout preferences";
+"PROFILE_MENU_EXCHANGE_REQUEST" = "Exchange Request";
 //MARK: Edit Profile Menu
 "PROFILE_ACCOUN_NUMBER" = "Account Number";
 "PROFILE_NAME" = "Name";

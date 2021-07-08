@@ -90,15 +90,23 @@ class CustomDatePicker: ThemeBottomDialogView {
     }
 
     @IBAction func btnPreviousYearTapped(_ sender: Any) {
-        let currentPage = self.vwCalendar.currentPage.previousYear()
-        self.vwCalendar.setCurrentPage(currentPage, animated: true)
-        self.selectDate(date: currentPage)
+        let currentPage = self.vwCalendar.currentPage.nextYear()
+        if currentPage > minDate {
+            self.vwCalendar.setCurrentPage(currentPage, animated: true)
+            self.selectDate(date: currentPage)
+        }
 
     }
     @IBAction func btnNextYearTapped(_ sender: Any) {
+
         let currentPage = self.vwCalendar.currentPage.nextYear()
-        self.vwCalendar.setCurrentPage(currentPage, animated: true)
+        if currentPage < maxDate {
+            self.vwCalendar.setCurrentPage(currentPage, animated: true)
+            self.selectDate(date: currentPage)
+        }
+
     }
+
 
     @IBAction func btnDoneTapped(_ sender: Any) {
         if selectedMilli == 0 {

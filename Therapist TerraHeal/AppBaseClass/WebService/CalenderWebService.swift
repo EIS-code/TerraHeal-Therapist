@@ -67,7 +67,7 @@ extension CalenderWebService {
          */
         init(fromDictionary dictionary: [String:Any]){
             self.bookingInfoId = (dictionary["booking_info_id"] as? String) ?? ""
-            self.massageDate = (dictionary["massage_date"] as? String) ?? ""
+            self.massageDate = (dictionary["massage_date_time"] as? String) ?? ""
             self.massageTime = (dictionary["massage_time"] as? String) ?? ""
             self.time = (dictionary["time"] as? String) ?? ""
         }

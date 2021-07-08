@@ -163,6 +163,7 @@ class BookingDetail {
     var totalBeds: String = ""
     var userPeopleId: String = ""
     var userPeopleName: String = ""
+    var createdAt: String = ""
     func getServiceStatus() -> ServiceStatus {
         return ServiceStatus.init(rawValue: self.serviceStatus) ?? .Pending
     }
@@ -171,6 +172,7 @@ class BookingDetail {
      */
     init(fromDictionary dictionary: [String:Any]){
         self.actualEndTime = (dictionary["actual_end_time"] as? String) ?? ""
+        self.createdAt = (dictionary["created_at"] as? String) ?? ""
         self.actualStartTime = (dictionary["actual_start_time"] as? String) ?? ""
         self.bookPlatform = (dictionary["book_platform"] as? String) ?? ""
         self.bookingId = (dictionary["booking_id"] as? String) ?? ""
@@ -205,7 +207,7 @@ class BookingDetail {
         self.servicePricingId = (dictionary["service_pricing_id"] as? String) ?? ""
         self.serviceStatus = (dictionary["service_status"] as? String) ?? ""
         self.serviceType = (dictionary["service_type"] as? String) ?? ""
-        self.sessionId = (dictionary["sessionId"] as? String) ?? ""
+        self.sessionId = (dictionary["session_id"] as? String) ?? ""
         self.sessionType = (dictionary["session_type"] as? String) ?? ""
         self.shopAddress = (dictionary["shop_address"] as? String) ?? ""
         self.shopId = (dictionary["shop_id"] as? String) ?? ""

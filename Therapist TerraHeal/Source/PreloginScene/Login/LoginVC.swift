@@ -69,7 +69,10 @@ class LoginVC: BaseVC {
     override func btnLeftTapped(_ btn: UIButton = UIButton()) {
 
     }
-
+    @IBAction func btnForgotPasswordTapped(_ sender: UIButton) {
+        self.view.tempDisable()
+        Common.showAlert(message: "Under Development")
+    }
     @IBAction func btnLoginTapped(_ sender: UIButton) {
         self.btnLogin.tempDisable()
         let (isValid,strMessage) = loginForm.isValid()

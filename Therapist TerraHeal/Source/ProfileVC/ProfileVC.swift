@@ -18,6 +18,7 @@ enum ProfileMenu: String {
     case MyRating = "7"
     case PaymentPreference = "8"
     case Logout = "9"
+    case ExchangeRequest = "10"
 
     func name() -> String {
         switch self {
@@ -39,6 +40,8 @@ enum ProfileMenu: String {
             return  "PROFILE_MENU_LOGOUT".localized()
         case .PaymentPreference:
             return  "PROFILE_MENU_PAYMENT_PREFERENCE".localized()
+        case .ExchangeRequest:
+            return  "PROFILE_MENU_EXCHANGE_REQUEST".localized()
         }
     }
     func image() -> String {
@@ -60,6 +63,8 @@ enum ProfileMenu: String {
         case .Logout:
             return  ImageAsset.ProfileMenu.logout
         case .PaymentPreference:
+            return  ImageAsset.ProfileMenu.paymentPreference
+        case .ExchangeRequest:
             return  ImageAsset.ProfileMenu.paymentPreference
         }
     }
@@ -93,7 +98,7 @@ class ProfileVC: BaseVC {
         ProfileItemDetail(type: ProfileMenu.MyProfile),
         ProfileItemDetail(type: ProfileMenu.MyBookings),
         ProfileItemDetail(type: ProfileMenu.MyWorkingSchedule),
-        ProfileItemDetail(type: ProfileMenu.MyAvailability),
+        ProfileItemDetail(type: ProfileMenu.ExchangeRequest),
         ProfileItemDetail(type: ProfileMenu.MyMissingDays),
         ProfileItemDetail(type: ProfileMenu.MyNumberOfMassages),
         ProfileItemDetail(type: ProfileMenu.MyRating),
@@ -259,12 +264,13 @@ extension ProfileVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDele
             
         case .MyNumberOfMassages:
             Common.appDelegate.loadMyNumberOfMassageVC(navigaionVC: self.navigationController)
-        case .PaymentPreference:
+        case .ExchangeRequest:
             //Common.appDelegate.loadPaymentReferenceVC(amount: 0.0, navigaionVC: self.navigationController, fromVC: nil)
             Common.appDelegate.loadExchangeOfferRequestVC(navigaionVC: self.navigationController)
         case .Logout:
-
             Common.appDelegate.loadLoginVC()
+        default:
+            print("")
         }
 
     }

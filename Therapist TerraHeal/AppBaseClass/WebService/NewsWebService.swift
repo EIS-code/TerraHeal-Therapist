@@ -12,7 +12,7 @@ import Foundation
 class NewsWebService {
     static let url: String = API_URL.GetNews
     struct RequestReadNews: Codable {
-        var id: String = PreferenceHelper.shared.getUserId()
+        var therapist_id: String = PreferenceHelper.shared.getUserId()
         var news_id: String = ""
     }
 }

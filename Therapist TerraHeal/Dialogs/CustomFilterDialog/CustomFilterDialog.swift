@@ -46,6 +46,7 @@ class CustomFilterDialog: ThemeBottomDialogView {
     @IBOutlet weak var tblForSessionType: UITableView!
     var arrForData: [SessionTypeDetails] = []
     var arrForClientData: [Client] = []
+    var arrForOriginalClientData: [Client] = []
     var arrForMassageData: [Massage] = appSingleton.user.selectedServices.massages
     var arrForTherapyData: [Therapy] = appSingleton.user.selectedServices.therapies
     //BookingTypeView
@@ -224,11 +225,17 @@ class CustomFilterDialog: ThemeBottomDialogView {
 //Search Client Setup
 extension CustomFilterDialog: UITextFieldDelegate {
     func searchData(for text: String) {
+        self.arrForClientData.removeAll()
         if text.isEmpty {
-
+            self.arrForClientData = self.arrForOriginalClientData
         } else {
-
+            for data in arrForOriginalClientData {
+                if data.name.lowercased().hasPrefix(text.lowercased()) {
+                    self.arrForClientData.append(data)
+                }
+            }
         }
+        self.tblForClient.reloadData()
     }
     func setupClientSearchView() {
         self.vwClientSearch.frame = self.activeView.bounds
@@ -345,6 +352,7 @@ extension CustomFilterDialog {
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
                 self.arrForClientData = response.clientList
+                self.arrForOriginalClientData = response.clientList
             }
             self.tblForClient.reloadData()
         })

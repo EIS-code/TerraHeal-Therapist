@@ -97,7 +97,9 @@ class MyBookingExpandTblCell: TableCell {
     }
     func setData(data:BookingDetail) {
 
-        let bookingDate = data.massageDate.formatDate(from: "yyyy-MM-dd", to: "dd MMM yyyy")
+
+
+        let bookingDate = Date.init(milliseconds: data.massageDate.toDouble).toString(format: "dd MMM yyyy")
         let bookingTime = Date.init(milliseconds: data.massageStartTime.toDouble).toString(format: "hh:mm")
 
         let bookingDateTime = Date.init(milliseconds:  data.massageStartTime.toDouble).toString(format: "hh:mm | EEE, dd MMM yyyy")

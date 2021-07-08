@@ -138,12 +138,12 @@ extension CalendarGraphVC: JZBaseViewDelegate {
 extension CalendarGraphVC {
 
     func wsGetCalendarBooking() {
-        self.dateOfMonth = "1617775646051"
         CalenderWebService.callCalenderEvents(params: CalenderWebService.RequestGetCalender.init(date: self.dateOfMonth), completionHandler: { (response) in
             if ResponseModel.isSuccess(response: response) {
                 self.arrForCalenderEvents.removeAll()
                 for i in 0..<response.bookingList.count {
                     let data = response.bookingList[i]
+                    let newDate = Date.init(milliseconds: data.massageDate.toDouble)
                     let newStartDate = Date.init(milliseconds: data.massageDate.toDouble)
                     if newStartDate.millisecondsSince1970 > 0 {
                         self.arrForCalenderEvents.append(DefaultEvent.init(id: data.bookingInfoId, title: data.bookingInfoId, startDate: newStartDate, endDate: newStartDate.add(component: .minute, value: data.time.toInt)))
@@ -170,9 +170,7 @@ extension CalendarGraphVC {
         let newDateOFMonth = dateForMonth.startOfMonth().millisecondsSince1970.toString()
         if newDateOFMonth != self.dateOfMonth {
             self.dateOfMonth = newDateOFMonth
-            //self.wsGetCalendarBooking()
+            self.wsGetCalendarBooking()
         }
-
-
     }
 }

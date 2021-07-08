@@ -83,6 +83,9 @@ to sign back in</string>
                                     <state key="normal" title="Forgot Password ?">
                                         <color key="titleColor" name="theme_secondary"/>
                                     </state>
+                                    <connections>
+                                        <action selector="btnForgotPasswordTapped:" destination="-1" eventType="touchUpInside" id="cJM-Up-NTi"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-Ig-liE" customClass="FilledRoundedButton" customModule="Therapist_TerraHeal" customModuleProvider="target">
                                     <rect key="frame" x="121" y="410" width="133" height="40"/>

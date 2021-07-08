@@ -112,7 +112,7 @@ class RatingData {
 //MARK: Web Service Calls
 extension RatingWebService {
     static func getAllRating( completionHandler: @escaping ((RatingWebService.Response) -> Void)) {
-        AlamofireHelper().getDataFrom(urlString: RatingWebService.getAllRatingUrl, methodName: AlamofireHelper.POST_METHOD, paramData: RequestCommon.init().dictionary) { (data, dictionary, error) in
+        AlamofireHelper().getDataFrom(urlString: RatingWebService.getAllRatingUrl, methodName: AlamofireHelper.GET_METHOD, paramData: RequestCommon.init().dictionary) { (data, dictionary, error) in
             let response = RatingWebService.Response.init(fromDictionary: dictionary)
             completionHandler(response)
         }

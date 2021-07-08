@@ -74,7 +74,7 @@ extension UITextField {
 //MARK: UITextView
 class ThemeTextView: UITextView {
 
-    @IBInspectable open var borderLineColor : UIColor = UIColor.themePrimary {
+    @IBInspectable open var borderLineColor : UIColor = UIColor.themeDarkText {
            didSet{
                self.updateView()
            }
@@ -100,7 +100,7 @@ class ThemeTextView: UITextView {
     }
     func updateView() {
         self.backgroundColor = bgColor
-       /* self.setRound(withBorderColor: borderLineColor, andCornerRadious: 35.0, borderWidth: 1.0)*/
+        self.setRound(withBorderColor: borderLineColor, andCornerRadious: 35.0, borderWidth: 1.0)
         textContainerInset = padding
     }
     func setUpTextView(cornerRaidus: CGFloat) {
