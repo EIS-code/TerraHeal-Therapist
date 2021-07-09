@@ -62,7 +62,7 @@
 "PROFILE_MENU_MY_AVAILABILITY" = "my availability";
 "PROFILE_MENU_MY_MISSING_DAYS" = "my missings days";
 "PROFILE_MENU_MY_RATING" = "my ratings";
-"PROFILE_MENU_MY_NUMBER_OF_MASSAGE" = "my number of massages";
+"PROFILE_MENU_MY_NUMBER_OF_BOOKINGS" = "my number of bookings";
 "PROFILE_MENU_LOGOUT" = "logout";
 "PROFILE_MENU_PAYMENT_PREFERENCE" = "payout preferences";
 "PROFILE_MENU_EXCHANGE_REQUEST" = "Exchange Request";
@@ -208,7 +208,7 @@
 "WORKING_DAYS" = "working days";
 "MY_MISSING_DAYS_TITLE" = "my missings days";
 "MISSING_DAYS" = "missings days";
-"MY_NUMBER_OF_MASSAGES_TITLE" = "my number of massages";
+"MY_NUMBER_OF_MASSAGES_TITLE" = "my number of bookings";
 "MY_MASSAGES_DETAIL_TITLE" = "booking details";
 
 "DOC_TYPE_ADDRESS_PROOF" = "Id / Passport";

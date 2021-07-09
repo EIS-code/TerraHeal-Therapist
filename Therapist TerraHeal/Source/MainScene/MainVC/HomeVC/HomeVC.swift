@@ -206,7 +206,7 @@ extension HomeVC {
                 self.currentBookingRequest.type = (ServiceType.Therapies.rawValue).toString()
                 self.currentBookingRequest.service_id = value as! String
             case .SessionType:
-                self.currentBookingRequest.session_type = value as! String
+                self.currentBookingRequest.session_id = value as! String
             }
             if self.selectedFilterType == .Future {
                 self.wsGetFutureBooking(request: self.currentBookingRequest)

@@ -35,7 +35,7 @@ enum ProfileMenu: String {
         case .MyRating:
             return  "PROFILE_MENU_MY_RATING".localized()
         case .MyNumberOfMassages:
-            return  "PROFILE_MENU_MY_NUMBER_OF_MASSAGE".localized()
+            return  "PROFILE_MENU_MY_NUMBER_OF_BOOKINGS".localized()
         case .Logout:
             return  "PROFILE_MENU_LOGOUT".localized()
         case .PaymentPreference:

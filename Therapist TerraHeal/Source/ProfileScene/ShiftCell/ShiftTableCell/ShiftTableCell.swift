@@ -43,6 +43,7 @@ class ShiftTableCell: TableCell {
     func setData(data:ShiftCellDetail) {
         self.lblShifName.setText(data.shiftName)
         self.lblTime.setText(data.shiftTime)
+        self.btnSelectShift.isUserInteractionEnabled = false
         if data.isSelected {
             self.btnSelectShift.setImage(ImageAsset.getImage(ImageAsset.Button.shiftSelected), for: .normal)
         } else {

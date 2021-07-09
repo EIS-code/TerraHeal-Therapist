@@ -89,10 +89,10 @@ class MassageDetailVC: BaseVC {
     
     func setData(data:BookingDetail) {
 
-        let bookingDate = data.massageDate.formatDate(from: "yyyy-MM-dd", to: "dd MMM yyyy")
-        let bookingTime = Date.init(milliseconds: data.massageStartTime.toDouble).toString(format: "hh:mm")
+        let bookingDate = data.massageDateTime.formatDate(from: "yyyy-MM-dd", to: "dd MMM yyyy")
+        let bookingTime = Date.init(milliseconds: data.massageDateTime.toDouble).toString(format: "hh:mm")
 
-        let bookingDateTime = Date.init(milliseconds:  data.massageStartTime.toDouble).toString(format: "hh:mm | EEE, dd MMM yyyy")
+        let bookingDateTime = Date.init(milliseconds:  data.massageDateTime.toDouble).toString(format: "hh:mm | EEE, dd MMM yyyy")
 
         let people = MyBookingUserPeople.init(fromDictionary: [:])
         people.age = data.clientAge

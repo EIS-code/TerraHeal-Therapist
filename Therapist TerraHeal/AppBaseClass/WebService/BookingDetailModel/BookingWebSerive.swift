@@ -33,7 +33,7 @@ class BookingWebSerive {
         var user_id: String = ""
         var service_id: String = ""
         var booking_type: String = ""
-        var session_type: String = ""
+        var session_id: String = ""
        
     }
 
@@ -41,6 +41,7 @@ class BookingWebSerive {
         var id: String = PreferenceHelper.shared.getUserId()
         var shop_id: String = appSingleton.user.shopId
         var booking_info_id: String = ""
+        var booking_massage_id: String = ""
     }
 
     struct RequestStartService: Codable {
@@ -109,7 +110,7 @@ extension BookingWebSerive {
             super.init(fromDictionary: dictionary)
 
             if let dataArray = dictionary["data"] as? [[String:Any]] {
-                if let detail = dataArray.last {
+                if let detail = dataArray.first {
                     self.bookingDetail = BookingDetail.init(fromDictionary: detail)
                 }
             } else if let data = dictionary["data"] as? [String:Any] {

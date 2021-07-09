@@ -122,6 +122,7 @@ extension HomeVC: UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegat
                 appSingleton.bookingTypeSelected = self.selectedFilterType
                 appSingleton.currentService = BookingDetail.init(fromDictionary: [:])
                 appSingleton.currentService.bookingInfoId = self.arrForOriginalData[indexPath.row].bookingInfoId
+                appSingleton.currentService.bookingMassageId = self.arrForOriginalData[indexPath.row].bookingMassageId
             })
         }
     }

@@ -128,6 +128,7 @@ extension MassageListVC {
                     self.arrForData.append(data.toBookingModel())
                     self.arrForOriginalData.append(data)
                 }
+                self.lblNumberOfMassageValue.setText(self.arrForOriginalData.count.toString())
                 self.tableView.reloadData()
             }
         }

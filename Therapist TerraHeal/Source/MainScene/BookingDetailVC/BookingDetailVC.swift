@@ -57,7 +57,7 @@ class BookingDetailVC: BaseVC {
         vwForCard2.addGradientFade(colors: [UIColor.init(hex: "##F6F6F4").cgColor,UIColor.init(hex: "#F6F6F4C8").cgColor,UIColor.init(hex: "#F6F6F48A").cgColor,UIColor.init(hex: "#F6F6F4").cgColor])
         vwForCard3.topRound()
         vwForCard3.addGradientFade(colors: [UIColor.init(hex: "#F6F6F4").cgColor,UIColor.init(hex: "#FFFFF8").cgColor])
-        self.wsGetBookingDetil(id: appSingleton.currentService.bookingInfoId)
+        self.wsGetBookingDetil(id: appSingleton.currentService.bookingMassageId)
 
     }
     
@@ -190,7 +190,7 @@ extension BookingDetailVC : QRScannerCodeDelegate {
 
 extension BookingDetailVC {
     func wsGetBookingDetil(id:String) {
-        BookingWebSerive.getBookingDetail(params: BookingWebSerive.RequestBookingDetail.init(booking_info_id: id)) { (response) in
+        BookingWebSerive.getBookingDetail(params: BookingWebSerive.RequestBookingDetail.init(booking_massage_id: id)) { (response) in
             if ResponseModel.isSuccess(response: response) {
                 appSingleton.currentService = response.bookingDetail
                 self.setupData(bookingDetail: appSingleton.currentService )
@@ -229,8 +229,8 @@ extension BookingDetailVC {
             (title: "BOOKING_DETAIL_CLIENT_NAME".localized(), detail: bookingDetail.clientName),
             (title: "BOOKING_DETAIL_TYPE_OF_SERVICE".localized(), detail: bookingDetail.serviceName )
         ]
-        let date = Date.init(milliseconds: bookingDetail.massageDate.toDouble).toString(format: "dd MMM yyyy")
-        let startTime = Date.init(milliseconds: bookingDetail.massageStartTime.toDouble).toString(format: "hh:mm a")
+        let date = Date.init(milliseconds: bookingDetail.massageDateTime.toDouble).toString(format: "dd MMM yyyy")
+        let startTime = Date.init(milliseconds: bookingDetail.massageDateTime.toDouble).toString(format: "hh:mm a")
         let endTime = Date.init(milliseconds: bookingDetail.massageEndTime.toDouble).toString(format: "hh:mm a")
         self.arrForTbl2 = [
             (title: "BOOKING_DETAIL_SESSION_TYPE".localized(), detail: bookingDetail.sessionType),

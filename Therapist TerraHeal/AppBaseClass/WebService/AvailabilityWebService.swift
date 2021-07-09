@@ -12,7 +12,7 @@ class AvailabilityWebService {
     static let getAvailibilityUrl: String = API_URL.GetAvailability
     struct RequestGetAvailability: Codable {
         var id: String = PreferenceHelper.shared.getUserId()
-        var date: String = "1622851200000"
+        var date: String = ""
     }
 
 }
@@ -25,8 +25,10 @@ extension AvailabilityWebService {
         override init(fromDictionary dictionary: [String:Any]) {
             super.init(fromDictionary: dictionary)
             if let dataArray = dictionary["data"] as? [[String:Any]] {
-                availabilityData = AvailabilityData.init(fromDictionary: dataArray.first!)
-                availabilityList.append(availabilityData)
+                for dataDict in dataArray {
+                    availabilityData = AvailabilityData.init(fromDictionary: dataDict)
+                    availabilityList.append(availabilityData)
+                }
             }
             else if let data = dictionary["data"] as? [String:Any] {
                 availabilityData = AvailabilityData.init(fromDictionary: data)

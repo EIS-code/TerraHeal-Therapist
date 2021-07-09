@@ -24,15 +24,14 @@ class MyBookingCollapseCell: TableCell {
     }
 
     func setData(data: BookingDetail ) {
-        self.lblName.setText(Date.init(milliseconds: data.massageStartTime.toDouble).toString(format: "dd MMM yyyy hh:mm"))
+        self.lblName.setText(Date.init(milliseconds: data.massageDateTime.toDouble).toString(format: "dd MMM yyyy hh:mm"))
         self.ivForplace.downloadedFrom(link: data.qrCodePath)
     }
 
     func setData(data: BookingData ) {
-        self.lblName.setText(Date.init(milliseconds: data.bookingDateTime.toDouble).toString(format: "dd MMM yyyy hh:mm"))
+        self.lblName.setText(Date.init(milliseconds: data.massageDateTime.toDouble).toString(format: "dd MMM yyyy hh:mm"))
        // self.ivForplace.downloadedFrom(link: data.qrCodePath)
     }
-
     override func layoutSubviews() {
         super.layoutSubviews()
         self.vwCollapse?.setRound(withBorderColor: .clear, andCornerRadious: 15.0, borderWidth: 1.0)

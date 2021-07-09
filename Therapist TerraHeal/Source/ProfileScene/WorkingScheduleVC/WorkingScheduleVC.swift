@@ -105,13 +105,7 @@ extension WorkingScheduleVC {
         WorkingScheduleWebService.getWorkignSchedule(params: WorkingScheduleWebService.RequestSchedule.init(date: date)) { (response) in
             Loader.hideLoading()
             for data in response.workingList {
-                if data.isWorking.toBool {
-                    self.arrForWorkingDays.append(data.date.toDouble)
-                }
-                if data.isAbsent.toBool{
-                    self.arrForNotAvailableDays.append(data.date.toDouble)
-                }
-
+                self.arrForWorkingDays.append(data.date.toDouble)
             }
             self.vwCalendar.reloadData()
             self.tblVwForData.reloadData()
@@ -120,6 +114,7 @@ extension WorkingScheduleVC {
 
     func wsAvailability(date:Double = Date().millisecondsSince1970WithUTC) {
         Loader.showLoading()
+        self.arrForData.removeAll()
         AvailabilityWebService.getAvailabilities(params: AvailabilityWebService.RequestGetAvailability.init(id: "3", date: date.toString())) { (response) in
             Loader.hideLoading()
             if ResponseModel.isSuccess(response: response) {
@@ -136,6 +131,8 @@ extension WorkingScheduleVC {
                         self.tblVwForData.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
                     }
                 }
+            } else {
+                self.tblVwForData.reloadData()
             }
         }
     }

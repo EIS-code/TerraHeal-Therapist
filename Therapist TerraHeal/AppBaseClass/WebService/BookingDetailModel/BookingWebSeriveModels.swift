@@ -55,6 +55,7 @@ class BookingData {
     var clientGender: String = ""
     var clientId: String = ""
     var clientName: String = ""
+    var massageDateTime: String = ""
 
     var isSelected: Bool = false
 
@@ -62,6 +63,7 @@ class BookingData {
         return ServiceStatus.init(rawValue: self.serviceStatus) ?? .Pending
     }
     init(fromDictionary dictionary: [String:Any]){
+        self.massageDateTime = (dictionary["massage_date_time"] as? String) ?? ""
         self.bookingDateTime = (dictionary["booking_date_time"] as? String) ?? ""
         self.bookingId = (dictionary["booking_id"] as? String) ?? ""
         self.bookingInfoId = (dictionary["booking_info_id"] as? String) ?? ""
@@ -83,7 +85,7 @@ class BookingData {
         self.tableFutonQuantity = (dictionary["table_futon_quantity"] as? String) ?? ""
         self.therapistId = (dictionary["therapist_id"] as? String) ?? ""
         self.therapistName = (dictionary["therapist_name"] as? String) ?? ""
-        self.sessionName = (dictionary["session_name"] as? String) ?? ""
+        self.sessionName = (dictionary["session_type"] as? String) ?? ""
         self.userName = (dictionary["user_people_name"] as? String) ?? ""
         self.userPeopleId = (dictionary["user_people_id"] as? String) ?? ""
         self.clientAge = (dictionary["client_age"] as? String) ?? ""
@@ -101,7 +103,7 @@ class BookingData {
         case .BookingType:
             return MyBookingTblDetail.init(id:self.bookingInfoId , title: bookingType!.name(), bookingType: bookingType!, isSelected: false)
         case .Date:
-            let newDate = Date.init(milliseconds: self.massageDate.toDouble)
+            let newDate = Date.init(milliseconds: self.massageDateTime.toDouble)
             return MyBookingTblDetail.init(id:self.bookingInfoId , title: newDate.toString(format: "dd MMM yyy hh:mm"), bookingType: bookingType!,isSelected: false)
         case .ClientName:
             return MyBookingTblDetail.init(id:self.bookingInfoId , title: self.clientName, bookingType: bookingType!, isSelected: false)
@@ -164,6 +166,7 @@ class BookingDetail {
     var userPeopleId: String = ""
     var userPeopleName: String = ""
     var createdAt: String = ""
+    var massageDateTime: String = ""
     func getServiceStatus() -> ServiceStatus {
         return ServiceStatus.init(rawValue: self.serviceStatus) ?? .Pending
     }
@@ -171,6 +174,7 @@ class BookingDetail {
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
+        self.massageDateTime = (dictionary["massage_date_time"] as? String) ?? ""
         self.actualEndTime = (dictionary["actual_end_time"] as? String) ?? ""
         self.createdAt = (dictionary["created_at"] as? String) ?? ""
         self.actualStartTime = (dictionary["actual_start_time"] as? String) ?? ""
@@ -225,7 +229,7 @@ class BookingDetail {
     }
     func toBookingModel() -> MyBookingTblDetail{
         let bookingType = BookingType.init(rawValue: self.bookingTypeValue)
-        let newDate = Date.init(milliseconds: self.massageDate.toDouble)
+        let newDate = Date.init(milliseconds: self.massageDateTime.toDouble)
         return MyBookingTblDetail.init(id:self.bookingInfoId , title: newDate.toString(format: "dd MMM yyy hh:mm"), bookingType: bookingType!,isSelected: false)
     }
 }

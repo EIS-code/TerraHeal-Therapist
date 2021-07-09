@@ -26,6 +26,7 @@ class CollapseShiftTableCell: TableCell {
     func setData(data:ShiftContainerCellDetail) {
         self.lblTherapistName?.setText(data.name)
         self.imgCell.downloadedFrom(link: data.image)
+        self.btnSelectTherapist.isUserInteractionEnabled = false
         self.btnSelectTherapist.isSelected = false
     }
 
